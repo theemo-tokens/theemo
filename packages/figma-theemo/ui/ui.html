@@ -1,0 +1,87 @@
+<div id="update" class="section">
+  Update all References
+</div>
+
+<div id="selection" class="section"></div>
+
+<template id="style-section">
+  <details open>
+    <summary data-elem="title" class="section-title"></summary>
+    <div class="section-grid">
+      <span class="section-label label">Origin</span>
+
+      <div data-elem="origin-none" class="field">
+        <span style="justify-content: space-between">
+          <select
+            placeholder="Pick a Local Style"
+            data-elem="origin-name"
+          ></select>
+          <button data-elem="origin-create" class="button button--primary">
+            Link
+          </button>
+        </span>
+        <small>
+          Note: Can only suggest Local Styles. If you need one from a library,
+          please assign manually.
+        </small>
+      </div>
+      <div data-elem="origin-migrate" class="field">
+        <span>
+          <span class="icon icon--alert"></span>
+          New Style detected, please choose:
+        </span>
+        <div class="migrate">
+          <div>
+            <span data-elem="migrate-active"></span>
+            <span class="type--figma-black-3">(active)</span>
+          </div>
+          <div>
+            <span data-elem="migrate-new"></span>
+            <span class="type--figma-black-3">(new)</span>
+          </div>
+          <div>
+            <button data-elem="migrate-keep" class="button button--secondary">
+              Keep old
+            </button>
+          </div>
+          <div>
+            <button data-elem="migrate-switch" class="button button--secondary">
+              Use new
+            </button>
+          </div>
+        </div>
+      </div>
+      <div data-elem="origin-exists" class="field">
+        <span>
+          <div class="icon icon--styles"></div>
+          <span data-elem="origin-exists-name"></span>
+        </span>
+      </div>
+
+      <span class="section-label label">Reference</span>
+
+      <div data-elem="ref-none" class="field">
+        <form data-elem="ref-form" style="justify-content: space-between">
+          <input
+            placeholder="Reference Name"
+            data-elem="ref-name"
+            class="input"
+            list="fill-ref-suggestions"
+          />
+          <datalist data-elem="ref-suggestions"></datalist>
+          <button type="submit" class="button button--primary">
+            Link
+          </button>
+        </form>
+      </div>
+
+      <div data-elem="ref-exists" class="field">
+        <span>
+          <span class="icon icon--styles"></span>
+          <span data-elem="ref-exists-name"></span>
+          <span data-elem="ref-unlink" class="icon icon--break"></span>
+        </span>
+      </div>
+    </div>
+  </details>
+</template>

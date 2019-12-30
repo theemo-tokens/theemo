@@ -1,0 +1,63 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+}
+
+summary {
+  outline: none;
+}
+
+.section {
+  display: none;
+}
+
+.section-label {
+  line-height: 32px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 55px auto;
+  grid-gap: 8px;
+  gap: 8px;
+}
+
+.field {
+  display: none;
+  flex-direction: column;
+}
+
+.field > * + * {
+  margin-top: 8px;
+}
+
+.field > span,
+.field > form {
+  display: flex;
+  align-items: center;
+}
+
+.field > span > .input,
+.field > form > .input {
+  border-right-width: 2px !important;
+}
+
+.field > form > button {
+  margin-left: 8px;
+}
+
+.field > span > * + * {
+  margin-left: 8px !important;
+}
+
+.migrate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grip-gap: 8px;
+  gap: 8px;
+  margin-left: 32px;
+}
+
+.migrate span {
+  line-height: 32px;
+}

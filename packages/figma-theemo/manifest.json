@@ -1,0 +1,7 @@
+{
+  "name": "Style References",
+  "id": "791262205400516364",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html"
+}
