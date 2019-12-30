@@ -8,7 +8,7 @@
     "start": "yarn webpack --mode=development --watch"
   },
   "author": "Thomas Gossmann",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "css-loader": "^3.4.0",
     "html-webpack-inline-source-plugin": "0.0.10",
