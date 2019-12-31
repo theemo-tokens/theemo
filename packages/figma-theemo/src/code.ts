@@ -6,6 +6,14 @@ function handleSelection(node: RefNode) {
   figma.ui.postMessage(handler.data);
 
   figma.ui.onmessage = msg => {
+    // check here if the node still exists or some other user has deleted it
+    const exists = figma.getNodeById(node.id);
+    if (!exists) {
+      figma.closePlugin();
+      return;
+    }
+
+    // if we are good, execute the commands
     switch (msg.command) {
       case 'link-origin':
         handler.linkOrigin(msg);

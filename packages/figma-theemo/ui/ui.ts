@@ -1,5 +1,5 @@
 import '../vendor/figma-plugin-ds.min.css'
-import '../vendor/figma-plugin-ds.min'
+// import '../vendor/figma-plugin-ds.min'
 import './ui.css'
 
 interface StyleIdentifier {
@@ -67,6 +67,14 @@ class StyleSection {
     this.setup();
     this.bind();
     this.render();
+
+    // post setup, call the `selectMenu` once for all `<select>`
+    // see second comment here: 
+    // https://github.com/thomas-lowry/figma-plugin-ds/issues/17
+    // // @ts-ignore
+    // selectMenu.init({
+    //   selector: `origin-suggestions`
+    // });
   }
 
   private setup() {
@@ -75,7 +83,12 @@ class StyleSection {
     this.root = fragment.firstElementChild as HTMLElement;
     document.getElementById('selection').appendChild(fragment);
 
+    // set title
     this.elem('title').innerHTML = this.section[0].toUpperCase() + this.section.slice(1);
+
+    // set class on origin-select
+    const originName = this.elem('origin-name');
+    originName.classList.add(`${this.section}-origin-suggestions`);
   }
 
   private bind() {
@@ -176,16 +189,21 @@ class StyleSection {
     this.elem('origin-none').style.display = 'flex';
 
     const originName = this.elem('origin-name');
-
-    // only add class `select-menu` when there are options, anyway there is a
-    // bug, see: https://github.com/thomas-lowry/figma-plugin-ds/issues/17
-    if (this.suggestions.length > 0) {
-      originName.classList.add('select-menu');
-    }
     this.renderOptions(originName);
 
-    // @ts-ignore
-    selectMenu.init();
+    // keep this for the post-setup routine
+    // if (this.suggestions.length > 0) {
+    //   originName.classList.add('origin-suggestions');
+    // }
+
+    // add the `selectMenu` one-by-one for only this section
+    // bug, see: https://github.com/thomas-lowry/figma-plugin-ds/issues/17
+    // if (this.suggestions.length > 0) {
+    //   // @ts-ignore
+    //   selectMenu.init({
+    //     selector: `${this.section}-origin-suggestions`
+    //   });
+    // }
   }
 
   private renderReference() {
