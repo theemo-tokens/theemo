@@ -1,4 +1,4 @@
-![Artwork](assets/artwork.png)
+<img src="assets/artwork.png">
 
 # Figma Plugin: Style References
 
