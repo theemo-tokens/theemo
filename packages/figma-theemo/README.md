@@ -1,3 +1,5 @@
+![Artwork](assets/artwork.png)
+
 # Figma Plugin: Style References
 
 Figma plugin to reference styles.
