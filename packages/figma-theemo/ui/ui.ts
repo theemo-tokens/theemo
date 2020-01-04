@@ -23,9 +23,6 @@ onmessage = (event) => {
   const message = event.data.pluginMessage;
 
   if (message.node) {
-    // handle  section
-    showSection('selection');
-
     sections.fill = new StyleSection('fill', message.styles.fill, message.paintStyles);
     sections.stroke = new StyleSection('stroke', message.styles.stroke, message.paintStyles);
     sections.effect = new StyleSection('effect', message.styles.effect, message.effectStyles);
@@ -42,16 +39,6 @@ onmessage = (event) => {
     }
   }
 }
-
-function showSection(name: string) {
-  for (const elem of document.getElementsByClassName('section')) {
-    (elem as HTMLElement).style.display = 'none';
-  }
-
-  document.getElementById(name).style.display = "block";
-}
-
-showSection('update');
 
 class StyleSection {
   private section: string;
