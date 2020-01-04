@@ -44,9 +44,13 @@ function main() {
   const selection = figma.currentPage.selection;
 
   // show dialog
-  if (selection.length > 0 && canHandleNode(selection[0])) {
-    figma.showUI(__html__);
-    handleSelection(selection[0] as RefNode);
+  if (selection.length > 0) {
+    if (canHandleNode(selection[0])) {
+      figma.showUI(__html__);
+      handleSelection(selection[0] as RefNode);
+    } else {
+      figma.closePlugin('Selected node is not handled by Style References');
+    }
   }
 
   // update what we got
@@ -63,7 +67,7 @@ function main() {
     }
     storeNodes(nodes);
 
-    figma.closePlugin();
+    figma.closePlugin(`${nodes.size} Style Reference${nodes.size !== 1 ? 's' : ''} updated`);
   }
 }
 
