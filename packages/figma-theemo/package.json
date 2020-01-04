@@ -1,6 +1,6 @@
 {
   "name": "figma-style-references",
-  "version": "0.0.1",
+  "version": "2",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
