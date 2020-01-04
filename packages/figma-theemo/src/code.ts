@@ -1,5 +1,28 @@
 import Handler, { RefNode } from './handler';
 import { readNodes, storeNodes } from './utils';
+import { ALL_STYLES } from './styles/types';
+import { NAMESPACE } from './config';
+
+migrate();
+
+function migrate() {
+  // migrate from plugin data to shared plugin data
+  const nodes = figma.root.getPluginData('nodes');
+  if (nodes !== '') {
+    for (const nodeId of JSON.parse(nodes)) {
+      const node = figma.getNodeById(nodeId);
+      if (node) {
+        for (const style of ALL_STYLES) {
+          node.setSharedPluginData(NAMESPACE, style, node.getPluginData(style));
+          node.setPluginData(style, '');
+        }
+      }
+    }
+
+    figma.root.setSharedPluginData(NAMESPACE, 'nodes', nodes);
+    figma.root.setPluginData('nodes', '');
+  }
+}
 
 function handleSelection(node: RefNode) {
   const handler = new Handler(node as RefNode);

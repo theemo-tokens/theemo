@@ -1,3 +1,5 @@
+import { NAMESPACE } from './config';
+
 export function createOrFindStyle(name: string, type: 'paint' | 'effect'): BaseStyle {
   switch (type) {
     case 'paint':
@@ -27,9 +29,9 @@ export function copyEffectStyle(from: EffectStyle, to: EffectStyle) {
 }
 
 export function readNodes(): Set<string> {
-  return new Set<string>(Array.from(JSON.parse(figma.root.getPluginData('nodes') || '[]')));
+  return new Set<string>(Array.from(JSON.parse(figma.root.getSharedPluginData(NAMESPACE, 'nodes') || '[]')));
 }
 
 export function storeNodes(nodes: Set<string>) {
-  figma.root.setPluginData('nodes', JSON.stringify(Array.from(nodes.values())));
+  figma.root.setSharedPluginData(NAMESPACE, 'nodes', JSON.stringify(Array.from(nodes.values())));
 }

@@ -1,6 +1,6 @@
 import StyleFactory from './styles/factory';
 import StyleAdapter from './styles/adapter';
-import { StyleTypes } from './styles/types';
+import { StyleTypes, ALL_STYLES } from './styles/types';
 import { readNodes, storeNodes } from './utils';
 
 // there is a mismatch between types and documentation
@@ -16,7 +16,7 @@ export default class Handler {
   constructor(node: RefNode) {
     this.node = node;
 
-    for (const style of [StyleTypes.Fill, StyleTypes.Stroke, StyleTypes.Effect]) {
+    for (const style of ALL_STYLES) {
       // if there is a nice check whether the this.node[`${style}StyleId`]
       // property exists, then there can be a dynamical exploration of which
       // styles are available to the given node (ie. for adding typo and grid

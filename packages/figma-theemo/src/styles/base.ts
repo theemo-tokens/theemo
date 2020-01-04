@@ -1,5 +1,6 @@
 import { RefNode } from '../handler';
 import { StyleTypes } from './types';
+import { NAMESPACE } from '../config';
 
 export default abstract class BaseStyleAdapter {
   abstract type: StyleTypes;
@@ -19,7 +20,7 @@ export default abstract class BaseStyleAdapter {
   }
 
   load() {
-    const data = JSON.parse(this.node.getPluginData(this.type) || '{}');
+    const data = JSON.parse(this.node.getSharedPluginData(NAMESPACE, this.type) || '{}');
 
     if (data.from) {
       this.from = figma.getStyleById(data.from);
@@ -46,7 +47,7 @@ export default abstract class BaseStyleAdapter {
       data.to = this.to.id;
     }
 
-    this.node.setPluginData(this.type, JSON.stringify(data));
+    this.node.setSharedPluginData(NAMESPACE, this.type, JSON.stringify(data));
   }
 
   compile() {
