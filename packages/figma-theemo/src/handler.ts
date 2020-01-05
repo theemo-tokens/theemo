@@ -55,6 +55,31 @@ export default class Handler {
   // Commands
   //
 
+  linkOrigin({ style, name }: { style: StyleTypes, name: string }) {
+    const adapter = this.adapters.get(style);
+    if (adapter) {
+      adapter.linkOrigin(name);
+      adapter.read();
+    }
+  }
+
+  migrateOrigin({ style, target }: { style: StyleTypes, target: string }) {
+    const adapter = this.adapters.get(style);
+    if (adapter) {
+      adapter.migrateOrigin(target);
+      adapter.save();
+      adapter.read();
+    }
+  }
+
+  unlinkOrigin({ style }: { style: StyleTypes }) {
+    const adapter = this.adapters.get(style);
+    if (adapter && !adapter.hasReference()) {
+      adapter.unlinkOrigin();
+      adapter.read();
+    }
+  }
+
   createReference({ from, name, style }: { from: string, name: string, style: StyleTypes }) {
     const adapter = this.adapters.get(style);
     if (adapter) {
@@ -81,22 +106,7 @@ export default class Handler {
     }
   }
 
-  migrateOrigin({ style, target }: { style: StyleTypes, target: string }) {
-    const adapter = this.adapters.get(style);
-    if (adapter) {
-      adapter.migrateOrigin(target);
-      adapter.save();
-      adapter.read();
-    }
-  }
 
-  linkOrigin({ style, name }: { style: StyleTypes, name: string }) {
-    const adapter = this.adapters.get(style);
-    if (adapter) {
-      adapter.linkOrigin(name);
-      adapter.read();
-    }
-  }
 
   private storeNode() {
     const nodes = readNodes();

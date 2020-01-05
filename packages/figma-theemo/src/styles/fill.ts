@@ -23,6 +23,10 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     this.node.fillStyleId = this.to.id;
   }
 
+  unlinkOrigin() {
+    this.node.fillStyleId = '';
+  }
+
   createReference(from, name) {
     const origin = figma.getStyleById(from) as PaintStyle;
     const to = createOrFindStyle(name, 'paint') as PaintStyle;

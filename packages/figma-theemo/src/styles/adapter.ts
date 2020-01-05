@@ -13,6 +13,8 @@ export default interface StyleAdapter {
 
   migrateOrigin(target: string);
 
+  unlinkOrigin();
+
   createReference(from: string, name: string);
 
   unlinkReference();

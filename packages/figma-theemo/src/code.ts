@@ -43,6 +43,11 @@ function handleSelection(node: RefNode) {
         figma.ui.postMessage({ event: 'origin-linked', style: msg.style, data: handler.data.styles[msg.style] });
         break;
 
+      case 'unlink-origin':
+        handler.unlinkOrigin(msg);
+        figma.ui.postMessage({ event: 'origin-unlinked', style: msg.style, data: handler.data.styles[msg.style] });
+        break;
+
       case 'migrate-origin':
         handler.migrateOrigin(msg);
         figma.ui.postMessage({ event: 'origin-migrated', style: msg.style, data: handler.data.styles[msg.style] });

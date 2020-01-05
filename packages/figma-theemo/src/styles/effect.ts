@@ -23,6 +23,11 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
     this.node.fillStyleId = this.to.id;
   }
 
+
+  unlinkOrigin() {
+    this.node.effectStyleId = '';
+  }
+
   createReference(from, name) {
     const origin = figma.getStyleById(from) as EffectStyle;
     const to = createOrFindStyle(name, 'paint') as EffectStyle;

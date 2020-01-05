@@ -23,6 +23,11 @@ export class StrokeStyleAdapter extends BaseStyleAdapter implements StyleAdapter
     this.node.fillStyleId = this.to.id;
   }
 
+
+  unlinkOrigin() {
+    this.node.strokeStyleId = '';
+  }
+
   createReference(from, name) {
     const origin = figma.getStyleById(from) as PaintStyle;
     const to = createOrFindStyle(name, 'paint') as PaintStyle;

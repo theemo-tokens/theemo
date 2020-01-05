@@ -31,6 +31,7 @@ onmessage = (event) => {
   if (message.event) {
     switch (message.event) {
       case 'origin-linked':
+      case 'origin-unlinked':
       case 'origin-migrated':
       case 'reference-created':
       case 'reference-unlinked':
@@ -88,15 +89,9 @@ class StyleSection {
       }
     };
 
-    // create reference
-    this.elem('ref-form').onsubmit = (e) => {
-      e.preventDefault();
-      const name = (this.elem('ref-name') as HTMLInputElement).value;
-
-      if (name) {
-        const origin = this.data.local;
-        parent.postMessage({ pluginMessage: { command: 'create-reference', from: origin.id, name, style: this.section } }, '*');
-      }
+    // origin unlink
+    this.elem('origin-unlink').onclick = (e) => {
+      parent.postMessage({ pluginMessage: { command: 'unlink-origin', style: this.section } }, '*');
     };
 
     // migrate keep
@@ -109,7 +104,18 @@ class StyleSection {
       parent.postMessage({ pluginMessage: { command: 'migrate-origin', style: this.section, target: this.data.local.id } }, '*');
     };
 
-    // unlink
+    // create reference
+    this.elem('ref-form').onsubmit = (e) => {
+      e.preventDefault();
+      const name = (this.elem('ref-name') as HTMLInputElement).value;
+
+      if (name) {
+        const origin = this.data.local;
+        parent.postMessage({ pluginMessage: { command: 'create-reference', from: origin.id, name, style: this.section } }, '*');
+      }
+    };
+
+    // ref unlink
     this.elem('ref-unlink').onclick = (e) => {
       parent.postMessage({ pluginMessage: { command: 'unlink-reference', style: this.section } }, '*');
     };
@@ -170,6 +176,7 @@ class StyleSection {
     const style = this.getOrigin() || this.data.local;
 
     this.elem('origin-exists-name').innerHTML = style.name;
+    this.elem('origin-unlink').style.display = this.data.to ? 'none' : 'inline';
   }
 
   private renderOriginNone() {
