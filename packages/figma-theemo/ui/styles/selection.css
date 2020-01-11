@@ -1,0 +1,77 @@
+#selection {
+  overflow-y: auto;
+  height: calc(100% - 40px);
+  --stack-space: 0;
+}
+
+#selection .section-title {
+  padding-left: 0 !important;
+}
+
+.section-label {
+  line-height: 32px;
+  padding-left: 0;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 60px auto;
+  grid-gap: 0 8px;
+  gap: 0 8px;
+}
+
+.field {
+  display: none;
+  flex-direction: column;
+}
+
+.field > * + * {
+  margin-top: 8px;
+}
+
+.field > span,
+.field > form {
+  display: flex;
+  align-items: center;
+}
+
+.field > span > .input,
+.field > form > .input {
+  border-right-width: 2px;
+}
+
+.field > form > button {
+  margin-left: 8px;
+}
+
+.field > span > * + * {
+  margin-left: 8px;
+}
+
+.field .action-icons {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 2;
+}
+
+.field .icon--button {
+  opacity: 0.5;
+  align-self: flex-end;
+}
+
+.field:hover .icon--button {
+  opacity: 1;
+}
+
+.field select {
+  max-width: 176px;
+  margin-left: 0;
+}
+
+.migrate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  gap: 8px;
+  margin-left: 32px;
+}

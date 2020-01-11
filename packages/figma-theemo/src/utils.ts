@@ -1,5 +1,3 @@
-import { NAMESPACE } from './config';
-
 export function createOrFindStyle(name: string, type: 'paint' | 'effect'): BaseStyle {
   switch (type) {
     case 'paint':
@@ -28,10 +26,17 @@ export function copyEffectStyle(from: EffectStyle, to: EffectStyle) {
   to.effects = from.effects;
 }
 
-export function readNodes(): Set<string> {
-  return new Set<string>(Array.from(JSON.parse(figma.root.getSharedPluginData(NAMESPACE, 'nodes') || '[]')));
+export function copyGridStyle(from: GridStyle, to: GridStyle) {
+  to.layoutGrids = from.layoutGrids;
 }
 
-export function storeNodes(nodes: Set<string>) {
-  figma.root.setSharedPluginData(NAMESPACE, 'nodes', JSON.stringify(Array.from(nodes.values())));
+export function copyTextStyle(from: TextStyle, to: TextStyle) {
+  to.fontName = from.fontName;
+  to.fontSize = from.fontSize;
+  to.letterSpacing = from.letterSpacing;
+  to.lineHeight = from.lineHeight;
+  to.paragraphIndent = from.paragraphIndent;
+  to.paragraphSpacing = from.paragraphSpacing;
+  to.textCase = from.textCase;
+  to.textDecoration = from.textDecoration;
 }

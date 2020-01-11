@@ -1,26 +1,141 @@
-<section id="selection"></section>
+<nav>
+  <span class="label" data-section="selection">Selection</span>
+  <span class="label" data-section="tools">Tools</span>
+  <span class="label" data-section="contexts">Contexts</span>
+  <span class="label" data-section="settings">Settings</span>
+</nav>
+
+<section id="selection" class="stack">
+  Please select something to manage style references
+</section>
+
+<section id="tools" class="stack">
+  <div class="section-title">Auto Update</div>
+  <div class="switch">
+    <input class="switch__toggle" type="checkbox" id="tools.update" checked />
+    <label class="switch__label" for="tools.update">
+      Auto Update Style References
+    </label>
+  </div>
+
+  <div class="section-title">Export</div>
+  <div class="stack" style="--stack-space: 8px;">
+    <p>
+      Export references to jsonbin.io to be consumable by third-party consumers.
+      Go to settings tab to set credentials.
+    </p>
+    <div class="cluster">
+      <button class="button button--primary" id="export" disabled>
+        Export References
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="contexts" class="stack">
+  <div class="section-title">Add Context</div>
+  <form id="context-add">
+    <input class="input" placeholder="New Context Name" id="context-name" />
+    <button
+      title="link"
+      type="submit"
+      class="icon icon--plus icon--button"
+    ></button>
+  </form>
+
+  <div class="section-title">Select Context</div>
+  <ul id="context-list"></ul>
+  <template id="context.item">
+    <li>
+      <div>
+        <span class="icon icon--mask"></span>
+        <span class="name type--pos-medium-normal"></span>
+      </div>
+      <span class="icon icon--trash icon--button remove"></span>
+    </li>
+  </template>
+</section>
+
+<section id="settings" class="stack">
+  <div class="grid">
+    <div class="section-title row">Contexts</div>
+
+    <span class="label" for="context.prefix">Prefix</span>
+    <input class="input" id="context.prefix" value=".§" />
+
+    <span class="label">Example</span>
+    <div class="cluster">
+      <span id="context.from" class="label"></span>
+      <span style="line-height: 30px;">→</span>
+      <span id="context.to" class="label"></span>
+    </div>
+
+    <div class="section-title row">Export</div>
+
+    <p class="type--figma-black-8 type--pos-small-normal row">
+      Exporting goes to
+      <a href="https://jsonbin.io" target="_blank">jsonbin.io</a>.
+    </p>
+    <ol class="row">
+      <li>Create an account and copy the API Key</li>
+      <li>Create a bin and copy the bin URL</li>
+    </ol>
+
+    <label class="label" for="tools.key">API Key</label>
+    <div class="input-icon">
+      <div class="input-icon__icon">
+        <div class="icon icon--lock icon--black-3"></div>
+      </div>
+      <input type="input" class="input-icon__input" id="tools.key" />
+    </div>
+
+    <label class="label" for="tools.url">Bin URL</label>
+    <div class="input-icon">
+      <div class="input-icon__icon">
+        <div class="icon icon--link-connected icon--black-3"></div>
+      </div>
+      <input type="input" class="input-icon__input" id="tools.url" />
+    </div>
+  </div>
+  <footer class="stack-end">
+    <button class="button button--primary" id="settings.save">Save</button>
+  </footer>
+</section>
 
 <template id="style-section">
-  <details open>
-    <summary data-elem="title" class="section-title"></summary>
+  <div>
+    <div data-elem="title" class="section-title"></div>
     <div class="section-grid">
       <span class="section-label label">Origin</span>
 
-      <div data-elem="origin-none" class="field">
-        <span style="justify-content: space-between">
+      <div data-elem="origin-link" class="field">
+        <span>
+          <div class="icon icon--styles"></div>
           <select
             placeholder="Pick a Local Style"
             data-elem="origin-name"
           ></select>
-          <button data-elem="origin-create" class="button button--primary">
-            Link
-          </button>
+
+          <span class="action-icons">
+            <span
+              title="update"
+              class="icon icon--return icon--button"
+              data-elem="origin-update"
+            ></span>
+            <span
+              title="unlink"
+              class="icon icon--break icon--button"
+              data-elem="origin-unlink"
+            ></span>
+            <span
+              title="link"
+              class="icon icon--plus icon--button"
+              data-elem="origin-create"
+            ></span>
+          </span>
         </span>
-        <small>
-          Note: Can only suggest Local Styles. If you need one from a library,
-          please assign manually.
-        </small>
       </div>
+
       <div data-elem="origin-migrate" class="field">
         <span>
           <span class="icon icon--alert"></span>
@@ -47,13 +162,6 @@
           </div>
         </div>
       </div>
-      <div data-elem="origin-exists" class="field">
-        <span>
-          <div class="icon icon--styles"></div>
-          <span data-elem="origin-exists-name"></span>
-          <span data-elem="origin-unlink" class="icon icon--break"></span>
-        </span>
-      </div>
 
       <span class="section-label label">Reference</span>
 
@@ -66,9 +174,11 @@
             list="fill-ref-suggestions"
           />
           <datalist data-elem="ref-suggestions"></datalist>
-          <button type="submit" class="button button--primary">
-            Link
-          </button>
+          <button
+            title="link"
+            type="submit"
+            class="icon icon--plus icon--button"
+          ></button>
         </form>
       </div>
 
@@ -76,9 +186,15 @@
         <span>
           <span class="icon icon--styles"></span>
           <span data-elem="ref-exists-name"></span>
-          <span data-elem="ref-unlink" class="icon icon--break"></span>
+          <span class="action-icons">
+            <span
+              title="unlink"
+              data-elem="ref-unlink"
+              class="icon icon--break icon--button"
+            ></span>
+          </span>
         </span>
       </div>
     </div>
-  </details>
+  </div>
 </template>

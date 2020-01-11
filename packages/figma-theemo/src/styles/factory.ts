@@ -1,9 +1,9 @@
+import { RefNode } from '../manager/node-manager';
 import StyleAdapter from './adapter';
-import { StyleTypes } from './types';
 import { EffectStyleAdapter } from './effect';
-import { RefNode } from '../handler';
 import { FillStyleAdapter } from './fill';
 import { StrokeStyleAdapter } from './stroke';
+import { StyleTypes } from './types';
 
 export default class StyleFactory {
   static create(type: StyleTypes, node: RefNode): StyleAdapter {

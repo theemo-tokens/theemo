@@ -5,6 +5,7 @@ import { StyleTypes } from './types';
 
 export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
   type: StyleTypes.Effect = StyleTypes.Effect;
+  collection: 'effect' = 'effect';
 
   protected local: EffectStyle;
   protected from: EffectStyle;
@@ -20,9 +21,8 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
   migrateOrigin(target) {
     this.from = figma.getStyleById(target) as EffectStyle;
     copyEffectStyle(this.from, this.to);
-    this.node.fillStyleId = this.to.id;
+    this.node.effectStyleId = this.to.id;
   }
-
 
   unlinkOrigin() {
     this.node.effectStyleId = '';
@@ -30,7 +30,7 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
 
   createReference(from, name) {
     const origin = figma.getStyleById(from) as EffectStyle;
-    const to = createOrFindStyle(name, 'paint') as EffectStyle;
+    const to = createOrFindStyle(name, 'effect') as EffectStyle;
     copyEffectStyle(origin, to);
     this.node.effectStyleId = to.id;
     this.from = origin;

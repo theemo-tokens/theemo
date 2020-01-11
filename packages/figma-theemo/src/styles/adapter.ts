@@ -1,4 +1,6 @@
 export default interface StyleAdapter {
+  collection: 'paint' | 'effect';
+
   read();
   load();
   save();

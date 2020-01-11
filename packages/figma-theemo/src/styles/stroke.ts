@@ -5,6 +5,7 @@ import { StyleTypes } from './types';
 
 export class StrokeStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
   type: StyleTypes.Stroke = StyleTypes.Stroke;
+  collection: 'paint' = 'paint';
 
   protected local: PaintStyle;
   protected from: PaintStyle;
@@ -20,9 +21,8 @@ export class StrokeStyleAdapter extends BaseStyleAdapter implements StyleAdapter
   migrateOrigin(target) {
     this.from = figma.getStyleById(target) as PaintStyle;
     copyPaintStyle(this.from, this.to);
-    this.node.fillStyleId = this.to.id;
+    this.node.strokeStyleId = this.to.id;
   }
-
 
   unlinkOrigin() {
     this.node.strokeStyleId = '';

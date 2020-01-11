@@ -1,6 +1,6 @@
-import { RefNode } from '../handler';
-import { StyleTypes } from './types';
 import { NAMESPACE } from '../config';
+import { RefNode } from '../manager/node-manager';
+import { StyleTypes } from './types';
 
 export default abstract class BaseStyleAdapter {
   abstract type: StyleTypes;

@@ -1,7 +1,8 @@
-import StyleFactory from './styles/factory';
-import StyleAdapter from './styles/adapter';
-import { StyleTypes, ALL_STYLES } from './styles/types';
-import { readNodes, storeNodes } from './utils';
+import StyleAdapter from '../styles/adapter';
+import { ALL_STYLES, StyleTypes } from '../styles/types';
+import StyleFactory from '../styles/factory';
+import ReferencesManager from './references-manager';
+
 
 // there is a mismatch between types and documentation
 // according to docs: `GroupNode` has styles
@@ -9,9 +10,10 @@ import { readNodes, storeNodes } from './utils';
 // type RefNode = GroupNode | ComponentNode | InstanceNode | VectorNode | StarNode | LineNode | EllipseNode | PolygonNode | RectangleNode | TextNode;
 export type RefNode = ComponentNode | InstanceNode | VectorNode | StarNode | LineNode | EllipseNode | PolygonNode | RectangleNode | TextNode;
 
-export default class Handler {
+export default class NodeManager {
   private node: RefNode;
   private adapters: Map<string, StyleAdapter> = new Map();
+  private references = new ReferencesManager();
 
   constructor(node: RefNode) {
     this.node = node;
@@ -40,15 +42,28 @@ export default class Handler {
         id: this.node.id
       },
       styles: {},
-      paintStyles: figma.getLocalPaintStyles().map(style => { return { id: style.id, name: style.name } }),
-      effectStyles: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } })
+      collection: {},
+      repo: {
+        paint: figma.getLocalPaintStyles().map(style => { return { id: style.id, name: style.name } }),
+        effect: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } })
+      }
     };
 
     for (const [style, adapter] of this.adapters.entries()) {
       data.styles[style] = adapter.compile();
+      data.collection[style] = adapter.collection;
     }
 
     return data;
+  }
+
+  hasReference(style: string) {
+    const adapter = this.adapters.get(style);
+    if (adapter) {
+      return adapter.hasReference();
+    }
+
+    return false;
   }
 
   //
@@ -106,23 +121,30 @@ export default class Handler {
     }
   }
 
-
-
   private storeNode() {
-    const nodes = readNodes();
-    nodes.add(this.node.id);
-    storeNodes(nodes);
+    this.references.addNode(this.node);
   }
 
   private deleteNode() {
-    const nodes = readNodes();
-    nodes.delete(this.node.id);
-    storeNodes(nodes);
+    this.references.deleteNode(this.node);
   }
 
   updateStyles() {
     for (const adapter of this.adapters.values()) {
       adapter.updateStyle();
     }
+  }
+
+  static canHandleNode(node: SceneNode) {
+    return node.type === 'GROUP' ||
+      node.type === 'COMPONENT' ||
+      node.type === 'INSTANCE' ||
+      node.type === 'VECTOR' ||
+      node.type === 'STAR' ||
+      node.type === 'LINE' ||
+      node.type === 'ELLIPSE' ||
+      node.type === 'POLYGON' ||
+      node.type === 'RECTANGLE' ||
+      node.type === 'TEXT';
   }
 }

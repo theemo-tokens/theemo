@@ -5,6 +5,7 @@ import { StyleTypes } from './types';
 
 export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
   type: StyleTypes.Fill = StyleTypes.Fill;
+  collection: 'paint' = 'paint';
 
   protected local: PaintStyle;
   protected from: PaintStyle;
