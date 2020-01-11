@@ -5,6 +5,7 @@ import SelectionSection from './sections/selection';
 import SettingsSection from './sections/settings';
 import ToolsSection from './sections/tools';
 import { DEFAULT_CONFIG } from '../shared/config';
+import HelpSection from './sections/help';
 
 export default class SectionManager {
   private sections: Map<string, Section> = new Map();
@@ -18,6 +19,7 @@ export default class SectionManager {
     this.registerSection(new ToolsSection(messenger, this.settings));
     this.registerSection(new ContextsSection(messenger, this.settings));
     this.registerSection(new SettingsSection(messenger, this.settings));
+    this.registerSection(new HelpSection(messenger, this.settings));
 
     this.setup();
   }

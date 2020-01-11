@@ -8,6 +8,10 @@
   padding-left: 0 !important;
 }
 
+#selection .how-to {
+  padding-top: 8px;
+}
+
 .section-label {
   line-height: 32px;
   padding-left: 0;

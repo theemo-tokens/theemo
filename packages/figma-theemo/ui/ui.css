@@ -11,6 +11,7 @@ summary {
 @import "styles/tools.css";
 @import "styles/contexts.css";
 @import "styles/settings.css";
+@import "styles/help.css";
 
 button.icon--button {
   background-color: transparent;

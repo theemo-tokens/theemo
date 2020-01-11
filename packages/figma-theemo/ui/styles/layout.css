@@ -26,6 +26,11 @@ nav [data-section]:hover {
   color: rgba(0, 0, 0, 0.8);
 }
 
+nav [data-section="help"] {
+  flex-grow: 2;
+  justify-content: flex-end;
+}
+
 /* Stack Layout */
 .stack {
   --stack-space: 8px;

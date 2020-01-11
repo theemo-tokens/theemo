@@ -15,7 +15,7 @@ export default class SelectionSection extends Section {
       document.getElementById('selection').innerHTML = '';
 
       if (data === null) {
-        document.getElementById('selection').innerHTML = 'Please select something to manage style references';
+        document.getElementById('selection').innerHTML = '<span class="how-to">Please select something to manage style references</span>';
         this.sections = {};
       } else {
         for (const style of Object.keys(data.styles)) {
