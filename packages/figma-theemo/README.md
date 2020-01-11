@@ -2,17 +2,18 @@
 
 # Figma Plugin: Style References
 
-Figma plugin to reference styles.
+Figma plugin to reference styles. It's main purpose is to allow you to have an
+origin style mapped to a reference style, which will kept in sync with the
+origin style.
 
-The plugin will allow you to have an origin style mapped to a reference style,
-which will kept in sync with the origin style.
+This plugin will let you do this:
+
+1. Manage style references on a selected node
+2. Auto-update all references as you change origins (keep the plugin open for this)
+3. Export references to make it available for third-party consumers
+4. Switch contexts
 
 ## Manual
-
-This plugin will do two things:
-
-1. Will let you manage references on a selected node
-2. Will update all references on their origin style
 
 ### 1. Manage References
 
@@ -31,20 +32,39 @@ origin style to the reference.
 - **Reference** That's the style to which the origin is copied over when
   references are updated.
 
-### 2. Updating References
+### 2. Export
 
-When you have not selected a node for which you want to manage references, then
-the plugin will update all those managed references in the current document.
+You can export your references to [jsonbin.io](https://jsonbin.io) and by that
+make it available for third-party consumers, e.g. if you want to update your
+design tokens in your code. Here is how:
 
-Here is how the update is working:
+Enter credentials in settngs:
 
-- Copy the original style to the one that is named reference style
-- Set the reference style to the given node
+1. Create an account and copy the API Key
+2. Create a bin and copy the bin URL
+
+On the tools tab the `Export Settings` button becomes available. Clicking the
+button will export your references.
+
+### 3. Contexts
+
+Contexts are a lightweight way to organize various theme modes within one
+document. E.g. if you have light and dark mode in one document, you may want to
+give styles for respective styles a specific suffix, e.g. `.$dark` - With
+defined contexts, you can swap between them quickly and then use
+[Themer](https://www.figma.com/c/plugin/731176732337510831/Themer) to export
+them.
+
+#### Workflow Suggestion
+
+Use it in combination with Themer:
+
+1. Set your variants for each context (`§light` and `§dark`)
+2. Select a context
+3. Use `Style References` to map those "compiled" styles
+4. Use `Themer` to export and apply them
 
 ### Things to Know
-
-- There is no auto-update of origins to references (limitation of the current
-  figma API).
 
 - When setting the origin style the suggestions only show local styles, that is
   also due to limitations of the current figma API, given security reasons for
@@ -56,8 +76,8 @@ Here is how the update is working:
   style references dialog in order to persist it.
 
 - Once you have one node "under management", you may want to change the local
-  style but once you update references, those new ones will be overridden. Open
-  the style references dialog which will provide you options for migrating
+  style but once you update references, those new ones will be overridden. Re-select
+  the node again and the references dialog will provide you options for migrating
   styles, to either keep the old one or use the new one.
 
 - Once you link origin to reference the node itself will show the reference as
