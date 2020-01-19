@@ -10,6 +10,8 @@ export default interface StyleAdapter {
   needsUnlink(): boolean;
   hasReference(): boolean;
 
+  getPool(): BaseStyle[];
+
   // UI commands
   linkOrigin(name: string);
 

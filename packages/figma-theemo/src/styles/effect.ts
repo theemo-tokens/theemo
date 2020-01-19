@@ -11,6 +11,10 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
   protected from: EffectStyle;
   protected to: EffectStyle;
 
+  getPool() {
+    return figma.getLocalEffectStyles();
+  }
+
   linkOrigin(name) {
     const style = figma.getLocalEffectStyles().find(style => style.name === name);
     if (style) {

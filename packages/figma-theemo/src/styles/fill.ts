@@ -11,6 +11,10 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
   protected from: PaintStyle;
   protected to: PaintStyle;
 
+  getPool() {
+    return figma.getLocalPaintStyles();
+  }
+
   linkOrigin(name) {
     const style = figma.getLocalPaintStyles().find(style => style.name === name);
     if (style) {

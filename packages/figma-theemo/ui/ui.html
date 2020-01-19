@@ -128,11 +128,29 @@
       </button>
     </div>
   </div>
+
+  <div class="section-title">Import</div>
+  <div class="stack" style="--stack-space: 8px;">
+    <p>
+      Import references from jsonbin.io. That is very helpful if you duplicated
+      a document and want to copy over references (as figma's duplicate doesn't
+      take them over).
+    </p>
+    <form class="row-form" id="import">
+      <input class="input" placeholder="jsonbin.io url" id="import-url" />
+      <button
+        id="import-submit"
+        title="Import"
+        type="submit"
+        class="icon icon--play icon--button"
+      ></button>
+    </form>
+  </div>
 </section>
 
 <section id="contexts" class="stack">
   <div class="section-title">Add Context</div>
-  <form id="context-add">
+  <form class="row-form" id="context-add">
     <input class="input" placeholder="New Context Name" id="context-name" />
     <button
       title="link"

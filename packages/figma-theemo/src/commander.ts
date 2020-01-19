@@ -2,6 +2,7 @@ import AddContextCommand from './commands/add-context';
 import CollectReferencesCommand from './commands/collect-references';
 import Command from './commands/command';
 import CreateReferenceCommand from './commands/create-reference';
+import ImportCommand from './commands/import';
 import LinkOriginCommand from './commands/link-origin';
 import MigrateCommand from './commands/migrate';
 import MigrateOriginCommand from './commands/migrate-origin';
@@ -32,6 +33,7 @@ export default class Commander {
     this.registerCommand(new AddContextCommand(this, emitter));
     this.registerCommand(new RemoveContextCommand(this, emitter));
     this.registerCommand(new SelectContextCommand(this, emitter));
+    this.registerCommand(new ImportCommand(this, emitter));
 
     // utils
     this.registerCommand(new NotifyCommand(this, emitter));

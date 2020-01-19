@@ -35,17 +35,3 @@
 #context-list li:hover .remove {
   display: inline-block;
 }
-
-#context-add {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0 8px 0;
-}
-
-#context-add input {
-  border-right-width: 2px !important;
-}
-
-#context-add button {
-  margin-left: 8px !important;
-}
