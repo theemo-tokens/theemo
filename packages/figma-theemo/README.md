@@ -11,7 +11,8 @@ This plugin will let you do this:
 1. Manage style references on a selected node
 2. Auto-update all references as you change origins (keep the plugin open for this)
 3. Export references to make it available for third-party consumers
-4. Switch contexts
+4. Import references (in case you duplicated a document)
+5. Switch contexts
 
 ## Manual
 
@@ -46,7 +47,21 @@ Enter credentials in settngs:
 On the tools tab the `Export Settings` button becomes available. Clicking the
 button will export your references.
 
-### 3. Contexts
+### 3. Import
+
+You can import your earlier exported references from
+[jsonbin.io](https://jsonbin.io). That is really helpful when you duplicated
+your document - figma will not copy over your stored references. Here is how to
+import references:
+
+1. Duplicate a document
+2. Open the old document, open the plugin, go to settings and copy the Bin URL
+3. Go the new new document (the plugin should still be opened), paste the URL
+   into the input for import and click the button next to it.
+4. A notification will appear telling you how much references were imported.
+5. You can work with your new document the same way as the old one now - win!
+
+### 4. Contexts
 
 Contexts are a lightweight way to organize various theme modes within one
 document. E.g. if you have light and dark mode in one document, you may want to
