@@ -99,15 +99,17 @@ class StyleSection {
 
   private bind() {
     // link style
-    for (const elem of ['origin-create', 'origin-update']) {
-      this.elem(elem).onclick = (e) => {
-        const name = (this.elem('origin-name') as HTMLInputElement).value;
+    // for (const elem of ['origin-create', 'origin-update']) {
+    this.elem('origin-name').onchange = (e) => {
+      const name = (this.elem('origin-name') as HTMLInputElement).value;
 
-        if (name) {
-          this.send('link-origin', { name });
-        }
-      };
-    }
+      if (name) {
+        this.send('link-origin', { name });
+      } else {
+        this.send('unlink-origin');
+      }
+    };
+    // }
 
     // origin unlink
     this.elem('origin-unlink').onclick = (e) => {
@@ -186,8 +188,8 @@ class StyleSection {
     const originName = this.elem('origin-name');
     this.renderOptions(originName, origin?.name || this.data.local?.name);
 
-    this.elem('origin-create').style.display = !this.data.to && !(origin || this.data.local) ? 'block' : 'none';
-    this.elem('origin-update').style.display = origin || this.data.local ? 'block' : 'none';
+    // this.elem('origin-create').style.display = !this.data.to && !(origin || this.data.local) ? 'block' : 'none';
+    // this.elem('origin-update').style.display = origin || this.data.local ? 'block' : 'none';
     this.elem('origin-unlink').style.display = (origin || this.data.local) && !this.data.to ? 'block' : 'none';
 
     // add the `selectMenu` one-by-one for only this section
