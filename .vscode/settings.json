@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "api-extractor.json": "jsonc"
+  },
+  "typescript.preferences.importModuleSpecifier": "relative"
+}

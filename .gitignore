@@ -1,0 +1,9 @@
+*.log
+.rts2_cache_cjs
+.rts2_cache_esm
+.rts2_cache_umd
+.rts2_cache_system
+.DS_Store
+node_modules/
+book/
+dist/

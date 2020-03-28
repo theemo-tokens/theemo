@@ -1,0 +1,39 @@
+{
+  "name": "theemo",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "main": "dist/index.js",
+  "module": "dist/theemo.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch --target node",
+    "build": "tsdx build --target node",
+    "_test": "tsdx test",
+    "lint": "tsdx lint"
+  },
+  "bin": {
+    "theemo": "bin/theemo.js"
+  },
+  "dependencies": {
+    "commander": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "figma-api": "^1.5.5",
+    "node-fetch": "^2.6.0",
+    "style-dictionary": "^2.8.3"
+  },
+  "devDependencies": {
+    "@clark/eslint-config-typescript": "^1.23.0",
+    "@microsoft/api-documenter": "^7.7.15",
+    "@microsoft/api-extractor": "^7.7.11",
+    "@types/jest": "^24.0.25",
+    "@types/node-fetch": "^2.5.4",
+    "eslint": "6.8.0",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
+}
