@@ -1,13 +1,14 @@
 {
   "name": "theemo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": "Thomas Gossmann",
   "main": "dist/index.js",
   "module": "dist/theemo.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "bin"
   ],
   "scripts": {
     "start": "tsdx watch --target node",
