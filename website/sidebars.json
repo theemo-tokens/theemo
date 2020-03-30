@@ -1,0 +1,34 @@
+{
+  "docs": {
+    "Theemo": [
+      "index",
+      "getting-started",
+      "how-theemo-works",
+      "usage"
+    ],
+    "Features": [
+      "sync",
+      "build",
+      "generate"
+    ],
+    "Appendix": [
+      "glossary",
+      "example-config"
+    ]
+  },
+  "api/theemo": {
+    "Main": [
+      "api/theemo",
+      "api/theemo.theemo",
+      "api/theemo.token",
+      "api/theemo.tokentype"
+    ],
+    "Config": [
+      "api/theemo.theemoconfig",
+      "api/theemo.syncconfig",
+      "api/theemo.readerconfig",
+      "api/theemo.lexerconfig",
+      "api/theemo.writerconfig"
+    ]
+  }
+}

@@ -1,3 +1,0 @@
-# Theemo
-
-Hello :)
