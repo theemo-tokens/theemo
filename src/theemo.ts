@@ -1,6 +1,9 @@
 import BuildCommand from './build';
 import TheemoConfig from './config';
+import GenerateCommand from './generate';
+import GenerateConfig from './generate/config';
 import SyncCommand from './sync';
+import SyncConfig from './sync/config';
 import Tool, { Tools } from './tools/tool';
 import ToolFactory from './tools/tool-factory';
 import { requireFile } from './utils';
@@ -49,15 +52,22 @@ export default class Theemo {
     return Tools.Unknown;
   }
 
-  async sync() {
-    // run sync task
-    const command = new SyncCommand(this.tool, this.config.sync);
+  async sync(config?: SyncConfig) {
+    const usedConfig = config ?? this.config.sync;
+    const command = new SyncCommand(this.tool, usedConfig);
     command.execute();
   }
 
   async build() {
-    const command = new BuildCommand(this.tool, this.config.build);
+    const command = new BuildCommand(this.tool);
     command.execute();
-    // run build task
+  }
+
+  generate(config?: GenerateConfig) {
+    const usedConfig = config ?? this.config.generate;
+    if (usedConfig) {
+      const command = new GenerateCommand(usedConfig);
+      command.execute();
+    }
   }
 }

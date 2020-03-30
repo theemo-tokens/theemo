@@ -1,15 +1,14 @@
 export interface SchemeConfig {
   file?: string;
-  activation: 'auto' | 'manual';
+  auto: boolean;
   manual: boolean;
 }
 
-export default interface BuildConfig {
-  enabled: boolean;
+export default interface GenerateConfig {
   input: string;
-  output: string;
+  output?: string;
   base?: string;
-  activation: 'auto' | 'manual';
+  auto: boolean;
   defaultColorScheme?: string;
   colorSchemes?: {
     [key: string]: SchemeConfig;

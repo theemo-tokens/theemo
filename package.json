@@ -1,5 +1,6 @@
 {
   "name": "theemo",
+  "description": "The yordle powered theme automator",
   "version": "0.0.2",
   "license": "MIT",
   "author": "Thomas Gossmann",
@@ -11,17 +12,24 @@
     "bin"
   ],
   "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && tsdx build --target node",
     "start": "tsdx watch --target node",
-    "build": "tsdx build --target node",
     "_test": "tsdx test",
-    "lint": "tsdx lint"
+    "lint:js": "eslint --ext ts,js src",
+    "lint:types": "tsc --noEmit",
+    "lint": "yarn lint:js && yarn lint:types",
+    "api": "yarn build && node scripts/make-docs.js",
+    "prepublish": "yarn build"
   },
   "bin": {
     "theemo": "bin/theemo.js"
   },
   "dependencies": {
+    "color-converter": "1.4.1",
     "commander": "^5.0.0",
     "dotenv": "^8.2.0",
+    "esm": "3.2.25",
     "figma-api": "^1.5.5",
     "node-fetch": "^2.6.0",
     "style-dictionary": "^2.8.3"
