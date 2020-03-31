@@ -33,7 +33,7 @@ jobs:
       run: cd website && yarn
     
     - name: build docusaurus
-      run: yarn build
+      run: cd website && yarn build
       
     - name: deploy docusaurus
-      run: GIT_USER=$GITHUB_ACTOR CURRENT_BRANCH=master yarn run publish-gh-pages
+      run: cd website && GIT_USER=$GITHUB_ACTOR CURRENT_BRANCH=master yarn run publish-gh-pages
