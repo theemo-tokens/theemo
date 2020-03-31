@@ -39,4 +39,4 @@ jobs:
       run: |
         git config --global user.name ${{ secrets.GIT_NAME }}
         git config --global user.email ${{ secrets.GIT_EMAIL }}
-        cd website && GIT_USER=${{ secrets.GITHUB_TOKEN }} USE_SSH=false yarn run publish-gh-pages
+        cd website && GIT_USER=${{ secrets.GITHUB_TOKEN }}:x-oauth-basic USE_SSH=false yarn run publish-gh-pages
