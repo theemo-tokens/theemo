@@ -37,6 +37,6 @@ jobs:
       
     - name: deploy docusaurus
       run: |
-        git config user.name ${{ GIT_NAME }}
-        git config user.email ${{ GIT_EMAIL }}
+        git config user.name ${{ secrets.GIT_NAME }}
+        git config user.email ${{ secrets.GIT_EMAIL }}
         cd website && GIT_USER=${{ secrets.GITHUB_TOKEN }} CURRENT_BRANCH=master yarn run publish-gh-pages
