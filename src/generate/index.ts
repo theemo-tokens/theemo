@@ -41,6 +41,14 @@ export default class GenerateCommand {
       packageJson.theemo.colorSchemes = Object.keys(this.config.colorSchemes);
       packageJson.theemo.file = outFile;
 
+      if (!packageJson.keywords) {
+        packageJson.keywords = [];
+      }
+
+      if (!packageJson.keywords.includes('theemo-theme')) {
+        packageJson.keywords.push('theemo-theme');
+      }
+
       const data = JSON.stringify(packageJson, null, '  ');
       const packageFile = path.join(process.cwd(), 'package.json');
       fs.writeFileSync(packageFile, data);
