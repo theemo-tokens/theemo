@@ -36,4 +36,7 @@ jobs:
       run: cd website && yarn build
       
     - name: deploy docusaurus
-      run: cd website && GIT_USER=$GITHUB_ACTOR CURRENT_BRANCH=master yarn run publish-gh-pages
+      run: |
+        git config user.name ${{ GIT_NAME }}
+        git config user.email ${{ GIT_EMAIL }}
+        cd website && GIT_USER=${{ secrets.GITHUB_TOKEN }} CURRENT_BRANCH=master yarn run publish-gh-pages
