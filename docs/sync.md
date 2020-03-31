@@ -48,7 +48,7 @@ To make figma work, these are the essential configuration options:
   - Currently only the plugin [Style
     References](https://www.figma.com/community/plugin/791262205400516364/Style-References)
     is supported ([Usage explained here](https://gos.si/blog/full-featured-themes-in-figma/))
-  - Comments as references can easily be added, PR is welcome ;)
+  - You shall not abuse description for that!
 - At the moment, only styles are parsed. Use `isTokenByStyle()` to parse name
   and tell theemo this is a style you want to process as token
 
