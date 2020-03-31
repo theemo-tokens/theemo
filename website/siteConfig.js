@@ -25,11 +25,11 @@ const repoUrl = 'https://github.com/gossi/theemo';
 const siteConfig = {
   title: 'Theemo', // Title for your website.
   tagline: 'The yordle powered theme automator',
-  url: repoUrl, // Your website URL
-  baseUrl: '/', // Base URL for your project */
+  // url: repoUrl, // Your website URL
+  // baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://gossi.github.io',
-  //   baseUrl: '/theemo/',
+  url: 'https://gossi.github.io',
+  baseUrl: '/theemo/',
 
   // Used for publishing and more
   projectName: 'theemo',
