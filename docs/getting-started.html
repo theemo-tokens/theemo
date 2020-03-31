@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Getting Started · Theemo</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Theemo is designed to work in an isolated package containing only theme related"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Getting Started · Theemo"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gossi.github.io/theemo/"/><meta property="og:description" content="Theemo is designed to work in an isolated package containing only theme related"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/theemo/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/theemo/js/scrollSpy.js"></script><link rel="stylesheet" href="/theemo/css/main.css"/><script src="/theemo/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/theemo/"><img class="logo" src="/theemo/img/favicon.ico" alt="Theemo"/><h2 class="headerTitleWithLogo">Theemo</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/theemo/docs/" target="_self">Docs</a></li><li class=""><a href="/theemo/docs/api/theemo" target="_self">API</a></li><li class=""><a href="https://github.com/gossi/theemo" target="_self">Github</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Theemo</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Theemo</h3><ul class=""><li class="navListItem"><a class="navItem" href="/theemo/docs/">Introduction</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/theemo/docs/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/how-theemo-works">How Theemo Works</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/usage">Usage</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/theemo/docs/sync">Sync</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/build">Build</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/generate">Generate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Appendix</h3><ul class=""><li class="navListItem"><a class="navItem" href="/theemo/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/example-config">Example Config</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Getting Started</h1></header><article><div><span><p>Theemo is designed to work in an isolated package containing only theme related
+assets. That is you can exchange the theme package and the rest of your
+application stays intact.</p>
+<h2><a class="anchor" aria-hidden="true" id="1-installation"></a><a href="#1-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. Installation</h2>
+<p>In your theme package, install theemo:</p>
+<pre><code class="hljs css language-bash">yarn add -D theemo
+</code></pre>
+<p>The name of your package is taken as theme name. If this is different, then add
+this to your <code>package.json</code>:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"@foo/my-theme"</span>,
+  <span class="hljs-attr">"theemo"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ocean"</span>
+  },
+  <span class="hljs-attr">"devDependencies"</span>: {
+    <span class="hljs-attr">"style-dictionary"</span>: <span class="hljs-string">"^2.8.3"</span>,
+    <span class="hljs-attr">"theemo"</span>: <span class="hljs-string">"^0.0.3"</span>
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="2-configuration"></a><a href="#2-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. Configuration</h2>
+<p>There are two things to configure:</p>
+<ol>
+<li>Theemo</li>
+<li>Your Token Manager Tool (if you haven't already - refer to respective docs)</li>
+</ol>
+<p>Theemo is configured in <code>theemo.js</code>. To understand what you need to configure,
+you first need to understand <a href="/theemo/docs/how-theemo-works">how theemo works</a>. Each
+action has its own configuration part and is explained in detail on each
+section. Please refer to:</p>
+<ul>
+<li><a href="/theemo/docs/sync">Sync</a></li>
+<li><a href="/theemo/docs/build">Build</a></li>
+<li><a href="/theemo/docs/generate">Generate</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="3-execute"></a><a href="#3-execute" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. Execute</h2>
+<p>Theemo comes with a <a href="/theemo/docs/usage">CLI</a> and let's you execute commands for each action. Imagine
+your project uses all actions, it's enough to have one command for it in your
+<em>theme package</em>. Here is a good practice (a <code>package.json</code>):</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"your-theme"</span>,
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"sync"</span>: <span class="hljs-string">"yarn theemo sync"</span>,
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"yarn theemo build"</span>,
+    <span class="hljs-attr">"generate"</span>: <span class="hljs-string">"yarn theemo generate"</span>,
+    <span class="hljs-attr">"magic"</span>: <span class="hljs-string">"yarn sync &amp;&amp; yarn build &amp;&amp; yarn generate"</span>
+  }
+}
+</code></pre>
+<p>You now have the flexibility to run each command on its own, e.g. <code>yarn sync</code> to
+solely run the synchronization step. The best thing is to run <em>one</em> command.
+Inside your project run this:</p>
+<pre><code class="hljs css language-bash">yarn magic
+</code></pre>
+<p>and <em>magically</em> everything comes together. Theemo will update your
+<code>package.json</code> and adjust values:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"@foo/my-theme"</span>,
+  <span class="hljs-attr">"theemo"</span>: {
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"ocean"</span>,
+    <span class="hljs-attr">"colorSchemes"</span>: [
+      <span class="hljs-string">"light"</span>,
+      <span class="hljs-string">"dark"</span>
+    ],
+    <span class="hljs-attr">"file"</span>: <span class="hljs-string">"dist/ocean.css"</span>
+  },
+  <span class="hljs-attr">"devDependencies"</span>: {
+    <span class="hljs-attr">"style-dictionary"</span>: <span class="hljs-string">"^2.8.3"</span>,
+    <span class="hljs-attr">"theemo"</span>: <span class="hljs-string">"^0.0.3"</span>
+  }
+}
+</code></pre>
+<p>And you should find a <code>dist/ocean.css</code> file ready to be consumed.</p>
+<h2><a class="anchor" aria-hidden="true" id="4-consume"></a><a href="#4-consume" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. Consume</h2>
+<p>Your theme is ready to go. Add the theme package as a dependency to your app and
+start. Things you want to do then:</p>
+<ul>
+<li>Integrate the output of your build into the workflow of your app (CSS Modules,
+Sass, Android or iOS).</li>
+<li>If you run the theemo generator, load up your CSS file and use it with vanilla
+css/html mechanics.</li>
+<li>Develop tooling for your framework/library of choice. Parse the <code>package.json</code>
+to get the information of your theme name, which file and what contexts are.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/theemo/docs/index"><span class="arrow-prev">← </span><span>Introduction</span></a><a class="docs-next button" href="/theemo/docs/how-theemo-works"><span>How Theemo Works</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#1-installation">1. Installation</a></li><li><a href="#2-configuration">2. Configuration</a></li><li><a href="#3-execute">3. Execute</a></li><li><a href="#4-consume">4. Consume</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/theemo/" class="nav-home"><img src="/theemo/img/favicon.ico" alt="Theemo" width="66" height="58"/></a><div><h5>Docs</h5><a href="/theemo/docs/en/getting-started">Getting Started</a><a href="/theemo/docs/en/introduction">Documentation</a><a href="/theemo/docs/en/api/theemo">API Reference</a></div><div><h5>More</h5><a href="https://github.com/gossi/theemo">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/gossi/theemo/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Thomas Gossmann</section></footer></div></body></html>

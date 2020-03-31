@@ -1,0 +1,64 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>How Theemo Works · Theemo</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Theemo will work with **tokens**, passes them around from one tool to the other,"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="How Theemo Works · Theemo"/><meta property="og:type" content="website"/><meta property="og:url" content="https://gossi.github.io/theemo/"/><meta property="og:description" content="Theemo will work with **tokens**, passes them around from one tool to the other,"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/theemo/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/theemo/js/scrollSpy.js"></script><link rel="stylesheet" href="/theemo/css/main.css"/><script src="/theemo/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/theemo/"><img class="logo" src="/theemo/img/favicon.ico" alt="Theemo"/><h2 class="headerTitleWithLogo">Theemo</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/theemo/docs/" target="_self">Docs</a></li><li class=""><a href="/theemo/docs/api/theemo" target="_self">API</a></li><li class=""><a href="https://github.com/gossi/theemo" target="_self">Github</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Theemo</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Theemo</h3><ul class=""><li class="navListItem"><a class="navItem" href="/theemo/docs/">Introduction</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/getting-started">Getting Started</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/theemo/docs/how-theemo-works">How Theemo Works</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/usage">Usage</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Features</h3><ul class=""><li class="navListItem"><a class="navItem" href="/theemo/docs/sync">Sync</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/build">Build</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/generate">Generate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Appendix</h3><ul class=""><li class="navListItem"><a class="navItem" href="/theemo/docs/glossary">Glossary</a></li><li class="navListItem"><a class="navItem" href="/theemo/docs/example-config">Example Config</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">How Theemo Works</h1></header><article><div><span><p>Theemo will work with <strong>tokens</strong>, passes them around from one tool to the other,
+but it <em>will never understand</em> them.</p>
+<p>Example:</p>
+<p>You will use tokens in figma, the way designers intend to. Next is to describe
+in Theemo what's their structure, how they are classified in order to prepare
+them to move them forward. You can think of it as the DSL to your tokens.</p>
+<p>That most likely affects the <a href="/theemo/docs/sync">sync</a> part.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/theemo/docs/getting-started"><span class="arrow-prev">← </span><span>Getting Started</span></a><a class="docs-next button" href="/theemo/docs/usage"><span>Usage</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/theemo/" class="nav-home"><img src="/theemo/img/favicon.ico" alt="Theemo" width="66" height="58"/></a><div><h5>Docs</h5><a href="/theemo/docs/en/getting-started">Getting Started</a><a href="/theemo/docs/en/introduction">Documentation</a><a href="/theemo/docs/en/api/theemo">API Reference</a></div><div><h5>More</h5><a href="https://github.com/gossi/theemo">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/gossi/theemo/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2020 Thomas Gossmann</section></footer></div></body></html>
