@@ -36,4 +36,4 @@ jobs:
       run: yarn build
       
     - name: deploy docusaurus
-      run: GIT_USER=${{ GITHUB_ACTOR }} CURRENT_BRANCH=master yarn run publish-gh-pages
+      run: GIT_USER=$GITHUB_ACTOR CURRENT_BRANCH=master yarn run publish-gh-pages
