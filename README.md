@@ -17,7 +17,7 @@ Check out the [Getting
 Started](https://gossi.github.io/theemo/docs/getting-started) for a head-start
 with theemo.
 
-## Collaboration
+## Contribute
 
 I'm calling for your help to improve theemo. Spin it up for your project, consult the documentation and benefit from your now-faster-workflow.
 
