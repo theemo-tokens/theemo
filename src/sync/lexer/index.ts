@@ -5,6 +5,8 @@ import Token from '../../token';
 export default class Lexer {
   private config: LexerConfig;
   private rawTokens: TokenCollection = new TokenCollection();
+  private normalizedTokens: TokenCollection = new TokenCollection();
+  private classifiedTokens: TokenCollection = new TokenCollection();
 
   constructor(config: LexerConfig) {
     this.config = getLexerConfig(config);
@@ -21,23 +23,41 @@ export default class Lexer {
   }
 
   private classifyTokens(tokens: TokenCollection): TokenCollection {
-    return tokens
-      .map(this.normalizeToken.bind(this))
-      .map(this.classifyToken.bind(this))
+    this.normalizedTokens = tokens.map(this.normalizeToken.bind(this));
+    this.classifiedTokens = this.normalizedTokens.map(
+      this.classifyToken.bind(this)
+    );
+
+    return this.classifiedTokens
       .filter(this.filterToken.bind(this))
       .map(this.resolveValueFromReference.bind(this));
   }
 
   private normalizeToken(token: Token): Token {
-    return this.config.normalizeToken?.(token) ?? token;
+    return (
+      this.config.normalizeToken?.(token, {
+        raw: this.rawTokens
+      }) ?? token
+    );
   }
 
   private classifyToken(token: Token): Token {
-    return this.config.classifyToken?.(token) ?? token;
+    return (
+      this.config.classifyToken?.(token, {
+        raw: this.rawTokens,
+        normalized: this.normalizedTokens
+      }) ?? token
+    );
   }
 
   private filterToken(token: Token): boolean {
-    return this.config.filterToken?.(token) ?? true;
+    return (
+      this.config.filterToken?.(token, {
+        raw: this.rawTokens,
+        normalized: this.normalizedTokens,
+        classified: this.classifiedTokens
+      }) ?? true
+    );
   }
 
   private resolveValueFromReference(token: Token): Token {

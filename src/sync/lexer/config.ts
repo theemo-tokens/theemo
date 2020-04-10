@@ -1,9 +1,20 @@
 import Token from '../../token';
+import TokenCollection from '../../token-collection';
 
 export default interface LexerConfig {
-  normalizeToken?: (token: Token) => Token;
-  classifyToken?: (token: Token) => Token;
-  filterToken?: (token: Token) => boolean;
+  normalizeToken?: (token: Token, tokens: { raw: TokenCollection }) => Token;
+  classifyToken?: (
+    token: Token,
+    tokens: { raw: TokenCollection; normalized: TokenCollection }
+  ) => Token;
+  filterToken?: (
+    token: Token,
+    tokens: {
+      raw: TokenCollection;
+      normalized: TokenCollection;
+      classified: TokenCollection;
+    }
+  ) => boolean;
   groupForToken?: (token: Token) => string;
 }
 
