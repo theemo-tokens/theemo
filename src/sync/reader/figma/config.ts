@@ -1,5 +1,5 @@
 import { ReaderSource } from '../config';
-import { Style } from 'figma-api';
+import { Style, Node } from 'figma-api';
 
 export default interface FigmaReaderConfig {
   source: ReaderSource.Figma;
@@ -8,7 +8,9 @@ export default interface FigmaReaderConfig {
   referencer?: ReferencerConfig;
 
   isTokenByStyle?: (style: Style) => boolean;
-  isTokenByNode?: (node: Node) => boolean;
+  isTokenByText?: (node: Node<'TEXT'>) => boolean;
+  getNameFromText?: (node: Node<'TEXT'>) => string;
+  getValueFromText?: (node: Node<'TEXT'>) => string;
 }
 
 // Referencer Options

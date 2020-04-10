@@ -62,9 +62,9 @@ export default class FigmaParser {
   }
 
   private parseNode(node: Node) {
-    // if (node.type === 'TEXT') {
-    //   this.parseTextNode(node as Node<'TEXT'>);
-    // }
+    if (node.type === 'TEXT') {
+      this.parseTextNode(node as Node<'TEXT'>);
+    }
 
     if (isVectorNode(node)) {
       this.parseVectorNode(node as Node<'VECTOR'>);
@@ -77,19 +77,15 @@ export default class FigmaParser {
     }
   }
 
-  private getCategoryFromType(type: string) {
-    // 'FILL' | 'STROKE' | 'TEXT' | 'EFFECT' | 'GRID'
-    switch (type.toLowerCase()) {
-      case 'fill':
-      case 'stroke':
-        return 'color';
-
-      // case 'TEXT':
-      //   return 'typography';
-
-      default:
-        return type.toLowerCase();
+  private parseTextNode(node: Node<'TEXT'>) {
+    if (!this.isTokenByText(node)) {
+      return;
     }
+
+    const token = this.createToken(this.getNameFromText(node));
+    token.value = this.getValueFromText(node);
+
+    this.tokens.add(token);
   }
 
   private parseVectorNode(node: Node<'VECTOR'>) {
@@ -145,7 +141,34 @@ export default class FigmaParser {
     };
   }
 
+  private isTokenByText(node: Node<'TEXT'>) {
+    return this.config.isTokenByText?.(node) ?? false;
+  }
+
   private isTokenByStyle(style: Style) {
     return this.config.isTokenByStyle?.(style) ?? false;
+  }
+
+  private getNameFromText(node: Node<'TEXT'>) {
+    return this.config.getNameFromText?.(node) ?? node.name;
+  }
+
+  private getValueFromText(node: Node<'TEXT'>) {
+    return this.config.getValueFromText?.(node) ?? node.characters;
+  }
+
+  private getCategoryFromType(type: string) {
+    // 'FILL' | 'STROKE' | 'TEXT' | 'EFFECT' | 'GRID'
+    switch (type.toLowerCase()) {
+      case 'fill':
+      case 'stroke':
+        return 'color';
+
+      // case 'TEXT':
+      //   return 'typography';
+
+      default:
+        return type.toLowerCase();
+    }
   }
 }
