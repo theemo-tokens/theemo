@@ -49,7 +49,7 @@ export default class StyleDictionaryWriter {
         const property = this.getPathFromToken(token);
         set(contents, property, {
           value: this.getValue(token),
-          description: token.description,
+          comment: token.description,
           colorScheme: token.colorScheme
         });
       }
