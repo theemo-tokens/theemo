@@ -1,6 +1,6 @@
-import { Node, Style, StylesMap } from 'figma-api';
+import { Node, Style, StylesMap, EffectType } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
-import Token, { TokenType } from '../../../token';
+import Token, { TokenType, TokenShadow } from '../../../token';
 import TokenCollection from '../../../token-collection';
 import FigmaReaderConfig from './config';
 import Referencer from './referencers/referencer';
@@ -84,6 +84,7 @@ export default class FigmaParser {
 
     const token = this.createToken(this.getNameFromText(node));
     token.value = this.getValueFromText(node);
+    token.category = 'content';
 
     this.tokens.add(token);
   }
@@ -115,6 +116,8 @@ export default class FigmaParser {
           // anyway look for the value
           else {
             const key = `${type.toLowerCase()}s` as keyof Node<'VECTOR'>;
+
+            // fill - color swatch
             if (key === 'fills' && node[key]) {
               // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
               // @ts-ignore
@@ -122,6 +125,38 @@ export default class FigmaParser {
                 ...node[key][0].color,
                 visible: node[key][0].visible ?? true
               };
+            }
+
+            // effect - shadows
+            else if (key === 'effects' && node[key]) {
+              const shadows: TokenShadow[] = [];
+
+              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+              // @ts-ignore
+              for (const effect of node[key]) {
+                if (!effect.visible) {
+                  return;
+                }
+
+                if (
+                  effect.type === EffectType.DROP_SHADOW ||
+                  effect.type === EffectType.INNER_SHADOW
+                ) {
+                  shadows.push({
+                    inner: effect.type === EffectType.INNER_SHADOW,
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+                    // @ts-ignore
+                    color: { ...effect.color, visible: true },
+                    x: effect.offset?.x ?? 0,
+                    y: effect.offset?.y ?? 0,
+                    radius: effect.radius
+                  });
+                }
+              }
+
+              if (shadows.length > 0) {
+                token.shadows = shadows;
+              }
             }
           }
           this.tokens.add(token);
@@ -163,6 +198,9 @@ export default class FigmaParser {
       case 'fill':
       case 'stroke':
         return 'color';
+
+      case 'effects':
+        return 'shadow';
 
       // case 'TEXT':
       //   return 'typography';

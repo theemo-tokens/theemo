@@ -38,6 +38,22 @@ export enum TokenType {
   Component = 'component'
 }
 
+export interface TokenColor {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+  visible: boolean;
+}
+
+export interface TokenShadow {
+  inner: boolean;
+  x: number;
+  y: number;
+  radius: number;
+  color: TokenColor;
+}
+
 /**
  * DTO to describe a Design Token
  *
@@ -134,11 +150,10 @@ export default interface Token {
    *
    * - `visible` - if completely transparent
    */
-  color?: {
-    r: number;
-    g: number;
-    b: number;
-    a: number;
-    visible: boolean;
-  };
+  color?: TokenColor;
+
+  /**
+   * Shadows values
+   */
+  shadows?: TokenShadow[];
 }
