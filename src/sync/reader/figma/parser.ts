@@ -1,6 +1,6 @@
-import { Node, Style, StylesMap, EffectType } from 'figma-api';
+import { Node, Style, StylesMap, EffectType, Paint } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
-import Token, { TokenType, TokenShadow } from '../../../token';
+import Token, { TokenType, TokenShadow, TokenColor } from '../../../token';
 import TokenCollection from '../../../token-collection';
 import FigmaReaderConfig from './config';
 import Referencer from './referencers/referencer';
@@ -16,7 +16,7 @@ function isCompositeNode(node: Node) {
     'GROUP',
     'CANVAS',
     'BOOLEAN',
-    ' BOOLEAN_OPERATION',
+    'BOOLEAN_OPERATION',
     'COMPONENT'
   ].includes(node.type);
 }
@@ -119,12 +119,12 @@ export default class FigmaParser {
 
             // fill - color swatch
             if (key === 'fills' && node[key]) {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-              // @ts-ignore
-              token.color = {
-                ...node[key][0].color,
-                visible: node[key][0].visible ?? true
-              };
+              token.color = this.getColorFromPaint(node[key] as Paint[]);
+            }
+
+            // stroke - somwhere used as border
+            else if (key === 'strokes' && node[key]) {
+              token.color = this.getColorFromPaint(node[key] as Paint[]);
             }
 
             // effect - shadows
@@ -163,6 +163,15 @@ export default class FigmaParser {
         }
       }
     }
+  }
+
+  private getColorFromPaint(paint: Paint[]): TokenColor {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    return {
+      ...paint[0].color,
+      visible: paint[0].visible ?? true
+    };
   }
 
   private getStyle(id: string) {
