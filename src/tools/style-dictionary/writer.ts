@@ -76,9 +76,11 @@ export default class StyleDictionaryWriter {
       const shadows = [];
       for (const shadow of token.shadows) {
         shadows.push(
-          `${shadow.inner ? 'inset ' : ''}${shadow.x} ${shadow.y} ${
+          `${shadow.inner ? 'inset ' : ''}${this.getLength(
+            shadow.x
+          )} ${this.getLength(shadow.y)} ${this.getLength(
             shadow.radius
-          } ${this.getColor(shadow.color)}`
+          )} ${this.getColor(shadow.color)}`
         );
       }
 
@@ -86,6 +88,10 @@ export default class StyleDictionaryWriter {
     }
 
     return token.value ?? '';
+  }
+
+  private getLength(value: number): string {
+    return value === 0 ? '0' : `${value}px`;
   }
 
   private getColor(color: TokenColor): string {
