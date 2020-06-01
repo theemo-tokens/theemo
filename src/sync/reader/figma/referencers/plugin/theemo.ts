@@ -32,7 +32,7 @@ interface Options {
   jsonbinSecret: string;
 }
 
-export default class StyleReferencer implements Referencer {
+export default class TheemoPluginReferencer implements Referencer {
   private options: Options;
   private references!: ReferenceDoc;
 

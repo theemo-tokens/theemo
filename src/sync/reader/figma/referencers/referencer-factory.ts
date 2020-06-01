@@ -4,7 +4,7 @@ import {
   ReferencerPluginConfig
 } from '../config';
 import NullReferencer from './null-referencer';
-import StyleReferencer from './plugin/style-referencer';
+import TheemoPluginReferencer from './plugin/theemo';
 import Referencer from './referencer';
 
 export default class ReferencerFactory {
@@ -22,8 +22,8 @@ export default class ReferencerFactory {
     config: ReferencerPluginConfig
   ): Referencer {
     switch (config.plugin) {
-      case 'style-referencer':
-        return new StyleReferencer(config.pluginOptions);
+      case 'theemo':
+        return new TheemoPluginReferencer(config.pluginOptions);
 
       default:
         return new NullReferencer();
