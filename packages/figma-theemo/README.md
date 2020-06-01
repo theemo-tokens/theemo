@@ -1,8 +1,8 @@
 <img src="assets/artwork.png">
 
-# Figma Plugin: Style References
+# Figma Plugin: Theemo
 
-Figma plugin to reference styles. It's main purpose is to allow you to have an
+Figma plugin to automate your styles. It's main purpose is to allow you to have an
 origin style mapped to a reference style, which will kept in sync with the
 origin style.
 
@@ -19,7 +19,7 @@ This plugin will let you do this:
 ### 1. Manage References
 
 Select a node for which you want to manage references, eg. a rectangle. Open the
-"Style References" plugin and a dialog will appear that let you do it. Currently
+"Theemo" plugin and a dialog will appear that let you do it. Currently
 these styles are supported:
 
 - Fill Style
@@ -87,7 +87,7 @@ Use it in combination with Themer:
 
 1. Set your variants for each context (`§light` and `§dark`)
 2. Select a context
-3. Use `Style References` to map those "compiled" styles
+3. Use `Theemo` to map those "compiled" styles
 4. Use `Themer` to export and apply them
 
 ### Things to Know
@@ -99,7 +99,7 @@ Use it in combination with Themer:
 
   It still is possible to use library styles, then you can't use the style
   references manage dialog, instead manually assign those style and THEN use the
-  style references dialog in order to persist it.
+  theemo dialog in order to persist it.
 
 - Once you have one node "under management", you may want to change the local
   style but once you update references, those new ones will be overridden. Re-select
