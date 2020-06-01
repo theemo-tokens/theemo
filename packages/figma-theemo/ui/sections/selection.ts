@@ -27,9 +27,6 @@ export default class SelectionSection extends Section {
         document.getElementById('selection-tab-items').innerHTML = '';
         document.getElementById('selection-tab-content').innerHTML = '';
 
-        console.log(data);
-        
-
         for (const style of Object.keys(data.styles)) {
           this.sections[style] = new StyleSection({
             messenger: this.messenger,
@@ -62,8 +59,6 @@ export default class SelectionSection extends Section {
   }
 
   private update(message) {
-    console.log('update', message);
-    
     if (this.sections[message.style]) {
       this.sections[message.style].update(message.data);
     }
