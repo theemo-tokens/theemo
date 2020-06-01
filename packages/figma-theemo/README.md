@@ -33,6 +33,17 @@ origin style to the reference.
 - **Reference** That's the style to which the origin is copied over when
   references are updated.
 
+#### Transforms
+
+For paint styles (Fill and Stroke) transforms are available. When styles
+are referenced from origin to reference you can put transforms in between.
+Availabe are HSL + Opacity values. They will be applied during
+referencing.
+
+Use this to automate your color palette. Make one color swatch for your
+base value (e.g. "Brand / 500"). A darker color would take your base value as
+reference and set lightness to "-20" - name it for example "Brand / 300".
+
 ### 2. Export
 
 You can export your references to [jsonbin.io](https://jsonbin.io) and by that
@@ -103,11 +114,11 @@ Use it in combination with Themer:
 To develop this on your own. Install depencencies first:
 
 ```bash
-$ yarn
+yarn
 ```
 
 Second, start the watch server:
 
 ```bash
-$ yarn start
+yarn start
 ```

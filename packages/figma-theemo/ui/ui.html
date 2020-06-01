@@ -206,9 +206,12 @@
 <section id="help" class="stack">
   <h1>Figma Plugin: Style References</h1>
   <p>
-    Website:
-    <a href="https://github.com/gossi/figma-style-references" target="_blank">
-      github.com/gossi/figma-style-references
+    Website: <a href="https://gossi.github.io/theemo" target="_blank">
+      gossi.github.com/theemo
+    </a><br>
+    Repo:
+    <a href="https://github.com/gossi/figma-theemo" target="_blank">
+      github.com/gossi/figma-theemo
     </a>
   </p>
   <p>
@@ -232,13 +235,14 @@
   <h3>1. Manage References</h3>
   <p>
     Select a node for which you want to manage references, eg. a rectangle. Open
-    the "Style References" plugin and a dialog will appear that let you do it.
+    the "Theemo - Style Automator" plugin and a dialog will appear that let you do it.
     Currently these styles are supported:
   </p>
   <ul>
     <li>Fill Style</li>
     <li>Stroke Style</li>
     <li>Effect Style</li>
+    <li>Text Style</li>
   </ul>
   <p>
     For each of those there is a section in the dialog where you can manage the
@@ -251,6 +255,21 @@
       over when references are updated.
     </li>
   </ul>
+
+  <h4>Transforms</h4>
+
+  <p>
+    For paint styles (Fill and Stroke) transforms are available. When styles
+    are referenced from origin to reference you can put transforms in between.
+    Availabe are HSL + Opacity values. They will be applied during
+    referencing.
+  </p>
+
+  <p>
+    Use this to automate your color palette. Make one color swatch for your
+    base value (e.g. "Brand / 500"). A darker color would take your base value as
+    reference and set lightness to "-20" - name it for example "Brand / 300".
+  </p>
 
   <h3>2. Export</h3>
   <p>
@@ -326,7 +345,7 @@
       <p>
         It still is possible to use library styles, then you can't use the style
         references manage dialog, instead manually assign those style and THEN
-        use the style references dialog in order to persist it.
+        use the theemo dialog in order to persist it.
       </p>
     </li>
     <li>
