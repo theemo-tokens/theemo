@@ -12,5 +12,7 @@ hide_title: true
 <b>Signature:</b>
 
 ```typescript
-normalizeToken?: (token: Token) => Token;
+normalizeToken?: (token: Token, tokens: {
+        raw: TokenCollection;
+    }) => Token;
 ```

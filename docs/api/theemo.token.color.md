@@ -14,13 +14,7 @@ The color is described in its essential parts
 <b>Signature:</b>
 
 ```typescript
-color?: {
-        r: number;
-        g: number;
-        b: number;
-        a: number;
-        visible: boolean;
-    };
+color?: TokenColor;
 ```
 
 ## Remarks

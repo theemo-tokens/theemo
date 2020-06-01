@@ -24,10 +24,11 @@ export default interface Token
 |  Property | Type | Description |
 |  --- | --- | --- |
 |  [category](./theemo.token.category.md) | <code>string</code> | The category helps token manager tools to generate the respective value in the appropriate format. |
-|  [color](./theemo.token.color.md) | <code>{</code><br/><code>        r: number;</code><br/><code>        g: number;</code><br/><code>        b: number;</code><br/><code>        a: number;</code><br/><code>        visible: boolean;</code><br/><code>    }</code> | The color is described in its essential parts |
+|  [color](./theemo.token.color.md) | <code>TokenColor</code> | The color is described in its essential parts |
 |  [colorScheme](./theemo.token.colorscheme.md) | <code>string</code> | Indicates the color scheme, to which the token belongs |
 |  [description](./theemo.token.description.md) | <code>string</code> | The description for the token |
 |  [name](./theemo.token.name.md) | <code>string</code> | The tokens name |
 |  [reference](./theemo.token.reference.md) | <code>string</code> | The name of the reference this token points to |
+|  [shadows](./theemo.token.shadows.md) | <code>TokenShadow[]</code> | Shadows values |
 |  [type](./theemo.token.type.md) | <code>TokenType</code> | The type describes the usage level of a token |
 |  [value](./theemo.token.value.md) | <code>string</code> | The tokens literal value |

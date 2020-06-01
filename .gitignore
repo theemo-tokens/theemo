@@ -4,7 +4,6 @@
 .rts2_cache_umd
 .rts2_cache_system
 .DS_Store
-website/build/
 node_modules/
 book/
-dist/
+dist

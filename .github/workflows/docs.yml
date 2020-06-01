@@ -37,6 +37,6 @@ jobs:
       
     - name: deploy docusaurus
       run: |
-        git config --global user.name ${{ secrets.GIT_NAME }}
-        git config --global user.email ${{ secrets.GIT_EMAIL }}
-        cd website && GIT_USER=$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }} USE_SSH=false yarn run publish-gh-pages
+        git config --global user.name "gh-actions"
+        git config --global user.email "actions@github.com"
+        cd website && GIT_USER=$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }} USE_SSH=false yarn deploy

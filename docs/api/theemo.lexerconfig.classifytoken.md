@@ -12,5 +12,8 @@ hide_title: true
 <b>Signature:</b>
 
 ```typescript
-classifyToken?: (token: Token) => Token;
+classifyToken?: (token: Token, tokens: {
+        raw: TokenCollection;
+        normalized: TokenCollection;
+    }) => Token;
 ```

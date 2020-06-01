@@ -19,7 +19,7 @@ export default interface LexerConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [classifyToken](./theemo.lexerconfig.classifytoken.md) | <code>(token: Token) =&gt; Token</code> |  |
-|  [filterToken](./theemo.lexerconfig.filtertoken.md) | <code>(token: Token) =&gt; boolean</code> |  |
+|  [classifyToken](./theemo.lexerconfig.classifytoken.md) | <code>(token: Token, tokens: {</code><br/><code>        raw: TokenCollection;</code><br/><code>        normalized: TokenCollection;</code><br/><code>    }) =&gt; Token</code> |  |
+|  [filterToken](./theemo.lexerconfig.filtertoken.md) | <code>(token: Token, tokens: {</code><br/><code>        raw: TokenCollection;</code><br/><code>        normalized: TokenCollection;</code><br/><code>        classified: TokenCollection;</code><br/><code>    }) =&gt; boolean</code> |  |
 |  [groupForToken](./theemo.lexerconfig.groupfortoken.md) | <code>(token: Token) =&gt; string</code> |  |
-|  [normalizeToken](./theemo.lexerconfig.normalizetoken.md) | <code>(token: Token) =&gt; Token</code> |  |
+|  [normalizeToken](./theemo.lexerconfig.normalizetoken.md) | <code>(token: Token, tokens: {</code><br/><code>        raw: TokenCollection;</code><br/><code>    }) =&gt; Token</code> |  |

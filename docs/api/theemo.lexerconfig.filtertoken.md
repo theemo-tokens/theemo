@@ -12,5 +12,9 @@ hide_title: true
 <b>Signature:</b>
 
 ```typescript
-filterToken?: (token: Token) => boolean;
+filterToken?: (token: Token, tokens: {
+        raw: TokenCollection;
+        normalized: TokenCollection;
+        classified: TokenCollection;
+    }) => boolean;
 ```
