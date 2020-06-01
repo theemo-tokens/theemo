@@ -1,5 +1,6 @@
 import Section from './section';
 import Messenger from '../messenger';
+// import { selectMenu } from 'figma-plugin-ds';
 
 export default class SelectionSection extends Section {
   name = 'selection';
@@ -8,19 +9,45 @@ export default class SelectionSection extends Section {
     fill?: StyleSection;
     stroke?: StyleSection;
     effect?: StyleSection;
+    text?: StyleSection;
   } = {};
 
   setup() {
     this.messenger.addListener('selection-changed', (data) => {
-      document.getElementById('selection').innerHTML = '';
+      const howTo = document.getElementById('selection-how-to');
+      const content = document.getElementById('selection-content');
+      howTo.style.display = 'none';
+      content.style.display = 'none';
+      this.sections = {};
 
       if (data === null) {
-        document.getElementById('selection').innerHTML = '<span class="how-to">Please select something to manage style references</span>';
-        this.sections = {};
+        howTo.style.display = 'inline';
       } else {
+        content.style.display = 'block';
+        document.getElementById('selection-tab-items').innerHTML = '';
+        document.getElementById('selection-tab-content').innerHTML = '';
+
+        console.log(data);
+        
+
         for (const style of Object.keys(data.styles)) {
-          this.sections[style] = new StyleSection(this.messenger, data.node, style, data.styles[style], data.repo[data.collection[style]]);
+          this.sections[style] = new StyleSection({
+            messenger: this.messenger,
+            node: data.node,
+            section: style,
+            collection: data.collection[style],
+            data: data.styles[style],
+            suggestions: data.repo[data.collection[style]]
+          });
         }
+
+        // This is buggy, issue to come
+        // Repro:
+        // - uncomment import at the header of this file
+        // - add  class="select-menu" to  `<select>` in  `ui.html`
+        // - uncomment this line
+        //
+        // selectMenu.init();
       }
     });
 
@@ -31,9 +58,12 @@ export default class SelectionSection extends Section {
     this.messenger.addListener('origin-migrated', update);
     this.messenger.addListener('reference-created', update);
     this.messenger.addListener('reference-unlinked', update);
+    this.messenger.addListener('transforms-saved', update);
   }
 
   private update(message) {
+    console.log('update', message);
+    
     if (this.sections[message.style]) {
       this.sections[message.style].update(message.data);
     }
@@ -49,34 +79,32 @@ interface Reference {
   local: StyleIdentifier;
   from: StyleIdentifier;
   to: StyleIdentifier;
+  transforms?: object;
 }
 
 class StyleSection {
   private messenger: Messenger;
   private node: { id: string };
   private section: string;
+  private collection: string;
   private data: Reference;
   private suggestions: BaseStyle[];
   private root: HTMLElement;
+  private tab: HTMLElement;
 
-  constructor(messenger: Messenger, node: { id: string }, section: string, data: Reference, suggestions: BaseStyle[]) {
-    this.messenger = messenger;
-    this.node = node;
-    this.section = section;
-    this.data = data;
-    this.suggestions = suggestions;
+  constructor(options: {
+    messenger: Messenger;
+    node: { id: string };
+    section: string;
+    collection: string;
+    data: Reference;
+    suggestions: BaseStyle[];
+  }) {
+    Object.assign(this, options);
 
     this.setup();
     this.bind();
     this.render();
-
-    // post setup, call the `selectMenu` once for all `<select>`
-    // see second comment here: 
-    // https://github.com/thomas-lowry/figma-plugin-ds/issues/17
-    // // @ts-ignore
-    // selectMenu.init({
-    //   selector: `origin-suggestions`
-    // });
   }
 
   private send(command: string, data: any = {}) {
@@ -87,19 +115,42 @@ class StyleSection {
     const template = document.getElementById('style-section') as HTMLTemplateElement;
     const fragment = document.importNode(template.content, true);
     this.root = fragment.firstElementChild as HTMLElement;
-    document.getElementById('selection').appendChild(fragment);
+    document.getElementById('selection-tab-content').appendChild(this.root);
 
-    // set title
-    this.elem('title').innerHTML = this.section[0].toUpperCase() + this.section.slice(1);
+    // add tab
+    this.tab = document.createElement('li');
+    this.tab.innerHTML = this.section[0].toUpperCase() + this.section.slice(1);
+    document.getElementById('selection-tab-items').appendChild(this.tab);
 
     // set class on origin-select
     const originName = this.elem('origin-name');
     originName.classList.add(`${this.section}-origin-suggestions`);
+
+    if (document.getElementById('selection-tab-items').children.length === 1) {
+      this.activateSection();
+    }
+
+    this.tab.addEventListener('click', () => {
+      this.activateSection();
+    });
+  }
+
+  private activateSection() {
+    // set tab active
+    for (const tab of this.tab.parentElement.children) { 
+      tab.classList.remove('active');
+    }
+    this.tab.classList.add('active');
+
+    // set content active
+    for (const content of this.root.parentElement.children) { 
+      content.classList.remove('active');
+    }
+    this.root.classList.add('active');
   }
 
   private bind() {
     // link style
-    // for (const elem of ['origin-create', 'origin-update']) {
     this.elem('origin-name').onchange = (e) => {
       const name = (this.elem('origin-name') as HTMLInputElement).value;
 
@@ -109,7 +160,6 @@ class StyleSection {
         this.send('unlink-origin');
       }
     };
-    // }
 
     // origin unlink
     this.elem('origin-unlink').onclick = (e) => {
@@ -140,7 +190,44 @@ class StyleSection {
     // ref unlink
     this.elem('ref-unlink').onclick = (e) => {
       this.send('unlink-reference');
+      (this.elem('ref-name') as HTMLInputElement).value = this.data.to.name;
     };
+
+    // transforms
+    const updateTransforms = (prop: string, value: string) => { 
+      const number = parseInt(value, 10);
+
+      // udpate
+      if (number) {
+        if (!this.data.transforms) {
+          this.data.transforms = {};
+        }
+
+        this.data.transforms[prop] = number;
+      }
+
+      // delete
+      else if (this.data.transforms && this.data.transforms[prop]) {
+        delete this.data.transforms[prop];
+      }
+
+      this.send('save-transforms', { transforms: this.data.transforms });
+    };
+    for (const prop of ['hue', 'saturation', 'lightness', 'opacity']) { 
+      this.elem(prop).onblur = (e) => { updateTransforms(prop, (e.target as HTMLInputElement).value) };
+      this.elem(prop).onkeydown = (e: KeyboardEvent) => {
+        const target = e.target as HTMLInputElement;
+        const number = parseInt(target.value, 10);
+        if (e.code === 'ArrowUp') {
+          target.value = `${number + 1}`;
+          e.preventDefault();
+        }
+        if (e.code === 'ArrowDown') {
+          target.value = `${number - 1}`;
+          e.preventDefault();
+        }
+      };
+    }
   }
 
   private elem(selector: string): HTMLElement {
@@ -187,25 +274,22 @@ class StyleSection {
     const origin = this.getOrigin();
     const originName = this.elem('origin-name');
     this.renderOptions(originName, origin?.name || this.data.local?.name);
-
-    // this.elem('origin-create').style.display = !this.data.to && !(origin || this.data.local) ? 'block' : 'none';
-    // this.elem('origin-update').style.display = origin || this.data.local ? 'block' : 'none';
     this.elem('origin-unlink').style.display = (origin || this.data.local) && !this.data.to ? 'block' : 'none';
-
-    // add the `selectMenu` one-by-one for only this section
-    // bug, see: https://github.com/thomas-lowry/figma-plugin-ds/issues/17
-    // if (this.suggestions.length > 0) {
-    //   // @ts-ignore
-    //   selectMenu.init({
-    //     selector: `${this.section}-origin-suggestions`
-    //   });
-    // }
   }
 
   private renderReference() {
     // hide all fields at first
     for (const field of ['exists', 'none']) {
       this.elem(`ref-${field}`).style.display = 'none';
+    }
+
+    if (this.collection === 'paint') {
+      this.elem('transforms').style.display = 'block';
+
+      for (const prop of ['hue', 'saturation', 'lightness', 'opacity']) { 
+        (this.elem(prop) as HTMLInputElement).value =
+          this.data.transforms && this.data.transforms[prop] ? this.data.transforms[prop] : '';
+      }
     }
 
     const origin = this.getOrigin();
@@ -233,12 +317,23 @@ class StyleSection {
     const isInOptions = this.suggestions.some(style => selected && style.name === selected);
     const options = this.suggestions.slice();
     if (!isInOptions) {
-      options.unshift({ name: '', id: '', remote: false, description: '', key: '', type: 'PAINT', remove() { } });
+      options.unshift({
+        name: '',
+        id: '',
+        remote: false,
+        description: '',
+        key: '',
+        type: 'PAINT',
+        remove() { },
+        // @ts-ignore
+        getPublishStatusAsync() { }
+      });
     }
 
     for (const style of options) {
       const opt = document.createElement('option');
       opt.appendChild(document.createTextNode(style.name));
+      opt.value = style.name;
       opt.selected = selected && style.name === selected;
       element.appendChild(opt);
     }

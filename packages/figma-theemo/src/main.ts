@@ -4,7 +4,7 @@ import NodeManager, { RefNode } from './manager/node-manager';
 
 figma.showUI(__html__, {
   width: 380,
-  height: 380
+  height: 350
 });
 
 const emitter = new Emitter();

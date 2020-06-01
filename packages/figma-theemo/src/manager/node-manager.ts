@@ -2,6 +2,7 @@ import StyleAdapter from '../styles/adapter';
 import { ALL_STYLES, StyleTypes } from '../styles/types';
 import StyleFactory from '../styles/factory';
 import ReferencesManager from './references-manager';
+import ContextManager from './context-manager';
 
 
 // there is a mismatch between types and documentation
@@ -14,11 +15,17 @@ export default class NodeManager {
   private node: RefNode;
   private adapters: Map<string, StyleAdapter> = new Map();
   private references = new ReferencesManager();
+  private contextManager = new ContextManager();
 
   constructor(node: RefNode) {
     this.node = node;
 
-    for (const style of ALL_STYLES) {
+    const styles = new Set(ALL_STYLES);
+    if (node.type !== 'TEXT') {
+      styles.delete(StyleTypes.Text);
+    }
+
+    for (const style of styles) {
       // if there is a nice check whether the this.node[`${style}StyleId`]
       // property exists, then there can be a dynamical exploration of which
       // styles are available to the given node (ie. for adding typo and grid
@@ -45,7 +52,8 @@ export default class NodeManager {
       collection: {},
       repo: {
         paint: figma.getLocalPaintStyles().map(style => { return { id: style.id, name: style.name } }),
-        effect: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } })
+        effect: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } }),
+        text: figma.getLocalTextStyles().map(style => { return { id: style.id, name: style.name } })
       }
     };
 
@@ -78,10 +86,10 @@ export default class NodeManager {
     }
   }
 
-  migrateOrigin({ style, target }: { style: StyleTypes, target: string }) {
+  async migrateOrigin({ style, target }: { style: StyleTypes, target: string }) {
     const adapter = this.adapters.get(style);
     if (adapter) {
-      adapter.migrateOrigin(target);
+      await adapter.migrateOrigin(target);
       adapter.save();
       adapter.read();
     }
@@ -95,12 +103,17 @@ export default class NodeManager {
     }
   }
 
-  createReference({ from, name, style }: { from: string, name: string, style: StyleTypes }) {
+  async createReference({ from, name, style }: { from: string, name: string, style: StyleTypes }) {
     const adapter = this.adapters.get(style);
     if (adapter) {
-      adapter.createReference(from, name);
+      await adapter.createReference(from, name);
       adapter.save();
       adapter.read();
+
+      const style = adapter.getStyle();
+      if (style) {
+        await this.contextManager.createContextfreeStyle(style);
+      }
     }
 
     // store node in document
@@ -121,6 +134,15 @@ export default class NodeManager {
     }
   }
 
+  saveTransforms({ style, transforms }: { style: StyleTypes, transforms: object }) {
+    const adapter = this.adapters.get(style);
+    if (adapter) {
+      adapter.saveTransforms(transforms);
+      adapter.save();
+      adapter.read();
+    }
+  }
+
   private storeNode() {
     this.references.addNode(this.node);
   }
@@ -129,10 +151,12 @@ export default class NodeManager {
     this.references.deleteNode(this.node);
   }
 
-  updateStyles() {
+  async updateStyles() {
     for (const adapter of this.adapters.values()) {
-      adapter.updateStyle();
+      await adapter.updateStyle();
     }
+
+    await this.contextManager.selectActiveContext();
   }
 
   static canHandleNode(node: SceneNode) {

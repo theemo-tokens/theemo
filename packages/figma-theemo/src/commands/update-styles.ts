@@ -7,9 +7,9 @@ export default class UpdateStylesCommand extends Command {
 
   execute() {
     const references = new ReferencesManager();
-    references.each((node) => {
+    references.each(async (node) => {
       const manager = new NodeManager(node);
-      manager.updateStyles();
+      await manager.updateStyles();
     });
   }
 }

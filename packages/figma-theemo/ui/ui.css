@@ -13,14 +13,16 @@ summary {
 @import "styles/settings.css";
 @import "styles/help.css";
 
-button.icon--button {
+button.icon-button {
   background-color: transparent;
+  padding: 0;
 }
 
 .row-form {
   display: flex;
   justify-content: space-between;
   padding: 0 0 8px 0;
+  align-items: center;
 }
 
 .row-form input {
@@ -29,4 +31,12 @@ button.icon--button {
 
 .row-form button {
   margin-left: 8px !important;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group > * + * {
+  margin-left: 0;
 }

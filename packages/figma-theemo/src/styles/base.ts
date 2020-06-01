@@ -10,9 +10,14 @@ export default abstract class BaseStyleAdapter {
   protected abstract local: BaseStyle;
   protected abstract from: BaseStyle;
   protected abstract to: BaseStyle;
+  protected transforms: object;
 
   constructor(node: RefNode) {
     this.node = node;
+  }
+
+  getStyle() {
+    return this.to;
   }
 
   read() {
@@ -29,6 +34,8 @@ export default abstract class BaseStyleAdapter {
     if (data.to) {
       this.to = figma.getStyleById(data.to);
     }
+
+    this.transforms = data.transforms;
   }
 
   needsUnlink() {
@@ -40,12 +47,14 @@ export default abstract class BaseStyleAdapter {
   }
 
   save() {
-    const data: { from?: string, to?: string } = {};
+    const data: { from?: string, to?: string, transforms?: object } = {};
 
     if (this.from && this.to) {
       data.from = this.from.id;
       data.to = this.to.id;
     }
+
+    data.transforms = this.transforms;
 
     this.node.setSharedPluginData(NAMESPACE, this.type, JSON.stringify(data));
   }
@@ -54,7 +63,8 @@ export default abstract class BaseStyleAdapter {
     return {
       local: this.getStyleData(this.local),
       from: this.getStyleData(this.from),
-      to: this.getStyleData(this.to)
+      to: this.getStyleData(this.to),
+      transforms: this.transforms
     }
   }
 

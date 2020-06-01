@@ -12,7 +12,7 @@
 }
 
 #settings > footer {
-  margin: 0 -8px -16px -8px;
+  margin: 0 -8px 0 -8px;
   padding: 4px 8px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
@@ -28,4 +28,8 @@
   margin: 0;
   padding-left: 13px;
   margin-bottom: 8px;
+}
+
+#settings .cluster .label {
+  width: auto;
 }

@@ -4,7 +4,7 @@ import NodeManager, { RefNode } from '../manager/node-manager';
 export default class UnlinkReferenceCommand extends Command {
   NAME = 'unlink-reference';
 
-  execute(data) {
+  async execute(data) {
     if (data.node.id) {
       const node = figma.getNodeById(data.node.id);
 
@@ -13,7 +13,7 @@ export default class UnlinkReferenceCommand extends Command {
       }
 
       const manager = new NodeManager(node as RefNode);
-      manager.unlinkReference(data);
+      await manager.unlinkReference(data);
 
       this.emitter.sendEvent('reference-unlinked', { style: data.style, data: manager.data.styles[data.style] });
     }

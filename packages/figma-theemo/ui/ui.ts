@@ -1,5 +1,4 @@
-import '../vendor/figma-plugin-ds.min.css'
-// import '../vendor/figma-plugin-ds.min'
+import 'figma-plugin-ds/dist/figma-plugin-ds.css'
 import './ui.css'
 
 import SectionManager from './section-manager';
@@ -16,5 +15,4 @@ messenger.addListener('selection-changed', (data) => {
   } else {
     manager.activate('selection');
   }
-
 });

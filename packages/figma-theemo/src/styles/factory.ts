@@ -3,6 +3,7 @@ import StyleAdapter from './adapter';
 import { EffectStyleAdapter } from './effect';
 import { FillStyleAdapter } from './fill';
 import { StrokeStyleAdapter } from './stroke';
+import { TextStyleAdapter } from './text';
 import { StyleTypes } from './types';
 
 export default class StyleFactory {
@@ -16,6 +17,9 @@ export default class StyleFactory {
 
       case StyleTypes.Effect:
         return new EffectStyleAdapter(node);
+      
+      case StyleTypes.Text:
+        return new TextStyleAdapter(node);
     }
   }
 }

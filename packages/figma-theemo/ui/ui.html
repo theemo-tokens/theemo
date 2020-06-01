@@ -7,29 +7,29 @@
 </nav>
 
 <section id="selection" class="stack">
-  <span class="how-to">Please select something to manage style references</span>
+  <span class="how-to" id="selection-how-to">Please select something to manage style references</span>
+  <div id="selection-content">
+    <ul id="selection-tab-items">
+    </ul>
+    <div id="selection-tab-content">
+    </div>
+  </div>
 </section>
 
 <template id="style-section">
   <div>
-    <div data-elem="title" class="section-title"></div>
     <div class="section-grid">
       <span class="section-label label">Origin</span>
 
       <div data-elem="origin-link" class="field">
         <span>
           <div class="icon icon--styles"></div>
-          <select
-            placeholder="Pick a Local Style"
-            data-elem="origin-name"
-          ></select>
+          <select placeholder="Pick a Local Style" data-elem="origin-name"></select>
 
           <span class="action-icons">
-            <span
-              title="unlink"
-              class="icon icon--break icon--button"
-              data-elem="origin-unlink"
-            ></span>
+            <span title="unlink" class="icon-button" data-elem="origin-unlink">
+              <div class="icon icon--break"></div>
+            </span>
           </span>
         </span>
       </div>
@@ -65,18 +65,11 @@
 
       <div data-elem="ref-none" class="field">
         <form data-elem="ref-form" style="justify-content: space-between">
-          <input
-            placeholder="Reference Name"
-            data-elem="ref-name"
-            class="input"
-            list="fill-ref-suggestions"
-          />
+          <input placeholder="Reference Name" data-elem="ref-name" class="input__field" list="fill-ref-suggestions" />
           <datalist data-elem="ref-suggestions"></datalist>
-          <button
-            title="link"
-            type="submit"
-            class="icon icon--plus icon--button"
-          ></button>
+          <button title="link" type="submit" class="icon-button">
+            <div class="icon icon--plus"></div>
+          </button>
         </form>
       </div>
 
@@ -85,13 +78,24 @@
           <span class="icon icon--styles"></span>
           <span data-elem="ref-exists-name"></span>
           <span class="action-icons">
-            <span
-              title="unlink"
-              data-elem="ref-unlink"
-              class="icon icon--break icon--button"
-            ></span>
+            <span title="unlink" data-elem="ref-unlink" class="icon icon--break icon--button"></span>
           </span>
         </span>
+      </div>
+    </div>
+
+    <div data-elem="transforms" class="stack">
+      <div class="section-title">Transforms</div>
+
+
+      <div class="section-grid">
+        <span class="section-label label">HSL</span>
+        <div class="input-group">
+          <input class="input__field" data-elem="hue" placeholder="Hue">
+          <input class="input__field" data-elem="saturation" placeholder="Saturation">
+          <input class="input__field" data-elem="lightness" placeholder="Lightness">
+          <input class="input__field" data-elem="opacity" placeholder="Opacity">
+        </div>
       </div>
     </div>
   </div>
@@ -127,13 +131,10 @@
       take them over).
     </p>
     <form class="row-form" id="import">
-      <input class="input" placeholder="jsonbin.io url" id="import-url" />
-      <button
-        id="import-submit"
-        title="Import"
-        type="submit"
-        class="icon icon--play icon--button"
-      ></button>
+      <input class="input__field" placeholder="jsonbin.io url" id="import-url" />
+      <button id="import-submit" title="Import" type="submit" class="icon-button">
+        <div class="icon icon--play"></div>
+      </button>
     </form>
   </div>
 </section>
@@ -141,12 +142,10 @@
 <section id="contexts" class="stack">
   <div class="section-title">Add Context</div>
   <form class="row-form" id="context-add">
-    <input class="input" placeholder="New Context Name" id="context-name" />
-    <button
-      title="link"
-      type="submit"
-      class="icon icon--plus icon--button"
-    ></button>
+    <input class="input__field" placeholder="New Context Name" id="context-name" />
+    <button title="link" type="submit" class="icon-button">
+      <div class="icon icon--plus"></div>
+    </button>
   </form>
 
   <div class="section-title">Select Context</div>
@@ -154,7 +153,7 @@
   <template id="context.item">
     <li>
       <div>
-        <span class="icon icon--mask"></span>
+        <span class="icon icon--blend"></span>
         <span class="name type--pos-medium-normal"></span>
       </div>
       <span class="icon icon--trash icon--button remove"></span>
@@ -167,7 +166,7 @@
     <div class="section-title row">Contexts</div>
 
     <span class="label" for="context.prefix">Prefix</span>
-    <input class="input" id="context.prefix" value=".§" />
+    <input class="input__field" id="context.prefix" value=".§" />
 
     <span class="label">Example</span>
     <div class="cluster">
@@ -188,19 +187,15 @@
     </ol>
 
     <label class="label" for="tools.key">API Key</label>
-    <div class="input-icon">
-      <div class="input-icon__icon">
-        <div class="icon icon--lock icon--black-3"></div>
-      </div>
-      <input type="input" class="input-icon__input" id="tools.key" />
+    <div class="input input--with-icon">
+      <div class="icon icon--key icon--black-3"></div>
+      <input type="input" class="input__field" id="tools.key" />
     </div>
 
     <label class="label" for="tools.url">Bin URL</label>
-    <div class="input-icon">
-      <div class="input-icon__icon">
-        <div class="icon icon--link-connected icon--black-3"></div>
-      </div>
-      <input type="input" class="input-icon__input" id="tools.url" />
+    <div class="input input--with-icon">
+      <div class="icon icon--link-connected icon--black-3"></div>
+      <input type="input" class="input__field" id="tools.url" />
     </div>
   </div>
   <footer class="stack-end">
@@ -303,12 +298,7 @@
     to give styles for respective styles a specific suffix, e.g.
     <code>.$dark</code> - With defined contexts, you can swap between them
     quickly and then use
-    <a
-      href="https://www.figma.com/c/plugin/731176732337510831/Themer"
-      rel="nofollow"
-      target="_blank"
-      >Themer</a
-    >
+    <a href="https://www.figma.com/c/plugin/731176732337510831/Themer" rel="nofollow" target="_blank">Themer</a>
     to export them.
   </p>
 

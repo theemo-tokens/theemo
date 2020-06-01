@@ -47,6 +47,8 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
     this.to = undefined;
   }
 
+  saveTransforms() {}
+
   updateStyle() {
     if (!this.hasReference()) {
       return;

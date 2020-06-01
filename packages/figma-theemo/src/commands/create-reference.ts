@@ -4,7 +4,7 @@ import NodeManager, { RefNode } from '../manager/node-manager';
 export default class CreateReferenceCommand extends Command {
   NAME = 'create-reference';
 
-  execute(data) {
+  async execute(data) {
     if (data.node.id) {
       const node = figma.getNodeById(data.node.id);
 
@@ -13,7 +13,7 @@ export default class CreateReferenceCommand extends Command {
       }
 
       const manager = new NodeManager(node as RefNode);
-      manager.createReference(data);
+      await manager.createReference(data);
 
       this.emitter.sendEvent('reference-created', { style: data.style, data: manager.data.styles[data.style] });
     }

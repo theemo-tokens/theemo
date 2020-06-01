@@ -6,5 +6,5 @@ export const DEFAULT_CONFIG = Object.freeze({
   // settings
   'tools.jsonbin.url': '',
   'tools.jsonbin.key': '',
-  'context.prefix': '.§'
+  'context.prefix': '.$'
 });

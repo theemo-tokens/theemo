@@ -1,8 +1,8 @@
 import Command from './command';
 import NodeManager, { RefNode } from '../manager/node-manager';
 
-export default class MigrateOriginCommand extends Command {
-  NAME = 'migrate-origin';
+export default class SaveTransformsCommand extends Command {
+  NAME = 'save-transforms';
 
   async execute(data) {
     if (data.node.id) {
@@ -13,9 +13,9 @@ export default class MigrateOriginCommand extends Command {
       }
 
       const manager = new NodeManager(node as RefNode);
-      await manager.migrateOrigin(data);
+      await manager.saveTransforms(data);
 
-      this.emitter.sendEvent('origin-migrated', { style: data.style, data: manager.data.styles[data.style] });
+      this.emitter.sendEvent('transforms-saved', { style: data.style, data: manager.data.styles[data.style] });
     }
   }
 }

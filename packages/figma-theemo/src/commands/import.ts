@@ -5,7 +5,7 @@ import { ALL_STYLES } from '../styles/types';
 export default class ImportCommand extends Command {
   NAME = 'import';
 
-  execute(data) {
+  async execute(data) {
     let selection;
     if (figma.currentPage.selection.length > 0) {
       selection = figma.currentPage.selection[0].id;
@@ -20,7 +20,7 @@ export default class ImportCommand extends Command {
         for (const style of ALL_STYLES) {
           if (entry[style]) {
             const local = figma.getLocalPaintStyles().find(local => local.name === entry[style].from.name);
-            manager.createReference({ style, from: local.id, name: entry[style].to.name });
+            await manager.createReference({ style, from: local.id, name: entry[style].to.name });
 
             if (selection === entry.node.id) {
               this.emitter.sendEvent('reference-created', { style, data: manager.data.styles[style] });
