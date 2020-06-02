@@ -4,7 +4,7 @@ import NodeManager, { RefNode } from '../manager/node-manager';
 export default class SaveTransformsCommand extends Command {
   NAME = 'save-transforms';
 
-  async execute(data) {
+  execute(data) {
     if (data.node.id) {
       const node = figma.getNodeById(data.node.id);
 
@@ -13,7 +13,7 @@ export default class SaveTransformsCommand extends Command {
       }
 
       const manager = new NodeManager(node as RefNode);
-      await manager.saveTransforms(data);
+      manager.saveTransforms(data);
 
       this.emitter.sendEvent('transforms-saved', { style: data.style, data: manager.data.styles[data.style] });
     }

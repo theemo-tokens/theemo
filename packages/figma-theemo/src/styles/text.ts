@@ -23,9 +23,9 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     }
   }
 
-  async migrateOrigin(target) {
+  migrateOrigin(target) {
     this.from = figma.getStyleById(target) as TextStyle;
-    await copyTextStyle(this.from, this.to);
+    copyTextStyle(this.from, this.to);
     this.node.textStyleId = this.to.id;
   }
 
@@ -33,10 +33,10 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     this.node.textStyleId = '';
   }
 
-  async createReference(from, name) {
+  createReference(from, name) {
     const origin = figma.getStyleById(from) as TextStyle;
     const to = createOrFindStyle(name, 'text') as TextStyle;
-    await copyTextStyle(origin, to);
+    copyTextStyle(origin, to);
     this.from = origin;
     this.to = to;
     this.node.textStyleId = to.id;
@@ -50,11 +50,11 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
 
   saveTransforms() {}
 
-  async updateStyle() {
+  updateStyle() {
     if (!this.hasReference()) {
       return;
     }
 
-    await copyTextStyle(this.from, this.to);
+    copyTextStyle(this.from, this.to);
   }
 }

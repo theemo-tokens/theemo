@@ -9,12 +9,25 @@ export default class ToolsSection extends Section {
   private autoUpdate = true;
 
   setup() {
-    // auto-update
-    setInterval(() => {
-      if (this.autoUpdate) {
-        this.messenger.send('update-styles');
-      }
-    }, 60);
+    this.messenger.addListener('stats-collected', (result) => {
+      // the auto-update "thread"
+      // fires "constantly" update commands to the plugin
+      // not gonna use `requestAnimationFrame` here on purpose!
+      // be able to control the update interval here!
+      // -> maybe make it an option somewhen
+
+      // for now interval time is dynamic and depends on the number
+      // of references to NOT freeze figma
+
+      const interval = 60 + result.total * 1.2;
+
+      setInterval(() => {
+        if (this.autoUpdate) {
+          this.messenger.send('update-styles');
+        }
+      }, interval);
+    });
+    this.messenger.send('collect-stats');
 
     document.getElementById('tools.update').addEventListener('change', (e) => {
       this.autoUpdate = (e.target as HTMLInputElement).checked;

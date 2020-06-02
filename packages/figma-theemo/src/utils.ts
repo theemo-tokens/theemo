@@ -79,14 +79,19 @@ export function copyGridStyle(from: GridStyle, to: GridStyle) {
   to.layoutGrids = from.layoutGrids;
 }
 
-export async function copyTextStyle(from: TextStyle, to: TextStyle) {
-  await figma.loadFontAsync(from.fontName);
-  to.fontName = from.fontName;
-  to.fontSize = from.fontSize;
-  to.letterSpacing = from.letterSpacing;
-  to.lineHeight = from.lineHeight;
-  to.paragraphIndent = from.paragraphIndent;
-  to.paragraphSpacing = from.paragraphSpacing;
-  to.textCase = from.textCase;
-  to.textDecoration = from.textDecoration;
+export function copyTextStyle(from: TextStyle, to: TextStyle) {
+  try {
+    to.fontSize = from.fontSize;
+    to.letterSpacing = from.letterSpacing;
+    to.lineHeight = from.lineHeight;
+    to.paragraphIndent = from.paragraphIndent;
+    to.paragraphSpacing = from.paragraphSpacing;
+    to.textCase = from.textCase;
+    to.textDecoration = from.textDecoration;
+    to.fontName = from.fontName;
+  } catch (e) {
+    figma.loadFontAsync(from.fontName).then(() => {
+      to.fontName = from.fontName;
+    });
+  }
 }

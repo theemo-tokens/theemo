@@ -2,7 +2,7 @@ import StyleAdapter from '../styles/adapter';
 import { ALL_STYLES, StyleTypes } from '../styles/types';
 import StyleFactory from '../styles/factory';
 import ReferencesManager from './references-manager';
-import ContextManager from './context-manager';
+import { createContextfreeStyle } from './context-manager';
 
 
 // there is a mismatch between types and documentation
@@ -15,7 +15,7 @@ export default class NodeManager {
   private node: RefNode;
   private adapters: Map<string, StyleAdapter> = new Map();
   private references = new ReferencesManager();
-  private contextManager = new ContextManager();
+  private compiledRepo = undefined;
 
   constructor(node: RefNode) {
     this.node = node;
@@ -43,18 +43,28 @@ export default class NodeManager {
     }
   }
 
+  /**
+   * ATTENTION!!!
+   * 
+   * This is a super costly call. Do NOT! run this in a thread or similar, this
+   * will stop Figma from working! Be wise with its usage
+   */
+  get repo() {
+    return {
+      paint: figma.getLocalPaintStyles().map(style => { return { id: style.id, name: style.name } }),
+      effect: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } }),
+      text: figma.getLocalTextStyles().map(style => { return { id: style.id, name: style.name } })
+    };
+  }
+
   get data() {
     const data = {
       node: {
         id: this.node.id
       },
-      styles: {},
+      styles: this.styles,
       collection: {},
-      repo: {
-        paint: figma.getLocalPaintStyles().map(style => { return { id: style.id, name: style.name } }),
-        effect: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } }),
-        text: figma.getLocalTextStyles().map(style => { return { id: style.id, name: style.name } })
-      }
+      repo: this.repo
     };
 
     for (const [style, adapter] of this.adapters.entries()) {
@@ -62,6 +72,22 @@ export default class NodeManager {
       data.collection[style] = adapter.collection;
     }
 
+    return data;
+  }
+
+  get styles() {
+    const data = {};
+    for (const [style, adapter] of this.adapters.entries()) {
+      data[style] = adapter.compile();
+    }
+    return data;
+  }
+
+  get collection() {
+    const data = {};
+    for (const [style, adapter] of this.adapters.entries()) {
+      data[style] = adapter.collection;
+    }
     return data;
   }
 
@@ -86,10 +112,10 @@ export default class NodeManager {
     }
   }
 
-  async migrateOrigin({ style, target }: { style: StyleTypes, target: string }) {
+  migrateOrigin({ style, target }: { style: StyleTypes, target: string }) {
     const adapter = this.adapters.get(style);
     if (adapter) {
-      await adapter.migrateOrigin(target);
+      adapter.migrateOrigin(target);
       adapter.save();
       adapter.read();
     }
@@ -103,16 +129,16 @@ export default class NodeManager {
     }
   }
 
-  async createReference({ from, name, style }: { from: string, name: string, style: StyleTypes }) {
+  createReference({ from, name, style }: { from: string, name: string, style: StyleTypes }) {
     const adapter = this.adapters.get(style);
     if (adapter) {
-      await adapter.createReference(from, name);
+      adapter.createReference(from, name);
       adapter.save();
       adapter.read();
 
       const style = adapter.getStyle();
       if (style) {
-        await this.contextManager.createContextfreeStyle(style);
+        createContextfreeStyle(style);
       }
     }
 
@@ -151,12 +177,14 @@ export default class NodeManager {
     this.references.deleteNode(this.node);
   }
 
-  async updateStyles() {
+  updateStyles() {
     for (const adapter of this.adapters.values()) {
-      await adapter.updateStyle();
+      adapter.updateStyle();
+      const style = adapter.getStyle();
+      // if (style) {
+      //   createContextfreeStyle(style);
+      // }
     }
-
-    await this.contextManager.selectActiveContext();
   }
 
   static canHandleNode(node: SceneNode) {

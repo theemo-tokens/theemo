@@ -6,6 +6,7 @@ import SettingsSection from './sections/settings';
 import ToolsSection from './sections/tools';
 import { DEFAULT_CONFIG } from '../shared/config';
 import HelpSection from './sections/help';
+import StatsSection from './sections/stats';
 
 export default class SectionManager {
   private sections: Map<string, Section> = new Map();
@@ -20,6 +21,7 @@ export default class SectionManager {
     this.registerSection(new ContextsSection(messenger, this.settings));
     this.registerSection(new SettingsSection(messenger, this.settings));
     this.registerSection(new HelpSection(messenger, this.settings));
+    this.registerSection(new StatsSection(messenger, this.settings));
 
     this.setup();
   }
@@ -73,5 +75,7 @@ export default class SectionManager {
     for (const section of document.getElementsByTagName('section')) {
       section.style.display = section.id === name ? 'flex' : 'none';
     }
+
+    this.sections.get(name).activate();
   }
 }

@@ -1,0 +1,17 @@
+.stats-badge {
+  width: 43vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-badge .value {
+  font-size: 24px;
+
+  margin: 0 auto;
+}
+
+.stats-badge .description {
+  margin: 0 auto;
+  margin-top: 8px;
+  color: var(--black3);
+}

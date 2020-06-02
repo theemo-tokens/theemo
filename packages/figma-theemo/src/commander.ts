@@ -1,5 +1,6 @@
 import AddContextCommand from './commands/add-context';
 import CollectReferencesCommand from './commands/collect-references';
+import CollectStatsCommand from './commands/collect-stats';
 import Command from './commands/command';
 import CreateReferenceCommand from './commands/create-reference';
 import ImportCommand from './commands/import';
@@ -16,7 +17,6 @@ import UnlinkOriginCommand from './commands/unlink-origin';
 import UnlinkReferenceCommand from './commands/unlink-reference';
 import UpdateStylesCommand from './commands/update-styles';
 import Emitter from './emitter';
-
 
 export default class Commander {
   private commands: Map<string, Command> = new Map();
@@ -37,6 +37,7 @@ export default class Commander {
     this.registerCommand(new RemoveContextCommand(this, emitter));
     this.registerCommand(new SelectContextCommand(this, emitter));
     this.registerCommand(new ImportCommand(this, emitter));
+    this.registerCommand(new CollectStatsCommand(this, emitter));
 
     // utils
     this.registerCommand(new NotifyCommand(this, emitter));
@@ -53,16 +54,16 @@ export default class Commander {
     this.commands.set(command.NAME, command);
   }
 
-  async run(name: string, data?: any) {
+  run(name: string, data?: any) {
     if (this.commands.has(name)) {
-      await this.commands.get(name).execute(data);
+      this.commands.get(name).execute(data);
     }
   }
 
   listen() {
-    figma.ui.onmessage = async msg => {
+    figma.ui.onmessage = msg => {
       if (this.commands.has(msg.command)) {
-        await this.commands.get(msg.command).execute(msg.data);
+        this.commands.get(msg.command).execute(msg.data);
       }
     };
   }
