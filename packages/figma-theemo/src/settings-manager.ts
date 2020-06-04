@@ -19,10 +19,10 @@ export default class SettingsManager {
     return this.cache;
   }
 
-  read() {
+  async read() {
     try {
       const settings = this.readPluginData();
-      settings['tools.jsonbin.key'] = figma.clientStorage.getAsync('jsonBinApiKey') ?? '';
+      settings['tools.jsonbin.key'] = await figma.clientStorage.getAsync('jsonBinApiKey') ?? '';
 
       return { ...DEFAULT_CONFIG, ...settings };
     } catch (e) {
@@ -30,13 +30,13 @@ export default class SettingsManager {
     }
   }
 
-  save(data) {
+  async save(data) {
     try {
       const key = data['tools.jsonbin.key'];
       delete data['tools.jsonbin.key'];
 
       this.savePluginData(data);
-      figma.clientStorage.setAsync('jsonBinApiKey', key);
+      await figma.clientStorage.setAsync('jsonBinApiKey', key);
 
       data['tools.jsonbin.key'] = key;
       return data;

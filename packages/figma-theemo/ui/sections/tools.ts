@@ -8,6 +8,8 @@ export default class ToolsSection extends Section {
   private importUrl: HTMLInputElement;
   private autoUpdate = true;
 
+  private updateThreadId;
+
   setup() {
     this.messenger.addListener('stats-collected', (result) => {
       // the auto-update "thread"
@@ -19,9 +21,15 @@ export default class ToolsSection extends Section {
       // for now interval time is dynamic and depends on the number
       // of references to NOT freeze figma
 
+      console.log('start an update thread');
+      
+      if (this.updateThreadId) {
+        window.clearInterval(this.updateThreadId);
+      }
+
       const interval = 60 + result.total * 1.2;
 
-      setInterval(() => {
+      this.updateThreadId = setInterval(() => {
         if (this.autoUpdate) {
           this.messenger.send('update-styles');
         }

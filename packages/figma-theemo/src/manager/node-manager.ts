@@ -63,14 +63,14 @@ export default class NodeManager {
         id: this.node.id
       },
       styles: this.styles,
-      collection: {},
+      collection: this.collection,
       repo: this.repo
     };
 
-    for (const [style, adapter] of this.adapters.entries()) {
-      data.styles[style] = adapter.compile();
-      data.collection[style] = adapter.collection;
-    }
+    // for (const [style, adapter] of this.adapters.entries()) {
+    //   data.styles[style] = adapter.compile();
+    //   data.collection[style] = adapter.collection;
+    // }
 
     return data;
   }
@@ -180,7 +180,7 @@ export default class NodeManager {
   updateStyles() {
     for (const adapter of this.adapters.values()) {
       adapter.updateStyle();
-      const style = adapter.getStyle();
+      // const style = adapter.getStyle();
       // if (style) {
       //   createContextfreeStyle(style);
       // }
