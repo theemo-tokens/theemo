@@ -1,4 +1,4 @@
-import { DEFAULT_CONFIG } from '../shared/config';
+import { DEFAULT_CONFIG } from '../../shared/config';
 
 export default class SettingsManager {
 

@@ -1,15 +1,14 @@
 import Command from './command';
-import SettingsManager from '../settings-manager';
-import { selectContext } from '../manager/context-manager';
 
 export default class SelectContextCommand extends Command {
   NAME = 'select-context';
 
   execute(ctx) {
-    const settings = new SettingsManager();
-    settings.update('context', ctx);
-
-    selectContext(ctx);
+    this.container.settings.update('context', ctx);
+    
+    this.container.references.eachWithHandler((handler) => {
+      handler.createContextFree();
+    })
 
     figma.notify(`Context ${ctx} selected`, {
       timeout: 250

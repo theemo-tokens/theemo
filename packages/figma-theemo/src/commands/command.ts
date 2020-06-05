@@ -1,15 +1,18 @@
-import Emitter from '../emitter';
-import Commander from '../commander';
+import Emitter from '../container/emitter';
+import Container from '../container/index';
+import Commander from '../container/commander';
 
 export default abstract class Command {
   NAME: string;
 
   private commander: Commander;
+  protected container: Container;
   protected emitter: Emitter;
 
-  constructor(commander: Commander, emitter: Emitter) {
+  constructor(commander: Commander, container: Container) {
     this.commander = commander;
-    this.emitter = emitter;
+    this.container = container;
+    this.emitter = container.emitter;
   }
 
   abstract execute(data?: any);

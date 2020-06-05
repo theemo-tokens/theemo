@@ -1,14 +1,16 @@
-import Commander from './commander';
-import Emitter from './emitter';
-import NodeManager, { RefNode } from './manager/node-manager';
+import { canHandleNode } from './nodes/utils';
+import { RefNode } from './nodes/types';
+import Container from './container/index';
 
 figma.showUI(__html__, {
   width: 380,
   height: 350
 });
 
-const emitter = new Emitter();
-const commander = new Commander(emitter);
+
+const container = new Container();
+const commander = container.commander;
+const emitter = container.emitter;
 
 commander.run('migrate');
 commander.run('read-settings');
@@ -22,8 +24,8 @@ figma.on('selectionchange', () => {
 });
 
 function handleSelection(selection: readonly SceneNode[]) {
-  if (selection.length > 0 && NodeManager.canHandleNode(selection[0])) {
-    const manager = new NodeManager(selection[0] as RefNode);
+  if (selection.length > 0 && canHandleNode(selection[0])) {
+    const manager = container.registry.get(selection[0] as RefNode);
     emitter.sendEvent('selection-changed', manager.data);
     return true;
   } else {

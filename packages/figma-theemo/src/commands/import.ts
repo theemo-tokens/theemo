@@ -1,6 +1,6 @@
 import Command from './command';
-import NodeManager, { RefNode } from '../manager/node-manager';
-import { ALL_STYLES } from '../styles/types';
+import { STYLES } from '../styles/types';
+import { RefNode } from '../nodes/types';
 
 export default class ImportCommand extends Command {
   NAME = 'import';
@@ -15,15 +15,15 @@ export default class ImportCommand extends Command {
     for (const entry of data.nodes) {
       const node = figma.getNodeById(entry.node.id);
       if (node) {
-        const manager = new NodeManager(node as RefNode);
+        const handler = this.container.registry.get(node as RefNode);
 
-        for (const style of ALL_STYLES) {
+        for (const style of STYLES) {
           if (entry[style]) {
             const local = figma.getLocalPaintStyles().find(local => local.name === entry[style].from.name);
-            manager.createReference({ style, from: local.id, name: entry[style].to.name });
+            handler.createReference({ style, from: local.id, name: entry[style].to.name });
 
             if (selection === entry.node.id) {
-              this.emitter.sendEvent('reference-created', { style, data: manager.data.styles[style] });
+              this.emitter.sendEvent('reference-created', { style, data: handler.data.styles[style] });
             }
             count++;
           }

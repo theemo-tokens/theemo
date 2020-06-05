@@ -1,5 +1,5 @@
 import Command from './command';
-import NodeManager, { RefNode } from '../manager/node-manager';
+import { RefNode } from '../nodes/types';
 
 export default class UnlinkReferenceCommand extends Command {
   NAME = 'unlink-reference';
@@ -12,10 +12,10 @@ export default class UnlinkReferenceCommand extends Command {
         return;
       }
 
-      const manager = new NodeManager(node as RefNode);
-      manager.unlinkReference(data);
+      const handler = this.container.registry.get(node as RefNode);
+      handler.unlinkReference(data);
 
-      this.emitter.sendEvent('reference-unlinked', { style: data.style, data: manager.data.styles[data.style] });
+      this.emitter.sendEvent('reference-unlinked', { style: data.style, data: handler.data.styles[data.style] });
     }
   }
 }

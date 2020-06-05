@@ -1,4 +1,4 @@
-import { copyEffectStyle, createOrFindStyle } from '../utils';
+import { copyEffectStyle, createOrFindStyle } from './utils';
 import StyleAdapter from './adapter';
 import BaseStyleAdapter from './base';
 import { StyleTypes } from './types';
@@ -10,10 +10,13 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
   protected local: EffectStyle;
   protected from: EffectStyle;
   protected to: EffectStyle;
+  private contextFree?: EffectStyle;
 
   getPool() {
     return figma.getLocalEffectStyles();
   }
+
+  // --- UI commands
 
   linkOrigin(name) {
     const style = figma.getLocalEffectStyles().find(style => style.name === name);
@@ -47,7 +50,9 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
     this.to = undefined;
   }
 
-  saveTransforms() {}
+  saveTransforms() { }
+  
+  // --- commands
 
   updateStyle() {
     if (!this.hasReference()) {
@@ -55,5 +60,26 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
     }
 
     copyEffectStyle(this.from, this.to);
+  }
+
+  createContextFree() {
+    if (!this.isContextual()) {
+      return;
+    }
+
+    const contextFree = this.getContextFreeStyle();
+    if (contextFree) {
+      copyEffectStyle(this.to, contextFree);
+    }
+  }
+
+  // --- helper
+
+  private getContextFreeStyle() {
+    if (!this.contextFree && this.to) {
+      this.contextFree = createOrFindStyle(this.getContextFreeName(), this.collection) as EffectStyle;
+    }
+
+    return this.contextFree;
   }
 }

@@ -1,4 +1,4 @@
-import { COLLECTION } from './styles/types';
+import { COLLECTION } from './types';
 // @ts-ignore
 import cc from 'color-converter';
 

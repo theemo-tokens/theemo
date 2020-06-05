@@ -1,17 +1,14 @@
 import Command from './command';
-import ReferencesManager from '../manager/references-manager';
-import NodeManager from '../manager/node-manager';
-import { ALL_STYLES } from '../styles/types';
+import { STYLES } from '../styles/types';
 
 export default class CollectReferencesCommand extends Command {
   NAME = 'collect-references';
 
   execute() {
-    const manager = new ReferencesManager();
     const nodes = [];
 
-    manager.each((node) => {
-      const handler = new NodeManager(node);
+    this.container.references.each((node) => {
+      const handler = this.container.registry.get(node);
       nodes.push({
         node: {
           id: node.id
@@ -33,7 +30,7 @@ export default class CollectReferencesCommand extends Command {
   filter(styles) {
     const filtered = {};
 
-    for (const style of ALL_STYLES) {
+    for (const style of STYLES) {
       if (styles[style]) {
         if (styles[style].from && styles[style].to) {
           filtered[style] = styles[style];

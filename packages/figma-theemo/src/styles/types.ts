@@ -1,5 +1,4 @@
 export type COLLECTION = 'paint' | 'effect' | 'text';
-export type STYLES = 'text' | 'fill' | 'stroke' | 'effect';
 
 export enum StyleTypes {
   Fill = 'fill',
@@ -8,4 +7,4 @@ export enum StyleTypes {
   Text = 'text'
 }
 
-export const ALL_STYLES = [StyleTypes.Text, StyleTypes.Fill, StyleTypes.Stroke, StyleTypes.Effect];
+export const STYLES = [StyleTypes.Text, StyleTypes.Fill, StyleTypes.Stroke, StyleTypes.Effect];

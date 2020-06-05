@@ -1,26 +1,16 @@
 import StyleAdapter from '../styles/adapter';
-import { ALL_STYLES, StyleTypes } from '../styles/types';
+import { STYLES, StyleTypes } from '../styles/types';
 import StyleFactory from '../styles/factory';
-import ReferencesManager from './references-manager';
-import { createContextfreeStyle } from './context-manager';
+import { RefNode } from './types';
+import Container from '../container/index';
 
-
-// there is a mismatch between types and documentation
-// according to docs: `GroupNode` has styles
-// according to types: `GroupNode` does NOT have styles
-// type RefNode = GroupNode | ComponentNode | InstanceNode | VectorNode | StarNode | LineNode | EllipseNode | PolygonNode | RectangleNode | TextNode;
-export type RefNode = ComponentNode | InstanceNode | VectorNode | StarNode | LineNode | EllipseNode | PolygonNode | RectangleNode | TextNode;
-
-export default class NodeManager {
-  private node: RefNode;
+export default class NodeHandler {
+  
   private adapters: Map<string, StyleAdapter> = new Map();
-  private references = new ReferencesManager();
-  private compiledRepo = undefined;
+  
+  constructor(private node: RefNode, private container: Container) {
 
-  constructor(node: RefNode) {
-    this.node = node;
-
-    const styles = new Set(ALL_STYLES);
+    const styles = new Set(STYLES);
     if (node.type !== 'TEXT') {
       styles.delete(StyleTypes.Text);
     }
@@ -30,7 +20,7 @@ export default class NodeManager {
       // property exists, then there can be a dynamical exploration of which
       // styles are available to the given node (ie. for adding typo and grid
       // styles)
-      const adapter = StyleFactory.create(style, node);
+      const adapter = StyleFactory.create(style, node, container);
 
       adapter.read();
       adapter.load();
@@ -67,11 +57,6 @@ export default class NodeManager {
       repo: this.repo
     };
 
-    // for (const [style, adapter] of this.adapters.entries()) {
-    //   data.styles[style] = adapter.compile();
-    //   data.collection[style] = adapter.collection;
-    // }
-
     return data;
   }
 
@@ -98,6 +83,12 @@ export default class NodeManager {
     }
 
     return false;
+  }
+
+  each(callback: (adapter: StyleAdapter) => void) {
+    for (const adapter of this.adapters.values()) {
+      callback(adapter);
+    }
   }
 
   //
@@ -133,13 +124,9 @@ export default class NodeManager {
     const adapter = this.adapters.get(style);
     if (adapter) {
       adapter.createReference(from, name);
+      adapter.createContextFree();
       adapter.save();
       adapter.read();
-
-      const style = adapter.getStyle();
-      if (style) {
-        createContextfreeStyle(style);
-      }
     }
 
     // store node in document
@@ -170,33 +157,29 @@ export default class NodeManager {
   }
 
   private storeNode() {
-    this.references.addNode(this.node);
+    this.container.references.addNode(this.node);
   }
 
   private deleteNode() {
-    this.references.deleteNode(this.node);
+    this.container.references.deleteNode(this.node);
   }
 
   updateStyles() {
     for (const adapter of this.adapters.values()) {
       adapter.updateStyle();
-      // const style = adapter.getStyle();
-      // if (style) {
-      //   createContextfreeStyle(style);
-      // }
     }
   }
 
-  static canHandleNode(node: SceneNode) {
-    return node.type === 'GROUP' ||
-      node.type === 'COMPONENT' ||
-      node.type === 'INSTANCE' ||
-      node.type === 'VECTOR' ||
-      node.type === 'STAR' ||
-      node.type === 'LINE' ||
-      node.type === 'ELLIPSE' ||
-      node.type === 'POLYGON' ||
-      node.type === 'RECTANGLE' ||
-      node.type === 'TEXT';
+  createContextFree() {
+    for (const adapter of this.adapters.values()) {
+      adapter.createContextFree();
+    }
+  }
+
+  updateStylesAndContext() {
+    for (const adapter of this.adapters.values()) {
+      adapter.updateStyle();
+      adapter.createContextFree();
+    }
   }
 }

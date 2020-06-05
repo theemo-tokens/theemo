@@ -1,5 +1,5 @@
 import Command from './command';
-import NodeManager, { RefNode } from '../manager/node-manager';
+import { RefNode } from '../nodes/types';
 
 export default class SaveTransformsCommand extends Command {
   NAME = 'save-transforms';
@@ -12,10 +12,10 @@ export default class SaveTransformsCommand extends Command {
         return;
       }
 
-      const manager = new NodeManager(node as RefNode);
-      manager.saveTransforms(data);
+      const handler = this.container.registry.get(node as RefNode);
+      handler.saveTransforms(data);
 
-      this.emitter.sendEvent('transforms-saved', { style: data.style, data: manager.data.styles[data.style] });
+      this.emitter.sendEvent('transforms-saved', { style: data.style, data: handler.data.styles[data.style] });
     }
   }
 }

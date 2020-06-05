@@ -1,5 +1,5 @@
 import Command from './command';
-import NodeManager, { RefNode } from '../manager/node-manager';
+import { RefNode } from '../nodes/types';
 
 export default class LinkOriginCommand extends Command {
   NAME = 'link-origin';
@@ -12,14 +12,14 @@ export default class LinkOriginCommand extends Command {
         return;
       }
 
-      const manager = new NodeManager(node as RefNode);
-      manager.linkOrigin(data);
+      const handler = this.container.registry.get(node as RefNode);
+      handler.linkOrigin(data);
 
-      if (manager.hasReference(data.style)) {
-        manager.migrateOrigin({ ...data, target: manager.data.styles[data.style].local.id });
+      if (handler.hasReference(data.style)) {
+        handler.migrateOrigin({ ...data, target: handler.data.styles[data.style].local.id });
       }
 
-      this.emitter.sendEvent('origin-linked', { style: data.style, data: manager.data.styles[data.style] });
+      this.emitter.sendEvent('origin-linked', { style: data.style, data: handler.data.styles[data.style] });
     }
   }
 }

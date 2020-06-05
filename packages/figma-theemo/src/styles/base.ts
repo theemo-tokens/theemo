@@ -1,23 +1,30 @@
 import { NAMESPACE } from '../config';
-import { RefNode } from '../manager/node-manager';
+import Container from '../container/index';
+import { RefNode } from '../nodes/types';
 import { StyleTypes } from './types';
 
 export default abstract class BaseStyleAdapter {
   abstract type: StyleTypes;
 
   protected node: RefNode;
+  protected container: Container;
 
   protected abstract local: BaseStyle;
   protected abstract from: BaseStyle;
   protected abstract to: BaseStyle;
   protected transforms: object;
 
-  constructor(node: RefNode) {
+  constructor(node: RefNode, container: Container) {
     this.node = node;
+    this.container = container;
   }
 
   getStyle() {
     return this.to;
+  }
+
+  getType() {
+    return this.type;
   }
 
   read() {
@@ -44,6 +51,21 @@ export default abstract class BaseStyleAdapter {
 
   hasReference() {
     return !!this.to;
+  }
+
+  isContextual() {
+    if (this.to) {
+      return this.container.contexts.isContextualName(this.to.name);
+    }
+
+    return false;
+  }
+
+  protected getContextFreeName() {
+    if (this.to) {
+      const prefix = this.container.settings.get('context.prefix');
+      return this.to.name.substr(0, this.to.name.indexOf(prefix));
+    }
   }
 
   save() {

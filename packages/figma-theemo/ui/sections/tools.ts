@@ -20,14 +20,11 @@ export default class ToolsSection extends Section {
 
       // for now interval time is dynamic and depends on the number
       // of references to NOT freeze figma
-
-      console.log('start an update thread');
-      
       if (this.updateThreadId) {
         window.clearInterval(this.updateThreadId);
       }
 
-      const interval = 60 + result.total * 1.2;
+      const interval = 60 + result.total * 1.1;
 
       this.updateThreadId = setInterval(() => {
         if (this.autoUpdate) {
@@ -58,12 +55,8 @@ export default class ToolsSection extends Section {
     this.importButton = document.getElementById('import-submit') as HTMLInputElement;
     document.getElementById('import').onsubmit = async (e) => {
       e.preventDefault();
-
       const input = (document.getElementById('import-url') as HTMLInputElement);
-
-
       await this.import(input.value);
-
       input.value = '';
     }
   }

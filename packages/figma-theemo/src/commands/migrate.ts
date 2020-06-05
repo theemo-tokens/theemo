@@ -1,5 +1,5 @@
 import Command from './command';
-import { ALL_STYLES } from '../styles/types';
+import { STYLES } from '../styles/types';
 import { NAMESPACE } from '../config';
 
 export default class MigrateCommand extends Command {
@@ -12,7 +12,7 @@ export default class MigrateCommand extends Command {
       for (const nodeId of JSON.parse(nodes)) {
         const node = figma.getNodeById(nodeId);
         if (node) {
-          for (const style of ALL_STYLES) {
+          for (const style of STYLES) {
             node.setSharedPluginData(NAMESPACE, style, node.getPluginData(style));
             node.setPluginData(style, '');
           }

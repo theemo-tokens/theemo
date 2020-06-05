@@ -1,4 +1,4 @@
-import { COLLECTION } from './types';
+import { COLLECTION, StyleTypes } from './types';
 
 export default interface StyleAdapter {
   collection: COLLECTION;
@@ -9,12 +9,13 @@ export default interface StyleAdapter {
   compile();
 
   getStyle(): BaseStyle | undefined;
+  getPool(): BaseStyle[];
+  getType(): StyleTypes;
 
   // checks
   needsUnlink(): boolean;
   hasReference(): boolean;
-
-  getPool(): BaseStyle[];
+  isContextual(): boolean;
 
   // UI commands
   linkOrigin(name: string);
@@ -31,4 +32,6 @@ export default interface StyleAdapter {
 
   // commands
   updateStyle();
+
+  createContextFree();
 }

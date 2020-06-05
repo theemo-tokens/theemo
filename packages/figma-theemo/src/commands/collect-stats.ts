@@ -1,15 +1,9 @@
 import Command from './command';
-import ReferencesManager from '../manager/references-manager';
-import NodeManager from '../manager/node-manager';
-import { ALL_STYLES } from '../styles/types';
-import { isContextualName } from '../manager/context-manager';
-
 
 export default class CollectStatsCommand extends Command {
   NAME = 'collect-stats';
 
   execute() {
-    const manager = new ReferencesManager();
     const counter = {
       total: 0,
       text: 0,
@@ -19,19 +13,20 @@ export default class CollectStatsCommand extends Command {
       contexts: 0
     };
 
-    manager.each((node) => {
-      const handler = new NodeManager(node);
-      for (const style of ALL_STYLES) {
-        if (handler.styles[style] && handler.styles[style].to && handler.styles[style].from) {
-          counter[style]++;
+    this.container.references.each((node) => {
+      const handler = this.container.registry.get(node);
+      handler.each((adapter) => {
+        if (adapter.hasReference()) {
           counter.total++;
+          counter[adapter.getType()]++;
 
-          if (isContextualName(handler.styles[style].to.name)) {
+          if (adapter.isContextual()) {
             counter.contexts++;
           }
         }
-      }
+      });
     });
+
     this.emitter.sendEvent('stats-collected', counter);
   }
 }

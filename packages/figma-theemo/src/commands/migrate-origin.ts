@@ -1,5 +1,5 @@
 import Command from './command';
-import NodeManager, { RefNode } from '../manager/node-manager';
+import { RefNode } from '../nodes/types';
 
 export default class MigrateOriginCommand extends Command {
   NAME = 'migrate-origin';
@@ -12,10 +12,10 @@ export default class MigrateOriginCommand extends Command {
         return;
       }
 
-      const manager = new NodeManager(node as RefNode);
-      manager.migrateOrigin(data);
+      const handler = this.container.registry.get(node as RefNode);
+      handler.migrateOrigin(data);
 
-      this.emitter.sendEvent('origin-migrated', { style: data.style, data: manager.data.styles[data.style] });
+      this.emitter.sendEvent('origin-migrated', { style: data.style, data: handler.data.styles[data.style] });
     }
   }
 }
