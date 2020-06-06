@@ -23,6 +23,7 @@ export default class ReferencesManager {
         callback(node);
       } else {
         nodes.delete(id);
+        this.container.registry.removeById(id);
       }
     }
     this.storeNodes(nodes);

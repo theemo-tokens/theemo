@@ -14,4 +14,8 @@ export default class NodeRegistry {
 
     return this.repo.get(node.id) as NodeHandler;
   }
+
+  removeById(id: string) {
+    this.repo.delete(id);
+  }
 }
