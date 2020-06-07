@@ -12,6 +12,8 @@
       "./node_modules/@types",
       "./node_modules/@figma"
     ],
+    "esModuleInterop": true,
+    "inlineSourceMap": false,
     "baseUrl": ".",
     "paths": {
       "*": [

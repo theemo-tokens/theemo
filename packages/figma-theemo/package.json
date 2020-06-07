@@ -3,15 +3,16 @@
   "version": "9",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "build": "yarn webpack --mode=production",
     "start": "yarn webpack --mode=development --watch"
   },
   "author": "Thomas Gossmann",
   "license": "MIT",
   "dependencies": {
-    "css-loader": "^3.4.0",
     "color-converter": "1.4.1",
+    "css-loader": "^3.4.0",
     "figma-plugin-ds": "^0.1.8",
     "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "^3.2.0",
@@ -23,6 +24,11 @@
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.15.0"
+    "@figma/plugin-typings": "^1.15.0",
+    "@types/jest": "^25.2.3",
+    "esbuild-jest": "^0.1.1",
+    "figma-api-stub": "^0.0.41",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0"
   }
 }
