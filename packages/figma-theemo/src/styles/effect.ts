@@ -7,10 +7,10 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
   type: StyleTypes.Effect = StyleTypes.Effect;
   collection: 'effect' = 'effect';
 
-  protected local: EffectStyle;
-  protected from: EffectStyle;
-  protected to: EffectStyle;
-  private contextFree?: EffectStyle;
+  local?: EffectStyle;
+  from?: EffectStyle;
+  to?: EffectStyle;
+  context?: EffectStyle;
 
   getPool() {
     return figma.getLocalEffectStyles();
@@ -18,34 +18,40 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
 
   // --- UI commands
 
-  linkOrigin(name) {
+  linkOrigin(name: string) {
     const style = figma.getLocalEffectStyles().find(style => style.name === name);
     if (style) {
       this.node.effectStyleId = style.id;
+      this.local = style;
     }
   }
 
-  migrateOrigin(target) {
-    this.from = figma.getStyleById(target) as EffectStyle;
+  migrateOrigin(targetId: string) {
+    this.from = figma.getStyleById(targetId) as EffectStyle;
     copyEffectStyle(this.from, this.to);
     this.node.effectStyleId = this.to.id;
   }
 
   unlinkOrigin() {
     this.node.effectStyleId = '';
+    this.local = undefined;
   }
 
   createReference(from, name) {
     const origin = figma.getStyleById(from) as EffectStyle;
     const to = createOrFindStyle(name, 'effect') as EffectStyle;
     copyEffectStyle(origin, to);
+
     this.node.effectStyleId = to.id;
+    this.local = to;
+
     this.from = origin;
     this.to = to;
   }
 
   unlinkReference() {
     this.node.effectStyleId = this.from.id;
+    this.local = this.from;
     this.from = undefined;
     this.to = undefined;
   }
@@ -62,24 +68,21 @@ export class EffectStyleAdapter extends BaseStyleAdapter implements StyleAdapter
     copyEffectStyle(this.from, this.to);
   }
 
-  createContextFree() {
-    if (!this.isContextual()) {
-      return;
-    }
-
-    const contextFree = this.getContextFreeStyle();
-    if (contextFree) {
-      copyEffectStyle(this.to, contextFree);
-    }
-  }
-
   // --- helper
 
-  private getContextFreeStyle() {
-    if (!this.contextFree && this.to) {
-      this.contextFree = createOrFindStyle(this.getContextFreeName(), this.collection) as EffectStyle;
+  private createOrFindContextStyle() {
+    if (!this.context && this.to) {
+      this.context = createOrFindStyle(this.getContextFreeName(), this.collection) as EffectStyle;
     }
 
-    return this.contextFree;
+    return this.context;
+  }
+
+  protected updateContextStyle() {
+    const contextFree = this.createOrFindContextStyle();
+    if (contextFree) {
+      contextFree.name = this.getContextFreeName();
+      copyEffectStyle(this.to, contextFree);
+    }
   }
 }

@@ -8,10 +8,10 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
   collection: 'text' = 'text';
   node: TextNode;
 
-  protected local: TextStyle;
-  protected from: TextStyle;
-  protected to: TextStyle;
-  private contextFree?: TextStyle;
+  local?: TextStyle;
+  from?: TextStyle;
+  to?: TextStyle;
+  context?: TextStyle;
 
   getPool() {
     return figma.getLocalTextStyles();
@@ -23,6 +23,7 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     const style = figma.getLocalTextStyles().find(style => style.name === name);
     if (style) {
       this.node.textStyleId = style.id;
+      this.local = style;
     }
   }
 
@@ -34,19 +35,24 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
 
   unlinkOrigin() {
     this.node.textStyleId = '';
+    this.local = undefined;
   }
 
   createReference(from, name) {
     const origin = figma.getStyleById(from) as TextStyle;
     const to = createOrFindStyle(name, 'text') as TextStyle;
     copyTextStyle(origin, to);
+    
+    this.node.textStyleId = to.id;
+    this.local = to;
+
     this.from = origin;
     this.to = to;
-    this.node.textStyleId = to.id;
   }
 
   unlinkReference() {
     this.node.textStyleId = this.from.id;
+    this.local = this.from;
     this.from = undefined;
     this.to = undefined;
   }
@@ -63,24 +69,21 @@ export class TextStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     copyTextStyle(this.from, this.to);
   }
 
-  createContextFree() {
-    if (!this.isContextual()) {
-      return;
-    }
-
-    const contextFree = this.getContextFreeStyle();
-    if (contextFree) {
-      copyTextStyle(this.to, contextFree);
-    }
-  }
-
   // --- helper
 
-  private getContextFreeStyle() {
-    if (!this.contextFree && this.to) {
-      this.contextFree = createOrFindStyle(this.getContextFreeName(), this.collection) as TextStyle;
+  private createOrFindContextStyle() {
+    if (!this.context && this.to) {
+      this.context = createOrFindStyle(this.getContextFreeName(), this.collection) as TextStyle;
     }
 
-    return this.contextFree;
+    return this.context;
+  }
+
+  protected updateContextStyle() {
+    const contextFree = this.createOrFindContextStyle();
+    if (contextFree) {
+      contextFree.name = this.getContextFreeName();
+      copyTextStyle(this.to, contextFree);
+    }
   }
 }

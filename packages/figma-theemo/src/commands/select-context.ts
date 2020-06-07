@@ -3,14 +3,14 @@ import Command from './command';
 export default class SelectContextCommand extends Command {
   NAME = 'select-context';
 
-  execute(ctx) {
-    this.container.settings.update('context', ctx);
+  execute(context) {
+    this.container.settings.update('context', context);
     
     this.container.references.eachWithHandler((handler) => {
-      handler.createContextFree();
-    })
+      handler.applyForContext(context);
+    });
 
-    figma.notify(`Context ${ctx} selected`, {
+    figma.notify(`Context ${context} selected`, {
       timeout: 250
     });
   }

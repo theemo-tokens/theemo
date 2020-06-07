@@ -18,4 +18,12 @@ export default class NodeRegistry {
   removeById(id: string) {
     this.repo.delete(id);
   }
+
+  readLocalStylesRepo() {
+    return {
+      paint: figma.getLocalPaintStyles().map(style => { return { id: style.id, name: style.name } }),
+      effect: figma.getLocalEffectStyles().map(style => { return { id: style.id, name: style.name } }),
+      text: figma.getLocalTextStyles().map(style => { return { id: style.id, name: style.name } })
+    };
+  }
 }

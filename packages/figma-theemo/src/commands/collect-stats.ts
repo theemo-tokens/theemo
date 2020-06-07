@@ -18,9 +18,9 @@ export default class CollectStatsCommand extends Command {
       handler.each((adapter) => {
         if (adapter.hasReference()) {
           counter.total++;
-          counter[adapter.getType()]++;
+          counter[adapter.type]++;
 
-          if (adapter.isContextual()) {
+          if (this.container.contexts.isContextualName(adapter.to.name)) {
             counter.contexts++;
           }
         }

@@ -9,22 +9,15 @@ export default abstract class BaseStyleAdapter {
   protected node: RefNode;
   protected container: Container;
 
-  protected abstract local: BaseStyle;
-  protected abstract from: BaseStyle;
-  protected abstract to: BaseStyle;
+  local?: BaseStyle;
+  from?: BaseStyle;
+  to?: BaseStyle;
+  context?: BaseStyle;
   protected transforms: object;
 
   constructor(node: RefNode, container: Container) {
     this.node = node;
     this.container = container;
-  }
-
-  getStyle() {
-    return this.to;
-  }
-
-  getType() {
-    return this.type;
   }
 
   read() {
@@ -33,7 +26,7 @@ export default abstract class BaseStyleAdapter {
 
   load() {
     const data = JSON.parse(this.node.getSharedPluginData(NAMESPACE, this.type) || '{}');
-
+    
     if (data.from) {
       this.from = figma.getStyleById(data.from);
     }
@@ -53,13 +46,26 @@ export default abstract class BaseStyleAdapter {
     return !!this.to;
   }
 
-  isContextual() {
+  // --- context: any
+
+  isContextual(context: string) {
     if (this.to) {
-      return this.container.contexts.isContextualName(this.to.name);
+      return this.container.contexts.getContextFromName(this.to.name) === context;
     }
 
     return false;
   }
+
+  applyForContext(context: string) {
+    if (!this.isContextual(context)) {
+      this.context = undefined;
+      return;
+    }
+
+    this.updateContextStyle();
+  }
+
+  protected abstract updateContextStyle();
 
   protected getContextFreeName() {
     if (this.to) {

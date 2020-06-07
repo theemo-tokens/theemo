@@ -1,7 +1,8 @@
 .stats-badge {
-  width: 43vw;
+  width: 43%;
   display: flex;
   flex-direction: column;
+  padding-top: 15px;
 }
 
 .stats-badge .value {
@@ -14,4 +15,8 @@
   margin: 0 auto;
   margin-top: 8px;
   color: var(--black3);
+}
+
+#stats .section-title {
+  transform: rotate(-90deg) translate(-26px);
 }

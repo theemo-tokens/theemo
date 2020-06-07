@@ -20,6 +20,14 @@ export default class ContextManager {
     return this.settings.get('contexts');
   }
 
+  nameBelongsToContext(name: string, context: string) {
+    return this.getContextFromName(name) === context;
+  }
+
+  nameBelongsToActiveContext(name: string) {
+    return this.nameBelongsToContext(name, this.context);
+  }
+
   isContextualName(name: string) {
     return this.getContextFromName(name) !== undefined;
   }

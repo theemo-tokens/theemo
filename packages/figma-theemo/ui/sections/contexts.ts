@@ -39,9 +39,17 @@ export default class ContextsSection extends Section {
         this.messenger.send('remove-context', ctx);
       }, false);
 
-      node.addEventListener('click', () => {
+      node.addEventListener('click', (e) => {
+        for (const item of list.querySelectorAll('.active')) {
+          item.classList.remove('active');
+        }
+        (e.target as HTMLElement).classList.add('active');
         this.messenger.send('select-context', ctx);
       }, false);
+
+      if (ctx === this.settings.get('context')) {
+        node.querySelector('.name').classList.add('active');
+      }
 
       list.appendChild(node);
     }

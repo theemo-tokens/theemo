@@ -124,7 +124,7 @@ export default class NodeHandler {
     const adapter = this.adapters.get(style);
     if (adapter) {
       adapter.createReference(from, name);
-      adapter.createContextFree();
+      adapter.applyForContext(this.container.contexts.context);
       adapter.save();
       adapter.read();
     }
@@ -164,22 +164,18 @@ export default class NodeHandler {
     this.container.references.deleteNode(this.node);
   }
 
+  applyForContext(context: string) {
+    for (const adapter of this.adapters.values()) {
+      if (adapter.isContextual(context)) {
+        adapter.applyForContext(context);
+      }
+    }
+  }
+
   updateStyles() {
     for (const adapter of this.adapters.values()) {
       adapter.updateStyle();
-    }
-  }
-
-  createContextFree() {
-    for (const adapter of this.adapters.values()) {
-      adapter.createContextFree();
-    }
-  }
-
-  updateStylesAndContext() {
-    for (const adapter of this.adapters.values()) {
-      adapter.updateStyle();
-      adapter.createContextFree();
+      adapter.applyForContext(this.container.contexts.context);
     }
   }
 }

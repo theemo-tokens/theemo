@@ -7,10 +7,10 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
   type: StyleTypes.Fill = StyleTypes.Fill;
   collection: 'paint' = 'paint';
 
-  protected local: PaintStyle;
-  protected from: PaintStyle;
-  protected to: PaintStyle;
-  private contextFree?: PaintStyle;
+  local?: PaintStyle;
+  from?: PaintStyle;
+  to?: PaintStyle;
+  context?: PaintStyle;
 
   getPool() {
     return figma.getLocalPaintStyles();
@@ -18,15 +18,16 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
 
   // --- UI commands
 
-  linkOrigin(name) {
+  linkOrigin(name: string) {
     const style = figma.getLocalPaintStyles().find(style => style.name === name);
     if (style) {
       this.node.fillStyleId = style.id;
+      this.local = style;
     }
   }
 
-  migrateOrigin(target) {
-    this.from = figma.getStyleById(target) as PaintStyle;
+  migrateOrigin(targetId: string) {
+    this.from = figma.getStyleById(targetId) as PaintStyle;
     copyPaintStyle(this.from, this.to);
     this.applyTransforms();
     this.node.fillStyleId = this.to.id;
@@ -34,20 +35,25 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
 
   unlinkOrigin() {
     this.node.fillStyleId = '';
+    this.local = undefined;
   }
 
-  createReference(from, name) {
-    const origin = figma.getStyleById(from) as PaintStyle;
+  createReference(fromId: string, name: string) {
+    const origin = figma.getStyleById(fromId) as PaintStyle;
     const to = createOrFindStyle(name, 'paint') as PaintStyle;
     copyPaintStyle(origin, to);
     this.applyTransforms();
+    
+    this.node.fillStyleId = to.id;
+    this.local = to;
+
     this.from = origin;
     this.to = to;
-    this.node.fillStyleId = to.id;
   }
 
   unlinkReference() {
     this.node.fillStyleId = this.from.id;
+    this.local = this.from;
     this.from = undefined;
     this.to = undefined;
   }
@@ -67,17 +73,6 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     this.applyTransforms();
   }
 
-  createContextFree() {
-    if (!this.isContextual()) {
-      return;
-    }
-
-    const contextFree = this.getContextFreeStyle();
-    if (contextFree) {
-      copyPaintStyle(this.to, contextFree);
-    }
-  }
-
   // --- helper
 
   private applyTransforms() {
@@ -86,11 +81,19 @@ export class FillStyleAdapter extends BaseStyleAdapter implements StyleAdapter {
     }
   }
 
-  private getContextFreeStyle() {
-    if (!this.contextFree && this.to) {
-      this.contextFree = createOrFindStyle(this.getContextFreeName(), this.collection) as PaintStyle;
+  private createOrFindContextStyle() {
+    if (!this.context && this.to) {
+      this.context = createOrFindStyle(this.getContextFreeName(), this.collection) as PaintStyle;
     }
 
-    return this.contextFree;
+    return this.context;
+  }
+
+  protected updateContextStyle() {
+    const contextFree = this.createOrFindContextStyle();
+    if (contextFree) {
+      contextFree.name = this.getContextFreeName();
+      copyPaintStyle(this.to, contextFree);
+    }
   }
 }
