@@ -1,6 +1,6 @@
 {
   "name": "figma-theemo",
-  "version": "9",
+  "version": "10",
   "description": "",
   "scripts": {
     "test": "jest",
