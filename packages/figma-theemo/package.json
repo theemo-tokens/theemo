@@ -27,7 +27,7 @@
     "@figma/plugin-typings": "^1.15.0",
     "@types/jest": "^25.2.3",
     "esbuild-jest": "^0.1.1",
-    "figma-api-stub": "^0.0.41",
+    "figma-api-stub": "^0.0.42",
     "jest": "^26.0.1",
     "ts-jest": "^26.1.0"
   }
