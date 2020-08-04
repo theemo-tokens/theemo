@@ -42,17 +42,22 @@ export default class TheemoPluginReferencer implements Referencer {
 
   async setup() {
     if (!this.references) {
-      // read references from jsonbin.io
-      const response = await fetch(
-        `https://api.jsonbin.io/b/${this.options.jsonbinFile}`,
-        {
-          headers: {
-            'secret-key': this.options.jsonbinSecret
-          }
-        }
-      );
-      this.references = await response.json();
+      this.references = await this.load();
+      console.log(this.references);
     }
+  }
+
+  private async load() {
+    // read references from jsonbin.io
+    const response = await fetch(
+      `https://api.jsonbin.io/b/${this.options.jsonbinFile}`,
+      {
+        headers: {
+          'secret-key': this.options.jsonbinSecret
+        }
+      }
+    );
+    return response.json();
   }
 
   find(name: string, type: string): string | undefined {

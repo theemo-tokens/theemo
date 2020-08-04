@@ -1,8 +1,7 @@
 {
   "include": [
-    "src/**/*",
-    "types",
-    "test"
+    "src",
+    "types"
   ],
   "compilerOptions": {
     "target": "esnext",
@@ -10,14 +9,14 @@
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,
-    "rootDir": "./",
+    "rootDir": "./src",
+    "alwaysStrict": true,
     "strict": true,
-    "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
+    "noImplicitAny": true,
     "noImplicitThis": true,
-    "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -27,12 +26,6 @@
     "baseUrl": "./",
     "downlevelIteration": true,
     "paths": {
-      "theemo": [
-        "src/"
-      ],
-      "theemo/*": [
-        "src/*"
-      ],
       "*": [
         "types/*",
         "node_modules/*"

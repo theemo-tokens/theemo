@@ -16,9 +16,12 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
+    "esbuild": "yarn clean && node scripts/build.js",
+    "esbuild:esm": "esbuild --target=esnext --outfile=dist/theemo.esm.js --platform=node --bundle --format=esm src/index.ts",
+    "esbuild:cjs": "esbuild --target=esnext --outfile=dist/index.js --platform=node --bundle --format=cjs src/index.ts",
     "build": "yarn clean && tsdx build --target node",
     "start": "tsdx watch --target node",
-    "_test": "tsdx test",
+    "test": "jest",
     "lint:js": "eslint --ext ts,js src",
     "lint:types": "tsc --noEmit",
     "lint": "yarn lint:js && yarn lint:types",
@@ -43,8 +46,11 @@
     "@microsoft/api-extractor": "^7.7.11",
     "@types/jest": "^24.0.25",
     "@types/node-fetch": "^2.5.4",
+    "esbuild": "^0.6.13",
+    "esbuild-jest": "^0.2.0",
     "eslint": "6.8.0",
-    "tsdx": "^0.12.3",
+    "jest": "^26.2.2",
+    "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   }

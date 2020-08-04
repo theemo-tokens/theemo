@@ -1,4 +1,4 @@
-import Token from 'theemo/token';
+import Token from '../../token';
 
 export default interface WriterConfig {
   formats: {

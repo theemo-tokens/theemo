@@ -15,17 +15,21 @@ export default class FigmaReader implements ReaderAdapter {
   }
 
   async read() {
-    // read figma
-    const figmaClient = new FigmaClient({
-      personalAccessToken: this.config.figmaSecret
-    });
-
-    const file = await figmaClient.getFile(this.config.figmaFile);
+    const file = await this.load();
 
     // create referencer
     await this.referencer.setup();
 
     const parser = new FigmaParser(file, this.referencer, this.config);
     return parser.parse();
+  }
+
+  private async load() {
+    // read figma
+    const figmaClient = new FigmaClient({
+      personalAccessToken: this.config.figmaSecret
+    });
+
+    return figmaClient.getFile(this.config.figmaFile);
   }
 }
