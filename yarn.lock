@@ -2912,22 +2912,22 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
-esbuild-jest@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/esbuild-jest/-/esbuild-jest-0.2.0.tgz#79dbab44bbd8438cdcb028a12a81d90381e10847"
-  integrity sha512-paqdNtO6G259FXRaiRzkIVwdO6Xo/ExNaCtRfTEA/19CNFD22EB5XMBSw69YdkCWR38B2vQp4euf8VoEo+MYbQ==
+esbuild-jest@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/esbuild-jest/-/esbuild-jest-0.2.1.tgz#da16f3965d62a0ec46eae60bdfda41d6c07e1f64"
+  integrity sha512-IEDK8O5IQAdrX6J6Sp4BoP3cc/1w0hfND99041//MNcTUknrLZc98GNmCGUsnzTQiLPWiTUiHHhH15zcP/EU9A==
   dependencies:
-    esbuild "^0.5.24"
-
-esbuild@^0.5.24:
-  version "0.5.26"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.5.26.tgz#0868e8f3e0938c6cb9a8c93e74f85900eff1a071"
-  integrity sha512-OopLmIbQNOWBWMBoOtHjDEaIiTI2okEpRkbiKccfatnXJtsGazwWhR0dmvY8ynjLx/BOPS9mQ6QFl7J1BQCcaQ==
+    esbuild "^0.6.14"
 
 esbuild@^0.6.13:
   version "0.6.13"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.6.13.tgz#eb7641715efcdc16bdc5c6f5b1671cb5dc61c8ce"
   integrity sha512-eTaeqZCna+g9cTqhdT/qn1n+ef8FinkjTHTEexn8mbCRxxqGlc1GfgiURXt74OAwHwH6IU2j/bX9NCyFBsi5KQ==
+
+esbuild@^0.6.14:
+  version "0.6.16"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.6.16.tgz#a5363761dd17283e090dae398f5ff4908cad789d"
+  integrity sha512-Jm4aJYAk4uBP2RssDe/rvYCrpGkfOJ5tPBZUF6da62pUtyzk8/RVwXZB4q8dxjYLKZNmY4lYJRpWY+wT3kme1w==
 
 escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
