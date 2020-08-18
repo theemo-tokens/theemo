@@ -4,7 +4,7 @@ import {
   ReferencerPluginConfig
 } from '../config';
 import NullReferencer from './null-referencer';
-import TheemoPluginReferencer from './plugin/theemo';
+import TheemoPluginReferencer from './theemo-plugin';
 import Referencer from './referencer';
 
 export default class ReferencerFactory {

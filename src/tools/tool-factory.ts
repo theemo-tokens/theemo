@@ -1,10 +1,33 @@
-import Tool, { Tools } from './tool';
+import ToolConfig from './config';
+import Figma from './figma';
 import StyleDictionary from './style-dictionary';
+import { BuilderTool, ReaderTool, Tools, WriterTool } from './tool';
 import UnknownTool from './unknown-tool';
-import TheemoConfig from '../config';
 
 export default class ToolFactory {
-  static create(tool: Tools, config: TheemoConfig): Tool {
+  static createReader(tool: Tools, config: ToolConfig): ReaderTool {
+    switch (tool) {
+      case Tools.Figma:
+        return new Figma(config);
+
+      case Tools.Unknown:
+      default:
+        return new UnknownTool();
+    }
+  }
+
+  static createWriter(tool: Tools, config: ToolConfig): WriterTool {
+    switch (tool) {
+      case Tools.StyleDictionary:
+        return new StyleDictionary(config);
+
+      case Tools.Unknown:
+      default:
+        return new UnknownTool();
+    }
+  }
+
+  static createBuilder(tool: Tools, config: ToolConfig): BuilderTool {
     switch (tool) {
       case Tools.StyleDictionary:
         return new StyleDictionary(config);

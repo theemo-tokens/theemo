@@ -28,9 +28,7 @@ export default class Lexer {
       this.classifyToken.bind(this)
     );
 
-    return this.classifiedTokens
-      .filter(this.filterToken.bind(this))
-      .map(this.resolveValueFromReference.bind(this));
+    return this.classifiedTokens.filter(this.filterToken.bind(this));
   }
 
   private normalizeToken(token: Token): Token {
@@ -58,29 +56,6 @@ export default class Lexer {
         classified: this.classifiedTokens
       }) ?? true
     );
-  }
-
-  private resolveValueFromReference(token: Token): Token {
-    const referenceToken = { ...token };
-    if (referenceToken.reference) {
-      const reference = this.findReference(token);
-
-      if (reference) {
-        referenceToken.value = reference.value;
-        referenceToken.color = reference.color;
-      }
-    }
-
-    return referenceToken;
-  }
-
-  private findReference(token: Token): Token | undefined {
-    let reference = this.rawTokens.find(t => t.name === token.reference);
-    if (reference?.reference) {
-      reference = this.findReference(reference);
-    }
-
-    return reference;
   }
 
   private findGroups(tokens: TokenCollection) {

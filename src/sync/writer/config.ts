@@ -1,23 +1,8 @@
-import Token from '../../token';
+import { StyleDictionaryWriterConfig } from '../../tools/style-dictionary/config';
+import { Tools } from '../../tools/tool';
 
-export default interface WriterConfig {
-  formats: {
-    color: ColorFormat;
-    colorAlpha: ColorAlphaFormat;
-  };
+type WriterConfig = StyleDictionaryWriterConfig & {
+  tool: Tools;
+};
 
-  fileForToken: (token: Token) => string;
-  pathForToken: (token: Token) => string[];
-  folderForGroup?: (group: string) => string;
-}
-
-export enum ColorFormat {
-  Rgb = 'rgb',
-  Hex = 'hex',
-  Hsl = 'hsl'
-}
-
-export enum ColorAlphaFormat {
-  Rgb = 'rgb',
-  Hsl = 'hsl'
-}
+export default WriterConfig;

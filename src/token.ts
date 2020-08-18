@@ -38,28 +38,10 @@ export enum TokenType {
   Component = 'component'
 }
 
-export interface TokenColor {
-  r: number;
-  g: number;
-  b: number;
-  a: number;
-  visible: boolean;
-}
-
-export interface TokenShadow {
-  inner: boolean;
-  x: number;
-  y: number;
-  radius: number;
-  color: TokenColor;
-}
-
 /**
  * DTO to describe a Design Token
- *
- * The value is represented by either `value`, `color` OR `reference`
  */
-export default interface Token {
+export interface BaseToken {
   // Generic Properties
 
   /**
@@ -123,37 +105,15 @@ export default interface Token {
   //  */
   // contrast: string;
 
-  // Value Properties
-
   /**
    * The name of the reference this token points to
    */
   reference?: string;
+}
 
+export default interface Token extends BaseToken {
   /**
-   * The tokens literal value
+   * The tokens value
    */
   value?: string;
-
-  /**
-   * The color is described in its essential parts
-   *
-   * @remarks
-   *
-   * - `r` - red
-   *
-   * - `g` - green
-   *
-   * - `b` - blue
-   *
-   * - `a` - alpha
-   *
-   * - `visible` - if completely transparent
-   */
-  color?: TokenColor;
-
-  /**
-   * Shadows values
-   */
-  shadows?: TokenShadow[];
 }

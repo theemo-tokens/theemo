@@ -1,12 +1,9 @@
-import FigmaReaderConfig from './figma/config';
+import { FigmaReaderConfig } from '../../tools/figma/config';
+import { Tools } from '../../tools/tool';
 
 // Reader Config
 type ReaderConfig = FigmaReaderConfig & {
-  source: ReaderSource;
+  tool: Tools;
 };
 
 export default ReaderConfig;
-
-export enum ReaderSource {
-  Figma = 'figma'
-}

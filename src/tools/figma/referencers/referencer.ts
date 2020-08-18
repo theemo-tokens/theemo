@@ -1,3 +1,6 @@
+import Token from '../../../token';
+import { FigmaToken } from '../token';
+
 export default interface Referencer {
   setup(): Promise<void>;
 
@@ -8,4 +11,8 @@ export default interface Referencer {
    * @param type
    */
   find(name: string, type: string): string | undefined;
+
+  findData(name: string, type: string): unknown;
+
+  compileToken(token: FigmaToken): Token;
 }

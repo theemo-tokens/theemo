@@ -1,9 +1,10 @@
-import { Node, Style, StylesMap, EffectType, Paint } from 'figma-api';
+import { EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
-import Token, { TokenType, TokenShadow, TokenColor } from '../../../token';
-import TokenCollection from '../../../token-collection';
-import FigmaReaderConfig from './config';
+import { TokenType } from '../../token';
+import TokenCollection from '../../token-collection';
+import { ColorNode, FigmaReaderConfig, ShadowNode } from './config';
 import Referencer from './referencers/referencer';
+import { FigmaToken } from './token';
 
 type CompositeNode = Node & {
   children: Node[];
@@ -40,7 +41,7 @@ export default class FigmaParser {
   private referencer: Referencer;
   private config: FigmaReaderConfig;
 
-  private tokens!: TokenCollection<Token>;
+  private tokens!: TokenCollection<FigmaToken>;
   private processedStyles: string[] = [];
 
   constructor(
@@ -103,6 +104,7 @@ export default class FigmaParser {
           const token = this.createToken(style.name);
           token.description = style.description;
           token.category = this.getCategoryFromType(type);
+          token.data = this.referencer.findData(style.name, type.toLowerCase());
           const reference = this.referencer.find(
             style.name,
             type.toLowerCase()
@@ -129,7 +131,7 @@ export default class FigmaParser {
 
             // effect - shadows
             else if (key === 'effects' && node[key]) {
-              const shadows: TokenShadow[] = [];
+              const shadows: ShadowNode[] = [];
 
               // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
               // @ts-ignore
@@ -165,7 +167,7 @@ export default class FigmaParser {
     }
   }
 
-  private getColorFromPaint(paint: Paint[]): TokenColor {
+  private getColorFromPaint(paint: Paint[]): ColorNode {
     // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
     // @ts-ignore
     return {
@@ -178,7 +180,7 @@ export default class FigmaParser {
     return this.file.styles[id] as Style & { description: string };
   }
 
-  private createToken(name: string): Token {
+  private createToken(name: string): FigmaToken {
     return {
       name,
       type: TokenType.Unknown

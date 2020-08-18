@@ -1,4 +1,6 @@
 import Referencer from './referencer';
+import Token from '../../../token';
+import { FigmaToken } from '../token';
 
 export default class NullReferencer implements Referencer {
   async setup() {
@@ -7,5 +9,13 @@ export default class NullReferencer implements Referencer {
 
   find(_name: string, _type: string): string | undefined {
     return undefined;
+  }
+
+  findData(_name: string, _type: string): string | undefined {
+    return undefined;
+  }
+
+  compileToken(token: FigmaToken) {
+    return token as Token;
   }
 }

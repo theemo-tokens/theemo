@@ -1,10 +1,13 @@
-import Tool from '../tools/tool';
+import BuildConfig from './config';
+import ToolFactory from '../tools/tool-factory';
+import ToolConfig from '../tools/config';
+import { BuilderTool } from '../tools/tool';
 
 export default class BuildCommand {
-  private tool: Tool;
+  private tool: BuilderTool;
 
-  constructor(tool: Tool) {
-    this.tool = tool;
+  constructor(config: BuildConfig) {
+    this.tool = ToolFactory.createBuilder(config.tool, config as ToolConfig);
   }
 
   execute() {

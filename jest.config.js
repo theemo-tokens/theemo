@@ -3,5 +3,5 @@ module.exports = {
   transform: {
     "^.+\\.ts$": 'esbuild-jest'
   },
-  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/types/'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/', '/types/']
 }

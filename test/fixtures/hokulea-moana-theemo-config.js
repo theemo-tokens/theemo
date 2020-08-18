@@ -1,7 +1,7 @@
 export const HokuleaConfig = {
   sync: {
     reader: {
-      source: 'figma',
+      tool: 'figma',
       figmaFile: process.env.FIGMA_FILE,
       figmaSecret: process.env.FIGMA_SECRET,
 
@@ -11,7 +11,11 @@ export const HokuleaConfig = {
         plugin: 'theemo',
         pluginOptions: {
           jsonbinFile: process.env.JSONBIN_FILE,
-          jsonbinSecret: process.env.JSONBIN_SECRET
+          jsonbinSecret: process.env.JSONBIN_SECRET,
+          formats: {
+            color: 'hex',
+            colorAlpha: 'rgb'
+          }
         }
       },
 
@@ -56,10 +60,7 @@ export const HokuleaConfig = {
 
     // writer
     writer: {
-      formats: {
-        color: 'hex',
-        colorAlpha: 'rgb',
-      },
+      tool: 'style-dictionary',
 
       fileForToken(token) {
         const slashIndex = token.name.indexOf('/')
