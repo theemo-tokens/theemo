@@ -1,14 +1,15 @@
-import TheemoConfig from '../../config';
 import TokenCollection from '../../token-collection';
-import Tool from '../tool';
+import ToolConfig from '../config';
+import { BuilderTool, WriterTool } from '../tool';
 import StyleDictionaryBuilder from './builder';
+import { StyleDictionaryConfig } from './config';
 import StyleDictionaryWriter from './writer';
 
-export default class StyleDictionary implements Tool {
-  private config: TheemoConfig;
+export default class StyleDictionary implements WriterTool, BuilderTool {
+  private config: StyleDictionaryConfig;
 
-  constructor(config: TheemoConfig) {
-    this.config = config;
+  constructor(config: ToolConfig) {
+    this.config = config as StyleDictionaryConfig;
   }
 
   build() {
@@ -17,7 +18,7 @@ export default class StyleDictionary implements Tool {
   }
 
   write(groupName: string, tokens: TokenCollection) {
-    const writer = new StyleDictionaryWriter(this.config.sync.writer);
+    const writer = new StyleDictionaryWriter(this.config.writer);
     writer.write(groupName, tokens);
   }
 }

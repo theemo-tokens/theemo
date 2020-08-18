@@ -1,17 +1,19 @@
-import ReaderAdapter from './adapter';
-import ReaderAdapterFactory from './adapter-factory';
 import ReaderConfig from './config';
+import { ReaderTool } from '../../tools/tool';
+import ToolFactory from '../../tools/tool-factory';
 
 export default class Reader {
   private config: ReaderConfig;
-  private adapter: ReaderAdapter;
+  private tool: ReaderTool;
 
   constructor(config: ReaderConfig) {
     this.config = config;
-    this.adapter = ReaderAdapterFactory.create(this.config);
+    this.tool = ToolFactory.createReader(this.config.tool, {
+      reader: this.config
+    });
   }
 
   async read() {
-    return this.adapter.read();
+    return this.tool.read();
   }
 }

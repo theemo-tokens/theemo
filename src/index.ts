@@ -6,6 +6,8 @@
 
 import { program } from 'commander';
 import dotenv from 'dotenv';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
 import package_ from '../package.json';
 import Theemo from './theemo';
 

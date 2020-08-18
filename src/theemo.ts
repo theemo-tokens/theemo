@@ -4,9 +4,9 @@ import GenerateCommand from './generate';
 import GenerateConfig from './generate/config';
 import SyncCommand from './sync';
 import SyncConfig from './sync/config';
-import Tool, { Tools } from './tools/tool';
-import ToolFactory from './tools/tool-factory';
+import { Tools } from './tools/tool';
 import { requireFile } from './utils';
+import BuildConfig from './build/config';
 
 interface Package {
   name: string;
@@ -21,14 +21,10 @@ interface Package {
 export default class Theemo {
   private config: TheemoConfig;
   private package: Package;
-  private tool: Tool;
 
   constructor() {
     this.config = this.loadConfig();
     this.package = this.loadPackage();
-
-    const tool = this.detectTool();
-    this.tool = ToolFactory.create(tool, this.config);
   }
 
   private loadConfig(): TheemoConfig {
@@ -39,7 +35,7 @@ export default class Theemo {
     return requireFile('package.json');
   }
 
-  private detectTool(): Tools {
+  private detectBuildTool(): Tools {
     const deps = {
       ...this.package.dependencies,
       ...this.package.devDependencies
@@ -54,13 +50,28 @@ export default class Theemo {
 
   async sync(config?: SyncConfig) {
     const usedConfig = config ?? this.config.sync;
-    const command = new SyncCommand(this.tool, usedConfig);
-    command.execute();
+    if (usedConfig) {
+      const command = new SyncCommand(usedConfig);
+      command.execute();
+    }
   }
 
-  async build() {
-    const command = new BuildCommand(this.tool);
-    command.execute();
+  async build(config?: BuildConfig) {
+    let usedConfig = config ?? this.config.build;
+
+    if (!usedConfig) {
+      const tool = this.detectBuildTool();
+      if (tool !== Tools.Unknown) {
+        usedConfig = {
+          tool
+        };
+      }
+    }
+
+    if (usedConfig) {
+      const command = new BuildCommand(usedConfig);
+      command.execute();
+    }
   }
 
   generate(config?: GenerateConfig) {

@@ -1,8 +1,18 @@
-import Tool from './tool';
 import TokenCollection from '../token-collection';
+import { ReaderTool, WriterTool, BuilderTool } from './tool';
 
-export default class UnknownTool implements Tool {
-  build() {}
+export default class UnknownTool
+  implements ReaderTool, WriterTool, BuilderTool {
+  async read() {
+    const tokens = await new TokenCollection();
+    return tokens;
+  }
 
-  write(_groupName: string, _tokens: TokenCollection) {}
+  build() {
+    // void implementation
+  }
+
+  write(_name: string, _tokens: TokenCollection) {
+    // void implementation
+  }
 }

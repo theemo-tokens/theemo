@@ -1,13 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-import cc from 'color-converter';
 import fs from 'fs';
 import path from 'path';
-import WriterConfig, {
-  ColorFormat,
-  ColorAlphaFormat
-} from '../../sync/writer/config';
-import Token, { TokenColor } from '../../token';
+import WriterConfig from '../../sync/writer/config';
+import Token from '../../token';
 import TokenCollection from '../../token-collection';
 import { set } from '../../utils';
 
@@ -67,70 +61,16 @@ export default class StyleDictionaryWriter {
     return this.config.pathForToken(token);
   }
 
-  private getValue(token: Token): string {
-    if (token.color) {
-      return this.getColor(token.color);
+  private getValue(token: Token) {
+    if (token.expression) {
+      return token.expression;
     }
 
-    if (token.shadows) {
-      const shadows = [];
-      for (const shadow of token.shadows) {
-        shadows.push(
-          `${shadow.inner ? 'inset ' : ''}${this.getLength(
-            shadow.x
-          )} ${this.getLength(shadow.y)} ${this.getLength(
-            shadow.radius
-          )} ${this.getColor(shadow.color)}`
-        );
-      }
-
-      return shadows.join(', ');
+    if (token.value) {
+      return `'${token.value}'`;
     }
 
-    return token.value ?? '';
-  }
-
-  private getLength(value: number): string {
-    return value === 0 ? '0' : `${value}px`;
-  }
-
-  private getColor(color: TokenColor): string {
-    if (color.visible === false) {
-      return 'transparent';
-    }
-
-    const c = cc.fromRGBA(color.r * 255, color.g * 255, color.b * 255, color.a);
-
-    if (c.alpha === 1) {
-      switch (this.config.formats.color) {
-        case ColorFormat.Rgb: {
-          const { r, g, b } = c.toRGB();
-          return `rgb(${r}, ${g}, ${b})`;
-        }
-
-        case ColorFormat.Hsl: {
-          const { h, s, l } = c.toHSL();
-          return `hsl(${h}, ${s}, ${l})`;
-        }
-
-        case ColorFormat.Hex:
-        default:
-          return c.toHex();
-      }
-    }
-
-    switch (this.config.formats.colorAlpha) {
-      case ColorAlphaFormat.Hsl: {
-        const { h, s, l, a } = c.toHSLA();
-        return `hsla(${h}, ${s}, ${l}, ${a})`;
-      }
-
-      case ColorAlphaFormat.Rgb:
-      default: {
-        const { r, g, b, a } = c.toRGBA();
-        return `rgba(${r}, ${g}, ${b}, ${a})`;
-      }
-    }
+    return '';
   }
 
   private writeFile(file: string, data: object) {

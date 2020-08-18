@@ -1,16 +1,13 @@
 import TokenCollection from '../token-collection';
-import Tool from '../tools/tool';
 import SyncConfig from './config';
 import Lexer from './lexer';
 import Reader from './reader';
 import Writer from './writer';
 
 export default class SyncCommand {
-  private tool: Tool;
   private config: SyncConfig;
 
-  constructor(tool: Tool, config: SyncConfig) {
-    this.tool = tool;
+  constructor(config: SyncConfig) {
     this.config = config;
   }
 
@@ -31,7 +28,7 @@ export default class SyncCommand {
   }
 
   private write(groups: Map<string, TokenCollection>) {
-    const writer = new Writer(this.tool);
+    const writer = new Writer(this.config.writer);
 
     for (const [groupName, tokens] of groups.entries()) {
       writer.write(groupName, tokens);
