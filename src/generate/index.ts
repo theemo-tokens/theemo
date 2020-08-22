@@ -1,7 +1,8 @@
-import GenerateConfig, { SchemeConfig } from './config';
 import fs from 'fs';
 import path from 'path';
+
 import { requireFile } from '../utils';
+import GenerateConfig, { SchemeConfig } from './config';
 
 export default class GenerateCommand {
   private config: GenerateConfig;

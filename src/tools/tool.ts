@@ -1,5 +1,11 @@
 import TokenCollection from '../token-collection';
 
+/**
+ * An list of known tools
+ *
+ * Each tool can be a `ReaderTool`, `WriterTool` or `BuilderTool` (multiple of
+ * that are allowed) and can be further parametrized through respective configs
+ */
 export enum Tools {
   Unknown = 'unknown',
   Figma = 'figma',

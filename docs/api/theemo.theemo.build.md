@@ -9,11 +9,20 @@ hide_title: true
 
 ## Theemo.build() method
 
+Executes the build command
+
 <b>Signature:</b>
 
 ```typescript
-build(): Promise<void>;
+build(config?: BuildConfig): Promise<void>;
 ```
+
+## Parameters
+
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  config | <code>BuildConfig</code> | the config for build (if it cannot be auto-detected) |
+
 <b>Returns:</b>
 
 `Promise<void>`

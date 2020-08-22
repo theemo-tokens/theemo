@@ -9,6 +9,8 @@ hide_title: true
 
 ## Theemo.generate() method
 
+Executes the generate command
+
 <b>Signature:</b>
 
 ```typescript
@@ -19,7 +21,7 @@ generate(config?: GenerateConfig): void;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | <code>GenerateConfig</code> |  |
+|  config | <code>GenerateConfig</code> | the config for generation |
 
 <b>Returns:</b>
 

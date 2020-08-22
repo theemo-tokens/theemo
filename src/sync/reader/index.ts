@@ -1,6 +1,6 @@
-import ReaderConfig from './config';
 import { ReaderTool } from '../../tools/tool';
 import ToolFactory from '../../tools/tool-factory';
+import ReaderConfig from './config';
 
 export default class Reader {
   private config: ReaderConfig;

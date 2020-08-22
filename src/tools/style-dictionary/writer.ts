@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+
 import WriterConfig from '../../sync/writer/config';
 import Token from '../../token';
 import TokenCollection from '../../token-collection';
@@ -12,7 +13,7 @@ export default class StyleDictionaryWriter {
     this.config = config;
   }
 
-  write(groupName: string, tokens: TokenCollection) {
+  write(groupName: string, tokens: TokenCollection): void {
     const files = this.getFiles(tokens);
     this.writeGroup(groupName, files);
   }
@@ -62,18 +63,10 @@ export default class StyleDictionaryWriter {
   }
 
   private getValue(token: Token) {
-    if (token.expression) {
-      return token.expression;
-    }
-
-    if (token.value) {
-      return `'${token.value}'`;
-    }
-
-    return '';
+    return `${token.value}`;
   }
 
-  private writeFile(file: string, data: object) {
+  private writeFile(file: string, data: Record<string, unknown>) {
     const target = `${path.join(
       this.getDirectory(),
       file.replace(/\./g, '/')

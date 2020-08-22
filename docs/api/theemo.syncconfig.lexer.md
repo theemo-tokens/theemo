@@ -9,6 +9,8 @@ hide_title: true
 
 ## SyncConfig.lexer property
 
+Config to \_make sense\_ of your tokens, as you need them in your domain
+
 <b>Signature:</b>
 
 ```typescript

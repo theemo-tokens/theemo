@@ -9,6 +9,8 @@ hide_title: true
 
 ## LexerConfig.filterToken property
 
+Filter callback to only keep the tokens you need.
+
 <b>Signature:</b>
 
 ```typescript
@@ -17,4 +19,15 @@ filterToken?: (token: Token, tokens: {
         normalized: TokenCollection;
         classified: TokenCollection;
     }) => boolean;
+```
+
+## Example
+
+You may want to keep only purpose tokens, use this:
+
+```js
+filterToken(token) {
+  return token.type === 'purpose';
+}
+
 ```

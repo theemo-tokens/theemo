@@ -9,7 +9,7 @@ hide_title: true
 
 ## Token.value property
 
-The tokens literal value
+The tokens value
 
 <b>Signature:</b>
 

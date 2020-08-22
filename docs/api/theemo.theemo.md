@@ -25,6 +25,6 @@ export default class Theemo
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [build()](./theemo.theemo.build.md) |  |  |
-|  [generate(config)](./theemo.theemo.generate.md) |  |  |
-|  [sync(config)](./theemo.theemo.sync.md) |  |  |
+|  [build(config)](./theemo.theemo.build.md) |  | Executes the build command |
+|  [generate(config)](./theemo.theemo.generate.md) |  | Executes the generate command |
+|  [sync(config)](./theemo.theemo.sync.md) |  | Executes the sync command |

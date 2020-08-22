@@ -1,7 +1,7 @@
+import ToolConfig from '../config';
 import { ReaderTool } from '../tool';
 import { FigmaConfig } from './config';
 import FigmaReader from './reader';
-import ToolConfig from '../config';
 
 export default class Figma implements ReaderTool {
   private config: FigmaConfig;

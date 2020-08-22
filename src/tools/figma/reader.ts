@@ -1,9 +1,10 @@
 import { Api as FigmaClient } from 'figma-api';
+
+import TokenCollection from '../../token-collection';
+import { FigmaReaderConfig } from './config';
 import FigmaParser from './parser';
 import Referencer from './referencers/referencer';
 import ReferencerFactory from './referencers/referencer-factory';
-import { FigmaReaderConfig } from './config';
-import TokenCollection from '../../token-collection';
 import { FigmaToken } from './token';
 
 export default class FigmaReader {

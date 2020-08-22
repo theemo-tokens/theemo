@@ -1,7 +1,7 @@
-import BuildConfig from './config';
-import ToolFactory from '../tools/tool-factory';
 import ToolConfig from '../tools/config';
 import { BuilderTool } from '../tools/tool';
+import ToolFactory from '../tools/tool-factory';
+import BuildConfig from './config';
 
 export default class BuildCommand {
   private tool: BuilderTool;

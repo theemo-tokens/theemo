@@ -1,5 +1,6 @@
 import Color from 'color';
 import fetch from 'node-fetch';
+
 import Token from '../../../token';
 import { ColorConfig } from '../config';
 import { FigmaToken, getValue, colorToValue } from '../token';
@@ -40,19 +41,19 @@ interface ReferenceDoc {
   nodes: RefNode[];
 }
 
-interface Options {
+export interface FigmaTheemoPluginConfig {
   jsonbinFile: string;
   jsonbinSecret: string;
   formats: ColorConfig;
 }
 
 export default class TheemoPluginReferencer implements Referencer {
-  private options: Options;
+  private config: FigmaTheemoPluginConfig;
   private references!: ReferenceDoc;
   private computed: WeakMap<FigmaToken, Token> = new WeakMap();
 
-  constructor(options: object) {
-    this.options = options as Options;
+  constructor(config: FigmaTheemoPluginConfig) {
+    this.config = config;
   }
 
   async setup() {
@@ -64,10 +65,10 @@ export default class TheemoPluginReferencer implements Referencer {
   private async load() {
     // read references from jsonbin.io
     const response = await fetch(
-      `https://api.jsonbin.io/b/${this.options.jsonbinFile}`,
+      `https://api.jsonbin.io/b/${this.config.jsonbinFile}`,
       {
         headers: {
-          'secret-key': this.options.jsonbinSecret
+          'secret-key': this.config.jsonbinSecret
         }
       }
     );
@@ -133,7 +134,7 @@ export default class TheemoPluginReferencer implements Referencer {
     if (token.referenceToken) {
       value = this.compileToken(token.referenceToken).value as string;
     } else {
-      value = getValue(token, this.options.formats);
+      value = getValue(token, this.config.formats);
     }
 
     if (token.data && (token.data as Data).transforms) {
@@ -142,7 +143,7 @@ export default class TheemoPluginReferencer implements Referencer {
           value,
           (token.data as Data).transforms as Transforms
         ),
-        this.options.formats
+        this.config.formats
       );
     }
 

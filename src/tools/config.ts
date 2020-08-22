@@ -1,7 +1,7 @@
 import ReaderConfig from '../sync/reader/config';
 import WriterConfig from '../sync/writer/config';
 
-export default interface ToolConfig {
+export default interface Config {
   reader?: ReaderConfig;
   writer?: WriterConfig;
 }

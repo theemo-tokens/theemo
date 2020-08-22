@@ -9,6 +9,10 @@ hide_title: true
 
 ## LexerConfig.classifyToken property
 
+Describe your tokens:
+
+- What's the type? - What's the color scheme?
+
 <b>Signature:</b>
 
 ```typescript

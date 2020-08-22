@@ -1,6 +1,7 @@
+import Color from 'color';
+
 import { BaseToken } from '../../token';
 import { ColorAlphaFormat, ColorConfig, ColorFormat } from './config';
-import Color from 'color';
 
 interface TokenColor {
   r: number;

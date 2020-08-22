@@ -7,19 +7,16 @@ hide_title: true
 
 [theemo](./theemo.md) &gt; [WriterConfig](./theemo.writerconfig.md)
 
-## WriterConfig interface
+## WriterConfig type
+
+The writer config describes the way tokens are written to your disk. This is expressed through the `tool` property.
+
+See the respective tool configurations, what further properties will be used.
 
 <b>Signature:</b>
 
 ```typescript
-export default interface WriterConfig 
+declare type WriterConfig = StyleDictionaryWriterConfig & {
+    tool: Tools;
+};
 ```
-
-## Properties
-
-|  Property | Type | Description |
-|  --- | --- | --- |
-|  [fileForToken](./theemo.writerconfig.filefortoken.md) | <code>(token: Token) =&gt; string</code> |  |
-|  [folderForGroup](./theemo.writerconfig.folderforgroup.md) | <code>(group: string) =&gt; string</code> |  |
-|  [formats](./theemo.writerconfig.formats.md) | <code>{</code><br/><code>        color: ColorFormat;</code><br/><code>        colorAlpha: ColorAlphaFormat;</code><br/><code>    }</code> |  |
-|  [pathForToken](./theemo.writerconfig.pathfortoken.md) | <code>(token: Token) =&gt; string[]</code> |  |

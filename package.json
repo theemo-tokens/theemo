@@ -16,9 +16,9 @@
   ],
   "scripts": {
     "clean": "rm -rf dist",
-    "esbuild": "yarn clean && node scripts/build.js",
-    "esbuild:esm": "esbuild --target=esnext --outfile=dist/theemo.esm.js --platform=node --bundle --format=esm src/index.ts",
-    "esbuild:cjs": "esbuild --target=esnext --outfile=dist/index.js --platform=node --bundle --format=cjs src/index.ts",
+    "_dts": "tsc -d --declarationDir dist/types --outDir tmp/ src/*; rm -rf tmp/",
+    "_esbuild": "yarn clean && node scripts/build.js",
+    "_rollup": "rollup -c",
     "build": "yarn clean && tsdx build --target node",
     "start": "tsdx watch --target node",
     "test": "jest --clearCache && jest",
@@ -26,34 +26,38 @@
     "lint:types": "tsc --noEmit",
     "lint": "yarn lint:js && yarn lint:types",
     "api": "yarn build && node scripts/make-docs.js",
-    "prepublish": "yarn build"
+    "prepublishOnly": "yarn build"
   },
   "bin": {
     "theemo": "bin/theemo.js"
   },
   "dependencies": {
     "color": "^3.1.2",
-    "color-converter": "1.4.1",
-    "commander": "^5.0.0",
+    "commander": "^6.0.0",
     "dotenv": "^8.2.0",
     "esm": "3.2.25",
     "figma-api": "^1.5.5",
     "node-fetch": "^2.6.0",
-    "style-dictionary": "^2.8.3"
+    "style-dictionary": "^2.10.1"
   },
   "devDependencies": {
-    "@clark/eslint-config-typescript": "^1.23.0",
-    "@microsoft/api-documenter": "^7.7.15",
-    "@microsoft/api-extractor": "^7.7.11",
+    "@clark/eslint-config-node-typescript": "^1.28.1",
+    "@microsoft/api-documenter": "^7.8.33",
+    "@microsoft/api-extractor": "^7.9.9",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "@types/color": "^3.0.1",
-    "@types/jest": "^24.0.25",
-    "@types/node-fetch": "^2.5.4",
-    "esbuild": "^0.6.24",
+    "@types/jest": "^26.0.10",
+    "@types/node-fetch": "^2.5.7",
+    "@typescript-eslint/eslint-plugin": "^3.9.1",
+    "esbuild": "^0.6.27",
     "esbuild-jest": "^0.2.2",
-    "eslint": "6.8.0",
-    "jest": "^26.2.2",
+    "eslint": "7.7.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.4.1",
+    "rollup": "2.26.5",
+    "rollup-plugin-esbuild": "^2.4.2",
     "tsdx": "^0.13.2",
-    "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7"
   }
 }
