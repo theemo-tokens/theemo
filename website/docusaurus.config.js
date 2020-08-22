@@ -18,6 +18,8 @@ module.exports = {
 
   favicon: 'img/favicon.svg',
 
+  onBrokenLinks: 'warn',
+
   presets: [
     [
       '@docusaurus/preset-classic',
