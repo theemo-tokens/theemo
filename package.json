@@ -6,7 +6,10 @@
   "author": "Thomas Gossmann",
   "homepage": "https://gossi.github.io/theemo/",
   "bugs": "https://github.com/gossi/theemo/issues",
-  "repository": "gossi/theemo",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gossi/theemo.git"
+  },
   "main": "dist/index.js",
   "module": "dist/theemo.esm.js",
   "typings": "dist/index.d.ts",
