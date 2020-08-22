@@ -9,6 +9,8 @@ hide_title: true
 
 ## SyncConfig.writer property
 
+Config to write them onto the disk for your used token manager tool
+
 <b>Signature:</b>
 
 ```typescript

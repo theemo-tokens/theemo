@@ -9,6 +9,8 @@ hide_title: true
 
 ## SyncConfig.reader property
 
+Config for reading tokens from external source
+
 <b>Signature:</b>
 
 ```typescript

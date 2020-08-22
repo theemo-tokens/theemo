@@ -9,6 +9,10 @@ hide_title: true
 
 ## TheemoConfig interface
 
+The main config to control all commands for theemo:
+
+- `sync` - `build` - `generate`
+
 <b>Signature:</b>
 
 ```typescript
@@ -19,5 +23,6 @@ export default interface TheemoConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [generate](./theemo.theemoconfig.generate.md) | <code>GenerateConfig</code> |  |
-|  [sync](./theemo.theemoconfig.sync.md) | <code>SyncConfig</code> |  |
+|  [build](./theemo.theemoconfig.build.md) | <code>BuildConfig</code> | Config for the build command |
+|  [generate](./theemo.theemoconfig.generate.md) | <code>GenerateConfig</code> | Config for the generate command |
+|  [sync](./theemo.theemoconfig.sync.md) | <code>SyncConfig</code> | Config for the sync command |

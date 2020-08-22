@@ -9,6 +9,8 @@ hide_title: true
 
 ## Theemo.sync() method
 
+Executes the sync command
+
 <b>Signature:</b>
 
 ```typescript
@@ -19,7 +21,7 @@ sync(config?: SyncConfig): Promise<void>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | <code>SyncConfig</code> |  |
+|  config | <code>SyncConfig</code> | the config for sync |
 
 <b>Returns:</b>
 

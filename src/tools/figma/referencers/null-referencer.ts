@@ -1,6 +1,6 @@
-import Referencer from './referencer';
 import Token from '../../../token';
 import { FigmaToken } from '../token';
+import Referencer from './referencer';
 
 export default class NullReferencer implements Referencer {
   async setup() {

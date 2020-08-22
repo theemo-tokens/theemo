@@ -1,4 +1,5 @@
 import BuildCommand from './build';
+import BuildConfig from './build/config';
 import TheemoConfig from './config';
 import GenerateCommand from './generate';
 import GenerateConfig from './generate/config';
@@ -6,7 +7,6 @@ import SyncCommand from './sync';
 import SyncConfig from './sync/config';
 import { Tools } from './tools/tool';
 import { requireFile } from './utils';
-import BuildConfig from './build/config';
 
 interface Package {
   name: string;
@@ -48,7 +48,12 @@ export default class Theemo {
     return Tools.Unknown;
   }
 
-  async sync(config?: SyncConfig) {
+  /**
+   * Executes the sync command
+   *
+   * @param config the config for sync
+   */
+  async sync(config?: SyncConfig): Promise<void> {
     const usedConfig = config ?? this.config.sync;
     if (usedConfig) {
       const command = new SyncCommand(usedConfig);
@@ -56,7 +61,12 @@ export default class Theemo {
     }
   }
 
-  async build(config?: BuildConfig) {
+  /**
+   * Executes the build command
+   *
+   * @param config the config for build (if it cannot be auto-detected)
+   */
+  async build(config?: BuildConfig): Promise<void> {
     let usedConfig = config ?? this.config.build;
 
     if (!usedConfig) {
@@ -74,7 +84,12 @@ export default class Theemo {
     }
   }
 
-  generate(config?: GenerateConfig) {
+  /**
+   * Executes the generate command
+   *
+   * @param config the config for generation
+   */
+  generate(config?: GenerateConfig): void {
     const usedConfig = config ?? this.config.generate;
     if (usedConfig) {
       const command = new GenerateCommand(usedConfig);

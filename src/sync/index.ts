@@ -11,7 +11,7 @@ export default class SyncCommand {
     this.config = config;
   }
 
-  async execute() {
+  async execute(): Promise<void> {
     const tokens = await this.read();
     const groups = this.analyze(tokens);
     this.write(groups);

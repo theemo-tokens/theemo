@@ -9,6 +9,8 @@ hide_title: true
 
 ## TheemoConfig.generate property
 
+Config for the generate command
+
 <b>Signature:</b>
 
 ```typescript

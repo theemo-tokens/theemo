@@ -9,26 +9,16 @@ hide_title: true
 
 ## Token interface
 
-DTO to describe a Design Token
-
-The value is represented by either `value`<!-- -->, `color` OR `reference`
+The token interface as they are returned from the reader(s).
 
 <b>Signature:</b>
 
 ```typescript
-export default interface Token 
+export default interface Token extends BaseToken 
 ```
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [category](./theemo.token.category.md) | <code>string</code> | The category helps token manager tools to generate the respective value in the appropriate format. |
-|  [color](./theemo.token.color.md) | <code>TokenColor</code> | The color is described in its essential parts |
-|  [colorScheme](./theemo.token.colorscheme.md) | <code>string</code> | Indicates the color scheme, to which the token belongs |
-|  [description](./theemo.token.description.md) | <code>string</code> | The description for the token |
-|  [name](./theemo.token.name.md) | <code>string</code> | The tokens name |
-|  [reference](./theemo.token.reference.md) | <code>string</code> | The name of the reference this token points to |
-|  [shadows](./theemo.token.shadows.md) | <code>TokenShadow[]</code> | Shadows values |
-|  [type](./theemo.token.type.md) | <code>TokenType</code> | The type describes the usage level of a token |
-|  [value](./theemo.token.value.md) | <code>string</code> | The tokens literal value |
+|  [value](./theemo.token.value.md) | <code>string</code> | The tokens value |

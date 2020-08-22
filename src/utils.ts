@@ -1,5 +1,5 @@
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 
 export function requireFile(file: string) {
   const filepath = path.join(process.cwd(), file);
@@ -11,10 +11,14 @@ export function requireFile(file: string) {
   return require(filepath);
 }
 
-export function set(object: object, keyPath: string[], value: unknown) {
+export function set(
+  object: Record<string, unknown>,
+  keyPath: string[],
+  value: unknown
+) {
   const lastKeyIndex = keyPath.length - 1;
   for (let i = 0; i < lastKeyIndex; ++i) {
-    const key = keyPath[i] as keyof object;
+    const key = keyPath[i] as keyof Record<string, unknown>;
     if (!(key in object)) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
       // @ts-ignore
@@ -22,7 +26,7 @@ export function set(object: object, keyPath: string[], value: unknown) {
       object[key] = {};
     }
     // eslint-disable-next-line no-param-reassign
-    object = object[key];
+    object = object[key] as Record<string, unknown>;
   }
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore

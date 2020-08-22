@@ -30,13 +30,53 @@ module.exports = {
     'API Reference': [
       'api/theemo',
       'api/theemo.theemo',
-      'api/theemo.token',
-      'api/theemo.tokentype',
-      'api/theemo.theemoconfig',
-      'api/theemo.syncconfig',
-      'api/theemo.readerconfig',
-      'api/theemo.lexerconfig',
-      'api/theemo.writerconfig'
+      {
+        type: 'category',
+        label: 'Token',
+        items: [
+          'api/theemo.token',
+          'api/theemo.basetoken',
+          'api/theemo.tokentype',
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Tools',
+        items: [
+          'api/theemo.tools',
+          'api/theemo.readertool',
+          'api/theemo.writertool',
+          'api/theemo.buildertool'
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Config',
+        items: [
+          'api/theemo.theemoconfig',
+          'api/theemo.syncconfig',
+          'api/theemo.readerconfig',
+          'api/theemo.lexerconfig',
+          'api/theemo.writerconfig'
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Tool: Figma',
+        items: [
+          'api/theemo.figmareaderconfig',
+          'api/theemo.figmareferencerconfig',
+          'api/theemo.figmareferencerpluginconfig'
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Tool: Style Dictionary',
+        items: [
+          'api/theemo.styledictionaryconfig',
+          'api/theemo.styledictionarywriterconfig'
+        ]
+      }
     ],
   },
   frameworks: {

@@ -9,7 +9,7 @@ export const HokuleaConfig = {
       referencer: {
         type: 'figma-plugin',
         plugin: 'theemo',
-        pluginOptions: {
+        pluginConfig: {
           jsonbinFile: process.env.JSONBIN_FILE,
           jsonbinSecret: process.env.JSONBIN_SECRET,
           formats: {

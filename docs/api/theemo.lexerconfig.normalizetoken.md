@@ -9,10 +9,30 @@ hide_title: true
 
 ## LexerConfig.normalizeToken property
 
+This is to normalize tokens and remove some glibberish off of it. Comes with a default, if you don't provide one (see in the example)
+
 <b>Signature:</b>
 
 ```typescript
 normalizeToken?: (token: Token, tokens: {
         raw: TokenCollection;
     }) => Token;
+```
+
+## Example
+
+This is the default normalize method:
+
+```js
+normalizeToken(token: Token): Token {
+ const normalized = { ...token };
+
+ normalized.name = normalized.name.replace(/\s/g, '');
+ if (normalized.reference) {
+   normalized.reference = normalized.reference.replace(/\s/g, '');
+ }
+
+ return normalized;
+}
+
 ```

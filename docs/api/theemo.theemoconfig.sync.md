@@ -9,8 +9,10 @@ hide_title: true
 
 ## TheemoConfig.sync property
 
+Config for the sync command
+
 <b>Signature:</b>
 
 ```typescript
-sync: SyncConfig;
+sync?: SyncConfig;
 ```

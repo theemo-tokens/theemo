@@ -176,10 +176,7 @@ name: `foo.bar/baz.bam`
 ```js
 {
   writer: {
-    formats: {
-      color: 'hex',
-      colorAlpha: 'rgb',
-    },
+    tool: 'style-dictionary',
 
     /**
      * The file in this case is the part before the first `/` in the token name.

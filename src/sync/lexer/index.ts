@@ -1,6 +1,6 @@
-import LexerConfig, { getLexerConfig } from './config';
-import TokenCollection from '../../token-collection';
 import Token from '../../token';
+import TokenCollection from '../../token-collection';
+import LexerConfig, { getLexerConfig } from './config';
 
 export default class Lexer {
   private config: LexerConfig;

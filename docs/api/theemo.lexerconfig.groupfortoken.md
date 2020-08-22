@@ -9,8 +9,21 @@ hide_title: true
 
 ## LexerConfig.groupForToken property
 
+Return the group for a token (e.g. if you want to group them by color scheme)
+
 <b>Signature:</b>
 
 ```typescript
 groupForToken?: (token: Token) => string;
+```
+
+## Example
+
+Group tokens by color scheme:
+
+```js
+groupForToken(token) {
+  return token.colorScheme ? token.colorScheme : 'base';
+}
+
 ```

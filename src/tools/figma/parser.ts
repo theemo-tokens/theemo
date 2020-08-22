@@ -1,5 +1,6 @@
 import { EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
+
 import { TokenType } from '../../token';
 import TokenCollection from '../../token-collection';
 import { ColorNode, FigmaReaderConfig, ShadowNode } from './config';

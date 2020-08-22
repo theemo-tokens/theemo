@@ -9,6 +9,14 @@ hide_title: true
 
 ## SyncConfig interface
 
+The config used to configure the `theemo sync` command.
+
+`sync` consists of three steps:
+
+1. reading 2. lexing 3. writing
+
+See the config for each respective step. Reading and writing is expressed through the supported tools.
+
 <b>Signature:</b>
 
 ```typescript
@@ -19,6 +27,6 @@ export default interface SyncConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [lexer](./theemo.syncconfig.lexer.md) | <code>LexerConfig</code> |  |
-|  [reader](./theemo.syncconfig.reader.md) | <code>ReaderConfig</code> |  |
-|  [writer](./theemo.syncconfig.writer.md) | <code>WriterConfig</code> |  |
+|  [lexer](./theemo.syncconfig.lexer.md) | <code>LexerConfig</code> | Config to \_make sense\_ of your tokens, as you need them in your domain |
+|  [reader](./theemo.syncconfig.reader.md) | <code>ReaderConfig</code> | Config for reading tokens from external source |
+|  [writer](./theemo.syncconfig.writer.md) | <code>WriterConfig</code> | Config to write them onto the disk for your used token manager tool |

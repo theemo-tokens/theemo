@@ -38,7 +38,7 @@ module.exports = {
         alt: 'Theemo Logo',
         src: 'img/favicon.svg'
       },
-      links: [
+      items: [
         {to: 'docs/getting-started', label: 'Getting Started', position: 'left'},
         {to: 'docs/design/overview', label: 'Design', position: 'left'},
         { to: 'docs/toolchain/index', label: 'Toolchain', position: 'left' },

@@ -39,7 +39,13 @@ export enum TokenType {
 }
 
 /**
- * DTO to describe a Design Token
+ * The base token, with all properties shared amongst various token types used
+ * throughout theemo.
+ *
+ * @remarks
+ *
+ * That is, figma is subclassing this with its own token and specific
+ * figma-related properties.
  */
 export interface BaseToken {
   // Generic Properties
@@ -111,6 +117,9 @@ export interface BaseToken {
   reference?: string;
 }
 
+/**
+ * The token interface as they are returned from the reader(s).
+ */
 export default interface Token extends BaseToken {
   /**
    * The tokens value

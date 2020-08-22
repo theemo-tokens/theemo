@@ -1,16 +1,16 @@
 import {
-  ReferencerConfig,
-  ReferencerType,
-  ReferencerPluginConfig
+  FigmaReferencerConfig,
+  FigmaReferencerType,
+  FigmaReferencerPluginConfig
 } from '../config';
 import NullReferencer from './null-referencer';
-import TheemoPluginReferencer from './theemo-plugin';
 import Referencer from './referencer';
+import TheemoPluginReferencer from './theemo-plugin';
 
 export default class ReferencerFactory {
-  static create(config?: ReferencerConfig): Referencer {
+  static create(config?: FigmaReferencerConfig): Referencer {
     switch (config?.type) {
-      case ReferencerType.FigmaPlugin:
+      case FigmaReferencerType.FigmaPlugin:
         return ReferencerFactory.createPluginReferencer(config);
 
       default:
@@ -19,11 +19,11 @@ export default class ReferencerFactory {
   }
 
   private static createPluginReferencer(
-    config: ReferencerPluginConfig
+    config: FigmaReferencerPluginConfig
   ): Referencer {
     switch (config.plugin) {
       case 'theemo':
-        return new TheemoPluginReferencer(config.pluginOptions);
+        return new TheemoPluginReferencer(config.pluginConfig);
 
       default:
         return new NullReferencer();

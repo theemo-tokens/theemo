@@ -1,10 +1,12 @@
-import StyleDictionary, { Config, TransformTypes } from 'style-dictionary';
-import { requireFile } from '../../utils';
 import fs from 'fs';
 
+import StyleDictionary, { Config, TransformTypes } from 'style-dictionary';
+
+import { requireFile } from '../../utils';
+
 interface TheemoTransform {
-  matcher?: (property: object) => boolean;
-  transformer: (property: object) => string;
+  matcher?: (property: Record<string, unknown>) => boolean;
+  transformer: (property: Record<string, unknown>) => string;
 }
 
 interface TheemoTransforms {
@@ -29,14 +31,14 @@ export default class StyleDictionaryBuilder {
             return this.applyMatcher(
               type as keyof TheemoTransforms,
               config,
-              property
+              property as Record<string, unknown>
             );
           },
           transformer: property => {
             return this.applyTransformer(
               type as keyof TheemoTransforms,
               config,
-              property
+              property as Record<string, unknown>
             );
           }
         });
@@ -59,7 +61,7 @@ export default class StyleDictionaryBuilder {
   private applyMatcher(
     type: keyof TheemoTransforms,
     config: TheemoConfig,
-    property: object
+    property: Record<string, unknown>
   ) {
     return Boolean(config.transforms?.[type]?.matcher?.(property));
   }
@@ -67,7 +69,7 @@ export default class StyleDictionaryBuilder {
   private applyTransformer(
     type: keyof TheemoTransforms,
     config: TheemoConfig,
-    property: object
+    property: Record<string, unknown>
   ) {
     return config.transforms?.[type]?.transformer(property) ?? '';
   }
