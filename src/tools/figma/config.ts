@@ -36,6 +36,11 @@ export interface FigmaReaderConfig {
   isTokenByStyle?: (style: Style) => boolean;
 
   /**
+   * To retrieve the name for a token from a `Style`
+   */
+  getNameFromStyle?: (style: Style) => string;
+
+  /**
    * This is to verify that a given `Node`found in figmas node tree is
    * considered to be a token or not, depending on the name of the node
    */

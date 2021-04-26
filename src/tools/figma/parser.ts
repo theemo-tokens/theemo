@@ -96,20 +96,18 @@ export default class FigmaParser {
       for (const type of Object.keys(node.styles)) {
         const id = node.styles[type as keyof StylesMap];
         const style = this.getStyle(id);
+        const name = this.getNameFromStyle(style);
 
         if (
           this.isTokenByStyle(style) &&
-          !this.processedStyles.includes(style.name)
+          !this.processedStyles.includes(name)
         ) {
-          this.processedStyles.push(style.name);
-          const token = this.createToken(style.name);
+          this.processedStyles.push(name);
+          const token = this.createToken(name);
           token.description = style.description;
           token.category = this.getCategoryFromType(type);
-          token.data = this.referencer.findData(style.name, type.toLowerCase());
-          const reference = this.referencer.find(
-            style.name,
-            type.toLowerCase()
-          );
+          token.data = this.referencer.findData(name, type.toLowerCase());
+          const reference = this.referencer.find(name, type.toLowerCase());
 
           // see if we have a reference
           if (reference) {
@@ -188,12 +186,16 @@ export default class FigmaParser {
     };
   }
 
-  private isTokenByText(node: Node<'TEXT'>) {
-    return this.config.isTokenByText?.(node) ?? false;
-  }
-
   private isTokenByStyle(style: Style) {
     return this.config.isTokenByStyle?.(style) ?? false;
+  }
+
+  private getNameFromStyle(style: Style) {
+    return this.config.getNameFromStyle?.(style) ?? style.name;
+  }
+
+  private isTokenByText(node: Node<'TEXT'>) {
+    return this.config.isTokenByText?.(node) ?? false;
   }
 
   private getNameFromText(node: Node<'TEXT'>) {
