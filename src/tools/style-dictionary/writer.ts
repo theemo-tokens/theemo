@@ -13,9 +13,9 @@ export default class StyleDictionaryWriter {
     this.config = config;
   }
 
-  write(groupName: string, tokens: TokenCollection): void {
+  write(tokens: TokenCollection): void {
     const files = this.getFiles(tokens);
-    this.writeGroup(groupName, files);
+    this.writeFiles(files, tokens);
   }
 
   private getFiles(tokens: TokenCollection) {
@@ -37,41 +37,47 @@ export default class StyleDictionaryWriter {
     return this.config.fileForToken(token);
   }
 
-  private writeGroup(groupName: string, files: Map<string, TokenCollection>) {
-    for (const [file, tokens] of files.entries()) {
+  private writeFiles(
+    files: Map<string, TokenCollection>,
+    allTokens: TokenCollection
+  ) {
+    for (const [file, tokenSet] of files.entries()) {
       const contents = {};
-      for (const token of tokens) {
+      for (const token of tokenSet) {
         const property = this.getPathFromToken(token);
-        set(contents, property, {
-          value: this.getValue(token),
+        const data: Record<string, unknown> = {
+          value: this.getValue(token, allTokens),
           comment: token.description,
-          colorScheme: token.colorScheme
-        });
+          colorScheme: token.colorScheme,
+          ...this.getTokenData(token)
+        };
+        set(contents, property, data);
       }
 
-      const fileName = path.join(this.getFolderForGroup(groupName), file);
-      this.writeFile(fileName, contents);
+      // const fileName = path.join(this.getFolderForGroup(groupName), file);
+      this.writeFile(file, contents);
     }
   }
 
-  private getFolderForGroup(groupName: string) {
-    return this.config.folderForGroup?.(groupName) ?? groupName;
-  }
+  // private getFolderForGroup(groupName: string) {
+  //   return this.config.folderForGroup?.(groupName) ?? groupName;
+  // }
 
   private getPathFromToken(token: Token) {
     return this.config.pathForToken(token);
   }
 
-  private getValue(token: Token) {
-    return `${token.value}`;
+  private getValue(token: Token, allTokens: TokenCollection) {
+    return this.config.valueForToken?.(token, allTokens) ?? `${token.value}`;
+  }
+
+  private getTokenData(token: Token) {
+    return this.config.dataForToken?.(token) ?? {};
   }
 
   private writeFile(file: string, data: Record<string, unknown>) {
-    const target = `${path.join(
-      this.getDirectory(),
-      file.replace(/\./g, '/')
-    )}.json`;
-    const contents = JSON.stringify(data, null, '  ');
+    const target = `${path.join(this.getDirectory(), file)}.json`;
+    const contents = JSON.stringify(data, undefined, '  ');
     const parent = path.dirname(target);
 
     if (!fs.existsSync(parent)) {
@@ -82,6 +88,6 @@ export default class StyleDictionaryWriter {
   }
 
   private getDirectory() {
-    return 'properties';
+    return this.config.directory ?? 'tokens';
   }
 }

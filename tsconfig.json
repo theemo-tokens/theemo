@@ -11,6 +11,7 @@
     "sourceMap": true,
     "rootDir": "./src",
     "alwaysStrict": true,
+    "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -25,6 +26,7 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "downlevelIteration": true,
+    "isolatedModules": true,
     "paths": {
       "*": [
         "types/*",

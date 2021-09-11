@@ -1,12 +1,13 @@
 import Color from 'color';
+import isEmpty from 'lodash.isempty';
 import fetch from 'node-fetch';
 
-import Token from '../../../token';
+import Token, { TokenType } from '../../../token';
 import { ColorConfig } from '../config';
 import { FigmaToken, getValue, colorToValue } from '../token';
 import Referencer from './referencer';
 
-type Transforms = Partial<
+export type Transforms = Partial<
   Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>
 >;
 
@@ -50,13 +51,13 @@ export interface FigmaTheemoPluginConfig {
 export default class TheemoPluginReferencer implements Referencer {
   private config: FigmaTheemoPluginConfig;
   private references!: ReferenceDoc;
-  private computed: WeakMap<FigmaToken, Token> = new WeakMap();
+  private computed: Map<string, Token> = new Map();
 
   constructor(config: FigmaTheemoPluginConfig) {
     this.config = config;
   }
 
-  async setup() {
+  async setup(): Promise<void> {
     if (!this.references) {
       this.references = await this.load();
     }
@@ -86,12 +87,9 @@ export default class TheemoPluginReferencer implements Referencer {
     if (nodeReference) {
       return (nodeReference[type as keyof RefNode] as StyleRef)?.from.name;
     }
-
-    return undefined;
   }
 
-  findData(name: string, type: string): Data {
-    let transforms;
+  findData(name: string, type: string): Data | undefined {
     const nodeReference = this.references.nodes.find(node => {
       return (
         node[type as keyof RefNode] &&
@@ -100,42 +98,48 @@ export default class TheemoPluginReferencer implements Referencer {
     });
 
     if (nodeReference) {
-      transforms = (nodeReference[type as keyof RefNode] as StyleRef)
+      const transforms = (nodeReference[type as keyof RefNode] as StyleRef)
         ?.transforms;
+
+      if (!isEmpty(transforms)) {
+        return {
+          transforms
+        };
+      }
     }
 
-    return {
-      transforms
-    };
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   }
 
-  compileToken(token: FigmaToken) {
-    if (this.computed.has(token)) {
-      return this.computed.get(token) as Token;
+  compileToken(token: FigmaToken): Token {
+    if (this.computed.has(token.name)) {
+      return this.computed.get(token.name) as Token;
     }
 
     const computed: Token = {
       name: token.name,
       description: token.description,
-      type: token.type,
+      type: TokenType.Unknown,
       category: token.category,
       colorScheme: token.colorScheme,
       reference: token.reference,
       value: this.getValue(token)
     };
 
-    this.computed.set(token, computed);
+    if (token.data && (token.data as Data).transforms) {
+      computed.transforms = (token.data as Data).transforms;
+    }
+
+    this.computed.set(token.name, computed);
 
     return computed;
   }
 
   private getValue(token: FigmaToken) {
-    let value;
-    if (token.referenceToken) {
-      value = this.compileToken(token.referenceToken).value as string;
-    } else {
-      value = getValue(token, this.config.formats);
-    }
+    let value = token.referenceToken
+      ? (this.compileToken(token.referenceToken).value as string)
+      : getValue(token, this.config.formats);
 
     if (token.data && (token.data as Data).transforms) {
       value = colorToValue(

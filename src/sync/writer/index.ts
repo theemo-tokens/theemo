@@ -7,16 +7,15 @@ export default class Writer {
   private tool: WriterTool;
 
   constructor(config: WriterConfig) {
-    // this.config = config;
     this.tool = ToolFactory.createWriter(config.tool, {
       writer: config
     });
   }
 
   /**
-   * Writer delegates writing to respective tool
+   * Writes a named set of tokens to disk
    */
-  write(groupName: string, tokens: TokenCollection): void {
-    this.tool.write(groupName, tokens);
+  write(tokens: TokenCollection): void {
+    this.tool.write(tokens);
   }
 }

@@ -38,12 +38,11 @@ export interface ReaderTool {
  */
 export interface WriterTool {
   /**
-   * Writes a named collection to the disk in the format of the tool
+   * Writes a named set to the disk in the format of the tool
    *
-   * @param name name of the collection
-   * @param tokens collection of tokens to write
+   * @param tokens tokens to write
    */
-  write(name: string, tokens: TokenCollection): void;
+  write(tokens: TokenCollection): void;
 }
 
 /**

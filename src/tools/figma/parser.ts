@@ -1,7 +1,6 @@
-import { EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
+import { Effect, EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
 
-import { TokenType } from '../../token';
 import TokenCollection from '../../token-collection';
 import { ColorNode, FigmaReaderConfig, ShadowNode } from './config';
 import Referencer from './referencers/referencer';
@@ -43,7 +42,7 @@ export default class FigmaParser {
   private config: FigmaReaderConfig;
 
   private tokens!: TokenCollection<FigmaToken>;
-  private processedStyles: string[] = [];
+  private processedStyles: WeakSet<Style> = new WeakSet();
 
   constructor(
     file: GetFileResult,
@@ -55,8 +54,7 @@ export default class FigmaParser {
     this.config = config;
   }
 
-  parse() {
-    this.processedStyles = [];
+  parse(): TokenCollection<FigmaToken> {
     this.tokens = new TokenCollection();
     this.parseNode(this.file.document);
 
@@ -84,7 +82,7 @@ export default class FigmaParser {
       return;
     }
 
-    const token = this.createToken(this.getNameFromText(node));
+    const token = this.createTokenFromNode(node);
     token.value = this.getValueFromText(node);
     token.category = 'content';
 
@@ -94,80 +92,97 @@ export default class FigmaParser {
   private parseVectorNode(node: Node<'VECTOR'>) {
     if (node.styles) {
       for (const type of Object.keys(node.styles)) {
-        const id = node.styles[type as keyof StylesMap];
-        const style = this.getStyle(id);
-        const name = this.getNameFromStyle(style);
+        const token = this.parseStyle(node, type as keyof StylesMap);
 
-        if (
-          this.isTokenByStyle(style) &&
-          !this.processedStyles.includes(name)
-        ) {
-          this.processedStyles.push(name);
-          const token = this.createToken(name);
-          token.description = style.description;
-          token.category = this.getCategoryFromType(type);
-          token.data = this.referencer.findData(name, type.toLowerCase());
-          const reference = this.referencer.find(name, type.toLowerCase());
-
-          // see if we have a reference
-          if (reference) {
-            token.reference = reference;
-          }
-
-          // anyway look for the value
-          else {
-            const key = `${type.toLowerCase()}s` as keyof Node<'VECTOR'>;
-
-            // fill - color swatch
-            if (key === 'fills' && node[key]) {
-              token.color = this.getColorFromPaint(node[key] as Paint[]);
-            }
-
-            // stroke - somwhere used as border
-            else if (key === 'strokes' && node[key]) {
-              token.color = this.getColorFromPaint(node[key] as Paint[]);
-            }
-
-            // effect - shadows
-            else if (key === 'effects' && node[key]) {
-              const shadows: ShadowNode[] = [];
-
-              // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-              // @ts-ignore
-              for (const effect of node[key]) {
-                if (!effect.visible) {
-                  return;
-                }
-
-                if (
-                  effect.type === EffectType.DROP_SHADOW ||
-                  effect.type === EffectType.INNER_SHADOW
-                ) {
-                  shadows.push({
-                    inner: effect.type === EffectType.INNER_SHADOW,
-                    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-                    // @ts-ignore
-                    color: { ...effect.color, visible: true },
-                    x: effect.offset?.x ?? 0,
-                    y: effect.offset?.y ?? 0,
-                    radius: effect.radius
-                  });
-                }
-              }
-
-              if (shadows.length > 0) {
-                token.shadows = shadows;
-              }
-            }
-          }
+        if (token) {
           this.tokens.add(token);
         }
       }
     }
   }
 
+  private parseStyle(
+    node: Node<'VECTOR'>,
+    type: keyof StylesMap
+  ): FigmaToken | undefined {
+    const id = (node.styles as StylesMap)[type];
+    const style = this.getStyle(id);
+
+    // styles don't match by type (because used somewhere else)
+    // let's return
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    if (style.styleType.toLowerCase() !== type) {
+      return;
+    }
+
+    if (!this.processedStyles.has(style)) {
+      this.processedStyles.add(style);
+      const token = this.createTokenFromStyle(style, node);
+      token.description = style.description;
+      token.category = this.getCategoryFromType(type);
+      token.data = this.referencer.findData(style.name, type.toLowerCase());
+
+      // see if we have a reference
+      token.figmaReference = this.referencer.find(
+        // eslint-disable-next-line unicorn/no-array-callback-reference
+        style.name,
+        type.toLowerCase()
+      );
+
+      // also look for the value
+      const key = `${type.toLowerCase()}s` as keyof Node<'VECTOR'>;
+
+      // fill - color swatch
+      if (key === 'fills' && node[key]) {
+        token.color = this.getColorFromPaint(node[key] as Paint[]);
+      }
+
+      // stroke - somewhere used as border
+      else if (key === 'strokes' && node[key]) {
+        token.color = this.getColorFromPaint(node[key] as Paint[]);
+      }
+
+      // effect - shadows
+      else if (key === 'effects' && node[key]) {
+        const shadows = this.getShadowsFromEffect(node[key] as Effect[]);
+
+        if (shadows.length > 0) {
+          token.shadows = shadows;
+        }
+      }
+
+      return token;
+    }
+  }
+
+  private getShadowsFromEffect(effects: Effect[]) {
+    const shadows: ShadowNode[] = [];
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    for (const effect of effects) {
+      if (
+        effect.visible &&
+        (effect.type === EffectType.DROP_SHADOW ||
+          effect.type === EffectType.INNER_SHADOW)
+      ) {
+        shadows.push({
+          inner: effect.type === EffectType.INNER_SHADOW,
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          color: { ...effect.color, visible: true },
+          x: effect.offset?.x ?? 0,
+          y: effect.offset?.y ?? 0,
+          radius: effect.radius
+        });
+      }
+    }
+
+    return shadows;
+  }
+
   private getColorFromPaint(paint: Paint[]): ColorNode {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     return {
       ...paint[0].color,
@@ -179,15 +194,21 @@ export default class FigmaParser {
     return this.file.styles[id] as Style & { description: string };
   }
 
-  private createToken(name: string): FigmaToken {
+  private createTokenFromNode(node: Node<'TEXT'>): FigmaToken {
     return {
-      name,
-      type: TokenType.Unknown
+      figmaName: node.name,
+      name: this.getNameFromText(node),
+      node
     };
   }
 
-  private isTokenByStyle(style: Style) {
-    return this.config.isTokenByStyle?.(style) ?? false;
+  private createTokenFromStyle(style: Style, node: Node): FigmaToken {
+    return {
+      figmaName: style.name,
+      name: this.getNameFromStyle(style),
+      node,
+      style
+    };
   }
 
   private getNameFromStyle(style: Style) {
