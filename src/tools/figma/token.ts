@@ -1,4 +1,5 @@
 import Color from 'color';
+import { Node, Style } from 'figma-api';
 
 import { BaseToken } from '../../token';
 import { ColorAlphaFormat, ColorConfig, ColorFormat } from './config';
@@ -46,6 +47,14 @@ export interface FigmaToken extends BaseToken {
   data?: unknown;
 
   referenceToken?: FigmaToken;
+
+  figmaName: string;
+
+  figmaReference?: string;
+
+  node: Node;
+
+  style?: Style;
 }
 
 export function getLength(value: number): string {

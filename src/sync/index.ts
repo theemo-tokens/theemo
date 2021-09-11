@@ -12,9 +12,9 @@ export default class SyncCommand {
   }
 
   async execute(): Promise<void> {
-    const tokens = await this.read();
-    const groups = this.analyze(tokens);
-    this.write(groups);
+    const raw = await this.read();
+    const tokens = this.analyze(raw);
+    this.write(tokens);
   }
 
   private async read() {
@@ -27,11 +27,8 @@ export default class SyncCommand {
     return lexer.analyze(tokens);
   }
 
-  private write(groups: Map<string, TokenCollection>) {
+  private write(tokens: TokenCollection) {
     const writer = new Writer(this.config.writer);
-
-    for (const [groupName, tokens] of groups.entries()) {
-      writer.write(groupName, tokens);
-    }
+    writer.write(tokens);
   }
 }

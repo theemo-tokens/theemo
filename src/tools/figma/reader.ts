@@ -1,4 +1,4 @@
-import { Api as FigmaClient } from 'figma-api';
+import { Api as FigmaClient, Style } from 'figma-api';
 
 import TokenCollection from '../../token-collection';
 import { FigmaReaderConfig } from './config';
@@ -16,7 +16,7 @@ export default class FigmaReader {
     this.referencer = ReferencerFactory.create(this.config.referencer);
   }
 
-  async read() {
+  async read(): Promise<TokenCollection> {
     const file = await this.load();
 
     // create referencer
@@ -25,19 +25,13 @@ export default class FigmaReader {
     const parser = new FigmaParser(file, this.referencer, this.config);
     const tokens = parser.parse();
 
-    return this.compileTokens(tokens);
-  }
+    const filtered = tokens.filter(token => this.filterToken(token));
+    const resolved = filtered.map(token =>
+      this.resolveReference(token, filtered)
+    );
+    const transformed = resolved.map(token => this.transformToken(token));
 
-  private compileTokens(tokens: TokenCollection<FigmaToken>) {
-    const compiled = new TokenCollection();
-    for (const token of tokens) {
-      if (token.reference) {
-        token.referenceToken = tokens.find(t => t.name === token.reference);
-      }
-      compiled.add(this.referencer.compileToken(token));
-    }
-
-    return compiled;
+    return transformed;
   }
 
   private async load() {
@@ -47,5 +41,35 @@ export default class FigmaReader {
     });
 
     return figmaClient.getFile(this.config.figmaFile);
+  }
+
+  private filterToken(token: FigmaToken): boolean {
+    return token.style ? this.isTokenByStyle(token.style) : true;
+  }
+
+  private resolveReference(
+    token: FigmaToken,
+    tokens: TokenCollection<FigmaToken>
+  ): FigmaToken {
+    if (token.figmaReference) {
+      const referenceToken = tokens.find(
+        t => t.figmaName === token.figmaReference
+      );
+      return {
+        ...token,
+        reference: referenceToken ? referenceToken.name : undefined,
+        referenceToken
+      };
+    }
+
+    return { ...token };
+  }
+
+  private transformToken(token: FigmaToken) {
+    return this.referencer.compileToken(token);
+  }
+
+  private isTokenByStyle(style: Style) {
+    return this.config.isTokenByStyle?.(style) ?? !style.name.startsWith('.');
   }
 }

@@ -1,3 +1,5 @@
+import Token from '../../token';
+import TokenCollection from '../../token-collection';
 import ToolConfig from '../config';
 import { ReaderTool } from '../tool';
 import { FigmaConfig } from './config';
@@ -12,7 +14,7 @@ export default class Figma implements ReaderTool {
     this.reader = new FigmaReader(this.config.reader);
   }
 
-  async read() {
+  async read(): Promise<TokenCollection<Token>> {
     return this.reader.read();
   }
 }

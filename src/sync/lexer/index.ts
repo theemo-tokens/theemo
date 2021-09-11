@@ -12,23 +12,23 @@ export default class Lexer {
     this.config = getLexerConfig(config);
   }
 
-  analyze(tokens: TokenCollection): Map<string, TokenCollection> {
-    this.rawTokens = tokens.map(this.normalizeToken.bind(this));
+  analyze(tokens: TokenCollection): TokenCollection {
+    this.rawTokens = tokens;
+
+    // normalization
+    this.normalizedTokens = tokens.map(this.normalizeToken.bind(this));
 
     // classification
-    const classifiedTokens = this.classifyTokens(tokens);
-
-    // grouping
-    return this.findGroups(classifiedTokens);
-  }
-
-  private classifyTokens(tokens: TokenCollection): TokenCollection {
-    this.normalizedTokens = tokens.map(this.normalizeToken.bind(this));
     this.classifiedTokens = this.normalizedTokens.map(
       this.classifyToken.bind(this)
     );
 
-    return this.classifiedTokens.filter(this.filterToken.bind(this));
+    // filter
+    const filteredTokens = this.classifiedTokens.filter(
+      this.filterToken.bind(this)
+    );
+
+    return filteredTokens;
   }
 
   private normalizeToken(token: Token): Token {
@@ -56,23 +56,5 @@ export default class Lexer {
         classified: this.classifiedTokens
       }) ?? true
     );
-  }
-
-  private findGroups(tokens: TokenCollection) {
-    const groups: Map<string, TokenCollection> = new Map();
-
-    for (const token of tokens) {
-      const group = this.findGroup(token);
-      if (!groups.has(group)) {
-        groups.set(group, new TokenCollection());
-      }
-      groups.get(group)?.add(token);
-    }
-
-    return groups;
-  }
-
-  private findGroup(token: Token): string {
-    return this.config.groupForToken?.(token) ?? '';
   }
 }

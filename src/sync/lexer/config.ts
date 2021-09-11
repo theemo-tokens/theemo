@@ -61,21 +61,6 @@ export default interface LexerConfig {
       classified: TokenCollection;
     }
   ) => boolean;
-
-  /**
-   * Return the group for a token (e.g. if you want to group them by color scheme)
-   *
-   * @example
-   *
-   * Group tokens by color scheme:
-   *
-   * ```js
-   * groupForToken(token) {
-   *   return token.colorScheme ? token.colorScheme : 'base';
-   * }
-   * ```
-   */
-  groupForToken?: (token: Token) => string;
 }
 
 const DEFAULT_LEXER_CONFIG = {

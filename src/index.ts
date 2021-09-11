@@ -17,10 +17,7 @@ import Theemo from './theemo';
 dotenv.config();
 
 async function main() {
-  program
-    .version(package_.version)
-    .name(package_.name)
-    .usage('command');
+  program.version(package_.version).name(package_.name).usage('command');
 
   const theemo = new Theemo();
 
@@ -54,25 +51,25 @@ main();
 
 export default Theemo;
 
-export { default as TheemoConfig } from './config';
-export { default as Token, BaseToken, TokenType } from './token';
+export type { default as TheemoConfig } from './config';
+export type { default as Token, BaseToken, TokenType } from './token';
 
 // config
-export { default as SyncConfig } from './sync/config';
-export { default as ReaderConfig } from './sync/reader/config';
-export { default as LexerConfig } from './sync/lexer/config';
-export { default as WriterConfig } from './sync/writer/config';
-export { default as GenerateConfig } from './generate/config';
+export type { default as SyncConfig } from './sync/config';
+export type { default as ReaderConfig } from './sync/reader/config';
+export type { default as LexerConfig } from './sync/lexer/config';
+export type { default as WriterConfig } from './sync/writer/config';
+export type { default as GenerateConfig } from './generate/config';
 
 // tools
-export { Tools, ReaderTool, WriterTool, BuilderTool } from './tools/tool';
-export {
+export type { Tools, ReaderTool, WriterTool, BuilderTool } from './tools/tool';
+export type {
   FigmaReaderConfig,
   FigmaReferencerConfig,
   FigmaReferencerType,
   FigmaReferencerPluginConfig
 } from './tools/figma/config';
-export {
+export type {
   StyleDictionaryConfig,
   StyleDictionaryWriterConfig
 } from './tools/style-dictionary/config';

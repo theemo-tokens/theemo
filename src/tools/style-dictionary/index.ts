@@ -17,8 +17,8 @@ export default class StyleDictionary implements WriterTool, BuilderTool {
     builder.build();
   }
 
-  write(groupName: string, tokens: TokenCollection) {
+  write(tokens: TokenCollection) {
     const writer = new StyleDictionaryWriter(this.config.writer);
-    writer.write(groupName, tokens);
+    writer.write(tokens);
   }
 }

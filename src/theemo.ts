@@ -1,10 +1,10 @@
-import BuildCommand from './build';
 import BuildConfig from './build/config';
+import BuildCommand from './build/index';
 import TheemoConfig from './config';
-import GenerateCommand from './generate';
 import GenerateConfig from './generate/config';
-import SyncCommand from './sync';
+import GenerateCommand from './generate/index';
 import SyncConfig from './sync/config';
+import SyncCommand from './sync/index';
 import { Tools } from './tools/tool';
 import { requireFile } from './utils';
 
@@ -28,11 +28,11 @@ export default class Theemo {
   }
 
   private loadConfig(): TheemoConfig {
-    return requireFile('theemo.js');
+    return requireFile('theemo.js') as TheemoConfig;
   }
 
   private loadPackage(): Package {
-    return requireFile('package.json');
+    return requireFile('package.json') as Package;
   }
 
   private detectBuildTool(): Tools {

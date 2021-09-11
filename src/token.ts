@@ -35,7 +35,7 @@ export enum TokenType {
    * A token for a _specific_ use-case. E.g. The heading color for
    * your hero component
    */
-  Component = 'component'
+  Specific = 'specific'
 }
 
 /**
@@ -61,11 +61,6 @@ export interface BaseToken {
   description?: string;
 
   // classification
-
-  /**
-   * The type describes the usage level of a token
-   */
-  type: TokenType;
 
   /**
    * The category helps token manager tools to generate the respective value in
@@ -122,7 +117,19 @@ export interface BaseToken {
  */
 export default interface Token extends BaseToken {
   /**
-   * The tokens value
+   * The type describes the usage level of a token
+   */
+  type: TokenType;
+
+  /**
+   * The tokens computed value
    */
   value?: string;
+
+  /**
+   * Optional transforms to run on the reference token
+   */
+  transforms?: Partial<
+    Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>
+  >;
 }
