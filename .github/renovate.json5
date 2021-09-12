@@ -1,0 +1,10 @@
+// Docs:
+// https://docs.renovatebot.com/configuration-options/
+{
+  "extends": [
+    "config:base"
+  ],
+  "automerge": true,
+  "masterIssue": true,
+  "rangeStrategy": "bump"
+}
