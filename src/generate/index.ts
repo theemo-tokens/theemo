@@ -4,6 +4,16 @@ import path from 'path';
 import { requireFile } from '../utils';
 import GenerateConfig, { SchemeConfig } from './config';
 
+interface Package {
+  name: string;
+  keywords: string[];
+  theemo?: {
+    name: string;
+    colorSchemes?: string[];
+    file?: string;
+  };
+}
+
 export default class GenerateCommand {
   private config: GenerateConfig;
   private name: string;
@@ -15,7 +25,7 @@ export default class GenerateCommand {
   }
 
   private getThemeName() {
-    const data = requireFile('package.json');
+    const data = requireFile('package.json') as Package;
     return data.theemo?.name ?? data.name;
   }
 
@@ -33,7 +43,7 @@ export default class GenerateCommand {
 
     // update package.json with color schemes
     if (this.config.colorSchemes) {
-      const packageJson = requireFile('package.json');
+      const packageJson = requireFile('package.json') as Package;
       if (!packageJson.theemo) {
         packageJson.theemo = {
           name: packageJson.name

@@ -7,4 +7,5 @@
 .eslintcache
 node_modules/
 book/
+coverage/
 dist
