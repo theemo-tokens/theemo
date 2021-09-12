@@ -82,7 +82,7 @@
     "esbuild": "^0.12.26",
     "esbuild-jest": "^0.5.0",
     "eslint": "7.30.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "jest": "^27.1.1",
     "jsonpath": "^1.1.1",
     "mock-fs": "^5.0.0",
