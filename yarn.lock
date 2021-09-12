@@ -3508,10 +3508,10 @@ figgy-pudding@^3.5.1:
   resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.2.tgz#b4eee8148abb01dcf1d1ac34367d59e12fa61d6e"
   integrity sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw==
 
-figma-api@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.6.1.tgz#8c4db8965cf1a7923c3e85e73b4bed67f9afcb67"
-  integrity sha512-Lbisqu8grrSlNucgHOUdw1SVXw7QrzZaZt+ix9LPl9tFwTigksAeKL05MvGdzTtvPM7OWJCP9Sguo2T4PtWmHA==
+figma-api@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.7.0.tgz#f6077272a60c1eb779519b62de2bed8d513bc292"
+  integrity sha512-AJ3GkM4IBroKTahpmDBOyAq3Str9qB6npivTx7Yzo36sMOrJPxr5soj8rNDqAZtMtrfnUx0chxVSqT0JgofFrw==
   dependencies:
     "@types/node" "12.0.2"
     axios "^0.21.1"
