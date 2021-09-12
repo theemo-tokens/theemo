@@ -55,7 +55,7 @@
     "esm": "3.2.25",
     "figma-api": "^1.7.0",
     "lodash.isempty": "^4.4.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^2.6.2",
     "style-dictionary": "^3.0.2"
   },
   "devDependencies": {
@@ -75,7 +75,7 @@
     "@types/jest-expect-message": "^1.0.3",
     "@types/lodash.isempty": "^4.4.6",
     "@types/mock-fs": "^4.13.1",
-    "@types/node-fetch": "^2.5.11",
+    "@types/node-fetch": "^2.5.12",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "chokidar": "^3.5.2",
