@@ -71,7 +71,7 @@
     "@swc/core": "^1.2.85",
     "@swc/jest": "^0.2.3",
     "@types/color": "^3.0.2",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@types/jest-expect-message": "^1.0.3",
     "@types/lodash.isempty": "^4.4.6",
     "@types/mock-fs": "^4.13.1",
