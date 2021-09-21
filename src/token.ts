@@ -14,14 +14,14 @@
  * - {@link https://dev.to/ynab/a-semantic-color-system-the-theory-hk7
  *   | The Theory: A Semantic Color System (Carlin)}
  */
-export enum TokenType {
+export enum TokenTier {
   /**
    * The default token type is unknown, until classified by you
    */
   Unknown = 'unknown',
 
   /**
-   * A very low-level token type, e.g. a color of your palette
+   * A very low-level token tier, e.g. a color of your palette
    */
   Basic = 'basic',
 
@@ -117,9 +117,9 @@ export interface BaseToken {
  */
 export default interface Token extends BaseToken {
   /**
-   * The type describes the usage level of a token
+   * The tier describes the usage level of a token
    */
-  type: TokenType;
+  tier: TokenTier;
 
   /**
    * The tokens computed value
