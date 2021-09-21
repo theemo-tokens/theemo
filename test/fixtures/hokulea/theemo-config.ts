@@ -1,5 +1,5 @@
 import { TheemoConfig } from '../../../src';
-import { TokenType } from '../../../src/token';
+import Token, { TokenTier } from '../../../src/token';
 import {
   ColorAlphaFormat,
   ColorFormat,
@@ -14,13 +14,13 @@ function pathForToken(token) {
   return path;
 }
 
-function isTransient(token, tokens) {
+function isTransient(token: Token, tokens) {
   const hasColorSchemes = tokens.some(
     t => t.colorScheme && t.name === token.name
   );
   const isReference = !token.colorScheme && hasColorSchemes;
 
-  return token.type === 'purpose' && isReference;
+  return token.tier === 'purpose' && isReference;
 }
 
 function isRatioScalingToken(name) {
@@ -150,9 +150,9 @@ export function makeHokuleaConfig({ dev = false } = {}): TheemoConfig {
 
         classifyToken(token, tokens) {
           const t = { ...token };
-          t.type = token.name.startsWith('.')
-            ? TokenType.Basic
-            : TokenType.Purpose;
+          t.tier = token.name.startsWith('.')
+            ? TokenTier.Basic
+            : TokenTier.Purpose;
 
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore

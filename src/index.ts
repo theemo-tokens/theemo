@@ -52,7 +52,11 @@ main();
 export default Theemo;
 
 export type { default as TheemoConfig } from './config';
-export type { default as Token, BaseToken, TokenType } from './token';
+export type {
+  default as Token,
+  BaseToken,
+  TokenTier as TokenType
+} from './token';
 
 // config
 export type { default as SyncConfig } from './sync/config';

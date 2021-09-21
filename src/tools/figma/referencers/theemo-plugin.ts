@@ -2,7 +2,7 @@ import Color from 'color';
 import isEmpty from 'lodash.isempty';
 import fetch from 'node-fetch';
 
-import Token, { TokenType } from '../../../token';
+import Token, { TokenTier } from '../../../token';
 import { ColorConfig } from '../config';
 import { FigmaToken, getValue, colorToValue } from '../token';
 import Referencer from './referencer';
@@ -59,7 +59,7 @@ export default class TheemoPluginReferencer implements Referencer {
 
   async setup(): Promise<void> {
     if (!this.references) {
-      this.references = await this.load();
+      this.references = (await this.load()) as ReferenceDoc;
     }
   }
 
@@ -120,7 +120,7 @@ export default class TheemoPluginReferencer implements Referencer {
     const computed: Token = {
       name: token.name,
       description: token.description,
-      type: TokenType.Unknown,
+      tier: TokenTier.Unknown,
       category: token.category,
       colorScheme: token.colorScheme,
       reference: token.reference,
