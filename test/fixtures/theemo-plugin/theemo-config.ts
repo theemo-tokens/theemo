@@ -1,5 +1,5 @@
 import { TheemoConfig } from '../../../src';
-import { TokenType } from '../../../src/token';
+import { TokenTier } from '../../../src/token';
 import {
   ColorAlphaFormat,
   ColorFormat,
@@ -96,9 +96,9 @@ export function makeTheemoPluginConfig({ dev = false } = {}): TheemoConfig {
 
         classifyToken(token, tokens) {
           const t = { ...token };
-          t.type = token.name.startsWith('.')
-            ? TokenType.Basic
-            : TokenType.Purpose;
+          t.tier = token.name.startsWith('.')
+            ? TokenTier.Basic
+            : TokenTier.Purpose;
 
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
