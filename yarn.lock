@@ -842,10 +842,10 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@microsoft/api-documenter@^7.13.50":
-  version "7.13.50"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.50.tgz#e349673f2de72e3312f65035d3c4001280559c36"
-  integrity sha512-u2VWomC4x1OFHNA+6VTKwfupD9ZOCR3V6ql7rieYmfVNMm+4V1UB1RSdzDDp1SQlTt13fwPUhO4yiAGRwmJdRA==
+"@microsoft/api-documenter@^7.13.51":
+  version "7.13.51"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.51.tgz#9e1899c59f2d08cd61713f4752275ad126dd91d4"
+  integrity sha512-t9qmCbyqrNvOmZiVkbBpKWm74eNFQ35gAtcO1ixyTgT1AqCcqSI6YMDFJV2s45Av8y1Wz52FNztNHVVnI6MnjQ==
   dependencies:
     "@microsoft/api-extractor-model" "7.13.7"
     "@microsoft/tsdoc" "0.13.2"
