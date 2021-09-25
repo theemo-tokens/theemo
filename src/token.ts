@@ -52,6 +52,12 @@ export interface BaseToken {
 
   /**
    * The tokens name
+   *
+   * @remarks
+   *
+   * References:
+   *
+   * - {@link https://www.designtokens.org/glossary/#design-token-name  | DTCG Glossary (Design Token Name)}
    */
   name: string;
 
@@ -63,21 +69,23 @@ export interface BaseToken {
   // classification
 
   /**
-   * The category helps token manager tools to generate the respective value in
+   * The type helps token translation tools to generate the respective value in
    * the appropriate format.
    *
    * @remarks
    * Resources:
    *
+   * - {@link https://www.designtokens.org/glossary/#design-token-type | DTCG Glossary (Design Token Type)}
+   *
    * - {@link
-   *   https://amzn.github.io/style-dictionary/#/properties?id=category-type-item
+   *   https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item
    *   | Style-Dictionary}
    *
    * - {@link
    *   https://github.com/salesforce-ux/theo#supported-categories
    *   | Theo}
    */
-  category?: string;
+  type?: string;
 
   // context
 
@@ -123,6 +131,12 @@ export default interface Token extends BaseToken {
 
   /**
    * The tokens computed value
+   *
+   * @remarks
+   *
+   * References:
+   *
+   * - {@link https://www.designtokens.org/glossary/#design-token-value  | DTCG Glossary (Design Token Value)}
    */
   value?: string;
 

@@ -3,6 +3,7 @@ import { Node, Style } from 'figma-api';
 import ToolConfig from '../config';
 import { Tools } from '../tool';
 import { FigmaTheemoPluginConfig } from './referencers/theemo-plugin';
+import { FigmaToken } from './token';
 
 // Referencer Options
 
@@ -123,6 +124,11 @@ export interface FigmaReaderConfig {
    * To retrieve the value for a token from a `Node`
    */
   getValueFromText?: (node: Node<'TEXT'>) => string;
+
+  /**
+   * To retrieve the type of a token
+   */
+  getTypeFromToken?: (token: FigmaToken) => string;
 }
 
 /**

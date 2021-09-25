@@ -99,6 +99,12 @@ export const READER_CONFIG_PROD: FigmaReaderConfig = {
 
   getNameFromText(node) {
     return node.name.replace('[token]', '').trim();
+  },
+
+  getTypeFromToken(token) {
+    if (token.style) {
+      return 'color';
+    }
   }
 };
 

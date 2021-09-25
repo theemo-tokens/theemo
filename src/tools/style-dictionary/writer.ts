@@ -45,10 +45,16 @@ export default class StyleDictionaryWriter {
       const contents = {};
       for (const token of tokenSet) {
         const property = this.getPathFromToken(token);
+        const attributes = token.type
+          ? {
+              category: token.type
+            }
+          : undefined;
         const data: Record<string, unknown> = {
           value: this.getValue(token, allTokens),
           comment: token.description,
           colorScheme: token.colorScheme,
+          attributes,
           ...this.getTokenData(token)
         };
         set(contents, property, data);

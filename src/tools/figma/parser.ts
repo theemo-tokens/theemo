@@ -84,7 +84,7 @@ export default class FigmaParser {
 
     const token = this.createTokenFromNode(node);
     token.value = this.getValueFromText(node);
-    token.category = 'content';
+    token.type = 'content';
 
     this.tokens.add(token);
   }
@@ -120,7 +120,7 @@ export default class FigmaParser {
       this.processedStyles.add(style);
       const token = this.createTokenFromStyle(style, node);
       token.description = style.description;
-      token.category = this.getCategoryFromType(type);
+      token.type = this.getCategoryFromType(type);
       token.data = this.referencer.findData(style.name, type.toLowerCase());
 
       // see if we have a reference
