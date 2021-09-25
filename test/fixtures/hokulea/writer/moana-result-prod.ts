@@ -18,42 +18,66 @@ export const SAMPLES = [
     file: 'color/intent/action.json',
     path: 'color.intent.action.fill.base.background',
     properties: {
-      value: '#9EDFFA'
+      value: '#9EDFFA',
+      type: 'color',
+      attributes: {
+        category: 'color'
+      }
     }
   },
   {
     file: 'color/intent/action.json',
     path: 'color.intent.action.fill.base.text',
     properties: {
-      value: '#333333'
+      value: '#333333',
+      type: 'color',
+      attributes: {
+        category: 'color'
+      }
     }
   },
   {
     file: 'color/intent/action.json',
     path: 'color.intent.action.subtle.disabled.background',
     properties: {
-      value: '{color.layout.background.value}'
+      value: '{color.layout.background.value}',
+      type: 'color',
+      attributes: {
+        category: 'color'
+      }
     }
   },
   {
     file: 'color/intent/action.json',
     path: 'color.intent.action.subtle.disabled.border',
     properties: {
-      value: '{color.layout.reduced.value}'
+      value: '{color.layout.reduced.value}',
+      type: 'color',
+      attributes: {
+        category: 'color'
+      }
     }
   },
   {
     file: 'color/intent/action.light.json',
     path: 'color.intent.action.fill.disabled.text',
     properties: {
-      colorScheme: 'light'
+      colorScheme: 'light',
+      type: 'color',
+      attributes: {
+        category: 'color'
+      }
     }
   },
   {
     file: 'color/intent/action.dark.json',
     path: 'color.intent.action.fill.disabled.text',
     properties: {
-      colorScheme: 'dark'
+      colorScheme: 'dark',
+      type: 'color',
+      attributes: {
+        category: 'color'
+      }
     }
   }
 ];
