@@ -87,6 +87,9 @@ export default class TheemoPluginReferencer implements Referencer {
     if (nodeReference) {
       return (nodeReference[type as keyof RefNode] as StyleRef)?.from.name;
     }
+
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   }
 
   findData(name: string, type: string): Data | undefined {

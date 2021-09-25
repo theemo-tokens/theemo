@@ -5,34 +5,41 @@
   ],
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
-    "rootDir": "./src",
-    "alwaysStrict": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
+
     "baseUrl": "./",
-    "downlevelIteration": true,
-    "isolatedModules": true,
+    "rootDir": "./src",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "paths": {
       "*": [
         "types/*",
         "node_modules/*"
       ]
     },
-    "esModuleInterop": true
+
+    "esModuleInterop": true,
+    "isolatedModules": true,
+
+    "declaration": true,
+    "declarationDir": "./dist",
+    "downlevelIteration": true,
+    "sourceMap": true,
+
+    "importHelpers": true,
+    
+    "alwaysStrict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+
+    "skipLibCheck": true
   }
 }

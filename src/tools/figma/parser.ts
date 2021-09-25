@@ -120,7 +120,7 @@ export default class FigmaParser {
       this.processedStyles.add(style);
       const token = this.createTokenFromStyle(style, node);
       token.description = style.description;
-      token.type = this.getCategoryFromType(type);
+      token.type = this.getTypefromStyle(type);
       token.data = this.referencer.findData(style.name, type.toLowerCase());
 
       // see if we have a reference
@@ -154,6 +154,9 @@ export default class FigmaParser {
 
       return token;
     }
+
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   }
 
   private getShadowsFromEffect(effects: Effect[]) {
@@ -227,7 +230,7 @@ export default class FigmaParser {
     return this.config.getValueFromText?.(node) ?? node.characters;
   }
 
-  private getCategoryFromType(type: string) {
+  private getTypefromStyle(type: string) {
     // 'FILL' | 'STROKE' | 'TEXT' | 'EFFECT' | 'GRID'
     switch (type.toLowerCase()) {
       case 'fill':
