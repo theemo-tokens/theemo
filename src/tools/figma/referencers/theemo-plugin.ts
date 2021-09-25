@@ -121,7 +121,7 @@ export default class TheemoPluginReferencer implements Referencer {
       name: token.name,
       description: token.description,
       tier: TokenTier.Unknown,
-      category: token.category,
+      type: token.type,
       colorScheme: token.colorScheme,
       reference: token.reference,
       value: this.getValue(token)

@@ -26,9 +26,9 @@ export default class FigmaReader {
     const tokens = parser.parse();
 
     const filtered = tokens.filter(token => this.filterToken(token));
-    const resolved = filtered.map(token =>
-      this.resolveReference(token, filtered)
-    );
+    const resolved = filtered
+      .map(token => this.classifyToken(token))
+      .map(token => this.resolveReference(token, filtered));
     const transformed = resolved.map(token => this.transformToken(token));
 
     return transformed;
@@ -45,6 +45,13 @@ export default class FigmaReader {
 
   private filterToken(token: FigmaToken): boolean {
     return token.style ? this.isTokenByStyle(token.style) : true;
+  }
+
+  private classifyToken(token: FigmaToken): FigmaToken {
+    return {
+      ...token,
+      type: this.getTypeFromToken(token)
+    };
   }
 
   private resolveReference(
@@ -67,6 +74,10 @@ export default class FigmaReader {
 
   private transformToken(token: FigmaToken) {
     return this.referencer.compileToken(token);
+  }
+
+  private getTypeFromToken(token: FigmaToken): string {
+    return this.config.getTypeFromToken?.(token) ?? '';
   }
 
   private isTokenByStyle(style: Style) {

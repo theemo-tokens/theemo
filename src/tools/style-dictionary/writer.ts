@@ -45,18 +45,34 @@ export default class StyleDictionaryWriter {
       const contents = {};
       for (const token of tokenSet) {
         const property = this.getPathFromToken(token);
-        const data: Record<string, unknown> = {
-          value: this.getValue(token, allTokens),
-          comment: token.description,
-          colorScheme: token.colorScheme,
-          ...this.getTokenData(token)
-        };
+        const data = this.buildToken(token, allTokens);
+
         set(contents, property, data);
       }
 
-      // const fileName = path.join(this.getFolderForGroup(groupName), file);
       this.writeFile(file, contents);
     }
+  }
+
+  private buildToken(
+    token: Token,
+    allTokens: TokenCollection
+  ): Record<string, unknown> {
+    const data: Record<string, unknown> = {
+      value: this.getValue(token, allTokens),
+      comment: token.description,
+      colorScheme: token.colorScheme,
+      ...this.getTokenData(token)
+    };
+
+    if (token.type) {
+      data.type = token.type;
+      data.attributes = {
+        category: token.type
+      };
+    }
+
+    return data;
   }
 
   // private getFolderForGroup(groupName: string) {
