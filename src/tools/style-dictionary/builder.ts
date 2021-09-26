@@ -35,6 +35,9 @@ export default class StyleDictionaryBuilder {
     if (file) {
       return requireFile(file) as TheemoConfig;
     }
+
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   }
 
   private findConfig() {
@@ -51,5 +54,8 @@ export default class StyleDictionaryBuilder {
         return file;
       }
     }
+
+    // eslint-disable-next-line unicorn/no-useless-undefined
+    return undefined;
   }
 }
