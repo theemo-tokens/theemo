@@ -1180,10 +1180,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@swc/cli@^0.1.50":
-  version "0.1.50"
-  resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.50.tgz#7522132f3728a99d9c189c185a522e6cc0f93147"
-  integrity sha512-Bwd/L+EiqMeNkZDQANXUSVCMu+6O5qj8tgQmdY8NJqYxzenmC5a3WxbdTbQmNO/PGlLs2uZa7jlsEbi1Zz+WeQ==
+"@swc/cli@^0.1.51":
+  version "0.1.51"
+  resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.51.tgz#720f2d966446558011085c2a40a65fd9079d06a1"
+  integrity sha512-7eqZGpkI4QOYfF+9FV4xpT/V/LSRDs5OMJcm4Z46JnPMvv+sxumAFdCe1hHRzHgnzwis9OtjI8Tt3Srf9JudQw==
   dependencies:
     commander "^7.1.0"
     fast-glob "^3.2.5"
