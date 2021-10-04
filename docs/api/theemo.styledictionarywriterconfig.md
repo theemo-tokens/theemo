@@ -9,7 +9,7 @@ hide_title: true
 
 ## StyleDictionaryWriterConfig interface
 
-The config for Style Dicitionary being used as `WriterTool`<!-- -->.
+The config for Style Dicitionary being used as `WriterTool`.
 
 <b>Signature:</b>
 
@@ -19,13 +19,15 @@ export interface StyleDictionaryWriterConfig
 
 ## Remarks
 
-The result from `Lexer` is pushed into the writer. Such, the configuration requires you to provide a folder for named groups, the file for the respective token and the "path" (the canonical name of the token, so to say) within that file.
+The result from `Lexer` is pushed into the writer. Such, the configuration requires you to provide the file for the respective token and the "path" (the canonical name of the token, so to say) within that file.
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [fileForToken](./theemo.styledictionarywriterconfig.filefortoken.md) | <code>(token: Token) =&gt; string</code> | The file for the given token. |
-|  [folderForGroup](./theemo.styledictionarywriterconfig.folderforgroup.md) | <code>(group: string) =&gt; string</code> | The folder for the named group |
-|  [pathForToken](./theemo.styledictionarywriterconfig.pathfortoken.md) | <code>(token: Token) =&gt; string[]</code> | The path (the canonical name) of the token |
-|  [tool](./theemo.styledictionarywriterconfig.tool.md) | <code>Tools.StyleDictionary</code> |  |
+|  [dataForToken?](./theemo.styledictionarywriterconfig.datafortoken.md) | (token: Token) =&gt; Record&lt;string, unknown&gt; | <i>(Optional)</i> Customize the data for a token |
+|  [directory?](./theemo.styledictionarywriterconfig.directory.md) | string | <i>(Optional)</i> The directory to which the tokens are written to |
+|  [fileForToken](./theemo.styledictionarywriterconfig.filefortoken.md) | (token: Token) =&gt; string | The file for the given token. |
+|  [pathForToken](./theemo.styledictionarywriterconfig.pathfortoken.md) | (token: Token) =&gt; string\[\] | The path (the canonical name) of the token |
+|  [tool](./theemo.styledictionarywriterconfig.tool.md) | [Tools.StyleDictionary](./theemo.tools.styledictionary.md) |  |
+|  [valueForToken?](./theemo.styledictionarywriterconfig.valuefortoken.md) | (token: Token, tokens: TokenCollection) =&gt; string | <i>(Optional)</i> The value for the given token |

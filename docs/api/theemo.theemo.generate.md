@@ -21,8 +21,8 @@ generate(config?: GenerateConfig): void;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | <code>GenerateConfig</code> | the config for generation |
+|  config | GenerateConfig | the config for generation |
 
 <b>Returns:</b>
 
-`void`
+void

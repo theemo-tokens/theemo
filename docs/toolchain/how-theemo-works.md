@@ -3,13 +3,29 @@ id: how-theemo-works
 title: How Theemo Works
 ---
 
-Theemo will work with **tokens**, passes them around from one tool to the other,
-but it _will never understand_ them.
+Theemo will work with **tokens** and overall knows about performing these steps:
 
-Example:
+```mermaid
+flowchart LR
+    subgraph Sync [ ]
+        RunSync[Sync] --> DescSync[Generates tokens for your<br>token translation tool]
+    end
 
-You will use tokens in figma, the way designers intend to. Next is to describe
-in Theemo what's their structure, how they are classified in order to prepare
-them to move them forward. You can think of it as the DSL to your tokens.
+    subgraph Build [ ]
+        RunBuild[Build] --> DescBuild[Run build with your<br>token translation tool]
+    end
 
-That most likely affects the [sync](sync.md) part.
+    subgraph Generate [ ]
+        RunGenerate[Generate] --> DescGenerate[Generates a theemo theme]
+    end
+
+    Sync --> Build --> Generate
+
+    classDef text stroke-width:0,fill:transparent
+    class DescSync,DescBuild,DescGenerate text
+```
+
+The paradox part is, while theemo provides all the infrastructure, it never
+understands your tokens at all. That is given the high diversity of design
+tokens, they come in many forms and your `theemo.js` config acts as DSL to make
+them understandable _to you_.

@@ -23,6 +23,6 @@ export default interface TheemoConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [build](./theemo.theemoconfig.build.md) | <code>BuildConfig</code> | Config for the build command |
-|  [generate](./theemo.theemoconfig.generate.md) | <code>GenerateConfig</code> | Config for the generate command |
-|  [sync](./theemo.theemoconfig.sync.md) | <code>SyncConfig</code> | Config for the sync command |
+|  [build?](./theemo.theemoconfig.build.md) | BuildConfig | <i>(Optional)</i> Config for the build command |
+|  [generate?](./theemo.theemoconfig.generate.md) | GenerateConfig | <i>(Optional)</i> Config for the generate command |
+|  [sync?](./theemo.theemoconfig.sync.md) | SyncConfig | <i>(Optional)</i> Config for the sync command |

@@ -9,7 +9,7 @@ hide_title: true
 
 ## FigmaReaderConfig.isTokenByText property
 
-This is to verify that a given `Node`<!-- -->found in figmas node tree is considered to be a token or not, depending on the name of the node
+This is to verify that a given `Node`found in figmas node tree is considered to be a token or not, depending on the name of the node
 
 <b>Signature:</b>
 

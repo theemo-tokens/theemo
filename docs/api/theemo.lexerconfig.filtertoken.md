@@ -29,5 +29,4 @@ You may want to keep only purpose tokens, use this:
 filterToken(token) {
   return token.type === 'purpose';
 }
-
 ```

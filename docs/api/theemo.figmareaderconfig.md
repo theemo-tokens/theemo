@@ -21,11 +21,13 @@ export interface FigmaReaderConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [figmaFile](./theemo.figmareaderconfig.figmafile.md) | <code>string</code> | The URL for the figma file, get it though ENV |
-|  [figmaSecret](./theemo.figmareaderconfig.figmasecret.md) | <code>string</code> | The secret for the figma file, get it though ENV |
-|  [getNameFromText](./theemo.figmareaderconfig.getnamefromtext.md) | <code>(node: Node&lt;'TEXT'&gt;) =&gt; string</code> | To retrieve the name for a token from a <code>Node</code> |
-|  [getValueFromText](./theemo.figmareaderconfig.getvaluefromtext.md) | <code>(node: Node&lt;'TEXT'&gt;) =&gt; string</code> | To retrieve the value for a token from a <code>Node</code> |
-|  [isTokenByStyle](./theemo.figmareaderconfig.istokenbystyle.md) | <code>(style: Style) =&gt; boolean</code> | This is to verify that a given <code>Style</code> node found in figmas node tree is considered to be a token or not |
-|  [isTokenByText](./theemo.figmareaderconfig.istokenbytext.md) | <code>(node: Node&lt;'TEXT'&gt;) =&gt; boolean</code> | This is to verify that a given <code>Node</code>found in figmas node tree is considered to be a token or not, depending on the name of the node |
-|  [referencer](./theemo.figmareaderconfig.referencer.md) | <code>FigmaReferencerConfig</code> | The config for the referencer |
-|  [tool](./theemo.figmareaderconfig.tool.md) | <code>Tools.Figma</code> |  |
+|  [figmaFile](./theemo.figmareaderconfig.figmafile.md) | string | The URL for the figma file, get it though ENV |
+|  [figmaSecret](./theemo.figmareaderconfig.figmasecret.md) | string | The secret for the figma file, get it though ENV |
+|  [getNameFromStyle?](./theemo.figmareaderconfig.getnamefromstyle.md) | (style: Style) =&gt; string | <i>(Optional)</i> To retrieve the name for a token from a <code>Style</code> |
+|  [getNameFromText?](./theemo.figmareaderconfig.getnamefromtext.md) | (node: Node&lt;'TEXT'&gt;) =&gt; string | <i>(Optional)</i> To retrieve the name for a token from a <code>Node</code> |
+|  [getTypeFromToken?](./theemo.figmareaderconfig.gettypefromtoken.md) | (token: FigmaToken) =&gt; string | <i>(Optional)</i> To retrieve the type of a token |
+|  [getValueFromText?](./theemo.figmareaderconfig.getvaluefromtext.md) | (node: Node&lt;'TEXT'&gt;) =&gt; string | <i>(Optional)</i> To retrieve the value for a token from a <code>Node</code> |
+|  [isTokenByStyle?](./theemo.figmareaderconfig.istokenbystyle.md) | (style: Style) =&gt; boolean | <i>(Optional)</i> This is to verify that a given <code>Style</code> node found in figmas node tree is considered to be a token or not |
+|  [isTokenByText?](./theemo.figmareaderconfig.istokenbytext.md) | (node: Node&lt;'TEXT'&gt;) =&gt; boolean | <i>(Optional)</i> This is to verify that a given <code>Node</code>found in figmas node tree is considered to be a token or not, depending on the name of the node |
+|  [referencer?](./theemo.figmareaderconfig.referencer.md) | [FigmaReferencerConfig](./theemo.figmareferencerconfig.md) | <i>(Optional)</i> The config for the referencer |
+|  [tool](./theemo.figmareaderconfig.tool.md) | [Tools.Figma](./theemo.tools.figma.md) |  |

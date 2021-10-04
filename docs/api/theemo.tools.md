@@ -11,7 +11,7 @@ hide_title: true
 
 An list of known tools
 
-Each tool can be a `ReaderTool`<!-- -->, `WriterTool` or `BuilderTool` (multiple of that are allowed) and can be further parametrized through respective configs
+Each tool can be a `ReaderTool`, `WriterTool` or `BuilderTool` (multiple of that are allowed) and can be further parametrized through respective configs
 
 <b>Signature:</b>
 

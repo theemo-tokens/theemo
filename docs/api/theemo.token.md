@@ -16,9 +16,12 @@ The token interface as they are returned from the reader(s).
 ```typescript
 export default interface Token extends BaseToken 
 ```
+<b>Extends:</b> [BaseToken](./theemo.basetoken.md)
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [value](./theemo.token.value.md) | <code>string</code> | The tokens value |
+|  [tier](./theemo.token.tier.md) | [TokenTier](./theemo.tokentier.md) | The tier describes the usage level of a token |
+|  [transforms?](./theemo.token.transforms.md) | Partial&lt;Record&lt;'hue' \| 'saturation' \| 'lightness' \| 'opacity', number&gt;&gt; | <i>(Optional)</i> Optional transforms to run on the reference token |
+|  [value?](./theemo.token.value.md) | string | <i>(Optional)</i> The tokens computed value |

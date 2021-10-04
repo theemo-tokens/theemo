@@ -9,21 +9,20 @@ hide_title: true
 
 ## WriterTool.write() method
 
-Writes a named collection to the disk in the format of the tool
+Writes a named set to the disk in the format of the tool
 
 <b>Signature:</b>
 
 ```typescript
-write(name: string, tokens: TokenCollection): void;
+write(tokens: TokenCollection): void;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  name | <code>string</code> | name of the collection |
-|  tokens | <code>TokenCollection</code> | collection of tokens to write |
+|  tokens | TokenCollection | tokens to write |
 
 <b>Returns:</b>
 
-`void`
+void

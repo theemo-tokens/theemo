@@ -9,10 +9,20 @@ hide_title: true
 
 ## BaseToken.type property
 
-The type describes the usage level of a token
+The type helps token translation tools to generate the respective value in the appropriate format.
 
 <b>Signature:</b>
 
 ```typescript
-type: TokenType;
+type?: string;
 ```
+
+## Remarks
+
+Resources:
+
+- [DTCG Glossary (Design Token Type)](https://www.designtokens.org/glossary/#design-token-type)
+
+- [Style-Dictionary](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item)
+
+- [Theo](https://github.com/salesforce-ux/theo#supported-categories)

@@ -34,5 +34,4 @@ normalizeToken(token: Token): Token {
 
  return normalized;
 }
-
 ```

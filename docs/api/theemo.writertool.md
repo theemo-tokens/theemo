@@ -25,4 +25,4 @@ Style Dictionary may be your writer tool and knows how to write the `properties/
 
 |  Method | Description |
 |  --- | --- |
-|  [write(name, tokens)](./theemo.writertool.write.md) | Writes a named collection to the disk in the format of the tool |
+|  [write(tokens)](./theemo.writertool.write.md) | Writes a named set to the disk in the format of the tool |

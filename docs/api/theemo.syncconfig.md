@@ -27,6 +27,6 @@ export default interface SyncConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [lexer](./theemo.syncconfig.lexer.md) | <code>LexerConfig</code> | Config to \_make sense\_ of your tokens, as you need them in your domain |
-|  [reader](./theemo.syncconfig.reader.md) | <code>ReaderConfig</code> | Config for reading tokens from external source |
-|  [writer](./theemo.syncconfig.writer.md) | <code>WriterConfig</code> | Config to write them onto the disk for your used token manager tool |
+|  [lexer](./theemo.syncconfig.lexer.md) | LexerConfig | Config to \_make sense\_ of your tokens, as you need them in your domain |
+|  [reader](./theemo.syncconfig.reader.md) | ReaderConfig | Config for reading tokens from external source |
+|  [writer](./theemo.syncconfig.writer.md) | WriterConfig | Config to write them onto the disk for your used token manager tool |

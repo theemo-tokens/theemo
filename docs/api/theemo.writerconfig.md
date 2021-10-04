@@ -20,3 +20,4 @@ declare type WriterConfig = StyleDictionaryWriterConfig & {
     tool: Tools;
 };
 ```
+<b>References:</b> [StyleDictionaryWriterConfig](./theemo.styledictionarywriterconfig.md), [Tools](./theemo.tools.md)

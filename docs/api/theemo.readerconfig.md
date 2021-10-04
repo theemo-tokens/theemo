@@ -20,3 +20,4 @@ declare type ReaderConfig = FigmaReaderConfig & {
     tool: Tools;
 };
 ```
+<b>References:</b> [FigmaReaderConfig](./theemo.figmareaderconfig.md), [Tools](./theemo.tools.md)

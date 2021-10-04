@@ -21,8 +21,8 @@ build(config?: BuildConfig): Promise<void>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | <code>BuildConfig</code> | the config for build (if it cannot be auto-detected) |
+|  config | BuildConfig | the config for build (if it cannot be auto-detected) |
 
 <b>Returns:</b>
 
-`Promise<void>`
+Promise&lt;void&gt;

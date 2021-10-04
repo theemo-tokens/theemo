@@ -1,12 +1,12 @@
 ---
-id: index
+id: overview
 title: Introduction
 ---
 
 Theemo will do the following:
 
-- **Sync** from your Design Tool to your Token Manager Tool
-- Trigger the **build** of your Token Manager Tool
+- **Sync** from your Design Tool to your Token Translation Tool
+- Trigger the **build** of your Token Translation Tool
 - **Generates** a ready-to-consume, adoptive CSS theme
 - Use one or all features
 

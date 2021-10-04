@@ -18,4 +18,4 @@ read(): Promise<TokenCollection>;
 ```
 <b>Returns:</b>
 
-`Promise<TokenCollection>`
+Promise&lt;TokenCollection&gt;

@@ -9,10 +9,16 @@ hide_title: true
 
 ## Token.value property
 
-The tokens value
+The tokens computed value
 
 <b>Signature:</b>
 
 ```typescript
 value?: string;
 ```
+
+## Remarks
+
+References:
+
+- [DTCG Glossary (Design Token Value)](https://www.designtokens.org/glossary/#design-token-value)

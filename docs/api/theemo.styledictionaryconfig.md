@@ -18,9 +18,10 @@ Style Dictionary is used as `WriterTool` and `BuilderTool` - yet there is only t
 ```typescript
 export interface StyleDictionaryConfig extends ToolConfig 
 ```
+<b>Extends:</b> ToolConfig
 
 ## Properties
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [writer](./theemo.styledictionaryconfig.writer.md) | <code>StyleDictionaryWriterConfig</code> |  |
+|  [writer](./theemo.styledictionaryconfig.writer.md) | [StyleDictionaryWriterConfig](./theemo.styledictionarywriterconfig.md) |  |

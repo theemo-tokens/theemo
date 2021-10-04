@@ -2,7 +2,8 @@ const repoUrl = 'https://github.com/gossi/theemo';
 
 module.exports = {
   title: 'Theemo', // Title for your website.
-  tagline: 'The yordle powered design-ops suite for automation',
+  tagline:
+    'Design Token Automations - Filling the gaps to make all your tools work together.',
   // url: repoUrl, // Your website URL
   // baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -27,13 +28,14 @@ module.exports = {
         docs: {
           path: '../docs',
           sidebarPath: require.resolve('./sidebars.js'),
-        },
-      },
-    ],
+          sidebarCollapsible: true,
+          remarkPlugins: [require('mdx-mermaid')]
+        }
+      }
+    ]
   ],
 
   themeConfig: {
-    sidebarCollapsible: true,
     navbar: {
       title: 'Theemo',
       logo: {
@@ -41,16 +43,24 @@ module.exports = {
         src: 'img/favicon.svg'
       },
       items: [
-        {to: 'docs/getting-started', label: 'Getting Started', position: 'left'},
-        {to: 'docs/design/overview', label: 'Design', position: 'left'},
-        { to: 'docs/toolchain/index', label: 'Toolchain', position: 'left' },
-        {to: 'docs/frameworks/overview', label: 'Frameworks', position: 'left'},
+        {
+          to: 'docs/getting-started',
+          label: 'Getting Started',
+          position: 'left'
+        },
+        { to: 'docs/design/overview', label: 'Design', position: 'left' },
+        { to: 'docs/toolchain/overview', label: 'Toolchain', position: 'left' },
+        {
+          to: 'docs/frameworks/overview',
+          label: 'Frameworks',
+          position: 'left'
+        },
         // {page: 'help', label: 'Help'}
-        {href: repoUrl, label: 'Github', position: 'right'}
+        { href: repoUrl, label: 'Github', position: 'right' }
       ]
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} Thomas Gossmann`,
+      copyright: `Copyright © ${new Date().getFullYear()} Thomas Gossmann`
     }
   }
 };

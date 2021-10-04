@@ -26,15 +26,17 @@ const features = [
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
+        <p>Blend into your existing toolchain</p>
+
         <Link to='docs/toolchain/sync'><h3>Sync</h3></Link>
-        <p>Sync Design Tokens from your Design Tool (eg. Figma, Sketch) into your 
-        favorite Token Manager Tool (eg. Style-Dictionary, Theo).</p>
+        <p>Sync design tokens from your design tool (eg. Figma, Sketch) into your 
+        favorite token translation tool (eg. Style-Dictionary, Theo).</p>
 
         <Link to='docs/toolchain/build'><h3>Build</h3></Link>
-        <p>Run the build of your Token Manager Tool and keep your Design Tokens organized.</p>
+        <p>Run the build of your token translation tool and keep your design tokens organized.</p>
         
         <Link to='docs/toolchain/generate'><h3>Generate</h3></Link>
-        <p>Generate a Theme adapting to users preferences (such as color-scheme)</p>
+        <p>Generate a theme adapting to users preferences (such as color-scheme)</p>
       </>
     ),
   },
@@ -44,7 +46,7 @@ const features = [
     // imageUrl: 'img/undraw_react.svg',
     description: (
       <>
-        <p>Run the build of your Token Manager Tool and keep your Design Tokens organized.</p>
+        <p>Integrate the generated design tokens into your framework of choice.</p>
         <ul>
           <li><Link to='docs/frameworks/ember'>Ember</Link></li>
         </ul>

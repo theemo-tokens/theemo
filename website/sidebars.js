@@ -1,32 +1,32 @@
 module.exports = {
   docs: {
-    'Documentation': [
-      'getting-started',
-      'libraries'
-    ]
+    Documentation: ['getting-started', 'libraries']
   },
   design: {
-    'Design': [
-      'design/overview',
-      'design/figma'
-    ]
+    Design: ['design/overview', 'design/figma']
   },
   toolchain: {
-    'Theemo': [
-      'toolchain/index',
+    Theemo: [
+      'toolchain/overview',
       'toolchain/getting-started',
       'toolchain/how-theemo-works',
       'toolchain/usage'
     ],
-    'Features': [
-      'toolchain/sync',
+    Features: [
+      {
+        type: 'category',
+        label: 'Sync',
+        items: [
+          'toolchain/sync/overview',
+          'toolchain/sync/reader',
+          'toolchain/sync/lexer',
+          'toolchain/sync/writer'
+        ]
+      },
       'toolchain/build',
       'toolchain/generate'
     ],
-    'Appendix': [
-      'toolchain/glossary',
-      'toolchain/example-config'
-    ],
+    Appendix: ['toolchain/glossary', 'toolchain/example-config'],
     'API Reference': [
       'api/theemo',
       'api/theemo.theemo',
@@ -36,7 +36,7 @@ module.exports = {
         items: [
           'api/theemo.token',
           'api/theemo.basetoken',
-          'api/theemo.tokentype',
+          'api/theemo.tokentier'
         ]
       },
       {
@@ -45,8 +45,7 @@ module.exports = {
         items: [
           'api/theemo.tools',
           'api/theemo.readertool',
-          'api/theemo.writertool',
-          'api/theemo.buildertool'
+          'api/theemo.writertool'
         ]
       },
       {
@@ -77,12 +76,9 @@ module.exports = {
           'api/theemo.styledictionarywriterconfig'
         ]
       }
-    ],
+    ]
   },
   frameworks: {
-    'Frameworks': [
-      'frameworks/overview',
-      'frameworks/ember'
-    ]
+    Frameworks: ['frameworks/overview', 'frameworks/ember']
   }
 };

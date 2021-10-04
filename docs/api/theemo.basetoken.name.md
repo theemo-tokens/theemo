@@ -16,3 +16,9 @@ The tokens name
 ```typescript
 name: string;
 ```
+
+## Remarks
+
+References:
+
+- [DTCG Glossary (Design Token Name)](https://www.designtokens.org/glossary/#design-token-name)

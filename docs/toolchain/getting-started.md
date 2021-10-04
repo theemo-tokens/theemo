@@ -25,8 +25,8 @@ this to your `package.json`:
     "name": "ocean"
   },
   "devDependencies": {
-    "style-dictionary": "^2.8.3",
-    "theemo": "^0.0.3"
+    "style-dictionary": "^3.0.0",
+    "theemo": "^0.1.0"
   }
 }
 ```
@@ -36,12 +36,13 @@ this to your `package.json`:
 There are two things to configure:
 
 1. Theemo
-2. Your Token Manager Tool (if you haven't already - refer to respective docs)
+2. Your Token Translation Tool (if you haven't already - refer to respective docs)
 
-Theemo is configured in `theemo.js`. To understand what you need to configure,
-you first need to understand [how theemo works](how-theemo-works.md). Each
-action has its own configuration part and is explained in detail on each
-section. Please refer to:
+Theemo is configured in `theemo.js`. Theemo can help you **sync** tokens from your
+design tool into the format of your token translation tool. After running the
+**build** of that, will post-process that output and **generate** a theemo theme
+file ready to be consumed by your framework of choice. Each step has its own
+configuration part and is explained in detail on each section. Please refer to:
 
 - [Sync](sync.md)
 - [Build](build.md)
@@ -49,9 +50,9 @@ section. Please refer to:
 
 ## 3. Execute
 
-Theemo comes with a [CLI](usage.md) and let's you execute commands for each action. Imagine
-your project uses all actions, it's enough to have one command for it in your
-_theme package_. Here is a good practice (a `package.json`):
+Theemo comes with a [CLI](usage.md) and let's you execute commands. Imagine your
+project uses all steps, it's enough to have one command for each step in
+your _theme package_. Here is a good practice (a `package.json`):
 
 ```json
 {
@@ -59,7 +60,7 @@ _theme package_. Here is a good practice (a `package.json`):
   // ...
   "scripts": {
     "sync": "yarn theemo sync",
-    "build": "yarn theemo build",
+    "build": "yarn style-dictionary build",
     "generate": "yarn theemo generate",
     "magic": "yarn sync && yarn build && yarn generate"
   }
@@ -82,15 +83,12 @@ and _magically_ everything comes together. Theemo will update your
   "name": "@foo/my-theme",
   "theemo": {
     "name": "ocean",
-    "colorSchemes": [
-      "light",
-      "dark"
-    ],
+    "colorSchemes": ["light", "dark"],
     "file": "dist/ocean.css"
   },
   "devDependencies": {
-    "style-dictionary": "^2.8.3",
-    "theemo": "^0.0.3"
+    "style-dictionary": "^3.0.0",
+    "theemo": "^0.1.0"
   }
 }
 ```

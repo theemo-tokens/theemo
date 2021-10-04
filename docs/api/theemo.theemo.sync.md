@@ -21,8 +21,8 @@ sync(config?: SyncConfig): Promise<void>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  config | <code>SyncConfig</code> | the config for sync |
+|  config | SyncConfig | the config for sync |
 
 <b>Returns:</b>
 
-`Promise<void>`
+Promise&lt;void&gt;

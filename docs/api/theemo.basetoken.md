@@ -25,9 +25,8 @@ That is, figma is subclassing this with its own token and specific figma-related
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [category](./theemo.basetoken.category.md) | <code>string</code> | The category helps token manager tools to generate the respective value in the appropriate format. |
-|  [colorScheme](./theemo.basetoken.colorscheme.md) | <code>string</code> | Indicates the color scheme, to which the token belongs |
-|  [description](./theemo.basetoken.description.md) | <code>string</code> | The description for the token |
-|  [name](./theemo.basetoken.name.md) | <code>string</code> | The tokens name |
-|  [reference](./theemo.basetoken.reference.md) | <code>string</code> | The name of the reference this token points to |
-|  [type](./theemo.basetoken.type.md) | <code>TokenType</code> | The type describes the usage level of a token |
+|  [colorScheme?](./theemo.basetoken.colorscheme.md) | string | <i>(Optional)</i> Indicates the color scheme, to which the token belongs |
+|  [description?](./theemo.basetoken.description.md) | string | <i>(Optional)</i> The description for the token |
+|  [name](./theemo.basetoken.name.md) | string | The tokens name |
+|  [reference?](./theemo.basetoken.reference.md) | string | <i>(Optional)</i> The name of the reference this token points to |
+|  [type?](./theemo.basetoken.type.md) | string | <i>(Optional)</i> The type helps token translation tools to generate the respective value in the appropriate format. |

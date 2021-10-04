@@ -21,7 +21,6 @@ export default interface LexerConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [classifyToken](./theemo.lexerconfig.classifytoken.md) | <code>(token: Token, tokens: {</code><br/><code>        raw: TokenCollection;</code><br/><code>        normalized: TokenCollection;</code><br/><code>    }) =&gt; Token</code> | Describe your tokens:<!-- -->- What's the type? - What's the color scheme? |
-|  [filterToken](./theemo.lexerconfig.filtertoken.md) | <code>(token: Token, tokens: {</code><br/><code>        raw: TokenCollection;</code><br/><code>        normalized: TokenCollection;</code><br/><code>        classified: TokenCollection;</code><br/><code>    }) =&gt; boolean</code> | Filter callback to only keep the tokens you need. |
-|  [groupForToken](./theemo.lexerconfig.groupfortoken.md) | <code>(token: Token) =&gt; string</code> | Return the group for a token (e.g. if you want to group them by color scheme) |
-|  [normalizeToken](./theemo.lexerconfig.normalizetoken.md) | <code>(token: Token, tokens: {</code><br/><code>        raw: TokenCollection;</code><br/><code>    }) =&gt; Token</code> | This is to normalize tokens and remove some glibberish off of it. Comes with a default, if you don't provide one (see in the example) |
+|  [classifyToken?](./theemo.lexerconfig.classifytoken.md) | (token: Token, tokens: { raw: TokenCollection; normalized: TokenCollection; }) =&gt; Token | <i>(Optional)</i> Describe your tokens:- What's the type? - What's the color scheme? |
+|  [filterToken?](./theemo.lexerconfig.filtertoken.md) | (token: Token, tokens: { raw: TokenCollection; normalized: TokenCollection; classified: TokenCollection; }) =&gt; boolean | <i>(Optional)</i> Filter callback to only keep the tokens you need. |
+|  [normalizeToken?](./theemo.lexerconfig.normalizetoken.md) | (token: Token, tokens: { raw: TokenCollection; }) =&gt; Token | <i>(Optional)</i> This is to normalize tokens and remove some glibberish off of it. Comes with a default, if you don't provide one (see in the example) |

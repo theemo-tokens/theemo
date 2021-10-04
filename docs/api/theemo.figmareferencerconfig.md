@@ -18,6 +18,7 @@ export declare type FigmaReferencerConfig = FigmaReferencerPluginConfig & {
     type: FigmaReferencerType;
 };
 ```
+<b>References:</b> [FigmaReferencerPluginConfig](./theemo.figmareferencerpluginconfig.md), [FigmaReferencerType](./theemo.figmareferencertype.md)
 
 ## Example
 
@@ -36,5 +37,4 @@ referencer: {
     }
   }
 }
-
 ```

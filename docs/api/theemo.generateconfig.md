@@ -19,9 +19,9 @@ export default interface GenerateConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [auto](./theemo.generateconfig.auto.md) | <code>boolean</code> |  |
-|  [base](./theemo.generateconfig.base.md) | <code>string</code> |  |
-|  [colorSchemes](./theemo.generateconfig.colorschemes.md) | <code>{</code><br/><code>        [key: string]: SchemeConfig;</code><br/><code>    }</code> |  |
-|  [defaultColorScheme](./theemo.generateconfig.defaultcolorscheme.md) | <code>string</code> |  |
-|  [input](./theemo.generateconfig.input.md) | <code>string</code> |  |
-|  [output](./theemo.generateconfig.output.md) | <code>string</code> |  |
+|  [auto](./theemo.generateconfig.auto.md) | boolean |  |
+|  [base?](./theemo.generateconfig.base.md) | string | <i>(Optional)</i> |
+|  [colorSchemes?](./theemo.generateconfig.colorschemes.md) | { \[key: string\]: SchemeConfig; } | <i>(Optional)</i> |
+|  [defaultColorScheme?](./theemo.generateconfig.defaultcolorscheme.md) | string | <i>(Optional)</i> |
+|  [input](./theemo.generateconfig.input.md) | string |  |
+|  [output?](./theemo.generateconfig.output.md) | string | <i>(Optional)</i> |

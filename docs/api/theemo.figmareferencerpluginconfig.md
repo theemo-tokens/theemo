@@ -21,6 +21,6 @@ export interface FigmaReferencerPluginConfig
 
 |  Property | Type | Description |
 |  --- | --- | --- |
-|  [plugin](./theemo.figmareferencerpluginconfig.plugin.md) | <code>string</code> |  |
-|  [pluginConfig](./theemo.figmareferencerpluginconfig.pluginconfig.md) | <code>FigmaTheemoPluginConfig &amp; Record&lt;string, unknown&gt;</code> |  |
-|  [type](./theemo.figmareferencerpluginconfig.type.md) | <code>FigmaReferencerType.FigmaPlugin</code> |  |
+|  [plugin](./theemo.figmareferencerpluginconfig.plugin.md) | string |  |
+|  [pluginConfig](./theemo.figmareferencerpluginconfig.pluginconfig.md) | [FigmaTheemoPluginConfig](./theemo.figmatheemopluginconfig.md) &amp; Record&lt;string, unknown&gt; |  |
+|  [type](./theemo.figmareferencerpluginconfig.type.md) | [FigmaReferencerType.FigmaPlugin](./theemo.figmareferencertype.figmaplugin.md) |  |
