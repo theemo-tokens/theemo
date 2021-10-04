@@ -852,15 +852,15 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@microsoft/api-documenter@^7.13.54":
-  version "7.13.54"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.54.tgz#d6eacf912250e57c36589650b84443868cdc2a09"
-  integrity sha512-Ar1e2xcQzGhl3W6z2I6a5cS+a5yXMbZP4cThzwrOR+Vc4rfgQnIQnuZWYPVKdU5UejCgLvUwc8LDMPisUleJQQ==
+"@microsoft/api-documenter@^7.13.55":
+  version "7.13.55"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.55.tgz#4d0b54ad3c817e2e0a67d466fd34c13d2c37a9ab"
+  integrity sha512-mvgT34wAxrW7jPSIBSnIWhNvTIxetFBqjWMSIcc+wLFIh6yxQrPj41lSjv6umztlRvNm91SvswhfKJcbbyGI0A==
   dependencies:
     "@microsoft/api-extractor-model" "7.13.9"
     "@microsoft/tsdoc" "0.13.2"
     "@rushstack/node-core-library" "3.41.0"
-    "@rushstack/ts-command-line" "4.9.1"
+    "@rushstack/ts-command-line" "4.10.0"
     colors "~1.2.1"
     js-yaml "~3.13.1"
     resolve "~1.17.0"
@@ -1144,6 +1144,16 @@
   dependencies:
     resolve "~1.17.0"
     strip-json-comments "~3.1.1"
+
+"@rushstack/ts-command-line@4.10.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@rushstack/ts-command-line/-/ts-command-line-4.10.0.tgz#6ddc939bb16410078379956dd97c14020b71b236"
+  integrity sha512-BRF7O4XQKmrZz8GZ6b/+0+4elrnY2kjZsLrUOJ1dwJZxAR0I1+G0/GD66RVPi0ku1qN4A6t+HrB5p2Nxc9ECrA==
+  dependencies:
+    "@types/argparse" "1.0.38"
+    argparse "~1.0.9"
+    colors "~1.2.1"
+    string-argv "~0.3.1"
 
 "@rushstack/ts-command-line@4.9.1":
   version "4.9.1"
