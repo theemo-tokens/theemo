@@ -1,4 +1,3 @@
-import BuildConfig from './build/config';
 import GenerateConfig from './generate/config';
 import SyncConfig from './sync/config';
 
@@ -12,9 +11,6 @@ import SyncConfig from './sync/config';
 export default interface TheemoConfig {
   /** Config for the sync command */
   sync?: SyncConfig;
-
-  /** Config for the build command */
-  build?: BuildConfig;
 
   /** Config for the generate command */
   generate?: GenerateConfig;

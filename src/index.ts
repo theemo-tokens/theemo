@@ -29,13 +29,6 @@ async function main() {
     });
 
   program
-    .command('build')
-    .description('runs the build of your token manager tool')
-    .action(() => {
-      theemo.build();
-    });
-
-  program
     .command('generate')
     .description('generates an adaptive CSS theme file')
     .action(() => {
@@ -66,7 +59,7 @@ export type { default as WriterConfig } from './sync/writer/config';
 export type { default as GenerateConfig } from './generate/config';
 
 // tools
-export type { Tools, ReaderTool, WriterTool, BuilderTool } from './tools/tool';
+export type { Tools, ReaderTool, WriterTool } from './tools/tool';
 export type {
   FigmaReaderConfig,
   FigmaReferencerConfig,
