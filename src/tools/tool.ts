@@ -44,18 +44,3 @@ export interface WriterTool {
    */
   write(tokens: TokenCollection): void;
 }
-
-/**
- * This is for tools used during the `build` command and trigger the execution
- * of that tool.
- *
- * @example
- *
- * Style Dictionary may be your builder tool and executes the build process
- */
-export interface BuilderTool {
-  /**
-   * Executes the build of the tool
-   */
-  build(): void;
-}
