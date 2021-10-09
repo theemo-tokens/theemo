@@ -3,17 +3,35 @@ id: writer
 title: Writer
 ---
 
-The writer takes your grouped token collection and writes them to the disk. The
-logic depends on your used [token manager tool](glossary.md#token-manager-tool),
-with it there are three main instructions for configuration:
+The writer takes your token collection and writes them to the disk. The
+logic depends on your used [token manager tool](glossary.md#token-manager-tool).
+Initial Config:
 
-- The formats in which colors shall be written
-- The file name for a token
-- The property path for a token. The path is an array and will be used to create
-  a POJO object
+```js
+{
+  writer: {
+    tool: 'style-dictionary';
+  }
+}
+```
 
-For easier understanding of the following snippt, the token has the following
-name: `foo.bar/baz.bam`
+Depending on your used tool, there are more specific configuration options
+
+## Style Dictionary
+
+Style Dictionary needs to know where to put your files, the file for each token,
+the path (canonical name) for the token, the value and optionally custom data
+with it.
+
+Imagine this is our lexical token:
+
+```js
+{
+  name: 'color.intent.action.text',
+  description: 'Text color for an action',
+  value: 'blue'
+}
+```
 
 ```js
 {
@@ -21,11 +39,10 @@ name: `foo.bar/baz.bam`
     tool: 'style-dictionary',
 
     /**
-     * The file in this case is the part before the first `/` in the token name.
+     * For each token, this function will return the filename for the token.
      */
     fileForToken(token) {
-      const slashIndex = token.name.indexOf('/')
-      return token.name.slice(0, slashIndex).replace(/\./g, '/');
+      return token.name.replace('.', '/');
     },
 
     /**
