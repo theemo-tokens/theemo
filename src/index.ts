@@ -10,16 +10,23 @@ import dotenv from 'dotenv';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import package_ from '../package.json';
+import TheemoConfig from './config';
 import Theemo from './theemo';
+import { requireFile } from './utils';
 
 // cli
 
 dotenv.config();
 
+function loadConfig(): TheemoConfig {
+  return requireFile('theemo.js') as TheemoConfig;
+}
+
 async function main() {
   program.version(package_.version).name(package_.name).usage('command');
 
-  const theemo = new Theemo();
+  const config = loadConfig();
+  const theemo = new Theemo(config);
 
   program
     .command('sync')
@@ -44,7 +51,7 @@ main();
 
 export default Theemo;
 
-export type { default as TheemoConfig } from './config';
+export type { TheemoConfig };
 export type {
   default as Token,
   BaseToken,

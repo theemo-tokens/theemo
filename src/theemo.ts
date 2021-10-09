@@ -3,17 +3,12 @@ import GenerateConfig from './generate/config';
 import GenerateCommand from './generate/index';
 import SyncConfig from './sync/config';
 import SyncCommand from './sync/index';
-import { requireFile } from './utils';
 
 export default class Theemo {
   private config: TheemoConfig;
 
-  constructor() {
-    this.config = this.loadConfig();
-  }
-
-  private loadConfig(): TheemoConfig {
-    return requireFile('theemo.js') as TheemoConfig;
+  constructor(config: TheemoConfig) {
+    this.config = config;
   }
 
   /**
