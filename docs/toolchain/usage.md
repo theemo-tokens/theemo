@@ -18,7 +18,6 @@ Options:
 
 Commands:
   sync            sync from your source into your token manager tool
-  build           runs the build of your token manager tool
   generate        generates an adaptive CSS theme file
   help [command]  display help for command
 ```
@@ -34,9 +33,8 @@ import Theemo from 'theemo';
 const theemo = new Theemo();
 
 theemo.sync();
-theemo.build();
 theemo.generate();
 ```
 
-Consult [API reference](api/theemo) for [`sync()`](api/theemo.theemo.sync),
-[`build()`](api/theemo.theemo.build) and [`generate()`](api/theemo.theemo.generate)
+Consult [API reference](../api/theemo) for [`sync()`](../api/theemo.theemo.sync)
+and [`generate()`](../api/theemo.theemo.generate)
