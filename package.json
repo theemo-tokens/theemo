@@ -68,7 +68,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@swc/cli": "^0.1.51",
-    "@swc/core": "^1.2.97",
+    "@swc/core": "^1.2.98",
     "@swc/jest": "^0.2.4",
     "@types/color": "^3.0.2",
     "@types/jest": "^27.0.2",
