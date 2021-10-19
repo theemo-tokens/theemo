@@ -66,7 +66,7 @@
     "@microsoft/api-documenter": "^7.13.63",
     "@microsoft/api-extractor": "^7.18.16",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.100",
     "@swc/jest": "^0.2.4",
