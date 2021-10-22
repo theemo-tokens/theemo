@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "color": "^4.0.1",
-    "commander": "^8.2.0",
+    "commander": "^8.3.0",
     "dotenv": "^10.0.0",
     "esm": "3.2.25",
     "figma-api": "^1.7.0",
