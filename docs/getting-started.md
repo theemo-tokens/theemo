@@ -3,21 +3,20 @@ id: getting-started
 title: Getting Started
 ---
 
-Theemo automates your design tokens by filling the gaps of your existing tool
+Theemo automates your design tokens by connecting your existing tools
 and make them work together, from design to framework integration. The theemo
-suite consists of multiple parts to serve a multi-disciplinary audience. In fact
-it connects all of them together by augmenting the links between, blending the
-workflows into one.
+suite consists of multiple parts to serve a multi-disciplinary audience by
+bringing them together for an immersive workflow.
 
 The suite addresses designers and developers and aims to make them
 more productive. Theemo connects to the collaborating interfaces, guiding
-through a structured process while allowing and adhering to the (already
-implemented) domain language.
+through a structured process while allowing and adhering to an (already
+existing) domain language.
 
 ## For Designers
 
-Theemo enhances your workflow by providing automation to design tools and with
-that offering access to consume your work in structured terms by developers.
+Theemo enhances your workflow by providing automation to design tools and makes
+your data available to developers.
 Assisting you to stay in your most productive workflow and pave the way for
 seemless transition to development.
 
@@ -25,7 +24,7 @@ Have a look at [design](design/overview.md) section, what options are available.
 
 ## For Developers
 
-Theemo assists your workflow by offer [toolchain support](toolchain/index.md)
+Theemo assists your workflow by offering [toolchain support](toolchain/index.md)
 to automate the data exchange with designers and integrates that output with
 your [framework](frameworks/overview.md) of choice.
 

@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     to: 'docs/design/overview',
-    title: <>Design</>,
+    title: <>🎨 Design</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
@@ -22,27 +22,27 @@ const features = [
   },
   {
     to: 'docs/toolchain/index',
-    title: <>Toolchain</>,
+    title: <>🛠️ Toolchain</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
         <p>Blend into your existing toolchain</p>
 
-        <Link to='docs/toolchain/sync'><h3>Sync</h3></Link>
+        <Link to='docs/toolchain/sync/overview'>Sync</Link>
         <p>Sync design tokens from your design tool (eg. Figma, Sketch) into your 
         favorite token translation tool (eg. Style-Dictionary, Theo).</p>
 
-        <Link to='docs/toolchain/build'><h3>Build</h3></Link>
+        <Link to='docs/toolchain/build'>Build</Link>
         <p>Run the build of your token translation tool and keep your design tokens organized.</p>
         
-        <Link to='docs/toolchain/generate'><h3>Generate</h3></Link>
+        <Link to='docs/toolchain/generate'>Generate</Link>
         <p>Generate a theme adapting to users preferences (such as color-scheme)</p>
       </>
     ),
   },
   {
     to: 'docs/frameworks/overview',
-    title: <>Frameworks</>,
+    title: <>🏗️ Frameworks</>,
     // imageUrl: 'img/undraw_react.svg',
     description: (
       <>

@@ -2,8 +2,7 @@ const repoUrl = 'https://github.com/gossi/theemo';
 
 module.exports = {
   title: 'Theemo', // Title for your website.
-  tagline:
-    'Design Token Automations - Filling the gaps to make all your tools work together.',
+  tagline: 'Design Token Automations - Connecting Tools...',
   // url: repoUrl, // Your website URL
   // baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -13,13 +12,14 @@ module.exports = {
   // Used for publishing and more
   projectName: 'theemo',
   organizationName: 'gossi',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
 
   favicon: 'img/favicon.svg',
 
   onBrokenLinks: 'warn',
+
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Patua+One&display=swap'
+  ],
 
   presets: [
     [
@@ -30,6 +30,9 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: true,
           remarkPlugins: [require('mdx-mermaid')]
+        },
+        theme: {
+          customCss: [require.resolve('./src/css/custom.css')]
         }
       }
     ]

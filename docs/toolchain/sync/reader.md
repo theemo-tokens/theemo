@@ -4,19 +4,28 @@ title: Reader
 ---
 
 Reads the tokens read from your design tool and parses them into a unified format.
-Connects to your `source` (e.g. figma) and parses out tokens. Initial Config:
+Connects to your `tool` (e.g. figma) and parses out tokens. Initial Config:
 
 ```js
 {
   reader: {
-    source: 'figma';
+    tool: 'figma';
   }
 }
 ```
 
 Depending on your source, you need to further merge in more properties.
 
-### Figma
+## Figma
+
+You are able to export tokens that are available in Figma itself, such as
+colors, effects, texts and other named tokens, depending on your
+organization. Let's go through each of those cases and how to configure
+theemo for those.
+
+### Colors
+
+![Figma Color Styles](/img/figma-color-styles.png)
 
 To make figma work, these are the essential configuration options:
 

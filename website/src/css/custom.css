@@ -1,0 +1,52 @@
+:root {
+  --ifm-link-color: #e41b1b;
+  --ifm-navbar-link-hover-color: #e41b1b;
+  --ifm-menu-color-active: #e41b1b;
+  --ifm-font-family-base: 'Open Sans';
+  --ifm-heading-font-family: 'Patua One';
+}
+
+img[alt='Figma Color Styles'] {
+  width: 250px;
+}
+
+.admonition h5 {
+  font-family: var(--ifm-font-family-base);
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link:hover code,
+/* .table-of-contents__link--active, */
+.table-of-contents__link--active code {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.hero__title {
+  display: inline-block;
+  color: #ffec40;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 0;
+
+  font-family: 'Patua One';
+  text-transform: uppercase;
+}
+
+.hero__title::first-letter {
+  font-size: 1.2em;
+}
+
+.hero__title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: #e41b1b;
+  transform: skew(-20deg);
+
+  z-index: -1;
+}
