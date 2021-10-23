@@ -60,7 +60,7 @@ export default class GenerateCommand {
         packageJson.keywords.push('theemo-theme');
       }
 
-      const data = JSON.stringify(packageJson, null, '  ');
+      const data = JSON.stringify(packageJson, undefined, '  ');
       const packageFile = path.join(process.cwd(), 'package.json');
       fs.writeFileSync(packageFile, data);
     }

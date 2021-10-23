@@ -23,4 +23,4 @@ jobs:
         with:
           coverageCommand: yarn coverage
           coverageLocations: |
-            ${{github.workspace}}/coverage/lcov.info:lcov
+            ${{github.workspace}}/packages/theemo/coverage/lcov.info:lcov
