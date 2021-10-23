@@ -25,6 +25,9 @@ theemo for those.
 
 ### Colors
 
+Colors might be by far the most interesting tokens to export from Figma. Let's
+assume these available color styles:
+
 ![Figma Color Styles](/img/figma-color-styles.png)
 
 To make figma work, these are the essential configuration options:
