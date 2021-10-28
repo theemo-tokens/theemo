@@ -50,3 +50,32 @@ img[alt='Figma Color Styles'] {
 
   z-index: -1;
 }
+
+figure {
+  counter-increment: figure;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+figure :where(img, video) {
+  max-width: 75%;
+}
+
+.f-90 :where(img, video) {
+  max-width: 90%;
+}
+
+.f-80 :where(img, video) {
+  max-width: 80%;
+}
+
+.f-50 :where(img, video) {
+  max-width: 50%;
+}
+
+figcaption::before {
+  content: 'Figure ' counter(figure) ': ';
+}

@@ -2,7 +2,7 @@ const repoUrl = 'https://github.com/gossi/theemo';
 
 module.exports = {
   title: 'Theemo', // Title for your website.
-  tagline: 'Design Token Automations - Connecting Tools...',
+  tagline: 'Design Token Automations - Connecting Tools',
   // url: repoUrl, // Your website URL
   // baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
@@ -26,7 +26,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: '../docs',
+          path: 'docs/',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: true,
           remarkPlugins: [require('mdx-mermaid')]
@@ -40,6 +40,7 @@ module.exports = {
 
   themeConfig: {
     navbar: {
+      hideOnScroll: false,
       title: 'Theemo',
       logo: {
         alt: 'Theemo Logo',
@@ -51,8 +52,8 @@ module.exports = {
           label: 'Getting Started',
           position: 'left'
         },
-        { to: 'docs/design/overview', label: 'Design', position: 'left' },
-        { to: 'docs/toolchain/overview', label: 'Toolchain', position: 'left' },
+        { to: 'docs/design', label: 'Design', position: 'left' },
+        { to: 'docs/toolchain/introduction', label: 'Toolchain', position: 'left' },
         {
           to: 'docs/frameworks/overview',
           label: 'Frameworks',
@@ -63,7 +64,7 @@ module.exports = {
       ]
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} Thomas Gossmann`
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://gos.si" target="_blank">Thomas Gossmann</a>`
     }
   }
 };
