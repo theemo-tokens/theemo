@@ -29,8 +29,9 @@ Here is how to execute all tasks in order. Config is being picked up from
 
 ```ts
 import Theemo from 'theemo';
+import config from './config';
 
-const theemo = new Theemo();
+const theemo = new Theemo(config);
 
 theemo.sync();
 theemo.generate();

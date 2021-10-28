@@ -1,9 +1,10 @@
 ---
-id: how-theemo-works
-title: How Theemo Works
+id: introduction
+title: Introduction
 ---
 
-Theemo will work with **tokens** and overall knows about performing these steps:
+Theemo will **integrate** into your existing **toolchain** by **connecting**
+multiple parts together. It will perform the following steps:
 
 ```mermaid
 flowchart LR
@@ -16,7 +17,7 @@ flowchart LR
     end
 
     subgraph Generate [ ]
-        RunGenerate[Generate] --> DescGenerate[Generates a theemo theme]
+        RunGenerate[Generate] --> DescGenerate[Generates a ready-to-use<br>CSS theme file]
     end
 
     Sync --> Build --> Generate
@@ -25,7 +26,11 @@ flowchart LR
     class DescSync,DescBuild,DescGenerate text
 ```
 
-The paradox part is, while theemo provides all the infrastructure, it never
+You can use one or all of the provided features, whatever fits for your situation.
+
+Theemo provides all the infrastructure yet it never
 understands your tokens at all. That is given the high diversity of design
 tokens, they come in many forms and your `theemo.js` config acts as DSL to make
 them understandable _to you_.
+
+-> [Let's get you started](getting-started.md)

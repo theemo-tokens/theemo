@@ -1,5 +1,5 @@
 ---
-id: overview
+id: design
 title: Overview
 hide_title: true
 ---
@@ -8,7 +8,7 @@ hide_title: true
 
 Theemo provides automation support for these design tools:
 
-- [Figma](figma.md)
+- [Figma](design/figma.md)
 
 :::tip More Tools?
 For more support of other design tools, please open an
