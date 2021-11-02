@@ -4936,10 +4936,10 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "2.1.1"
 
-figma-api@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.7.0.tgz#f6077272a60c1eb779519b62de2bed8d513bc292"
-  integrity sha512-AJ3GkM4IBroKTahpmDBOyAq3Str9qB6npivTx7Yzo36sMOrJPxr5soj8rNDqAZtMtrfnUx0chxVSqT0JgofFrw==
+figma-api@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.8.0.tgz#8a9a5638de05b27a0d333fd9a19b46b1cb6e5e64"
+  integrity sha512-/WYfE+pUC9AdbJuCoPMrG/hsi12Jwbq81hhCeSCCjk4x9t9o+KIYQT+PwthVaxUcQsvhcfygFTjbUa4JBTeJwg==
   dependencies:
     "@types/node" "12.0.2"
     axios "^0.21.1"
