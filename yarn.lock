@@ -1534,10 +1534,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@microsoft/api-documenter@^7.13.67":
-  version "7.13.67"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.67.tgz#0cba4ba49eb05e7241b5107d8ec9ec272f598987"
-  integrity sha512-U1ohqUCZWoSLY4uHNjM2VPpIZjoLG76Najg6wY/FXEpIYWmohwfXa84b5QWCY+YHpZLwYFtk9Ye6G3PLqDpgEg==
+"@microsoft/api-documenter@^7.13.68":
+  version "7.13.68"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.68.tgz#c1e144764cac0684adefe78fd848d78c3f374681"
+  integrity sha512-cRjwK1TDyGxFGgCsRG8G0Yi3Z4akvfWgw1pWAxKFbm7ajlQQGZcHPnb+n4lKlSeQ5g/cxc7hcdw54Mvisne9Bg==
   dependencies:
     "@microsoft/api-extractor-model" "7.13.16"
     "@microsoft/tsdoc" "0.13.2"
