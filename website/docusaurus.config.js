@@ -43,7 +43,7 @@ module.exports = {
       hideOnScroll: false,
       title: 'Theemo',
       logo: {
-        alt: 'Theemo Logo',
+        alt: 'Super Theemo',
         src: 'img/favicon.svg'
       },
       items: [
