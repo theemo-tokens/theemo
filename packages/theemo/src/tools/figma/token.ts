@@ -126,3 +126,23 @@ export function getValue(token: FigmaToken, config: ColorConfig): string {
 
   return token.value ?? '';
 }
+
+export function getTypefromStyle(style: Style) {
+  // 'FILL' | 'STROKE' | 'TEXT' | 'EFFECT' | 'GRID'
+  const type = style.styleType;
+
+  switch (type.toLowerCase()) {
+    case 'fill':
+    case 'stroke':
+      return 'color';
+
+    case 'effects':
+      return 'shadow';
+
+    // case 'TEXT':
+    //   return 'typography';
+
+    default:
+      return type.toLowerCase();
+  }
+}

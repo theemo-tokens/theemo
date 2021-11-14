@@ -23,6 +23,7 @@ export default class StyleDictionaryWriter {
 
     for (const token of tokens) {
       const file = this.getFileFromToken(token);
+
       if (!files.has(file)) {
         files.set(file, new TokenCollection());
       }
