@@ -1,0 +1,20 @@
+{
+  "text": {
+    "normal": {
+      "value": "#000000",
+      "comment": "",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "emphasize": {
+      "value": "#894D10",
+      "comment": "",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

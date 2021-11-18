@@ -1,0 +1,22 @@
+{
+  "text": {
+    "normal": {
+      "value": "#F2F2F2",
+      "comment": "",
+      "colorScheme": "dark",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "emphasize": {
+      "value": "#FAE6D1",
+      "comment": "",
+      "colorScheme": "dark",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

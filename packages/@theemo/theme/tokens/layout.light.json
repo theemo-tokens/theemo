@@ -1,0 +1,22 @@
+{
+  "layout": {
+    "background": {
+      "value": "#FFFFFF",
+      "comment": "",
+      "colorScheme": "light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "contrast": {
+      "value": "#E6E6E6",
+      "comment": "",
+      "colorScheme": "light",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

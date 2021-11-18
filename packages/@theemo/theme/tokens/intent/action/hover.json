@@ -1,0 +1,32 @@
+{
+  "intent": {
+    "action": {
+      "hover": {
+        "background": {
+          "value": "#B61616",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#B61616",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#FFEC40",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

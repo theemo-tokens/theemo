@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "background": {
+      "value": "#E6E6E6",
+      "comment": "",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "heading": {
+      "background": {
+        "value": "#E41B1B",
+        "comment": "",
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      },
+      "text": {
+        "value": "#FFEC40",
+        "comment": "",
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      }
+    },
+    "text": {
+      "value": "#000000",
+      "comment": "",
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

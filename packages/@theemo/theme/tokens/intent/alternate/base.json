@@ -1,0 +1,32 @@
+{
+  "intent": {
+    "alternate": {
+      "base": {
+        "background": {
+          "value": "#E4801B",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#E4801B",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#F2F2F2",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

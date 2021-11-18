@@ -1,0 +1,32 @@
+{
+  "intent": {
+    "alternate": {
+      "active": {
+        "background": {
+          "value": "#894D10",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#894D10",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#F2F2F2",
+          "comment": "",
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}
