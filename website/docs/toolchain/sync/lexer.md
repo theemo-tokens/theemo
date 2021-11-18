@@ -38,7 +38,7 @@ sample data for which to apply the above mentioned customizations on:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFFFFF',
+    value: '#FFFFFF'
   },
   {
     name: 'layout.background.$dark',
@@ -47,7 +47,7 @@ sample data for which to apply the above mentioned customizations on:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#4D4D4D',
+    value: '#4D4D4D'
   },
   {
     name: 'layout.background',
@@ -56,7 +56,7 @@ sample data for which to apply the above mentioned customizations on:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFFFFF',
+    value: '#FFFFFF'
   },
   // regular token
   {
@@ -66,7 +66,7 @@ sample data for which to apply the above mentioned customizations on:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFEC40',
+    value: '#FFEC40'
   },
   // token with a reference
   {
@@ -76,7 +76,7 @@ sample data for which to apply the above mentioned customizations on:
     type: 'color',
     colorScheme: undefined,
     reference: 'intent.action.base.text',
-    value: '#FFEC40',
+    value: '#FFEC40'
   },
   // token with a reference and transform
   {
@@ -87,7 +87,7 @@ sample data for which to apply the above mentioned customizations on:
     colorScheme: undefined,
     reference: 'intent.action.base.text',
     value: 'rgba(255, 236, 64, 0.65)',
-    transforms: { opacity: -35 },
+    transforms: { opacity: -35 }
   },
   // specific token
   {
@@ -97,7 +97,7 @@ sample data for which to apply the above mentioned customizations on:
     type: 'color',
     colorScheme: undefined,
     reference: 'text.normal',
-    value: '#000000',
+    value: '#000000'
   },
   // text token
   {
@@ -107,8 +107,8 @@ sample data for which to apply the above mentioned customizations on:
     type: 'content',
     colorScheme: undefined,
     reference: undefined,
-    value: '1.3',
-  },
+    value: '1.3'
+  }
   //...
 ];
 ```
@@ -182,9 +182,9 @@ module.exports = {
         }
 
         return normalized;
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -200,7 +200,7 @@ That will turn the layout tokens from above ...
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFFFFF',
+    value: '#FFFFFF'
   },
   {
     name: 'layout.background.$dark',
@@ -209,8 +209,8 @@ That will turn the layout tokens from above ...
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#4D4D4D',
-  },
+    value: '#4D4D4D'
+  }
   //...
 ];
 ```
@@ -227,7 +227,7 @@ That will turn the layout tokens from above ...
     type: 'color',
     colorScheme: 'light',
     reference: undefined,
-    value: '#FFFFFF',
+    value: '#FFFFFF'
   },
   {
     name: 'layout.background',
@@ -236,8 +236,8 @@ That will turn the layout tokens from above ...
     type: 'color',
     colorScheme: 'dark',
     reference: undefined,
-    value: '#4D4D4D',
-  },
+    value: '#4D4D4D'
+  }
   //...
 ];
 ```
@@ -257,7 +257,7 @@ function isTransient(token, tokens) {
   );
   const isReference = !token.colorScheme && hasColorSchemes;
 
-  return token.type === 'purpose' && isReference;
+  return token.type !== 'basic' && isReference;
 }
 
 module.exports = {
@@ -275,9 +275,9 @@ module.exports = {
         t.transient = isTransient(t, tokens.normalized);
 
         return t;
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -306,9 +306,9 @@ module.exports = {
 
       filterToken(token) {
         return token.tier !== 'basic';
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -334,7 +334,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: 'light',
     reference: undefined,
     value: '#FFFFFF',
-    transient: false,
+    transient: false
   },
   {
     name: 'layout.background',
@@ -344,7 +344,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: 'light',
     reference: undefined,
     value: '#4D4D4D',
-    transient: false,
+    transient: false
   },
   {
     name: 'layout.background',
@@ -354,7 +354,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: undefined,
     reference: undefined,
     value: '#FFFFFF',
-    transient: true,
+    transient: true
   },
   // regular token
   {
@@ -365,7 +365,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: undefined,
     reference: undefined,
     value: '#FFEC40',
-    transient: false,
+    transient: false
   },
   // token with a reference
   {
@@ -376,7 +376,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: undefined,
     reference: 'intent.action.base.text',
     value: '#FFEC40',
-    transient: false,
+    transient: false
   },
   // token with a reference and transform
   {
@@ -388,7 +388,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     reference: 'intent.action.base.text',
     value: 'rgba(255, 236, 64, 0.65)',
     transforms: { opacity: -35 },
-    transient: false,
+    transient: false
   },
   // specific token
   {
@@ -399,7 +399,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: undefined,
     reference: 'text.normal',
     value: '#000000',
-    transient: false,
+    transient: false
   },
   // text token
   {
@@ -410,8 +410,8 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
     colorScheme: undefined,
     reference: undefined,
     value: '1.3',
-    transient: false,
-  },
+    transient: false
+  }
   //...
 ];
 ```

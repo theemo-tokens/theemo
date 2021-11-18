@@ -26,7 +26,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'docs/',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: true,
           remarkPlugins: [require('mdx-mermaid')]
@@ -48,18 +48,20 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/getting-started',
+          to: 'getting-started',
           label: 'Getting Started',
           position: 'left'
         },
-        { to: 'docs/design', label: 'Design', position: 'left' },
-        { to: 'docs/toolchain/introduction', label: 'Toolchain', position: 'left' },
+        { to: 'design', label: 'Design', position: 'left' },
+        { to: 'toolchain/introduction', label: 'Toolchain', position: 'left' },
         {
-          to: 'docs/frameworks/overview',
+          to: 'frameworks/overview',
           label: 'Frameworks',
           position: 'left'
         },
+        { to: 'knowledge-base/glossary', label: 'Knowledge Base', position: 'left' },
         // {page: 'help', label: 'Help'}
+        { to: 'api/theemo', label: 'API', position: 'right' },
         { href: repoUrl, label: 'Github', position: 'right' }
       ]
     },

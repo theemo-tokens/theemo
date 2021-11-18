@@ -1,10 +1,7 @@
 ---
-id: overview
-title: Overview
-hide_title: true
+id: sync
+title: Sync
 ---
-
-# Sync
 
 Sync tokens from your [design tool](https://www.designtokens.org/glossary/#design-tool) to your [token translation
 tool](https://www.designtokens.org/glossary/#design-token-translation-tool).

@@ -10,14 +10,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Connects to your `tool` (e.g. figma) and parses out tokens. Initial Config:
 
 ```js
-{
+module.exports = {
   reader: {
-    tool: 'figma';
+    tool: 'figma'
   }
-}
+};
 ```
-
-Depending on your source, you need to further merge in more properties.
 
 ## Figma
 
@@ -116,12 +114,12 @@ module.exports = {
           jsonbinSecret: JSONBIN_SECRET,
           formats: {
             color: 'hex',
-            colorAlpha: 'rgb',
-          },
-        },
-      },
-    },
-  },
+            colorAlpha: 'rgb'
+          }
+        }
+      }
+    }
+  }
 };
 ```
 
@@ -184,9 +182,9 @@ module.exports = {
         }
 
         return name;
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -225,9 +223,9 @@ module.exports = {
 
       isTokenByText(node) {
         return node.name.includes('[token]');
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -244,9 +242,9 @@ module.exports = {
 
       getNameFromText(node) {
         return node.name.replace('[token]', '').trim();
-      },
-    },
-  },
+      }
+    }
+  }
 };
 ```
 
@@ -312,7 +310,7 @@ parsed from Figma:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFFFFF',
+    value: '#FFFFFF'
   },
   {
     name: 'layout.background.$dark',
@@ -321,7 +319,7 @@ parsed from Figma:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#4D4D4D',
+    value: '#4D4D4D'
   },
   {
     name: 'layout.background',
@@ -330,7 +328,7 @@ parsed from Figma:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFFFFF',
+    value: '#FFFFFF'
   },
   // regular token
   {
@@ -340,7 +338,7 @@ parsed from Figma:
     type: 'color',
     colorScheme: undefined,
     reference: undefined,
-    value: '#FFEC40',
+    value: '#FFEC40'
   },
   // token with a reference
   {
@@ -350,7 +348,7 @@ parsed from Figma:
     type: 'color',
     colorScheme: undefined,
     reference: 'intent.action.base.text',
-    value: '#FFEC40',
+    value: '#FFEC40'
   },
   // token with a reference and transform
   {
@@ -361,7 +359,7 @@ parsed from Figma:
     colorScheme: undefined,
     reference: 'intent.action.base.text',
     value: 'rgba(255, 236, 64, 0.65)',
-    transforms: { opacity: -35 },
+    transforms: { opacity: -35 }
   },
   // specific token
   {
@@ -371,7 +369,7 @@ parsed from Figma:
     type: 'color',
     colorScheme: undefined,
     reference: 'text.normal',
-    value: '#000000',
+    value: '#000000'
   },
   // text token
   {
@@ -381,8 +379,8 @@ parsed from Figma:
     type: 'content',
     colorScheme: undefined,
     reference: undefined,
-    value: '1.3',
-  },
+    value: '1.3'
+  }
   //...
 ];
 ```

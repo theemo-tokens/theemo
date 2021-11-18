@@ -8,11 +8,11 @@ logic depends on your used [token manager tool](glossary.md#token-manager-tool).
 Initial Config:
 
 ```js
-{
+module.exports = {
   writer: {
-    tool: 'style-dictionary';
+    tool: 'style-dictionary'
   }
-}
+};
 ```
 
 Depending on your used tool, there are more specific configuration options
@@ -39,7 +39,7 @@ for dark mode in style dictionary.
     colorScheme: 'light',
     reference: undefined,
     value: '#FFFFFF',
-    transient: false,
+    transient: false
   },
   {
     name: 'layout.background',
@@ -49,7 +49,7 @@ for dark mode in style dictionary.
     colorScheme: 'light',
     reference: undefined,
     value: '#4D4D4D',
-    transient: false,
+    transient: false
   },
   {
     name: 'layout.background',
@@ -59,8 +59,8 @@ for dark mode in style dictionary.
     colorScheme: undefined,
     reference: undefined,
     value: '#FFFFFF',
-    transient: true,
-  },
+    transient: true
+  }
 ];
 ```
 
@@ -84,7 +84,7 @@ Suffix rules:
 - transient tokens will be in a file with `.transient` as suffix
 
 ```js
-{
+module.exports = {
   sync: {
     writer: {
       tool: 'style-dictionary',
@@ -94,7 +94,7 @@ Suffix rules:
 
         // individual treatment for text style tokens
         if (token.type === 'text') {
-          fileName = 'typography'
+          fileName = 'typography';
         }
 
         // all others
@@ -123,7 +123,7 @@ Suffix rules:
       }
     }
   }
-}
+};
 ```
 
 ### `pathForToken()`
@@ -134,7 +134,7 @@ token](https://amzn.github.io/style-dictionary/#/tokens?id=default-design-token-
 to segment the token name for that:
 
 ```js
-{
+module.exports = {
   writer: {
     tool: 'style-dictionary',
 
@@ -142,7 +142,7 @@ to segment the token name for that:
       return token.name.split('.');
     }
   }
-}
+};
 ```
 
 ### Output
