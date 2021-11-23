@@ -69,7 +69,7 @@
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.111",
-    "@swc/jest": "^0.2.5",
+    "@swc/jest": "^0.2.8",
     "@types/color": "^3.0.2",
     "@types/jest": "^27.0.3",
     "@types/jest-expect-message": "^1.0.3",
