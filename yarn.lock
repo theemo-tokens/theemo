@@ -1552,14 +1552,14 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@microsoft/api-documenter@^7.13.75":
-  version "7.13.75"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.75.tgz#5c9c0ccd2bd87202c6d8466ba87f90a594b4b805"
-  integrity sha512-uiatgPqvayJ6fUOdObYlNOP29hieRJ7VBja+8VnPhNcq326YlgP0iEeVpqDKc+HZvF6mCxRzIFKtP549pUc+nQ==
+"@microsoft/api-documenter@^7.13.76":
+  version "7.13.76"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.13.76.tgz#d334eca4170e291823da48796a31412bd92dee40"
+  integrity sha512-OW8CvnP6OMQOiPP+xstiqjfv+KgI52xyRTd4uBStqxpRJoHDGYdl4/fzx7Y9iNui+tOhUxiSfOOI9YhQqVBCyg==
   dependencies:
-    "@microsoft/api-extractor-model" "7.15.0"
+    "@microsoft/api-extractor-model" "7.15.1"
     "@microsoft/tsdoc" "0.13.2"
-    "@rushstack/node-core-library" "3.44.1"
+    "@rushstack/node-core-library" "3.44.2"
     "@rushstack/ts-command-line" "4.10.5"
     colors "~1.2.1"
     js-yaml "~3.13.1"
@@ -1573,6 +1573,15 @@
     "@microsoft/tsdoc" "0.13.2"
     "@microsoft/tsdoc-config" "~0.15.2"
     "@rushstack/node-core-library" "3.44.1"
+
+"@microsoft/api-extractor-model@7.15.1":
+  version "7.15.1"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.15.1.tgz#e52d68676e846d8b86e3b18e2654af39fba6e4a1"
+  integrity sha512-DWfS1o3oMY0mzdO3OuQbD/9vzn80jwM6tFd7XbiYnkpxwhD83LMGXz7NZWwSh+IaA+9w3LF4w62fT31Qq+dAMw==
+  dependencies:
+    "@microsoft/tsdoc" "0.13.2"
+    "@microsoft/tsdoc-config" "~0.15.2"
+    "@rushstack/node-core-library" "3.44.2"
 
 "@microsoft/api-extractor@^7.19.1":
   version "7.19.1"
@@ -1906,6 +1915,21 @@
     semver "~7.3.0"
     timsort "~0.3.0"
     z-schema "~3.18.3"
+
+"@rushstack/node-core-library@3.44.2":
+  version "3.44.2"
+  resolved "https://registry.yarnpkg.com/@rushstack/node-core-library/-/node-core-library-3.44.2.tgz#4fcd8f76887ae5968f2796f633a7e48f5ebd2271"
+  integrity sha512-lQ8Ct267UKkNSJSDxpBWn7SyyITWQ9l3Xqww0V+YY0rMt02r9eiGvwwPaU1ugJW7IMVo6r/HXvgbmpOSPyzGyg==
+  dependencies:
+    "@types/node" "12.20.24"
+    colors "~1.2.1"
+    fs-extra "~7.0.1"
+    import-lazy "~4.0.0"
+    jju "~1.4.0"
+    resolve "~1.17.0"
+    semver "~7.3.0"
+    timsort "~0.3.0"
+    z-schema "~5.0.2"
 
 "@rushstack/rig-package@0.3.6":
   version "0.3.6"
@@ -7071,7 +7095,7 @@ lodash.clonedeep@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
-lodash.get@^4.0.0:
+lodash.get@^4.0.0, lodash.get@^4.4.2:
   version "4.4.2"
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
@@ -7081,7 +7105,7 @@ lodash.isempty@^4.4.0:
   resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
   integrity sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=
 
-lodash.isequal@^4.0.0:
+lodash.isequal@^4.0.0, lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
@@ -10500,6 +10524,11 @@ validate-peer-dependencies@^2.0.0:
     resolve-package-path "^4.0.0"
     semver "^7.3.2"
 
+validator@^13.7.0:
+  version "13.7.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-13.7.0.tgz#4f9658ba13ba8f3d82ee881d3516489ea85c0857"
+  integrity sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==
+
 validator@^8.0.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/validator/-/validator-8.2.0.tgz#3c1237290e37092355344fef78c231249dab77b9"
@@ -10823,5 +10852,16 @@ z-schema@~3.18.3:
     lodash.get "^4.0.0"
     lodash.isequal "^4.0.0"
     validator "^8.0.0"
+  optionalDependencies:
+    commander "^2.7.1"
+
+z-schema@~5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/z-schema/-/z-schema-5.0.2.tgz#f410394b2c9fcb9edaf6a7511491c0bb4e89a504"
+  integrity sha512-40TH47ukMHq5HrzkeVE40Ad7eIDKaRV2b+Qpi2prLc9X9eFJFzV7tMe5aH12e6avaSS/u5l653EQOv+J9PirPw==
+  dependencies:
+    lodash.get "^4.4.2"
+    lodash.isequal "^4.5.0"
+    validator "^13.7.0"
   optionalDependencies:
     commander "^2.7.1"
