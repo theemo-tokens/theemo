@@ -67,7 +67,7 @@
     "@microsoft/api-extractor": "^7.19.2",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "@swc/cli": "^0.1.53",
+    "@swc/cli": "^0.1.54",
     "@swc/core": "^1.2.119",
     "@swc/jest": "^0.2.14",
     "@types/color": "^3.0.2",
