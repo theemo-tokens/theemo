@@ -1949,14 +1949,13 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@swc/cli@^0.1.54":
-  version "0.1.54"
-  resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.54.tgz#6eeba0fb9bd98fdc129a86d33a2ced25dc2e325d"
-  integrity sha512-+Y7sniBJaFxKgNNIuOhvNQguVd0bNoZPvK2k2ZA9o56WTknobP/ily14U4TB7Ykcx41pc2ahWd9YaUcrOejMsA==
+"@swc/cli@^0.1.55":
+  version "0.1.55"
+  resolved "https://registry.yarnpkg.com/@swc/cli/-/cli-0.1.55.tgz#6c00b836ae56f35b4a5243f7fad5f9674470b016"
+  integrity sha512-akkLuRexFq8XTi6JNZ27mXD4wcKXLDSLj4g7YMU+/upFM8IeD1IEp1Mxtre7MzCZn+QOQgPF8N8IReJoHuSn3g==
   dependencies:
     commander "^7.1.0"
     fast-glob "^3.2.5"
-    micromatch "^4.0.4"
     slash "3.0.0"
     source-map "^0.7.3"
 
