@@ -49,7 +49,7 @@
     "theemo": "bin/theemo.js"
   },
   "dependencies": {
-    "color": "^4.1.0",
+    "color": "^4.2.0",
     "commander": "^8.3.0",
     "dotenv": "^11.0.0",
     "esm": "3.2.25",
