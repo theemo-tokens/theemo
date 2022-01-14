@@ -5172,10 +5172,10 @@ fetch-blob@^3.1.2:
   dependencies:
     web-streams-polyfill "^3.0.3"
 
-figma-api@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.9.1.tgz#cb2bb1d3e3d5c8c2a2404a91ec0c498775b76ca8"
-  integrity sha512-/UjoOCtJkdJiIz9xqMf3Rf1ZUXNpEHJEIv6bkKZXH6lERMS7aYPZ6fyKE8TelUjtN4jOj5AMAr/r0zTMDxlCqQ==
+figma-api@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/figma-api/-/figma-api-1.9.2.tgz#a8c54a685e05636f7551ca26bfe52463dd2a723d"
+  integrity sha512-gNQ03K9+9TqtpLEA8B38YZf7pjZ9RtoEQP/+8qaFsG2zvOD7tE3i0giNXnCVeLtoZDq8QT/5wnokroaNCId/gw==
   dependencies:
     "@types/node" "12.0.2"
     axios "^0.21.1"
