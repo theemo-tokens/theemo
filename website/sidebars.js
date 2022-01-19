@@ -45,9 +45,7 @@ module.exports = {
       items: ['toolchain/example-config'],
     }
   ],
-  frameworks: {
-    Frameworks: ['frameworks/overview', 'frameworks/ember']
-  },
+  frameworks: ['frameworks', 'frameworks/ember'],
   'knowledge-base': [
     'knowledge-base/glossary',
     'knowledge-base/token-specification'

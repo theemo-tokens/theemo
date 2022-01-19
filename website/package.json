@@ -10,8 +10,9 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-beta.18",
-    "@docusaurus/preset-classic": "^2.0.0-beta.18",
+    "@docusaurus/core": "2.0.0-beta.8",
+    "@docusaurus/preset-classic": "2.0.0-beta.8",
+    "@theemo/theme": "^0.0.0",
     "classnames": "^2.3.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",

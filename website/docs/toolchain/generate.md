@@ -18,7 +18,7 @@ CSS media queries as pleased.
 Linking the stylesheet of your theme with:
 
 ```html
-<link href="path/to/your/theme.css" rel="stylesheet">
+<link href="path/to/your/theme.css" rel="stylesheet" />
 ```
 
 Do you want it to have immediate (autmatically) effect on loading? Or do you
@@ -70,8 +70,7 @@ them. Let's start with a sample configuration:
 The name of the color scheme is the key of the object in which they are defined.
 
 The `activation` can happen automatically (if the name is recognized as `light`
-or `dark`) which will generate CSS media queries (e.g. `@media
-(prefers-color-scheme: light)`). If a browser is configured to instruct a
+or `dark`) which will generate CSS media queries (e.g. `@media (prefers-color-scheme: light)`). If a browser is configured to instruct a
 website to prefer a named color scheme, this will be picked up.
 
 When a `file` is given then this will be the input, anyway if defaults to
@@ -120,18 +119,21 @@ Output:
 
 ```css
 /* No color scheme related tokens */
-:root, .ocean {
+:root,
+.ocean {
   --bar: baz;
 }
 
 @media (prefers-color-scheme: no-preference), (prefers-color-scheme: light) {
-  :root, .ocean {
+  :root,
+  .ocean {
     --foo: lightblue;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root, .ocean {
+  :root,
+  .ocean {
     --foo: darkblue;
   }
 }
@@ -141,10 +143,9 @@ Usage:
 
 ```html
 <head>
-  <link rel="stylesheet" href="path/to/ocean.css" type="text/css">
+  <link rel="stylesheet" href="path/to/ocean.css" type="text/css" />
 </head>
-<body>
-</body>
+<body></body>
 ```
 
 ### Auto-Theme with `light` auto Color Scheme and Manual Activation
@@ -172,12 +173,14 @@ Output:
 
 ```css
 /* No color scheme related tokens */
-:root, .ocean {
+:root,
+.ocean {
   --bar: baz;
 }
 
 @media (prefers-color-scheme: no-preference), (prefers-color-scheme: light) {
-  :root, .ocean {
+  :root,
+  .ocean {
     --foo: lightblue;
   }
 }
@@ -187,7 +190,8 @@ Output:
 }
 
 @media (prefers-color-scheme: dark) {
-  :root, .ocean {
+  :root,
+  .ocean {
     --foo: darkblue;
   }
 }
@@ -201,7 +205,7 @@ Usage:
 
 ```html
 <head>
-  <link rel="stylesheet" href="path/to/ocean.css" type="text/css">
+  <link rel="stylesheet" href="path/to/ocean.css" type="text/css" />
 </head>
 <body>
   <div>Here is the light</div>
@@ -255,7 +259,7 @@ Usage 1:
 
 ```html
 <head>
-  <link rel="stylesheet" href="path/to/ocean.css" type="text/css">
+  <link rel="stylesheet" href="path/to/ocean.css" type="text/css" />
 </head>
 <body class="ocean">
   Activation for the whole document
@@ -266,7 +270,7 @@ Usage 2:
 
 ```html
 <head>
-  <link rel="stylesheet" href="path/to/ocean.css" type="text/css">
+  <link rel="stylesheet" href="path/to/ocean.css" type="text/css" />
 </head>
 <body>
   Here is no theme active
@@ -274,3 +278,17 @@ Usage 2:
   <div class="ocean">Swim in the water</div>
 </body>
 ```
+
+## Integration
+
+The output from `generate` is _one_ CSS file ready to include in your
+application as demonstrated above. You can publish your theme package
+(on npm or your internal registry) and include the `dist/<your-theme-name>.css`
+file.
+
+Additionally, when running `theemo generate`, this will update your
+`package.json` with a `"theemo"` section. With that it is possible to write
+framework integrations, that will pick up these information and integrate the
+theme in your framework with zero-config.
+
+Head over to [frameworks](../frameworks.md) to see what options are available.

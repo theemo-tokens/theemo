@@ -1,10 +1,7 @@
 ---
-id: overview
-title: Overview
-hide_title: true
+id: frameworks
+title: Frameworks
 ---
-
-# Frameworks
 
 Theemo has support to integrate its toolchain output directly into your
 framework with zero-config:

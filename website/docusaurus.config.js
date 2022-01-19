@@ -32,7 +32,10 @@ module.exports = {
           remarkPlugins: [require('mdx-mermaid')]
         },
         theme: {
-          customCss: [require.resolve('./src/css/custom.css')]
+          customCss: [
+            require.resolve('@theemo/theme/dist/theemo.css'),
+            require.resolve('./src/css/custom.css')
+          ]
         }
       }
     ]
@@ -55,7 +58,7 @@ module.exports = {
         { to: 'design', label: 'Design', position: 'left' },
         { to: 'toolchain/introduction', label: 'Toolchain', position: 'left' },
         {
-          to: 'frameworks/overview',
+          to: 'frameworks',
           label: 'Frameworks',
           position: 'left'
         },

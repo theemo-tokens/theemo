@@ -52,6 +52,15 @@ module.exports = {
           && style.styleType.toLowerCase() !== 'text';
       },
 
+      getNameFromStyle(style) {
+        let name = style.name.replaceAll('/', '.');
+
+        if (name.startsWith('ifm')) {
+          name = 'ifm' + name.replace('ifm', '').replaceAll('-', '.');
+        }
+        return name;
+      },
+
       // text
 
       isTokenByText(node) {
@@ -116,7 +125,13 @@ module.exports = {
           // 1) LOCATION
           const parts = token.name.split('.');
 
-          if (parts.length > 3) {
+          // special location ifm
+          if (parts[0] === 'ifm') {
+            fileName = 'ifm';
+          }
+
+          // let's see for the others
+          else if (parts.length > 3) {
             fileName = parts.slice(0, 3).join('/');
           } else {
             fileName = parts[0];
@@ -134,6 +149,44 @@ module.exports = {
         }
 
         return fileName;
+      },
+
+      valueForToken(token, tokens) {
+        if (token.reference) {
+          const reference = tokens.find(
+            t => t.name === token.reference && t.colorScheme === undefined
+          );
+
+          if (reference && reference.name.startsWith('ifm') && token.name.startsWith('ifm') && token.transforms === undefined) {
+            // const ref = reference.name.replaceAll('-', '.').split('.').join('.');
+            return `{${reference.name}.value}`;
+          }
+        }
+
+        return token.value;
+      },
+
+      dataForToken(token) {
+        return {
+          transient: token.transient
+        };
+      }
+    }
+  },
+  generate: {
+    input: 'build/website',
+    output: 'dist',
+    auto: true,
+    defaultColorScheme: 'light',
+    colorSchemes: {
+      // light: {
+      //   auto: false,
+      //   manual: true
+      // },
+      dark: {
+        auto: false,
+        manual: true,
+        selector: 'html[data-theme="dark"]'
       }
     }
   }

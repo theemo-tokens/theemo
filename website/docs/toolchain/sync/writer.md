@@ -145,6 +145,27 @@ module.exports = {
 };
 ```
 
+### `dataForToken()`
+
+By default, all required fields for Style Dictionary are exported + some fields
+theemo requires. You may want to export more of your token information into
+Style Dictionary, for which you can use `dataForToken()` configuration. Here is
+an example to export the `transient` flag:
+
+```js
+module.exports = {
+  writer: {
+    tool: 'style-dictionary',
+
+    dataForToken(token) {
+      return {
+        transient: token.transient
+      };
+    }
+  }
+};
+```
+
 ### Output
 
 This is the intended output folder structure:

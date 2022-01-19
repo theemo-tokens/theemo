@@ -7,6 +7,4 @@
 .eslintcache
 .env
 node_modules/
-book/
 coverage/
-dist

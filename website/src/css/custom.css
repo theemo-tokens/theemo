@@ -1,13 +1,9 @@
 :root {
-  --ifm-link-color: #e41b1b;
-  --ifm-navbar-link-hover-color: #e41b1b;
-  --ifm-menu-color-active: #e41b1b;
+  /* --ifm-link-color: #e41b1b; */
+  /* --ifm-navbar-link-hover-color: #e41b1b; */
+  /* --ifm-menu-color-active: #e41b1b; */
   --ifm-font-family-base: 'Open Sans';
   --ifm-heading-font-family: 'Patua One';
-}
-
-img[alt='Figma Color Styles'] {
-  width: 250px;
 }
 
 .admonition h5 {
@@ -16,14 +12,27 @@ img[alt='Figma Color Styles'] {
 
 .table-of-contents__link:hover,
 .table-of-contents__link:hover code,
-/* .table-of-contents__link--active, */
+.table-of-contents__link--active,
 .table-of-contents__link--active code {
   color: var(--ifm-navbar-link-hover-color);
 }
 
+/* .button.button--secondary {
+  --ifm-button-color: var(--ifm-color-secondary-contrast-background);
+  color: var(--ifm-button-color);
+} */
+em {
+  color: var(--ifm-color-secondary-darkest);
+}
+
+.hero--primary {
+  --ifm-hero-background-color: var(--ifm-color-hero-background);
+  --ifm-hero-text-color: var(--ifm-color-hero-text);
+}
+
 .hero__title {
   display: inline-block;
-  color: #ffec40;
+  color: var(--ifm-color-hero-title-text);
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
@@ -45,7 +54,7 @@ img[alt='Figma Color Styles'] {
   width: 100%;
   height: 100%;
 
-  background: #e41b1b;
+  background: var(--ifm-color-hero-title-background);
   transform: skew(-20deg);
 
   z-index: -1;

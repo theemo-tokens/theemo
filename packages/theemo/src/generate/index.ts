@@ -122,7 +122,8 @@ export default class GenerateCommand {
 
     // manual activiate
     if (config.manual || !config.auto) {
-      contents.push(`.${this.name}-${name} ${block}`);
+      const selector = config.selector ?? `.${this.name}-${name}`;
+      contents.push(`${selector} ${block}`);
     }
 
     return contents.join('\n\n');
