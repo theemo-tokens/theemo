@@ -70,7 +70,7 @@
     "@swc/cli": "^0.1.55",
     "@swc/core": "^1.2.135",
     "@swc/jest": "^0.2.17",
-    "@types/color": "^3.0.2",
+    "@types/color": "^3.0.3",
     "@types/jest": "^27.4.0",
     "@types/jest-expect-message": "^1.0.3",
     "@types/lodash.isempty": "^4.4.6",
