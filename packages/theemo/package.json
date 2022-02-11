@@ -92,7 +92,7 @@
     "rollup": "2.67.2",
     "rollup-plugin-esbuild": "^4.8.2",
     "typescript": "^4.5.5",
-    "vite": "^2.8.0"
+    "vite": "^2.8.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
