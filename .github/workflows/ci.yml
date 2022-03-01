@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Setup Tools
         uses: volta-cli/action@v1
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
@@ -30,7 +30,7 @@ jobs:
         node-version: [12.x, 14.x, 16.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
           path: '**/node_modules'
