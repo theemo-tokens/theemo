@@ -53,7 +53,7 @@
     "commander": "^9.1.0",
     "dotenv": "^16.0.0",
     "esm": "3.2.25",
-    "figma-api": "^1.9.2",
+    "figma-api": "^1.10.1",
     "lodash.isempty": "^4.4.0",
     "node-fetch": "~3.2.3",
     "style-dictionary": "^3.7.0"
