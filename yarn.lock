@@ -9575,10 +9575,10 @@ rimraf@^3.0.0, rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-rollup-plugin-esbuild@^4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-4.8.2.tgz#c097b93cd4b622e62206cadb5797589f548cf48c"
-  integrity sha512-wsaYNOjzTb6dN1qCIZsMZ7Q0LWiPJklYs2TDI8vJA2LUbvtPUY+17TC8C0vSat3jPMInfR9XWKdA7ttuwkjsGQ==
+rollup-plugin-esbuild@^4.9.1:
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-esbuild/-/rollup-plugin-esbuild-4.9.1.tgz#369d137e2b1542c8ee459495fd4f10de812666aa"
+  integrity sha512-qn/x7Wz9p3Xnva99qcb+nopH0d2VJwVnsxJTGEg+Sh2Z3tqQl33MhOwzekVo1YTKgv+yAmosjcBRJygMfGrtLw==
   dependencies:
     "@rollup/pluginutils" "^4.1.1"
     debug "^4.3.3"
