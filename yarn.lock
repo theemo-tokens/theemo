@@ -1735,13 +1735,13 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@microsoft/api-documenter@^7.17.5":
-  version "7.17.5"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.17.5.tgz#cdaec54ad04d66b6f4c6f797f4120ff8c844a82d"
-  integrity sha512-zyJS3qORQP33S8EU0YPZb/JLIbMoslzj1bg8VmgfYCnxhX+3/FmlrTqDCwA9h2TR4bu1r7aQ26AfjUbBUz9+EA==
+"@microsoft/api-documenter@^7.17.6":
+  version "7.17.6"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.17.6.tgz#099679e4d13312ed9b55db3c4d2d23a113530ca9"
+  integrity sha512-D32aPoVTzpaN3u5dl5S9d7uk/StqCbwmqmjrRdJOQBoa/LOFDUTk6JP5ok9DqwoIN8HMcX+1kWVrVJaI0aP7Jg==
   dependencies:
-    "@microsoft/api-extractor-model" "7.16.1"
-    "@microsoft/tsdoc" "0.13.2"
+    "@microsoft/api-extractor-model" "7.16.2"
+    "@microsoft/tsdoc" "0.14.1"
     "@rushstack/node-core-library" "3.45.2"
     "@rushstack/ts-command-line" "4.10.8"
     colors "~1.2.1"
@@ -1755,6 +1755,15 @@
   dependencies:
     "@microsoft/tsdoc" "0.13.2"
     "@microsoft/tsdoc-config" "~0.15.2"
+    "@rushstack/node-core-library" "3.45.2"
+
+"@microsoft/api-extractor-model@7.16.2":
+  version "7.16.2"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.16.2.tgz#58504311bba3e0f8375b49c5c8b92ffc7e576845"
+  integrity sha512-hnqKsG89iIiQlLDXasxFw8QR0LwakPVXejNVmlGpFL008R+IExgc1f+tBrUAm1in6Oq76t7Ea0TFhER56Qfhaw==
+  dependencies:
+    "@microsoft/tsdoc" "0.14.1"
+    "@microsoft/tsdoc-config" "~0.16.1"
     "@rushstack/node-core-library" "3.45.2"
 
 "@microsoft/api-extractor@^7.21.2":
@@ -1785,10 +1794,25 @@
     jju "~1.4.0"
     resolve "~1.19.0"
 
+"@microsoft/tsdoc-config@~0.16.1":
+  version "0.16.1"
+  resolved "https://registry.yarnpkg.com/@microsoft/tsdoc-config/-/tsdoc-config-0.16.1.tgz#4de11976c1202854c4618f364bf499b4be33e657"
+  integrity sha512-2RqkwiD4uN6MLnHFljqBlZIXlt/SaUT6cuogU1w2ARw4nKuuppSmR0+s+NC+7kXBQykd9zzu0P4HtBpZT5zBpQ==
+  dependencies:
+    "@microsoft/tsdoc" "0.14.1"
+    ajv "~6.12.6"
+    jju "~1.4.0"
+    resolve "~1.19.0"
+
 "@microsoft/tsdoc@0.13.2":
   version "0.13.2"
   resolved "https://registry.yarnpkg.com/@microsoft/tsdoc/-/tsdoc-0.13.2.tgz#3b0efb6d3903bd49edb073696f60e90df08efb26"
   integrity sha512-WrHvO8PDL8wd8T2+zBGKrMwVL5IyzR3ryWUsl0PXgEV0QHup4mTLi0QcATefGI6Gx9Anu7vthPyyyLpY0EpiQg==
+
+"@microsoft/tsdoc@0.14.1":
+  version "0.14.1"
+  resolved "https://registry.yarnpkg.com/@microsoft/tsdoc/-/tsdoc-0.14.1.tgz#155ef21065427901994e765da8a0ba0eaae8b8bd"
+  integrity sha512-6Wci+Tp3CgPt/B9B0a3J4s3yMgLNSku6w5TV6mN+61C71UqsRBv2FUibBf3tPGlNxebgPHMEUzKpb1ggE8KCKw==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
