@@ -1735,12 +1735,12 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@microsoft/api-documenter@^7.17.7":
-  version "7.17.7"
-  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.17.7.tgz#74639fc7d2ece1a15bcba4515a292227fab64381"
-  integrity sha512-aVteAvReeNTKuS3vhFo4V3Nfy2S9g7KAnNyfTIgbRkFLIblaognQ9qvd7eSNa9/JUElU2eD0kAt1mSOVkpy6ag==
+"@microsoft/api-documenter@^7.17.8":
+  version "7.17.8"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-documenter/-/api-documenter-7.17.8.tgz#0cf9e7d02956038319377241f5fdc6613ed77b16"
+  integrity sha512-t5nZg0Rk2xZJvSb8hl+8Uqpr2JilKhSJ0upE0HXY+djIMFMittNdH9Vs4pH+GGnBFU7sUy0bsNFEZ+GdlAvzyQ==
   dependencies:
-    "@microsoft/api-extractor-model" "7.16.2"
+    "@microsoft/api-extractor-model" "7.17.0"
     "@microsoft/tsdoc" "0.14.1"
     "@rushstack/node-core-library" "3.45.2"
     "@rushstack/ts-command-line" "4.10.8"
@@ -1752,6 +1752,15 @@
   version "7.16.2"
   resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.16.2.tgz#58504311bba3e0f8375b49c5c8b92ffc7e576845"
   integrity sha512-hnqKsG89iIiQlLDXasxFw8QR0LwakPVXejNVmlGpFL008R+IExgc1f+tBrUAm1in6Oq76t7Ea0TFhER56Qfhaw==
+  dependencies:
+    "@microsoft/tsdoc" "0.14.1"
+    "@microsoft/tsdoc-config" "~0.16.1"
+    "@rushstack/node-core-library" "3.45.2"
+
+"@microsoft/api-extractor-model@7.17.0":
+  version "7.17.0"
+  resolved "https://registry.yarnpkg.com/@microsoft/api-extractor-model/-/api-extractor-model-7.17.0.tgz#1b98f323cc7852ea98457eba74ee6702bb0e3e40"
+  integrity sha512-IsZD3vXVyfR3+sKPXwi8QRJ3hb+Wkgoc4LTeRmUgNb16PqhYvwE1Yyu7dapoa2q3qta1yo5NAXU2v3cY7yzYeA==
   dependencies:
     "@microsoft/tsdoc" "0.14.1"
     "@microsoft/tsdoc-config" "~0.16.1"
