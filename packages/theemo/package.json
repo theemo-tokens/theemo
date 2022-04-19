@@ -73,7 +73,7 @@
     "@types/color": "^3.0.3",
     "@types/jest": "^27.4.1",
     "@types/jest-expect-message": "^1.0.3",
-    "@types/lodash.isempty": "^4.4.6",
+    "@types/lodash.isempty": "^4.4.7",
     "@types/mock-fs": "^4.13.1",
     "@types/node-fetch": "~3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
