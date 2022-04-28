@@ -55,7 +55,7 @@
     "esm": "3.2.25",
     "figma-api": "^1.10.1",
     "lodash.isempty": "^4.4.0",
-    "node-fetch": "~3.2.3",
+    "node-fetch": "~3.2.4",
     "style-dictionary": "^3.7.0"
   },
   "devDependencies": {
