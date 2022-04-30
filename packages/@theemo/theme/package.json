@@ -1,7 +1,7 @@
 {
-  "name": "@hokulea/theme-moana",
+  "name": "@theemo/theme",
   "version": "0.0.0",
-  "description": "Moana theme for hokulea",
+  "description": "Theemo theme",
   "license": "MIT",
   "keywords": [
     "theemo-theme"
@@ -9,19 +9,21 @@
   "theemo": {
     "name": "theemo",
     "colorSchemes": [
-      "light",
       "dark"
     ],
     "file": "dist/theemo.css"
   },
   "scripts": {
     "clean": "rm -rf build/ dist/ tokens/",
-    "sync": "yarn theemo sync",
+    "sync": "theemo sync",
     "build": "npm-run-all build:*",
-    "build:base": "yarn style-dictionary build --config sd.base.js",
-    "build:light": "yarn style-dictionary build --config sd.light.js",
-    "build:dark": "yarn style-dictionary build --config sd.dark.js",
-    "generate": "yarn theemo generate",
+    "build:base": "style-dictionary build --config config.base.js",
+    "build:light": "style-dictionary build --config config.light.js",
+    "build:dark": "style-dictionary build --config config.dark.js",
+    "build:website": "npm-run-all build:website:*",
+    "build:website:base": "style-dictionary build --config config.website.js",
+    "build:website:dark": "style-dictionary build --config config.website.dark.js",
+    "generate": "theemo generate",
     "magic": "npm-run-all sync build generate",
     "clean-magic": "yarn clean && yarn magic"
   },

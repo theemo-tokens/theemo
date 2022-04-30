@@ -1,0 +1,118 @@
+{
+  "ifm": {
+    "color": {
+      "hero": {
+        "background": {
+          "value": "#A4CCF4",
+          "comment": "",
+          "colorScheme": "dark",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      },
+      "content": {
+        "value": "#F2F2F2",
+        "comment": "",
+        "colorScheme": "dark",
+        "transient": false,
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      },
+      "content-inverse": {
+        "value": "#000000",
+        "comment": "",
+        "colorScheme": "dark",
+        "transient": false,
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      },
+      "content-secondary": {
+        "value": "#D8D8D8",
+        "comment": "",
+        "colorScheme": "dark",
+        "transient": false,
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      }
+    },
+    "menu-color-active": {
+      "value": "#EECF44",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "pagination-nav-color-hover": {
+      "value": "#EECF44",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "navbar-link-hover-color": {
+      "value": "#EECF44",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "breadcrumb-color-active": {
+      "value": "#EECF44",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "link-color": {
+      "value": "#EECF44",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "background-color": {
+      "value": "#333333",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "background-surface-color": {
+      "value": "{ifm.color.gray-700.value}",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

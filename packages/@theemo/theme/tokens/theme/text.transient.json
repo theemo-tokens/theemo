@@ -1,0 +1,22 @@
+{
+  "text": {
+    "normal": {
+      "value": "#000000",
+      "comment": "",
+      "transient": true,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "emphasize": {
+      "value": "#8C750D",
+      "comment": "",
+      "transient": true,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

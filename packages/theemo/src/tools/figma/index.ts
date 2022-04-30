@@ -1,9 +1,9 @@
-import Token from '../../token';
-import TokenCollection from '../../token-collection';
-import ToolConfig from '../config';
-import { ReaderTool } from '../tool';
-import { FigmaConfig } from './config';
-import FigmaReader from './reader';
+import Token from '../../token.js';
+import TokenCollection from '../../token-collection.js';
+import ToolConfig from '../config.js';
+import { ReaderTool } from '../tool.js';
+import { FigmaConfig } from './config.js';
+import FigmaReader from './reader.js';
 
 export default class Figma implements ReaderTool {
   private config: FigmaConfig;

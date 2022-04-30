@@ -6,10 +6,8 @@
   "compilerOptions": {
     "target": "esnext",
 
-    "baseUrl": "./",
-    "rootDir": "./src",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "baseUrl": "src/",
+    "module": "NodeNext",
     "resolveJsonModule": true,
     "paths": {
       "*": [

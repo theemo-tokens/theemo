@@ -1,0 +1,35 @@
+{
+  "intent": {
+    "action": {
+      "active": {
+        "background": {
+          "value": "#891010",
+          "comment": "",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#891010",
+          "comment": "",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#FFEC40",
+          "comment": "",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

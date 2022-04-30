@@ -1,0 +1,35 @@
+{
+  "intent": {
+    "alternate": {
+      "hover": {
+        "background": {
+          "value": "#BB9C11",
+          "comment": "",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "border": {
+          "value": "#BB9C11",
+          "comment": "",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        },
+        "text": {
+          "value": "#F2F2F2",
+          "comment": "",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      }
+    }
+  }
+}

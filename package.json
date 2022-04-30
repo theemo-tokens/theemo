@@ -12,7 +12,8 @@
   },
   "workspaces": [
     "website",
-    "packages/*"
+    "packages/*",
+    "packages/@theemo/*"
   ],
   "devDependencies": {
     "lerna": "^4.0.0"

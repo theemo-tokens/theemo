@@ -1,3 +1,3 @@
 module.exports = {
-  source: [`tokens/**/*.json`]
+  source: ['tokens/theme/**/*.json']
 };

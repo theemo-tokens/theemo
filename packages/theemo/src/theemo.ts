@@ -1,8 +1,8 @@
-import TheemoConfig from './config';
-import GenerateConfig from './generate/config';
-import GenerateCommand from './generate/index';
-import SyncConfig from './sync/config';
-import SyncCommand from './sync/index';
+import TheemoConfig from './config.js';
+import GenerateConfig from './generate/config.js';
+import GenerateCommand from './generate/index.js';
+import SyncConfig from './sync/config.js';
+import SyncCommand from './sync/index.js';
 
 export default class Theemo {
   private config: TheemoConfig;

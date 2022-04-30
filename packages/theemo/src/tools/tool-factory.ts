@@ -1,8 +1,8 @@
-import ToolConfig from './config';
-import Figma from './figma';
-import StyleDictionary from './style-dictionary';
-import { ReaderTool, Tools, WriterTool } from './tool';
-import UnknownTool from './unknown-tool';
+import ToolConfig from './config.js';
+import Figma from './figma/index.js';
+import StyleDictionary from './style-dictionary/index.js';
+import { ReaderTool, Tools, WriterTool } from './tool.js';
+import UnknownTool from './unknown-tool.js';
 
 export default class ToolFactory {
   static createReader(tool: Tools, config: ToolConfig): ReaderTool {

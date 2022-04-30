@@ -1,8 +1,8 @@
-import TokenCollection from '../token-collection';
-import SyncConfig from './config';
-import Lexer from './lexer';
-import Reader from './reader';
-import Writer from './writer';
+import TokenCollection from '../token-collection.js';
+import SyncConfig from './config.js';
+import Lexer from './lexer/index.js';
+import Reader from './reader/index.js';
+import Writer from './writer/index.js';
 
 export default class SyncCommand {
   private config: SyncConfig;

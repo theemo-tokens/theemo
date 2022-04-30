@@ -1,18 +1,21 @@
-import { Api as FigmaClient, Style } from 'figma-api';
+import { Api as FigmaClient } from 'figma-api';
 
-import TokenCollection from '../../token-collection';
-import { FigmaReaderConfig } from './config';
-import FigmaParser from './parser';
-import Referencer from './referencers/referencer';
-import ReferencerFactory from './referencers/referencer-factory';
-import { FigmaToken } from './token';
+import TokenCollection from '../../token-collection.js';
+import { DEFAULT_CONFIG, FigmaReaderConfig } from './config.js';
+import FigmaParser from './parser.js';
+import Referencer from './referencers/referencer.js';
+import ReferencerFactory from './referencers/referencer-factory.js';
+import { FigmaToken } from './token.js';
 
 export default class FigmaReader {
-  private config: FigmaReaderConfig;
+  private config: Required<FigmaReaderConfig>;
   private referencer: Referencer;
 
   constructor(config: FigmaReaderConfig) {
-    this.config = config;
+    this.config = {
+      ...DEFAULT_CONFIG,
+      ...config
+    } as unknown as Required<FigmaReaderConfig>;
     this.referencer = ReferencerFactory.create(this.config.referencer);
   }
 
@@ -25,10 +28,9 @@ export default class FigmaReader {
     const parser = new FigmaParser(file, this.referencer, this.config);
     const tokens = parser.parse();
 
-    const filtered = tokens.filter(token => this.filterToken(token));
-    const resolved = filtered
+    const resolved = tokens
       .map(token => this.classifyToken(token))
-      .map(token => this.resolveReference(token, filtered));
+      .map(token => this.resolveReference(token, tokens));
     const transformed = resolved.map(token => this.transformToken(token));
 
     return transformed;
@@ -41,10 +43,6 @@ export default class FigmaReader {
     });
 
     return figmaClient.getFile(this.config.figmaFile);
-  }
-
-  private filterToken(token: FigmaToken): boolean {
-    return token.style ? this.isTokenByStyle(token.style) : true;
   }
 
   private classifyToken(token: FigmaToken): FigmaToken {
@@ -76,11 +74,7 @@ export default class FigmaReader {
     return this.referencer.compileToken(token);
   }
 
-  private getTypeFromToken(token: FigmaToken): string {
-    return this.config.getTypeFromToken?.(token) ?? '';
-  }
-
-  private isTokenByStyle(style: Style) {
-    return this.config.isTokenByStyle?.(style) ?? !style.name.startsWith('.');
+  private getTypeFromToken(token: FigmaToken): string | undefined {
+    return this.config.getTypeFromToken(token);
   }
 }

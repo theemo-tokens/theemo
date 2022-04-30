@@ -17,6 +17,7 @@
     "url": "git@github.com:gossi/theemo.git"
   },
   "main": "dist/index.js",
+  "type": "module",
   "module": "dist/theemo.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -26,10 +27,11 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dts": "tsc --emitDeclarationOnly",
-    "start": "yarn build:rollup -w",
+    "_start": "yarn build:rollup -w",
     "build": "yarn clean && yarn build:rollup",
     "build:rollup": "rollup -c",
     "build:swc": "yarn swc src/ --out-dir dist/",
+    "start": "yarn swc src/ --out-dir dist/ -w",
     "test": "jest --clearCache && NODE_OPTIONS=--experimental-vm-modules jest",
     "coverage": "yarn test --coverage=true",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
@@ -52,7 +54,6 @@
     "color": "^4.2.3",
     "commander": "^9.2.0",
     "dotenv": "^16.0.0",
-    "esm": "3.2.25",
     "figma-api": "^1.10.1",
     "lodash.isempty": "^4.4.0",
     "node-fetch": "~3.2.4",
@@ -75,6 +76,7 @@
     "@types/jest-expect-message": "^1.0.3",
     "@types/lodash.isempty": "^4.4.7",
     "@types/mock-fs": "^4.13.1",
+    "@types/node": "^17.0.30",
     "@types/node-fetch": "~3.0.2",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",

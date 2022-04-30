@@ -1,8 +1,8 @@
-import TokenCollection from '../../token-collection';
-import ToolConfig from '../config';
-import { WriterTool } from '../tool';
-import { StyleDictionaryConfig } from './config';
-import StyleDictionaryWriter from './writer';
+import TokenCollection from '../../token-collection.js';
+import ToolConfig from '../config.js';
+import { WriterTool } from '../tool.js';
+import { StyleDictionaryConfig } from './config.js';
+import StyleDictionaryWriter from './writer.js';
 
 export default class StyleDictionary implements WriterTool {
   private config: StyleDictionaryConfig;

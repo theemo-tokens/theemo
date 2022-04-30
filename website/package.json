@@ -1,6 +1,9 @@
 {
+  "name": "website",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
+    "clear": "docusaurus clear",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -9,9 +12,12 @@
   "dependencies": {
     "@docusaurus/core": "^2.0.0-beta.18",
     "@docusaurus/preset-classic": "^2.0.0-beta.18",
+    "@theemo/theme": "^0.0.0",
     "classnames": "^2.3.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "mdx-mermaid": "^1.1.0",
+    "mermaid": "^8.13.0"
   },
   "browserslist": {
     "production": [

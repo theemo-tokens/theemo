@@ -2,6 +2,7 @@ export interface SchemeConfig {
   file?: string;
   auto: boolean;
   manual: boolean;
+  selector?: string;
 }
 
 export default interface GenerateConfig {

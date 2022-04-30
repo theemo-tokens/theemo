@@ -1,4 +1,4 @@
-import Token from './token';
+import Token from './token.js';
 
 export default class TokenCollection<T = Token> extends Set<T> {
   find(callback: (token: T) => boolean): T | undefined {

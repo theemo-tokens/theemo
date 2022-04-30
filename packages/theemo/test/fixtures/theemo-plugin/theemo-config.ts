@@ -21,7 +21,7 @@ function isTransient(token, tokens) {
   return token.type === 'purpose' && isReference;
 }
 
-export const READER_CONFIG_PROD: FigmaReaderConfig = {
+export const READER_CONFIG_DEV: FigmaReaderConfig = {
   tool: Tools.Figma,
   figmaFile: process.env.FIGMA_FILE,
   figmaSecret: process.env.FIGMA_SECRET,
@@ -38,11 +38,8 @@ export const READER_CONFIG_PROD: FigmaReaderConfig = {
         colorAlpha: ColorAlphaFormat.Rgb
       }
     }
-  }
-};
+  },
 
-export const READER_CONFIG_DEV: FigmaReaderConfig = {
-  ...READER_CONFIG_PROD,
   isTokenByStyle: style => {
     return style.name.includes('.') || style.name.includes('/');
   },
@@ -53,6 +50,17 @@ export const READER_CONFIG_DEV: FigmaReaderConfig = {
     }
 
     return style.name.toLowerCase();
+  }
+};
+
+export const READER_CONFIG_PROD: FigmaReaderConfig = {
+  ...READER_CONFIG_DEV,
+
+  isTokenByStyle: style => {
+    return (
+      !style.name.startsWith('.') &&
+      (style.name.includes('.') || style.name.includes('/'))
+    );
   }
 };
 

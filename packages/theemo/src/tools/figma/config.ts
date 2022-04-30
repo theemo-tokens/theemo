@@ -1,9 +1,9 @@
 import { Node, Style } from 'figma-api';
 
-import ToolConfig from '../config';
-import { Tools } from '../tool';
-import { FigmaTheemoPluginConfig } from './referencers/theemo-plugin';
-import { FigmaToken } from './token';
+import ToolConfig from '../config.js';
+import { Tools } from '../tool.js';
+import { FigmaTheemoPluginConfig } from './referencers/theemo-plugin.js';
+import { FigmaToken } from './token.js';
 
 // Referencer Options
 
@@ -130,6 +130,58 @@ export interface FigmaReaderConfig {
    */
   getTypeFromToken?: (token: FigmaToken) => string;
 }
+
+// types for optional keys
+// by https://gist.github.com/eddiemoore/7873191f366675e520e802a9fb2531d8
+
+type Undefined<T> = { [P in keyof T]: P extends undefined ? T[P] : never };
+
+type FilterFlags<Base, Condition> = {
+  [Key in keyof Base]: Base[Key] extends Condition ? Key : never;
+};
+
+type AllowedNames<Base, Condition> = FilterFlags<Base, Condition>[keyof Base];
+
+type SubType<Base, Condition> = Pick<Base, AllowedNames<Base, Condition>>;
+
+type OptionalKeys<T> = Exclude<
+  keyof T,
+  NonNullable<keyof SubType<Undefined<T>, never>>
+>;
+
+type DefaultFigmaReaderConfig = Pick<
+  FigmaReaderConfig,
+  OptionalKeys<FigmaReaderConfig>
+>;
+
+export const DEFAULT_CONFIG: DefaultFigmaReaderConfig = {
+  isTokenByStyle: (style: Style) => {
+    return !style.name.startsWith('.');
+  },
+
+  getNameFromStyle: (style: Style) => {
+    return style.name.replaceAll('/', '.');
+  },
+
+  isTokenByText: (_node: Node<'TEXT'>) => {
+    return false;
+  },
+
+  getNameFromText: (node: Node<'TEXT'>) => {
+    return node.name;
+  },
+
+  getValueFromText: (node: Node<'TEXT'>) => {
+    return node.characters;
+  },
+
+  /**
+   * To retrieve the type of a token
+   */
+  getTypeFromToken: (token: FigmaToken) => {
+    return token.type as string;
+  }
+};
 
 /**
  * Config for Figma

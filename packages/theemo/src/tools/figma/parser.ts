@@ -1,45 +1,39 @@
 import { Effect, EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
-
-import TokenCollection from '../../token-collection';
-import { ColorNode, FigmaReaderConfig, ShadowNode } from './config';
-import Referencer from './referencers/referencer';
-import { FigmaToken } from './token';
+import TokenCollection from '../../token-collection.js';
+import { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
+import Referencer from './referencers/referencer.js';
+import { FigmaToken, getTypefromStyle } from './token.js';
 
 type CompositeNode = Node & {
   children: Node[];
 };
 
-function isCompositeNode(node: Node) {
-  return [
-    'DOCUMENT',
-    'FRAME',
-    'GROUP',
-    'CANVAS',
-    'BOOLEAN',
-    'BOOLEAN_OPERATION',
-    'COMPONENT'
-  ].includes(node.type);
+function isCompositeNode(node: Node): node is CompositeNode {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  return node.children !== undefined;
 }
 
-function isVectorNode(node: Node) {
-  return [
-    'VECTOR',
-    'BOOLEAN',
-    'BOOLEAN_OPERATION',
-    'STAR',
-    'LINE',
-    'ELLIPSE',
-    'REGULAR_POLYGON',
-    'RECTANGLE',
-    'TEXT'
-  ].includes(node.type);
-}
+// function isVectorNode(node: Node) {
+//   return [
+//     'VECTOR',
+//     'FRAME',
+//     'BOOLEAN',
+//     'BOOLEAN_OPERATION',
+//     'STAR',
+//     'LINE',
+//     'ELLIPSE',
+//     'REGULAR_POLYGON',
+//     'RECTANGLE',
+//     'TEXT'
+//   ].includes(node.type);
+// }
 
 export default class FigmaParser {
   private file: GetFileResult;
   private referencer: Referencer;
-  private config: FigmaReaderConfig;
+  private config: Required<FigmaReaderConfig>;
 
   private tokens!: TokenCollection<FigmaToken>;
   private processedStyles: WeakSet<Style> = new WeakSet();
@@ -47,7 +41,7 @@ export default class FigmaParser {
   constructor(
     file: GetFileResult,
     referencer: Referencer,
-    config: FigmaReaderConfig
+    config: Required<FigmaReaderConfig>
   ) {
     this.file = file;
     this.referencer = referencer;
@@ -62,34 +56,33 @@ export default class FigmaParser {
   }
 
   private parseNode(node: Node) {
+    // parse text nodes
     if (node.type === 'TEXT') {
       this.parseTextNode(node as Node<'TEXT'>);
     }
 
-    if (isVectorNode(node)) {
-      this.parseVectorNode(node as Node<'VECTOR'>);
-    }
+    this.parseStyles(node as Node<'VECTOR'>);
 
     if (isCompositeNode(node)) {
-      for (const child of (node as CompositeNode).children) {
+      for (const child of node.children) {
         this.parseNode(child);
       }
     }
   }
 
   private parseTextNode(node: Node<'TEXT'>) {
-    if (!this.isTokenByText(node)) {
+    if (!this.config.isTokenByText(node)) {
       return;
     }
 
     const token = this.createTokenFromNode(node);
-    token.value = this.getValueFromText(node);
+    token.value = this.config.getValueFromText(node);
     token.type = 'content';
 
     this.tokens.add(token);
   }
 
-  private parseVectorNode(node: Node<'VECTOR'>) {
+  private parseStyles(node: Node<'VECTOR'>) {
     if (node.styles) {
       for (const type of Object.keys(node.styles)) {
         const token = this.parseStyle(node, type as keyof StylesMap);
@@ -110,53 +103,51 @@ export default class FigmaParser {
 
     // styles don't match by type (because used somewhere else)
     // let's return
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    if (style.styleType.toLowerCase() !== type) {
+    // if (style.styleType.toLowerCase() !== type) {
+    //   return;
+    // }
+
+    if (this.processedStyles.has(style) || !this.config.isTokenByStyle(style)) {
       return;
     }
 
-    if (!this.processedStyles.has(style)) {
-      this.processedStyles.add(style);
-      const token = this.createTokenFromStyle(style, node);
-      token.description = style.description;
-      token.type = this.getTypefromStyle(type);
-      token.data = this.referencer.findData(style.name, type.toLowerCase());
+    this.processedStyles.add(style);
+    const styleType = style.styleType.toLowerCase();
+    const token = this.createTokenFromStyle(style, node);
+    token.type = getTypefromStyle(style);
+    token.description = style.description;
+    token.data = this.referencer.findData(style.name, styleType);
 
-      // see if we have a reference
-      token.figmaReference = this.referencer.find(
-        // eslint-disable-next-line unicorn/no-array-callback-reference
-        style.name,
-        type.toLowerCase()
-      );
+    // see if we have a reference
+    token.figmaReference = this.referencer.find(
+      // eslint-disable-next-line unicorn/no-array-callback-reference
+      style.name,
+      styleType
+    );
 
-      // also look for the value
-      const key = `${type.toLowerCase()}s` as keyof Node<'VECTOR'>;
+    // also look for the value
+    const key = `${styleType}s` as keyof Node<'VECTOR'>;
 
-      // fill - color swatch
-      if (key === 'fills' && node[key]) {
-        token.color = this.getColorFromPaint(node[key] as Paint[]);
-      }
-
-      // stroke - somewhere used as border
-      else if (key === 'strokes' && node[key]) {
-        token.color = this.getColorFromPaint(node[key] as Paint[]);
-      }
-
-      // effect - shadows
-      else if (key === 'effects' && node[key]) {
-        const shadows = this.getShadowsFromEffect(node[key] as Effect[]);
-
-        if (shadows.length > 0) {
-          token.shadows = shadows;
-        }
-      }
-
-      return token;
+    // fill - color swatch
+    if (key === 'fills' && node[key]) {
+      token.color = this.getColorFromPaint(node[key] as Paint[]);
     }
 
-    // eslint-disable-next-line unicorn/no-useless-undefined
-    return undefined;
+    // stroke - somewhere used as border
+    else if (key === 'strokes' && node[key]) {
+      token.color = this.getColorFromPaint(node[key] as Paint[]);
+    }
+
+    // effect - shadows
+    else if (key === 'effects' && node[key]) {
+      const shadows = this.getShadowsFromEffect(node[key] as Effect[]);
+
+      if (shadows.length > 0) {
+        token.shadows = shadows;
+      }
+    }
+
+    return token;
   }
 
   private getShadowsFromEffect(effects: Effect[]) {
@@ -198,53 +189,23 @@ export default class FigmaParser {
   }
 
   private createTokenFromNode(node: Node<'TEXT'>): FigmaToken {
-    return {
+    const token: FigmaToken = {
       figmaName: node.name,
-      name: this.getNameFromText(node),
+      name: this.config.getNameFromText(node),
       node
     };
+
+    return token;
   }
 
   private createTokenFromStyle(style: Style, node: Node): FigmaToken {
-    return {
+    const token: FigmaToken = {
       figmaName: style.name,
-      name: this.getNameFromStyle(style),
+      name: this.config.getNameFromStyle(style),
       node,
       style
     };
-  }
 
-  private getNameFromStyle(style: Style) {
-    return this.config.getNameFromStyle?.(style) ?? style.name;
-  }
-
-  private isTokenByText(node: Node<'TEXT'>) {
-    return this.config.isTokenByText?.(node) ?? false;
-  }
-
-  private getNameFromText(node: Node<'TEXT'>) {
-    return this.config.getNameFromText?.(node) ?? node.name;
-  }
-
-  private getValueFromText(node: Node<'TEXT'>) {
-    return this.config.getValueFromText?.(node) ?? node.characters;
-  }
-
-  private getTypefromStyle(type: string) {
-    // 'FILL' | 'STROKE' | 'TEXT' | 'EFFECT' | 'GRID'
-    switch (type.toLowerCase()) {
-      case 'fill':
-      case 'stroke':
-        return 'color';
-
-      case 'effects':
-        return 'shadow';
-
-      // case 'TEXT':
-      //   return 'typography';
-
-      default:
-        return type.toLowerCase();
-    }
+    return token;
   }
 }

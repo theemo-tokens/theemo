@@ -1,5 +1,5 @@
-import GenerateConfig from './generate/config';
-import SyncConfig from './sync/config';
+import GenerateConfig from './generate/config.js';
+import SyncConfig from './sync/config.js';
 
 /**
  * The main config to control all commands for theemo:

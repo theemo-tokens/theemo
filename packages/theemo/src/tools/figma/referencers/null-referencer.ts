@@ -1,6 +1,6 @@
-import Token from '../../../token';
-import { FigmaToken } from '../token';
-import Referencer from './referencer';
+import Token from '../../../token.js';
+import { FigmaToken } from '../token.js';
+import Referencer from './referencer.js';
 
 export default class NullReferencer implements Referencer {
   async setup(): Promise<void> {

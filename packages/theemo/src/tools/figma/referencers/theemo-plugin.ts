@@ -2,10 +2,10 @@ import Color from 'color';
 import isEmpty from 'lodash.isempty';
 import fetch from 'node-fetch';
 
-import Token, { TokenTier } from '../../../token';
-import { ColorConfig } from '../config';
-import { FigmaToken, getValue, colorToValue } from '../token';
-import Referencer from './referencer';
+import Token, { TokenTier } from '../../../token.js';
+import { ColorConfig } from '../config.js';
+import { FigmaToken, getValue, colorToValue } from '../token.js';
+import Referencer from './referencer.js';
 
 export type Transforms = Partial<
   Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>

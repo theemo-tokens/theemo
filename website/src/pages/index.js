@@ -8,45 +8,47 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    to: 'docs/design/overview',
-    title: <>Design</>,
+    to: 'design',
+    title: <>🎨 Design</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
         <p>Automate Design in your Design Tool (eg. Figma).</p>
         <ul>
-          <li><Link to='docs/design/figma'>Figma</Link></li>
+          <li><Link to='design/figma'>Figma</Link></li>
         </ul>
       </>
     ),
   },
   {
-    to: 'docs/toolchain/index',
-    title: <>Toolchain</>,
+    to: 'toolchain',
+    title: <>🛠️ Toolchain</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
-        <Link to='docs/toolchain/sync'><h3>Sync</h3></Link>
-        <p>Sync Design Tokens from your Design Tool (eg. Figma, Sketch) into your 
-        favorite Token Manager Tool (eg. Style-Dictionary, Theo).</p>
+        <p>Blend into your existing toolchain</p>
 
-        <Link to='docs/toolchain/build'><h3>Build</h3></Link>
-        <p>Run the build of your Token Manager Tool and keep your Design Tokens organized.</p>
+        <Link to='toolchain/sync'>Sync</Link>
+        <p>Sync design tokens from your design tool (eg. Figma, Sketch) into your 
+        favorite token translation tool (eg. Style-Dictionary, Theo).</p>
+
+        <Link to='toolchain/build'>Build</Link>
+        <p>Run the build of your token translation tool and keep your design tokens organized.</p>
         
-        <Link to='docs/toolchain/generate'><h3>Generate</h3></Link>
-        <p>Generate a Theme adapting to users preferences (such as color-scheme)</p>
+        <Link to='toolchain/generate'>Generate</Link>
+        <p>Generate a theme adapting to users preferences (such as color-scheme)</p>
       </>
     ),
   },
   {
-    to: 'docs/frameworks/overview',
-    title: <>Frameworks</>,
+    to: 'frameworks',
+    title: <>🏗️ Frameworks</>,
     // imageUrl: 'img/undraw_react.svg',
     description: (
       <>
-        <p>Run the build of your Token Manager Tool and keep your Design Tokens organized.</p>
+        <p>Integrate the generated design tokens into your framework of choice.</p>
         <ul>
-          <li><Link to='docs/frameworks/ember'>Ember</Link></li>
+          <li><Link to='frameworks/ember'>Ember</Link></li>
         </ul>
       </>
     ),

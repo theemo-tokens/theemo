@@ -1,0 +1,24 @@
+{
+  "layout": {
+    "contrast": {
+      "value": "#666666",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "background": {
+      "value": "#333333",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}
