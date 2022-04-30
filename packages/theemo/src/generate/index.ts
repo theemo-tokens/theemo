@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { requireFile } from '../utils.js';
+import { readJson, readModule } from '../utils.js';
 import GenerateConfig, { SchemeConfig } from './config.js';
 
 interface Package {
@@ -25,7 +25,7 @@ export default class GenerateCommand {
   }
 
   private getThemeName() {
-    const data = requireFile('package.json') as Package;
+    const data = readJson('package.json') as Package;
     return data.theemo?.name ?? data.name;
   }
 
@@ -43,7 +43,7 @@ export default class GenerateCommand {
 
     // update package.json with color schemes
     if (this.config.colorSchemes) {
-      const packageJson = requireFile('package.json') as Package;
+      const packageJson = readJson('package.json') as Package;
       if (!packageJson.theemo) {
         packageJson.theemo = {
           name: packageJson.name

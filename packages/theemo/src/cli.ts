@@ -1,28 +1,29 @@
 import { Command } from 'commander';
 import dotenv from 'dotenv';
-import fs from 'node:fs';
 import path from 'node:path';
 import { argv } from 'node:process';
 import { fileURLToPath } from 'node:url';
 import TheemoConfig from './config.js';
 import Theemo from './theemo.js';
-import { requireFile } from './utils.js';
+import { readJson, readModule } from './utils.js';
 
 dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const pkg = JSON.parse(fs.readFileSync(`${__dirname}/../package.json`, { encoding: 'utf-8' }));
+const pkg = readJson(`${__dirname}/../package.json`);
 const program = new Command();
 
 
-function loadConfig(): TheemoConfig {
-  return requireFile('theemo.js') as TheemoConfig;
+async function loadConfig(): Promise<TheemoConfig> {
+  const module = await readModule('theemo.js');
+  // @ts-ignore
+  return module.default as TheemoConfig;
 }
 
 export async function cli() {
   program.version(pkg.version).name(pkg.name).usage('command');
 
-  const config = loadConfig();
+  const config = await loadConfig();
   const theemo = new Theemo(config);
 
   program
