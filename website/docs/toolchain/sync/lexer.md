@@ -290,7 +290,7 @@ such as `layout.background` directly (without the `.$light` or `.$dark` suffix).
 They are classified as _transient_ to indicate these are consumer tokens, but the
 actual value is replaced with the token from a given context (light or dark in
 this case). Having this information stored at the token will help for
-[building](--/build.md) and therefore [generating](../generate.md) tokens.
+[building](../build.md) and therefore [generating](../generate.md) tokens.
 
 ## `filterToken()`
 
@@ -415,3 +415,7 @@ way. This is great as it will help to [write](./writer.md) tokens to disk.
   //...
 ];
 ```
+
+## References
+
+- [LexerConfig](/api/theemo.lexerconfig)

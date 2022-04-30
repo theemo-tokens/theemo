@@ -3,15 +3,9 @@ id: glossary
 title: Glossary
 ---
 
-Terms described here
-
-## Token Manager Tool
-
-In absence of an already existing name, with that name these kind of tools are
-expressed:
-
-- [Style-Dictionary](https://amzn.github.io/style-dictionary)
-- [Theo](https://github.com/salesforce-ux/theo)
+There is a [glossary at Design Tokens Community
+Group](https://www.designtokens.org/glossary/). Additional/further description
+can be found here:
 
 ## Token
 

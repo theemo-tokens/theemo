@@ -20,12 +20,12 @@ your data available to developers.
 Assisting you to stay in your most productive workflow and pave the way for
 seemless transition to development.
 
-Have a look at [design](design/overview.md) section, what options are available.
+Have a look at [design](design.md) section, what options are available.
 
 ## For Developers
 
-Theemo assists your workflow by offering [toolchain support](toolchain/index.md)
+Theemo assists your workflow by offering [toolchain support](toolchain.md)
 to automate the data exchange with designers and integrates that output with
-your [framework](frameworks/overview.md) of choice.
+your [framework](frameworks.md) of choice.
 
 Set up the automation once and then maintain it with the minimal amount possible.

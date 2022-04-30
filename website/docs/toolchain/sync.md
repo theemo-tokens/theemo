@@ -27,10 +27,10 @@ flowchart LR
     class DescReader,DescLexer,DescWriter text
 ```
 
-- [Reader](reader.md) - Reads the tokens read from your design tool and parses
+- [Reader](./sync/reader.md) - Reads the tokens read from your design tool and parses
   them into a unified format
-- [Lexer](lexer.md) - Understands the tokens your way
-- [Writer](writer.md) - Writes them to disc according to your generated
+- [Lexer](./sync/lexer.md) - Understands the tokens your way
+- [Writer](./sync/writer.md) - Writes them to disc according to your generated
   knowledge in the format of your preferred token translation tool
 
 All instructions go into your `theemo.js` file under the `sync` key:
@@ -41,4 +41,4 @@ module.exports = {
 }
 ```
 
-You can reach out for a full [example config](../example-config.md).
+You can reach out for a full [example config](./example-config.md).

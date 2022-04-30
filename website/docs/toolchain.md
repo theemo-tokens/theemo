@@ -1,6 +1,6 @@
 ---
-id: introduction
-title: Introduction
+id: toolchain
+title: Toolchain
 ---
 
 Theemo will **integrate** into your existing **toolchain** by **connecting**
@@ -33,4 +33,4 @@ understands your tokens at all. That is given the high diversity of design
 tokens, they come in many forms and your `theemo.js` config acts as DSL to make
 them understandable _to you_.
 
--> [Let's get you started](getting-started.md)
+-> [Let's get you started](./toolchain/getting-started.md)

@@ -384,3 +384,8 @@ parsed from Figma:
   //...
 ];
 ```
+
+## References
+
+- [ReaderConfig](/api/theemo.readerconfig)
+- [FigmaReaderConfig](/api/theemo.figmareaderconfig)

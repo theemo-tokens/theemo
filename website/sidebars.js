@@ -18,7 +18,7 @@ module.exports = {
     }
   ],
   toolchain: [
-    'toolchain/introduction',
+    'toolchain',
     'toolchain/getting-started',
     'toolchain/usage',
     'toolchain/sync',

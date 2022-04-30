@@ -4,7 +4,7 @@ title: Writer
 ---
 
 The writer takes your token collection and writes them to the disk. The
-logic depends on your used [token manager tool](glossary.md#token-manager-tool).
+logic depends on your used [token translation tool](https://www.designtokens.org/glossary#design-token-translation-tool).
 Initial Config:
 
 ```js
@@ -201,4 +201,5 @@ in [build](../build.md) how to use them.
 
 ## References
 
-Reference: [WriterConfig](api/theemo.writerconfig)
+- [WriterConfig](/api/theemo.writerconfig)
+- [StyleDictionaryWriterConfig](/api/theemo.styledictionarywriterconfig)

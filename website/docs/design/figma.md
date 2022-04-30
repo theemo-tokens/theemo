@@ -15,10 +15,10 @@ Theemo Plugin for Figma
 
 This plugin will let you do this:
 
-1. Manage [references](./references) on a selected node
+1. Manage [references](./figma/references) on a selected node
 2. Auto-update all references as you change origins (keep the plugin open for
    this)
-3. Build [automatic color palettes](./automatic-color-palette)
-4. Switch [contexts](./contexts)
-5. [Export](./sync#export) references to make it available for third-party consumers
-6. [Import](./sync#import) references (in case you duplicated a document)
+3. Build [automatic color palettes](./figma/automatic-color-palette)
+4. Switch [contexts](./figma/contexts)
+5. [Export](./figma/sync#export) references to make it available for third-party consumers
+6. [Import](./figma/sync#import) references (in case you duplicated a document)

@@ -33,4 +33,4 @@ components](./best-practices#multi-themed-components).
    somewhat under (1) or (2) is much likely the reason for it.
 4. Exporting references, duplicating the file and re-importing references
    (through jsbin might be helping).
-5. It might be an actual bug. Please file an issue at <https://github.com/gossi/figma-theemo/issues>
+5. It might be an actual bug. Please file an issue at <https://github.com/gossi/theemo/issues>

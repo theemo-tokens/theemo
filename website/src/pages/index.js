@@ -8,47 +8,47 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    to: 'docs/design/overview',
+    to: 'design',
     title: <>🎨 Design</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
         <p>Automate Design in your Design Tool (eg. Figma).</p>
         <ul>
-          <li><Link to='docs/design/figma'>Figma</Link></li>
+          <li><Link to='design/figma'>Figma</Link></li>
         </ul>
       </>
     ),
   },
   {
-    to: 'docs/toolchain/index',
+    to: 'toolchain',
     title: <>🛠️ Toolchain</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
         <p>Blend into your existing toolchain</p>
 
-        <Link to='docs/toolchain/sync/overview'>Sync</Link>
+        <Link to='toolchain/sync'>Sync</Link>
         <p>Sync design tokens from your design tool (eg. Figma, Sketch) into your 
         favorite token translation tool (eg. Style-Dictionary, Theo).</p>
 
-        <Link to='docs/toolchain/build'>Build</Link>
+        <Link to='toolchain/build'>Build</Link>
         <p>Run the build of your token translation tool and keep your design tokens organized.</p>
         
-        <Link to='docs/toolchain/generate'>Generate</Link>
+        <Link to='toolchain/generate'>Generate</Link>
         <p>Generate a theme adapting to users preferences (such as color-scheme)</p>
       </>
     ),
   },
   {
-    to: 'docs/frameworks/overview',
+    to: 'frameworks',
     title: <>🏗️ Frameworks</>,
     // imageUrl: 'img/undraw_react.svg',
     description: (
       <>
         <p>Integrate the generated design tokens into your framework of choice.</p>
         <ul>
-          <li><Link to='docs/frameworks/ember'>Ember</Link></li>
+          <li><Link to='frameworks/ember'>Ember</Link></li>
         </ul>
       </>
     ),
