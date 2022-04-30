@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import WriterConfig from '../../sync/writer/config';
-import Token from '../../token';
-import TokenCollection from '../../token-collection';
-import { set } from '../../utils';
+import WriterConfig from '../../sync/writer/config.js';
+import Token from '../../token.js';
+import TokenCollection from '../../token-collection.js';
+import { set } from '../../utils.js';
 
 export default class StyleDictionaryWriter {
   private config: WriterConfig;

@@ -1,8 +1,8 @@
 import Color from 'color';
 import { Node, Style } from 'figma-api';
 
-import { BaseToken } from '../../token';
-import { ColorAlphaFormat, ColorConfig, ColorFormat } from './config';
+import { BaseToken } from '../../token.js';
+import { ColorAlphaFormat, ColorConfig, ColorFormat } from './config.js';
 
 interface TokenColor {
   r: number;

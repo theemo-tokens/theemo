@@ -1,4 +1,4 @@
-import TokenCollection from '../token-collection';
+import TokenCollection from '../token-collection.js';
 
 /**
  * An list of known tools

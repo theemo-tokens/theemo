@@ -1,5 +1,6 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import process from 'node:process';
 
 export function requireFile(file: string): unknown {
   const filepath = path.join(process.cwd(), file);
@@ -8,7 +9,7 @@ export function requireFile(file: string): unknown {
     throw new Error(`Cannot find file: ${filepath}`);
   }
 
-  return require(filepath);
+  return import(filepath);
 }
 
 export function set(

@@ -1,9 +1,9 @@
 import { Node, Style } from 'figma-api';
 
-import ToolConfig from '../config';
-import { Tools } from '../tool';
-import { FigmaTheemoPluginConfig } from './referencers/theemo-plugin';
-import { FigmaToken } from './token';
+import ToolConfig from '../config.js';
+import { Tools } from '../tool.js';
+import { FigmaTheemoPluginConfig } from './referencers/theemo-plugin.js';
+import { FigmaToken } from './token.js';
 
 // Referencer Options
 

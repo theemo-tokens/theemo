@@ -11,13 +11,13 @@ const external = [
 
 const esbuildPlugin = (options = {}) => {
   return esbuild({
-    watch: process.argv.includes('--watch'),
+    // watch: process.argv.includes('--watch'),
     minify: false,
-    bundle: true,
-    write: true,
+    // bundle: true,
+    // write: true,
     target: 'es2017',
     sourcemap: true,
-    platform: 'node',
+    // platform: 'node',
     ...options
   })
 };
@@ -36,17 +36,17 @@ export default [
       include: 'src/**'
     }
   },
-  {
-    input: 'src/index.ts',
-    output: {
-      file: 'dist/theemo.min.js',
-      format: 'es',
-      exports: 'auto'
-    },
-    external,
-    plugins: [jsonPlugin(), nodeResolve(), esbuildPlugin({minify: true})],
-    watch: {
-      include: 'src/**'
-    }
-  }
+  // {
+  //   input: 'src/index.ts',
+  //   output: {
+  //     file: 'dist/theemo.min.js',
+  //     format: 'es',
+  //     exports: 'auto'
+  //   },
+  //   external,
+  //   plugins: [jsonPlugin(), nodeResolve(), esbuildPlugin({minify: true})],
+  //   watch: {
+  //     include: 'src/**'
+  //   }
+  // }
 ];

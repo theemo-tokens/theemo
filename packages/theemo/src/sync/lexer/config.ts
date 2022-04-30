@@ -1,5 +1,5 @@
-import Token from '../../token';
-import TokenCollection from '../../token-collection';
+import Token from '../../token.js';
+import TokenCollection from '../../token-collection.js';
 
 /**
  * The lexer config is used for you to configure the tokens to what they mean

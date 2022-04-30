@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
-import { requireFile } from '../utils';
-import GenerateConfig, { SchemeConfig } from './config';
+import { requireFile } from '../utils.js';
+import GenerateConfig, { SchemeConfig } from './config.js';
 
 interface Package {
   name: string;

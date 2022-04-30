@@ -1,5 +1,5 @@
-import ReaderConfig from '../sync/reader/config';
-import WriterConfig from '../sync/writer/config';
+import ReaderConfig from '../sync/reader/config.js';
+import WriterConfig from '../sync/writer/config.js';
 
 export default interface Config {
   reader?: ReaderConfig;

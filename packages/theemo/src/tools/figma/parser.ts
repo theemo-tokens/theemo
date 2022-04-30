@@ -1,10 +1,9 @@
 import { Effect, EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
 import { GetFileResult } from 'figma-api/lib/api-types';
-
-import TokenCollection from '../../token-collection';
-import { ColorNode, FigmaReaderConfig, ShadowNode } from './config';
-import Referencer from './referencers/referencer';
-import { FigmaToken, getTypefromStyle } from './token';
+import TokenCollection from '../../token-collection.js';
+import { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
+import Referencer from './referencers/referencer.js';
+import { FigmaToken, getTypefromStyle } from './token.js';
 
 type CompositeNode = Node & {
   children: Node[];
