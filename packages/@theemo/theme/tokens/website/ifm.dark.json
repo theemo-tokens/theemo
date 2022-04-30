@@ -54,6 +54,16 @@
         "category": "color"
       }
     },
+    "pagination-nav-color-hover": {
+      "value": "#EECF44",
+      "comment": "",
+      "colorScheme": "dark",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
     "navbar-link-hover-color": {
       "value": "#EECF44",
       "comment": "",

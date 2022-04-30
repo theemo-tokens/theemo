@@ -1,8 +1,10 @@
 :root, .theemo {
   --ifm-background-surface-color: #e6e6e6;
   --ifm-background-color: #ffffff;
+  --ifm-link-color: #e41b1b;
   --ifm-breadcrumb-color-active: #e41b1b;
   --ifm-navbar-link-hover-color: #e41b1b;
+  --ifm-pagination-nav-color-hover: #e41b1b;
   --ifm-menu-color-active: #e41b1b;
   --ifm-color-content-secondary: #333333;
   --ifm-color-content-inverse: #f2f2f2;
@@ -74,7 +76,6 @@
   --ifm-color-success-darkest: #335b0b;
   --ifm-color-secondary-darkest: #ba9c13;
   --ifm-color-primary-darkest: #5b0b0b;
-  --ifm-link-color: #e41b1b;
 }
 
 /* Color Scheme: dark */
@@ -83,6 +84,7 @@ html[data-theme="dark"] {
   --ifm-link-color: #eecf44;
   --ifm-breadcrumb-color-active: #eecf44;
   --ifm-navbar-link-hover-color: #eecf44;
+  --ifm-pagination-nav-color-hover: #eecf44;
   --ifm-menu-color-active: #eecf44;
   --ifm-color-content-secondary: #d8d8d8;
   --ifm-color-content-inverse: #000000;
