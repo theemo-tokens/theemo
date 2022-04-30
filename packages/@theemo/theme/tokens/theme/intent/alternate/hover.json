@@ -1,26 +1,29 @@
 {
   "intent": {
     "alternate": {
-      "disabled": {
+      "hover": {
         "background": {
-          "value": "rgba(228, 128, 27, 0.65)",
+          "value": "#BB9C11",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "border": {
-          "value": "rgba(228, 128, 27, 0.65)",
+          "value": "#BB9C11",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "text": {
-          "value": "rgba(242, 242, 242, 0.65)",
+          "value": "#F2F2F2",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"

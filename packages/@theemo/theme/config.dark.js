@@ -2,8 +2,8 @@ const base = require('./config.base');
 
 const config = {
   ...base,
-  include: [`tokens/**/!(*.${base.modes.join(`|*.`)}).json`],
-  source: [`tokens/**/*.dark.json`]
+  include: [`tokens/theme/**/!(*.${base.modes.join(`|*.`)}).json`],
+  source: [`tokens/theme/**/*.dark.json`]
 };
 config.platforms.web.files = [
   {

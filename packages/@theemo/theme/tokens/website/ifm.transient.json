@@ -1,0 +1,13 @@
+{
+  "ifm": {
+    "link-color": {
+      "value": "#E41B1B",
+      "comment": "",
+      "transient": true,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

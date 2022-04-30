@@ -56,7 +56,7 @@ module.exports = {
         let name = style.name.replaceAll('/', '.');
 
         if (name.startsWith('ifm')) {
-          name = 'ifm' + name.replace('ifm', '').replaceAll('-', '.');
+          name = 'ifm' + name.replace('ifm', '');
         }
         return name;
       },
@@ -148,7 +148,10 @@ module.exports = {
           }
         }
 
-        return fileName;
+        // add folder to which token set this one belongs
+        const folder = token.name.startsWith('ifm') ? 'website' : 'theme';
+
+        return `${folder}/${fileName}`;
       },
 
       valueForToken(token, tokens) {

@@ -1,6 +1,10 @@
 module.exports = {
+  include: [
+    'tokens/website/ifm.transient.json',
+  ],
   source: [
-    `tokens/ifm.json`, `tokens/ifm.light.json`
+    'tokens/website/ifm.json',
+    'tokens/website/ifm.light.json'
   ],
   platforms: {
     web: {

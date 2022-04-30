@@ -3,6 +3,7 @@
     "background": {
       "value": "#E41B1B",
       "comment": "",
+      "transient": false,
       "type": "color",
       "attributes": {
         "category": "color"
@@ -11,6 +12,7 @@
     "text": {
       "value": "#FFEC40",
       "comment": "",
+      "transient": false,
       "type": "color",
       "attributes": {
         "category": "color"

@@ -1,0 +1,108 @@
+{
+  "ifm": {
+    "color": {
+      "hero": {
+        "background": {
+          "value": "#D1E6FA",
+          "comment": "",
+          "colorScheme": "light",
+          "transient": false,
+          "type": "color",
+          "attributes": {
+            "category": "color"
+          }
+        }
+      },
+      "content": {
+        "value": "#000000",
+        "comment": "",
+        "colorScheme": "light",
+        "transient": false,
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      },
+      "content-inverse": {
+        "value": "#F2F2F2",
+        "comment": "",
+        "colorScheme": "light",
+        "transient": false,
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      },
+      "content-secondary": {
+        "value": "#333333",
+        "comment": "",
+        "colorScheme": "light",
+        "transient": false,
+        "type": "color",
+        "attributes": {
+          "category": "color"
+        }
+      }
+    },
+    "menu-color-active": {
+      "value": "#E41B1B",
+      "comment": "",
+      "colorScheme": "light",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "navbar-link-hover-color": {
+      "value": "#E41B1B",
+      "comment": "",
+      "colorScheme": "light",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "breadcrumb-color-active": {
+      "value": "#E41B1B",
+      "comment": "",
+      "colorScheme": "light",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "link-color": {
+      "value": "#E41B1B",
+      "comment": "",
+      "colorScheme": "light",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "background-color": {
+      "value": "#FFFFFF",
+      "comment": "",
+      "colorScheme": "light",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    },
+    "background-surface-color": {
+      "value": "#E6E6E6",
+      "comment": "",
+      "colorScheme": "light",
+      "transient": false,
+      "type": "color",
+      "attributes": {
+        "category": "color"
+      }
+    }
+  }
+}

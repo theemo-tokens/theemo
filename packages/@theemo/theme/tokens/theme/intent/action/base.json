@@ -1,26 +1,29 @@
 {
   "intent": {
-    "alternate": {
-      "active": {
+    "action": {
+      "base": {
         "background": {
-          "value": "#894D10",
+          "value": "#E41B1B",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "border": {
-          "value": "#894D10",
+          "value": "#E41B1B",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "text": {
-          "value": "#F2F2F2",
+          "value": "#FFEC40",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"

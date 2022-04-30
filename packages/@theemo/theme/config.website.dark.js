@@ -1,10 +1,10 @@
 module.exports = {
-  // include: [
-  //   'tokens/ifm.json',
-  //   'tokens/ifm.light.json'
-  // ],
+  include: [
+    'tokens/website/ifm.json',
+    // 'tokens/ifm.light.json'
+  ],
   source: [
-    `tokens/ifm.dark.json`
+    `tokens/website/ifm.dark.json`
   ],
   platforms: {
     web: {

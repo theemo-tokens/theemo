@@ -3,16 +3,16 @@
     "normal": {
       "value": "#000000",
       "comment": "",
-      "colorScheme": "light",
+      "transient": true,
       "type": "color",
       "attributes": {
         "category": "color"
       }
     },
     "emphasize": {
-      "value": "#894D10",
+      "value": "#8C750D",
       "comment": "",
-      "colorScheme": "light",
+      "transient": true,
       "type": "color",
       "attributes": {
         "category": "color"

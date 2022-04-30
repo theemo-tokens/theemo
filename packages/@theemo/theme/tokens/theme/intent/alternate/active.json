@@ -1,26 +1,29 @@
 {
   "intent": {
-    "action": {
-      "hover": {
+    "alternate": {
+      "active": {
         "background": {
-          "value": "#B61616",
+          "value": "#8C750D",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "border": {
-          "value": "#B61616",
+          "value": "#8C750D",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "text": {
-          "value": "#FFEC40",
+          "value": "#F2F2F2",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"

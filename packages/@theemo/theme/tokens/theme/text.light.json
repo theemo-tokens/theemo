@@ -1,18 +1,20 @@
 {
-  "layout": {
-    "background": {
-      "value": "#FFFFFF",
+  "text": {
+    "normal": {
+      "value": "#000000",
       "comment": "",
       "colorScheme": "light",
+      "transient": false,
       "type": "color",
       "attributes": {
         "category": "color"
       }
     },
-    "contrast": {
-      "value": "#E6E6E6",
+    "emphasize": {
+      "value": "#8C750D",
       "comment": "",
       "colorScheme": "light",
+      "transient": false,
       "type": "color",
       "attributes": {
         "category": "color"

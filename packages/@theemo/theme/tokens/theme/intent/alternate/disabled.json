@@ -1,26 +1,29 @@
 {
   "intent": {
     "alternate": {
-      "base": {
+      "disabled": {
         "background": {
-          "value": "#E4801B",
+          "value": "rgba(233, 195, 22, 0.65)",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "border": {
-          "value": "#E4801B",
+          "value": "rgba(233, 195, 22, 0.65)",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"
           }
         },
         "text": {
-          "value": "#F2F2F2",
+          "value": "rgba(242, 242, 242, 0.65)",
           "comment": "",
+          "transient": false,
           "type": "color",
           "attributes": {
             "category": "color"

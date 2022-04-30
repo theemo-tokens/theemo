@@ -4,7 +4,7 @@ module.exports = {
   source: [
     // this is saying find any files in the tokens folder
     // that does not have .dark or .light, but ends in .json
-    `tokens/**/!(*.${modes.join(`|*.`)}|*.transient).json`
+    `tokens/theme/**/!(*.${modes.join(`|*.`)}|*.transient).json`
   ],
   include: ['tokens/**/*.transient.json'],
   platforms: {
@@ -16,7 +16,7 @@ module.exports = {
         'size/rem',
         'color/css'
       ],
-      buildPath: 'build/',
+      buildPath: 'build/theme/',
       files: [
         {
           format: 'css/variables',
