@@ -3,11 +3,11 @@ import { EffectType } from 'figma-api';
 import TokenCollection from '../../token-collection.js';
 import { getTypefromStyle } from './token.js';
 
-import type { Effect, Node, Paint, Style, StylesMap } from 'figma-api';
-import { Api } from 'figma-api';
 import type { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
 import type Referencer from './referencers/referencer.js';
 import type { FigmaToken } from './token.js';
+import type { Api } from 'figma-api';
+import type { Effect, Node, Paint, Style, StylesMap } from 'figma-api';
 
 type GetFileResult = Awaited<ReturnType<Api['getFile']>>;
 
@@ -121,11 +121,7 @@ export default class FigmaParser {
     token.data = this.referencer.findData(style.name, styleType);
 
     // see if we have a reference
-    token.figmaReference = this.referencer.find(
-      // eslint-disable-next-line unicorn/no-array-callback-reference
-      style.name,
-      styleType
-    );
+    token.figmaReference = this.referencer.find(style.name, styleType);
 
     // also look for the value
     const key = `${styleType}s` as keyof Node<'VECTOR'>;

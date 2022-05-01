@@ -18,6 +18,7 @@ const program = new Command();
 async function loadConfig(): Promise<TheemoConfig> {
   const module = await readModule('theemo.js');
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   return module.default as TheemoConfig;
 }

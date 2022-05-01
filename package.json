@@ -10,14 +10,6 @@
     "coverage": "yarn lerna-run coverage",
     "lint": "yarn lerna-run lint"
   },
-  "workspaces": [
-    "website",
-    "packages/*",
-    "packages/@theemo/*"
-  ],
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  },
   "volta": {
     "node": "16.15.0"
   }

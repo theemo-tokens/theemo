@@ -86,7 +86,6 @@ export default class TheemoPluginReferencer implements Referencer {
       return (nodeReference[type as keyof RefNode] as StyleRef)?.from.name;
     }
 
-    // eslint-disable-next-line unicorn/no-useless-undefined
     return undefined;
   }
 
@@ -107,7 +106,6 @@ export default class TheemoPluginReferencer implements Referencer {
       }
     }
 
-    // eslint-disable-next-line unicorn/no-useless-undefined
     return undefined;
   }
 

@@ -8,12 +8,10 @@ export default class NullReferencer implements Referencer {
   }
 
   find(_name: string, _type: string): string | undefined {
-    // eslint-disable-next-line unicorn/no-useless-undefined
     return undefined;
   }
 
   findData(_name: string, _type: string): string | undefined {
-    // eslint-disable-next-line unicorn/no-useless-undefined
     return undefined;
   }
 

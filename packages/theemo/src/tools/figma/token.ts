@@ -87,6 +87,7 @@ export function colorToValue(color: Color, config: ColorConfig): string {
 
     case ColorAlphaFormat.Rgb:
 
+    // eslint-disable-next-line no-fallthrough
     default: {
       return color.rgb().string();
     }

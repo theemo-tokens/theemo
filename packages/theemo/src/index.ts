@@ -23,17 +23,17 @@ export type { default as ReaderConfig } from './sync/reader/config.js';
 export type { default as WriterConfig } from './sync/writer/config.js';
 
 // tools
-export type { default as Figma } from './tools/figma/index.js';
 export type {
   FigmaReaderConfig,
   FigmaReferencerConfig,
   FigmaReferencerPluginConfig,
   FigmaReferencerType,
 } from './tools/figma/config.js';
+export type { default as Figma } from './tools/figma/index.js';
 export type { FigmaTheemoPluginConfig } from './tools/figma/referencers/theemo-plugin.js';
-export type { default as StyleDictionary } from './tools/style-dictionary/index.js';
 export type {
   StyleDictionaryConfig,
   StyleDictionaryWriterConfig,
 } from './tools/style-dictionary/config.js';
+export type { default as StyleDictionary } from './tools/style-dictionary/index.js';
 export type { ReaderTool, Tools, WriterTool } from './tools/tool.js';
