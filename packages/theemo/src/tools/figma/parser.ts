@@ -1,9 +1,15 @@
-import { Effect, EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
-import { GetFileResult } from 'figma-api/lib/api-types';
+import { EffectType } from 'figma-api';
+
 import TokenCollection from '../../token-collection.js';
-import { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
-import Referencer from './referencers/referencer.js';
-import { FigmaToken, getTypefromStyle } from './token.js';
+import { getTypefromStyle } from './token.js';
+
+import type { Effect, Node, Paint, Style, StylesMap } from 'figma-api';
+import { Api } from 'figma-api';
+import type { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
+import type Referencer from './referencers/referencer.js';
+import type { FigmaToken } from './token.js';
+
+type GetFileResult = Awaited<ReturnType<Api['getFile']>>;
 
 type CompositeNode = Node & {
   children: Node[];
@@ -38,11 +44,7 @@ export default class FigmaParser {
   private tokens!: TokenCollection<FigmaToken>;
   private processedStyles: WeakSet<Style> = new WeakSet();
 
-  constructor(
-    file: GetFileResult,
-    referencer: Referencer,
-    config: Required<FigmaReaderConfig>
-  ) {
+  constructor(file: GetFileResult, referencer: Referencer, config: Required<FigmaReaderConfig>) {
     this.file = file;
     this.referencer = referencer;
     this.config = config;
@@ -76,6 +78,7 @@ export default class FigmaParser {
     }
 
     const token = this.createTokenFromNode(node);
+
     token.value = this.config.getValueFromText(node);
     token.type = 'content';
 
@@ -94,10 +97,7 @@ export default class FigmaParser {
     }
   }
 
-  private parseStyle(
-    node: Node<'VECTOR'>,
-    type: keyof StylesMap
-  ): FigmaToken | undefined {
+  private parseStyle(node: Node<'VECTOR'>, type: keyof StylesMap): FigmaToken | undefined {
     const id = (node.styles as StylesMap)[type];
     const style = this.getStyle(id);
 
@@ -112,8 +112,10 @@ export default class FigmaParser {
     }
 
     this.processedStyles.add(style);
+
     const styleType = style.styleType.toLowerCase();
     const token = this.createTokenFromStyle(style, node);
+
     token.type = getTypefromStyle(style);
     token.description = style.description;
     token.data = this.referencer.findData(style.name, styleType);
@@ -152,13 +154,13 @@ export default class FigmaParser {
 
   private getShadowsFromEffect(effects: Effect[]) {
     const shadows: ShadowNode[] = [];
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     for (const effect of effects) {
       if (
         effect.visible &&
-        (effect.type === EffectType.DROP_SHADOW ||
-          effect.type === EffectType.INNER_SHADOW)
+        (effect.type === EffectType.DROP_SHADOW || effect.type === EffectType.INNER_SHADOW)
       ) {
         shadows.push({
           inner: effect.type === EffectType.INNER_SHADOW,
@@ -167,7 +169,7 @@ export default class FigmaParser {
           color: { ...effect.color, visible: true },
           x: effect.offset?.x ?? 0,
           y: effect.offset?.y ?? 0,
-          radius: effect.radius
+          radius: effect.radius,
         });
       }
     }
@@ -180,7 +182,7 @@ export default class FigmaParser {
     // @ts-ignore
     return {
       ...paint[0].color,
-      visible: paint[0].visible ?? true
+      visible: paint[0].visible ?? true,
     };
   }
 
@@ -192,7 +194,7 @@ export default class FigmaParser {
     const token: FigmaToken = {
       figmaName: node.name,
       name: this.config.getNameFromText(node),
-      node
+      node,
     };
 
     return token;
@@ -203,7 +205,7 @@ export default class FigmaParser {
       figmaName: style.name,
       name: this.config.getNameFromStyle(style),
       node,
-      style
+      style,
     };
 
     return token;

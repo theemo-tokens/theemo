@@ -35,7 +35,7 @@ export enum TokenTier {
    * A token for a _specific_ use-case. E.g. The heading color for
    * your hero component
    */
-  Specific = 'specific'
+  Specific = 'specific',
 }
 
 /**
@@ -143,7 +143,5 @@ export default interface Token extends BaseToken {
   /**
    * Optional transforms to run on the reference token
    */
-  transforms?: Partial<
-    Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>
-  >;
+  transforms?: Partial<Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>>;
 }

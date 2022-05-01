@@ -1,11 +1,13 @@
 import { Api as FigmaClient } from 'figma-api';
 
-import TokenCollection from '../../token-collection.js';
-import { DEFAULT_CONFIG, FigmaReaderConfig } from './config.js';
+import { DEFAULT_CONFIG } from './config.js';
 import FigmaParser from './parser.js';
-import Referencer from './referencers/referencer.js';
 import ReferencerFactory from './referencers/referencer-factory.js';
-import { FigmaToken } from './token.js';
+
+import type TokenCollection from '../../token-collection.js';
+import type { FigmaReaderConfig } from './config.js';
+import type Referencer from './referencers/referencer.js';
+import type { FigmaToken } from './token.js';
 
 export default class FigmaReader {
   private config: Required<FigmaReaderConfig>;
@@ -14,7 +16,7 @@ export default class FigmaReader {
   constructor(config: FigmaReaderConfig) {
     this.config = {
       ...DEFAULT_CONFIG,
-      ...config
+      ...config,
     } as unknown as Required<FigmaReaderConfig>;
     this.referencer = ReferencerFactory.create(this.config.referencer);
   }
@@ -29,9 +31,9 @@ export default class FigmaReader {
     const tokens = parser.parse();
 
     const resolved = tokens
-      .map(token => this.classifyToken(token))
-      .map(token => this.resolveReference(token, tokens));
-    const transformed = resolved.map(token => this.transformToken(token));
+      .map((token) => this.classifyToken(token))
+      .map((token) => this.resolveReference(token, tokens));
+    const transformed = resolved.map((token) => this.transformToken(token));
 
     return transformed;
   }
@@ -39,7 +41,7 @@ export default class FigmaReader {
   private async load() {
     // read figma
     const figmaClient = new FigmaClient({
-      personalAccessToken: this.config.figmaSecret
+      personalAccessToken: this.config.figmaSecret,
     });
 
     return figmaClient.getFile(this.config.figmaFile);
@@ -48,22 +50,18 @@ export default class FigmaReader {
   private classifyToken(token: FigmaToken): FigmaToken {
     return {
       ...token,
-      type: this.getTypeFromToken(token)
+      type: this.getTypeFromToken(token),
     };
   }
 
-  private resolveReference(
-    token: FigmaToken,
-    tokens: TokenCollection<FigmaToken>
-  ): FigmaToken {
+  private resolveReference(token: FigmaToken, tokens: TokenCollection<FigmaToken>): FigmaToken {
     if (token.figmaReference) {
-      const referenceToken = tokens.find(
-        t => t.figmaName === token.figmaReference
-      );
+      const referenceToken = tokens.find((t) => t.figmaName === token.figmaReference);
+
       return {
         ...token,
         reference: referenceToken ? referenceToken.name : undefined,
-        referenceToken
+        referenceToken,
       };
     }
 

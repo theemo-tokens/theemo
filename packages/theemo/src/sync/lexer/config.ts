@@ -1,5 +1,5 @@
-import Token from '../../token.js';
-import TokenCollection from '../../token-collection.js';
+import type Token from '../../token.js';
+import type TokenCollection from '../../token-collection.js';
 
 /**
  * The lexer config is used for you to configure the tokens to what they mean
@@ -68,17 +68,18 @@ const DEFAULT_LEXER_CONFIG = {
     const normalized = { ...token };
 
     normalized.name = normalized.name.replace(/\s/g, '');
+
     if (normalized.reference) {
       normalized.reference = normalized.reference.replace(/\s/g, '');
     }
 
     return normalized;
-  }
+  },
 };
 
 export function getLexerConfig(config: LexerConfig): LexerConfig {
   return {
     ...DEFAULT_LEXER_CONFIG,
-    ...config
+    ...config,
   };
 }

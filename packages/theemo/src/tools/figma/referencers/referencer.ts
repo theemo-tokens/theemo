@@ -1,5 +1,5 @@
-import Token from '../../../token.js';
-import { FigmaToken } from '../token.js';
+import type Token from '../../../token.js';
+import type { FigmaToken } from '../token.js';
 
 export default interface Referencer {
   setup(): Promise<void>;

@@ -1,4 +1,4 @@
-import TokenCollection from '../token-collection.js';
+import type TokenCollection from '../token-collection.js';
 
 /**
  * An list of known tools
@@ -9,7 +9,7 @@ import TokenCollection from '../token-collection.js';
 export enum Tools {
   Unknown = 'unknown',
   Figma = 'figma',
-  StyleDictionary = 'style-dictionary'
+  StyleDictionary = 'style-dictionary',
 }
 
 /**

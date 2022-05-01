@@ -1,10 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import WriterConfig from '../../sync/writer/config.js';
-import Token from '../../token.js';
 import TokenCollection from '../../token-collection.js';
 import { set } from '../../utils.js';
+
+import type WriterConfig from '../../sync/writer/config.js';
+import type Token from '../../token.js';
 
 export default class StyleDictionaryWriter {
   private config: WriterConfig;
@@ -15,6 +16,7 @@ export default class StyleDictionaryWriter {
 
   write(tokens: TokenCollection): void {
     const files = this.getFiles(tokens);
+
     this.writeFiles(files, tokens);
   }
 
@@ -38,12 +40,10 @@ export default class StyleDictionaryWriter {
     return this.config.fileForToken(token);
   }
 
-  private writeFiles(
-    files: Map<string, TokenCollection>,
-    allTokens: TokenCollection
-  ) {
+  private writeFiles(files: Map<string, TokenCollection>, allTokens: TokenCollection) {
     for (const [file, tokenSet] of files.entries()) {
       const contents = {};
+
       for (const token of tokenSet) {
         const property = this.getPathFromToken(token);
         const data = this.buildToken(token, allTokens);
@@ -55,21 +55,18 @@ export default class StyleDictionaryWriter {
     }
   }
 
-  private buildToken(
-    token: Token,
-    allTokens: TokenCollection
-  ): Record<string, unknown> {
+  private buildToken(token: Token, allTokens: TokenCollection): Record<string, unknown> {
     const data: Record<string, unknown> = {
       value: this.getValue(token, allTokens),
       comment: token.description,
       colorScheme: token.colorScheme,
-      ...this.getTokenData(token)
+      ...this.getTokenData(token),
     };
 
     if (token.type) {
       data.type = token.type;
       data.attributes = {
-        category: token.type
+        category: token.type,
       };
     }
 

@@ -1,5 +1,5 @@
-import { StyleDictionaryWriterConfig } from '../../tools/style-dictionary/config.js';
-import { Tools } from '../../tools/tool.js';
+import type { StyleDictionaryWriterConfig } from '../../tools/style-dictionary/config.js';
+import type { Tools } from '../../tools/tool.js';
 
 /**
  * The writer config describes the way tokens are written to your disk. This

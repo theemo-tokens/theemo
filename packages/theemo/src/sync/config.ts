@@ -1,6 +1,6 @@
-import LexerConfig from './lexer/config.js';
-import ReaderConfig from './reader/config.js';
-import WriterConfig from './writer/config.js';
+import type LexerConfig from './lexer/config.js';
+import type ReaderConfig from './reader/config.js';
+import type WriterConfig from './writer/config.js';
 
 /**
  * The config used to configure the `theemo sync` command.

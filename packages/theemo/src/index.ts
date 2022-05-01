@@ -4,35 +4,36 @@
  * @packageDocumentation
  */
 
-import TheemoConfig from './config.js';
 import Theemo from './theemo.js';
+
+import type TheemoConfig from './config.js';
 
 // api docs
 
 export default Theemo;
 
 export type { TheemoConfig };
-export type { default as Token, BaseToken, TokenTier } from './token';
+export type { BaseToken, default as Token, TokenTier } from './token.js';
 
 // config
-export type { default as SyncConfig } from './sync/config';
-export type { default as ReaderConfig } from './sync/reader/config';
-export type { default as LexerConfig } from './sync/lexer/config';
-export type { default as WriterConfig } from './sync/writer/config';
-export type { default as GenerateConfig } from './generate/config';
+export type { default as GenerateConfig } from './generate/config.js';
+export type { default as SyncConfig } from './sync/config.js';
+export type { default as LexerConfig } from './sync/lexer/config.js';
+export type { default as ReaderConfig } from './sync/reader/config.js';
+export type { default as WriterConfig } from './sync/writer/config.js';
 
 // tools
-export type { Tools, ReaderTool, WriterTool } from './tools/tool';
-export type { default as Figma } from './tools/figma';
-export type { default as StyleDictionary } from './tools/style-dictionary';
+export type { default as Figma } from './tools/figma/index.js';
 export type {
   FigmaReaderConfig,
   FigmaReferencerConfig,
+  FigmaReferencerPluginConfig,
   FigmaReferencerType,
-  FigmaReferencerPluginConfig
-} from './tools/figma/config';
-export type { FigmaTheemoPluginConfig } from './tools/figma/referencers/theemo-plugin';
+} from './tools/figma/config.js';
+export type { FigmaTheemoPluginConfig } from './tools/figma/referencers/theemo-plugin.js';
+export type { default as StyleDictionary } from './tools/style-dictionary/index.js';
 export type {
   StyleDictionaryConfig,
-  StyleDictionaryWriterConfig
-} from './tools/style-dictionary/config';
+  StyleDictionaryWriterConfig,
+} from './tools/style-dictionary/config.js';
+export type { ReaderTool, Tools, WriterTool } from './tools/tool.js';
