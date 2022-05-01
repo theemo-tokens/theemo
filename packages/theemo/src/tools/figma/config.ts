@@ -10,7 +10,7 @@ import type { Node, Style } from 'figma-api';
  * The type of source for retrieving references
  */
 export enum FigmaReferencerType {
-  FigmaPlugin = 'figma-plugin',
+  FigmaPlugin = 'figma-plugin'
 }
 
 /**
@@ -52,12 +52,12 @@ export type FigmaReferencerConfig = FigmaReferencerPluginConfig & {
 export enum ColorFormat {
   Rgb = 'rgb',
   Hex = 'hex',
-  Hsl = 'hsl',
+  Hsl = 'hsl'
 }
 
 export enum ColorAlphaFormat {
   Rgb = 'rgb',
-  Hsl = 'hsl',
+  Hsl = 'hsl'
 }
 
 export interface ColorConfig {
@@ -143,9 +143,15 @@ type AllowedNames<Base, Condition> = FilterFlags<Base, Condition>[keyof Base];
 
 type SubType<Base, Condition> = Pick<Base, AllowedNames<Base, Condition>>;
 
-type OptionalKeys<T> = Exclude<keyof T, NonNullable<keyof SubType<Undefined<T>, never>>>;
+type OptionalKeys<T> = Exclude<
+  keyof T,
+  NonNullable<keyof SubType<Undefined<T>, never>>
+>;
 
-type DefaultFigmaReaderConfig = Pick<FigmaReaderConfig, OptionalKeys<FigmaReaderConfig>>;
+type DefaultFigmaReaderConfig = Pick<
+  FigmaReaderConfig,
+  OptionalKeys<FigmaReaderConfig>
+>;
 
 export const DEFAULT_CONFIG: DefaultFigmaReaderConfig = {
   isTokenByStyle: (style: Style) => {
@@ -173,7 +179,7 @@ export const DEFAULT_CONFIG: DefaultFigmaReaderConfig = {
    */
   getTypeFromToken: (token: FigmaToken) => {
     return token.type as string;
-  },
+  }
 };
 
 /**

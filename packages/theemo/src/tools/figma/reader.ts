@@ -16,7 +16,7 @@ export default class FigmaReader {
   constructor(config: FigmaReaderConfig) {
     this.config = {
       ...DEFAULT_CONFIG,
-      ...config,
+      ...config
     } as unknown as Required<FigmaReaderConfig>;
     this.referencer = ReferencerFactory.create(this.config.referencer);
   }
@@ -41,7 +41,7 @@ export default class FigmaReader {
   private async load() {
     // read figma
     const figmaClient = new FigmaClient({
-      personalAccessToken: this.config.figmaSecret,
+      personalAccessToken: this.config.figmaSecret
     });
 
     return figmaClient.getFile(this.config.figmaFile);
@@ -50,18 +50,23 @@ export default class FigmaReader {
   private classifyToken(token: FigmaToken): FigmaToken {
     return {
       ...token,
-      type: this.getTypeFromToken(token),
+      type: this.getTypeFromToken(token)
     };
   }
 
-  private resolveReference(token: FigmaToken, tokens: TokenCollection<FigmaToken>): FigmaToken {
+  private resolveReference(
+    token: FigmaToken,
+    tokens: TokenCollection<FigmaToken>
+  ): FigmaToken {
     if (token.figmaReference) {
-      const referenceToken = tokens.find((t) => t.figmaName === token.figmaReference);
+      const referenceToken = tokens.find(
+        (t) => t.figmaName === token.figmaReference
+      );
 
       return {
         ...token,
         reference: referenceToken ? referenceToken.name : undefined,
-        referenceToken,
+        referenceToken
       };
     }
 

@@ -9,7 +9,7 @@ export default class Writer {
 
   constructor(config: WriterConfig) {
     this.tool = ToolFactory.createWriter(config.tool, {
-      writer: config,
+      writer: config
     });
   }
 

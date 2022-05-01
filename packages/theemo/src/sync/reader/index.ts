@@ -10,7 +10,7 @@ export default class Reader {
   constructor(config: ReaderConfig) {
     this.config = config;
     this.tool = ToolFactory.createReader(this.config.tool, {
-      reader: this.config,
+      reader: this.config
     });
   }
 

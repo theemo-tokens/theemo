@@ -10,7 +10,9 @@ import type { ColorConfig } from '../config.js';
 import type { FigmaToken } from '../token.js';
 import type Referencer from './referencer.js';
 
-export type Transforms = Partial<Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>>;
+export type Transforms = Partial<
+  Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>
+>;
 
 interface Data {
   transforms?: Transforms;
@@ -66,11 +68,14 @@ export default class TheemoPluginReferencer implements Referencer {
 
   private async load() {
     // read references from jsonbin.io
-    const response = await fetch(`https://api.jsonbin.io/b/${this.config.jsonbinFile}`, {
-      headers: {
-        'secret-key': this.config.jsonbinSecret,
-      },
-    });
+    const response = await fetch(
+      `https://api.jsonbin.io/b/${this.config.jsonbinFile}`,
+      {
+        headers: {
+          'secret-key': this.config.jsonbinSecret
+        }
+      }
+    );
 
     return response.json();
   }
@@ -78,7 +83,8 @@ export default class TheemoPluginReferencer implements Referencer {
   find(name: string, type: string): string | undefined {
     const nodeReference = this.references.nodes.find((node) => {
       return (
-        node[type as keyof RefNode] && (node[type as keyof RefNode] as StyleRef)?.to.name === name
+        node[type as keyof RefNode] &&
+        (node[type as keyof RefNode] as StyleRef)?.to.name === name
       );
     });
 
@@ -92,16 +98,18 @@ export default class TheemoPluginReferencer implements Referencer {
   findData(name: string, type: string): Data | undefined {
     const nodeReference = this.references.nodes.find((node) => {
       return (
-        node[type as keyof RefNode] && (node[type as keyof RefNode] as StyleRef)?.to.name === name
+        node[type as keyof RefNode] &&
+        (node[type as keyof RefNode] as StyleRef)?.to.name === name
       );
     });
 
     if (nodeReference) {
-      const transforms = (nodeReference[type as keyof RefNode] as StyleRef)?.transforms;
+      const transforms = (nodeReference[type as keyof RefNode] as StyleRef)
+        ?.transforms;
 
       if (!isEmpty(transforms)) {
         return {
-          transforms,
+          transforms
         };
       }
     }
@@ -121,7 +129,7 @@ export default class TheemoPluginReferencer implements Referencer {
       type: token.type,
       colorScheme: token.colorScheme,
       reference: token.reference,
-      value: this.getValue(token),
+      value: this.getValue(token)
     };
 
     if (token.data && (token.data as Data).transforms) {
@@ -140,7 +148,10 @@ export default class TheemoPluginReferencer implements Referencer {
 
     if (token.data && (token.data as Data).transforms) {
       value = colorToValue(
-        this.applyTransforms(value, (token.data as Data).transforms as Transforms),
+        this.applyTransforms(
+          value,
+          (token.data as Data).transforms as Transforms
+        ),
         this.config.formats
       );
     }

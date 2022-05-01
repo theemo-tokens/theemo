@@ -40,7 +40,10 @@ export default class StyleDictionaryWriter {
     return this.config.fileForToken(token);
   }
 
-  private writeFiles(files: Map<string, TokenCollection>, allTokens: TokenCollection) {
+  private writeFiles(
+    files: Map<string, TokenCollection>,
+    allTokens: TokenCollection
+  ) {
     for (const [file, tokenSet] of files.entries()) {
       const contents = {};
 
@@ -55,18 +58,21 @@ export default class StyleDictionaryWriter {
     }
   }
 
-  private buildToken(token: Token, allTokens: TokenCollection): Record<string, unknown> {
+  private buildToken(
+    token: Token,
+    allTokens: TokenCollection
+  ): Record<string, unknown> {
     const data: Record<string, unknown> = {
       value: this.getValue(token, allTokens),
       comment: token.description,
       colorScheme: token.colorScheme,
-      ...this.getTokenData(token),
+      ...this.getTokenData(token)
     };
 
     if (token.type) {
       data.type = token.type;
       data.attributes = {
-        category: token.type,
+        category: token.type
       };
     }
 

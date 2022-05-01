@@ -98,7 +98,7 @@ export function figmaToColor(color: TokenColor): Color {
   return Color({
     r: Math.round(color.r * 255),
     g: Math.round(color.g * 255),
-    b: Math.round(color.b * 255),
+    b: Math.round(color.b * 255)
   }).alpha(color.a);
 }
 
@@ -120,9 +120,9 @@ export function getValue(token: FigmaToken, config: ColorConfig): string {
 
     for (const shadow of token.shadows) {
       shadows.push(
-        `${shadow.inner ? 'inset ' : ''}${getLength(shadow.x)} ${getLength(shadow.y)} ${getLength(
-          shadow.radius
-        )} ${getColor(shadow.color, config)}`
+        `${shadow.inner ? 'inset ' : ''}${getLength(shadow.x)} ${getLength(
+          shadow.y
+        )} ${getLength(shadow.radius)} ${getColor(shadow.color, config)}`
       );
     }
 

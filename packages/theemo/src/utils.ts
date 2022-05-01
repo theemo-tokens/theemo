@@ -16,7 +16,11 @@ export function readJson(file: string) {
   return JSON.parse(fs.readFileSync(file, { encoding: 'utf-8' }));
 }
 
-export function set(object: Record<string, unknown>, keyPath: string[], value: unknown): void {
+export function set(
+  object: Record<string, unknown>,
+  keyPath: string[],
+  value: unknown
+): void {
   const lastKeyIndex = keyPath.length - 1;
 
   for (let i = 0; i < lastKeyIndex; ++i) {

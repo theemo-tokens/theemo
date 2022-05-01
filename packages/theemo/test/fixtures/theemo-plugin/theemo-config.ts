@@ -1,12 +1,13 @@
-import { TheemoConfig } from '../../../src';
 import { TokenTier } from '../../../src/token';
 import {
   ColorAlphaFormat,
   ColorFormat,
-  FigmaReaderConfig,
   FigmaReferencerType
 } from '../../../src/tools/figma/config';
 import { Tools } from '../../../src/tools/tool';
+
+import type { TheemoConfig } from '../../../src';
+import type { FigmaReaderConfig } from '../../../src/tools/figma/config';
 
 function pathForToken(token) {
   return token.name.split('/');
@@ -14,7 +15,7 @@ function pathForToken(token) {
 
 function isTransient(token, tokens) {
   const hasColorSchemes = tokens.some(
-    t => t.colorScheme && t.name === token.name
+    (t) => t.colorScheme && t.name === token.name
   );
   const isReference = !token.colorScheme && hasColorSchemes;
 
@@ -40,11 +41,11 @@ export const READER_CONFIG_DEV: FigmaReaderConfig = {
     }
   },
 
-  isTokenByStyle: style => {
+  isTokenByStyle: (style) => {
     return style.name.includes('.') || style.name.includes('/');
   },
 
-  getNameFromStyle: style => {
+  getNameFromStyle: (style) => {
     if (style.name.startsWith('.')) {
       return style.name.slice(1).toLowerCase();
     }
@@ -56,7 +57,7 @@ export const READER_CONFIG_DEV: FigmaReaderConfig = {
 export const READER_CONFIG_PROD: FigmaReaderConfig = {
   ...READER_CONFIG_DEV,
 
-  isTokenByStyle: style => {
+  isTokenByStyle: (style) => {
     return (
       !style.name.startsWith('.') &&
       (style.name.includes('.') || style.name.includes('/'))
@@ -76,12 +77,14 @@ export function makeTheemoPluginConfig({ dev = false } = {}): TheemoConfig {
 
           // normalize names
           normalized.name = normalized.name.replace(/\s/g, '');
+
           if (normalized.reference) {
             normalized.reference = normalized.reference.replace(/\s/g, '');
           }
 
           // normalize contexts
           const tokenContextIndex = normalized.name.indexOf('.$');
+
           if (tokenContextIndex !== -1) {
             normalized.colorScheme = normalized.name.slice(
               tokenContextIndex + 2
@@ -91,6 +94,7 @@ export function makeTheemoPluginConfig({ dev = false } = {}): TheemoConfig {
 
           if (normalized.reference !== undefined) {
             const referenceContextIndex = normalized.reference.indexOf('.$');
+
             if (referenceContextIndex !== -1) {
               normalized.reference = normalized.reference.slice(
                 0,
@@ -104,6 +108,7 @@ export function makeTheemoPluginConfig({ dev = false } = {}): TheemoConfig {
 
         classifyToken(token, tokens) {
           const t = { ...token };
+
           t.tier = token.name.startsWith('.')
             ? TokenTier.Basic
             : TokenTier.Purpose;
@@ -146,7 +151,7 @@ export function makeTheemoPluginConfig({ dev = false } = {}): TheemoConfig {
 
         valueForToken(token, tokens) {
           if (token.reference) {
-            const reference = tokens.find(t => t.name === token.reference);
+            const reference = tokens.find((t) => t.name === token.reference);
 
             if (reference && !reference.colorScheme) {
               return `{${pathForToken(reference).join('.')}.value}`;

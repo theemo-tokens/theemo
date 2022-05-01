@@ -44,7 +44,11 @@ export default class FigmaParser {
   private tokens!: TokenCollection<FigmaToken>;
   private processedStyles: WeakSet<Style> = new WeakSet();
 
-  constructor(file: GetFileResult, referencer: Referencer, config: Required<FigmaReaderConfig>) {
+  constructor(
+    file: GetFileResult,
+    referencer: Referencer,
+    config: Required<FigmaReaderConfig>
+  ) {
     this.file = file;
     this.referencer = referencer;
     this.config = config;
@@ -97,7 +101,10 @@ export default class FigmaParser {
     }
   }
 
-  private parseStyle(node: Node<'VECTOR'>, type: keyof StylesMap): FigmaToken | undefined {
+  private parseStyle(
+    node: Node<'VECTOR'>,
+    type: keyof StylesMap
+  ): FigmaToken | undefined {
     const id = (node.styles as StylesMap)[type];
     const style = this.getStyle(id);
 
@@ -156,7 +163,8 @@ export default class FigmaParser {
     for (const effect of effects) {
       if (
         effect.visible &&
-        (effect.type === EffectType.DROP_SHADOW || effect.type === EffectType.INNER_SHADOW)
+        (effect.type === EffectType.DROP_SHADOW ||
+          effect.type === EffectType.INNER_SHADOW)
       ) {
         shadows.push({
           inner: effect.type === EffectType.INNER_SHADOW,
@@ -165,7 +173,7 @@ export default class FigmaParser {
           color: { ...effect.color, visible: true },
           x: effect.offset?.x ?? 0,
           y: effect.offset?.y ?? 0,
-          radius: effect.radius,
+          radius: effect.radius
         });
       }
     }
@@ -178,7 +186,7 @@ export default class FigmaParser {
     // @ts-ignore
     return {
       ...paint[0].color,
-      visible: paint[0].visible ?? true,
+      visible: paint[0].visible ?? true
     };
   }
 
@@ -190,7 +198,7 @@ export default class FigmaParser {
     const token: FigmaToken = {
       figmaName: node.name,
       name: this.config.getNameFromText(node),
-      node,
+      node
     };
 
     return token;
@@ -201,7 +209,7 @@ export default class FigmaParser {
       figmaName: style.name,
       name: this.config.getNameFromStyle(style),
       node,
-      style,
+      style
     };
 
     return token;

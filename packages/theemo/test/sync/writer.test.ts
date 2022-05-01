@@ -1,5 +1,4 @@
 import fs from 'fs';
-
 import jp from 'jsonpath';
 import mockFs from 'mock-fs';
 
@@ -31,11 +30,14 @@ import {
 
 async function write({ config, mockReader }) {
   const reader = new FigmaReader(config.sync.reader);
+
   mockReader(reader);
+
   const raw = await reader.read();
   const lexer = new Lexer(config.sync.lexer);
   const tokens = lexer.analyze(raw);
   const writer = new Writer(config.sync.writer);
+
   writer.write(tokens);
 }
 
@@ -55,6 +57,7 @@ function testSamples(samples) {
     );
 
     const props = jp.query(tokens, `$.${sample.path}`);
+
     expect(props[0], `props for ${sample.path}`).toEqual(
       expect.objectContaining(sample.properties)
     );

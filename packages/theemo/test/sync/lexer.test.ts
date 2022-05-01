@@ -1,9 +1,5 @@
-import { TheemoConfig } from '../../src';
 import Lexer from '../../src/sync/lexer';
 import Reader from '../../src/sync/reader';
-import TokenCollection from '../../src/token-collection';
-import Figma from '../../src/tools/figma';
-import FigmaReader from '../../src/tools/figma/reader';
 import { TOKENS as MOANA_TOKENS_DEV } from '../fixtures/hokulea/lexer/moana-result-dev';
 import { TOKENS as MOANA_TOKENS_PROD } from '../fixtures/hokulea/lexer/moana-result-prod';
 import { makeHokuleaConfig } from '../fixtures/hokulea/theemo-config';
@@ -15,9 +11,14 @@ import {
   mockFigmaReaderWithTheemo
 } from '../tools/figma/utils';
 
+import type { TheemoConfig } from '../../src';
+import type TokenCollection from '../../src/token-collection';
+import type Figma from '../../src/tools/figma';
+import type FigmaReader from '../../src/tools/figma/reader';
+
 function testTokens(expected: { name: string }[], actual: TokenCollection) {
   for (const expectedToken of expected) {
-    const token = actual.find(t => {
+    const token = actual.find((t) => {
       let found = true;
 
       for (const [prop, value] of Object.entries(expectedToken)) {

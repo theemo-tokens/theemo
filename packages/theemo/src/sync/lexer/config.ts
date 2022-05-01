@@ -74,12 +74,12 @@ const DEFAULT_LEXER_CONFIG = {
     }
 
     return normalized;
-  },
+  }
 };
 
 export function getLexerConfig(config: LexerConfig): LexerConfig {
   return {
     ...DEFAULT_LEXER_CONFIG,
-    ...config,
+    ...config
   };
 }

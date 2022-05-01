@@ -51,7 +51,7 @@ export default class GenerateCommand {
 
       if (!packageJson.theemo) {
         packageJson.theemo = {
-          name: packageJson.name,
+          name: packageJson.name
         };
       }
 
@@ -74,7 +74,10 @@ export default class GenerateCommand {
   }
 
   private prepareBaseBlock() {
-    const basePath = path.join(this.config.input, this.config.base ?? 'base.css');
+    const basePath = path.join(
+      this.config.input,
+      this.config.base ?? 'base.css'
+    );
 
     const baseBlock = this.getBlockFromFile(basePath);
 
@@ -92,7 +95,10 @@ export default class GenerateCommand {
 
     for (const [scheme, config] of Object.entries(this.config.colorSchemes)) {
       contents.push(
-        `/* Color Scheme: ${scheme} */\n${this.prepareColorScheme(scheme, config as SchemeConfig)}`
+        `/* Color Scheme: ${scheme} */\n${this.prepareColorScheme(
+          scheme,
+          config as SchemeConfig
+        )}`
       );
     }
 

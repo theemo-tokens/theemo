@@ -21,10 +21,14 @@ export default class Lexer {
     this.normalizedTokens = tokens.map(this.normalizeToken.bind(this));
 
     // classification
-    this.classifiedTokens = this.normalizedTokens.map(this.classifyToken.bind(this));
+    this.classifiedTokens = this.normalizedTokens.map(
+      this.classifyToken.bind(this)
+    );
 
     // filter
-    const filteredTokens = this.classifiedTokens.filter(this.filterToken.bind(this));
+    const filteredTokens = this.classifiedTokens.filter(
+      this.filterToken.bind(this)
+    );
 
     return filteredTokens;
   }
@@ -32,7 +36,7 @@ export default class Lexer {
   private normalizeToken(token: Token): Token {
     return (
       this.config.normalizeToken?.(token, {
-        raw: this.rawTokens,
+        raw: this.rawTokens
       }) ?? token
     );
   }
@@ -41,7 +45,7 @@ export default class Lexer {
     return (
       this.config.classifyToken?.(token, {
         raw: this.rawTokens,
-        normalized: this.normalizedTokens,
+        normalized: this.normalizedTokens
       }) ?? token
     );
   }
@@ -51,7 +55,7 @@ export default class Lexer {
       this.config.filterToken?.(token, {
         raw: this.rawTokens,
         normalized: this.normalizedTokens,
-        classified: this.classifiedTokens,
+        classified: this.classifiedTokens
       }) ?? true
     );
   }
