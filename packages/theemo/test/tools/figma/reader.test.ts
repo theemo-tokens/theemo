@@ -3,32 +3,35 @@ import {
   REFERENCES as MOANA_DEV_REFERENCES,
   TRANSFORMS as MOANA_DEV_TRANSFORMS,
   VALUES as MOANA_DEV_VALUES
-} from '../../fixtures/hokulea/reader/moana-result-dev';
+} from '../../fixtures/hokulea/reader/moana-result-dev.js';
 import {
   REFERENCES as MOANA_PROD_REFERENCES,
   VALUES as MOANA_PROD_VALUES
-} from '../../fixtures/hokulea/reader/moana-result-prod';
+} from '../../fixtures/hokulea/reader/moana-result-prod.js';
 import {
   READER_CONFIG_DEV as HOKULEA_READER_CONFIG_DEV,
   READER_CONFIG_PROD as HOKULEA_READER_CONFIG_PROD
-} from '../../fixtures/hokulea/theemo-config';
+} from '../../fixtures/hokulea/theemo-config.js';
 import {
   REFERENCES as THEEMO_DEV_REFERENCES,
   TRANSFORMS as THEEMO_DEV_TRANSFORMS,
   VALUES as THEEMO_DEV_VALUES
-} from '../../fixtures/theemo-plugin/reader/theemo-result-dev';
+} from '../../fixtures/theemo-plugin/reader/theemo-result-dev.js';
 import {
   REFERENCES as THEEMO_PROD_REFERENCES,
   VALUES as THEEMO_PROD_VALUES
-} from '../../fixtures/theemo-plugin/reader/theemo-result-prod';
+} from '../../fixtures/theemo-plugin/reader/theemo-result-prod.js';
 import {
   READER_CONFIG_DEV as THEEMO_READER_CONFIG_DEV,
   READER_CONFIG_PROD as THEEMO_READER_CONFIG_PROD
-} from '../../fixtures/theemo-plugin/theemo-config';
-import { mockFigmaReaderWithMoana, mockFigmaReaderWithTheemo } from './utils';
+} from '../../fixtures/theemo-plugin/theemo-config.js';
+import {
+  mockFigmaReaderWithMoana,
+  mockFigmaReaderWithTheemo
+} from './utils.js';
 
-import type TokenCollection from '../../../src/token-collection';
-import type { Transforms } from '../../../src/tools/figma/referencers/theemo-plugin';
+import type TokenCollection from '../../../src/token-collection.js';
+import type { Transforms } from '../../../src/tools/figma/referencers/theemo-plugin.js';
 
 function testNames(tokens: TokenCollection, names: string[]) {
   for (const name of names) {
@@ -48,8 +51,8 @@ function testReferences(
     const token = tokens.find((t) => t.name === name);
 
     expect(
-      token.reference,
-      `Reference for token '${token.name}'`
+      token?.reference,
+      `Reference for token '${token?.name}'`
     ).toStrictEqual(reference);
   }
 
@@ -60,7 +63,7 @@ function testValues(tokens: TokenCollection, values: Record<string, string>) {
   for (const [tokenName, value] of Object.entries(values)) {
     const token = tokens.find((t) => t.name === tokenName);
 
-    expect(token.value, `Value for token '${token.name}'`).toBe(value);
+    expect(token?.value, `Value for token '${token?.name}'`).toBe(value);
   }
 }
 
@@ -72,8 +75,8 @@ function testTransforms(
     const token = tokens.find((t) => t.name === tokenName);
 
     expect(
-      token.transforms,
-      `Transforms for token '${token.name}'`
+      token?.transforms,
+      `Transforms for token '${token?.name}'`
     ).toStrictEqual(value);
   }
 }

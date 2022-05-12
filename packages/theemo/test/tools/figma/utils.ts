@@ -5,8 +5,8 @@ import moanaFigmaJson from '../../fixtures/hokulea/moana-theme.json';
 import theemoPluginFigmaJson from '../../fixtures/theemo-plugin/figma.json';
 import theemoPluginReferencesJson from '../../fixtures/theemo-plugin/references.json';
 
-import type FigmaReader from '../../../src/tools/figma/reader';
-import type TheemoPluginReferencer from '../../../src/tools/figma/referencers/theemo-plugin';
+import type FigmaReader from '../../../src/tools/figma/reader.js';
+import type TheemoPluginReferencer from '../../../src/tools/figma/referencers/theemo-plugin.js';
 
 export function mockFigmaReaderReferences(
   reader: FigmaReader,

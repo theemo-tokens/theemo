@@ -29,7 +29,7 @@
     "dts": "tsc --emitDeclarationOnly",
     "build": "pnpm swc src/ --out-dir dist/",
     "start": "pnpm swc src/ --out-dir dist/ -w",
-    "test": "jest --clearCache && NODE_OPTIONS=--experimental-vm-modules jest",
+    "test": "jest --clearCache && NODE_OPTIONS='--experimental-vm-modules --experimental-specifier-resolution=node' jest",
     "coverage": "pnpm test --coverage=true",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
@@ -61,7 +61,7 @@
     "@nullvoxpopuli/eslint-configs": "^2.2.14",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.174",
-    "@swc/jest": "^0.2.20",
+    "@swc-node/jest": "^1.5.2",
     "@types/color": "^3.0.3",
     "@types/jest": "^27.4.1",
     "@types/jest-expect-message": "^1.0.3",
@@ -81,7 +81,7 @@
     "prettier": "^2.6.2",
     "release-it": "^14.14.3",
     "release-it-lerna-changelog": "^4.0.1",
-    "typescript": "next"
+    "typescript": "4.7.0-beta"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
