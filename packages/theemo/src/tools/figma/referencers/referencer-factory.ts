@@ -1,11 +1,12 @@
-import {
+import { FigmaReferencerType } from '../config.js';
+import NullReferencer from './null-referencer.js';
+import TheemoPluginReferencer from './theemo-plugin.js';
+
+import type {
   FigmaReferencerConfig,
-  FigmaReferencerType,
   FigmaReferencerPluginConfig
 } from '../config.js';
-import NullReferencer from './null-referencer.js';
-import Referencer from './referencer.js';
-import TheemoPluginReferencer from './theemo-plugin.js';
+import type Referencer from './referencer.js';
 
 export default class ReferencerFactory {
   static create(config?: FigmaReferencerConfig): Referencer {

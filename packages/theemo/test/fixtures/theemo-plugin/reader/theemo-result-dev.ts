@@ -1,6 +1,6 @@
 import {
-  VALUES as PROD_VALUES,
-  REFERENCES as PROD_REFERENCES
+  REFERENCES as PROD_REFERENCES,
+  VALUES as PROD_VALUES
 } from './theemo-result-prod';
 
 export const VALUES = {

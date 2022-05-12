@@ -1,10 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import WriterConfig from '../../sync/writer/config.js';
-import Token from '../../token.js';
 import TokenCollection from '../../token-collection.js';
 import { set } from '../../utils.js';
+
+import type WriterConfig from '../../sync/writer/config.js';
+import type Token from '../../token.js';
 
 export default class StyleDictionaryWriter {
   private config: WriterConfig;
@@ -15,6 +16,7 @@ export default class StyleDictionaryWriter {
 
   write(tokens: TokenCollection): void {
     const files = this.getFiles(tokens);
+
     this.writeFiles(files, tokens);
   }
 
@@ -44,6 +46,7 @@ export default class StyleDictionaryWriter {
   ) {
     for (const [file, tokenSet] of files.entries()) {
       const contents = {};
+
       for (const token of tokenSet) {
         const property = this.getPathFromToken(token);
         const data = this.buildToken(token, allTokens);

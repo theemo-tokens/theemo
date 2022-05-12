@@ -1,11 +1,12 @@
 import { jest } from '@jest/globals';
 
-import FigmaReader from '../../../src/tools/figma/reader';
-import TheemoPluginReferencer from '../../../src/tools/figma/referencers/theemo-plugin';
 import moanaReferencesJson from '../../fixtures/hokulea/moana-references.json';
 import moanaFigmaJson from '../../fixtures/hokulea/moana-theme.json';
 import theemoPluginFigmaJson from '../../fixtures/theemo-plugin/figma.json';
 import theemoPluginReferencesJson from '../../fixtures/theemo-plugin/references.json';
+
+import type FigmaReader from '../../../src/tools/figma/reader.js';
+import type TheemoPluginReferencer from '../../../src/tools/figma/referencers/theemo-plugin.js';
 
 export function mockFigmaReaderReferences(
   reader: FigmaReader,
@@ -13,6 +14,7 @@ export function mockFigmaReaderReferences(
 ): void {
   // eslint-disable-next-line dot-notation
   const referencer = reader['referencer'] as TheemoPluginReferencer;
+
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   // eslint-disable-next-line dot-notation

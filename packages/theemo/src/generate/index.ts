@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { readJson, readModule } from '../utils.js';
-import GenerateConfig, { SchemeConfig } from './config.js';
+import { readJson } from '../utils.js';
+
+import type { SchemeConfig } from './config.js';
+import type GenerateConfig from './config.js';
 
 interface Package {
   name: string;
@@ -26,6 +28,7 @@ export default class GenerateCommand {
 
   private getThemeName() {
     const data = readJson('package.json') as Package;
+
     return data.theemo?.name ?? data.name;
   }
 
@@ -39,16 +42,19 @@ export default class GenerateCommand {
     }
 
     const outFile = path.join(output, `${this.name}.css`);
+
     fs.writeFileSync(outFile, contents.join('\n'));
 
     // update package.json with color schemes
     if (this.config.colorSchemes) {
       const packageJson = readJson('package.json') as Package;
+
       if (!packageJson.theemo) {
         packageJson.theemo = {
           name: packageJson.name
         };
       }
+
       packageJson.theemo.colorSchemes = Object.keys(this.config.colorSchemes);
       packageJson.theemo.file = outFile;
 
@@ -62,6 +68,7 @@ export default class GenerateCommand {
 
       const data = JSON.stringify(packageJson, undefined, '  ');
       const packageFile = path.join(process.cwd(), 'package.json');
+
       fs.writeFileSync(packageFile, data);
     }
   }
@@ -123,6 +130,7 @@ export default class GenerateCommand {
     // manual activiate
     if (config.manual || !config.auto) {
       const selector = config.selector ?? `.${this.name}-${name}`;
+
       contents.push(`${selector} ${block}`);
     }
 
@@ -131,6 +139,7 @@ export default class GenerateCommand {
 
   private getBlockFromFile(file: string) {
     const contents = fs.readFileSync(file, 'utf-8');
+
     return contents.replace(':root ', '');
   }
 }

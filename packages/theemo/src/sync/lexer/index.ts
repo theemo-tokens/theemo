@@ -1,6 +1,8 @@
-import Token from '../../token.js';
 import TokenCollection from '../../token-collection.js';
-import LexerConfig, { getLexerConfig } from './config.js';
+import { getLexerConfig } from './config.js';
+
+import type Token from '../../token.js';
+import type LexerConfig from './config.js';
 
 export default class Lexer {
   private config: LexerConfig;

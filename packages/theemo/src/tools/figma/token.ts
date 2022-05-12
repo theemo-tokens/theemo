@@ -1,8 +1,10 @@
 import Color from 'color';
-import { Node, Style } from 'figma-api';
 
-import { BaseToken } from '../../token.js';
-import { ColorAlphaFormat, ColorConfig, ColorFormat } from './config.js';
+import { ColorAlphaFormat, ColorFormat } from './config.js';
+
+import type { BaseToken } from '../../token.js';
+import type { ColorConfig } from './config.js';
+import type { Node, Style } from 'figma-api';
 
 interface TokenColor {
   r: number;
@@ -84,6 +86,8 @@ export function colorToValue(color: Color, config: ColorConfig): string {
     }
 
     case ColorAlphaFormat.Rgb:
+
+    // eslint-disable-next-line no-fallthrough
     default: {
       return color.rgb().string();
     }
@@ -113,6 +117,7 @@ export function getValue(token: FigmaToken, config: ColorConfig): string {
 
   if (token.shadows) {
     const shadows = [];
+
     for (const shadow of token.shadows) {
       shadows.push(
         `${shadow.inner ? 'inset ' : ''}${getLength(shadow.x)} ${getLength(

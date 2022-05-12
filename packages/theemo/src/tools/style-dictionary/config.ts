@@ -1,7 +1,7 @@
-import Token from '../../token.js';
-import TokenCollection from '../../token-collection.js';
-import ToolConfig from '../config.js';
-import { Tools } from '../tool.js';
+import type Token from '../../token.js';
+import type TokenCollection from '../../token-collection.js';
+import type ToolConfig from '../config.js';
+import type { Tools } from '../tool.js';
 
 /**
  * The config for Style Dicitionary being used as `WriterTool`.

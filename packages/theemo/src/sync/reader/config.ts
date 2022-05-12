@@ -1,5 +1,5 @@
-import { FigmaReaderConfig } from '../../tools/figma/config.js';
-import { Tools } from '../../tools/tool.js';
+import type { FigmaReaderConfig } from '../../tools/figma/config.js';
+import type { Tools } from '../../tools/tool.js';
 
 /**
  * The reader config describes the source from which tokens are read. This

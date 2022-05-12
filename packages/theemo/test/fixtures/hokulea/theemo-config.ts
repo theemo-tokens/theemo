@@ -1,12 +1,14 @@
-import { TheemoConfig } from '../../../src';
-import Token, { TokenTier } from '../../../src/token';
+import { TokenTier } from '../../../src/token';
 import {
   ColorAlphaFormat,
   ColorFormat,
-  FigmaReaderConfig,
   FigmaReferencerType
 } from '../../../src/tools/figma/config';
 import { Tools } from '../../../src/tools/tool';
+
+import type { TheemoConfig } from '../../../src';
+import type Token from '../../../src/token';
+import type { FigmaReaderConfig } from '../../../src/tools/figma/config';
 
 function pathForToken(token) {
   const path = token.name.replace(/\//g, '.').split('.');
@@ -16,7 +18,7 @@ function pathForToken(token) {
 
 function isTransient(token: Token, tokens) {
   const hasColorSchemes = tokens.some(
-    t => t.colorScheme && t.name === token.name
+    (t) => t.colorScheme && t.name === token.name
   );
   const isReference = !token.colorScheme && hasColorSchemes;
 
@@ -85,6 +87,7 @@ export const READER_CONFIG_PROD: FigmaReaderConfig = {
       }
 
       name = `color.${name}`.replace('color.color.', 'color.');
+
       return name;
     }
 
@@ -125,12 +128,14 @@ export function makeHokuleaConfig({ dev = false } = {}): TheemoConfig {
 
           // normalize names
           normalized.name = normalizeName(normalized.name);
+
           if (normalized.reference) {
             normalized.reference = normalizeName(normalized.reference);
           }
 
           // normalize contexts
           const tokenContextIndex = normalized.name.indexOf('.$');
+
           if (tokenContextIndex !== -1) {
             normalized.colorScheme = normalized.name.slice(
               tokenContextIndex + 2
@@ -154,6 +159,7 @@ export function makeHokuleaConfig({ dev = false } = {}): TheemoConfig {
 
         classifyToken(token, tokens) {
           const t = { ...token };
+
           t.tier = token.name.startsWith('.')
             ? TokenTier.Basic
             : TokenTier.Purpose;
@@ -202,6 +208,7 @@ export function makeHokuleaConfig({ dev = false } = {}): TheemoConfig {
               if (token.name.startsWith(name)) {
                 const sub = token.name.replace(`${name}.`, '');
                 const file = sub.split('.').shift();
+
                 fileName = `${name.replace('.', '/')}/${file}`;
               }
             }
@@ -233,7 +240,7 @@ export function makeHokuleaConfig({ dev = false } = {}): TheemoConfig {
         valueForToken(token, tokens) {
           if (token.reference) {
             const reference = tokens.find(
-              t => t.name === token.reference && t.colorScheme === undefined
+              (t) => t.name === token.reference && t.colorScheme === undefined
             );
 
             if (reference && token.transforms === undefined) {

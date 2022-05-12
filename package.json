@@ -1,25 +1,7 @@
 {
   "name": "root",
   "private": true,
-  "scripts": {
-    "bootstrap": "yarn install --frozen-lockfile --non-interactive && yarn lerna bootstrap",
-    "clean": "yarn lerna clean -y && rm -rf node_modules",
-    "reinstall": "yarn clean && yarn bootstrap",
-    "lerna-run": "FORCE_COLOR=1 yarn lerna --concurrency 1 run --stream",
-    "test": "yarn lerna-run test",
-    "coverage": "yarn lerna-run coverage",
-    "lint": "yarn lerna-run lint"
-  },
-  "workspaces": [
-    "website",
-    "packages/*",
-    "packages/@theemo/*"
-  ],
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  },
   "volta": {
-    "node": "16.15.0",
-    "yarn": "1.22.18"
+    "node": "16.15.0"
   }
 }

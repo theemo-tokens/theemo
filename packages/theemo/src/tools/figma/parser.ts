@@ -1,9 +1,15 @@
-import { Effect, EffectType, Node, Paint, Style, StylesMap } from 'figma-api';
-import { GetFileResult } from 'figma-api/lib/api-types';
+import { EffectType } from 'figma-api';
+
 import TokenCollection from '../../token-collection.js';
-import { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
-import Referencer from './referencers/referencer.js';
-import { FigmaToken, getTypefromStyle } from './token.js';
+import { getTypefromStyle } from './token.js';
+
+import type { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
+import type Referencer from './referencers/referencer.js';
+import type { FigmaToken } from './token.js';
+import type { Api } from 'figma-api';
+import type { Effect, Node, Paint, Style, StylesMap } from 'figma-api';
+
+type GetFileResult = Awaited<ReturnType<Api['getFile']>>;
 
 type CompositeNode = Node & {
   children: Node[];
@@ -76,6 +82,7 @@ export default class FigmaParser {
     }
 
     const token = this.createTokenFromNode(node);
+
     token.value = this.config.getValueFromText(node);
     token.type = 'content';
 
@@ -112,18 +119,16 @@ export default class FigmaParser {
     }
 
     this.processedStyles.add(style);
+
     const styleType = style.styleType.toLowerCase();
     const token = this.createTokenFromStyle(style, node);
+
     token.type = getTypefromStyle(style);
     token.description = style.description;
     token.data = this.referencer.findData(style.name, styleType);
 
     // see if we have a reference
-    token.figmaReference = this.referencer.find(
-      // eslint-disable-next-line unicorn/no-array-callback-reference
-      style.name,
-      styleType
-    );
+    token.figmaReference = this.referencer.find(style.name, styleType);
 
     // also look for the value
     const key = `${styleType}s` as keyof Node<'VECTOR'>;
@@ -152,6 +157,7 @@ export default class FigmaParser {
 
   private getShadowsFromEffect(effects: Effect[]) {
     const shadows: ShadowNode[] = [];
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     for (const effect of effects) {

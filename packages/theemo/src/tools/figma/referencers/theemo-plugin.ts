@@ -2,10 +2,13 @@ import Color from 'color';
 import isEmpty from 'lodash.isempty';
 import fetch from 'node-fetch';
 
-import Token, { TokenTier } from '../../../token.js';
-import { ColorConfig } from '../config.js';
-import { FigmaToken, getValue, colorToValue } from '../token.js';
-import Referencer from './referencer.js';
+import { TokenTier } from '../../../token.js';
+import { colorToValue, getValue } from '../token.js';
+
+import type Token from '../../../token.js';
+import type { ColorConfig } from '../config.js';
+import type { FigmaToken } from '../token.js';
+import type Referencer from './referencer.js';
 
 export type Transforms = Partial<
   Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>
@@ -73,11 +76,12 @@ export default class TheemoPluginReferencer implements Referencer {
         }
       }
     );
+
     return response.json();
   }
 
   find(name: string, type: string): string | undefined {
-    const nodeReference = this.references.nodes.find(node => {
+    const nodeReference = this.references.nodes.find((node) => {
       return (
         node[type as keyof RefNode] &&
         (node[type as keyof RefNode] as StyleRef)?.to.name === name
@@ -88,12 +92,11 @@ export default class TheemoPluginReferencer implements Referencer {
       return (nodeReference[type as keyof RefNode] as StyleRef)?.from.name;
     }
 
-    // eslint-disable-next-line unicorn/no-useless-undefined
     return undefined;
   }
 
   findData(name: string, type: string): Data | undefined {
-    const nodeReference = this.references.nodes.find(node => {
+    const nodeReference = this.references.nodes.find((node) => {
       return (
         node[type as keyof RefNode] &&
         (node[type as keyof RefNode] as StyleRef)?.to.name === name
@@ -111,7 +114,6 @@ export default class TheemoPluginReferencer implements Referencer {
       }
     }
 
-    // eslint-disable-next-line unicorn/no-useless-undefined
     return undefined;
   }
 
