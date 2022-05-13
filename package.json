@@ -3,5 +3,9 @@
   "private": true,
   "volta": {
     "node": "16.15.0"
+  },
+  "scripts": {
+    "test": "pnpm run --filter theemo test",
+    "coverage": "pnpm run --filter theemo coverage"
   }
 }
