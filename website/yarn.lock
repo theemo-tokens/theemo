@@ -6480,9 +6480,7 @@ mdurl@^1.0.0:
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
 mdx-mermaid@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/mdx-mermaid/-/mdx-mermaid-1.1.0.tgz#687bcec767fe7b142a065463f3ec6ede53bd7b9e"
-  integrity sha512-hmY1KWu7YqIfNSOnrsnxCUTq2sRklnNc9OyHz+SRSQDJuYo2ZCQP2PHciR2oK9sPAwHSvpnTep6w5ha2Gl98WQ==
+  version "1.2.2"
 
 media-typer@0.3.0:
   version "0.3.0"
