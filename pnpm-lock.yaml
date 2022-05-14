@@ -97,7 +97,7 @@ importers:
       '@theemo/theme': workspace:*
       classnames: ^2.3.1
       mdx-mermaid: ^1.1.0
-      mermaid: ^8.13.0
+      mermaid: ^9.0.0
       react: ^18.1.0
       react-dom: ^18.1.0
       unist-util-visit: ^4.1.0
@@ -106,8 +106,8 @@ importers:
       '@docusaurus/preset-classic': 2.0.0-beta.18_ef5jwxihqo6n7gxfmzogljlgcm
       '@theemo/theme': link:../packages/@theemo/theme
       classnames: 2.3.1
-      mdx-mermaid: 1.2.2_s6x3khbxcbxqkkw4jhh6uc7a5i
-      mermaid: 8.14.0
+      mdx-mermaid: 1.2.2_quqpgkdmwrwagevjlygiiiada4
+      mermaid: 9.1.1
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       unist-util-visit: 4.1.0
@@ -1564,9 +1564,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@braintree/sanitize-url/3.1.0:
-    resolution: {integrity: sha512-GcIY79elgB+azP74j8vqkiXz8xLFfIzbQJdlwOPisgbKT00tviJQuEghOXSMVxJ00HoYJbGswr4kcllUc4xCcg==}
-    deprecated: Potential XSS vulnerability patched in v6.0.0.
+  /@braintree/sanitize-url/6.0.0:
+    resolution: {integrity: sha512-mgmE7XBYY/21erpzhexk4Cj1cyTQ9LzvnTxtzM17BJ7ERMNE6W72mQRo0I1Ud8eFJ+RVVIcBNhLFZ3GX4XFz5w==}
     dev: false
 
   /@colors/colors/1.5.0:
@@ -6291,8 +6290,8 @@ packages:
       domelementtype: 2.3.0
     dev: false
 
-  /dompurify/2.3.5:
-    resolution: {integrity: sha512-kD+f8qEaa42+mjdOpKeztu9Mfx5bv9gVLO6K9jRx4uGvh6Wv06Srn4jr1wPNY2OOUGGSKHNFN+A8MA3v0E0QAQ==}
+  /dompurify/2.3.6:
+    resolution: {integrity: sha512-OFP2u/3T1R5CEgWCEONuJ1a5+MFKnOYpkywpUSxv/dj1LeBT1erK+JwM7zK0ROy2BRhqVCf0LRw/kHqKuMkVGg==}
     dev: false
 
   /domutils/1.5.1:
@@ -9060,8 +9059,8 @@ packages:
     dependencies:
       json-buffer: 3.0.0
 
-  /khroma/1.4.1:
-    resolution: {integrity: sha512-+GmxKvmiRuCcUYDgR7g5Ngo0JEDeOsGdNONdU2zsiBQaK4z19Y2NvXqfEDE0ZiIrg45GTZyAnPLVsLZZACYm3Q==}
+  /khroma/2.0.0:
+    resolution: {integrity: sha512-2J8rDNlQWbtiNYThZRvmMv5yt44ZakX+Tz5ZIp/mN1pt4snn+m030Va5Z4v8xA0cQFDXBwO/8i42xL4QPsVk3g==}
     dev: false
 
   /kind-of/6.0.3:
@@ -9437,14 +9436,14 @@ packages:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
     dev: false
 
-  /mdx-mermaid/1.2.2_s6x3khbxcbxqkkw4jhh6uc7a5i:
+  /mdx-mermaid/1.2.2_quqpgkdmwrwagevjlygiiiada4:
     resolution: {integrity: sha512-izl9Vaus0fJHJb6IGgcGZ79LpfFACfn28ExPXKL815RTMT9bgDRIAubufZUCgoCAAv/2S1VTxJLWTwbck4TpLA==}
     peerDependencies:
       mermaid: '>= 8.11.0 < 8.12.0'
       react: ^16.8.4 || ^17.0.0
       unist-util-visit: ^2.0.0
     dependencies:
-      mermaid: 8.14.0
+      mermaid: 9.1.1
       react: 18.1.0
       unist-util-visit: 4.1.0
     dev: false
@@ -9477,16 +9476,16 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  /mermaid/8.14.0:
-    resolution: {integrity: sha512-ITSHjwVaby1Li738sxhF48sLTxcNyUAoWfoqyztL1f7J6JOLpHOuQPNLBb6lxGPUA0u7xP9IRULgvod0dKu35A==}
+  /mermaid/9.1.1:
+    resolution: {integrity: sha512-2RVD+WkzZ4VDyO9gQvQAuQ/ux2gLigJtKDTlbwjYqOR/NwsVzTSfGm/kx648/qWJsg6Sv04tE9BWCO8s6a+pFA==}
     dependencies:
-      '@braintree/sanitize-url': 3.1.0
+      '@braintree/sanitize-url': 6.0.0
       d3: 7.4.4
       dagre: 0.8.5
       dagre-d3: 0.6.4
-      dompurify: 2.3.5
+      dompurify: 2.3.6
       graphlib: 2.1.8
-      khroma: 1.4.1
+      khroma: 2.0.0
       moment-mini: 2.24.0
       stylis: 4.1.1
     dev: false
