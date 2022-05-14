@@ -26,12 +26,12 @@ jobs:
           version: latest
 
       - run: pnpm install
-      - run: pnpm test
       - name: Collect Coverage and Submit to CodeClimate
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
           coverageCommand: pnpm coverage
+          workingDirectory: ${{github.workspace}}/packages/theemo
           coverageLocations: |
             ${{github.workspace}}/packages/theemo/coverage/lcov.info:lcov
