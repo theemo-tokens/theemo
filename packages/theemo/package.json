@@ -57,7 +57,7 @@
     "@alex_neo/jest-expect-message": "^1.0.5",
     "@jest/globals": "^28.0.3",
     "@microsoft/api-documenter": "^7.17.11",
-    "@microsoft/api-extractor": "^7.23.0",
+    "@microsoft/api-extractor": "^7.24.0",
     "@nullvoxpopuli/eslint-configs": "^2.2.14",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.174",
