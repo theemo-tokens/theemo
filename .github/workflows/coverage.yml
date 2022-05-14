@@ -33,7 +33,6 @@ jobs:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
         with:
           coverageCommand: pnpm coverage
-          debug: true
           workingDirectory: ${{github.workspace}}/packages/theemo
           coverageLocations: |
             ${{github.workspace}}/packages/theemo/coverage/lcov.info:lcov
