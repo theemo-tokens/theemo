@@ -6,5 +6,5 @@
   ],
   "automerge": true,
   "masterIssue": true,
-  "rangeStrategy": "bump"
+  "rangeStrategy": "update-lockfile"
 }
