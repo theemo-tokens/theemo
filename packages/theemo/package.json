@@ -72,7 +72,7 @@
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "chokidar": "^3.5.3",
-    "eslint": "^8.14.0",
+    "eslint": "^8.15.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^28.0.3",
     "jsonpath": "^1.1.1",
