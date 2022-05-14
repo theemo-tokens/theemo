@@ -1,9 +1,9 @@
 ---
-id: toolchain
-title: Toolchain
+id: cli
+title: CLI
 ---
 
-Theemo will **integrate** into your existing **toolchain** by **connecting**
+Theemo will **integrate** into your existing **cli** by **connecting**
 multiple parts together. It will perform the following steps:
 
 ```mermaid
@@ -33,4 +33,4 @@ understands your tokens at all. That is given the high diversity of design
 tokens, they come in many forms and your `theemo.js` config acts as DSL to make
 them understandable _to you_.
 
--> [Let's get you started](./toolchain/getting-started.md)
+-> [Let's get you started](./cli/getting-started.md)

@@ -56,7 +56,7 @@ module.exports = {
           position: 'left'
         },
         { to: 'design', label: 'Design', position: 'left' },
-        { to: 'toolchain', label: 'Toolchain', position: 'left' },
+        { to: 'cli', label: 'CLI', position: 'left' },
         {
           to: 'frameworks',
           label: 'Frameworks',
