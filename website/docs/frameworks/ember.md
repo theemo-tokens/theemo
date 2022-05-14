@@ -14,7 +14,7 @@ ember install ember-theemo
 
 ## Usage
 
-If you use [generate](../toolchain/generate.md) for your theme creating,
+If you use [generate](../cli/generate.md) for your theme creating,
 `ember-theemo` will pick up any installed themes found by the `theemo-theme`
 keyword.
 

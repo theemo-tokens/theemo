@@ -24,7 +24,7 @@ Have a look at [design](design.md) section, what options are available.
 
 ## For Developers
 
-Theemo assists your workflow by offering [toolchain support](toolchain.md)
+Theemo assists your workflow by offering [cli support](cli.md)
 to automate the data exchange with designers and integrates that output with
 your [framework](frameworks.md) of choice.
 

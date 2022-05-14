@@ -17,32 +17,32 @@ module.exports = {
       ]
     }
   ],
-  toolchain: [
-    'toolchain',
-    'toolchain/getting-started',
-    'toolchain/usage',
-    'toolchain/sync',
+  cli: [
+    'cli',
+    'cli/getting-started',
+    'cli/usage',
+    'cli/sync',
     {
       type: 'doc',
-      id: 'toolchain/sync/reader',
+      id: 'cli/sync/reader',
       label: '> Reader'
     },
     {
       type: 'doc',
-      id: 'toolchain/sync/lexer',
+      id: 'cli/sync/lexer',
       label: '> Lexer'
     },
     {
       type: 'doc',
-      id: 'toolchain/sync/writer',
+      id: 'cli/sync/writer',
       label: '> Writer'
     },
-    'toolchain/build',
-    'toolchain/generate',
+    'cli/build',
+    'cli/generate',
     {
       type: "category",
       label: "Appendix",
-      items: ['toolchain/example-config'],
+      items: ['cli/example-config'],
     }
   ],
   frameworks: ['frameworks', 'frameworks/ember'],

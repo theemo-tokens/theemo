@@ -15,7 +15,8 @@ export default {
   },
 
   // coverage
-  coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
+  // coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
+
   // when invoked from project root
   // but that doesn't display stats on the console
   // coverageReporters: [['lcov', { projectRoot: '../..' }]],

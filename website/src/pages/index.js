@@ -21,21 +21,21 @@ const features = [
     ),
   },
   {
-    to: 'toolchain',
-    title: <>🛠️ Toolchain</>,
+    to: 'cli',
+    title: <>🛠️ CLI</>,
     // imageUrl: 'img/undraw_building_blocks.svg',
     description: (
       <>
         <p>Blend into your existing toolchain</p>
 
-        <Link to='toolchain/sync'>Sync</Link>
+        <Link to='cli/sync'>Sync</Link>
         <p>Sync design tokens from your design tool (eg. Figma, Sketch) into your 
         favorite token translation tool (eg. Style-Dictionary, Theo).</p>
 
-        <Link to='toolchain/build'>Build</Link>
+        <Link to='cli/build'>Build</Link>
         <p>Run the build of your token translation tool and keep your design tokens organized.</p>
         
-        <Link to='toolchain/generate'>Generate</Link>
+        <Link to='cli/generate'>Generate</Link>
         <p>Generate a theme adapting to users preferences (such as color-scheme)</p>
       </>
     ),
