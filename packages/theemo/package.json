@@ -36,7 +36,10 @@
     "lint:js": "eslint --ext ts,js src/ test/ --cache",
     "lint:js:fix": "eslint --ext ts,js src/ test/ --fix",
     "lint:types": "tsc --noEmit",
-    "api": "node scripts/make-docs.cjs",
+    "api:extractor": "api-extractor run --local",
+    "api:documenter": "api-documenter markdown -i dist -o api",
+    "api:doc": "pnpm api:extractor && pnpm api:documenter",
+    "api": "pnpm dts && pnpm api:doc",
     "prepublishOnly": "pnpm build",
     "prepack": "pnpm dts",
     "release": "release-it"
@@ -104,6 +107,7 @@
     }
   },
   "volta": {
-    "extends": "../../package.json"
+    "extends": "../../package.json",
+    "node": "18.1.0"
   }
 }

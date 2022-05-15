@@ -1,30 +1,39 @@
-const { readdir, createReadStream, writeFile } = require('fs-extra');
+import { createReadStream, writeFile } from 'node:fs';
+import { readdir } from 'node:fs/promises';
 
-const { createInterface } = require('readline');
-const { join, parse } = require('path');
-const { exec } = require('child_process');
+import { createInterface } from 'node:readline/promises';
+
+import { join, parse } from 'node:path';
+
+import util from 'node:util';
+import { exec } from 'node:child_process';
 
 // This script uses api-extractor and api-documenter and adds frontmatter
 // Taken from:
 // https://github.com/faastjs/faast.js/blob/master/build/make-docs.js
 
-async function main() {
-  await new Promise((resolve, reject) =>
-    exec(
-      'api-extractor run --local && api-documenter markdown -i dist -o docs/api',
-      (err, stdout, stderr) => {
-        console.log(stdout);
-        console.error(stderr);
-        if (err) {
-          reject(err);
-        } else {
-          resolve();
-        }
-      }
-    )
-  );
+const execAsync = util.promisify(exec);
 
-  const dir = './docs/api';
+async function main() {
+  const { stdout, stderr } = await execAsync('api-extractor run --local && api-documenter markdown -i packages/theemo/dist -o website/docs/api');
+  console.log(stdout);
+  console.error(stderr);
+  // await new Promise((resolve, reject) =>
+  //   exec(
+  //     'api-extractor run --local && api-documenter markdown -i dist -o website/docs/api',
+  //     (err, stdout, stderr) => {
+  //       console.log(stdout);
+  //       console.error(stderr);
+  //       if (err) {
+  //         reject(err);
+  //       } else {
+  //         resolve();
+  //       }
+  //     }
+  //   )
+  // );
+
+  const dir = './website/docs/api';
   const docFiles = await readdir(dir);
   for (const docFile of docFiles) {
     try {
