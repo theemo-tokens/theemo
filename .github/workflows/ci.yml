@@ -75,4 +75,4 @@ jobs:
           version: latest
 
       - run: pnpm install
-      - run: pnpm --filter 'theemo' build
+      - run: pnpm -r --parallel build
