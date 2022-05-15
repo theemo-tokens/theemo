@@ -2,10 +2,11 @@
   "name": "root",
   "private": true,
   "volta": {
-    "node": "16.15.0"
+    "node": "18.1.0"
   },
   "scripts": {
     "test": "pnpm run --filter theemo test",
-    "coverage": "pnpm run --filter theemo coverage"
+    "coverage": "pnpm run --filter theemo coverage",
+    "api": "pnpm run --filter theemo api"
   }
 }
