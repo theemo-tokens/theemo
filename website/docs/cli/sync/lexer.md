@@ -143,7 +143,7 @@ as a minimal configuration out of the box:
 There is no need to overwrite the `normalizeToken()`, if that default behavior
 suits you.
 
-For our set of tokens, we are going customizing the behavior to account for
+For our set of tokens, we are customizing the behavior to account for
 contextual tokens, whose name ends in `.$light` or `.$dark`, by moving
 that part to the `colorScheme` property.
 
@@ -244,7 +244,7 @@ That will turn the layout tokens from above ...
 
 ## `classifyToken()`
 
-Clasifying tokens is to give them a meaning. What's the token tier? What's the
+Classifying tokens is to give them a meaning. What's the token tier? What's the
 color scheme (if not already), what's the color contrast and so forth.
 
 We also have access to `raw` and `normalized` sets of tokens in order to perform

@@ -5,10 +5,10 @@ title: References
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-References enables you to alias a token to another one.
+References enable you to alias a token to another one.
 Select a node for which you want to manage references, eg. a color swatch.
-Open the "Theemo" plugin and a dialog will appear that let you do it.
-Currently these styles are supported:
+Open the Theemo plugin and which let's you do that. Currently these styles
+are supported:
 
 - Fill Style
 - Stroke Style
@@ -38,10 +38,10 @@ arrows in the figure to demonstrate these references visually.
 
 ## Transforms
 
-Transforms are a welcome addition on top of references. Avaiable for paint
+Transforms are a welcome addition on top of references. Available for paint
 styles (Fill and Stroke). When styles are referenced from origin to reference
-you can put transforms in between to manipulate HSL and opacity values to their
-during referencing.
+you can put transforms in between to manipulate HSL and opacity values which are
+calculated during referencing.
 
 <figure id="references-with-transforms">
   <img src={useBaseUrl('/img/references-with-transforms.png')} />

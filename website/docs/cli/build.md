@@ -6,8 +6,7 @@ title: Build
 Building is the second step in the process. Run the build of your token
 translation tool directly.
 Although Theemo isn't running that command directly, it makes sense to include
-it as part of your `scripts` in your `package.json` as explained in [execute
-section](./getting-started.md#3-execute) on getting started.
+it as part of your `scripts` in your `package.json` as explained on [getting started](./getting-started.md#3-execute).
 
 ## Style Dictionary
 

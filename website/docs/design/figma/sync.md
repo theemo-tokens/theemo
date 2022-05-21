@@ -5,7 +5,7 @@ title: Sync
 
 Tokens are stored within the theemo plugin which run in a sandboxed environment.
 In order to use your tokens and valuable references from somewhere else, they
-need to be synced from on place to another
+need to be synced from one place to another
 
 ## Export
 

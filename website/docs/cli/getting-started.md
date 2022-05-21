@@ -50,7 +50,7 @@ configuration part and is explained in detail on each section. Please refer to:
 
 ## 3. Execute
 
-Theemo comes with a [CLI](usage.md) and let's you execute commands. Imagine your
+Theemo CLI contains [commands](usage.md) for each of the named tasks above. Imagine your
 project uses all steps, it's enough to have one command for each step in
 your _theme package_. Here is a good practice (a `package.json`):
 
