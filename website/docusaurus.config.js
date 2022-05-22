@@ -9,8 +9,8 @@ module.exports = {
   // url: repoUrl, // Your website URL
   // baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
-  url: 'https://gossi.github.io',
-  baseUrl: '/theemo/',
+  url: 'https://theemo.io',
+  baseUrl: '/',
 
   // Used for publishing and more
   projectName: 'theemo',
