@@ -1,10 +1,10 @@
 {
   "name": "theemo",
   "description": "The yordle powered theme automator",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "Thomas Gossmann",
-  "homepage": "https://gossi.github.io/theemo/",
+  "homepage": "https://theemo.io",
   "keywords": [
     "figma",
     "design tokens",
