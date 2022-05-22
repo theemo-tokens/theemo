@@ -3,10 +3,8 @@ id: best-practices
 title: Best Practices
 ---
 
-The theemo plugin was developed with some workflows in mind, it is best to use
-them like that.
-
-Theemo is built with _theeming_ in mind (hence the name).
+Theemo is built for _theeming_ in mind (hence the name) was developed
+with some workflows in mind, it is best to use them like that.
 
 ## As a Free User
 
@@ -23,7 +21,7 @@ Setup:
 - Use [context switchting](./contexts#switching-contexts) to select a published
   context for your theme
 - Publish styles (Figma will prompt you)
-- Create theme in Themer (or update existing one)
+- Create theme in [Themer](https://www.figma.com/community/plugin/731176732337510831/Themer) (or update existing one)
 
 ### Component File
 
@@ -35,7 +33,7 @@ Workflow for switching the context in your component library:
 
 1. Theme document:
 
-- Open Style References plugin
+- Open Theemo plugin
 - Switch context
 - Publish styles (Figma will prompt you)
 

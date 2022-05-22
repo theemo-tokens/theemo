@@ -48,7 +48,8 @@ module.exports = {
   frameworks: ['frameworks', 'frameworks/ember'],
   'knowledge-base': [
     'knowledge-base/glossary',
-    'knowledge-base/token-specification'
+    'knowledge-base/token-specification',
+    'knowledge-base/literature'
   ],
   api: [
     'api/theemo',

@@ -1,3 +1,6 @@
+const math = require('remark-math');
+const katex = require('rehype-katex');
+
 const repoUrl = 'https://github.com/gossi/theemo';
 
 module.exports = {
@@ -18,7 +21,14 @@ module.exports = {
   onBrokenLinks: 'warn',
 
   stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Patua+One&display=swap'
+    'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&family=Patua+One&display=swap',
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
+    }
   ],
 
   presets: [
@@ -29,7 +39,8 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           sidebarCollapsible: true,
-          remarkPlugins: [require('mdx-mermaid')]
+          remarkPlugins: [require('mdx-mermaid'), math],
+          rehypePlugins: [katex],
         },
         theme: {
           customCss: [

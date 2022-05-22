@@ -7,7 +7,7 @@ There is a [glossary at Design Tokens Community
 Group](https://www.designtokens.org/glossary/). Additional/further description
 can be found here:
 
-## Token
+## Design Token
 
 A design token, which has some properties. Please refer to the full
 [token reference](api/theemo.token).
@@ -29,3 +29,26 @@ Here are some references for you, that explain them in various ways:
 - [Design Tokens: How to use them effectively
   (Manandhar)](https://uxdesign.cc/design-tokens-how-to-use-them-effectively-d495ff05cbbf)
 - [The Theory: A Semantic Color System (Carlin)](https://dev.to/ynab/a-semantic-color-system-the-theory-hk7)
+
+## Scalable Design Tokens
+
+In order to make design tokens scalable, their creation process needs to be
+replicable. A [token specification](./token-specification.md) contains
+the plan in form of a scheme in order to make them replicatable.
+
+## Token User
+
+Token users are [token designer](#token-designer) and [token consumer](#token-consumer).
+
+## Token Designer
+
+A token designer develops and designs tokens. The token design includes
+references and possible transforms.
+
+## Token Consumer
+
+An end-user using a token either in design or code.
+
+## Token Specification
+
+[A formula for scalable design tokens](./token-specification.md).

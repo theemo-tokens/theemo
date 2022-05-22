@@ -8,10 +8,8 @@ and make them work together, from design to framework integration. The theemo
 suite consists of multiple parts to serve a multi-disciplinary audience by
 bringing them together for an immersive workflow.
 
-The suite addresses designers and developers and aims to make them
-more productive. Theemo connects to the collaborating interfaces, guiding
-through a structured process while allowing and adhering to an (already
-existing) domain language.
+The suite addresses designers and developers and works with already established
+conventions within your team.
 
 ## For Designers
 
