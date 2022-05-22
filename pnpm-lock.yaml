@@ -97,7 +97,7 @@ importers:
       '@mdx-js/react': ~1.6.22
       '@theemo/theme': workspace:*
       classnames: ^2.3.1
-      hast-util-is-element: 1.1.0
+      hast-util-is-element: 2.1.2
       mdx-mermaid: ^1.2.2
       mermaid: ^9.1.1
       react: ^18.1.0
@@ -110,7 +110,7 @@ importers:
       '@mdx-js/react': 1.6.22_react@18.1.0
       '@theemo/theme': link:../packages/@theemo/theme
       classnames: 2.3.1
-      hast-util-is-element: 1.1.0
+      hast-util-is-element: 2.1.2
       mdx-mermaid: 1.2.2_mermaid@9.1.1+react@18.1.0
       mermaid: 9.1.1
       react: 18.1.0
@@ -7839,6 +7839,13 @@ packages:
 
   /hast-util-is-element/1.1.0:
     resolution: {integrity: sha512-oUmNua0bFbdrD/ELDSSEadRVtWZOf3iF6Lbv81naqsIV99RnSCieTbWuWCY8BAeEfKJTKl0gRdokv+dELutHGQ==}
+    dev: false
+
+  /hast-util-is-element/2.1.2:
+    resolution: {integrity: sha512-thjnlGAnwP8ef/GSO1Q8BfVk2gundnc2peGQqEg2kUt/IqesiGg/5mSwN2fE7nLzy61pg88NG6xV+UrGOrx9EA==}
+    dependencies:
+      '@types/hast': 2.3.4
+      '@types/unist': 2.0.6
     dev: false
 
   /hast-util-parse-selector/2.2.5:
