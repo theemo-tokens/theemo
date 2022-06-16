@@ -76,4 +76,4 @@ jobs:
 
       - run: pnpm install
       - run: pnpm -r --parallel build
-      - run: pnpm --filter 'theemo' pack
+      - run: pnpm --filter 'theemo' dts
