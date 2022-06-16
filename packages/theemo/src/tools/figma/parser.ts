@@ -144,8 +144,6 @@ export default class FigmaParser {
 
     // stroke - somewhere used as border
     else if (key === 'strokes' && node[key]) {
-      // console.log('node', node, 'style', style);
-
       token.color = this.getColorFromPaint(node[key] as Paint[]);
     }
 
