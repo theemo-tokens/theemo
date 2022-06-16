@@ -12,10 +12,7 @@
     "css"
   ],
   "bugs": "https://github.com/gossi/theemo/issues",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:gossi/theemo.git"
-  },
+  "repository": "https://github.com/gossi/theemo",
   "main": "dist/index.js",
   "type": "module",
   "module": "dist/theemo.esm.js",
