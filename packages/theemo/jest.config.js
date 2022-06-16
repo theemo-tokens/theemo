@@ -12,7 +12,7 @@ export default {
         }
       }
     ]
-  },
+  }
 
   // coverage
   // coveragePathIgnorePatterns: ['/node_modules/', '/test/'],
@@ -23,5 +23,5 @@ export default {
 
   // extensions
   // see: https://github.com/mattphillips/jest-expect-message/issues/39
-  setupFilesAfterEnv: ['@alex_neo/jest-expect-message']
+  // setupFilesAfterEnv: ['@alex_neo/jest-expect-message']
 };
