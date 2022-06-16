@@ -131,7 +131,11 @@ export default class FigmaParser {
     token.figmaReference = this.referencer.find(style.name, styleType);
 
     // also look for the value
-    const key = `${styleType}s` as keyof Node<'VECTOR'>;
+    // `type` can be for example: `stroke` _or_ `strokes`
+    // add the `s` and replace a possible `ss` to `s`
+    // that way ensure, this is the plural version of `type`
+    // which is also the key in the node
+    let key = `${type}s`.replace('ss', 's') as keyof Node<'VECTOR'>;
 
     // fill - color swatch
     if (key === 'fills' && node[key]) {
