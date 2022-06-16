@@ -96,7 +96,7 @@ function testProd(
   }: {
     names: string[];
     values: Record<string, string>;
-    references: Record<string, string>;
+    references: Record<string, string | undefined>;
   }
 ) {
   test('it contains all tokens', async () => {
