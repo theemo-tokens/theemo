@@ -34,7 +34,7 @@ export interface StyleDictionaryWriterConfig {
   /**
    * The value for the given token
    */
-  valueForToken?: (token: Token, tokens: TokenCollection) => string;
+  valueForToken?: (token: Token, tokens: TokenCollection) => string | undefined;
 
   /**
    * Customize the data for a token

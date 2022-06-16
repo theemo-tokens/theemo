@@ -24,16 +24,16 @@ function isTransient(token, tokens) {
 
 export const READER_CONFIG_DEV: FigmaReaderConfig = {
   tool: Tools.Figma,
-  figmaFile: process.env.FIGMA_FILE,
-  figmaSecret: process.env.FIGMA_SECRET,
+  figmaFile: process.env.FIGMA_FILE as string,
+  figmaSecret: process.env.FIGMA_SECRET as string,
 
   // referencer
   referencer: {
     type: FigmaReferencerType.FigmaPlugin,
     plugin: 'theemo',
     pluginConfig: {
-      jsonbinFile: process.env.JSONBIN_FILE,
-      jsonbinSecret: process.env.JSONBIN_SECRET,
+      jsonbinFile: process.env.JSONBIN_FILE as string,
+      jsonbinSecret: process.env.JSONBIN_SECRET as string,
       formats: {
         color: ColorFormat.Hex,
         colorAlpha: ColorAlphaFormat.Rgb
