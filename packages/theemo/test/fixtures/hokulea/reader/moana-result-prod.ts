@@ -10,7 +10,10 @@ export const VALUES = {
   'color.intent.action.fill.disabled.text.$light': '#737373',
   'color.intent.action.fill.disabled.background.$dark': '#6E6E6E',
   'color.intent.action.fill.disabled.border.$dark': '#6E6E6E',
-  'color.intent.action.fill.disabled.text.$dark': '#CECECE'
+  'color.intent.action.fill.disabled.text.$dark': '#CECECE',
+  'color.intent.action.subtle.base.background': '#FFFFFF',
+  'color.intent.action.subtle.base.border': '#55C6F7',
+  'color.intent.action.subtle.base.text': '#333333'
 };
 
 export const REFERENCES = {
