@@ -127,7 +127,7 @@ export interface FigmaReaderConfig {
   /**
    * To retrieve the type of a token
    */
-  getTypeFromToken?: (token: FigmaToken) => string;
+  getTypeFromToken?: (token: FigmaToken) => string | undefined;
 }
 
 // types for optional keys

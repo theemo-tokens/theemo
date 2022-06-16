@@ -1,3 +1,5 @@
+import { describe, expect, test } from '@jest/globals';
+
 import FigmaReader from '../../../src/tools/figma/reader';
 import {
   REFERENCES as MOANA_DEV_REFERENCES,
@@ -37,7 +39,8 @@ function testNames(tokens: TokenCollection, names: string[]) {
   for (const name of names) {
     const token = tokens.find((t) => t.name === name);
 
-    expect(token, `Token ${name} exists`).toBeDefined();
+    // expect(token, `Token ${name} exists`).toBeDefined();
+    expect(token).toBeDefined();
   }
 
   expect(tokens.size > 0).toBeTruthy();
@@ -45,15 +48,16 @@ function testNames(tokens: TokenCollection, names: string[]) {
 
 function testReferences(
   tokens: TokenCollection,
-  references: Record<string, string>
+  references: Record<string, string | undefined>
 ) {
   for (const [name, reference] of Object.entries(references)) {
     const token = tokens.find((t) => t.name === name);
 
-    expect(
-      token?.reference,
-      `Reference for token '${token?.name}'`
-    ).toStrictEqual(reference);
+    // expect(
+    //   token?.reference,
+    //   `Reference for token '${token?.name}'`
+    // ).toStrictEqual(reference);
+    expect(token?.reference).toStrictEqual(reference);
   }
 
   expect(tokens.size > 0).toBeTruthy();
@@ -63,7 +67,8 @@ function testValues(tokens: TokenCollection, values: Record<string, string>) {
   for (const [tokenName, value] of Object.entries(values)) {
     const token = tokens.find((t) => t.name === tokenName);
 
-    expect(token?.value, `Value for token '${token?.name}'`).toBe(value);
+    // expect(token?.value, `Value for token '${token?.name}'`).toBe(value);
+    expect(token?.value).toBe(value);
   }
 }
 
@@ -74,10 +79,11 @@ function testTransforms(
   for (const [tokenName, value] of Object.entries(transforms)) {
     const token = tokens.find((t) => t.name === tokenName);
 
-    expect(
-      token?.transforms,
-      `Transforms for token '${token?.name}'`
-    ).toStrictEqual(value);
+    // expect(
+    //   token?.transforms,
+    //   `Transforms for token '${token?.name}'`
+    // ).toStrictEqual(value);
+    expect(token?.transforms).toStrictEqual(value);
   }
 }
 
@@ -90,7 +96,7 @@ function testProd(
   }: {
     names: string[];
     values: Record<string, string>;
-    references: Record<string, string>;
+    references: Record<string, string | undefined>;
   }
 ) {
   test('it contains all tokens', async () => {

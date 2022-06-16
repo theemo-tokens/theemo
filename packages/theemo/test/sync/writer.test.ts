@@ -1,3 +1,8 @@
+import { describe } from '@jest/globals';
+import { afterEach } from '@jest/globals';
+import { beforeEach } from '@jest/globals';
+import { test } from '@jest/globals';
+import { expect } from '@jest/globals';
 import fs from 'fs';
 import jp from 'jsonpath';
 import mockFs from 'mock-fs';
@@ -43,10 +48,12 @@ async function write({ config, mockReader }) {
 
 function testExistingFiles(files) {
   for (const file of files) {
-    expect(
-      fs.existsSync(`tokens/${file}`),
-      `File "tokens/${file}" exists`
-    ).toBeTruthy();
+    // expect(
+    //   fs.existsSync(`tokens/${file}`),
+    //   `File "tokens/${file}" exists`
+    // ).toBeTruthy();
+
+    expect(fs.existsSync(`tokens/${file}`)).toBeTruthy();
   }
 }
 
@@ -58,9 +65,10 @@ function testSamples(samples) {
 
     const props = jp.query(tokens, `$.${sample.path}`);
 
-    expect(props[0], `props for ${sample.path}`).toEqual(
-      expect.objectContaining(sample.properties)
-    );
+    // expect(props[0], `props for ${sample.path}`).toEqual(
+    //   expect.objectContaining(sample.properties)
+    // );
+    expect(props[0]).toEqual(expect.objectContaining(sample.properties));
   }
 }
 

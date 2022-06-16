@@ -1,19 +1,28 @@
-import StyleDictionary from 'style-dictionary';
-
 declare module 'style-dictionary' {
-  type TransformGroupNamess = 'web' | 'js' | 'scss' | 'css' | 'less' | 'html' | 'android' | 'ios' | 'ios-swift-separate' | 'assets';
+  import type StyleDictionary from 'style-dictionary';
+
+  type TransformGroupNamess =
+    | 'web'
+    | 'js'
+    | 'scss'
+    | 'css'
+    | 'less'
+    | 'html'
+    | 'android'
+    | 'ios'
+    | 'ios-swift-separate'
+    | 'assets';
   interface FileConfig {
     destination: string;
     format: string;
     filter?: (object: object) => boolean;
     options?: {
       showFileHeader: boolean;
-    }
+    };
   }
 
-  interface Platform {
-
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface Platform {}
 
   interface Config {
     include?: string[];
@@ -24,13 +33,13 @@ declare module 'style-dictionary' {
         transforms?: string;
         buildPath: string;
         prefix?: string;
-        files: FileConfig[]
-      }
-    }
+        files: FileConfig[];
+      };
+    };
   }
 
   type TransformTypes = 'name' | 'attributes' | 'value';
-  
+
   interface Transform {
     type: TransformTypes;
     name: string;
@@ -50,12 +59,13 @@ declare module 'style-dictionary' {
 
     static extend(config: Config): StyleDictionary;
     static registerTransform(transform: Transform): StyleDictionary;
-    static registerTransformGroup(transformGroup: TransformGroup): StyleDictionary;
+    static registerTransformGroup(
+      transformGroup: TransformGroup
+    ): StyleDictionary;
 
     buildAllPlatforms(): StyleDictionary;
     buildPlatform(name: string): StyleDictionary;
     cleanAllPlatforms(): StyleDictionary;
     cleanPlatform(name: string): StyleDictionary;
-    
   }
 }
