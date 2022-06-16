@@ -6,5 +6,12 @@
   ],
   "automerge": true,
   "masterIssue": true,
-  "rangeStrategy": "update-lockfile"
+  "rangeStrategy": "update-lockfile",
+  "packageRules": [
+    {
+      // until https://github.com/rwjblue/release-it-lerna-changelog/issues/203
+      "matchPackageNames": ["release-it"],
+      "allowedVersions": "<15"
+    }
+  ]
 }
