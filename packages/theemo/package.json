@@ -87,7 +87,8 @@
   },
   "release-it": {
     "git": {
-      "tagName": "theemo@${version}",
+      "commitMessage": "release theemo v${version}",
+      "tagName": "theemo/${version}",
       "changelog": "pnpx auto-changelog --stdout -p --ignore-commit-pattern='^Update (.+) to'"
     },
     "hooks": {
@@ -95,7 +96,7 @@
     },
     "github": {
       "release": true,
-      "releaseName": "theemo@${version}",
+      "releaseName": "Release theemo v${version}",
       "tokenRef": "GITHUB_AUTH"
     }
   },
