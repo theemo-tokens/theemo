@@ -87,7 +87,7 @@
   },
   "release-it": {
     "git": {
-      "tagName": "${name}@${version}",
+      "tagName": "theemo@${version}",
       "changelog": "pnpx auto-changelog --stdout -p --ignore-commit-pattern='^Update (.+) to'"
     },
     "hooks": {
