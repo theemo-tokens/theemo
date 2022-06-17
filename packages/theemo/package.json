@@ -1,18 +1,18 @@
 {
   "name": "theemo",
-  "description": "The yordle powered theme automator",
+  "description": "Design Token automations",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Thomas Gossmann",
   "homepage": "https://theemo.io",
+  "bugs": "https://github.com/gossi/theemo/issues",
+  "repository": "https://github.com/gossi/theemo",
   "keywords": [
     "figma",
     "design tokens",
     "automation",
     "css"
   ],
-  "bugs": "https://github.com/gossi/theemo/issues",
-  "repository": "https://github.com/gossi/theemo",
   "main": "dist/index.js",
   "type": "module",
   "module": "dist/theemo.esm.js",
@@ -78,8 +78,7 @@
     "mock-fs": "^5.1.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.2",
-    "release-it": "~14.14.3",
-    "release-it-lerna-changelog": "^4.0.1",
+    "release-it": "15.0.0",
     "typescript": "4.7.3"
   },
   "publishConfig": {
@@ -87,14 +86,12 @@
     "access": "public"
   },
   "release-it": {
-    "plugins": {
-      "release-it-lerna-changelog": {
-        "infile": "CHANGELOG.md",
-        "launchEditor": false
-      }
-    },
     "git": {
-      "tagName": "${name}@${version}"
+      "tagName": "${name}@${version}",
+      "changelog": "pnpx auto-changelog --stdout -p --ignore-commit-pattern='^Update (.+) to'"
+    },
+    "hooks": {
+      "after:bump": "pnpx auto-changelog -p --ignore-commit-pattern='^Update (.+) to'"
     },
     "github": {
       "release": true,
