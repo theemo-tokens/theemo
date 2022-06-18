@@ -1,17 +1,22 @@
 import { Api as FigmaClient } from 'figma-api';
 
+import { TokenTier } from '../../token.js';
 import { DEFAULT_CONFIG } from './config.js';
 import FigmaParser from './parser.js';
 import ReferencerFactory from './referencers/referencer-factory.js';
 
+import type Token from '../../token.js';
 import type TokenCollection from '../../token-collection.js';
 import type { FigmaReaderConfig } from './config.js';
 import type Referencer from './referencers/referencer.js';
 import type { FigmaToken } from './token.js';
+import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 export default class FigmaReader {
   private config: Required<FigmaReaderConfig>;
   private referencer: Referencer;
+  private transformed: Map<string, Token> = new Map();
+  private file?: GetFileResult;
 
   constructor(config: FigmaReaderConfig) {
     this.config = {
@@ -22,12 +27,12 @@ export default class FigmaReader {
   }
 
   async read(): Promise<TokenCollection> {
-    const file = await this.load();
+    this.file = await this.load();
 
     // create referencer
     await this.referencer.setup();
 
-    const parser = new FigmaParser(file, this.referencer, this.config);
+    const parser = new FigmaParser(this.file, this.referencer, this.config);
     const tokens = parser.parse();
 
     const resolved = tokens
@@ -48,10 +53,9 @@ export default class FigmaReader {
   }
 
   private classifyToken(token: FigmaToken): FigmaToken {
-    return {
-      ...token,
-      type: this.getTypeFromToken(token)
-    };
+    token.type = this.getTypeFromToken(token);
+
+    return token;
   }
 
   private resolveReference(
@@ -63,18 +67,38 @@ export default class FigmaReader {
         (t) => t.figmaName === token.figmaReference
       );
 
-      return {
-        ...token,
-        reference: referenceToken ? referenceToken.name : undefined,
-        referenceToken
-      };
+      token.reference = referenceToken ? referenceToken.name : undefined;
+      token.referenceToken = referenceToken;
     }
 
-    return { ...token };
+    return token;
   }
 
   private transformToken(token: FigmaToken) {
-    return this.referencer.compileToken(token);
+    if (this.transformed.has(token.name)) {
+      return this.transformed.get(token.name) as Token;
+    }
+
+    const transformed: Token = {
+      name: token.name,
+      description: token.description,
+      tier: TokenTier.Unknown,
+      type: token.type,
+      colorScheme: token.colorScheme,
+      ...this.referencer.getProperties(token),
+      ...this.getPropertiesForToken(token)
+    };
+
+    this.transformed.set(token.name, transformed);
+
+    return transformed;
+  }
+
+  private getPropertiesForToken(token: FigmaToken): Record<string, unknown> {
+    return (
+      this.config.getPropertiesForToken?.(token, this.file as GetFileResult) ??
+      {}
+    );
   }
 
   private getTypeFromToken(token: FigmaToken): string | undefined {

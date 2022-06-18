@@ -6,10 +6,8 @@ import { getTypefromStyle } from './token.js';
 import type { ColorNode, FigmaReaderConfig, ShadowNode } from './config.js';
 import type Referencer from './referencers/referencer.js';
 import type { FigmaToken } from './token.js';
-import type { Api } from 'figma-api';
 import type { Effect, Node, Paint, Style, StylesMap } from 'figma-api';
-
-type GetFileResult = Awaited<ReturnType<Api['getFile']>>;
+import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 type CompositeNode = Node & {
   children: Node[];

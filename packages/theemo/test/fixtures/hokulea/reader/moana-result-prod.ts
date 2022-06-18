@@ -28,3 +28,22 @@ export const REFERENCES = {
   'color.intent.action.subtle.base.background': 'color.layout.background',
   'color.intent.action.subtle.disabled.border': 'color.layout.reduced'
 };
+
+export const STYLE_NAMES = {
+  'color.intent.action.fill.base.background':
+    'intent/action/fill/base.background',
+  'color.intent.action.fill.base.border': 'intent/action/fill/base.border',
+  'color.intent.action.fill.base.text': 'intent/action/fill/base.text',
+  'color.intent.action.fill.hover.background':
+    'intent/action/fill/hover.background',
+  'color.intent.action.fill.hover.border': 'intent/action/fill/hover.border',
+  'color.intent.action.fill.active.background':
+    'intent/action/fill/active.background',
+  'color.intent.action.fill.active.border': 'intent/action/fill/active.border',
+  'color.intent.action.fill.disabled.text.$dark':
+    'intent/action/fill/disabled.text.$dark',
+  'color.intent.action.subtle.base.background':
+    'intent/action/subtle/base.background',
+  'color.intent.action.subtle.disabled.border':
+    'intent/action/subtle/disabled.border'
+};

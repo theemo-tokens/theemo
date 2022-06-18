@@ -14,5 +14,5 @@ export default interface Referencer {
 
   findData(name: string, type: string): unknown;
 
-  compileToken(token: FigmaToken): Token;
+  getProperties(token: FigmaToken): Partial<Token>;
 }

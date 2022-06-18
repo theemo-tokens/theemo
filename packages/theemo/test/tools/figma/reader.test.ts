@@ -8,6 +8,7 @@ import {
 } from '../../fixtures/hokulea/reader/moana-result-dev.js';
 import {
   REFERENCES as MOANA_PROD_REFERENCES,
+  STYLE_NAMES as MOANA_PROD_STYLE_NAMES,
   VALUES as MOANA_PROD_VALUES
 } from '../../fixtures/hokulea/reader/moana-result-prod.js';
 import {
@@ -32,93 +33,103 @@ import {
   mockFigmaReaderWithTheemo
 } from './utils.js';
 
+import type { Token } from '../../../src';
 import type TokenCollection from '../../../src/token-collection.js';
 import type { Transforms } from '../../../src/tools/figma/referencers/theemo-plugin.js';
 
 function testNames(tokens: TokenCollection, names: string[]) {
+  const data: { name: string; token?: Token }[] = [];
+
   for (const name of names) {
     const token = tokens.find((t) => t.name === name);
 
-    // expect(token, `Token ${name} exists`).toBeDefined();
-    expect(token).toBeDefined();
+    data.push({ name, token });
   }
 
-  expect(tokens.size > 0).toBeTruthy();
+  test.each(data)('Token "$name" exists', ({ token }) => {
+    expect(token).toBeDefined();
+  });
 }
 
 function testReferences(
   tokens: TokenCollection,
   references: Record<string, string | undefined>
 ) {
-  for (const [name, reference] of Object.entries(references)) {
+  const data: { name: string; expected?: string; actual?: string }[] = [];
+
+  for (const [name, expected] of Object.entries(references)) {
     const token = tokens.find((t) => t.name === name);
 
-    // expect(
-    //   token?.reference,
-    //   `Reference for token '${token?.name}'`
-    // ).toStrictEqual(reference);
-    expect(token?.reference).toStrictEqual(reference);
+    data.push({ name, expected, actual: token?.reference });
   }
 
-  expect(tokens.size > 0).toBeTruthy();
+  test.each(data)(
+    'Reference for token "$name" to be "$expected"',
+    ({ expected, actual }) => {
+      expect(actual).toBe(expected);
+    }
+  );
 }
 
 function testValues(tokens: TokenCollection, values: Record<string, string>) {
-  for (const [tokenName, value] of Object.entries(values)) {
-    const token = tokens.find((t) => t.name === tokenName);
+  const data: { name: string; expected: string; actual?: string }[] = [];
 
-    // expect(token?.value, `Value for token '${token?.name}'`).toBe(value);
-    expect(token?.value).toBe(value);
+  for (const [name, expected] of Object.entries(values)) {
+    const token = tokens.find((t) => t.name === name);
+
+    data.push({ name, expected, actual: token?.value });
   }
+
+  test.each(data)(
+    'Value for token "$name" to be "$expected"',
+    ({ expected, actual }) => {
+      expect(actual).toBe(expected);
+    }
+  );
 }
 
 function testTransforms(
   tokens: TokenCollection,
   transforms: Record<string, Transforms>
 ) {
-  for (const [tokenName, value] of Object.entries(transforms)) {
-    const token = tokens.find((t) => t.name === tokenName);
+  const data: { name: string; expected: Transforms; actual?: Transforms }[] =
+    [];
 
-    // expect(
-    //   token?.transforms,
-    //   `Transforms for token '${token?.name}'`
-    // ).toStrictEqual(value);
-    expect(token?.transforms).toStrictEqual(value);
+  for (const [name, expected] of Object.entries(transforms)) {
+    const token = tokens.find((t) => t.name === name);
+
+    data.push({ name, expected, actual: token?.transforms });
   }
+
+  test.each(data)('Transforms for token "$name"', ({ expected, actual }) => {
+    expect(actual).toStrictEqual(expected);
+  });
 }
 
-function testProd(
-  reader: FigmaReader,
-  {
-    names,
-    values,
-    references
-  }: {
-    names: string[];
-    values: Record<string, string>;
-    references: Record<string, string | undefined>;
-  }
+function testFigmaNames(
+  tokens: TokenCollection,
+  figmaNames: Record<string, string>
 ) {
-  test('it contains all tokens', async () => {
-    const tokens = await reader.read();
+  const data: { name: string; expected: string; actual?: string }[] = [];
 
-    testNames(tokens, names);
-  });
+  for (const [name, expected] of Object.entries(figmaNames)) {
+    const token = tokens.find((t) => t.name === name);
 
-  test('it has the proper references', async () => {
-    const tokens = await reader.read();
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    data.push({ name, expected, actual: token?.figmaName });
+  }
 
-    testReferences(tokens, references);
-  });
-
-  test('it has the proper values', async () => {
-    const tokens = await reader.read();
-
-    testValues(tokens, values);
-  });
+  test.each(data)(
+    'Figma Name for token "$name" to be "$expected"',
+    ({ expected, actual }) => {
+      expect(actual).toBe(expected);
+    }
+  );
 }
 
-function testDev(
+function testSuite(
+  name: string,
   reader: FigmaReader,
   {
     names,
@@ -128,71 +139,97 @@ function testDev(
   }: {
     names: string[];
     values: Record<string, string>;
-    references: Record<string, string>;
-    transforms: Record<string, Transforms>;
+    references: Record<string, string | undefined>;
+    transforms?: Record<string, Transforms>;
   }
 ) {
-  testProd(reader, {
-    names,
-    values,
-    references
-  });
+  return new Promise<TokenCollection>((next) => {
+    new Promise<TokenCollection>((resolve) => {
+      resolve(reader.read());
+    }).then((tokens) => {
+      describe(`Suite: ${name}`, () => {
+        test('has tokens', () => {
+          expect(tokens.size > 0).toBeTruthy();
+        });
 
-  test('it has transforms', async () => {
-    const tokens = await reader.read();
+        describe('contains all tokens', () => {
+          testNames(tokens, names);
+        });
 
-    testTransforms(tokens, transforms);
+        describe('has references', () => {
+          testReferences(tokens, references);
+        });
+
+        describe('has values', () => {
+          testValues(tokens, values);
+        });
+
+        if (transforms) {
+          describe('has transforms', () => {
+            testTransforms(tokens, transforms);
+          });
+        }
+
+        next(tokens);
+      });
+    });
   });
 }
 
-describe('Tool: Figma > Reader', () => {
-  describe('Source: Theemo Plugin (prod)', () => {
-    const reader = new FigmaReader(THEEMO_READER_CONFIG_PROD);
+// theemo plugin
 
-    mockFigmaReaderWithTheemo(reader);
+describe('Theemo Plugin (prod)', () => {
+  const reader = new FigmaReader(THEEMO_READER_CONFIG_PROD);
 
-    testProd(reader, {
-      names: Object.keys(THEEMO_PROD_VALUES),
-      values: THEEMO_PROD_VALUES,
-      references: THEEMO_PROD_REFERENCES
+  mockFigmaReaderWithTheemo(reader);
+
+  testSuite('Theemo Plugin (prod)', reader, {
+    names: Object.keys(THEEMO_PROD_VALUES),
+    values: THEEMO_PROD_VALUES,
+    references: THEEMO_PROD_REFERENCES
+  });
+});
+
+describe('Theemo Plugin (dev)', () => {
+  const reader = new FigmaReader(THEEMO_READER_CONFIG_DEV);
+
+  mockFigmaReaderWithTheemo(reader);
+
+  testSuite('Theemo Plugin (dev)', reader, {
+    names: Object.keys(THEEMO_DEV_VALUES),
+    values: THEEMO_DEV_VALUES,
+    references: THEEMO_DEV_REFERENCES,
+    transforms: THEEMO_DEV_TRANSFORMS
+  });
+});
+
+// moana theme
+
+describe('Moana Theme (prod)', () => {
+  const reader = new FigmaReader(HOKULEA_READER_CONFIG_PROD);
+
+  mockFigmaReaderWithMoana(reader);
+
+  testSuite('Moana Theme (prod)', reader, {
+    names: Object.keys(MOANA_PROD_VALUES),
+    values: MOANA_PROD_VALUES,
+    references: MOANA_PROD_REFERENCES
+  }).then((tokens) => {
+    describe('contains figma names', () => {
+      testFigmaNames(tokens, MOANA_PROD_STYLE_NAMES);
     });
   });
+});
 
-  describe('Source: Theemo Plugin (dev)', () => {
-    const reader = new FigmaReader(THEEMO_READER_CONFIG_DEV);
+describe('Moana Theme (dev)', () => {
+  const reader = new FigmaReader(HOKULEA_READER_CONFIG_DEV);
 
-    mockFigmaReaderWithTheemo(reader);
+  mockFigmaReaderWithMoana(reader);
 
-    testDev(reader, {
-      names: Object.keys(THEEMO_DEV_VALUES),
-      values: THEEMO_DEV_VALUES,
-      references: THEEMO_DEV_REFERENCES,
-      transforms: THEEMO_DEV_TRANSFORMS
-    });
-  });
-
-  describe('Source: Moana Theme (prod)', () => {
-    const reader = new FigmaReader(HOKULEA_READER_CONFIG_PROD);
-
-    mockFigmaReaderWithMoana(reader);
-
-    testProd(reader, {
-      names: Object.keys(MOANA_PROD_VALUES),
-      values: MOANA_PROD_VALUES,
-      references: MOANA_PROD_REFERENCES
-    });
-  });
-
-  describe('Source: Moana Theme (dev)', () => {
-    const reader = new FigmaReader(HOKULEA_READER_CONFIG_DEV);
-
-    mockFigmaReaderWithMoana(reader);
-
-    testDev(reader, {
-      names: Object.keys(MOANA_DEV_VALUES),
-      values: MOANA_DEV_VALUES,
-      references: MOANA_DEV_REFERENCES,
-      transforms: MOANA_DEV_TRANSFORMS
-    });
+  testSuite('Moana Theme (dev)', reader, {
+    names: Object.keys(MOANA_DEV_VALUES),
+    values: MOANA_DEV_VALUES,
+    references: MOANA_DEV_REFERENCES,
+    transforms: MOANA_DEV_TRANSFORMS
   });
 });
