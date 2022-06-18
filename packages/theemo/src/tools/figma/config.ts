@@ -3,6 +3,7 @@ import type { Tools } from '../tool.js';
 import type { FigmaTheemoPluginConfig } from './referencers/theemo-plugin.js';
 import type { FigmaToken } from './token.js';
 import type { Node, Style } from 'figma-api';
+import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 // Referencer Options
 
@@ -128,6 +129,14 @@ export interface FigmaReaderConfig {
    * To retrieve the type of a token
    */
   getTypeFromToken?: (token: FigmaToken) => string | undefined;
+
+  /**
+   * Add properties relevant for you to the token
+   */
+  getPropertiesForToken?: (
+    token: FigmaToken,
+    document: GetFileResult
+  ) => Record<string, unknown> | undefined;
 }
 
 // types for optional keys

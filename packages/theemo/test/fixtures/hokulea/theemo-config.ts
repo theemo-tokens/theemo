@@ -106,6 +106,14 @@ export const READER_CONFIG_PROD: FigmaReaderConfig = {
     if (token.style) {
       return 'color';
     }
+  },
+
+  getPropertiesForToken(token) {
+    if (token.figmaName) {
+      return {
+        figmaName: token.figmaName
+      };
+    }
   }
 };
 

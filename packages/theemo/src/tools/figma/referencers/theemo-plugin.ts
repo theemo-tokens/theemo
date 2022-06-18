@@ -2,7 +2,6 @@ import Color from 'color';
 import isEmpty from 'lodash.isempty';
 import fetch from 'node-fetch';
 
-import { TokenTier } from '../../../token.js';
 import { colorToValue, getValue } from '../token.js';
 
 import type Token from '../../../token.js';
@@ -54,7 +53,6 @@ export interface FigmaTheemoPluginConfig {
 export default class TheemoPluginReferencer implements Referencer {
   private config: FigmaTheemoPluginConfig;
   private references!: ReferenceDoc;
-  private computed: Map<string, Token> = new Map();
 
   constructor(config: FigmaTheemoPluginConfig) {
     this.config = config;
@@ -117,33 +115,22 @@ export default class TheemoPluginReferencer implements Referencer {
     return undefined;
   }
 
-  compileToken(token: FigmaToken): Token {
-    if (this.computed.has(token.name)) {
-      return this.computed.get(token.name) as Token;
-    }
-
-    const computed: Token = {
-      name: token.name,
-      description: token.description,
-      tier: TokenTier.Unknown,
-      type: token.type,
-      colorScheme: token.colorScheme,
+  getProperties(token: FigmaToken): Partial<Token> {
+    const properties: Partial<Token> = {
       reference: token.reference,
       value: this.getValue(token)
     };
 
     if (token.data && (token.data as Data).transforms) {
-      computed.transforms = (token.data as Data).transforms;
+      properties.transforms = (token.data as Data).transforms;
     }
 
-    this.computed.set(token.name, computed);
-
-    return computed;
+    return properties;
   }
 
-  private getValue(token: FigmaToken) {
+  private getValue(token: FigmaToken): string {
     let value = token.referenceToken
-      ? (this.compileToken(token.referenceToken).value as string)
+      ? this.getValue(token.referenceToken)
       : getValue(token, this.config.formats);
 
     if (token.data && (token.data as Data).transforms) {

@@ -1,4 +1,3 @@
-import type Token from '../../../token.js';
 import type { FigmaToken } from '../token.js';
 import type Referencer from './referencer.js';
 
@@ -15,7 +14,7 @@ export default class NullReferencer implements Referencer {
     return undefined;
   }
 
-  compileToken(token: FigmaToken) {
-    return token as unknown as Token;
+  getProperties(_token: FigmaToken) {
+    return {};
   }
 }

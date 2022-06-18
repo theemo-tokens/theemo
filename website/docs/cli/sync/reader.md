@@ -29,53 +29,54 @@ The flow for reading tokens from Figma is outlined here:
 ```mermaid
 flowchart TB
 
-    subgraph Parser
-        direction TB
+  subgraph Parser
+      direction TB
 
-        FigmaToken
-        parseNode["parseNode()"]
+      FigmaToken
+      parseNode["parseNode()"]
 
-        subgraph text [ ]
-            direction TB
+      subgraph text [ ]
+          direction TB
 
-            parseTextNode["parseTextNode()"] --> isTokenByText
-            isTokenByText{"isTokenByText()"} -->|yes| createTokenFromText["createTokenFromText()"]
+          parseTextNode["parseTextNode()"] --> isTokenByText
+          isTokenByText{"isTokenByText()"} -->|yes| createTokenFromText["createTokenFromText()"]
 
-            createTokenFromText --> getNameFromText["getNameFromText()"]
-            createTokenFromText --> getValueFromText["getValueFromText()"]
-        end
+          createTokenFromText --> getNameFromText["getNameFromText()"]
+          createTokenFromText --> getValueFromText["getValueFromText()"]
+      end
 
-        subgraph style [ ]
-            direction TB
+      subgraph style [ ]
+          direction TB
 
-            parseStyle["parseStyle()"] --> isTokenByStyle
-            isTokenByStyle{"isTokenByStyle()"} -->|yes| createTokenFromStyle["createTokenFromStyle()"]
-            createTokenFromStyle --> getNameFromStyle["getNameFromStyle()"]
-        end
+          parseStyle["parseStyle()"] --> isTokenByStyle
+          isTokenByStyle{"isTokenByStyle()"} -->|yes| createTokenFromStyle["createTokenFromStyle()"]
+          createTokenFromStyle --> getNameFromStyle["getNameFromStyle()"]
+      end
 
-        parseNode --> parseTextNode
-        parseNode --> parseStyle
+      parseNode --> parseTextNode
+      parseNode --> parseStyle
 
-        createTokenFromStyle --> FigmaToken
-        createTokenFromText --> FigmaToken
-    end
+      createTokenFromStyle --> FigmaToken
+      createTokenFromText --> FigmaToken
+  end
 
-    subgraph classify [ ]
-        direction LR
+  subgraph classify [ ]
+      direction LR
 
-        classifyToken["classifyToken()"]
-        classifyToken --> getTypeFromToken["getTypeFromToken()"]
-    end
+      classifyToken["classifyToken()"]
+      classifyToken --> getTypeFromToken["getTypeFromToken()"]
+      classifyToken --> getPropertiesForToken["getPropertiesForToken()"]
+  end
 
-    FigmaToken[[Figma Tokens]] --> classify
-    classify --> TokenCollection[[Output: Token Collection]]
-    read[[Read Figma File]] --> parseNode
+  FigmaToken[[Figma Tokens]] --> classify
+  classify --> TokenCollection[[Token Collection]]
+  read[[Read Figma File]] --> parseNode
 
-    classDef muted color:#666
-    class parseNode,parseTextNode,parseStyle muted
+  classDef muted color:#666
+  class parseNode,parseTextNode,parseStyle muted
 
-    classDef api color:#080
-    class isTokenByStyle,getNameFromStyle,isTokenByText,getNameFromText,getValueFromText,filterToken,getTypeFromToken api
+  classDef api color:#080
+  class isTokenByStyle,getNameFromStyle,isTokenByText,getNameFromText,getValueFromText,filterToken,getTypeFromToken,getPropertiesForToken api
 ```
 
 The green parts highlight the API at which you can customize this behavior to
@@ -294,6 +295,35 @@ module.exports = {
   }
 }
 ```
+
+#### `getPropertiesForToken()`
+
+You might find yourself in the need to add additional properties to the token
+that is parsed from Figma. For example, you might want to include the Figma name
+of the related style to be able to show them both on the generated token
+documentation. Here is how:
+
+```js
+module.exports = {
+  sync: {
+    reader: {
+      // ...
+
+      getPropertiesForToken: (token: FigmaToken, document?: FigmaDocument) => {
+        if (token.figmaName) {
+          return {
+            figmaName: token.figmaName
+          };
+        }
+      };
+    }
+  }
+}
+```
+
+You'll also receive the Figma `document` as second parameter. With that you can
+perform your own lookups with the Figma document. Please refer to their
+[REST API documention](https://www.figma.com/developers/api#get-files-endpoint).
 
 ### Output
 
