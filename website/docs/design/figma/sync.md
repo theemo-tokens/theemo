@@ -3,6 +3,8 @@ id: sync
 title: Sync
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Tokens are stored within the theemo plugin which run in a sandboxed environment.
 In order to use your tokens and valuable references from somewhere else, they
 need to be synced from one place to another
@@ -16,7 +18,17 @@ design tokens in your code. Here is how:
 Enter credentials in settngs:
 
 1. Create an account and copy the API Key
-2. Create a bin and copy the bin URL
+2. Create a private bin and copy the bin URL
+
+   The bin can't be empty (jsonbin requires content) - enter `[{}]`, which
+   let's allow you to create the bin (see figure 1).
+
+   <figure id="jsonbin">
+     <img src={useBaseUrl('/img/jsonbin-create.png')} />
+     <figcaption>
+       Creating a new json bin with "empty" content (using their new dashboard)
+     </figcaption>
+   </figure>
 
 On the tools tab the `Export Settings` button becomes available. Clicking the
 button will export your references.
