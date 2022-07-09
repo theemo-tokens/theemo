@@ -1,0 +1,94 @@
+body {
+  overflow: hidden;
+  margin: 0;
+}
+
+section {
+  display: none;
+  overflow: auto;
+  padding: 0 16px;
+}
+
+section > .section-title,
+.grid > .section-title,
+.grid > .label {
+  padding-left: 0;
+}
+
+nav {
+  display: flex;
+  padding: 0 16px;
+  padding: 4px 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav > .section-title, 
+nav > .label {
+  width: auto;
+}
+
+nav [data-section]:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+nav [data-section="help"] {
+  flex-grow: 2;
+  justify-content: flex-end;
+}
+
+/* Stack Layout */
+.stack {
+  --stack-space: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--stack-space);
+}
+
+.stack-recursive * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack-recursive * + * {
+  margin-top: var(--stack-space);
+}
+
+/* Pushing an element to the bottom */
+.stack:only-child {
+  height: 100%;
+}
+
+.stack-end {
+  margin-bottom: auto;
+}
+
+/** Cluster Layout */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cluster > * + * {
+  margin-left: 8px;
+}
+
+/** Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 66px auto;
+  grid-gap: 0 8px;
+  gap: 0 8px;
+}
+
+.row {
+  grid-column: 1 / 3;
+}

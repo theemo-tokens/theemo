@@ -1,0 +1,123 @@
+#selection {
+  overflow-y: auto;
+  height: calc(100% - 40px);
+  --stack-space: 0;
+}
+
+#selection .section-title {
+  padding-left: 0 !important;
+}
+
+#selection .how-to {
+  padding-top: 8px;
+}
+
+#selection-tab-items {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 32px;
+  cursor: default;
+}
+
+#selection-tab-items li {
+  color: var(--black3);
+}
+
+#selection-tab-items li:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#selection-tab-items li.active {
+  color: var(--black8);
+  font-weight: var(--font-weight-bold);
+}
+
+#selection-tab-items > * + * {
+  margin-left: 16px;
+}
+
+#selection-tab-content > * {
+  display: none;
+}
+
+#selection-tab-content > .active {
+  display: block;
+}
+
+.section-label {
+  line-height: 32px;
+  padding-left: 0;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 60px auto;
+  grid-gap: 0 8px;
+  gap: 0 8px;
+}
+
+.field {
+  display: none;
+  flex-direction: column;
+}
+
+.field > * + * {
+  margin-top: 8px;
+}
+
+.field > span,
+.field > form {
+  display: flex;
+  align-items: center;
+}
+
+.field > span > .input,
+.field > form > .input {
+  border-right-width: 2px;
+}
+
+.field > form > button {
+  margin-left: 8px;
+}
+
+.field > span > * + * {
+  margin-left: 8px;
+}
+
+.field .select-menu {
+  flex-grow: 2;
+}
+
+.field .action-icons {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 2;
+}
+
+.field .icon-button {
+  opacity: 0.5;
+  align-self: flex-end;
+}
+
+.field:hover .icon-button {
+  opacity: 1;
+}
+
+.field select {
+  max-width: 176px;
+  margin-left: 0;
+}
+
+.migrate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+  gap: 8px;
+  margin-left: 32px;
+}
+
+[data-elem="transforms"] {
+  display: none;
+}

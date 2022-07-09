@@ -1,0 +1,34 @@
+{
+  "name": "figma-theemo",
+  "version": "10",
+  "description": "",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "yarn webpack --mode=production",
+    "start": "yarn webpack --mode=development --watch"
+  },
+  "author": "Thomas Gossmann",
+  "license": "MIT",
+  "dependencies": {
+    "color-converter": "1.4.1",
+    "css-loader": "^3.4.0",
+    "figma-plugin-ds": "^0.1.8",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.9.5",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.15.0",
+    "@types/jest": "^25.2.3",
+    "esbuild-jest": "^0.1.1",
+    "figma-api-stub": "^0.0.42",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0"
+  }
+}

@@ -1,0 +1,43 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+}
+
+summary {
+  outline: none;
+}
+@import "styles/layout.css";
+@import "styles/selection.css";
+@import "styles/tools.css";
+@import "styles/contexts.css";
+@import "styles/settings.css";
+@import "styles/stats.css";
+@import "styles/help.css";
+
+button.icon-button {
+  background-color: transparent;
+  padding: 0;
+}
+
+.row-form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 8px 0;
+  align-items: center;
+}
+
+.row-form input {
+  border-right-width: 2px !important;
+}
+
+.row-form button {
+  margin-left: 8px !important;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group > * + * {
+  margin-left: 0;
+}

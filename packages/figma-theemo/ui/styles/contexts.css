@@ -1,0 +1,41 @@
+#contexts {
+  --stack-space: 0;
+}
+
+#context-list {
+  list-style-type: none;
+  margin: 0 -16px;
+  padding: 0;
+}
+
+#context-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  cursor: default;
+}
+
+#context-list li > div {
+  display: flex;
+  align-items: center;
+}
+
+#context-list li > div > .icon {
+  display: inline-block;
+}
+
+#context-list li .remove {
+  display: none;
+}
+
+#context-list li:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+#context-list li:hover .remove {
+  display: inline-block;
+}
+
+#context-list .active {
+  font-weight: 600;
+}

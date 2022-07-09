@@ -1,0 +1,419 @@
+<nav>
+  <span class="label" data-section="selection">Selection</span>
+  <span class="label" data-section="tools">Tools</span>
+  <span class="label" data-section="contexts">Contexts</span>
+  <span class="label" data-section="settings">Settings</span>
+  <span class="label" data-section="stats">Stats</span>
+  <span class="label" data-section="help">?</span>
+</nav>
+
+<section id="selection" class="stack">
+  <span class="how-to" id="selection-how-to">Please select something to manage style references</span>
+  <div id="selection-content">
+    <ul id="selection-tab-items">
+    </ul>
+    <div id="selection-tab-content">
+    </div>
+  </div>
+</section>
+
+<template id="style-section">
+  <div>
+    <div class="section-grid">
+      <span class="section-label label">Origin</span>
+
+      <div data-elem="origin-link" class="field">
+        <span>
+          <div class="icon icon--styles"></div>
+          <select placeholder="Pick a Local Style" data-elem="origin-name"></select>
+
+          <span class="action-icons">
+            <span title="unlink" class="icon-button" data-elem="origin-unlink">
+              <div class="icon icon--break"></div>
+            </span>
+          </span>
+        </span>
+      </div>
+
+      <div data-elem="origin-migrate" class="field">
+        <span>
+          <span class="icon icon--alert"></span>
+          New Style detected, please choose:
+        </span>
+        <div class="migrate">
+          <div>
+            <span data-elem="migrate-active"></span>
+            <span class="type--figma-black-3">(active)</span>
+          </div>
+          <div>
+            <span data-elem="migrate-new"></span>
+            <span class="type--figma-black-3">(new)</span>
+          </div>
+          <div>
+            <button data-elem="migrate-keep" class="button button--secondary">
+              Keep old
+            </button>
+          </div>
+          <div>
+            <button data-elem="migrate-switch" class="button button--secondary">
+              Use new
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <span class="section-label label">Reference</span>
+
+      <div data-elem="ref-none" class="field">
+        <form data-elem="ref-form" style="justify-content: space-between">
+          <input placeholder="Reference Name" data-elem="ref-name" class="input__field" list="fill-ref-suggestions" />
+          <datalist data-elem="ref-suggestions"></datalist>
+          <button title="link" type="submit" class="icon-button">
+            <div class="icon icon--plus"></div>
+          </button>
+        </form>
+      </div>
+
+      <div data-elem="ref-exists" class="field">
+        <span>
+          <span class="icon icon--styles"></span>
+          <span data-elem="ref-exists-name"></span>
+          <span class="action-icons">
+            <span title="unlink" data-elem="ref-unlink" class="icon icon--break icon--button"></span>
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div data-elem="transforms" class="stack">
+      <div class="section-title">Transforms</div>
+
+
+      <div class="section-grid">
+        <span class="section-label label">HSL</span>
+        <div class="input-group">
+          <input class="input__field" data-elem="hue" placeholder="Hue">
+          <input class="input__field" data-elem="saturation" placeholder="Saturation">
+          <input class="input__field" data-elem="lightness" placeholder="Lightness">
+          <input class="input__field" data-elem="opacity" placeholder="Opacity">
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<section id="tools" class="stack">
+  <div class="section-title">Auto Update</div>
+  <div class="switch">
+    <input class="switch__toggle" type="checkbox" id="tools.update" checked />
+    <label class="switch__label" for="tools.update">
+      Auto Update Style References
+    </label>
+  </div>
+
+  <div class="section-title">Export</div>
+  <div class="stack" style="--stack-space: 8px;">
+    <p>
+      Export references to jsonbin.io to be consumable by third-party consumers.
+      Go to settings tab to set credentials.
+    </p>
+    <div class="cluster">
+      <button class="button button--primary" id="export" disabled>
+        Export References
+      </button>
+    </div>
+  </div>
+
+  <div class="section-title">Import</div>
+  <div class="stack" style="--stack-space: 8px;">
+    <p>
+      Import references from jsonbin.io. That is very helpful if you duplicated
+      a document and want to copy over references (as figma's duplicate doesn't
+      take them over).
+    </p>
+    <form class="row-form" id="import">
+      <input class="input__field" placeholder="jsonbin.io url" id="import-url" />
+      <button id="import-submit" title="Import" type="submit" class="icon-button">
+        <div class="icon icon--play"></div>
+      </button>
+    </form>
+  </div>
+</section>
+
+<section id="contexts" class="stack">
+  <div class="section-title">Add Context</div>
+  <form class="row-form" id="context-add">
+    <input class="input__field" placeholder="New Context Name" id="context-name" />
+    <button title="link" type="submit" class="icon-button">
+      <div class="icon icon--plus"></div>
+    </button>
+  </form>
+
+  <div class="section-title">Select Context</div>
+  <ul id="context-list"></ul>
+  <template id="context.item">
+    <li>
+      <div>
+        <span class="icon icon--blend"></span>
+        <span class="name type--pos-medium-normal"></span>
+      </div>
+      <span class="icon icon--trash icon--button remove"></span>
+    </li>
+  </template>
+</section>
+
+<section id="settings" class="stack">
+  <div class="grid">
+    <div class="section-title row">Contexts</div>
+
+    <span class="label" for="context.prefix">Prefix</span>
+    <input class="input__field" id="context.prefix" value=".§" />
+
+    <span class="label">Example</span>
+    <div class="cluster">
+      <span id="context.from" class="label"></span>
+      <span style="line-height: 30px;">→</span>
+      <span id="context.to" class="label"></span>
+    </div>
+
+    <div class="section-title row">Export</div>
+
+    <p class="type--figma-black-8 type--pos-small-normal row">
+      Exporting goes to
+      <a href="https://jsonbin.io" target="_blank">jsonbin.io</a>.
+    </p>
+    <ol class="row">
+      <li>Create an account and copy the API Key</li>
+      <li>Create a bin and copy the bin URL</li>
+    </ol>
+
+    <label class="label" for="tools.key">API Key</label>
+    <div class="input input--with-icon">
+      <div class="icon icon--key icon--black-3"></div>
+      <input type="input" class="input__field" id="tools.key" />
+    </div>
+
+    <label class="label" for="tools.url">Bin URL</label>
+    <div class="input input--with-icon">
+      <div class="icon icon--link-connected icon--black-3"></div>
+      <input type="input" class="input__field" id="tools.url" />
+    </div>
+  </div>
+  <footer class="stack-end">
+    <button class="button button--primary" id="settings.save">Save</button>
+  </footer>
+</section>
+
+<section id="stats" class="stack">
+  <div class="section-grid">
+    <div class="section-title">
+      Overview
+    </div>
+
+    <div class="cluster">
+      <div class="stats-badge">
+        <div class="value" id="stats-total"></div>
+        <div class="description">Total</div>
+      </div>
+
+      <div class="stats-badge">
+        <div class="value" id="stats-contexts"></div>
+        <div class="description">Contextual</div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      By Type
+    </div>
+
+    <div>
+      <div class="cluster">
+        <div class="stats-badge">
+          <div class="value" id="stats-fill"></div>
+          <div class="description">Fill</div>
+        </div>
+
+        <div class="stats-badge">
+          <div class="value" id="stats-stroke"></div>
+          <div class="description">Stroke</div>
+        </div>
+      </div>
+
+      <div class="cluster">
+        <div class="stats-badge">
+          <div class="value" id="stats-effect"></div>
+          <div class="description">Effect</div>
+        </div>
+
+        <div class="stats-badge">
+          <div class="value" id="stats-text"></div>
+          <div class="description">Text</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="help" class="stack">
+  <h1>Figma Plugin: Style References</h1>
+  <p>
+    Website: <a href="https://gossi.github.io/theemo" target="_blank">
+      gossi.github.com/theemo
+    </a><br>
+    Repo:
+    <a href="https://github.com/gossi/figma-theemo" target="_blank">
+      github.com/gossi/figma-theemo
+    </a>
+  </p>
+  <p>
+    Figma plugin to reference styles. It's main purpose is to allow you to have
+    an origin style mapped to a reference style, which will kept in sync with
+    the origin style.
+  </p>
+  <p>This plugin will let you do this:</p>
+  <ol>
+    <li>Manage style references on a selected node</li>
+    <li>
+      Auto-update all references as you change origins (keep the plugin open for
+      this)
+    </li>
+    <li>Export references to make it available for third-party consumers</li>
+    <li>Switch contexts</li>
+  </ol>
+
+  <h2>Manual</h2>
+
+  <h3>1. Manage References</h3>
+  <p>
+    Select a node for which you want to manage references, eg. a rectangle. Open
+    the "Theemo - Style Automator" plugin and a dialog will appear that let you do it.
+    Currently these styles are supported:
+  </p>
+  <ul>
+    <li>Fill Style</li>
+    <li>Stroke Style</li>
+    <li>Effect Style</li>
+    <li>Text Style</li>
+  </ul>
+  <p>
+    For each of those there is a section in the dialog where you can manage the
+    origin style to the reference.
+  </p>
+  <ul>
+    <li><strong>Origin</strong> That's the <em>original</em> style.</li>
+    <li>
+      <strong>Reference</strong> That's the style to which the origin is copied
+      over when references are updated.
+    </li>
+  </ul>
+
+  <h4>Transforms</h4>
+
+  <p>
+    For paint styles (Fill and Stroke) transforms are available. When styles
+    are referenced from origin to reference you can put transforms in between.
+    Availabe are HSL + Opacity values. They will be applied during
+    referencing.
+  </p>
+
+  <p>
+    Use this to automate your color palette. Make one color swatch for your
+    base value (e.g. "Brand / 500"). A darker color would take your base value as
+    reference and set lightness to "-20" - name it for example "Brand / 300".
+  </p>
+
+  <h3>2. Export</h3>
+  <p>
+    You can export your references to
+    <a href="https://jsonbin.io" rel="nofollow" target="_blank">jsonbin.io</a>
+    and by that make it available for third-party consumers, e.g. if you want to
+    update your design tokens in your code. Here is how:
+  </p>
+  <p>Enter credentials in settngs:</p>
+  <ol>
+    <li>Create an account and copy the API Key</li>
+    <li>Create a bin and copy the bin URL</li>
+  </ol>
+  <p>
+    On the tools tab the <code>Export Settings</code> button becomes available.
+    Clicking the button will export your references.
+  </p>
+
+  <h3>3. Import</h3>
+  <p>
+    You can import your earlier exported references from
+    <a href="https://jsonbin.io" rel="nofollow" target="_blank">jsonbin.io</a>.
+    That is really helpful when you duplicated your document - figma will not
+    copy over your stored references. Here is how to import references:
+  </p>
+  <ol>
+    <li>Duplicate a document</li>
+    <li>
+      Open the old document, open the plugin, go to settings and copy the Bin
+      URL
+    </li>
+    <li>
+      Go the new new document (the plugin should still be opened), paste the URL
+      into the input for import and click the button next to it
+    </li>
+    <li>
+      You can work with your new document the same way as the old one now - win!
+    </li>
+  </ol>
+
+  <h3>4. Contexts</h3>
+  <p>
+    Contexts are a lightweight way to organize various theme modes within one
+    document. E.g. if you have light and dark mode in one document, you may want
+    to give styles for respective styles a specific suffix, e.g.
+    <code>.$dark</code> - With defined contexts, you can swap between them
+    quickly and then use
+    <a href="https://www.figma.com/c/plugin/731176732337510831/Themer" rel="nofollow" target="_blank">Themer</a>
+    to export them.
+  </p>
+
+  <h4>Workflow Suggestion</h4>
+  <p>Use it in combination with Themer:</p>
+  <ol>
+    <li>
+      Set your variants for each context (<code>§light</code> and
+      <code>§dark</code>)
+    </li>
+    <li>Select a context</li>
+    <li>Use <code>Style References</code> to map those "compiled" styles</li>
+    <li>Use <code>Themer</code> to export and apply them</li>
+  </ol>
+
+  <h3>Things to Know</h3>
+  <ul>
+    <li>
+      <p>
+        When setting the origin style the suggestions only show local styles,
+        that is also due to limitations of the current figma API, given security
+        reasons for shared team libraries. That's fair - figma keeps us safe,
+        give them credit for that :)
+      </p>
+      <p>
+        It still is possible to use library styles, then you can't use the style
+        references manage dialog, instead manually assign those style and THEN
+        use the theemo dialog in order to persist it.
+      </p>
+    </li>
+    <li>
+      <p>
+        Once you have one node "under management", you may want to change the
+        local style but once you update references, those new ones will be
+        overridden. Re-select the node again and the references dialog will
+        provide you options for migrating styles, to either keep the old one or
+        use the new one.
+      </p>
+    </li>
+    <li>
+      <p>
+        Once you link origin to reference the node itself will show the
+        reference as its local style, which might give you wonders, yet is
+        expected and the correct behavior.
+      </p>
+    </li>
+  </ul>
+</section>
