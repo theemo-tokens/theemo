@@ -1,6 +1,9 @@
 module.exports = {
+  // transform: {
+  //   "^.+\\.ts$": "esbuild-jest"
+  // },
   transform: {
-    "^.+\\.ts$": "esbuild-jest"
+    "^.+\\.ts$": ["@swc/jest"],
   },
   setupFiles: ['./tests/setup.ts']
 };
