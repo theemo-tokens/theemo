@@ -7,7 +7,6 @@ figma.showUI(__html__, {
   height: 350
 });
 
-
 const container = new Container();
 const commander = container.commander;
 const emitter = container.emitter;

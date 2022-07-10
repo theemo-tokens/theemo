@@ -1,18 +1,11 @@
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
 }
 
 summary {
   outline: none;
 }
-@import "styles/layout.css";
-@import "styles/selection.css";
-@import "styles/tools.css";
-@import "styles/contexts.css";
-@import "styles/settings.css";
-@import "styles/stats.css";
-@import "styles/help.css";
 
 button.icon-button {
   background-color: transparent;
