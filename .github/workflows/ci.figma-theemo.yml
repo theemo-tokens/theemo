@@ -3,12 +3,13 @@ name: CI (Figma Theemo)
 on:
   workflow_dispatch:
   pull_request:
+    paths:
+      - packages/figma-theemo
   push:
     branches:
       - main
     paths:
-      - packages/theemo
-      - packages/@theemo
+      - packages/figma-theemo
 
 jobs:
   # lint:
