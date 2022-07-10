@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - packages/figma-theemo/**
+      - pnpm-lock.yaml
   push:
     branches:
       - main

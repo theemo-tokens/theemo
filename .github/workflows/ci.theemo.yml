@@ -6,6 +6,7 @@ on:
     paths:
       - packages/theemo/**
       - packages/@theemo/**
+      - pnpm-lock.yaml
   push:
     branches:
       - main
