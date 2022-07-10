@@ -1,0 +1,10 @@
+#help {
+  overflow-y: auto;
+  height: calc(100% - 40px);
+  padding-top: 8px;
+}
+
+#help ol,
+#help ul {
+  padding-left: 20px;
+}
