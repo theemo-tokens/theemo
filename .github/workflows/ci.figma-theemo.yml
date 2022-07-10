@@ -4,12 +4,10 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - packages/figma-theemo
+      - packages/figma-theemo/**
   push:
     branches:
       - main
-    paths:
-      - packages/figma-theemo
 
 jobs:
   # lint:
