@@ -262,167 +262,35 @@
 </section>
 
 <section id="help" class="stack">
-  <h1>Figma Plugin: Style References</h1>
+  <h1>Theemo - Design Tokens</h1>
   <p>
-    Website: <a href="https://gossi.github.io/theemo" target="_blank">
-      gossi.github.com/theemo
-    </a><br>
-    Repo:
-    <a href="https://github.com/gossi/figma-theemo" target="_blank">
-      github.com/gossi/figma-theemo
+    Theemo automates your design tokens by connecting your existing tools and
+    make them work together, from design to framework integration. The theemo
+    suite consists of multiple parts to serve a multi-disciplinary audience by
+    bringing them together for an immersive workflow.
+  </p>
+  <p>
+    <a href="https://theemo.io" target="_blank">
+      theemo.io
     </a>
+    <br>
+    Website - Documentation - Theemo Suite
   </p>
   <p>
-    Figma plugin to reference styles. It's main purpose is to allow you to have
-    an origin style mapped to a reference style, which will kept in sync with
-    the origin style.
-  </p>
-  <p>This plugin will let you do this:</p>
-  <ol>
-    <li>Manage style references on a selected node</li>
-    <li>
-      Auto-update all references as you change origins (keep the plugin open for
-      this)
-    </li>
-    <li>Export references to make it available for third-party consumers</li>
-    <li>Switch contexts</li>
-  </ol>
-
-  <h2>Manual</h2>
-
-  <h3>1. Manage References</h3>
-  <p>
-    Select a node for which you want to manage references, eg. a rectangle. Open
-    the "Theemo - Style Automator" plugin and a dialog will appear that let you do it.
-    Currently these styles are supported:
-  </p>
-  <ul>
-    <li>Fill Style</li>
-    <li>Stroke Style</li>
-    <li>Effect Style</li>
-    <li>Text Style</li>
-  </ul>
-  <p>
-    For each of those there is a section in the dialog where you can manage the
-    origin style to the reference.
-  </p>
-  <ul>
-    <li><strong>Origin</strong> That's the <em>original</em> style.</li>
-    <li>
-      <strong>Reference</strong> That's the style to which the origin is copied
-      over when references are updated.
-    </li>
-  </ul>
-
-  <h4>Transforms</h4>
-
-  <p>
-    For paint styles (Fill and Stroke) transforms are available. When styles
-    are referenced from origin to reference you can put transforms in between.
-    Availabe are HSL + Opacity values. They will be applied during
-    referencing.
+    <a href="https://github.com/gossi/theemo" target="_blank">
+      github.com/gossi/theemo
+    </a>
+    <br>
+    Code - Issues
   </p>
 
   <p>
-    Use this to automate your color palette. Make one color swatch for your
-    base value (e.g. "Brand / 500"). A darker color would take your base value as
-    reference and set lightness to "-20" - name it for example "Brand / 300".
+    <a href="https://gos.si" target="_blank">
+      gos.si
+    </a>
+    <br>
+    Made by Thomas 'gossi' Gossmann
   </p>
-
-  <h3>2. Export</h3>
-  <p>
-    You can export your references to
-    <a href="https://jsonbin.io" rel="nofollow" target="_blank">jsonbin.io</a>
-    and by that make it available for third-party consumers, e.g. if you want to
-    update your design tokens in your code. Here is how:
-  </p>
-  <p>Enter credentials in settngs:</p>
-  <ol>
-    <li>Create an account and copy the API Key</li>
-    <li>Create a bin and copy the bin URL</li>
-  </ol>
-  <p>
-    On the tools tab the <code>Export Settings</code> button becomes available.
-    Clicking the button will export your references.
-  </p>
-
-  <h3>3. Import</h3>
-  <p>
-    You can import your earlier exported references from
-    <a href="https://jsonbin.io" rel="nofollow" target="_blank">jsonbin.io</a>.
-    That is really helpful when you duplicated your document - figma will not
-    copy over your stored references. Here is how to import references:
-  </p>
-  <ol>
-    <li>Duplicate a document</li>
-    <li>
-      Open the old document, open the plugin, go to settings and copy the Bin
-      URL
-    </li>
-    <li>
-      Go the new new document (the plugin should still be opened), paste the URL
-      into the input for import and click the button next to it
-    </li>
-    <li>
-      You can work with your new document the same way as the old one now - win!
-    </li>
-  </ol>
-
-  <h3>4. Contexts</h3>
-  <p>
-    Contexts are a lightweight way to organize various theme modes within one
-    document. E.g. if you have light and dark mode in one document, you may want
-    to give styles for respective styles a specific suffix, e.g.
-    <code>.$dark</code> - With defined contexts, you can swap between them
-    quickly and then use
-    <a href="https://www.figma.com/c/plugin/731176732337510831/Themer" rel="nofollow" target="_blank">Themer</a>
-    to export them.
-  </p>
-
-  <h4>Workflow Suggestion</h4>
-  <p>Use it in combination with Themer:</p>
-  <ol>
-    <li>
-      Set your variants for each context (<code>§light</code> and
-      <code>§dark</code>)
-    </li>
-    <li>Select a context</li>
-    <li>Use <code>Style References</code> to map those "compiled" styles</li>
-    <li>Use <code>Themer</code> to export and apply them</li>
-  </ol>
-
-  <h3>Things to Know</h3>
-  <ul>
-    <li>
-      <p>
-        When setting the origin style the suggestions only show local styles,
-        that is also due to limitations of the current figma API, given security
-        reasons for shared team libraries. That's fair - figma keeps us safe,
-        give them credit for that :)
-      </p>
-      <p>
-        It still is possible to use library styles, then you can't use the style
-        references manage dialog, instead manually assign those style and THEN
-        use the theemo dialog in order to persist it.
-      </p>
-    </li>
-    <li>
-      <p>
-        Once you have one node "under management", you may want to change the
-        local style but once you update references, those new ones will be
-        overridden. Re-select the node again and the references dialog will
-        provide you options for migrating styles, to either keep the old one or
-        use the new one.
-      </p>
-    </li>
-    <li>
-      <p>
-        Once you link origin to reference the node itself will show the
-        reference as its local style, which might give you wonders, yet is
-        expected and the correct behavior.
-      </p>
-    </li>
-  </ul>
 </section>
 </body>
 </html>
