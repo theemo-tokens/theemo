@@ -23,3 +23,17 @@ messenger.addListener('selection-changed', (data) => {
     manager.activate('selection');
   }
 });
+
+const windowControl = document.querySelector('[data-control="window"]');
+
+windowControl.addEventListener('click', (event: MouseEvent) => {
+  const expanded = windowControl.getAttribute('aria-expanded') === 'true';
+
+  if (expanded) {
+    messenger.send('minimize');
+    windowControl.setAttribute('aria-expanded', 'false');
+  } else {
+    messenger.send('maximize');
+    windowControl.setAttribute('aria-expanded', 'true');
+  }
+});
