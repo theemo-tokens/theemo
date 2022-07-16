@@ -5,8 +5,10 @@ import Command from '../commands/command';
 import CreateReferenceCommand from '../commands/create-reference';
 import ImportCommand from '../commands/import';
 import LinkOriginCommand from '../commands/link-origin';
+import MaximizeCommand from '../commands/maximize';
 import MigrateCommand from '../commands/migrate';
 import MigrateOriginCommand from '../commands/migrate-origin';
+import MinimizeCommand from '../commands/minimize';
 import NotifyCommand from '../commands/notify';
 import ReadSettingsCommand from '../commands/read-settings';
 import RemoveContextCommand from '../commands/remove-context';
@@ -38,6 +40,10 @@ export default class Commander {
     this.registerCommand(new SelectContextCommand(this, container));
     this.registerCommand(new ImportCommand(this, container));
     this.registerCommand(new CollectStatsCommand(this, container));
+
+    // ui
+    this.registerCommand(new MinimizeCommand(this, container));
+    this.registerCommand(new MaximizeCommand(this, container));
 
     // utils
     this.registerCommand(new NotifyCommand(this, container));

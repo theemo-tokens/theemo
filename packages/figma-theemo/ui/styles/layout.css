@@ -22,7 +22,7 @@ nav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-nav > .section-title, 
+nav > .section-title,
 nav > .label {
   width: auto;
 }
@@ -31,9 +31,16 @@ nav [data-section]:hover {
   color: rgba(0, 0, 0, 0.8);
 }
 
-nav [data-section="help"] {
-  flex-grow: 2;
-  justify-content: flex-end;
+nav [data-control='window'] {
+  margin-left: auto;
+}
+
+[data-control='window'][aria-expanded='true'] {
+  transform: rotate(-90deg);
+}
+
+[data-control='window'][aria-expanded='false'] {
+  transform: rotate(90deg);
 }
 
 /* Stack Layout */
