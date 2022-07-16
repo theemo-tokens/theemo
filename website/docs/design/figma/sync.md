@@ -18,7 +18,7 @@ design tokens in your code. Here is how:
 Enter credentials in settngs:
 
 1. Create an account and copy the API Key
-2. Create a private bin and copy the bin URL
+2. Create a private bin and copy the bin ID or URL
 
    The bin can't be empty (jsonbin requires content) - enter `[{}]`, which
    let's allow you to create the bin (see figure 1).
@@ -41,8 +41,9 @@ your document - figma will not copy over your stored references. Here is how to
 import references:
 
 1. Duplicate a document
-2. Open the old document, open the plugin, go to settings and copy the Bin URL
-3. Go the new new document (the plugin should still be opened), paste the URL
+2. Open the old document, open the plugin, go to settings and copy the Bin ID or
+   URL
+3. Go the new new document (the plugin should still be opened), paste the ID or URL
    into the input for import and click the button next to it.
 4. A notification will appear telling you how much references were imported.
 5. You can work with your new document the same way as the old one now - win!
