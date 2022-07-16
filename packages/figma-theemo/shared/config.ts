@@ -4,6 +4,7 @@ export const DEFAULT_CONFIG = Object.freeze({
   'contexts': ['light', 'dark'],
 
   // settings
+  'tools.auto-update-references': true,
   'tools.jsonbin.url': '',
   'tools.jsonbin.key': '',
   'context.prefix': '.$'
