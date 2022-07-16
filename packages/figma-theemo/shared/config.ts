@@ -5,7 +5,7 @@ export const DEFAULT_CONFIG = Object.freeze({
 
   // settings
   'tools.auto-update-references': true,
-  'tools.jsonbin.url': '',
   'tools.jsonbin.key': '',
+  'tools.jsonbin.id': '',
   'context.prefix': '.$'
 });

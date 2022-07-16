@@ -79,7 +79,7 @@ export default class ToolsSection extends Section {
   }
 
   updateSettings(settings) {
-    this.exportButton.disabled = !(settings.get('tools.jsonbin.key') && settings.get('tools.jsonbin.url'));
+    this.exportButton.disabled = !(settings.get('tools.jsonbin.key') && settings.get('tools.jsonbin.id'));
     this.importButton.disabled = !settings.get('tools.jsonbin.key');
     this.importUrl.disabled = !settings.get('tools.jsonbin.key');
 
@@ -93,31 +93,53 @@ export default class ToolsSection extends Section {
   }
 
   private async export(references) {
-    await fetch(this.settings.get('tools.jsonbin.url'), {
-      method: 'PUT',
-      // @ts-ignore
-      headers: {
-        'Content-Type': 'application/json',
-        'secret-key': this.settings.get('tools.jsonbin.key'),
-        'versioning': false
-      },
-      body: JSON.stringify(references)
-    });
+    // export data 
+    await this.exportData(references);
+
+    // set name
+    const name = references.document?.name;
+    if (name) {
+      await this.exportName(name);
+    }
 
     this.messenger.send('notify', 'Style References exported');
   }
 
-  private async import(url) {
+  private async exportData(references) {
+    const id = this.settings.get('tools.jsonbin.id');
+    const url = `https://api.jsonbin.io/v3/b/${id}`;
+    await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': this.settings.get('tools.jsonbin.key')
+      },
+      body: JSON.stringify(references)
+    });
+  }
+
+  private async exportName(name) {
+    const id = this.settings.get('tools.jsonbin.id');
+    const url = `https://api.jsonbin.io/v3/b/${id}/meta/name`;
+    await fetch(url, {
+      method: 'PUT',
+      headers: {
+        'X-Master-Key': this.settings.get('tools.jsonbin.key'),
+        'X-Bin-Name': name
+      }
+    });
+  }
+
+  private async import(idOrUrl) {
+    const url = idOrUrl.startsWith('https://') ? idOrUrl : `https://api.jsonbin.io/v3/b/${idOrUrl}`;
     try {
       const response = await fetch(url, {
-        // @ts-ignore
         headers: {
-          'Content-Type': 'application/json',
-          'secret-key': this.settings.get('tools.jsonbin.key')
+          'X-Master-Key': this.settings.get('tools.jsonbin.key')
         }
       });
       const data = await response.json();
-      this.messenger.send('import', data);
+      this.messenger.send('import', data.record);
     } catch (e) {
       this.messenger.send('nofity', `Problem fetching data from ${url}`);
     }

@@ -140,7 +140,7 @@
       take them over).
     </p>
     <form class="row-form" id="import">
-      <input class="input__field" placeholder="jsonbin.io url" id="import-url" />
+      <input class="input__field" placeholder="jsonbin.io ID or URL" id="import-url" />
       <button id="import-submit" title="Import" type="submit" class="icon-button">
         <div class="icon icon--play"></div>
       </button>
@@ -187,13 +187,10 @@
     <div class="section-title row">Export</div>
 
     <p class="type--figma-black-8 type--pos-small-normal row">
-      Exporting goes to
-      <a href="https://jsonbin.io" target="_blank">jsonbin.io</a>.
+      Export to
+      <a href="https://jsonbin.io" target="_blank">jsonbin.io</a> -
+      <a href="https://theemo.io/design/figma/sync" target="_blank">Export Manual</a>
     </p>
-    <ol class="row">
-      <li>Create an account and copy the API Key</li>
-      <li>Create a bin and copy the bin URL</li>
-    </ol>
 
     <label class="label" for="tools.key">API Key</label>
     <div class="input input--with-icon">
@@ -201,10 +198,10 @@
       <input type="input" class="input__field" id="tools.key" />
     </div>
 
-    <label class="label" for="tools.url">Bin URL</label>
+    <label class="label" for="tools.binId">Bin ID</label>
     <div class="input input--with-icon">
       <div class="icon icon--link-connected icon--black-3"></div>
-      <input type="input" class="input__field" id="tools.url" />
+      <input type="input" class="input__field" id="tools.binId" />
     </div>
   </div>
   <footer class="stack-end">

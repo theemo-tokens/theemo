@@ -76,7 +76,7 @@ class SettingsContextSection implements SubSection {
 class SettingsToolsSection implements SubSection {
 
   private key: HTMLInputElement;
-  private url: HTMLInputElement;
+  private id: HTMLInputElement;
 
   private settings: Map<string, any>;
 
@@ -87,14 +87,14 @@ class SettingsToolsSection implements SubSection {
 
   setup() {
     this.key = document.getElementById('tools.key') as HTMLInputElement;
-    this.url = document.getElementById('tools.url') as HTMLInputElement;
+    this.id = document.getElementById('tools.binId') as HTMLInputElement;
 
     this.key.addEventListener('input', () => {
       this.settings.set('tools.jsonbin.key', this.key.value);
     });
 
-    this.url.addEventListener('input', () => {
-      this.settings.set('tools.jsonbin.url', this.url.value);
+    this.id.addEventListener('input', () => {
+      this.settings.set('tools.jsonbin.id', this.id.value);
     });
   }
 
@@ -102,6 +102,6 @@ class SettingsToolsSection implements SubSection {
     this.settings = settings;
 
     this.key.value = settings.get('tools.jsonbin.key');
-    this.url.value = settings.get('tools.jsonbin.url');
+    this.id.value = settings.get('tools.jsonbin.id');
   }
 }

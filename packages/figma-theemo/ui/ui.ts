@@ -25,8 +25,7 @@ messenger.addListener('selection-changed', (data) => {
 });
 
 const windowControl = document.querySelector('[data-control="window"]');
-
-windowControl.addEventListener('click', (event: MouseEvent) => {
+windowControl.addEventListener('click', () => {
   const expanded = windowControl.getAttribute('aria-expanded') === 'true';
 
   if (expanded) {
