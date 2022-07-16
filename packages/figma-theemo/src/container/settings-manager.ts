@@ -35,7 +35,15 @@ export default class SettingsManager {
       const key = data['tools.jsonbin.key'];
       delete data['tools.jsonbin.key'];
 
-      this.savePluginData(data);
+      const temp = {};
+      for (const [k,v] of this.settings.entries()) {
+        temp[k] = v;
+      }
+
+      this.savePluginData({
+        ...temp,
+        ...data
+      });
       await figma.clientStorage.setAsync('jsonBinApiKey', key);
 
       data['tools.jsonbin.key'] = key;

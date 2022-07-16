@@ -6,7 +6,7 @@ export default class ToolsSection extends Section {
   private exportButton: HTMLInputElement;
   private importButton: HTMLInputElement;
   private importUrl: HTMLInputElement;
-  private autoUpdate = true;
+  private autoUpdate = false;
 
   private updateThreadId;
 
@@ -50,6 +50,9 @@ export default class ToolsSection extends Section {
 
     document.getElementById('tools.update').addEventListener('change', (e) => {
       this.autoUpdate = (e.target as HTMLInputElement).checked;
+      this.messenger.send('save-settings', {
+        'tools.auto-update-references': this.autoUpdate
+      });
     }, false);
 
     // export
@@ -79,6 +82,10 @@ export default class ToolsSection extends Section {
     this.exportButton.disabled = !(settings.get('tools.jsonbin.key') && settings.get('tools.jsonbin.url'));
     this.importButton.disabled = !settings.get('tools.jsonbin.key');
     this.importUrl.disabled = !settings.get('tools.jsonbin.key');
+
+    // set auto update
+    this.autoUpdate = settings.get('tools.auto-update-references');
+    (document.getElementById('tools.update') as HTMLInputElement).checked = this.autoUpdate;
   }
 
   private collect() {
