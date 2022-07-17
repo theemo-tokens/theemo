@@ -7,7 +7,6 @@ export default class MigrateCommand extends Command {
 
   execute() {
     this.migratePluginData();
-    this.migrateJsonbin();
   }
 
   private migratePluginData() {
@@ -26,26 +25,6 @@ export default class MigrateCommand extends Command {
 
       figma.root.setSharedPluginData(NAMESPACE, 'nodes', nodes);
       figma.root.setPluginData('nodes', '');
-    }
-  }
-
-  private migrateJsonbin() {
-    const jsonbinUrl = this.container.settings.get('tools.jsonbin.url') as string;
-
-    if (jsonbinUrl) {
-      const parts = jsonbinUrl.split('/');
-      const id = parts.pop();
-
-      const settings = new Map(this.container.settings.settings);
-      settings.delete('tools.jsonbin.url');
-      settings.set('tools.jsonbin.id', id);
-
-      const data = {};
-      for (const [k,v] of settings.entries()) {
-        data[k] = v;
-      }
-      this.container.settings.save(data);
-      this.container.commander.run('read-settings');
     }
   }
 }
