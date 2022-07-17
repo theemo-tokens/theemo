@@ -1,5 +1,13 @@
 import { DEFAULT_CONFIG } from '../../shared/config';
 
+function mapToObject(map: Map<string, unknown>): Record<string, unknown> {
+  const data = {};
+  for (const [k,v] of map.entries()) {
+    data[k] = v;
+  }
+  return data;
+}
+
 export default class SettingsManager {
 
   private cache: Map<string, any>;
@@ -24,7 +32,10 @@ export default class SettingsManager {
       const settings = this.readPluginData();
       settings['tools.jsonbin.key'] = await figma.clientStorage.getAsync('jsonBinApiKey') ?? '';
 
-      return { ...DEFAULT_CONFIG, ...settings };
+      return mapToObject(this.migrate(new Map(Object.entries({ 
+        ...DEFAULT_CONFIG, 
+        ...settings 
+      }))));
     } catch (e) {
       console.warn(e);
     }
@@ -35,15 +46,7 @@ export default class SettingsManager {
       const key = data['tools.jsonbin.key'];
       delete data['tools.jsonbin.key'];
 
-      const temp = {};
-      for (const [k,v] of this.settings.entries()) {
-        temp[k] = v;
-      }
-
-      this.savePluginData({
-        ...temp,
-        ...data
-      });
+      this.savePluginData(data);
       await figma.clientStorage.setAsync('jsonBinApiKey', key);
 
       data['tools.jsonbin.key'] = key;
@@ -68,5 +71,26 @@ export default class SettingsManager {
     }
 
     this.savePluginData(settings);
+  }
+
+  private migrate(settings: Map<string, string>): Map<string, string> {
+    const migrated = this.migrateJsonbin(settings);
+
+    this.save(mapToObject(migrated));
+    
+    return migrated;
+  }
+
+  private migrateJsonbin(settings: Map<string, string>) {
+    if (settings.has('tools.jsonbin.url')) {
+      const jsonbinUrl = settings.get('tools.jsonbin.url') as string;
+      const parts = jsonbinUrl.split('/');
+      const id = parts.pop();
+
+      settings.delete('tools.jsonbin.url');
+      settings.set('tools.jsonbin.id', id);
+    }
+
+    return settings;
   }
 }
