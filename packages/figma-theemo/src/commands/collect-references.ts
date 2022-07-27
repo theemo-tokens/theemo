@@ -1,5 +1,6 @@
 import Command from './command';
 import { STYLES } from '../styles/types';
+import { NAMESPACE } from '../config';
 
 export default class CollectReferencesCommand extends Command {
   NAME = 'collect-references';
@@ -24,6 +25,7 @@ export default class CollectReferencesCommand extends Command {
       nodes
     };
 
+    figma.root.setSharedPluginData(NAMESPACE, 'references-data', JSON.stringify(data));
     this.emitter.sendEvent('references-collected', data);
   }
 
