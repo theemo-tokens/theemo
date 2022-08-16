@@ -67,10 +67,11 @@ export default class TheemoPluginReferencer implements Referencer {
   private async load() {
     // read references from jsonbin.io
     const response = await fetch(
-      `https://api.jsonbin.io/b/${this.config.jsonbinFile}`,
+      `https://api.jsonbin.io/v3/b/${this.config.jsonbinFile}`,
       {
         headers: {
-          'secret-key': this.config.jsonbinSecret
+          'X-Access-Key': this.config.jsonbinSecret,
+          'X-Bin-Meta': 'false'
         }
       }
     );
