@@ -25,7 +25,7 @@
     "@swc/jest": "^0.2.21",
     "@types/jest": "^28.1.4",
     "figma-api-stub": "^0.0.55",
-    "jest": "^28.1.2",
+    "jest": "^29.0.0",
     "postcss": "^8.4.14",
     "postcss-parcel-css": "^0.5.0",
     "rollup": "^2.76.0",
