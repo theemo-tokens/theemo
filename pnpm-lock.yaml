@@ -34,7 +34,7 @@ importers:
       rollup-plugin-html-bundle: ^0.0.3
       rollup-plugin-livereload: ^2.0.5
       rollup-plugin-postcss: ^4.0.2
-      rollup-plugin-swc3: ^0.5.0
+      rollup-plugin-swc3: ^0.6.0
       rollup-plugin-watch: ^1.0.1
       typescript: ^4.7.4
     dependencies:
@@ -56,7 +56,7 @@ importers:
       rollup-plugin-html-bundle: 0.0.3
       rollup-plugin-livereload: 2.0.5
       rollup-plugin-postcss: 4.0.2_postcss@8.4.14
-      rollup-plugin-swc3: 0.5.0_4gu2mpgp53gkkcxokiyvp7asiy
+      rollup-plugin-swc3: 0.6.0_4gu2mpgp53gkkcxokiyvp7asiy
       rollup-plugin-watch: 1.0.1_rollup@2.76.0
       typescript: 4.7.4
 
@@ -7998,6 +7998,10 @@ packages:
       get-intrinsic: 1.1.1
     dev: true
 
+  /get-tsconfig/4.2.0:
+    resolution: {integrity: sha512-X8u8fREiYOE6S8hLbq99PeykTDoLVnxvF4DjWKJmz9xy2nNRdUcV8ZN9tniJFeKyTU3qnC9lL8n4Chd6LmVKHg==}
+    dev: true
+
   /get-uri/3.0.2:
     resolution: {integrity: sha512-+5s0SJbGoyiJTZZ2JTpFPLMPSch72KEqGOTvQsBqg0RBWvwhWUSYZFAtz3TPW0GXJuLBJPts1E241iHg+VRfhg==}
     engines: {node: '>= 6'}
@@ -9628,11 +9632,6 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: false
 
-  /joycon/3.1.1:
-    resolution: {integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw==}
-    engines: {node: '>=10'}
-    dev: true
-
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -9705,10 +9704,6 @@ packages:
 
   /jsonc-parser/3.0.0:
     resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
-
-  /jsonc-parser/3.2.0:
-    resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
-    dev: true
 
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
@@ -12525,8 +12520,8 @@ packages:
       - ts-node
     dev: true
 
-  /rollup-plugin-swc3/0.5.0_4gu2mpgp53gkkcxokiyvp7asiy:
-    resolution: {integrity: sha512-Y5zJAsvksM39YAmjNje9rWtRMrJefaieDfkv52B2H7PsFj9EuYsrgGJRRUZCiOjMkQwdkiAEYfobqMZFV1X6pg==}
+  /rollup-plugin-swc3/0.6.0_4gu2mpgp53gkkcxokiyvp7asiy:
+    resolution: {integrity: sha512-nNG2T3x3wq6e7H+8ZHB0CxJ3H9QeYZUh+DwCjwWEyGCaIwIMyIaq/30ZJlYK8/OWWhCfYMwxKRcZGirPg6nPqA==}
     engines: {node: '>=12'}
     peerDependencies:
       '@swc/core': '>=1.2.165'
@@ -12535,8 +12530,7 @@ packages:
       '@rollup/pluginutils': 4.2.1
       '@swc/core': 1.2.211
       deepmerge: 4.2.2
-      joycon: 3.1.1
-      jsonc-parser: 3.2.0
+      get-tsconfig: 4.2.0
       rollup: 2.76.0
     dev: true
 
