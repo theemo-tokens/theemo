@@ -92,7 +92,7 @@ importers:
       node-fetch: ~3.2.4
       npm-run-all: ^4.1.5
       prettier: ^2.6.2
-      release-it: 15.4.3
+      release-it: 15.5.0
       style-dictionary: ^3.7.0
       typescript: 4.8.4
     dependencies:
@@ -128,7 +128,7 @@ importers:
       mock-fs: 5.1.2
       npm-run-all: 4.1.5
       prettier: 2.6.2
-      release-it: 15.4.3
+      release-it: 15.5.0
       typescript: 4.8.4
 
   website:
@@ -12248,8 +12248,8 @@ packages:
     engines: {node: '>= 0.10'}
     dev: false
 
-  /release-it/15.4.3:
-    resolution: {integrity: sha512-+GPciiCLhb9AUNlRNmajHtGAr6ud8uu2qHLRQRPJgqO3KE5RnVXjRgmJPn5MIupaAavrEltklMC4vpnl8pydsA==}
+  /release-it/15.5.0:
+    resolution: {integrity: sha512-/pQo/PwEXAWRBgVGLE+3IQ3hUoeiDZMGAo/Egin1envCyLyjzrU7+0P2w4iZ1Xv5OxhC2AcaPaN5eY1ql47cBA==}
     engines: {node: '>=14.9'}
     hasBin: true
     dependencies:
