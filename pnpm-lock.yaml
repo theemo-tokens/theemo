@@ -20,7 +20,7 @@ importers:
       '@figma/plugin-typings': ^1.49.0
       '@parcel/css': ^1.11.2
       '@rollup/plugin-commonjs': ^23.0.0
-      '@rollup/plugin-node-resolve': ^13.3.0
+      '@rollup/plugin-node-resolve': ^14.0.0
       '@swc/core': ^1.2.211
       '@swc/jest': ^0.2.21
       '@types/jest': ^29.0.0
@@ -44,7 +44,7 @@ importers:
       '@figma/plugin-typings': 1.49.0
       '@parcel/css': 1.11.2
       '@rollup/plugin-commonjs': 23.0.0_rollup@2.76.0
-      '@rollup/plugin-node-resolve': 13.3.0_rollup@2.76.0
+      '@rollup/plugin-node-resolve': 14.1.0_rollup@2.76.0
       '@swc/core': 1.2.211
       '@swc/jest': 0.2.21_@swc+core@1.2.211
       '@types/jest': 29.0.0
@@ -3175,11 +3175,11 @@ packages:
       rollup: 2.76.0
     dev: true
 
-  /@rollup/plugin-node-resolve/13.3.0_rollup@2.76.0:
-    resolution: {integrity: sha512-Lus8rbUo1eEcnS4yTFKLZrVumLPY+YayBdWXgFSHYhTT2iJbMhoaaBL3xl5NCdeRytErGr8tZ0L71BMRmnlwSw==}
+  /@rollup/plugin-node-resolve/14.1.0_rollup@2.76.0:
+    resolution: {integrity: sha512-5G2niJroNCz/1zqwXtk0t9+twOSDlG00k1Wfd7bkbbXmwg8H8dvgHdIWAun53Ps/rckfvOC7scDBjuGFg5OaWw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
-      rollup: ^2.42.0
+      rollup: ^2.78.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.76.0
       '@types/resolve': 1.17.1
