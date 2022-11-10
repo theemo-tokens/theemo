@@ -50,7 +50,7 @@
     "dotenv": "^16.0.0",
     "figma-api": "^1.10.1",
     "lodash.isempty": "^4.4.0",
-    "node-fetch": "~3.2.4",
+    "node-fetch": "~3.3.0",
     "style-dictionary": "^3.7.0"
   },
   "devDependencies": {
