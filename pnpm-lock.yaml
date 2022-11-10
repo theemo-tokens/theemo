@@ -89,7 +89,7 @@ importers:
       jsonpath: ^1.1.1
       lodash.isempty: ^4.4.0
       mock-fs: ^5.1.2
-      node-fetch: ~3.2.4
+      node-fetch: ~3.3.0
       npm-run-all: ^4.1.5
       prettier: ^2.6.2
       release-it: 15.5.0
@@ -101,7 +101,7 @@ importers:
       dotenv: 16.0.0
       figma-api: 1.10.1
       lodash.isempty: 4.4.0
-      node-fetch: 3.2.4
+      node-fetch: 3.3.0
       style-dictionary: 3.7.0
     devDependencies:
       '@alex_neo/jest-expect-message': 1.0.5
@@ -4018,7 +4018,7 @@ packages:
   /@types/node-fetch/3.0.2:
     resolution: {integrity: sha512-3q5FyT6iuekUxXeL2qjcyIhtMJdfMF7RGhYXWKkYpdcW9k36A/+txXrjG0l+NMVkiC30jKNrcOqVlqBl7BcCHA==}
     dependencies:
-      node-fetch: 3.2.4
+      node-fetch: 3.3.0
     dev: true
 
   /@types/node/12.0.2:
@@ -10375,8 +10375,8 @@ packages:
       formdata-polyfill: 4.0.10
     dev: true
 
-  /node-fetch/3.2.4:
-    resolution: {integrity: sha512-WvYJRN7mMyOLurFR2YpysQGuwYrJN+qrrpHjJDuKMcSPdfFccRUla/kng2mz6HWSBxJcqPbvatS6Gb4RhOzCJw==}
+  /node-fetch/3.3.0:
+    resolution: {integrity: sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
