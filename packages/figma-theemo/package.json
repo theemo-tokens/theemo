@@ -24,7 +24,7 @@
     "@swc/core": "^1.2.211",
     "@swc/jest": "^0.2.21",
     "@types/jest": "^29.0.0",
-    "figma-api-stub": "^0.0.55",
+    "figma-api-stub": "^0.0.56",
     "jest": "^29.0.0",
     "postcss": "^8.4.14",
     "postcss-parcel-css": "^0.5.0",

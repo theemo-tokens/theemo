@@ -25,7 +25,7 @@ importers:
       '@swc/jest': ^0.2.21
       '@types/jest': ^29.0.0
       color-converter: 1.4.1
-      figma-api-stub: ^0.0.55
+      figma-api-stub: ^0.0.56
       figma-plugin-ds: ^1.0.1
       jest: ^29.0.0
       postcss: ^8.4.14
@@ -48,7 +48,7 @@ importers:
       '@swc/core': 1.2.211
       '@swc/jest': 0.2.21_@swc+core@1.2.211
       '@types/jest': 29.0.0
-      figma-api-stub: 0.0.55
+      figma-api-stub: 0.0.56
       jest: 29.0.0
       postcss: 8.4.14
       postcss-parcel-css: 0.5.0_postcss@8.4.14
@@ -7658,11 +7658,11 @@ packages:
       node-domexception: 1.0.0
       web-streams-polyfill: 3.2.1
 
-  /figma-api-stub/0.0.55:
-    resolution: {integrity: sha512-6/ltnSZTz2xti9NrS2d2gEN1fRQUy4UThCFrZOKywKFBRlDjDuTcy/B078JK6ApwS4EkKOtwRzTznImxn5rLAg==}
+  /figma-api-stub/0.0.56:
+    resolution: {integrity: sha512-tS4TC0mBky+OQPfv+IWyNWURvPBZ74LBSstHmoKgl+Nd8e1dbkKIURENy9AgViEnJqlt5Tqmv6/RYXFT/mmL5g==}
     dependencies:
       clone-deep: 4.0.1
-      nanoid: 3.3.3
+      nanoid: 3.3.4
       rxjs: 6.6.7
     dev: true
 
@@ -10300,11 +10300,6 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
-  /nanoid/3.3.3:
-    resolution: {integrity: sha512-p1sjXuopFs0xg+fPASzQ28agW1oHD7xDsd9Xkf3T15H3c/cifrFHVwrh74PdoklAPi+i7MdRsE47vm2r6JoB+w==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -11669,7 +11664,7 @@ packages:
     resolution: {integrity: sha512-jtL6eTBrza5MPzy8oJLFuUscHDXTV5KcLlqAWHl5q5WYRfnNRGSmOZmOZ1T6Gy7A99mOZfqungmZMpMmCVJ8ZA==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
-      nanoid: 3.3.3
+      nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: false
