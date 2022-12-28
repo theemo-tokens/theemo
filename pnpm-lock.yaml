@@ -92,7 +92,7 @@ importers:
       node-fetch: ~3.3.0
       npm-run-all: ^4.1.5
       prettier: ^2.6.2
-      release-it: 15.5.1
+      release-it: 15.6.0
       style-dictionary: ^3.7.0
       typescript: 4.9.4
     dependencies:
@@ -128,7 +128,7 @@ importers:
       mock-fs: 5.1.2
       npm-run-all: 4.1.5
       prettier: 2.6.2
-      release-it: 15.5.1
+      release-it: 15.6.0
       typescript: 4.9.4
 
   website:
@@ -4807,10 +4807,6 @@ packages:
       lodash: 4.17.21
     dev: false
 
-  /asynckit/0.4.0:
-    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
-    dev: true
-
   /at-least-node/1.0.0:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
@@ -5561,13 +5557,6 @@ packages:
     resolution: {integrity: sha512-ZI9jvcLDxqwaXEixOhArm3r7ReIivsXkpbyEWyeOhzz1QS0iSgBPnWvEqvIQtYyamGCYA88gFhmUrs9hrrQ0pg==}
     engines: {node: '>=10'}
     dev: false
-
-  /combined-stream/1.0.8:
-    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
-    engines: {node: '>= 0.8'}
-    dependencies:
-      delayed-stream: 1.0.0
-    dev: true
 
   /comma-separated-tokens/1.0.8:
     resolution: {integrity: sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==}
@@ -6682,11 +6671,6 @@ packages:
     dependencies:
       robust-predicates: 3.0.1
     dev: false
-
-  /delayed-stream/1.0.0:
-    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
-    engines: {node: '>=0.4.0'}
-    dev: true
 
   /depd/1.1.2:
     resolution: {integrity: sha512-7emPTl6Dpo6JRXOXjLRxck+FlLRX5847cLKEn00PLAgc3g2hTZZgr+e4c2v6QpSmLeFP3n5yUo7ft6avBK/5jQ==}
@@ -7880,15 +7864,6 @@ packages:
   /form-data-encoder/2.1.2:
     resolution: {integrity: sha512-FCaIOVTRA9E0siY6FeXid7D5yrCqpsErplUkE2a1BEiKj1BE9z6FbKB4ntDTwC4NVLie9p+4E9nX4mWwEOT05A==}
     engines: {node: '>= 14.17'}
-    dev: true
-
-  /form-data/4.0.0:
-    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
-    engines: {node: '>= 6'}
-    dependencies:
-      asynckit: 0.4.0
-      combined-stream: 1.0.8
-      mime-types: 2.1.35
     dev: true
 
   /formdata-polyfill/4.0.10:
@@ -12327,8 +12302,8 @@ packages:
     engines: {node: '>= 0.10'}
     dev: false
 
-  /release-it/15.5.1:
-    resolution: {integrity: sha512-1X1oyqay/amJh/V+xkSU9zN6LqGmLQJ0Q40+FaHE6+Pu6QCmgX9HbrpHxvF0HZeXkB5cdhHjmYsPbHnUQLRnYg==}
+  /release-it/15.6.0:
+    resolution: {integrity: sha512-NXewgzO8QV1LOFjn2K7/dgE1Y1cG+2JiLOU/x9X/Lq9UdFn2hTH1r9SSrufCxG+y/Rp+oN8liYTsNptKrj92kg==}
     engines: {node: '>=14.9'}
     hasBin: true
     dependencies:
@@ -12338,7 +12313,6 @@ packages:
       chalk: 5.1.2
       cosmiconfig: 8.0.0
       execa: 6.1.0
-      form-data: 4.0.0
       git-url-parse: 13.1.0
       globby: 13.1.2
       got: 12.5.3
