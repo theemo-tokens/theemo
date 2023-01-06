@@ -102,6 +102,6 @@
   },
   "volta": {
     "extends": "../../package.json",
-    "node": "18.12.1"
+    "node": "18.13.0"
   }
 }
