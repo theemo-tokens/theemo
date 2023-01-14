@@ -34,7 +34,7 @@ importers:
       rollup-plugin-html-bundle: ^0.0.3
       rollup-plugin-livereload: ^2.0.5
       rollup-plugin-postcss: ^4.0.2
-      rollup-plugin-swc3: ^0.6.0
+      rollup-plugin-swc3: ^0.8.0
       rollup-plugin-watch: ^1.0.1
       typescript: ^4.7.4
     dependencies:
@@ -56,7 +56,7 @@ importers:
       rollup-plugin-html-bundle: 0.0.3
       rollup-plugin-livereload: 2.0.5
       rollup-plugin-postcss: 4.0.2_postcss@8.4.14
-      rollup-plugin-swc3: 0.6.0_4gu2mpgp53gkkcxokiyvp7asiy
+      rollup-plugin-swc3: 0.8.0_4gu2mpgp53gkkcxokiyvp7asiy
       rollup-plugin-watch: 1.0.1_rollup@2.76.0
       typescript: 4.7.4
 
@@ -2326,6 +2326,10 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@fastify/deepmerge/1.3.0:
+    resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
     dev: true
 
   /@figma/plugin-typings/1.49.0:
@@ -12568,16 +12572,16 @@ packages:
       - ts-node
     dev: true
 
-  /rollup-plugin-swc3/0.6.0_4gu2mpgp53gkkcxokiyvp7asiy:
-    resolution: {integrity: sha512-nNG2T3x3wq6e7H+8ZHB0CxJ3H9QeYZUh+DwCjwWEyGCaIwIMyIaq/30ZJlYK8/OWWhCfYMwxKRcZGirPg6nPqA==}
+  /rollup-plugin-swc3/0.8.0_4gu2mpgp53gkkcxokiyvp7asiy:
+    resolution: {integrity: sha512-IJapqORpU4NgSJHaFvbTcUe4WQPzgE6v8Suu95ZO4Qw1VwGRcuurvSCuYX1fIzR+DLVlZH4zq/T6uqbmw3Bzxw==}
     engines: {node: '>=12'}
     peerDependencies:
       '@swc/core': '>=1.2.165'
-      rollup: ^2.0.0
+      rollup: ^2.0.0 || ^3.0.0
     dependencies:
+      '@fastify/deepmerge': 1.3.0
       '@rollup/pluginutils': 4.2.1
       '@swc/core': 1.2.211
-      deepmerge: 4.2.2
       get-tsconfig: 4.2.0
       rollup: 2.76.0
     dev: true
