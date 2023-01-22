@@ -1,7 +1,8 @@
 {
-  "name": "@theemo/theme",
+  "name": "super-theemo-theme",
+  "private": true,
   "version": "0.0.0",
-  "description": "Theemo theme",
+  "description": "Super Theemo theme",
   "license": "MIT",
   "keywords": [
     "theemo-theme"
