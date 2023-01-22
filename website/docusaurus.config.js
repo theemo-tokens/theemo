@@ -44,7 +44,7 @@ module.exports = {
         },
         theme: {
           customCss: [
-            require.resolve('@theemo/theme/dist/theemo.css'),
+            require.resolve('super-theemo-theme/dist/theemo.css'),
             require.resolve('./src/css/custom.css')
           ]
         }
