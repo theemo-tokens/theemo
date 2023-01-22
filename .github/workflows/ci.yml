@@ -1,4 +1,4 @@
-name: CI (Theemo)
+name: CI
 
 on:
   workflow_dispatch:
