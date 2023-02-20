@@ -1,6 +1,6 @@
 {
-  "name": "@theemo/theme",
-  "description": "Theemo Theme Runtine",
+  "name": "@theemo/core",
+  "description": "Theemo Core Definitions and Utilities",
   "license": "MIT",
   "author": "Thomas Gossmann",
   "homepage": "https://theemo.io",
@@ -8,7 +8,8 @@
   "repository": "https://github.com/theemo-tokens/theemo",
   "keywords": [
     "design system",
-    "theme"
+    "theme",
+    "design tokens"
   ],
   "files": [
     "dist"
@@ -25,10 +26,6 @@
     "start": "concurrently -r 'npm:start:*'",
     "start:js": "swc ./src -d ./dist -w",
     "start:types": "tsc --emitDeclarationOnly -w"
-  },
-  "dependencies": {
-    "@theemo/core": "*",
-    "type-fest": "^3.5.3"
   },
   "devDependencies": {
     "@alex_neo/jest-expect-message": "^1.0.5",

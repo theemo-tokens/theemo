@@ -1,7 +1,4 @@
-import { ColorContrast } from './features/color-contrast';
-import { ColorScheme } from './features/color-scheme';
-import { Motion } from './features/motion';
-import { Feature } from './theme';
+import { ColorContrast, ColorScheme, Feature, Motion } from '@theemo/core';
 
 interface Preferences {
   [Feature.ColorScheme]: ColorScheme;

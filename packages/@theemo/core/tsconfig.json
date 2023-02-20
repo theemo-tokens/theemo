@@ -4,13 +4,8 @@
     "baseUrl": ".",
     "rootDir": "src/",
     "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "resolveJsonModule": true,
-    "paths": {
-      "*": [
-        "types/*",
-        "node_modules/*"
-      ]
-    },
     "esModuleInterop": true,
     "isolatedModules": true,
     "declaration": true,

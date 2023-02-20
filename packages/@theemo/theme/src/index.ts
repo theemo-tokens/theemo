@@ -1,1 +1,1 @@
-export { type Scope, Behavior } from './vocabulary';
+export { type TheemoConfig, type TheemoOptions, type TheemoPackage } from './config';
