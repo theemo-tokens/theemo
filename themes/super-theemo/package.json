@@ -15,7 +15,7 @@
     "file": "dist/theemo.css"
   },
   "scripts": {
-    "clean": "rm -rf build/ dist/ tokens/",
+    "_clean": "rm -rf build/ dist/ tokens/",
     "sync": "theemo sync",
     "build": "npm-run-all build:*",
     "build:base": "style-dictionary build --config config.base.js",
@@ -26,7 +26,7 @@
     "build:website:dark": "style-dictionary build --config config.website.dark.js",
     "generate": "theemo generate",
     "magic": "npm-run-all sync build generate",
-    "clean-magic": "yarn clean && yarn magic"
+    "_clean-magic": "yarn clean && yarn magic"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
@@ -34,6 +34,6 @@
     "theemo": "^0.1.0"
   },
   "volta": {
-    "extends": "../../../package.json"
+    "extends": "../../package.json"
   }
 }

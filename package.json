@@ -7,6 +7,25 @@
   "scripts": {
     "test": "pnpm run --filter theemo test",
     "coverage": "pnpm run --filter theemo coverage",
-    "api": "pnpm run --filter theemo api"
+    "api": "pnpm run --filter theemo api",
+    "build": "turbo run --filter='@theemo/*' build"
+  },
+  "devDependencies": {
+    "@release-it-plugins/workspaces": "^3.2.0",
+    "turbo": "^1.8.1",
+    "release-it": "^15.6.0"
+  },
+  "release-it": {
+    "plugins": {
+      "@release-it-plugins/workspaces": {
+        "workspaces": [
+          "packages/@theemo"
+        ]
+      }
+    },
+    "git": {
+      "requireCleanWorkingDir": false,
+      "changelog": false
+    }
   }
 }
