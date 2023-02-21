@@ -7,6 +7,9 @@
   "homepage": "https://theemo.io",
   "bugs": "https://github.com/theemo-tokens/theemo/issues",
   "repository": "https://github.com/theemo-tokens/theemo",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "design system",
     "theme"
