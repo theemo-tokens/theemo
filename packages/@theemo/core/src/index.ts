@@ -4,6 +4,7 @@ export {
   type ColorContrastOptions,
   type ColorSchemeFeature,
   type ColorSchemeOptions,
+  type Features,
   type MotionFeature,
   type MotionOptions,
   type Scope,

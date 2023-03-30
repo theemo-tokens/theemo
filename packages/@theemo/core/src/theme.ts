@@ -13,31 +13,37 @@ export enum Feature {
   Motion = 'motion'
 }
 
+interface Feat {
+  enabled: boolean;
+}
+
 export type ColorSchemeOptions = ColorScheme.Light | ColorScheme.Dark;
-export interface ColorSchemeFeature {
+export interface ColorSchemeFeature extends Feat {
   behavior: Behavior[];
-  options: ColorSchemeOptions;
+  // options: ColorScheme[];
   default: ColorScheme;
 }
 
 export type ColorContrastOptions = ColorContrast.More | ColorContrast.Less;
-export interface ColorContrastFeature {
+export interface ColorContrastFeature extends Feat {
   behavior: Behavior[];
-  options: ColorContrastOptions;
+  // options: ColorContrastOptions;
 }
 
 export type MotionOptions = Motion.Reduce | Motion.NoPreference;
-export interface MotionFeature {
+export interface MotionFeature extends Feat {
   behavior: Behavior[];
-  options: MotionOptions;
+  // options: MotionOptions;
+}
+
+export interface Features {
+  [Feature.ColorScheme]?: ColorSchemeFeature;
+  [Feature.ColorContrast]?: ColorContrastFeature;
+  [Feature.Motion]?: MotionFeature;
 }
 
 export interface Theme {
   name: string;
-  features?: {
-    [Feature.ColorScheme]?: ColorSchemeFeature;
-    [Feature.ColorContrast]?: ColorContrastFeature;
-    [Feature.Motion]: MotionFeature;
-  };
+  features?: Features;
   scopes?: Scope[];
 }
