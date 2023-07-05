@@ -58,7 +58,7 @@
     "@jest/globals": "^29.0.0",
     "@microsoft/api-documenter": "^7.17.11",
     "@microsoft/api-extractor": "^7.23.0",
-    "@nullvoxpopuli/eslint-configs": "^2.2.14",
+    "@nullvoxpopuli/eslint-configs": "^3.0.0",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.174",
     "@swc-node/jest": "^1.5.2",
