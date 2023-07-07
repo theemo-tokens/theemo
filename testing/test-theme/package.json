@@ -1,0 +1,30 @@
+{
+  "name": "test-theme",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Test theme for API",
+  "license": "MIT",
+  "keywords": [
+    "theemo-theme"
+  ],
+  "theemo": {
+    "name": "theemo",
+    "colorSchemes": [
+      "dark"
+    ],
+    "file": "dist/theemo.css"
+  },
+  "scripts": {
+    "sync": "pnpm theemo sync"
+  },
+  "devDependencies": {
+    "@theemo/cli": "workspace:*",
+    "@theemo/figma": "workspace:*",
+    "@theemo/sync": "workspace:*",
+    "@theemo/style-dictionary": "workspace:*",
+    "style-dictionary": "^3.7.0"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

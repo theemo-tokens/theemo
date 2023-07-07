@@ -1,0 +1,356 @@
+[
+	{
+		"name": "ref.text2",
+		"description": "",
+		"tier": "purpose",
+		"type": "text",
+		"value": "",
+		"transient": false
+	},
+	{
+		"name": "palette/brand/100",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#08102B",
+		"transforms": {
+			"lightness": -40
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/100",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#092A25",
+		"transforms": {
+			"lightness": -40
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/200",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#112055",
+		"transforms": {
+			"lightness": -30
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/200",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#12544A",
+		"transforms": {
+			"lightness": -30
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/300",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#193080",
+		"transforms": {
+			"lightness": -20
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/300",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#1A7F70",
+		"transforms": {
+			"lightness": -20
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/400",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#2240AA",
+		"transforms": {
+			"lightness": -10
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/400",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#23A995",
+		"transforms": {
+			"lightness": -10
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/500",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#2A50D5",
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/500",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#2CD3BA",
+		"transient": false
+	},
+	{
+		"name": "palette/brand/600",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#5573DD",
+		"transforms": {
+			"lightness": 10
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/600",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#56DCC8",
+		"transforms": {
+			"lightness": 10
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/700",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#7F96E6",
+		"transforms": {
+			"lightness": 20
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/700",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#80E5D6",
+		"transforms": {
+			"lightness": 20
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/800",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#AAB9EE",
+		"transforms": {
+			"lightness": 30
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/800",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#ABEDE3",
+		"transforms": {
+			"lightness": 30
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/brand/900",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#D4DCF7",
+		"transforms": {
+			"lightness": 40
+		},
+		"transient": false
+	},
+	{
+		"name": "palette/adjacent/900",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#D5F6F1",
+		"transforms": {
+			"lightness": 40
+		},
+		"transient": false
+	},
+	{
+		"name": "action/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#2A50D5",
+		"transient": false
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/200",
+		"value": "#12544A",
+		"colorScheme": "light",
+		"transient": false
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/700",
+		"value": "#80E5D6",
+		"colorScheme": "dark",
+		"transient": false
+	},
+	{
+		"name": "action/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/300",
+		"value": "#193080",
+		"transient": false
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/100",
+		"value": "#092A25",
+		"colorScheme": "light",
+		"transient": false
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/600",
+		"value": "#56DCC8",
+		"colorScheme": "dark",
+		"transient": false
+	},
+	{
+		"name": "action/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/brand/900",
+		"value": "#D4DCF7",
+		"transient": false
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/900",
+		"value": "#D5F6F1",
+		"colorScheme": "light",
+		"transient": false
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "palette/adjacent/200",
+		"value": "#12544A",
+		"colorScheme": "dark",
+		"transient": false
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#12544A",
+		"transient": false
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#092A25",
+		"transient": false
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#D5F6F1",
+		"transient": false
+	},
+	{
+		"name": "hero/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "action/background",
+		"value": "#2A50D5",
+		"transient": false
+	},
+	{
+		"name": "hero/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "action/border",
+		"value": "#193080",
+		"transient": false
+	},
+	{
+		"name": "hero/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "action/text",
+		"value": "#D4DCF7",
+		"transient": false
+	}
+]

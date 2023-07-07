@@ -5,15 +5,23 @@
     "node": "18.13.0"
   },
   "scripts": {
+    "clean": "concurrently 'npm:clean:*'",
+    "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
+    "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
+    "clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
+    "_start": "turbo run --parallel --filter='@theemo/*' start",
+    "start": "pnpm run --parallel --filter='@theemo/*' start",
     "test": "pnpm run --filter theemo test",
     "coverage": "pnpm run --filter theemo coverage",
     "api": "pnpm run --filter theemo api",
-    "build": "turbo run --filter='@theemo/*' build"
+    "_build": "turbo run --allowCycles --filter='@theemo/*' build",
+    "build": "pnpm run --parallel --filter='@theemo/*' build"
   },
   "devDependencies": {
     "@release-it-plugins/workspaces": "^3.2.0",
-    "turbo": "^1.8.1",
-    "release-it": "^15.6.0"
+    "concurrently": "^8.2.0",
+    "turbo": "^1.10.7",
+    "release-it": "^15.11.0"
   },
   "release-it": {
     "plugins": {

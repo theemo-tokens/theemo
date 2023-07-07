@@ -1,3 +1,16 @@
 {
-  "typescript.preferences.importModuleSpecifier": "relative"
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "eslint.workingDirectories": [
+    // problem with glob, doesn't work with `prettier/prettier` - wants me to
+    // use trailing comma, dafuq no!
+    // "packages/@theemo/*",
+    "packages/@theemo/cli",
+    "packages/@theemo/core",
+    "packages/@theemo/figma",
+    "packages/@theemo/sync",
+    "packages/@theemo/style-dictionary",
+    "packages/@theemo/theme",
+    "packages/theemo",
+    "testing/fixtures"
+  ]
 }

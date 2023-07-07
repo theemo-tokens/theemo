@@ -1,6 +1,4 @@
-import type { ColorContrast, ColorScheme, Motion } from './features';
-
-export type Scope = string;
+import type { ColorContrast, ColorScheme, Motion } from './runtimes/browser';
 
 export enum Behavior {
   Mode = 'mode',
@@ -40,10 +38,4 @@ export interface Features {
   [Feature.ColorScheme]?: ColorSchemeFeature;
   [Feature.ColorContrast]?: ColorContrastFeature;
   [Feature.Motion]?: MotionFeature;
-}
-
-export interface Theme {
-  name: string;
-  features?: Features;
-  scopes?: Scope[];
 }

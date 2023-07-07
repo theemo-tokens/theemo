@@ -1,0 +1,69 @@
+{
+  "name": "@theemo/figma",
+  "version": "0.0.1",
+  "description": "Theemo Figma Integration",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "homepage": "https://theemo.io",
+  "bugs": "https://github.com/theemo-tokens/theemo/issues",
+  "repository": "https://github.com/theemo-tokens/theemo",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design system",
+    "theme",
+    "design tokens",
+    "figma",
+    "theemo-tool"
+  ],
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:js": "swc ./src -d ./dist",
+    "build:types": "tsc --emitDeclarationOnly --project tsconfig.dts.json",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "concurrently -r 'npm:start:*'",
+    "start:js": "swc ./src -d ./dist -w",
+    "start:types": "tsc --emitDeclarationOnly --project tsconfig.dts.json -w",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@theemo/core": "workspace:*",
+    "@theemo/sync": "workspace:*",
+    "color": "^4.2.3",
+    "figma-api": "^1.11.0",
+    "lodash.isempty": "^4.4.0",
+    "lodash.merge": "^4.6.2",
+    "node-fetch": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/eslint-parser": "^7.22.5",
+    "@gossi/config-eslint": "^0.4.0",
+    "@gossi/config-prettier": "^0.4.0",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.67",
+    "@theemo/fixtures": "workspace:*",
+    "@types/color": "^3.0.3",
+    "@types/lodash.isempty": "^4.4.7",
+    "@types/lodash.merge": "^4.6.7",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.44.0",
+    "prettier": "^2.8.5",
+    "typescript": "^5.1.6",
+    "vitest": "^0.32.4"
+  }
+}

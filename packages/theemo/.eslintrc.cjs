@@ -1,20 +1,15 @@
 'use strict';
 
-const { configs } = require('@nullvoxpopuli/eslint-configs');
-const prettierConfig = require('./.prettierrc.cjs');
+const { configs } = require('@gossi/config-eslint');
 
-// accommodates: JS, TS
-const config = configs.nodeTS();
+const config = configs.nodeESM();
 
 module.exports = {
   ...config,
-  overrides: [
-    ...config.overrides,
-    {
-      files: ['**/*.js', '**/*.ts'],
-      rules: {
-        'prettier/prettier': ['error', prettierConfig],
-      },
-    },
-  ],
+  overrides: {
+    files: ['**/*.ts'],
+    rules: {
+      'n/no-missing-import': false
+    }
+  }
 };

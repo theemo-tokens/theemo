@@ -3,6 +3,9 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"]
+    },
+    "start": {
+      "dependsOn": ["^start"]
     }
   }
 }

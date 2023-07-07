@@ -1,0 +1,2642 @@
+[
+	{
+		"name": ".swatch Grid",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "",
+		"figmaName": ".swatch Grid"
+	},
+	{
+		"name": "color.palette.brand0",
+		"description": "Neutral Brand Color",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#0CAEF3",
+		"figmaName": ".palette/Brand/0"
+	},
+	{
+		"name": "color.palette.brand1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand0",
+		"value": "#55C6F7",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Brand/+1"
+	},
+	{
+		"name": "color.palette.brand-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand0",
+		"value": "#054661",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Brand/-2"
+	},
+	{
+		"name": "color.palette.brand2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand0",
+		"value": "#9EDFFA",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Brand/+2"
+	},
+	{
+		"name": "color.palette.brand-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand0",
+		"value": "#087AAA",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Brand/-1"
+	},
+	{
+		"name": "color.palette.adjacent-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent0",
+		"value": "#125448",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Adjacent/-2"
+	},
+	{
+		"name": "color.palette.accent-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent0",
+		"value": "#665C00",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Accent/-2"
+	},
+	{
+		"name": "color.palette.letters-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#737373",
+		"figmaName": ".palette/Letters/-2"
+	},
+	{
+		"name": "color.palette.letters-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#9C9C9C",
+		"figmaName": ".palette/Letters/-1"
+	},
+	{
+		"name": "color.palette.adjacent-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent0",
+		"value": "#1F947F",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Adjacent/-1"
+	},
+	{
+		"name": "color.palette.negative0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#E35858",
+		"figmaName": ".palette/Negative/0"
+	},
+	{
+		"name": "color.palette.negative-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#CC2222",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Negative/-1"
+	},
+	{
+		"name": "color.palette.negative-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#8B1717",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Negative/-2"
+	},
+	{
+		"name": "color.palette.negative1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#EE9A9A",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Negative/+1"
+	},
+	{
+		"name": "color.palette.negative2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#F9DBDB",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Negative/+2"
+	},
+	{
+		"name": "color.palette.accent-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent0",
+		"value": "#B3A000",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Accent/-1"
+	},
+	{
+		"name": "color.palette.letters1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#CECECE",
+		"figmaName": ".palette/Letters/+1"
+	},
+	{
+		"name": "color.palette.letters2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": ".palette/Letters/+2"
+	},
+	{
+		"name": "color.palette.structure-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#595959",
+		"figmaName": ".palette/Structure/-1"
+	},
+	{
+		"name": "color.palette.letters-3",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": ".palette/Letters/-3"
+	},
+	{
+		"name": "color.palette.adjacent0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#2CD3B5",
+		"figmaName": ".palette/Adjacent/0"
+	},
+	{
+		"name": "color.palette.positive0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#2CD3B5",
+		"figmaName": ".palette/Positive/0"
+	},
+	{
+		"name": "color.palette.neutral0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#0CAEF3",
+		"figmaName": ".palette/Neutral/0"
+	},
+	{
+		"name": "color.palette.neutral-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral0",
+		"value": "#087AAA",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Neutral/-1"
+	},
+	{
+		"name": "color.palette.neutral-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral0",
+		"value": "#054661",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Neutral/-2"
+	},
+	{
+		"name": "color.palette.neutral1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral0",
+		"value": "#55C6F7",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Neutral/+1"
+	},
+	{
+		"name": "color.palette.neutral2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral0",
+		"value": "#9EDFFA",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Neutral/+2"
+	},
+	{
+		"name": "color.palette.higgs0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#FFB700",
+		"figmaName": ".palette/Higgs/0"
+	},
+	{
+		"name": "color.palette.higgs-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs0",
+		"value": "#B38000",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Higgs/-1"
+	},
+	{
+		"name": "color.palette.higgs-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs0",
+		"value": "#664900",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Higgs/-2"
+	},
+	{
+		"name": "color.palette.higgs1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs0",
+		"value": "#FFCD4D",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Higgs/+1"
+	},
+	{
+		"name": "color.palette.higgs2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs0",
+		"value": "#FFE299",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Higgs/+2"
+	},
+	{
+		"name": "color.palette.positive1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive0",
+		"value": "#6BE0CB",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Positive/+1"
+	},
+	{
+		"name": "color.palette.positive-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive0",
+		"value": "#1F947F",
+		"transforms": {
+			"lightness": -15
+		},
+		"figmaName": ".palette/Positive/-1"
+	},
+	{
+		"name": "color.palette.positive-2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive0",
+		"value": "#125448",
+		"transforms": {
+			"lightness": -30
+		},
+		"figmaName": ".palette/Positive/-2"
+	},
+	{
+		"name": "color.palette.positive2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive0",
+		"value": "#ABEDE1",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Positive/+2"
+	},
+	{
+		"name": "color.palette.accent0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#FFE500",
+		"figmaName": ".palette/Accent/0"
+	},
+	{
+		"name": "color.palette.structure0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#6E6E6E",
+		"figmaName": ".palette/Structure/0"
+	},
+	{
+		"name": "color.palette.adjacent1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent0",
+		"value": "#6BE0CB",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Adjacent/+1"
+	},
+	{
+		"name": "color.palette.accent1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent0",
+		"value": "#FFED4D",
+		"transforms": {
+			"lightness": 15
+		},
+		"figmaName": ".palette/Accent/+1"
+	},
+	{
+		"name": "color.palette.structure1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#DFDFDF",
+		"figmaName": ".palette/Structure/+1"
+	},
+	{
+		"name": "color.palette.adjacent2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent0",
+		"value": "#ABEDE1",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Adjacent/+2"
+	},
+	{
+		"name": "color.palette.scheme.light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#FFFFFF",
+		"figmaName": ".palette/Scheme/Light"
+	},
+	{
+		"name": "color.palette.scheme.dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#595959",
+		"figmaName": ".palette/Scheme/Dark"
+	},
+	{
+		"name": "color.palette.accent2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent0",
+		"value": "#FFF599",
+		"transforms": {
+			"lightness": 30
+		},
+		"figmaName": ".palette/Accent/+2"
+	},
+	{
+		"name": "color.palette.structure2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": ".palette/Structure/+2"
+	},
+	{
+		"name": "structure/border-style",
+		"tier": "unknown",
+		"value": "solid",
+		"figmaName": "structure/border-style [token]"
+	},
+	{
+		"name": "structure/border-width",
+		"tier": "unknown",
+		"value": "2px",
+		"figmaName": "structure/border-width [token]"
+	},
+	{
+		"name": "structure/border-radius",
+		"tier": "unknown",
+		"value": "4px",
+		"figmaName": "structure/border-radius [token]"
+	},
+	{
+		"name": "color.structure.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.structure1",
+		"value": "#DFDFDF",
+		"figmaName": "structure/border"
+	},
+	{
+		"name": "color.layout.background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.scheme.dark",
+		"value": "#595959",
+		"figmaName": "layout/background.$dark"
+	},
+	{
+		"name": "color.layout.background.$light",
+		"description": "Background color for layouts",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.scheme.light",
+		"value": "#FFFFFF",
+		"figmaName": "layout/background.$light"
+	},
+	{
+		"name": "color.layout.brand",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand0",
+		"value": "#0CAEF3",
+		"figmaName": "layout/brand"
+	},
+	{
+		"name": "color.layout.low-contrast.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "layout/low-contrast.$light"
+	},
+	{
+		"name": "color.layout.low-contrast.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "layout/low-contrast.$dark"
+	},
+	{
+		"name": "color.layout.high-contrast.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout-1",
+		"value": "#595959",
+		"figmaName": "layout/high-contrast.$light"
+	},
+	{
+		"name": "color.layout.high-contrast.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "layout/high-contrast.$dark"
+	},
+	{
+		"name": "color.layout.reduced.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "layout/reduced.$light"
+	},
+	{
+		"name": "color.layout.reduced.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout1",
+		"value": "#DFDFDF",
+		"figmaName": "layout/reduced.$dark"
+	},
+	{
+		"name": "color.layout0",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.structure0",
+		"value": "#6E6E6E",
+		"figmaName": ".layout/0"
+	},
+	{
+		"name": "color.layout1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.structure1",
+		"value": "#DFDFDF",
+		"figmaName": ".layout/+1"
+	},
+	{
+		"name": "color.layout-1",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.structure-1",
+		"value": "#595959",
+		"figmaName": ".layout/-1"
+	},
+	{
+		"name": "color.layout2",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.structure2",
+		"value": "#F2F2F2",
+		"figmaName": ".layout/+2"
+	},
+	{
+		"name": "color.text.inverse.disabled.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.reduced",
+		"value": "#737373",
+		"figmaName": "text/inverse.disabled.$dark"
+	},
+	{
+		"name": "color.text.inverse.disabled.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.reduced",
+		"value": "#CECECE",
+		"figmaName": "text/inverse.disabled.$light"
+	},
+	{
+		"name": "color.text.normal.$light",
+		"description": "Regular text color",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.normal",
+		"value": "#333333",
+		"figmaName": "text/normal.$light"
+	},
+	{
+		"name": "color.text.inverse.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.normal",
+		"value": "#333333",
+		"figmaName": "text/inverse.$dark"
+	},
+	{
+		"name": "color.text.inverse.$light",
+		"description": "Text color for more contrast (e.g. high-contrast or reduced)",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.normal",
+		"value": "#F5F5F5",
+		"figmaName": "text/inverse.$light"
+	},
+	{
+		"name": "color.text.disabled.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.reduced",
+		"value": "#CECECE",
+		"figmaName": "text/disabled.$dark"
+	},
+	{
+		"name": "color.text.disabled.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.reduced",
+		"value": "#737373",
+		"figmaName": "text/disabled.$light"
+	},
+	{
+		"name": "color.text.normal.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.normal",
+		"value": "#F5F5F5",
+		"figmaName": "text/normal.$dark"
+	},
+	{
+		"name": "color.text.light.reduced",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.letters1",
+		"value": "#CECECE",
+		"figmaName": ".text/light.reduced"
+	},
+	{
+		"name": "color.text.light.normal",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.letters2",
+		"value": "#F5F5F5",
+		"figmaName": ".text/light.normal"
+	},
+	{
+		"name": "color.text.dark.reduced",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.letters-2",
+		"value": "#737373",
+		"figmaName": ".text/dark.reduced"
+	},
+	{
+		"name": "color.text.dark.normal",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.letters-3",
+		"value": "#333333",
+		"figmaName": ".text/dark.normal"
+	},
+	{
+		"name": "color.layout.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#FFFFFF",
+		"figmaName": "layout/background"
+	},
+	{
+		"name": "color.layout.low-contrast",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "layout/low-contrast"
+	},
+	{
+		"name": "color.layout.high-contrast",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#595959",
+		"figmaName": "layout/high-contrast"
+	},
+	{
+		"name": "color.layout.reduced",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#6E6E6E",
+		"figmaName": "layout/reduced"
+	},
+	{
+		"name": "color.text.disabled",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#737373",
+		"figmaName": "text/disabled"
+	},
+	{
+		"name": "color.text.normal",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "text/normal"
+	},
+	{
+		"name": "color.text.inverse.disabled",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#CECECE",
+		"figmaName": "text/inverse.disabled"
+	},
+	{
+		"name": "color.text.inverse",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "text/inverse"
+	},
+	{
+		"name": "scale/measure",
+		"tier": "unknown",
+		"value": "65ch",
+		"figmaName": "scale/measure [token]"
+	},
+	{
+		"name": "scale/ratio",
+		"tier": "unknown",
+		"value": "1.3",
+		"figmaName": "scale/ratio [token]"
+	},
+	{
+		"name": "color.intent.danger.plain.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled",
+		"value": "#737373",
+		"figmaName": "intent/danger/plain/disabled.text"
+	},
+	{
+		"name": "color.intent.danger.plain.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/plain/active.text"
+	},
+	{
+		"name": "color.intent.danger.plain.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/plain/hover.text"
+	},
+	{
+		"name": "color.intent.danger.plain.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "intent/danger/plain/base.text"
+	},
+	{
+		"name": "color.intent.danger.subtle.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/subtle/active.background"
+	},
+	{
+		"name": "color.intent.danger.subtle.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/subtle/active.border"
+	},
+	{
+		"name": "shadow.intent.danger/focus",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "0 0 6px #CD2222",
+		"figmaName": "shadow.intent.danger/focus"
+	},
+	{
+		"name": "color.intent.danger.subtle.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.normal.$dark",
+		"value": "#F5F5F5",
+		"figmaName": "intent/danger/subtle/active.text"
+	},
+	{
+		"name": "color.intent.danger.subtle.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "intent/danger/subtle/hover.background"
+	},
+	{
+		"name": "color.intent.danger.subtle.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "intent/danger/subtle/hover.border"
+	},
+	{
+		"name": "color.intent.danger.subtle.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.normal.$dark",
+		"value": "#F5F5F5",
+		"figmaName": "intent/danger/subtle/hover.text"
+	},
+	{
+		"name": "color.intent.danger.subtle.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/danger/subtle/base.background"
+	},
+	{
+		"name": "color.intent.danger.subtle.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#E35858",
+		"figmaName": "intent/danger/subtle/base.border"
+	},
+	{
+		"name": "color.intent.danger.subtle.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.normal",
+		"value": "#333333",
+		"figmaName": "intent/danger/subtle/base.text"
+	},
+	{
+		"name": "color.intent.danger.subtle.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/danger/subtle/disabled.background"
+	},
+	{
+		"name": "color.intent.danger.subtle.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.low-contrast.$dark",
+		"value": "#6E6E6E",
+		"figmaName": "intent/danger/subtle/disabled.border"
+	},
+	{
+		"name": "color.intent.danger.subtle.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled.$light",
+		"value": "#737373",
+		"figmaName": "intent/danger/subtle/disabled.text"
+	},
+	{
+		"name": "color.intent.danger.fill.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/fill/active.background"
+	},
+	{
+		"name": "color.intent.danger.fill.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/fill/active.border"
+	},
+	{
+		"name": "color.intent.danger.fill.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.normal.$dark",
+		"value": "#F5F5F5",
+		"figmaName": "intent/danger/fill/active.text"
+	},
+	{
+		"name": "color.intent.danger.fill.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "intent/danger/fill/hover.background"
+	},
+	{
+		"name": "color.intent.danger.fill.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "intent/danger/fill/hover.border"
+	},
+	{
+		"name": "color.intent.danger.fill.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.normal.$dark",
+		"value": "#F5F5F5",
+		"figmaName": "intent/danger/fill/hover.text"
+	},
+	{
+		"name": "color.intent.danger.fill.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#E35858",
+		"figmaName": "intent/danger/fill/base.background"
+	},
+	{
+		"name": "color.intent.danger.fill.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#E35858",
+		"figmaName": "intent/danger/fill/base.border"
+	},
+	{
+		"name": "color.intent.danger.fill.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.normal.$dark",
+		"value": "#F5F5F5",
+		"figmaName": "intent/danger/fill/base.text"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/danger/fill/disabled.background"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/highlight/fill/disabled.border"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/fill/disabled.text"
+	},
+	{
+		"name": "color.intent.alternative.subtle.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/alternative/subtle/base.background"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative2",
+		"value": "#F9DBDB",
+		"figmaName": "intent/danger/fill/disabled.text.$dark"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "intent/danger/fill/disabled.text.$light"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/danger/fill/disabled.border.$dark"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/danger/fill/disabled.border.$light"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/danger/fill/disabled.background.$dark"
+	},
+	{
+		"name": "color.intent.danger.fill.disabled.background.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/danger/fill/disabled.background.$light"
+	},
+	{
+		"name": "color.emphasize.danger.stronger",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-2",
+		"value": "#8B1717",
+		"figmaName": "emphasize/danger/stronger"
+	},
+	{
+		"name": "color.emphasize.danger.strong",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "emphasize/danger/strong"
+	},
+	{
+		"name": "color.emphasize.danger.regular",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative0",
+		"value": "#E35858",
+		"figmaName": "emphasize/danger/regular"
+	},
+	{
+		"name": "color.emphasize.danger.weak",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative1",
+		"value": "#EE9A9A",
+		"figmaName": "emphasize/danger/weak"
+	},
+	{
+		"name": "color.emphasize.danger.weaker",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative2",
+		"value": "#F9DBDB",
+		"figmaName": "emphasize/danger/weaker"
+	},
+	{
+		"name": "color.intent.highlight.plain.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled",
+		"value": "#737373",
+		"figmaName": "intent/highlight/plain/disabled.text"
+	},
+	{
+		"name": "color.intent.highlight.plain.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-2",
+		"value": "#665C00",
+		"figmaName": "intent/highlight/plain/active.text"
+	},
+	{
+		"name": "color.intent.highlight.plain.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-2",
+		"value": "#665C00",
+		"figmaName": "intent/highlight/plain/hover.text"
+	},
+	{
+		"name": "color.intent.highlight.plain.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-1",
+		"value": "#B3A000",
+		"figmaName": "intent/highlight/plain/base.text"
+	},
+	{
+		"name": "color.intent.highlight.fill.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-1",
+		"value": "#B3A000",
+		"figmaName": "intent/highlight/fill/active.background"
+	},
+	{
+		"name": "color.intent.highlight.fill.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-1",
+		"value": "#B3A000",
+		"figmaName": "intent/highlight/fill/active.border"
+	},
+	{
+		"name": "shadow.intent.accent/focus",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "0 0 6px #B2A000",
+		"figmaName": "shadow.intent.accent/focus"
+	},
+	{
+		"name": "color.intent.highlight.fill.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/highlight/fill/active.text"
+	},
+	{
+		"name": "color.intent.highlight.fill.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent1",
+		"value": "#FFED4D",
+		"figmaName": "intent/highlight/fill/hover.background"
+	},
+	{
+		"name": "color.intent.highlight.fill.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent1",
+		"value": "#FFED4D",
+		"figmaName": "intent/highlight/fill/hover.border"
+	},
+	{
+		"name": "color.intent.highlight.fill.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/highlight/fill/hover.text"
+	},
+	{
+		"name": "color.intent.highlight.fill.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent2",
+		"value": "#FFF599",
+		"figmaName": "intent/highlight/fill/base.background"
+	},
+	{
+		"name": "color.intent.highlight.fill.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent2",
+		"value": "#FFF599",
+		"figmaName": "intent/highlight/fill/base.border"
+	},
+	{
+		"name": "color.intent.highlight.fill.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/highlight/fill/base.text"
+	},
+	{
+		"name": "color.intent.highlight.subtle.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/highlight/subtle/disabled.background"
+	},
+	{
+		"name": "color.intent.highlight.subtle.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.low-contrast.$dark",
+		"value": "#6E6E6E",
+		"figmaName": "intent/highlight/subtle/disabled.border"
+	},
+	{
+		"name": "color.intent.highlight.subtle.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled.$light",
+		"value": "#737373",
+		"figmaName": "intent/highlight/subtle/disabled.text"
+	},
+	{
+		"name": "color.intent.highlight.subtle.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-2",
+		"value": "#665C00",
+		"figmaName": "intent/highlight/subtle/active.background"
+	},
+	{
+		"name": "color.intent.highlight.subtle.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-2",
+		"value": "#665C00",
+		"figmaName": "intent/highlight/subtle/active.border"
+	},
+	{
+		"name": "color.intent.highlight.subtle.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "intent/highlight/subtle/active.text"
+	},
+	{
+		"name": "color.intent.highlight.subtle.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent1",
+		"value": "#FFED4D",
+		"figmaName": "intent/highlight/subtle/hover.background"
+	},
+	{
+		"name": "color.intent.highlight.subtle.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent1",
+		"value": "#FFED4D",
+		"figmaName": "intent/highlight/subtle/hover.border"
+	},
+	{
+		"name": "color.intent.highlight.subtle.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/highlight/subtle/hover.text"
+	},
+	{
+		"name": "color.intent.highlight.subtle.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/highlight/subtle/base.background"
+	},
+	{
+		"name": "color.intent.highlight.subtle.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent1",
+		"value": "#FFED4D",
+		"figmaName": "intent/highlight/subtle/base.border"
+	},
+	{
+		"name": "color.intent.highlight.subtle.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/highlight/subtle/base.text"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/highlight/fill/disabled.background"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#737373",
+		"figmaName": "intent/highlight/fill/disabled.text"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.reduced",
+		"value": "#CECECE",
+		"figmaName": "intent/highlight/fill/disabled.text.$dark"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.reduced",
+		"value": "#737373",
+		"figmaName": "intent/highlight/fill/disabled.text.$light"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/highlight/fill/disabled.border.$dark"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/highlight/fill/disabled.border.$light"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/highlight/fill/disabled.background.$dark"
+	},
+	{
+		"name": "color.intent.highlight.fill.disabled.background.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/highlight/fill/disabled.background.$light"
+	},
+	{
+		"name": "color.emphasize.accent.stronger",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-2",
+		"value": "#665C00",
+		"figmaName": "emphasize/accent/stronger"
+	},
+	{
+		"name": "color.emphasize.accent.strong",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent-1",
+		"value": "#B3A000",
+		"figmaName": "emphasize/accent/strong"
+	},
+	{
+		"name": "color.emphasize.accent.regular",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent0",
+		"value": "#FFE500",
+		"figmaName": "emphasize/accent/regular"
+	},
+	{
+		"name": "color.emphasize.accent.weak",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent1",
+		"value": "#FFED4D",
+		"figmaName": "emphasize/accent/weak"
+	},
+	{
+		"name": "color.emphasize.accent.weaker",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.accent2",
+		"value": "#FFF599",
+		"figmaName": "emphasize/accent/weaker"
+	},
+	{
+		"name": "color.intent.alternative.fill.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "intent/alternative/fill/active.background"
+	},
+	{
+		"name": "color.intent.alternative.fill.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "intent/alternative/fill/active.border"
+	},
+	{
+		"name": "shadow.intent.adjacent/focus",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "0 0 6px #2CD3B5",
+		"figmaName": "shadow.intent.adjacent/focus"
+	},
+	{
+		"name": "color.intent.alternative.fill.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "intent/alternative/fill/active.text"
+	},
+	{
+		"name": "color.intent.alternative.subtle.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "intent/alternative/subtle/active.background"
+	},
+	{
+		"name": "color.intent.alternative.subtle.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "intent/alternative/subtle/active.border"
+	},
+	{
+		"name": "color.intent.alternative.subtle.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "intent/alternative/subtle/active.text"
+	},
+	{
+		"name": "color.intent.alternative.fill.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent1",
+		"value": "#6BE0CB",
+		"figmaName": "intent/alternative/fill/hover.background"
+	},
+	{
+		"name": "color.intent.alternative.fill.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent1",
+		"value": "#6BE0CB",
+		"figmaName": "intent/alternative/fill/hover.border"
+	},
+	{
+		"name": "color.intent.alternative.fill.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/alternative/fill/hover.text"
+	},
+	{
+		"name": "color.intent.alternative.subtle.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent1",
+		"value": "#6BE0CB",
+		"figmaName": "intent/alternative/subtle/hover.background"
+	},
+	{
+		"name": "color.intent.alternative.subtle.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent1",
+		"value": "#6BE0CB",
+		"figmaName": "intent/alternative/subtle/hover.border"
+	},
+	{
+		"name": "color.intent.alternative.subtle.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/alternative/subtle/hover.text"
+	},
+	{
+		"name": "color.intent.alternative.fill.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent2",
+		"value": "#ABEDE1",
+		"figmaName": "intent/alternative/fill/base.background"
+	},
+	{
+		"name": "color.intent.alternative.fill.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent2",
+		"value": "#ABEDE1",
+		"figmaName": "intent/alternative/fill/base.border"
+	},
+	{
+		"name": "color.intent.alternative.fill.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/alternative/fill/base.text"
+	},
+	{
+		"name": "color.intent.alternative.subtle.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent1",
+		"value": "#6BE0CB",
+		"figmaName": "intent/alternative/subtle/base.border"
+	},
+	{
+		"name": "color.intent.alternative.subtle.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#333333",
+		"figmaName": "intent/alternative/subtle/base.text"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/alternative/fill/disabled.background"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/alternative/fill/disabled.border"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#737373",
+		"figmaName": "intent/alternative/fill/disabled.text"
+	},
+	{
+		"name": "color.intent.alternative.subtle.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/alternative/subtle/disabled.background"
+	},
+	{
+		"name": "color.intent.alternative.subtle.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.low-contrast.$dark",
+		"value": "#6E6E6E",
+		"figmaName": "intent/alternative/subtle/disabled.border"
+	},
+	{
+		"name": "color.intent.alternative.subtle.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled.$light",
+		"value": "#737373",
+		"figmaName": "intent/alternative/subtle/disabled.text"
+	},
+	{
+		"name": "color.intent.alternative.plain.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled",
+		"value": "#737373",
+		"figmaName": "intent/alternative/plain/disabled.text"
+	},
+	{
+		"name": "color.intent.alternative.plain.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "intent/alternative/plain/active.text"
+	},
+	{
+		"name": "color.intent.alternative.plain.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "intent/alternative/plain/hover.text"
+	},
+	{
+		"name": "color.intent.alternative.plain.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-1",
+		"value": "#1F947F",
+		"figmaName": "intent/alternative/plain/base.text"
+	},
+	{
+		"name": "color.intent.action.subtle.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.reduced",
+		"value": "#6E6E6E",
+		"figmaName": "intent/action/subtle/disabled.border"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.reduced",
+		"value": "#CECECE",
+		"figmaName": "intent/alternative/fill/disabled.text.$dark"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.reduced",
+		"value": "#737373",
+		"figmaName": "intent/alternative/fill/disabled.text.$light"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/alternative/fill/disabled.border.$dark"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/alternative/fill/disabled.border.$light"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/alternative/fill/disabled.background.$dark"
+	},
+	{
+		"name": "color.intent.alternative.fill.disabled.background.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/alternative/fill/disabled.background.$light"
+	},
+	{
+		"name": "color.emphasize.adjacent.stronger",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-2",
+		"value": "#125448",
+		"figmaName": "emphasize/adjacent/stronger"
+	},
+	{
+		"name": "color.emphasize.adjacent.strong",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent-1",
+		"value": "#1F947F",
+		"figmaName": "emphasize/adjacent/strong"
+	},
+	{
+		"name": "color.emphasize.adjacent.regular",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent0",
+		"value": "#2CD3B5",
+		"figmaName": "emphasize/adjacent/regular"
+	},
+	{
+		"name": "color.emphasize.adjacent.weak",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent1",
+		"value": "#6BE0CB",
+		"figmaName": "emphasize/adjacent/weak"
+	},
+	{
+		"name": "color.emphasize.adjacent.weaker",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.adjacent2",
+		"value": "#ABEDE1",
+		"figmaName": "emphasize/adjacent/weaker"
+	},
+	{
+		"name": "color.intent.action.plain.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.disabled",
+		"value": "#737373",
+		"figmaName": "intent/action/plain/disabled.text"
+	},
+	{
+		"name": "color.intent.action.plain.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "intent/action/plain/active.text"
+	},
+	{
+		"name": "color.intent.action.plain.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "intent/action/plain/hover.text"
+	},
+	{
+		"name": "color.intent.action.plain.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-1",
+		"value": "#087AAA",
+		"figmaName": "intent/action/plain/base.text"
+	},
+	{
+		"name": "color.intent.action.fill.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "intent/action/fill/active.background"
+	},
+	{
+		"name": "color.intent.action.fill.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "intent/action/fill/active.border"
+	},
+	{
+		"name": "shadow.intent.action/focus",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "0 0 6px #0CAEF3",
+		"figmaName": "shadow.intent.action/focus"
+	},
+	{
+		"name": "color.intent.action.fill.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.normal",
+		"value": "#F5F5F5",
+		"figmaName": "intent/action/fill/active.text"
+	},
+	{
+		"name": "color.intent.action.fill.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand1",
+		"value": "#55C6F7",
+		"figmaName": "intent/action/fill/hover.background"
+	},
+	{
+		"name": "color.intent.action.fill.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand1",
+		"value": "#55C6F7",
+		"figmaName": "intent/action/fill/hover.border"
+	},
+	{
+		"name": "color.intent.action.fill.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.normal",
+		"value": "#333333",
+		"figmaName": "intent/action/fill/hover.text"
+	},
+	{
+		"name": "color.intent.action.fill.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand2",
+		"value": "#9EDFFA",
+		"figmaName": "intent/action/fill/base.background"
+	},
+	{
+		"name": "color.intent.action.fill.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand2",
+		"value": "#9EDFFA",
+		"figmaName": "intent/action/fill/base.border"
+	},
+	{
+		"name": "color.intent.action.fill.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.normal",
+		"value": "#333333",
+		"figmaName": "intent/action/fill/base.text"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/action/fill/disabled.background"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F2F2F2",
+		"figmaName": "intent/action/fill/disabled.border"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#737373",
+		"figmaName": "intent/action/fill/disabled.text"
+	},
+	{
+		"name": "color.intent.action.subtle.active.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "intent/action/subtle/active.background"
+	},
+	{
+		"name": "color.intent.action.subtle.active.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "intent/action/subtle/active.border"
+	},
+	{
+		"name": "color.intent.action.subtle.active.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.normal",
+		"value": "#F5F5F5",
+		"figmaName": "intent/action/subtle/active.text"
+	},
+	{
+		"name": "color.intent.action.subtle.hover.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand1",
+		"value": "#55C6F7",
+		"figmaName": "intent/action/subtle/hover.background"
+	},
+	{
+		"name": "color.intent.action.subtle.hover.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand1",
+		"value": "#55C6F7",
+		"figmaName": "intent/action/subtle/hover.border"
+	},
+	{
+		"name": "color.intent.action.subtle.hover.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.normal",
+		"value": "#333333",
+		"figmaName": "intent/action/subtle/hover.text"
+	},
+	{
+		"name": "color.intent.action.subtle.base.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/action/subtle/base.background"
+	},
+	{
+		"name": "color.intent.action.subtle.base.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand1",
+		"value": "#55C6F7",
+		"figmaName": "intent/action/subtle/base.border"
+	},
+	{
+		"name": "color.intent.action.subtle.base.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.normal",
+		"value": "#333333",
+		"figmaName": "intent/action/subtle/base.text"
+	},
+	{
+		"name": "color.intent.action.subtle.disabled.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout.background",
+		"value": "#FFFFFF",
+		"figmaName": "intent/action/subtle/disabled.background"
+	},
+	{
+		"name": "color.intent.action.subtle.disabled.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.reduced",
+		"value": "#737373",
+		"figmaName": "intent/action/subtle/disabled.text"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.light.reduced",
+		"value": "#CECECE",
+		"figmaName": "intent/action/fill/disabled.text.$dark"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.text.dark.reduced",
+		"value": "#737373",
+		"figmaName": "intent/action/fill/disabled.text.$light"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/action/fill/disabled.border.$dark"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/action/fill/disabled.border.$light"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout0",
+		"value": "#6E6E6E",
+		"figmaName": "intent/action/fill/disabled.background.$dark"
+	},
+	{
+		"name": "color.intent.action.fill.disabled.background.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.layout2",
+		"value": "#F2F2F2",
+		"figmaName": "intent/action/fill/disabled.background.$light"
+	},
+	{
+		"name": "color.emphasize.action.stronger",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-2",
+		"value": "#054661",
+		"figmaName": "emphasize/action/stronger"
+	},
+	{
+		"name": "color.emphasize.action.strong",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand-1",
+		"value": "#087AAA",
+		"figmaName": "emphasize/action/strong"
+	},
+	{
+		"name": "color.emphasize.action.regular",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand0",
+		"value": "#0CAEF3",
+		"figmaName": "emphasize/action/regular"
+	},
+	{
+		"name": "color.emphasize.action.weak",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand1",
+		"value": "#55C6F7",
+		"figmaName": "emphasize/action/weak"
+	},
+	{
+		"name": "color.emphasize.action.weaker",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.brand2",
+		"value": "#9EDFFA",
+		"figmaName": "emphasize/action/weaker"
+	},
+	{
+		"name": "color.indicator.error.box.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative2",
+		"value": "#F9DBDB",
+		"figmaName": "indicator/error/box.background"
+	},
+	{
+		"name": "color.indicator.error.box.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/box.border"
+	},
+	{
+		"name": "color.indicator.error.fill.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/fill.background"
+	},
+	{
+		"name": "color.indicator.error.fill.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/fill.border"
+	},
+	{
+		"name": "color.indicator.error.outline.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/outline.border"
+	},
+	{
+		"name": "color.indicator.error.box.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/box.text"
+	},
+	{
+		"name": "color.indicator.error.fill.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "indicator/error/fill.text"
+	},
+	{
+		"name": "color.indicator.error.outline.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/outline.text"
+	},
+	{
+		"name": "color.indicator.error.outline.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative1",
+		"value": "#EE9A9A",
+		"figmaName": "indicator/error/outline.text.$dark"
+	},
+	{
+		"name": "color.indicator.error.outline.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/outline.text.$light"
+	},
+	{
+		"name": "color.indicator.error.outline.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative-1",
+		"value": "#CC2222",
+		"figmaName": "indicator/error/outline.border.$light"
+	},
+	{
+		"name": "color.indicator.error.outline.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.negative1",
+		"value": "#EE9A9A",
+		"figmaName": "indicator/error/outline.border.$dark"
+	},
+	{
+		"name": "color.indicator.warning.box.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs2",
+		"value": "#FFE299",
+		"figmaName": "indicator/warning/box.background"
+	},
+	{
+		"name": "color.indicator.warning.box.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs-1",
+		"value": "#B38000",
+		"figmaName": "indicator/warning/box.border"
+	},
+	{
+		"name": "color.indicator.warning.fill.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs-1",
+		"value": "#B38000",
+		"figmaName": "indicator/warning/fill.background"
+	},
+	{
+		"name": "color.indicator.warning.fill.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs-1",
+		"value": "#B38000",
+		"figmaName": "indicator/warning/fill.border"
+	},
+	{
+		"name": "color.indicator.warning.outline.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#B28000",
+		"figmaName": "indicator/warning/outline.border"
+	},
+	{
+		"name": "color.indicator.warning.box.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs-2",
+		"value": "#664900",
+		"figmaName": "indicator/warning/box.text"
+	},
+	{
+		"name": "color.indicator.warning.fill.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "indicator/warning/fill.text"
+	},
+	{
+		"name": "color.indicator.warning.outline.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#B28000",
+		"figmaName": "indicator/warning/outline.text"
+	},
+	{
+		"name": "color.indicator.warning.outline.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs1",
+		"value": "#FFCD4D",
+		"figmaName": "indicator/warning/outline.text.$dark"
+	},
+	{
+		"name": "color.indicator.warning.outline.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs-1",
+		"value": "#B38000",
+		"figmaName": "indicator/warning/outline.text.$light"
+	},
+	{
+		"name": "color.indicator.warning.outline.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs-1",
+		"value": "#B38000",
+		"figmaName": "indicator/warning/outline.border.$light"
+	},
+	{
+		"name": "color.indicator.warning.outline.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.higgs1",
+		"value": "#FFCD4D",
+		"figmaName": "indicator/warning/outline.border.$dark"
+	},
+	{
+		"name": "color.indicator.info.box.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral2",
+		"value": "#9EDFFA",
+		"figmaName": "indicator/info/box.background"
+	},
+	{
+		"name": "color.indicator.info.box.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral-1",
+		"value": "#087AAA",
+		"figmaName": "indicator/info/box.border"
+	},
+	{
+		"name": "color.indicator.info.fill.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral-2",
+		"value": "#054661",
+		"figmaName": "indicator/info/fill.background"
+	},
+	{
+		"name": "color.indicator.info.fill.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral-2",
+		"value": "#054661",
+		"figmaName": "indicator/info/fill.border"
+	},
+	{
+		"name": "color.indicator.info.outline.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#054661",
+		"figmaName": "indicator/info/outline.border"
+	},
+	{
+		"name": "color.indicator.info.box.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral-2",
+		"value": "#054661",
+		"figmaName": "indicator/info/box.text"
+	},
+	{
+		"name": "color.indicator.info.fill.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "indicator/info/fill.text"
+	},
+	{
+		"name": "color.indicator.info.outline.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#054661",
+		"figmaName": "indicator/info/outline.text"
+	},
+	{
+		"name": "color.indicator.info.outline.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral1",
+		"value": "#55C6F7",
+		"figmaName": "indicator/info/outline.text.$dark"
+	},
+	{
+		"name": "color.indicator.info.outline.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral-2",
+		"value": "#054661",
+		"figmaName": "indicator/info/outline.text.$light"
+	},
+	{
+		"name": "color.indicator.info.outline.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral-2",
+		"value": "#054661",
+		"figmaName": "indicator/info/outline.border.$light"
+	},
+	{
+		"name": "color.indicator.info.outline.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.neutral1",
+		"value": "#55C6F7",
+		"figmaName": "indicator/info/outline.border.$dark"
+	},
+	{
+		"name": "color.indicator.success.box.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive2",
+		"value": "#ABEDE1",
+		"figmaName": "indicator/success/box.background"
+	},
+	{
+		"name": "color.indicator.success.box.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive-2",
+		"value": "#125448",
+		"figmaName": "indicator/success/box.border"
+	},
+	{
+		"name": "color.indicator.success.fill.background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive-2",
+		"value": "#125448",
+		"figmaName": "indicator/success/fill.background"
+	},
+	{
+		"name": "color.indicator.success.fill.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive-2",
+		"value": "#125448",
+		"figmaName": "indicator/success/fill.border"
+	},
+	{
+		"name": "color.indicator.success.outline.border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#125449",
+		"figmaName": "indicator/success/outline.border"
+	},
+	{
+		"name": "color.indicator.success.box.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive-2",
+		"value": "#125448",
+		"figmaName": "indicator/success/box.text"
+	},
+	{
+		"name": "color.indicator.success.fill.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#F5F5F5",
+		"figmaName": "indicator/success/fill.text"
+	},
+	{
+		"name": "color.indicator.success.outline.text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#125449",
+		"figmaName": "indicator/success/outline.text"
+	},
+	{
+		"name": "color.indicator.success.outline.text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive1",
+		"value": "#6BE0CB",
+		"figmaName": "indicator/success/outline.text.$dark"
+	},
+	{
+		"name": "color.indicator.success.outline.text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive-2",
+		"value": "#125448",
+		"figmaName": "indicator/success/outline.text.$light"
+	},
+	{
+		"name": "color.indicator.success.outline.border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive-2",
+		"value": "#125448",
+		"figmaName": "indicator/success/outline.border.$light"
+	},
+	{
+		"name": "color.indicator.success.outline.border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "color.palette.positive1",
+		"value": "#6BE0CB",
+		"figmaName": "indicator/success/outline.border.$dark"
+	}
+]
