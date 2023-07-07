@@ -36,13 +36,15 @@ async function loadConfig(program: Command): Promise<TheemoConfig | undefined> {
       `.config/theemorc.mjs`,
       `theemo.config.js`,
       `theemo.config.cjs`,
-      `theemo.config.mjs`,
+      `theemo.config.mjs`
     ]
   });
   const result = await explorer.search();
 
   if (result === null) {
-    return program.error('Cannot find config for theemo. Please provide a config for theemo to function properly');
+    return program.error(
+      'Cannot find config for theemo. Please provide a config for theemo to function properly'
+    );
   }
 
   return result.config as TheemoConfig;
@@ -63,7 +65,6 @@ export async function cli() {
     .command('sync')
     .description('sync from your source into your token manager tool')
     .action(async () => {
-
       // config
       const config = await loadConfig(program);
 

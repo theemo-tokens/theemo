@@ -259,6 +259,9 @@ importers:
       '@theemo/fixtures':
         specifier: workspace:*
         version: link:../../../testing/fixtures
+      '@types/node':
+        specifier: ^20.4.0
+        version: 20.4.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.60.1
         version: 5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.44.0)(typescript@5.1.6)
