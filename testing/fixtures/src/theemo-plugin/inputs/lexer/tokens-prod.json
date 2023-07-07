@@ -1,0 +1,117 @@
+[
+	{
+		"name": "ref.text2",
+		"description": "",
+		"tier": "unknown",
+		"type": "text",
+		"value": ""
+	},
+	{
+		"name": "action/background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#2A50D5"
+	},
+	{
+		"name": "alternative/background.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#12544A"
+	},
+	{
+		"name": "alternative/background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#80E5D6"
+	},
+	{
+		"name": "action/border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#193080"
+	},
+	{
+		"name": "alternative/border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#092A25"
+	},
+	{
+		"name": "alternative/border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#56DCC8"
+	},
+	{
+		"name": "action/text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#D4DCF7"
+	},
+	{
+		"name": "alternative/text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#D5F6F1"
+	},
+	{
+		"name": "alternative/text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#12544A"
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#12544A"
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#092A25"
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#D5F6F1"
+	},
+	{
+		"name": "hero/background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "action/background",
+		"value": "#2A50D5"
+	},
+	{
+		"name": "hero/border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "action/border",
+		"value": "#193080"
+	},
+	{
+		"name": "hero/text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "action/text",
+		"value": "#D4DCF7"
+	}
+]

@@ -8,3 +8,5 @@
 .env
 node_modules/
 coverage/
+dist/
+.turbo/

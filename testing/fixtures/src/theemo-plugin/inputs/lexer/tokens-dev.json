@@ -1,0 +1,316 @@
+[
+	{
+		"name": "ref.text2",
+		"description": "",
+		"tier": "unknown",
+		"type": "text",
+		"value": ""
+	},
+	{
+		"name": "palette/brand/100",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#08102B",
+		"transforms": {
+			"lightness": -40
+		}
+	},
+	{
+		"name": "palette/adjacent/100",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#092A25",
+		"transforms": {
+			"lightness": -40
+		}
+	},
+	{
+		"name": "palette/brand/200",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#112055",
+		"transforms": {
+			"lightness": -30
+		}
+	},
+	{
+		"name": "palette/adjacent/200",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#12544A",
+		"transforms": {
+			"lightness": -30
+		}
+	},
+	{
+		"name": "palette/brand/300",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#193080",
+		"transforms": {
+			"lightness": -20
+		}
+	},
+	{
+		"name": "palette/adjacent/300",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#1A7F70",
+		"transforms": {
+			"lightness": -20
+		}
+	},
+	{
+		"name": "palette/brand/400",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#2240AA",
+		"transforms": {
+			"lightness": -10
+		}
+	},
+	{
+		"name": "palette/adjacent/400",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#23A995",
+		"transforms": {
+			"lightness": -10
+		}
+	},
+	{
+		"name": "palette/brand/500",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#2A50D5"
+	},
+	{
+		"name": "palette/adjacent/500",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#2CD3BA"
+	},
+	{
+		"name": "palette/brand/600",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#5573DD",
+		"transforms": {
+			"lightness": 10
+		}
+	},
+	{
+		"name": "palette/adjacent/600",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#56DCC8",
+		"transforms": {
+			"lightness": 10
+		}
+	},
+	{
+		"name": "palette/brand/700",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#7F96E6",
+		"transforms": {
+			"lightness": 20
+		}
+	},
+	{
+		"name": "palette/adjacent/700",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#80E5D6",
+		"transforms": {
+			"lightness": 20
+		}
+	},
+	{
+		"name": "palette/brand/800",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#AAB9EE",
+		"transforms": {
+			"lightness": 30
+		}
+	},
+	{
+		"name": "palette/adjacent/800",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#ABEDE3",
+		"transforms": {
+			"lightness": 30
+		}
+	},
+	{
+		"name": "palette/brand/900",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#D4DCF7",
+		"transforms": {
+			"lightness": 40
+		}
+	},
+	{
+		"name": "palette/adjacent/900",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/500",
+		"value": "#D5F6F1",
+		"transforms": {
+			"lightness": 40
+		}
+	},
+	{
+		"name": "action/background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/500",
+		"value": "#2A50D5"
+	},
+	{
+		"name": "alternative/background.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/200",
+		"value": "#12544A"
+	},
+	{
+		"name": "alternative/background.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/700",
+		"value": "#80E5D6"
+	},
+	{
+		"name": "action/border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/300",
+		"value": "#193080"
+	},
+	{
+		"name": "alternative/border.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/100",
+		"value": "#092A25"
+	},
+	{
+		"name": "alternative/border.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/600",
+		"value": "#56DCC8"
+	},
+	{
+		"name": "action/text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/brand/900",
+		"value": "#D4DCF7"
+	},
+	{
+		"name": "alternative/text.$light",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/900",
+		"value": "#D5F6F1"
+	},
+	{
+		"name": "alternative/text.$dark",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "palette/adjacent/200",
+		"value": "#12544A"
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#12544A"
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#092A25"
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"value": "#D5F6F1"
+	},
+	{
+		"name": "hero/background",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "action/background",
+		"value": "#2A50D5"
+	},
+	{
+		"name": "hero/border",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "action/border",
+		"value": "#193080"
+	},
+	{
+		"name": "hero/text",
+		"description": "",
+		"tier": "unknown",
+		"type": "color",
+		"reference": "action/text",
+		"value": "#D4DCF7"
+	}
+]

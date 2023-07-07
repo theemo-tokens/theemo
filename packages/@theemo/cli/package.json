@@ -1,0 +1,64 @@
+{
+  "name": "@theemo/cli",
+  "version": "0.0.1",
+  "description": "Theemo CLI",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "homepage": "https://theemo.io",
+  "bugs": "https://github.com/theemo-tokens/theemo/issues",
+  "repository": "https://github.com/theemo-tokens/theemo",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design system",
+    "theme",
+    "design tokens"
+  ],
+  "type": "module",
+  "bin": {
+    "theemo": "bin/theemo.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "package.json"
+  ],
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:js": "swc ./src -d ./dist",
+    "build:types": "tsc --emitDeclarationOnly",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "concurrently -r 'npm:start:*'",
+    "start:js": "swc ./src -d ./dist -w",
+    "start:types": "tsc --emitDeclarationOnly -w"
+  },
+  "dependencies": {
+    "@theemo/sync": "workspace:*",
+    "commander": "^11.0.0",
+    "cosmiconfig": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "read-pkg-up": "^10.0.0",
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {
+    "@gossi/config-eslint": "^0.4.0",
+    "@gossi/config-prettier": "^0.4.0",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.67",
+    "@types/node": "^20.3.3",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.44.0",
+    "prettier": "^2.8.5",
+    "typescript": "^5.1.6"
+  }
+}

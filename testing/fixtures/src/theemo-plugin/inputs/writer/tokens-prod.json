@@ -1,0 +1,139 @@
+[
+	{
+		"name": "ref.text2",
+		"description": "",
+		"tier": "purpose",
+		"type": "text",
+		"value": "",
+		"transient": false
+	},
+	{
+		"name": "action/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#2A50D5",
+		"transient": false
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#12544A",
+		"colorScheme": "light",
+		"transient": false
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#80E5D6",
+		"colorScheme": "dark",
+		"transient": false
+	},
+	{
+		"name": "action/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#193080",
+		"transient": false
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#092A25",
+		"colorScheme": "light",
+		"transient": false
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#56DCC8",
+		"colorScheme": "dark",
+		"transient": false
+	},
+	{
+		"name": "action/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#D4DCF7",
+		"transient": false
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#D5F6F1",
+		"colorScheme": "light",
+		"transient": false
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#12544A",
+		"colorScheme": "dark",
+		"transient": false
+	},
+	{
+		"name": "alternative/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#12544A",
+		"transient": false
+	},
+	{
+		"name": "alternative/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#092A25",
+		"transient": false
+	},
+	{
+		"name": "alternative/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"value": "#D5F6F1",
+		"transient": false
+	},
+	{
+		"name": "hero/background",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "action/background",
+		"value": "#2A50D5",
+		"transient": false
+	},
+	{
+		"name": "hero/border",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "action/border",
+		"value": "#193080",
+		"transient": false
+	},
+	{
+		"name": "hero/text",
+		"description": "",
+		"tier": "purpose",
+		"type": "color",
+		"reference": "action/text",
+		"value": "#D4DCF7",
+		"transient": false
+	}
+]

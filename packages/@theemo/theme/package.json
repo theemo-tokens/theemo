@@ -1,0 +1,57 @@
+{
+  "name": "@theemo/theme",
+  "version": "0.0.1",
+  "description": "Theemo Theme Runtine",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "homepage": "https://theemo.io",
+  "bugs": "https://github.com/theemo-tokens/theemo/issues",
+  "repository": "https://github.com/theemo-tokens/theemo",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design system",
+    "theme"
+  ],
+  "files": [
+    "dist"
+  ],
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    "package.json": "./package.json",
+    "index.js": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "concurrently -r 'npm:build:*'",
+    "build:js": "swc ./src -d ./dist",
+    "build:types": "tsc --emitDeclarationOnly",
+    "_lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "_lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "concurrently -r 'npm:start:*'",
+    "start:js": "swc ./src -d ./dist -w",
+    "start:types": "tsc --emitDeclarationOnly -w"
+  },
+  "dependencies": {
+    "@theemo/core": "workspace:*",
+    "type-fest": "^3.12.0"
+  },
+  "devDependencies": {
+    "@alex_neo/jest-expect-message": "^1.0.5",
+    "@babel/core": "^7.22.5",
+    "@gossi/config-eslint": "^0.4.0",
+    "@gossi/config-prettier": "^0.4.0",
+    "@jest/globals": "^29.5.0",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.67",
+    "@swc-node/jest": "^1.6.6",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.44.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
+  }
+}

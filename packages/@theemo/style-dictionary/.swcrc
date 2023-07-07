@@ -1,0 +1,16 @@
+{
+  "sourceMaps": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": false,
+      "dynamicImport": true
+    },
+    "target": "es2019",
+    "loose": true
+  },
+  "module": {
+    "type": "es6"
+  }
+}
