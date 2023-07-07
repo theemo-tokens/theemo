@@ -26,8 +26,11 @@
     "build": "concurrently -r 'npm:build:*'",
     "build:js": "swc ./src -d ./dist",
     "build:types": "tsc --emitDeclarationOnly",
+    "_lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "_lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
     "start": "concurrently -r 'npm:start:*'",
     "start:js": "swc ./src -d ./dist -w",
     "start:types": "tsc --emitDeclarationOnly -w"

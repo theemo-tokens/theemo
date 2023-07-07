@@ -30,6 +30,8 @@
     "build": "concurrently -r 'npm:build:*'",
     "build:js": "swc ./src -d ./dist",
     "build:types": "tsc --emitDeclarationOnly --project tsconfig.dts.json",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
