@@ -11,11 +11,18 @@
     "clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
     "_start": "turbo run --parallel --filter='@theemo/*' start",
     "start": "pnpm run --parallel --filter='@theemo/*' start",
-    "test": "pnpm run --filter theemo test",
+    "test": "pnpm run --filter '@theemo/*' test",
     "coverage": "pnpm run --filter theemo coverage",
     "api": "pnpm run --filter theemo api",
-    "_build": "turbo run --allowCycles --filter='@theemo/*' build",
-    "build": "pnpm run --parallel --filter='@theemo/*' build"
+    "build": "pnpm run build:core && pnpm run build:sync && pnpm run build:figma && pnpm run build:style-dictionary && pnpm run build:cli",
+    "build:core": "pnpm run --filter='@theemo/core' build",
+    "build:sync": "pnpm run --filter='@theemo/sync' build",
+    "build:figma": "pnpm run --filter='@theemo/figma' build",
+    "build:style-dictionary": "pnpm run --filter='@theemo/style-dictionary' build",
+    "build:cli": "pnpm run --filter='@theemo/cli' build",
+    "build:fixtures": "pnpm run --filter='@theemo/fixtures' build",
+    "__build": "pnpm run --filter='@theemo/*' --filter='!@theemo/fixtures' --filter='!@theemo/theme' build",
+    "_build": "pnpm run --parallel --filter='@theemo/*' build"
   },
   "devDependencies": {
     "@release-it-plugins/workspaces": "^3.2.0",

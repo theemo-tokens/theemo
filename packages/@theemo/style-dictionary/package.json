@@ -34,7 +34,8 @@
     "start": "concurrently -r 'npm:start:*'",
     "start:js": "swc ./src -d ./dist -w",
     "start:types": "tsc --emitDeclarationOnly --project tsconfig.dts.json -w",
-    "test": "vitest"
+    "test": "vitest run",
+    "test:dev": "vitest"
   },
   "dependencies": {
     "@theemo/core": "workspace:*",

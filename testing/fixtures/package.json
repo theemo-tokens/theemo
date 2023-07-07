@@ -39,7 +39,8 @@
     "@theemo/core": "workspace:*",
     "@theemo/sync": "workspace:*",
     "@theemo/figma": "workspace:*",
-    "@theemo/style-dictionary": "workspace:*"
+    "@theemo/style-dictionary": "workspace:*",
+    "pkg-dir": "^7.0.0"
   },
   "devDependencies": {
     "@gossi/config-eslint": "^0.4.0",

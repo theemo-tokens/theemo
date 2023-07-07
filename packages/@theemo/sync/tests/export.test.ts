@@ -40,13 +40,13 @@ const scenarios: Scenario[] = [
     `${FIXTURES_HOME}/theemo-plugin/inputs/writer/tokens-dev.json`
   ],
   [
-    'Moana (Prod)',
+    'Hokulea (Prod)',
     HOKULEA_INPUT_LEXER_TOKENS_PROD as Token[],
     HOKULEA_LEXER_CONFIG,
     `${FIXTURES_HOME}/hokulea/inputs/writer/tokens-prod.json`
   ],
   [
-    'Moana (Dev)',
+    'Hokulea (Dev)',
     HOKULEA_INPUT_LEXER_TOKENS_DEV as Token[],
     HOKULEA_LEXER_CONFIG,
     `${FIXTURES_HOME}/hokulea/inputs/writer/tokens-dev.json`
