@@ -20,7 +20,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "rehype-katex": "6",
-    "remark-math": "3",
+    "remark-math": "5",
     "super-theemo-theme": "workspace:*"
   },
   "browserslist": {
