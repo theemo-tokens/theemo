@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@release-it-plugins/workspaces':
-        specifier: ^3.2.0
-        version: 3.2.0(release-it@16.0.0)
+        specifier: ^4.0.0
+        version: 4.0.0(release-it@16.0.0)
       concurrently:
         specifier: ^8.2.0
         version: 8.2.0
@@ -4039,16 +4039,16 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: false
 
-  /@release-it-plugins/workspaces@3.2.0(release-it@16.0.0):
-    resolution: {integrity: sha512-ooEIgwb4qwGFQa9kXoTaQDHgD2Vymy5Z/aKL1JefnVUg1hiKL8Lh5fEfkDXggeXetTYk+SaFm2YNLrVOarX+Kw==}
-    engines: {node: '>= 14'}
+  /@release-it-plugins/workspaces@4.0.0(release-it@16.0.0):
+    resolution: {integrity: sha512-79qsR770mvuQeTSMnOjrEJuJHQ4x1KyUkZjqCOQ/UxjK+igNYYDsLK26LpKTweeTjpbpmLYaOg6bl+28M5CO0A==}
+    engines: {node: '>= 16'}
     peerDependencies:
-      release-it: ^14.0.0 || ^15.2.0
+      release-it: ^14.0.0 || ^15.2.0 || ^16.0.0
     dependencies:
       detect-indent: 6.1.0
       detect-newline: 3.1.0
       release-it: 16.0.0
-      semver: 7.3.8
+      semver: 7.5.3
       url-join: 4.0.1
       validate-peer-dependencies: 1.2.0
       walk-sync: 2.2.0
