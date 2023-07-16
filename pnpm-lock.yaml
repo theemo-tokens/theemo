@@ -287,8 +287,8 @@ importers:
         specifier: workspace:*
         version: link:../core
       type-fest:
-        specifier: ^3.12.0
-        version: 3.12.0
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       '@alex_neo/jest-expect-message':
         specifier: ^1.0.5
@@ -16059,6 +16059,11 @@ packages:
   /type-fest@3.12.0:
     resolution: {integrity: sha512-qj9wWsnFvVEMUDbESiilKeXeHL7FwwiFcogfhfyjmvT968RXSvnl23f1JOClTHYItsi7o501C/7qVllscUP3oA==}
     engines: {node: '>=14.16'}
+    dev: false
+
+  /type-fest@4.0.0:
+    resolution: {integrity: sha512-d/oYtUnPM9zar2fqqGLYPzgcY0qUlYK0evgNVti93xpzfjGkMgZHu9Lvgrkn0rqGXTgsFRxFamzjGoD9Uo+dgw==}
+    engines: {node: '>=16'}
     dev: false
 
   /type-is@1.6.18:
