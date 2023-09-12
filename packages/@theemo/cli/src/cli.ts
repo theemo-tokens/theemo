@@ -28,15 +28,12 @@ async function loadPackage() {
 async function loadConfig(program: Command): Promise<TheemoConfig | undefined> {
   const explorer = cosmiconfig('theemo', {
     searchPlaces: [
-      `.theemorc.js`,
-      `.theemorc.cjs`,
-      `.theemorc.mjs`,
-      `.config/theemorc.js`,
-      `.config/theemorc.cjs`,
-      `.config/theemorc.mjs`,
-      `theemo.config.js`,
-      `theemo.config.cjs`,
-      `theemo.config.mjs`
+      '.config/theemo.js',
+      '.config/theemo.cjs',
+      '.config/theemo.mjs',
+      'theemo.config.js',
+      'theemo.config.cjs',
+      'theemo.config.mjs'
     ]
   });
   const result = await explorer.search();

@@ -1,3 +1,5 @@
+import type { ReferenceValue, TokenType, ValueFor } from './token-types.js';
+
 /**
  * The usage level of a token
  *
@@ -47,7 +49,7 @@ export enum TokenTier {
  * That is, figma is subclassing this with its own token and specific
  * figma-related properties.
  */
-export interface BaseToken {
+export interface Token<T extends TokenType = 'unknown'> {
   // Generic Properties
 
   /**
@@ -82,63 +84,15 @@ export interface BaseToken {
    * the appropriate format.
    *
    * @remarks
+   *
    * Resources:
    *
-   * - {@link https://tr.designtokens.org/format/#type-0 | Design Tokens Format Module}
-   *
+   * - {@link https://tr.designtokens.org/format/#types | Design Tokens Format Module}
    * - {@link https://www.designtokens.org/glossary/#design-token-type | DTCG Glossary (Design Token Type)}
-   *
-   * - {@link
-   *   https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item
-   *   | Style-Dictionary}
-   *
-   * - {@link
-   *   https://github.com/salesforce-ux/theo#supported-categories
-   *   | Theo}
+   * - {@link https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item | Style-Dictionary}
+   * - {@link https://github.com/salesforce-ux/theo#supported-categories | Theo}
    */
-  type?: string;
-
-  // context
-
-  /**
-   * Indicates the color scheme, to which the token belongs
-   *
-   * @remarks
-   * Given the category is a color, then color scheme becomes relevant.
-   * Since OS more and more adopting light and dark mode, there is also support
-   * coming from browsers to detect for it and provide switchting mechanisms
-   *
-   * References:
-   *
-   * - {@link
-   *   https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
-   *   | @media (prefers-color-scheme) on MDN}
-   */
-  colorScheme?: string;
-
-  // /**
-  //  * Given the category is color, then color scheme becomes relevant.
-  //  * For accessibility reasons, users may set their preference in OS/browsers.
-  //  * With media queries this can be queried for and a wished preference can be provided.
-  //  *
-  //  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
-  //  */
-  // contrast: string;
-
-  /**
-   * The name of the reference this token points to
-   */
-  reference?: string;
-}
-
-/**
- * The token interface as they are returned from the reader(s).
- */
-export interface Token extends BaseToken {
-  /**
-   * The tier describes the usage level of a token
-   */
-  tier: TokenTier;
+  type?: T | TokenType;
 
   /**
    * The tokens computed value
@@ -149,7 +103,17 @@ export interface Token extends BaseToken {
    *
    * - {@link https://www.designtokens.org/glossary/#design-token-value  | DTCG Glossary (Design Token Value)}
    */
-  value?: string;
+  value?: ValueFor<T> | ReferenceValue;
+
+  /**
+   * The name of the reference this token points to
+   */
+  reference?: string;
+
+  /**
+   * The tier describes the usage level of a token
+   */
+  tier?: TokenTier;
 
   /**
    * Optional transforms to run on the reference token

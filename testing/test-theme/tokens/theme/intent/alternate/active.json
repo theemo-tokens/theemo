@@ -1,0 +1,29 @@
+{
+  "intent": {
+    "alternate": {
+      "active": {
+        "background": {
+          "$value": "#8c750d",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.active.background}",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.alternate.base.text}",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

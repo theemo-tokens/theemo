@@ -1,8 +1,8 @@
-import { figmaReader, theemoPlugin } from '@theemo/figma';
+import { figmaReader, getNameFromStyle, theemoPlugin } from '@theemo/figma';
 import { styleDictionaryWriter } from '@theemo/style-dictionary';
 import { defineConfig } from '@theemo/cli';
 
-const { FIGMA_FILE, FIGMA_SECRET, JSONBIN_FILE, JSONBIN_SECRET } = process.env;
+const { FIGMA_FILE, FIGMA_SECRET } = process.env;
 
 function normalizeName(name) {
   // lowercase all things
@@ -36,15 +36,24 @@ export default defineConfig({
         files: [FIGMA_FILE],
 
         plugins: [
-          theemoPlugin({
-            jsonbinFile: JSONBIN_FILE,
-            jsonbinSecret: JSONBIN_SECRET,
-            formats: {
-              color: 'hex',
-              colorAlpha: 'rgb'
+          theemoPlugin()
+        ],
+
+        parser: {
+          getConstraints(mode) {
+            if (mode === 'light' || mode === 'dark') {
+              return { features: { 'color-scheme': mode } };
             }
-          })
-        ]
+          },
+
+          getNameFromStyle(style) {
+            if (style.styleType === 'TEXT') {
+              style.name = `typography/${style.name}`;
+            }
+
+            return getNameFromStyle(style);
+          }
+        }
       })
     },
 
@@ -56,13 +65,6 @@ export default defineConfig({
         normalized.name = normalizeName(normalized.name);
         if (normalized.reference) {
           normalized.reference = normalizeName(normalized.reference);
-        }
-
-        // normalize contexts
-        const tokenContextIndex = normalized.name.indexOf('.$');
-        if (tokenContextIndex !== -1) {
-          normalized.colorScheme = normalized.name.slice(tokenContextIndex + 2);
-          normalized.name = normalized.name.slice(0, tokenContextIndex);
         }
 
         return normalized;

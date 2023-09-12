@@ -24,7 +24,7 @@ export class TokenCollection<T = Token> extends Set<T> {
   }
 
   merge(tokens: TokenCollection<T>): TokenCollection<T> {
-    const allTokens = new TokenCollection<T>();
+    const allTokens = new TokenCollection<T>(this);
 
     for (const token of tokens.values()) {
       // merge

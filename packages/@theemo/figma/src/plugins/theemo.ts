@@ -1,185 +1,233 @@
-import Color from 'color';
-import isEmpty from 'lodash.isempty';
-import fetch from 'node-fetch';
+import { TokenCollection } from '@theemo/core';
 
-import { colorToValue, getValue } from '../token.js';
+import { mapVariablesWithCollection, parseVariables } from '../figma-variables.js';
 
-import type { ColorConfig } from '../config.js';
+import type { FigmaVariable, Variable, VariableCollection } from '../-figma-variable-types.js';
+import type { FigmaParserConfigWithDefaults } from '../config.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
-import type { Token, TokenCollection } from '@theemo/core';
-import type { Style } from 'figma-api';
+import type { ColorTransform, ComputedValue, ConstrainedValue, TokenType } from '@theemo/core';
+import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
-export type Transforms = Partial<Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>>;
+export type PaintTransforms = Partial<
+  Record<'hue' | 'saturation' | 'lightness' | 'opacity', number>
+>;
 
-interface Data {
-  transforms?: Transforms;
+function paintToColorTransforms(paint: PaintTransforms): ColorTransform {
+  const colorTransforms: ColorTransform = {
+    ...paint
+  };
+
+  if (paint.opacity) {
+    // @ts-expect-error opacity is invalidly copied over
+    delete colorTransforms['opacity'];
+    colorTransforms['alpha'] = paint['opacity'];
+  }
+
+  return colorTransforms;
 }
 
-interface StyleRef {
-  from: {
-    id: string;
-    name: string;
-  };
-  to: {
-    id: string;
-    name: string;
-  };
+function matches(haystack: Record<string, unknown>, needle: Record<string, unknown>) {
+  Object.keys(needle).every(
+    (key) =>
+      Object.hasOwn(haystack, key) &&
+      (typeof haystack[key] === 'object' && typeof needle[key] === 'object'
+        ? matches(haystack[key] as Record<string, unknown>, needle[key] as Record<string, unknown>)
+        : haystack[key] === needle[key])
+  );
+}
+
+export type Transforms = PaintTransforms; // or NumericTransforms
+
+export interface StyleConfig {
+  styleId: string;
+  /** Id of the referenced style */
+  referenceId: string;
+}
+
+export interface VariableConfig {
+  variableId: string;
+  modeId: string;
+  /** Id of the referenced variable */
+  referenceId: string;
   transforms: Transforms;
 }
 
-interface RefNode {
-  node: string;
-  fill?: StyleRef;
-  stroke?: StyleRef;
-  effect?: StyleRef;
+export interface Config {
+  styles: StyleConfig[];
+  variables: VariableConfig[];
 }
 
-interface ReferenceDoc {
-  document: {
-    id: string;
-    name: string;
-  };
-  nodes: RefNode[];
+const CONFIG = '.theemo/config';
+
+function getKeyFromStyleId(id: string) {
+  return id.replace('S:', '').replace(',', '');
 }
 
-export interface FigmaTheemoPluginConfig {
-  jsonbinFile: string;
-  jsonbinSecret: string;
-  formats: ColorConfig;
+function getStyleIdFromKey(key: string) {
+  return `S:${key},`;
 }
+
+interface PluginData {
+  variables: string;
+  variableCollections: string;
+  version: string;
+}
+
+type Variables = Record<string, Variable>;
+type VariableCollections = Record<string, VariableCollection>;
 
 export class TheemoPlugin implements Plugin {
-  private config: FigmaTheemoPluginConfig;
-  private references!: ReferenceDoc;
+  // private declare file: GetFileResult;
+  private declare parserConfig: FigmaParserConfigWithDefaults;
 
-  constructor(config: FigmaTheemoPluginConfig) {
-    this.config = config;
+  // config found in `.theemo/config`
+  private styleConfig: StyleConfig[] = [];
+  private variableConfig: VariableConfig[] = [];
+
+  setup(config: FigmaParserConfigWithDefaults): void {
+    this.parserConfig = config;
   }
 
-  async setup(): Promise<void> {
-    if (!this.references) {
-      this.references = (await this.load()) as ReferenceDoc;
+  getPluginData(): string {
+    return '791262205400516364';
+  }
+
+  parse(file: GetFileResult) {
+    const configStyle = Object.values(file.styles).find((style) => style.name === CONFIG);
+
+    if (configStyle) {
+      const theemoConfig = JSON.parse(configStyle.description ?? '{}') as Config;
+
+      this.styleConfig = theemoConfig.styles;
+      this.variableConfig = theemoConfig.variables;
     }
+
+    return this.parseVariables(file);
   }
 
-  private async load() {
-    // read references from jsonbin.io
-    const response = await fetch(`https://api.jsonbin.io/v3/b/${this.config.jsonbinFile}`, {
-      headers: {
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        'X-Access-Key': this.config.jsonbinSecret,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
-        'X-Bin-Meta': 'false'
+  private parseVariables(file: GetFileResult): TokenCollection<FigmaToken> {
+    let tokens = new TokenCollection<FigmaToken>();
+    const pluginData = file.document.pluginData[this.getPluginData()] as PluginData;
+
+    if (pluginData) {
+      const variables = (JSON.parse(pluginData.variables) ?? {}) as Variables;
+      const collections = (JSON.parse(pluginData.variableCollections) ?? {}) as VariableCollections;
+      const figmaVariables = mapVariablesWithCollection(
+        Object.values(variables),
+        Object.values(collections)
+      );
+
+      tokens = tokens.merge(parseVariables(figmaVariables, file, this.parserConfig));
+
+      // add transforms
+      for (const token of tokens) {
+        const variable = token.figma.variable as FigmaVariable;
+        const varConfig = this.variableConfig.find((varConf) => varConf.variableId === variable.id);
+
+        // found a theemo variable config for this token
+        if (varConfig) {
+          const mode = variable.collection.modes.find(
+            (modeObject) => modeObject.modeId === varConfig.modeId
+          );
+
+          // found the mode in question
+          if (mode) {
+            let foundIndex: number | boolean = false;
+            let value: ComputedValue<TokenType> | undefined = undefined;
+
+            // value is a computed value
+            if (typeof token.value === 'object') {
+              value = token.value as ComputedValue<TokenType>;
+            }
+
+            // value is constrained, find by matching constraints
+            else if (Array.isArray(token.value)) {
+              const constraints = this.parserConfig.getConstraints?.(mode.name, variable) ?? {};
+
+              if (!constraints || Object.keys(constraints).length === 0) {
+                console.log('No Constraints found for ', variable.name, 'with mode: ', mode.name);
+              } else {
+                value = (token.value as ComputedValue<TokenType>[]).find(
+                  (val) =>
+                    typeof val === 'object' &&
+                    matches(val as ConstrainedValue<TokenType>, constraints)
+                ) as ComputedValue<TokenType>;
+
+                foundIndex = token.value.indexOf(value);
+              }
+            }
+
+            // anyway
+            else {
+              value = {
+                value: token.value
+              };
+            }
+
+            // found the matching value
+            if (value) {
+              // attach transforms
+              if (varConfig.transforms) {
+                (value as ComputedValue<TokenType>).transforms = paintToColorTransforms(
+                  varConfig.transforms
+                );
+              }
+
+              // set value to a reference
+              if (varConfig.referenceId) {
+                const ref = figmaVariables.find((refVar) => refVar.id === varConfig.referenceId);
+
+                // ref found and matched token
+                if (ref && this.parserConfig.isTokenByVariable(ref)) {
+                  (
+                    value as ComputedValue<TokenType>
+                  ).value = `{${this.parserConfig.getNameFromVariable(ref)}}`;
+                }
+              }
+
+              if (Array.isArray(token.value) && foundIndex !== false) {
+                token.value[foundIndex] = value;
+              } else {
+                token.value = value;
+              }
+            }
+          }
+        }
       }
-    });
+    }
 
-    return response.json();
-  }
-
-  parseStyle(token: FigmaToken, style: Style): void {
-    const styleType = style.styleType.toLowerCase();
-
-    token.data = this.findData(style.name, styleType);
-    token.figmaReference = this.findReference(style.name, styleType);
+    return tokens;
   }
 
   resolve(token: FigmaToken, tokens: TokenCollection<FigmaToken>): FigmaToken {
-    if (token.figmaReference) {
-      const referenceToken = tokens.find((t) => t.figmaName === token.figmaReference);
+    if (!token.figma.style) {
+      return token;
+    }
 
-      token.reference = referenceToken ? referenceToken.name : undefined;
-      token.referenceToken = referenceToken;
+    // find style in `.theemo/config`
+    const styleId = getStyleIdFromKey(token.figma.style.key);
+    const refConfig = this.styleConfig.find((style) => style.styleId === styleId);
+
+    if (refConfig) {
+      // find referenced style
+      const refKey = getKeyFromStyleId(refConfig.referenceId);
+      const refStyle = Object.values(token.figma.file.styles).find((style) => style.key === refKey);
+
+      if (refStyle) {
+        // find token for referenced style
+        const referenceToken = tokens.find((t) => t.figma.style?.name === refStyle.name);
+
+        if (referenceToken) {
+          token.value = `{${referenceToken.name}}`;
+        }
+      }
     }
 
     return token;
   }
-
-  private findReference(name: string, type: string): string | undefined {
-    const nodeReference = this.references.nodes.find((node) => {
-      return (
-        node[type as keyof RefNode] && (node[type as keyof RefNode] as StyleRef)?.to.name === name
-      );
-    });
-
-    if (nodeReference) {
-      return (nodeReference[type as keyof RefNode] as StyleRef)?.from.name;
-    }
-
-    return undefined;
-  }
-
-  private findData(name: string, type: string): Data | undefined {
-    const nodeReference = this.references.nodes.find((node) => {
-      return (
-        node[type as keyof RefNode] && (node[type as keyof RefNode] as StyleRef)?.to.name === name
-      );
-    });
-
-    if (nodeReference) {
-      const transforms = (nodeReference[type as keyof RefNode] as StyleRef)?.transforms;
-
-      if (!isEmpty(transforms)) {
-        return {
-          transforms
-        };
-      }
-    }
-
-    return undefined;
-  }
-
-  getProperties(token: FigmaToken): Partial<Token> {
-    const properties: Partial<Token> = {
-      reference: token.reference,
-      value: this.getValue(token)
-    };
-
-    if (token.data && (token.data as Data).transforms) {
-      properties.transforms = (token.data as Data).transforms;
-    }
-
-    return properties;
-  }
-
-  private getValue(token: FigmaToken): string {
-    let value = token.referenceToken
-      ? this.getValue(token.referenceToken)
-      : getValue(token, this.config.formats);
-
-    if (token.data && (token.data as Data).transforms) {
-      value = colorToValue(
-        this.applyTransforms(value, (token.data as Data).transforms as Transforms),
-        this.config.formats
-      );
-    }
-
-    return value;
-  }
-
-  private applyTransforms(value: string, transforms: Transforms) {
-    let c = Color(value);
-
-    if (transforms.hue) {
-      c = c.rotate(transforms.hue);
-    }
-
-    if (transforms.saturation) {
-      c = c.saturationl(c.saturationl() + transforms.saturation);
-    }
-
-    if (transforms.lightness) {
-      c = c.lightness(c.lightness() + transforms.lightness);
-    }
-
-    if (transforms.opacity) {
-      c = c.alpha(c.alpha() + transforms.opacity / 100);
-    }
-
-    return c;
-  }
 }
 
-export function theemoPlugin(config: FigmaTheemoPluginConfig): Plugin {
-  return new TheemoPlugin(config);
+export function theemoPlugin(): Plugin {
+  return new TheemoPlugin();
 }

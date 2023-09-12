@@ -1,0 +1,29 @@
+{
+  "intent": {
+    "action": {
+      "hover": {
+        "background": {
+          "$value": "#b61616",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        },
+        "border": {
+          "$value": "#b61616",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.action.base.text}",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "brand": {
+    "background": {
+      "$value": "#e41b1b",
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "color"
+    },
+    "text": {
+      "$value": "#ffec40",
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "color"
+    }
+  }
+}

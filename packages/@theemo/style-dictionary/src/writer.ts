@@ -58,17 +58,14 @@ export default class StyleDictionaryWriter {
 
   private buildToken(token: Token, allTokens: TokenCollection): Record<string, unknown> {
     const data: Record<string, unknown> = {
-      value: this.getValue(token, allTokens),
+      $value: this.getValue(token, allTokens),
+      $description: token.description,
       comment: token.description,
-      colorScheme: token.colorScheme,
       ...this.getTokenData(token)
     };
 
     if (token.type) {
-      data.type = token.type;
-      data.attributes = {
-        category: token.type
-      };
+      data.$type = token.type;
     }
 
     return data;

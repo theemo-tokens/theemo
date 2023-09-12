@@ -1,0 +1,88 @@
+{
+  "typography": {
+    "prose": {
+      "$value": {
+        "fontFamily": "Raleway",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "letterSpacing": "0",
+        "lineHeight": "0.85",
+        "textTransform": "none"
+      },
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "typography"
+    },
+    "display1": {
+      "$value": {
+        "fontFamily": "Patua One",
+        "fontSize": "48px",
+        "fontWeight": 400,
+        "letterSpacing": "0",
+        "lineHeight": "0.82",
+        "textTransform": "uppercase"
+      },
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "typography"
+    },
+    "display2": {
+      "$value": {
+        "fontFamily": "Patua One",
+        "fontSize": "36px",
+        "fontWeight": 400,
+        "letterSpacing": "0",
+        "lineHeight": "0.82",
+        "textTransform": "none"
+      },
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "typography"
+    },
+    "displayprose": {
+      "$value": {
+        "fontFamily": "Patua One",
+        "fontSize": "16px",
+        "fontWeight": 400,
+        "letterSpacing": "0",
+        "lineHeight": "0.82",
+        "textTransform": "uppercase"
+      },
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "typography"
+    },
+    "heading1": {
+      "$value": {
+        "fontFamily": "Raleway",
+        "fontSize": "36px",
+        "fontWeight": 600,
+        "letterSpacing": "0",
+        "lineHeight": "0.85",
+        "textTransform": "none"
+      },
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "typography"
+    },
+    "heading2": {
+      "$value": {
+        "fontFamily": "Raleway",
+        "fontSize": "30px",
+        "fontWeight": 500,
+        "letterSpacing": "0",
+        "lineHeight": "0.85",
+        "textTransform": "none"
+      },
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "typography"
+    }
+  }
+}

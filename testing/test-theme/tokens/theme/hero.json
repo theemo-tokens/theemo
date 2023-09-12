@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "background": {
+      "$value": "#d1e6fa",
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "color"
+    },
+    "heading": {
+      "background": {
+        "$value": "{brand.background}",
+        "$description": "",
+        "comment": "",
+        "transient": false,
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{brand.text}",
+        "$description": "",
+        "comment": "",
+        "transient": false,
+        "$type": "color"
+      }
+    },
+    "text": {
+      "$value": "{text.normal}",
+      "$description": "",
+      "comment": "",
+      "transient": false,
+      "$type": "color"
+    }
+  }
+}

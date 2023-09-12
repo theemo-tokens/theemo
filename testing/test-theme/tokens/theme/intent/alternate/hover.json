@@ -1,0 +1,29 @@
+{
+  "intent": {
+    "alternate": {
+      "hover": {
+        "background": {
+          "$value": "#bb9c11",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.hover.background}",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.alternate.base.text}",
+          "$description": "",
+          "comment": "",
+          "transient": false,
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

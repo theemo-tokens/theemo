@@ -1,5 +1,7 @@
+import type { FigmaVariable, Variable } from './-figma-variable-types.js';
 import type { Plugin } from './plugin.js';
 import type { FigmaToken } from './token.js';
+import type { Constraints, TokenType, TokenValue } from '@theemo/core';
 import type { Node, Style } from 'figma-api';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
@@ -19,33 +21,10 @@ export interface ColorConfig {
   colorAlpha: ColorAlphaFormat;
 }
 
-export interface ColorNode {
-  r: number;
-  g: number;
-  b: number;
-  a: number;
-  visible: boolean;
-}
-
-export interface ShadowNode {
-  inner: boolean;
-  x: number;
-  y: number;
-  radius: number;
-  color: ColorNode;
-}
-
-/**
- * Config for Figma as a `ReaderTool`
- */
-export interface FigmaReaderConfig {
-  /** The secret for the figma file, get it though ENV */
-  secret: string;
-
-  /** The URL for the figma file, get it though ENV */
-  files: string[];
-
-  plugins: Plugin[];
+export interface FigmaParserConfig {
+  //
+  // style tokens
+  //
 
   /**
    * This is to verify that a given `Style` node found in figmas node tree is
@@ -57,6 +36,10 @@ export interface FigmaReaderConfig {
    * To retrieve the name for a token from a `Style`
    */
   getNameFromStyle?: (style: Style) => string;
+
+  //
+  // text node tokens
+  //
 
   /**
    * This is to verify that a given `Node`found in figmas node tree is
@@ -72,20 +55,50 @@ export interface FigmaReaderConfig {
   /**
    * To retrieve the value for a token from a `Node`
    */
-  getValueFromText?: (node: Node<'TEXT'>) => string;
+  getValueFromText?: (node: Node<'TEXT'>) => TokenValue<'unknown'>;
+
+  //
+  // variable tokens
+  //
+
+  isTokenByVariable?: (variable: FigmaVariable) => boolean;
+
+  getNameFromVariable?: (variable: FigmaVariable) => string;
+
+  considerMode?: (mode: string) => boolean;
+
+  getConstraints?: (mode: string, variable: FigmaVariable) => void | Constraints;
+
+  //
+  // misc
+  //
 
   /**
    * To retrieve the type of a token
    */
-  getTypeFromToken?: (token: FigmaToken) => string | undefined;
+  getTypeFromToken?: (token: FigmaToken) => TokenType;
 
   /**
    * Add properties relevant for you to the token
    */
-  getPropertiesForToken?: (
-    token: FigmaToken,
-    document: GetFileResult
-  ) => Record<string, unknown> | undefined;
+  getPropertiesForToken?: (token: FigmaToken, document: GetFileResult) => Record<string, unknown>;
+
+  formats?: ColorConfig;
+}
+
+/**
+ * Config for Figma as a `ReaderTool`
+ */
+export interface FigmaReaderConfig {
+  /** The secret for the figma file, get it though ENV */
+  secret: string;
+
+  /** The URL for the figma file, get it though ENV */
+  files: string[];
+
+  plugins: Plugin[];
+
+  parser: FigmaParserConfig;
 }
 
 export interface FigmaConfig {
@@ -107,34 +120,66 @@ type SubType<Base, Condition> = Pick<Base, AllowedNames<Base, Condition>>;
 
 type OptionalKeys<T> = Exclude<keyof T, NonNullable<keyof SubType<Undefined<T>, never>>>;
 
-type DefaultFigmaReaderConfig = Pick<FigmaReaderConfig, OptionalKeys<FigmaReaderConfig>>;
+type DefaultFigmaParserConfig = Omit<
+  Required<Pick<FigmaParserConfig, OptionalKeys<FigmaParserConfig>>>,
+  'getPropertiesForToken' | 'getConstraints'
+>;
 
-export const DEFAULT_CONFIG: DefaultFigmaReaderConfig = {
-  isTokenByStyle: (style: Style) => {
-    return !style.name.startsWith('.');
-  },
+export type FigmaParserConfigWithDefaults = FigmaParserConfig & DefaultFigmaParserConfig;
 
-  getNameFromStyle: (style: Style) => {
-    return style.name.replaceAll('/', '.');
-  },
+export function isTokenByStyle(style: Style) {
+  return !style.name.startsWith('.');
+}
 
-  isTokenByText: (_node: Node<'TEXT'>) => {
+export function getNameFromStyle(style: Style) {
+  return style.name
+    .replaceAll('/', '.')
+    .replace(/^\.(.+)/, '$1')
+    .toLowerCase();
+}
+
+export function isTokenByText() {
+  return false;
+}
+
+export function getNameFromText(node: Node<'TEXT'>) {
+  return node.name.toLowerCase();
+}
+
+export function getValueFromText(node: Node<'TEXT'>) {
+  return node.characters;
+}
+
+export function isTokenByVariable(variable: Variable) {
+  return !variable.hiddenFromPublishing && variable.resolvedType !== 'BOOLEAN';
+}
+
+export function getNameFromVariable(variable: FigmaVariable) {
+  return variable.name.replaceAll('/', '.').toLowerCase();
+}
+
+/**
+ * To retrieve the type of a token
+ */
+export function getTypeFromToken(token: FigmaToken) {
+  return token.type as TokenType;
+}
+
+export const DEFAULT_PARSER_CONFIG: DefaultFigmaParserConfig = {
+  isTokenByStyle,
+  getNameFromStyle,
+  isTokenByText,
+  getNameFromText,
+  getValueFromText,
+  isTokenByVariable,
+  getNameFromVariable,
+  getTypeFromToken,
+  considerMode() {
     return false;
   },
-
-  getNameFromText: (node: Node<'TEXT'>) => {
-    return node.name;
-  },
-
-  getValueFromText: (node: Node<'TEXT'>) => {
-    return node.characters;
-  },
-
-  /**
-   * To retrieve the type of a token
-   */
-  getTypeFromToken: (token: FigmaToken) => {
-    return token.type as string;
+  formats: {
+    color: ColorFormat.Hex,
+    colorAlpha: ColorAlphaFormat.Rgb
   }
 };
 
