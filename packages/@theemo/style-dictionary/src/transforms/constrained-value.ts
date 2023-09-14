@@ -1,4 +1,5 @@
-import type { TokenType } from '@theemo/tokens';
+import { isConstrainedValue, type TokenType } from '@theemo/tokens';
+
 import type StyleDictionary from 'style-dictionary';
 
 export const deconstrainValue: StyleDictionary.Transform = {
