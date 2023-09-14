@@ -1,6 +1,5 @@
 import { describe, expect, test } from 'vitest';
 
-import { TokenCollection } from '@theemo/core';
 import {
   HOKULEA_INPUT_LEXER_TOKENS_DEV,
   HOKULEA_INPUT_LEXER_TOKENS_PROD,
@@ -9,6 +8,7 @@ import {
   THEEMO_INPUT_LEXER_TOKENS_PROD,
   THEEMO_LEXER_CONFIG
 } from '@theemo/fixtures';
+import { TokenCollection } from '@theemo/tokens';
 
 import { Lexer } from '../src/lexer/index.js';
 import { TOKENS as HOKULEA_TOKENS_DEV } from './samples/hokulea/lexer/moana-result-dev.js';
@@ -16,7 +16,7 @@ import { TOKENS as HOKULEA_TOKENS_PROD } from './samples/hokulea/lexer/moana-res
 import { TOKENS as THEEMO_TOKENS_DEV } from './samples/theemo-plugin/lexer/theemo-result-dev.js';
 import { TOKENS as THEEMO_TOKENS_PROD } from './samples/theemo-plugin/lexer/theemo-result-prod.js';
 
-import type { Token } from '@theemo/core';
+import type { Token } from '@theemo/tokens';
 
 function testTokens(expected: { name: string }[], actual: TokenCollection) {
   for (const expectedToken of expected) {

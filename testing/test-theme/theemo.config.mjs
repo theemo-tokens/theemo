@@ -125,10 +125,7 @@ export default defineConfig({
             }
           }
 
-          // add folder to which token set this one belongs
-          const folder = token.name.startsWith('ifm') ? 'website' : 'theme';
-
-          return `${folder}/${fileName}`;
+          return fileName;
         },
 
         valueForToken(token, tokens) {

@@ -2,7 +2,7 @@
   "name": "root",
   "private": true,
   "volta": {
-    "node": "18.17.0"
+    "node": "20.6.1"
   },
   "scripts": {
     "clean": "concurrently 'npm:clean:*'",
@@ -28,8 +28,8 @@
   "devDependencies": {
     "@release-it-plugins/workspaces": "^4.0.0",
     "concurrently": "^8.2.0",
-    "turbo": "^1.10.7",
-    "release-it": "^16.0.0"
+    "release-it": "^16.0.0",
+    "turbo": "^1.10.7"
   },
   "release-it": {
     "plugins": {

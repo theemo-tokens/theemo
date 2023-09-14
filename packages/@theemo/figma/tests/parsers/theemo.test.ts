@@ -4,7 +4,7 @@ import { DEFAULT_PARSER_CONFIG } from '../../src/index.js';
 import { TheemoPlugin } from '../../src/plugins/theemo.js';
 import theemoPlaygroundFigma from '../samples/theemo-playground/figma.json';
 
-import type { Constraints } from '@theemo/core';
+import type { Constraints } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 function getTokens(dev = false) {

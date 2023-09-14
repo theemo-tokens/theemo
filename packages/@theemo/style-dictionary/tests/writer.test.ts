@@ -4,7 +4,6 @@ import jp from 'jsonpath';
 import mockFs from 'mock-fs';
 import { afterEach, beforeEach, describe, expect, test } from 'vitest';
 
-import { type Token, TokenCollection } from '@theemo/core';
 import {
   HOKULEA_INPUT_WRITER_TOKENS_DEV,
   HOKULEA_INPUT_WRITER_TOKENS_PROD,
@@ -13,6 +12,7 @@ import {
   THEEMO_INPUT_WRITER_TOKENS_PROD,
   THEEMO_WRITER_CONFIG
 } from '@theemo/fixtures';
+import { type Token, TokenCollection } from '@theemo/tokens';
 
 import StyleDictionaryWriter from '../src/writer.js';
 import {

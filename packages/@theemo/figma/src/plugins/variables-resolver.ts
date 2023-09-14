@@ -4,7 +4,7 @@ import type { FigmaVariable, VariableCollection } from '../-figma-variable-types
 import type { FigmaParserConfig } from '../config.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
-import type { TokenCollection } from '@theemo/core';
+import type { TokenCollection } from '@theemo/tokens';
 
 export class VariablesResolver implements Plugin {
   private declare config: Required<FigmaParserConfig>;

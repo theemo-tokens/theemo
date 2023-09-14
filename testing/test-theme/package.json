@@ -15,14 +15,15 @@
     "file": "dist/theemo.css"
   },
   "scripts": {
-    "sync": "pnpm theemo sync"
+    "sync": "pnpm theemo sync",
+    "build": "style-dictionary build"
   },
   "devDependencies": {
     "@theemo/cli": "workspace:*",
     "@theemo/figma": "workspace:*",
     "@theemo/sync": "workspace:*",
     "@theemo/style-dictionary": "workspace:*",
-    "style-dictionary": "^3.7.0"
+    "style-dictionary": "^3.8.0"
   },
   "volta": {
     "extends": "../../package.json"

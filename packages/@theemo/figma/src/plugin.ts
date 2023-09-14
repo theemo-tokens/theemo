@@ -1,6 +1,6 @@
 import type { FigmaParserConfigWithDefaults } from './config.js';
 import type { FigmaToken } from './token.js';
-import type { Token, TokenCollection } from '@theemo/core';
+import type { Token, TokenCollection } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 export interface Plugin {

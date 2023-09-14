@@ -1,5 +1,5 @@
 import type { FigmaVariable } from './-figma-variable-types.js';
-import type { Token, TokenType } from '@theemo/core';
+import type { Token, TokenType } from '@theemo/tokens';
 import type { Node, Style } from 'figma-api';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 

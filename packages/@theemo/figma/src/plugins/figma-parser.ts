@@ -1,4 +1,4 @@
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
 import {
   getTypefromStyle,
@@ -11,7 +11,7 @@ import type { FigmaParserConfigWithDefaults } from '../config.js';
 import type { StyleColor } from '../figma-styles.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
-import type { TokenType } from '@theemo/core';
+import type { TokenType } from '@theemo/tokens';
 import type { Effect, Node, Paint, Style, StylesMap, TypeStyle } from 'figma-api';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 

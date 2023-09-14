@@ -1,7 +1,7 @@
 import type { FigmaVariable, Variable } from './-figma-variable-types.js';
 import type { Plugin } from './plugin.js';
 import type { FigmaToken } from './token.js';
-import type { Constraints, TokenType, TokenValue } from '@theemo/core';
+import type { Constraints, TokenType, TokenValue } from '@theemo/tokens';
 import type { Node, Style } from 'figma-api';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 

@@ -250,6 +250,15 @@ export type Constraints =
     };
 export type ConstrainedValue<T extends TokenType> = ComputedValue<T> & Constraints;
 
+type NonConstrainedTokenValueSingular<T extends TokenType> =
+  | ValueFor<T>
+  | ComputedValue<T>
+  | ReferencedValue<UnknownValue>;
+
+export type NonConstrainedTokenValue<T extends TokenType> =
+  | NonConstrainedTokenValueSingular<T>
+  | NonConstrainedTokenValueSingular<T>[];
+
 type TokenValueSingular<T extends TokenType> =
   | ValueFor<T>
   | ComputedValue<T>

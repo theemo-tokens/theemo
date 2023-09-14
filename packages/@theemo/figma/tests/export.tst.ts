@@ -14,7 +14,7 @@ import { createReaderMockWithMoana, createReaderMockWithTheemo } from './utils.j
 
 import type { FigmaReaderConfig } from '../src/config.js';
 import type FigmaReader from '../src/reader.js';
-import type { TokenCollection } from '@theemo/core';
+import type { TokenCollection } from '@theemo/tokens';
 
 type Factory = (config: FigmaReaderConfig) => FigmaReader;
 

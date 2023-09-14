@@ -1,4 +1,4 @@
-import type { Token, TokenCollection } from '@theemo/core';
+import type { Token, TokenCollection } from '@theemo/tokens';
 
 /**
  * The lexer config is used for you to configure the tokens to what they mean

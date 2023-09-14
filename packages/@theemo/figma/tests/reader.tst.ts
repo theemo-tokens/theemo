@@ -30,7 +30,7 @@ import { createReaderMockWithMoana, createReaderMockWithTheemo } from './utils.j
 
 import type { Transforms } from '../src/plugins/theemo.js';
 import type FigmaReader from '../src/reader.js';
-import type { Token, TokenCollection } from '@theemo/core';
+import type { Token, TokenCollection } from '@theemo/tokens';
 
 function testNames(tokens: TokenCollection, names: string[]) {
   const data: { name: string; token?: Token }[] = [];

@@ -40,7 +40,7 @@
     "test:dev": "vitest"
   },
   "dependencies": {
-    "@theemo/core": "workspace:*"
+    "@theemo/tokens": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",

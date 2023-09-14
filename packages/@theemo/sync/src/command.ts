@@ -3,7 +3,7 @@ import { Reader } from './reader/index.js';
 import { Writer } from './writer/index.js';
 
 import type { SyncConfig } from './config.js';
-import type { TokenCollection } from '@theemo/core';
+import type { TokenCollection } from '@theemo/tokens';
 
 export class SyncCommand {
   private config: SyncConfig;

@@ -1,5 +1,5 @@
 import type { WriterConfig } from './config.js';
-import type { TokenCollection } from '@theemo/core';
+import type { TokenCollection } from '@theemo/tokens';
 
 export class Writer {
   private config: WriterConfig;

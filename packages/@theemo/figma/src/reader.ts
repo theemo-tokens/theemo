@@ -1,7 +1,7 @@
 import { Api as FigmaClient } from 'figma-api';
 import merge from 'lodash.merge';
 
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
 import { DEFAULT_PARSER_CONFIG } from './config.js';
 import FigmaParser from './plugins/figma-parser.js';
@@ -10,7 +10,7 @@ import { VariablesResolver } from './plugins/variables-resolver.js';
 import type { FigmaParserConfig, FigmaReaderConfig } from './config.js';
 import type { Plugin } from './plugin.js';
 import type { FigmaToken } from './token.js';
-import type { Token } from '@theemo/core';
+import type { Token } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 type FigmaReaderConfigWithParser = FigmaReaderConfig & {

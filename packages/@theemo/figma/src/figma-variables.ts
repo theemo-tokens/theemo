@@ -1,4 +1,4 @@
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
 import { parseColorValue } from './token-values.js';
 
@@ -13,7 +13,7 @@ import type {
 } from './-figma-variable-types.js';
 import type { FigmaParserConfigWithDefaults } from './config.js';
 import type { FigmaToken } from './token.js';
-import type { ComputedValue, TokenType, TokenValue } from '@theemo/core';
+import type { ComputedValue, TokenType, TokenValue } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 export function isAlias(value: VariableValue): value is VariableAlias {

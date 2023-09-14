@@ -4,7 +4,7 @@ import { ColorAlphaFormat, ColorFormat } from './config.js';
 
 import type { RGB, RGBA } from './-figma-variable-types.js';
 import type { ColorConfig } from './config.js';
-import type { ColorValue } from '@theemo/core';
+import type { ColorValue } from '@theemo/tokens';
 
 function rgbTo255(value: RGB | RGBA): RGB | RGBA {
   return {

@@ -11,7 +11,7 @@ import type {
   TextTransformValue,
   TokenType,
   TypographyValue
-} from '@theemo/core';
+} from '@theemo/tokens';
 import type { Effect, Style, TextCase, TypeStyle } from 'figma-api';
 
 export interface StyleColor extends RGBA {

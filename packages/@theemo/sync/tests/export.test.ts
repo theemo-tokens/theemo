@@ -2,7 +2,6 @@ import { writeFile } from 'node:fs/promises';
 
 import { describe, test } from 'vitest';
 
-import { TokenCollection } from '@theemo/core';
 import {
   FIXTURES_HOME,
   HOKULEA_INPUT_LEXER_TOKENS_DEV,
@@ -12,11 +11,12 @@ import {
   THEEMO_INPUT_LEXER_TOKENS_PROD,
   THEEMO_LEXER_CONFIG
 } from '@theemo/fixtures';
+import { TokenCollection } from '@theemo/tokens';
 
 import { Lexer } from '../src/lexer/index.js';
 
 import type { LexerConfig } from '../src/lexer/config.js';
-import type { Token } from '@theemo/core';
+import type { Token } from '@theemo/tokens';
 
 async function writeTokens(tokens: TokenCollection, path: string) {
   const data = JSON.stringify([...tokens], null, '\t');

@@ -1,4 +1,4 @@
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
 import { mapVariablesWithCollection, parseVariables } from '../figma-variables.js';
 
@@ -6,7 +6,7 @@ import type { FigmaVariable, Variable, VariableCollection } from '../-figma-vari
 import type { FigmaParserConfigWithDefaults } from '../config.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
-import type { ColorTransform, ComputedValue, ConstrainedValue, TokenType } from '@theemo/core';
+import type { ColorTransform, ComputedValue, ConstrainedValue, TokenType } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 export type PaintTransforms = Partial<

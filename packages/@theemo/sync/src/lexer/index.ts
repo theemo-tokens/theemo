@@ -1,9 +1,9 @@
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
 import { getLexerConfig } from './config.js';
 
 import type { LexerConfig } from './config.js';
-import type { Token } from '@theemo/core';
+import type { Token } from '@theemo/tokens';
 
 export class Lexer {
   private config: LexerConfig;

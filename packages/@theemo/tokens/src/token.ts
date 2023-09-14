@@ -1,4 +1,4 @@
-import type { ReferenceValue, TokenType, ValueFor } from './token-types.js';
+import type { ReferenceValue, TokenType, ValueFor } from './token-types';
 
 /**
  * The usage level of a token
