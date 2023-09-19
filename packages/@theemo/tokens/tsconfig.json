@@ -2,14 +2,12 @@
   "compilerOptions": {
     "target": "ESNext",
     "baseUrl": ".",
-    "rootDir": "src/",
+    "rootDir": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "declaration": true,
-    "declarationDir": "./dist",
     "downlevelIteration": true,
     "sourceMap": true,
     "importHelpers": true,
@@ -28,6 +26,6 @@
   },
   "include": [
     "src",
-    "types"
+    "tests"
   ]
 }

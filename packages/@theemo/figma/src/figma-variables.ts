@@ -74,6 +74,8 @@ function parseValue(
     case 'FLOAT':
       return value;
   }
+
+  return void 0;
 }
 
 function parseValueOrReference(
@@ -107,6 +109,8 @@ function parseValueOrReference(
 
     return parseValue(valueHoldingVariable, mode, config);
   }
+
+  return void 0;
 }
 
 function needConstraints(variable: FigmaVariable) {
@@ -130,6 +134,7 @@ function parseTokenValue(
       const constraints = config.getConstraints?.(name, variable) ?? {};
 
       if (Object.keys(constraints).length === 0) {
+        // eslint-disable-next-line no-console
         console.log('No Constraints found for ', variable.name, 'with mode: ', name);
       } else {
         tokenValues.push({

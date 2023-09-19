@@ -230,30 +230,51 @@ export type TransformFor<T extends TokenType> = T extends keyof TokenTransformRe
   : never;
 
 // extended values
-export type ComputedValue<T extends TokenType> = {
+export type StructuredValue<T extends TokenType> = {
   value: ValueFor<T>;
-  transforms?: TransformFor<T>;
 };
 
+// computeds rsp. transforms
+export type ComputedValue<T extends TokenType> = StructuredValue<T> & {
+  transforms: TransformFor<T>;
+};
+
+// constraints
 export type Scope = string;
 export type Features = Record<string, string>;
+
+export type FeatureConstraints = {
+  features: Features;
+};
+
+export type ScopeConstraint = {
+  scope: Scope;
+};
 
 /**
  * Tokens can be constraint by either features, scope or both
  */
-export type Constraints =
-  | { features: Features }
-  | { scope: Scope }
-  | {
-      features: Features;
-      scope: Scope;
-    };
-export type ConstrainedValue<T extends TokenType> = ComputedValue<T> & Constraints;
+// | { scope: Scope }
+// | { features: Features }
+// | {
+//     features: Features;
+//     scope: Scope;
+//   };
+// export type Constraints = {
+//   features?: Features;
+//   scope?: Scope;
+// };
+// export type Constraints =
+//   | FeatureConstraints
+//   | ScopeConstraint
+//   | (FeatureConstraints & ScopeConstraint);
+export type Constraints = Partial<FeatureConstraints & ScopeConstraint>;
+export type ConstrainedValue<T extends TokenType> = StructuredValue<T> & Constraints;
 
 type NonConstrainedTokenValueSingular<T extends TokenType> =
   | ValueFor<T>
-  | ComputedValue<T>
-  | ReferencedValue<UnknownValue>;
+  | ReferenceValue
+  | ComputedValue<T>;
 
 export type NonConstrainedTokenValue<T extends TokenType> =
   | NonConstrainedTokenValueSingular<T>
@@ -261,8 +282,8 @@ export type NonConstrainedTokenValue<T extends TokenType> =
 
 type TokenValueSingular<T extends TokenType> =
   | ValueFor<T>
+  | ReferenceValue
   | ComputedValue<T>
-  | ConstrainedValue<T>
-  | ReferencedValue<UnknownValue>;
+  | ConstrainedValue<T>;
 
 export type TokenValue<T extends TokenType> = TokenValueSingular<T> | TokenValueSingular<T>[];

@@ -21,12 +21,8 @@
   "exports": {
     ".": {
       "types": "./dist/declarations/index.d.ts",
+      "require": "./dist/cjs/index.js",
       "default": "./dist/esm/index.js"
-    },
-    "./extend": {
-      "types": "./dist/declarations/extend.d.ts",
-      "require": "./dist/cjs/extend.js",
-      "default": "./dist/esm/extend.js"
     },
     "./package.json": "./package.json"
   },

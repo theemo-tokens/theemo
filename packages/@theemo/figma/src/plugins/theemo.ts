@@ -134,7 +134,7 @@ export class TheemoPlugin implements Plugin {
           // found the mode in question
           if (mode) {
             let foundIndex: number | boolean = false;
-            let value: ComputedValue<TokenType> | undefined = undefined;
+            let value: Partial<ComputedValue<TokenType>> | undefined = undefined;
 
             // value is a computed value
             if (typeof token.value === 'object') {
@@ -146,6 +146,7 @@ export class TheemoPlugin implements Plugin {
               const constraints = this.parserConfig.getConstraints?.(mode.name, variable) ?? {};
 
               if (!constraints || Object.keys(constraints).length === 0) {
+                // eslint-disable-next-line no-console
                 console.log('No Constraints found for ', variable.name, 'with mode: ', mode.name);
               } else {
                 value = (token.value as ComputedValue<TokenType>[]).find(

@@ -68,10 +68,6 @@ const DEFAULT_LEXER_CONFIG = {
 
     normalized.name = normalized.name.replace(/\s/g, '');
 
-    if (normalized.reference) {
-      normalized.reference = normalized.reference.replace(/\s/g, '');
-    }
-
     return normalized;
   }
 };

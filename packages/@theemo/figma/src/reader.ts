@@ -23,7 +23,6 @@ interface Resolver extends Required<Pick<Plugin, 'resolve'>> {}
 export default class FigmaReader {
   private config: FigmaReaderConfigWithParser;
   private transformed: Map<string, Token> = new Map();
-  private file?: GetFileResult;
   private plugins: Plugin[];
 
   constructor(config: FigmaReaderConfig) {
