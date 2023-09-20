@@ -9,7 +9,7 @@
           }
         },
         {
-          "value": "#ffffff",
+          "value": "#333333",
           "features": {
             "color-scheme": "dark"
           }
@@ -28,7 +28,7 @@
           }
         },
         {
-          "value": "#e6e6e6",
+          "value": "#666666",
           "features": {
             "color-scheme": "dark"
           }

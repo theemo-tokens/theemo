@@ -5,7 +5,6 @@ import { TokenCollection } from '@theemo/tokens';
 
 import { DEFAULT_PARSER_CONFIG } from './config.js';
 import FigmaParser from './plugins/figma-parser.js';
-import { VariablesResolver } from './plugins/variables-resolver.js';
 
 import type { FigmaParserConfig, FigmaReaderConfig } from './config.js';
 import type { Plugin } from './plugin.js';
@@ -34,7 +33,7 @@ export default class FigmaReader {
       }
     } as unknown as FigmaReaderConfigWithParser;
 
-    this.plugins = [new FigmaParser(), ...this.config.plugins, new VariablesResolver()];
+    this.plugins = [new FigmaParser(), ...this.config.plugins];
   }
 
   async read(): Promise<TokenCollection> {

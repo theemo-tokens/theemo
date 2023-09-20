@@ -13,7 +13,7 @@
     "_api": "pnpm run --filter theemo api",
     "lint": "pnpm --filter '@theemo/*' lint",
     "start": "pnpm build && turbo run --parallel --filter '@theemo/*' start",
-    "build": "turbo run --filter '@theemo/cli' build",
+    "build": "turbo run --filter '@theemo/*' build",
     "test": "pnpm run --filter '@theemo/*' test"
   },
   "devDependencies": {

@@ -101,7 +101,9 @@ function parseValueOrReference(
 
   // no alias, or unpublished alias - return raw value
   else {
-    const valueHoldingVariable = unpublishedAlias ? resolveVariable(variable, variables) : variable;
+    const valueHoldingVariable = unpublishedAlias
+      ? resolveVariable(variable, variables, modeId)
+      : variable;
     const mode =
       valueHoldingVariable.collection.id === variable.collection.id
         ? modeId
