@@ -10,17 +10,20 @@
   "theemo": {
     "name": "theemo",
     "colorSchemes": [
+      "light",
       "dark"
     ],
     "file": "dist/theemo.css"
   },
   "scripts": {
-    "sync": "pnpm theemo sync",
-    "build": "style-dictionary build"
+    "sync": "theemo sync",
+    "build:css": "style-dictionary build",
+    "build:theme": "theemo build"
   },
   "devDependencies": {
     "@theemo/cli": "workspace:*",
     "@theemo/figma": "workspace:*",
+    "@theemo/build": "workspace:*",
     "@theemo/sync": "workspace:*",
     "@theemo/style-dictionary": "workspace:*",
     "@theemo/tokens": "workspace:*",
@@ -28,5 +31,7 @@
   },
   "volta": {
     "extends": "../../package.json"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "test-theme@0.0.0"
 }

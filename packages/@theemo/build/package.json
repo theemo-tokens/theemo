@@ -1,7 +1,7 @@
 {
-  "name": "@theemo/core",
+  "name": "@theemo/build",
   "version": "0.0.1",
-  "description": "Theemo Core Definitions and Utilities",
+  "description": "Theme Builder",
   "license": "MIT",
   "author": "Thomas Gossmann",
   "homepage": "https://theemo.io",
@@ -28,15 +28,18 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "_build": "vite build",
+    "build": "vite build",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
-    "_start": "vite build -w",
+    "start": "vite build -w",
     "_test": "vitest run",
     "_test:dev": "vitest"
+  },
+  "dependencies": {
+    "read-pkg": "^8.1.0"
   },
   "devDependencies": {
     "@gossi/config-eslint": "^0.6.0",

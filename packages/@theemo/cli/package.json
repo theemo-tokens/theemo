@@ -45,6 +45,7 @@
     "test:dev": "vitest"
   },
   "dependencies": {
+    "@theemo/build": "workspace:*",
     "@theemo/sync": "workspace:*",
     "commander": "^11.0.0",
     "cosmiconfig": "^8.2.0",

@@ -1,6 +1,8 @@
+import { build } from '@theemo/build';
 import { SyncCommand, type SyncConfig } from '@theemo/sync';
 
 import type { TheemoConfig } from './config.js';
+import type { GenerateConfig } from '@theemo/build';
 
 export default class Theemo {
   private config: TheemoConfig;
@@ -24,18 +26,11 @@ export default class Theemo {
     }
   }
 
-  // /**
-  //  * Executes the generate command
-  //  *
-  //  * @param config the config for generation
-  //  */
-  // generate(config?: GenerateConfig): void {
-  //   const usedConfig = config ?? this.config.generate;
+  build(config?: GenerateConfig): void {
+    const usedConfig = config ?? this.config.build;
 
-  //   if (usedConfig) {
-  //     const command = new GenerateCommand(usedConfig);
-
-  //     command.execute();
-  //   }
-  // }
+    if (usedConfig) {
+      build(usedConfig);
+    }
+  }
 }

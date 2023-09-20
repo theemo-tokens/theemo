@@ -100,5 +100,22 @@ export default defineConfig({
         }
       })
     }
+  },
+  build: {
+    input: 'dist',
+    output: 'dist',
+    auto: true,
+    defaultColorScheme: 'light',
+    colorSchemes: {
+      light: {
+        auto: true,
+        manual: true
+      },
+      dark: {
+        auto: true,
+        manual: true,
+        // selector: 'html[data-theme="dark"]'
+      }
+    }
   }
 });
