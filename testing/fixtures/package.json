@@ -26,12 +26,12 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "concurrently -r 'npm:build:*'",
+    "_build": "concurrently -r 'npm:build:*'",
     "build:js": "swc ./src -d ./dist --copy-files",
     "build:types": "tsc --emitDeclarationOnly",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "concurrently -r 'npm:start:*'",
+    "_start": "concurrently -r 'npm:start:*'",
     "start:js": "swc ./src -d ./dist --copy-files -w",
     "start:types": "tsc --emitDeclarationOnly -w"
   },

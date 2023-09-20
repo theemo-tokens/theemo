@@ -1,0 +1,26 @@
+{
+  "intent": {
+    "action": {
+      "active": {
+        "background": {
+          "$value": "#891010",
+          "$description": "",
+          "comment": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "#891010",
+          "$description": "",
+          "comment": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.action.base.text}",
+          "$description": "",
+          "comment": "",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

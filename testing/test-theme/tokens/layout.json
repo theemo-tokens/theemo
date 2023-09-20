@@ -1,0 +1,42 @@
+{
+  "layout": {
+    "background": {
+      "$value": [
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "comment": "",
+      "$type": "color"
+    },
+    "contrast": {
+      "$value": [
+        {
+          "value": "#e6e6e6",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#e6e6e6",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "comment": "",
+      "$type": "color"
+    }
+  }
+}

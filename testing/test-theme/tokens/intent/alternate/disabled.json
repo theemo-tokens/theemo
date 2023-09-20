@@ -1,0 +1,36 @@
+{
+  "intent": {
+    "alternate": {
+      "disabled": {
+        "background": {
+          "$value": {
+            "value": "{intent.alternate.base.background}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "comment": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.disabled.background}",
+          "$description": "",
+          "comment": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": {
+            "value": "{intent.alternate.base.text}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "comment": "",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

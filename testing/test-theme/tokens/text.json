@@ -1,0 +1,42 @@
+{
+  "text": {
+    "normal": {
+      "$value": [
+        {
+          "value": "#000000",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#000000",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "comment": "",
+      "$type": "color"
+    },
+    "emphasize": {
+      "$value": [
+        {
+          "value": "#8c750d",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#8c750d",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "comment": "",
+      "$type": "color"
+    }
+  }
+}
