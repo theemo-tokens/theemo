@@ -24,6 +24,5 @@ export default defineConfig({
       outDir: './dist',
       rollupTypes: !watch
     })
-  ],
-  ssr: true
+  ]
 });
