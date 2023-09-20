@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/index.ts"],"sourcesContent":["export type { StyleDictionaryWriterConfig } from './config.js';\nexport { registerTheemo } from './extend.js';\nexport { styleDictionaryWriter } from './tool.js';\n"],"names":["registerTheemo","styleDictionaryWriter"],"mappings":";;;;;;;;;;;IACSA,cAAc;eAAdA,sBAAc;;IACdC,qBAAqB;eAArBA,2BAAqB;;;wBADC;sBACO"}
