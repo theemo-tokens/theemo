@@ -1,8 +1,9 @@
 import { build } from '@theemo/build';
-import { SyncCommand, type SyncConfig } from '@theemo/sync';
+import { sync } from '@theemo/sync';
 
-import type { TheemoConfig } from './config.js';
+import type { TheemoConfig } from './config';
 import type { GenerateConfig } from '@theemo/build';
+import type { SyncConfig } from '@theemo/sync';
 
 export default class Theemo {
   private config: TheemoConfig;
@@ -20,9 +21,7 @@ export default class Theemo {
     const usedConfig = config ?? this.config.sync;
 
     if (usedConfig) {
-      const command = new SyncCommand(usedConfig);
-
-      command.execute();
+      sync(usedConfig);
     }
   }
 
