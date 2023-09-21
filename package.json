@@ -18,22 +18,9 @@
     "@vitest/coverage-v8": "^0.34.4",
     "@vitest/ui": "^0.34.4",
     "concurrently": "^8.2.0",
-    "release-it": "^16.0.0",
+    "release-it": "^16.1.5",
     "turbo": "^1.10.14",
     "vitest": "^0.34.4"
-  },
-  "release-it": {
-    "plugins": {
-      "@release-it-plugins/workspaces": {
-        "workspaces": [
-          "packages/@theemo"
-        ]
-      }
-    },
-    "git": {
-      "requireCleanWorkingDir": false,
-      "changelog": false
-    }
   },
   "volta": {
     "node": "20.7.0"

@@ -1,5 +1,6 @@
 {
   "name": "@theemo/core",
+  "private": true,
   "version": "0.0.1",
   "description": "Theemo Core Definitions and Utilities",
   "license": "MIT",
