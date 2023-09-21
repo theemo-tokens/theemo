@@ -13,4 +13,6 @@ export function findConstrainedValue(
   if (matchesConstrainedValue(value, constraints)) {
     return value;
   }
+
+  return void 0;
 }

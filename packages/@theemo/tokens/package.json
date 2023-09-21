@@ -28,13 +28,13 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "tsup",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
     "lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
-    "start": "vite build -w",
+    "start": "tsup --watch",
     "test": "vitest run",
     "test:dev": "vitest"
   },
@@ -49,9 +49,8 @@
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",
     "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9",
-    "vite-plugin-dts": "^3.5.3",
     "vitest": "^0.34.4"
   },
   "volta": {
