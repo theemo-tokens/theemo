@@ -15,7 +15,7 @@ module.exports = {
   },
   git: {
     tagName: 'v${version}',
-    commitMessage: 'Release v${version}',
+    commitMessage: 'release v${version}',
     requireCleanWorkingDir: false,
     changelog: false
   },
