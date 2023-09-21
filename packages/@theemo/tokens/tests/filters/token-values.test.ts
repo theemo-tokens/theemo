@@ -25,6 +25,7 @@ describe('filter token values', () => {
   describe('isConstrainedValue', () => {
     test('with features', () => {
       expect(
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         isConstrainedValue({ value: '#ff0088', features: { 'color-scheme': 'light' } })
       ).toBeTruthy();
     });
@@ -32,7 +33,9 @@ describe('filter token values', () => {
     test('value array with features', () => {
       expect(
         isConstrainedValue([
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           { value: '#ff0088', features: { 'color-scheme': 'light' } },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           { value: '#9900ff', features: { 'color-scheme': 'dark' } }
         ])
       ).toBeTruthy();
@@ -51,7 +54,9 @@ describe('filter token values', () => {
     test('matching on feature', () => {
       expect(
         matchesConstrainedValue(
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           { value: '#ff0088', features: { 'color-scheme': 'light' } },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           { features: { 'color-scheme': 'light' } }
         )
       ).toBeTruthy();
@@ -61,9 +66,12 @@ describe('filter token values', () => {
       expect(
         matchesConstrainedValue(
           [
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             { value: '#ff0088', features: { 'color-scheme': 'light' } },
+            // eslint-disable-next-line @typescript-eslint/naming-convention
             { value: '#9900ff', features: { 'color-scheme': 'dark' } }
           ],
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           { features: { 'color-scheme': 'light' } }
         )
       ).toBeTruthy();
@@ -73,6 +81,7 @@ describe('filter token values', () => {
       expect(
         matchesConstrainedValue(
           { value: '#ff0088', scope: 'spotlight' },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
           { features: { 'color-scheme': 'light' } }
         )
       ).toBeFalsy();

@@ -19,6 +19,9 @@
     "dist",
     "bin"
   ],
+  "bin": {
+    "theemo": "./bin/theemo.js"
+  },
   "type": "module",
   "exports": {
     ".": {
