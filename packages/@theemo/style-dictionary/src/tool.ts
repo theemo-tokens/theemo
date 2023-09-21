@@ -1,6 +1,6 @@
-import StyleDictionaryWriter from './writer.js';
+import StyleDictionaryWriter from './writer';
 
-import type { StyleDictionaryWriterConfig } from './config.js';
+import type { StyleDictionaryWriterConfig } from './config';
 import type { WriterTool } from '@theemo/sync';
 
 export function styleDictionaryWriter(config: StyleDictionaryWriterConfig): WriterTool {

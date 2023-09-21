@@ -1,4 +1,4 @@
-import type { Token, TokenCollection } from '@theemo/core';
+import type { Token, TokenCollection } from '@theemo/tokens';
 
 /**
  * The config for Style Dicitionary being used as `WriterTool`.

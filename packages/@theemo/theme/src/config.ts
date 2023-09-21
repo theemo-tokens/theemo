@@ -1,4 +1,4 @@
-import type { Theme } from '@theemo/core';
+import type { Theme } from '@theemo/tokens';
 import type { PackageJson } from 'type-fest';
 
 /**

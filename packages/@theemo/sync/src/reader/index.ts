@@ -1,4 +1,4 @@
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
 import type { ReaderConfig } from './config.js';
 

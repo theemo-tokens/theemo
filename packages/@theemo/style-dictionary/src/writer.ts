@@ -1,12 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { TokenCollection } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
-import { set } from './utils.js';
+import { set } from './utils';
 
-import type { StyleDictionaryWriterConfig } from './config.js';
-import type { Token } from '@theemo/core';
+import type { StyleDictionaryWriterConfig } from './config';
+import type { Token } from '@theemo/tokens';
 
 export default class StyleDictionaryWriter {
   private config: StyleDictionaryWriterConfig;
@@ -58,17 +58,14 @@ export default class StyleDictionaryWriter {
 
   private buildToken(token: Token, allTokens: TokenCollection): Record<string, unknown> {
     const data: Record<string, unknown> = {
-      value: this.getValue(token, allTokens),
+      $value: this.getValue(token, allTokens),
+      $description: token.description,
       comment: token.description,
-      colorScheme: token.colorScheme,
       ...this.getTokenData(token)
     };
 
     if (token.type) {
-      data.type = token.type;
-      data.attributes = {
-        category: token.type
-      };
+      data.$type = token.type;
     }
 
     return data;

@@ -1,2 +1,3 @@
-export type { StyleDictionaryWriterConfig } from './config.js';
-export { styleDictionaryWriter } from './tool.js';
+export type { StyleDictionaryWriterConfig } from './config';
+export * from './extend';
+export { styleDictionaryWriter } from './tool';

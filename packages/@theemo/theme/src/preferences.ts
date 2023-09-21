@@ -1,4 +1,4 @@
-import { ColorContrast, ColorScheme, Feature, Motion } from '@theemo/core';
+import { ColorContrast, ColorScheme, Feature, Motion } from '@theemo/tokens';
 
 interface Preferences {
   [Feature.ColorScheme]: ColorScheme;

@@ -1,4 +1,4 @@
-import type { TokenCollection } from '@theemo/core';
+import type { TokenCollection } from '@theemo/tokens';
 
 /**
  * This is for tools used during the `sync` command to read tokens from most of

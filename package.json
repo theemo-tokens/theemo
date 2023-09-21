@@ -1,35 +1,26 @@
 {
   "name": "root",
   "private": true,
-  "volta": {
-    "node": "18.17.0"
-  },
   "scripts": {
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
-    "_start": "turbo run --parallel --filter='@theemo/*' start",
-    "start": "pnpm run --parallel --filter='@theemo/*' start",
-    "test": "pnpm run --filter '@theemo/*' test",
-    "_coverage": "pnpm run --filter theemo coverage",
     "_api": "pnpm run --filter theemo api",
     "lint": "pnpm --filter '@theemo/*' lint",
-    "build": "pnpm run build:core && pnpm run build:sync && pnpm run build:figma && pnpm run build:style-dictionary && pnpm run build:cli",
-    "build:core": "pnpm run --filter='@theemo/core' build",
-    "build:sync": "pnpm run --filter='@theemo/sync' build",
-    "build:figma": "pnpm run --filter='@theemo/figma' build",
-    "build:style-dictionary": "pnpm run --filter='@theemo/style-dictionary' build",
-    "build:cli": "pnpm run --filter='@theemo/cli' build",
-    "build:fixtures": "pnpm run --filter='@theemo/fixtures' build",
-    "__build": "pnpm run --filter='@theemo/*' --filter='!@theemo/fixtures' --filter='!@theemo/theme' build",
-    "_build": "pnpm run --parallel --filter='@theemo/*' build"
+    "start": "turbo run --filter '@theemo/*' start",
+    "build": "turbo run --filter '@theemo/*' build",
+    "test": "vitest run",
+    "test:dev": "vitest --ui"
   },
   "devDependencies": {
     "@release-it-plugins/workspaces": "^4.0.0",
+    "@vitest/coverage-v8": "^0.34.4",
+    "@vitest/ui": "^0.34.4",
     "concurrently": "^8.2.0",
-    "turbo": "^1.10.7",
-    "release-it": "^16.0.0"
+    "release-it": "^16.0.0",
+    "turbo": "^1.10.14",
+    "vitest": "^0.34.4"
   },
   "release-it": {
     "plugins": {
@@ -43,5 +34,8 @@
       "requireCleanWorkingDir": false,
       "changelog": false
     }
+  },
+  "volta": {
+    "node": "20.6.1"
   }
 }

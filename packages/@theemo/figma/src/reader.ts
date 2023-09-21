@@ -1,52 +1,78 @@
 import { Api as FigmaClient } from 'figma-api';
 import merge from 'lodash.merge';
 
-import { type Token, TokenCollection, TokenTier } from '@theemo/core';
+import { TokenCollection } from '@theemo/tokens';
 
-import { DEFAULT_CONFIG } from './config.js';
-import FigmaParser from './parser.js';
+import { DEFAULT_PARSER_CONFIG } from './config.js';
+import FigmaParser from './plugins/figma-parser.js';
 
-import type { FigmaReaderConfig } from './config.js';
+import type { FigmaParserConfig, FigmaReaderConfig } from './config.js';
 import type { Plugin } from './plugin.js';
 import type { FigmaToken } from './token.js';
+import type { Token } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
+type FigmaReaderConfigWithParser = FigmaReaderConfig & {
+  parser: Required<FigmaParserConfig>;
+};
+
+interface Parser extends Required<Pick<Plugin, 'parse'>> {}
+interface Resolver extends Required<Pick<Plugin, 'resolve'>> {}
+
 export default class FigmaReader {
-  private config: Required<FigmaReaderConfig>;
+  private config: FigmaReaderConfigWithParser;
   private transformed: Map<string, Token> = new Map();
-  private file?: GetFileResult;
   private plugins: Plugin[];
 
   constructor(config: FigmaReaderConfig) {
     this.config = {
-      ...DEFAULT_CONFIG,
-      ...config
-    } as unknown as Required<FigmaReaderConfig>;
+      ...config,
+      parser: {
+        ...DEFAULT_PARSER_CONFIG,
+        ...config.parser
+      }
+    } as unknown as FigmaReaderConfigWithParser;
 
-    this.plugins = this.config.plugins;
+    this.plugins = [new FigmaParser(), ...this.config.plugins];
   }
 
   async read(): Promise<TokenCollection> {
     // setup plugins
-    await Promise.all(this.plugins.map((plugin) => plugin.setup()));
+    await Promise.all(this.plugins.map((plugin) => plugin.setup?.(this.config.parser)));
 
-    let allTokens = new TokenCollection();
+    let figmaTokens = new TokenCollection<FigmaToken>();
 
-    for (const file of this.config.files) {
-      this.file = await this.load(file);
+    for (const fileId of this.config.files) {
+      const file = await this.load(fileId);
 
-      const parser = new FigmaParser(this.file, this.plugins, this.config);
-      const tokens = parser.parse();
-
-      const resolved = tokens
-        .map((token) => this.classifyToken(token))
-        .map((token) => this.resolve(token, tokens));
-      const transformed = resolved.map((token) => this.transformToken(token));
-
-      allTokens = allTokens.merge(transformed);
+      figmaTokens = figmaTokens.merge(this.parse(file, fileId));
     }
 
-    return allTokens;
+    const tokens = figmaTokens
+      // step 1: resolve tokens
+      .map((token: FigmaToken) => this.resolveToken(token, figmaTokens))
+      // step 2: classify tokens
+      .map(this.classifyToken.bind(this))
+      // step 3: transform FigmaToken into Token
+      .map(this.transformToken.bind(this));
+
+    return tokens;
+  }
+
+  private parse(file: GetFileResult, fileId: string): TokenCollection<FigmaToken> {
+    let tokens = new TokenCollection<FigmaToken>();
+
+    const parsers = this.plugins.filter((plugin) => plugin.parse !== undefined) as Parser[];
+
+    for (const parser of parsers) {
+      tokens = tokens.merge(parser.parse(file, fileId));
+    }
+
+    // parse tokens from variables
+    // enterprise plan only
+    // tbd.
+
+    return tokens;
   }
 
   private async load(file: string) {
@@ -65,20 +91,24 @@ export default class FigmaReader {
     });
   }
 
-  private classifyToken(token: FigmaToken): FigmaToken {
-    token.type = this.getTypeFromToken(token);
+  private resolveToken(token: FigmaToken, tokens: TokenCollection<FigmaToken>): FigmaToken {
+    let t = { ...token };
 
-    return token;
-  }
+    const resolvers = this.plugins.filter((plugin) => plugin.resolve !== undefined) as Resolver[];
 
-  private resolve(token: FigmaToken, tokens: TokenCollection<FigmaToken>): FigmaToken {
-    let t = token;
-
-    for (const plugin of this.plugins) {
-      t = plugin.resolve?.(token, tokens) ?? t;
+    for (const resolver of resolvers) {
+      t = resolver.resolve(token, tokens) ?? t;
     }
 
     return t;
+  }
+
+  private classifyToken(token: FigmaToken): FigmaToken {
+    token.type = this.getTypeFromToken(token);
+
+    // console.log(token);
+
+    return token;
   }
 
   private transformToken(token: FigmaToken): Token {
@@ -87,7 +117,8 @@ export default class FigmaReader {
     }
 
     const pluginProperties = this.plugins
-      .map((plugin) => plugin.getProperties(token))
+      .filter((plugin) => plugin.getProperties !== undefined)
+      .map((plugin) => plugin.getProperties?.(token))
       .reduce((prev, actual) => {
         return merge(prev, actual);
       }, {});
@@ -95,9 +126,8 @@ export default class FigmaReader {
     const transformed: Token = {
       name: token.name,
       description: token.description,
-      tier: TokenTier.Unknown,
       type: token.type,
-      colorScheme: token.colorScheme,
+      value: token.value,
       ...pluginProperties,
       ...this.getPropertiesForToken(token)
     };
@@ -108,10 +138,10 @@ export default class FigmaReader {
   }
 
   private getPropertiesForToken(token: FigmaToken): Record<string, unknown> {
-    return this.config.getPropertiesForToken?.(token, this.file as GetFileResult) ?? {};
+    return this.config.parser.getPropertiesForToken?.(token, token.figma.file) ?? {};
   }
 
-  private getTypeFromToken(token: FigmaToken): string | undefined {
-    return this.config.getTypeFromToken(token);
+  private getTypeFromToken(token: FigmaToken) {
+    return this.config.parser.getTypeFromToken(token);
   }
 }

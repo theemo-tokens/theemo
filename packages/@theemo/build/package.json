@@ -1,0 +1,58 @@
+{
+  "name": "@theemo/build",
+  "version": "0.0.1",
+  "description": "Theme Builder",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "homepage": "https://theemo.io",
+  "bugs": "https://github.com/theemo-tokens/theemo/issues",
+  "repository": "https://github.com/theemo-tokens/theemo",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design system",
+    "theme",
+    "design tokens"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "tsup --watch",
+    "_test": "vitest run",
+    "_test:dev": "vitest"
+  },
+  "dependencies": {
+    "read-pkg": "^8.1.0"
+  },
+  "devDependencies": {
+    "@gossi/config-eslint": "^0.6.0",
+    "@gossi/config-prettier": "^0.6.0",
+    "@types/node": "^20.6.3",
+    "concurrently": "^8.2.0",
+    "eslint": "^8.49.0",
+    "prettier": "^3.0.3",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.4"
+  },
+  "volta": {
+    "extends": "../../../package.json"
+  }
+}

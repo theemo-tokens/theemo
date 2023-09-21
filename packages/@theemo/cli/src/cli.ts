@@ -28,15 +28,12 @@ async function loadPackage() {
 async function loadConfig(program: Command): Promise<TheemoConfig | undefined> {
   const explorer = cosmiconfig('theemo', {
     searchPlaces: [
-      `.theemorc.js`,
-      `.theemorc.cjs`,
-      `.theemorc.mjs`,
-      `.config/theemorc.js`,
-      `.config/theemorc.cjs`,
-      `.config/theemorc.mjs`,
-      `theemo.config.js`,
-      `theemo.config.cjs`,
-      `theemo.config.mjs`
+      '.config/theemo.js',
+      '.config/theemo.cjs',
+      '.config/theemo.mjs',
+      'theemo.config.js',
+      'theemo.config.cjs',
+      'theemo.config.mjs'
     ]
   });
   const result = await explorer.search();
@@ -48,6 +45,12 @@ async function loadConfig(program: Command): Promise<TheemoConfig | undefined> {
   }
 
   return result.config as TheemoConfig;
+}
+
+async function loadTheemo(program: Command) {
+  const config = await loadConfig(program);
+
+  return new Theemo(config ?? {});
 }
 
 export async function cli() {
@@ -65,22 +68,19 @@ export async function cli() {
     .command('sync')
     .description('sync from your source into your token manager tool')
     .action(async () => {
-      // config
-      const config = await loadConfig(program);
+      const theemo = await loadTheemo(program);
 
-      if (config) {
-        const theemo = new Theemo(config);
-
-        await theemo.sync();
-      }
+      await theemo.sync();
     });
 
-  // program
-  //   .command('generate')
-  //   .description('generates an adaptive CSS theme file')
-  //   .action(() => {
-  //     theemo.generate();
-  //   });
+  program
+    .command('build')
+    .description('builds an adaptive CSS theme file')
+    .action(async () => {
+      const theemo = await loadTheemo(program);
+
+      theemo.build();
+    });
 
   program.parse(argv);
 }

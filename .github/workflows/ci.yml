@@ -14,22 +14,14 @@ jobs:
     steps:
       - uses: wyvox/action@v1
       - run: pnpm build
-      - run: pnpm build:fixtures
       - run: pnpm lint
-
-  # build:
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - uses: wyvox/action@v1
-  #     - run: pnpm build
 
   test:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x, 20.x]
+        node-version: [18.x, 20.x]
 
     # needs: build
     steps:
@@ -37,5 +29,4 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: pnpm build
-      - run: pnpm build:fixtures
-      - run: pnpm --filter '@theemo/*' test
+      - run: pnpm test

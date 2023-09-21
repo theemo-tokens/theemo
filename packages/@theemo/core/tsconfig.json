@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "rootDir": "src/",
     "module": "ESNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "isolatedModules": true,
