@@ -22,19 +22,6 @@
     "turbo": "^1.10.14",
     "vitest": "^0.34.4"
   },
-  "release-it": {
-    "plugins": {
-      "@release-it-plugins/workspaces": {
-        "workspaces": [
-          "packages/@theemo"
-        ]
-      }
-    },
-    "git": {
-      "requireCleanWorkingDir": false,
-      "changelog": false
-    }
-  },
   "volta": {
     "node": "20.6.1"
   }
