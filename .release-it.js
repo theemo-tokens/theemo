@@ -23,7 +23,5 @@ module.exports = {
     release: true,
     tokenRef: "GITHUB_AUTH"
   },
-  npm: {
-    publish: true
-  }
+  npm: false
 }
