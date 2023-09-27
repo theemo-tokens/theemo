@@ -31,5 +31,22 @@
       "$description": "",
       "$type": "shadow"
     }
+  },
+  "stroke": {
+    "color": {
+      "$value": "#dddddd",
+      "$description": "",
+      "$type": "color"
+    },
+    "width": {
+      "$value": 1,
+      "$description": "",
+      "$type": "number"
+    },
+    "style": {
+      "$value": "solid",
+      "$description": "",
+      "$type": "unknown"
+    }
   }
 }
