@@ -10,13 +10,11 @@
             }
           },
           "$description": "",
-          "comment": "",
           "$type": "color"
         },
         "border": {
           "$value": "{intent.alternate.disabled.background}",
           "$description": "",
-          "comment": "",
           "$type": "color"
         },
         "text": {
@@ -27,7 +25,6 @@
             }
           },
           "$description": "",
-          "comment": "",
           "$type": "color"
         }
       }

@@ -16,7 +16,6 @@
         }
       ],
       "$description": "",
-      "comment": "",
       "$type": "color"
     },
     "contrast": {
@@ -35,7 +34,6 @@
         }
       ],
       "$description": "",
-      "comment": "",
       "$type": "color"
     }
   }

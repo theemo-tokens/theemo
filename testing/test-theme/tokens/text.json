@@ -16,7 +16,6 @@
         }
       ],
       "$description": "",
-      "comment": "",
       "$type": "color"
     },
     "emphasize": {
@@ -35,7 +34,6 @@
         }
       ],
       "$description": "",
-      "comment": "",
       "$type": "color"
     }
   }
