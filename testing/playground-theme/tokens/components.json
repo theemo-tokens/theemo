@@ -1,14 +1,18 @@
 {
-  "brand": {
+  "hero": {
     "background": {
-      "$value": "#e41b1b",
+      "$value": "#d5f6f1",
       "$description": "",
       "$type": "color"
     },
     "text": {
-      "$value": "#ffec40",
+      "$value": "#12544a",
       "$description": "",
       "$type": "color"
+    },
+    "border": {
+      "$value": "{hero.background}",
+      "$description": ""
     }
   }
 }

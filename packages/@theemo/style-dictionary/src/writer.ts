@@ -79,7 +79,7 @@ export default class StyleDictionaryWriter {
   }
 
   private getValue(token: Token, allTokens: TokenCollection) {
-    return this.config.valueForToken?.(token, allTokens) ?? `${token.value}`;
+    return this.config.valueForToken?.(token, allTokens) ?? token.value;
   }
 
   private getTokenData(token: Token) {

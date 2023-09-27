@@ -1,5 +1,5 @@
 {
-  "name": "test-theme",
+  "name": "playground-theme",
   "private": true,
   "version": "0.0.0",
   "description": "Test theme for API",
@@ -31,7 +31,5 @@
   },
   "volta": {
     "extends": "../../package.json"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "test-theme@0.0.0"
+  }
 }

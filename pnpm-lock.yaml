@@ -531,7 +531,7 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
 
-  testing/test-theme:
+  testing/playground-theme:
     devDependencies:
       '@theemo/build':
         specifier: workspace:*
