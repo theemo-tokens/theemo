@@ -2,6 +2,8 @@ export type ReferenceValue = string;
 
 export type UnknownValue = unknown;
 
+export type ContentValue = string;
+
 //
 //
 // Primitive Values
@@ -203,6 +205,7 @@ export interface TokenTransformRegistry {
 
 export interface TokenTypeRegistry {
   unknown: UnknownValue;
+  content: ContentValue;
   color: ColorValue;
   dimension: DimensionValue;
   fontFamily: FontFamilyValue;

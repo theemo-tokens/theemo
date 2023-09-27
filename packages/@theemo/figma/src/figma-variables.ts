@@ -72,10 +72,10 @@ function parseValue(
       return parseColorValue(value as string | RGB | RGBA, config.formats);
 
     case 'FLOAT':
+    case 'STRING':
+    default:
       return value;
   }
-
-  return void 0;
 }
 
 function parseValueOrReference(
@@ -164,6 +164,9 @@ function parseType(variable: Variable): TokenType {
 
     case 'FLOAT':
       return 'number';
+
+    case 'STRING':
+      return 'content';
 
     default:
       return 'unknown';
