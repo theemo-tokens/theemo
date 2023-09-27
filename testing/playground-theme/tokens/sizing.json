@@ -1,0 +1,47 @@
+{
+  "s0": {
+    "$value": 16,
+    "$description": "",
+    "$type": "number"
+  },
+  "s-1": {
+    "$value": 14,
+    "$description": "",
+    "$type": "number"
+  },
+  "s1": {
+    "$value": 20,
+    "$description": "",
+    "$type": "number"
+  },
+  "s2": {
+    "$value": 24,
+    "$description": "",
+    "$type": "number"
+  },
+  "s3": {
+    "$value": 32,
+    "$description": "",
+    "$type": "number"
+  },
+  "s4": {
+    "$value": 40,
+    "$description": "",
+    "$type": "number"
+  },
+  "s-2": {
+    "$value": 12,
+    "$description": "",
+    "$type": "number"
+  },
+  "s-3": {
+    "$value": 10,
+    "$description": "",
+    "$type": "number"
+  },
+  "s-4": {
+    "$value": 8,
+    "$description": "",
+    "$type": "number"
+  }
+}

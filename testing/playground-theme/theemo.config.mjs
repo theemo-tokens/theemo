@@ -33,22 +33,19 @@ export default defineConfig({
             }
 
             return getNameFromStyle(style);
+          },
+
+          getPropertiesForToken(token) {
+            // console.log(token.figma.variable);
+            // return {
+            //   collection: token.figms
+            // }
+            return {
+              topic: token.figma.variable?.collection?.name?.toLowerCase() ?? ''
+            };
           }
         }
       })
-    },
-
-    lexer: {
-      classifyToken(token) {
-        const t = { ...token };
-        t.tier = token.name.startsWith('.')
-          ? 'basic'
-          : token.name.startsWith('hero')
-          ? 'specific'
-          : 'purpose';
-
-        return t;
-      }
     },
 
     writer: {
@@ -58,39 +55,19 @@ export default defineConfig({
         },
 
         fileForToken(token) {
-          let fileName = '';
+          if (token.topic) {
+            return token.topic;
+          }
 
-          // 1) LOCATION
+          let fileName = 'misc';
+
           const parts = token.name.split('.');
 
-          // let's see for the others
-          if (parts.length > 3) {
-            fileName = parts.slice(0, 3).join('/');
-          } else {
+          if (parts.length > 1) {
             fileName = parts[0];
           }
 
           return fileName;
-        },
-
-        valueForToken(token, tokens) {
-          if (token.reference) {
-            const reference = tokens.find(
-              (t) => t.name === token.reference && t.colorScheme === undefined
-            );
-
-            if (
-              reference &&
-              reference.name.startsWith('ifm') &&
-              token.name.startsWith('ifm') &&
-              token.transforms === undefined
-            ) {
-              // const ref = reference.name.replaceAll('-', '.').split('.').join('.');
-              return `{${reference.name}.value}`;
-            }
-          }
-
-          return token.value;
         },
 
         dataForToken(token) {

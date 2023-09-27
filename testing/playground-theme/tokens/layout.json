@@ -1,0 +1,22 @@
+{
+  "surface": {
+    "background": {
+      "$value": [
+        {
+          "value": "#ffffff",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "#333333",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "color"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "intent": {
+    "action": {
+      "background": {
+        "$value": [
+          {
+            "value": "#2a50d5",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#2a50d5",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      },
+      "border": {
+        "$value": [
+          {
+            "value": "{intent.action.background}",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "{intent.action.background}",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": ""
+      },
+      "text": {
+        "$value": [
+          {
+            "value": "#d4dcf7",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#d4dcf7",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "alternative": {
+      "background": {
+        "$value": [
+          {
+            "value": "#12544a",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#80e5d6",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      },
+      "border": {
+        "$value": [
+          {
+            "value": "#092a25",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#2cd3ba",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      },
+      "text": {
+        "$value": [
+          {
+            "value": "#d5f6f1",
+            "features": {
+              "color-scheme": "light"
+            }
+          },
+          {
+            "value": "#12544a",
+            "features": {
+              "color-scheme": "dark"
+            }
+          }
+        ],
+        "$description": "",
+        "$type": "color"
+      }
+    }
+  }
+}
