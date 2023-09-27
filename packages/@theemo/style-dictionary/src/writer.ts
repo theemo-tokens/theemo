@@ -60,7 +60,6 @@ export default class StyleDictionaryWriter {
     const data: Record<string, unknown> = {
       $value: this.getValue(token, allTokens),
       $description: token.description,
-      comment: token.description,
       ...this.getTokenData(token)
     };
 
