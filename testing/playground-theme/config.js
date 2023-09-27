@@ -4,25 +4,13 @@ const { isConstrainedValue, matchesConstrainedValue } = require('@theemo/tokens'
 
 registerTheemo(StyleDictionary);
 
-const platform = {
-  transforms: [
-    'theemo/attributes',
-    'theemo/value',
-    'theemo/transform',
-    'name/path/kebab',
-    'typography/css',
-    'shadow/css',
-    'time/seconds',
-    'color/css'
-  ],
-  buildPath: 'dist/'
-};
 
 module.exports = {
   source: ['tokens/**/*.json'],
   platforms: {
     base: {
-      ...platform,
+      transformGroup: 'theemo',
+      buildPath: 'dist/',
       files: [
         {
           format: 'css/variables',
@@ -38,7 +26,8 @@ module.exports = {
       ]
     },
     dark: {
-      ...platform,
+      transformGroup: 'theemo',
+      buildPath: 'dist/',
       constraints: {
         features: {
           'color-scheme': 'dark'
@@ -61,7 +50,8 @@ module.exports = {
       ]
     },
     light: {
-      ...platform,
+      transformGroup: 'theemo',
+      buildPath: 'dist/',
       constraints: {
         features: {
           'color-scheme': 'light'
