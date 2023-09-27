@@ -1,4 +1,4 @@
-import { figmaReader, getNameFromStyle, theemoPlugin } from '@theemo/figma';
+import { figmaReader, getNameFromStyle, theemoPlugin, isTokenByStyle } from '@theemo/figma';
 import { styleDictionaryWriter } from '@theemo/style-dictionary';
 import { defineConfig } from '@theemo/cli';
 
@@ -33,6 +33,10 @@ export default defineConfig({
             }
 
             return getNameFromStyle(style);
+          },
+
+          isTokenByStyle(style) {
+            return !style.name.includes('(') && !style.name.includes(')') && isTokenByStyle(style);
           },
 
           getPropertiesForToken(token) {

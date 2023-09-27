@@ -11,6 +11,7 @@ const platform = {
     'theemo/transform',
     'name/path/kebab',
     'typography/css',
+    'shadow/css',
     'time/seconds',
     'color/css'
   ],
