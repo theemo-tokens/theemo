@@ -3,27 +3,23 @@
     "background": {
       "$value": "#d1e6fa",
       "$description": "",
-      "comment": "",
       "$type": "color"
     },
     "heading": {
       "background": {
         "$value": "{brand.background}",
         "$description": "",
-        "comment": "",
         "$type": "color"
       },
       "text": {
         "$value": "{brand.text}",
         "$description": "",
-        "comment": "",
         "$type": "color"
       }
     },
     "text": {
       "$value": "{text.normal}",
       "$description": "",
-      "comment": "",
       "$type": "color"
     }
   }

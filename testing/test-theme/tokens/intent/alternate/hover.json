@@ -5,19 +5,16 @@
         "background": {
           "$value": "#bb9c11",
           "$description": "",
-          "comment": "",
           "$type": "color"
         },
         "border": {
           "$value": "{intent.alternate.hover.background}",
           "$description": "",
-          "comment": "",
           "$type": "color"
         },
         "text": {
           "$value": "{intent.alternate.base.text}",
           "$description": "",
-          "comment": "",
           "$type": "color"
         }
       }

@@ -10,7 +10,6 @@
         "textTransform": "none"
       },
       "$description": "",
-      "comment": "",
       "$type": "typography"
     },
     "display1": {
@@ -23,7 +22,6 @@
         "textTransform": "uppercase"
       },
       "$description": "",
-      "comment": "",
       "$type": "typography"
     },
     "display2": {
@@ -36,7 +34,6 @@
         "textTransform": "none"
       },
       "$description": "",
-      "comment": "",
       "$type": "typography"
     },
     "displayprose": {
@@ -49,7 +46,6 @@
         "textTransform": "uppercase"
       },
       "$description": "",
-      "comment": "",
       "$type": "typography"
     },
     "heading1": {
@@ -62,7 +58,6 @@
         "textTransform": "none"
       },
       "$description": "",
-      "comment": "",
       "$type": "typography"
     },
     "heading2": {
@@ -75,7 +70,6 @@
         "textTransform": "none"
       },
       "$description": "",
-      "comment": "",
       "$type": "typography"
     }
   }

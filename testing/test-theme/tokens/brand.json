@@ -3,13 +3,11 @@
     "background": {
       "$value": "#e41b1b",
       "$description": "",
-      "comment": "",
       "$type": "color"
     },
     "text": {
       "$value": "#ffec40",
       "$description": "",
-      "comment": "",
       "$type": "color"
     }
   }
