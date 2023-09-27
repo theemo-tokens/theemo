@@ -7,7 +7,6 @@ import type StyleDictionary from 'style-dictionary';
  */
 export const typographyCssTransform: StyleDictionary.Transform = {
   type: 'value',
-  transitive: true,
   matcher: isTypography,
   transformer: ({ value }: { value: TypographyValue }) => {
     // font: (font-style) font-variant font-weight font-size/line-height font-family;

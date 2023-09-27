@@ -46,7 +46,7 @@
     "style": {
       "$value": "solid",
       "$description": "",
-      "$type": "unknown"
+      "$type": "content"
     }
   }
 }
