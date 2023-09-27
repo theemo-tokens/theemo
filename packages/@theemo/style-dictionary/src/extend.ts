@@ -51,4 +51,18 @@ export const registerTheemo = (styleDictionary: StyleDictionary.Core) => {
     name: 'shadow/css',
     ...shadowCssTransform
   });
+
+  styleDictionary.registerTransformGroup({
+    name: 'theemo',
+    transforms: [
+      'theemo/attributes',
+      'theemo/value',
+      'theemo/transform',
+      'name/path/kebab',
+      'typography/css',
+      'shadow/css',
+      'time/seconds',
+      'color/css'
+    ]
+  });
 };
