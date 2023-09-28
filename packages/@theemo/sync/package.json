@@ -1,6 +1,6 @@
 {
   "name": "@theemo/sync",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Theemo Sync",
   "license": "MIT",
   "author": "Thomas Gossmann",
@@ -42,7 +42,7 @@
     "test:dev": "vitest"
   },
   "dependencies": {
-    "@theemo/tokens": "0.1.0"
+    "@theemo/tokens": "0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
