@@ -1,5 +1,9 @@
 module.exports = {
   plugins: {
+    '@release-it-plugins/lerna-changelog': {
+      'infile': 'CHANGELOG.md',
+      'launchEditor': false
+    },
     '@release-it-plugins/workspaces': {
       workspaces: [
         // glob still finds private repositories o_O
@@ -17,7 +21,6 @@ module.exports = {
     tagName: 'v${version}',
     commitMessage: 'Release v${version}',
     requireCleanWorkingDir: false,
-    changelog: false
   },
   github: {
     release: true,
