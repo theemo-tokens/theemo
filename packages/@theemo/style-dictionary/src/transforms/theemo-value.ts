@@ -4,7 +4,7 @@ import type StyleDictionary from 'style-dictionary';
 
 export const theemoValueTransform: StyleDictionary.Transform = {
   type: 'value',
-  transitive: false,
+  transitive: true,
   matcher: (token) => isConstrainedValue(token.value),
   transformer: (token: StyleDictionary.TransformedToken, platform: StyleDictionary.Platform) => {
     const { value } = token;
