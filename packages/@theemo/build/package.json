@@ -42,7 +42,7 @@
     "_test:dev": "vitest"
   },
   "dependencies": {
-    "read-pkg": "^8.1.0"
+    "read-pkg": "^9.0.0"
   },
   "devDependencies": {
     "@gossi/config-eslint": "^0.6.0",
