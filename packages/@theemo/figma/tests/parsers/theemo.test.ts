@@ -114,6 +114,13 @@ describe('Theemo Plugin', () => {
       expect(heroBorder?.value).toBe('{hero.background}');
     });
 
+    test('number 0', () => {
+      const tokens = getTokens();
+      const strokeOffset = tokens.find((t) => t.name === 'control.focus.stroke-offset');
+
+      expect(strokeOffset?.value).toBe(0);
+    });
+
     test('number token', () => {
       const tokens = getTokens();
       const s0 = tokens.find((t) => t.name === 's0');

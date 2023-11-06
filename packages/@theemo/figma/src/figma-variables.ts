@@ -203,7 +203,7 @@ function createTokenFromVariable(
 
   const value = parseTokenValue(variable, variables, config);
 
-  if (value) {
+  if (value !== undefined) {
     token.value = value;
 
     if (!isValueOnlyReferences(value)) {
