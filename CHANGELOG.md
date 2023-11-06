@@ -1,4 +1,14 @@
 
+
+## v0.2.1 (2023-11-06)
+
+#### :bug: Bug Fix
+* `@theemo/figma`
+  * [#718](https://github.com/theemo-tokens/theemo/pull/718) Fix parsing `0` value ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## v0.2.0 (2023-09-28)
 
 #### :rocket: Enhancement
