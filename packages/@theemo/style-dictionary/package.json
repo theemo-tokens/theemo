@@ -61,7 +61,7 @@
     "mock-fs": "^5.2.0",
     "prettier": "^3.0.3",
     "style-dictionary": "^3.8.0",
-    "tsup": "^7.2.0",
+    "tsup": "^8.0.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.5"
   },
