@@ -79,8 +79,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       cosmiconfig:
-        specifier: ^8.2.0
-        version: 8.2.0
+        specifier: ^9.0.0
+        version: 9.0.0(typescript@5.2.2)
       dotenv:
         specifier: ^16.3.1
         version: 16.3.1
@@ -93,7 +93,7 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -129,7 +129,7 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -181,7 +181,7 @@ importers:
         version: 7.22.5(@babel/core@7.22.5)(eslint@8.49.0)
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -227,7 +227,7 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -279,7 +279,7 @@ importers:
         version: 7.22.5(@babel/core@7.22.5)(eslint@8.49.0)
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -322,7 +322,7 @@ importers:
         version: 7.22.5
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.5)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.5)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -356,7 +356,7 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -414,7 +414,7 @@ importers:
         version: 7.22.5
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3)(typescript@5.1.6)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -508,7 +508,7 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.6.0
-        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3)
+        version: 0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3)(typescript@5.1.6)
       '@gossi/config-prettier':
         specifier: ^0.6.0
         version: 0.6.0(prettier@3.0.3)
@@ -1794,7 +1794,7 @@ packages:
       '@simple-dom/interface': 1.4.0
     dev: true
 
-  /@gossi/config-eslint@0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3):
+  /@gossi/config-eslint@0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3)(typescript@5.1.6):
     resolution: {integrity: sha512-DCCLUnldm5qz5yQdjq0NneTw837urNBtV6NtDoDmwzYwkZhkBkxXR5WStaeayu9GhDsoEZAi9DvOX817QHW5BA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
@@ -1823,7 +1823,7 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.22.17
-      cosmiconfig: 8.2.0
+      cosmiconfig: 8.3.6(typescript@5.1.6)
       eslint: 8.44.0
       eslint-config-prettier: 8.10.0(eslint@8.44.0)
       eslint-import-resolver-typescript: 3.6.0(eslint-plugin-import@2.27.5)(eslint@8.44.0)
@@ -1840,6 +1840,7 @@ packages:
       - eslint-plugin-import
       - prettier
       - supports-color
+      - typescript
     dev: true
 
   /@gossi/config-eslint@0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3):
@@ -1890,7 +1891,56 @@ packages:
       - supports-color
     dev: true
 
-  /@gossi/config-eslint@0.6.0(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3):
+  /@gossi/config-eslint@0.6.0(@babel/core@7.22.17)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2):
+    resolution: {integrity: sha512-DCCLUnldm5qz5yQdjq0NneTw837urNBtV6NtDoDmwzYwkZhkBkxXR5WStaeayu9GhDsoEZAi9DvOX817QHW5BA==}
+    engines: {node: 16.* || >= 18.*}
+    peerDependencies:
+      '@babel/core': ^7.22.5
+      '@babel/eslint-parser': ^7.22.5
+      '@typescript-eslint/eslint-plugin': ^5.59.9
+      '@typescript-eslint/parser': ^5.59.9
+      eslint: ^7.0.0 || ^8.0.0
+      eslint-plugin-ember: ^11.10.0
+      eslint-plugin-qunit: ^7.3.4
+      eslint-plugin-storybook: ^0.6.12
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/eslint-parser':
+        optional: true
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+      '@typescript-eslint/parser':
+        optional: true
+      eslint-plugin-ember:
+        optional: true
+      eslint-plugin-qunit:
+        optional: true
+      eslint-plugin-storybook:
+        optional: true
+    dependencies:
+      '@babel/core': 7.22.17
+      cosmiconfig: 8.3.6(typescript@5.2.2)
+      eslint: 8.49.0
+      eslint-config-prettier: 8.10.0(eslint@8.49.0)
+      eslint-import-resolver-typescript: 3.6.0(eslint-plugin-import@2.27.5)(eslint@8.49.0)
+      eslint-plugin-decorator-position: 5.0.2(@babel/eslint-parser@7.22.5)(eslint@8.49.0)
+      eslint-plugin-i: 2.28.1(eslint-import-resolver-typescript@3.6.0)(eslint@8.49.0)
+      eslint-plugin-json: 3.1.0
+      eslint-plugin-n: 16.0.1(eslint@8.49.0)
+      eslint-plugin-prettier: 5.0.0(eslint-config-prettier@8.10.0)(eslint@8.49.0)(prettier@3.0.3)
+      eslint-plugin-simple-import-sort: 10.0.0(eslint@8.49.0)
+    transitivePeerDependencies:
+      - '@types/eslint'
+      - eslint-import-resolver-node
+      - eslint-import-resolver-webpack
+      - eslint-plugin-import
+      - prettier
+      - supports-color
+      - typescript
+    dev: true
+
+  /@gossi/config-eslint@0.6.0(@babel/core@7.22.5)(@babel/eslint-parser@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2):
     resolution: {integrity: sha512-DCCLUnldm5qz5yQdjq0NneTw837urNBtV6NtDoDmwzYwkZhkBkxXR5WStaeayu9GhDsoEZAi9DvOX817QHW5BA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
@@ -1922,7 +1972,7 @@ packages:
       '@babel/eslint-parser': 7.22.5(@babel/core@7.22.5)(eslint@8.49.0)
       '@typescript-eslint/eslint-plugin': 5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.49.0)(typescript@5.2.2)
       '@typescript-eslint/parser': 5.60.1(eslint@8.49.0)(typescript@5.2.2)
-      cosmiconfig: 8.2.0
+      cosmiconfig: 8.3.6(typescript@5.2.2)
       eslint: 8.49.0
       eslint-config-prettier: 8.10.0(eslint@8.49.0)
       eslint-import-resolver-typescript: 3.6.0(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.49.0)
@@ -1939,9 +1989,10 @@ packages:
       - eslint-plugin-import
       - prettier
       - supports-color
+      - typescript
     dev: true
 
-  /@gossi/config-eslint@0.6.0(@babel/core@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3):
+  /@gossi/config-eslint@0.6.0(@babel/core@7.22.5)(@typescript-eslint/eslint-plugin@5.60.1)(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.44.0)(prettier@3.0.3)(typescript@5.1.6):
     resolution: {integrity: sha512-DCCLUnldm5qz5yQdjq0NneTw837urNBtV6NtDoDmwzYwkZhkBkxXR5WStaeayu9GhDsoEZAi9DvOX817QHW5BA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
@@ -1972,7 +2023,7 @@ packages:
       '@babel/core': 7.22.5
       '@typescript-eslint/eslint-plugin': 5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.44.0)(typescript@5.1.6)
       '@typescript-eslint/parser': 5.60.1(eslint@8.44.0)(typescript@5.1.6)
-      cosmiconfig: 8.2.0
+      cosmiconfig: 8.3.6(typescript@5.1.6)
       eslint: 8.44.0
       eslint-config-prettier: 8.10.0(eslint@8.44.0)
       eslint-import-resolver-typescript: 3.6.0(@typescript-eslint/parser@5.60.1)(eslint-plugin-import@2.27.5)(eslint@8.44.0)
@@ -1989,9 +2040,10 @@ packages:
       - eslint-plugin-import
       - prettier
       - supports-color
+      - typescript
     dev: true
 
-  /@gossi/config-eslint@0.6.0(@babel/core@7.22.5)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3):
+  /@gossi/config-eslint@0.6.0(@babel/core@7.22.5)(eslint-plugin-import@2.27.5)(eslint@8.49.0)(prettier@3.0.3)(typescript@5.2.2):
     resolution: {integrity: sha512-DCCLUnldm5qz5yQdjq0NneTw837urNBtV6NtDoDmwzYwkZhkBkxXR5WStaeayu9GhDsoEZAi9DvOX817QHW5BA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
@@ -2020,7 +2072,7 @@ packages:
         optional: true
     dependencies:
       '@babel/core': 7.22.5
-      cosmiconfig: 8.2.0
+      cosmiconfig: 8.3.6(typescript@5.2.2)
       eslint: 8.49.0
       eslint-config-prettier: 8.10.0(eslint@8.49.0)
       eslint-import-resolver-typescript: 3.6.0(eslint-plugin-import@2.27.5)(eslint@8.49.0)
@@ -2037,6 +2089,7 @@ packages:
       - eslint-plugin-import
       - prettier
       - supports-color
+      - typescript
     dev: true
 
   /@gossi/config-prettier@0.6.0(prettier@3.0.3):
@@ -5036,6 +5089,7 @@ packages:
       js-yaml: 4.1.0
       parse-json: 5.2.0
       path-type: 4.0.0
+    dev: true
 
   /cosmiconfig@8.3.6(typescript@5.1.6):
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
@@ -5052,6 +5106,38 @@ packages:
       path-type: 4.0.0
       typescript: 5.1.6
     dev: true
+
+  /cosmiconfig@8.3.6(typescript@5.2.2):
+    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      path-type: 4.0.0
+      typescript: 5.2.2
+    dev: true
+
+  /cosmiconfig@9.0.0(typescript@5.2.2):
+    resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      env-paths: 2.2.1
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      typescript: 5.2.2
+    dev: false
 
   /cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
@@ -5427,6 +5513,11 @@ packages:
   /ensure-posix-path@1.1.1:
     resolution: {integrity: sha512-VWU0/zXzVbeJNXvME/5EmLuEj2TauvoaTz6aFYK1Z92JCBlDlZ3Gu0tuGR42kpW1754ywTs+QB0g5TP0oj9Zaw==}
     dev: true
+
+  /env-paths@2.2.1:
+    resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
+    engines: {node: '>=6'}
+    dev: false
 
   /err-code@2.0.3:
     resolution: {integrity: sha512-2bmlRpNKBxT/CRmPOlyISQpNj+qSeYvcym/uT0Jx2bMOlKLtSy1ZmLuVxSEKKyor/N5yhvp/ZiG1oE3DEYMSFA==}
@@ -9742,6 +9833,7 @@ packages:
   /path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
+    dev: true
 
   /path-type@5.0.0:
     resolution: {integrity: sha512-5HviZNaZcfqP95rwpv+1HDgUamezbqdSYTyzjTvwtJSnIH+3vnbmWsItli8OFEndS984VT55M3jduxZbX351gg==}
@@ -11405,7 +11497,6 @@ packages:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /ufo@1.1.2:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}

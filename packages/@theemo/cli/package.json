@@ -54,7 +54,7 @@
     "@theemo/build": "0.2.1",
     "@theemo/sync": "0.2.1",
     "commander": "^11.0.0",
-    "cosmiconfig": "^8.2.0",
+    "cosmiconfig": "^9.0.0",
     "dotenv": "^16.3.1",
     "read-pkg-up": "^11.0.0",
     "esm": "^3.2.25"
