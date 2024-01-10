@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "@theemo/super-theemo",
   "private": true,
   "repository": "https://github.com/theemo-tokens/theemo",
   "scripts": {
@@ -7,7 +7,6 @@
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
-    "_api": "pnpm run --filter theemo api",
     "lint": "pnpm --filter '@theemo/*' lint",
     "start": "turbo run --filter '@theemo/*' start",
     "build": "turbo run --filter '@theemo/*' build",
@@ -26,6 +25,5 @@
   },
   "volta": {
     "node": "20.10.0"
-  },
-  "version": "0.2.1"
+  }
 }
