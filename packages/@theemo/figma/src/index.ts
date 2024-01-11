@@ -8,6 +8,7 @@ export type {
   FigmaReaderConfig
 } from './config.js';
 export {
+  DEFAULT_PARSER_CONFIG,
   getNameFromStyle,
   getNameFromText,
   getNameFromVariable,
