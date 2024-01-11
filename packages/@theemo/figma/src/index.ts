@@ -1,7 +1,13 @@
-export type { FigmaReaderConfig } from './config.js';
-export { ColorAlphaFormat, ColorFormat, defineReaderConfig } from './config.js';
+export type { File, Node, Style } from './-figma-types.js';
+export type { FigmaVariable } from './-figma-variable-types.js';
+export type {
+  ColorAlphaFormat,
+  ColorConfig,
+  ColorFormat,
+  FigmaParserConfigWithDefaults,
+  FigmaReaderConfig
+} from './config.js';
 export {
-  DEFAULT_PARSER_CONFIG,
   getNameFromStyle,
   getNameFromText,
   getNameFromVariable,
@@ -13,4 +19,5 @@ export {
 } from './config.js';
 export type { Plugin } from './plugin.js';
 export { theemoPlugin } from './plugins/theemo.js';
+export type { FigmaToken } from './token.js';
 export { figmaReader } from './tool.js';

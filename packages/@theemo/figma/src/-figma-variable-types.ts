@@ -27,14 +27,18 @@ export type ColorVariableScope =
   | 'FRAME_FILL'
   | 'SHAPE_FILL'
   | 'TEXT_FILL'
-  | 'STROKE_COLOR';
+  | 'STROKE_COLOR'
+  | 'EFFECT_COLOR';
 
 export type FloatVariableScope =
   | 'ALL_SCOPES'
   | 'TEXT_CONTENT'
   | 'CORNER_RADIUS'
   | 'WIDTH_HEIGHT'
-  | 'GAP';
+  | 'GAP'
+  | 'STROKE_FLOAT'
+  | 'OPACITY'
+  | 'EFFECT_FLOAT';
 
 export type VariableScope = FloatVariableScope | ColorVariableScope;
 
