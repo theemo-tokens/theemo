@@ -1,9 +1,8 @@
-import type { FigmaVariable, Variable } from './-figma-variable-types.js';
+import type { File, Node, Style } from './-figma-types.js';
+import type { FigmaVariable } from './-figma-variable-types.js';
 import type { Plugin } from './plugin.js';
 import type { FigmaToken } from './token.js';
 import type { Constraints, TokenType, TokenValue } from '@theemo/tokens';
-import type { Node, Style } from 'figma-api';
-import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 export enum ColorFormat {
   Rgb = 'rgb',
@@ -81,7 +80,7 @@ export interface FigmaParserConfig {
   /**
    * Add properties relevant for you to the token
    */
-  getPropertiesForToken?: (token: FigmaToken, document: GetFileResult) => Record<string, unknown>;
+  getPropertiesForToken?: (token: FigmaToken, document: File) => Record<string, unknown>;
 
   formats?: ColorConfig;
 }
@@ -150,7 +149,7 @@ export function getValueFromText(node: Node<'TEXT'>) {
   return node.characters;
 }
 
-export function isTokenByVariable(variable: Variable) {
+export function isTokenByVariable(variable: FigmaVariable) {
   return !variable.hiddenFromPublishing && variable.resolvedType !== 'BOOLEAN';
 }
 
