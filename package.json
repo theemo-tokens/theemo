@@ -3,6 +3,7 @@
   "private": true,
   "repository": "https://github.com/theemo-tokens/theemo",
   "scripts": {
+    "api": "typedoc",
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
@@ -21,6 +22,8 @@
     "concurrently": "^8.2.0",
     "release-it": "^17.0.0",
     "turbo": "^1.10.14",
+    "typedoc": "^0.25.7",
+    "typedoc-plugin-markdown": "^3.17.1",
     "vitest": "^1.0.0"
   },
   "volta": {

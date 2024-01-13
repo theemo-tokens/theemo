@@ -1,3 +1,8 @@
+/**
+ * Hi from Figma
+ * @packageDocumentation
+ */
+
 export type { File, Node, Style } from './-figma-types.js';
 export type { FigmaVariable } from './-figma-variable-types.js';
 export type {

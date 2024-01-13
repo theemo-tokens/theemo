@@ -1,3 +1,8 @@
+/**
+ * Hi from Sync
+ * @module @theemo/sync
+ */
+
 export type { SyncConfig } from './config';
 export { defineConfig } from './config';
 export type { LexerConfig } from './lexer/config';

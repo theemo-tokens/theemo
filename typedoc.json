@@ -1,0 +1,16 @@
+{
+  "name": "Theemo",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/@theemo/build",
+    "packages/@theemo/cli",
+    "packages/@theemo/figma",
+    "packages/@theemo/style-dictionary",
+    "packages/@theemo/sync",
+    "packages/@theemo/tokens"
+  ],
+  "out": "./api",
+  "plugin": [
+    "typedoc-plugin-markdown"
+  ]
+}
