@@ -1,6 +1,13 @@
 /**
- * Hi from Sync
- * @module @theemo/sync
+ * @packageDocumentation
+ *
+ * Synchronizes tokens from one tool to another
+ *
+ * ## Installation
+ *
+ * ```sh
+ * pnpm add -D @theemo/sync
+ * ```
  */
 
 export type { SyncConfig } from './config';

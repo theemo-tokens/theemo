@@ -2,8 +2,12 @@
   "name": "@theemo/super-theemo",
   "private": true,
   "repository": "https://github.com/theemo-tokens/theemo",
+  "type": "module",
   "scripts": {
-    "api": "typedoc",
+    "api": "rm -rf docs/api/ && typedoc && mv api/ docs/",
+    "docs:dev": "pnpm api && vitepress dev docs",
+    "docs:build": "pnpm api && vitepress build docs",
+    "docs:preview": "pnpm api && vitepress preview docs",
     "clean": "concurrently 'npm:clean:*'",
     "clean:dist": "find . -not \\( -path './node_modules' -type d -prune \\) -name 'dist' -type d -exec rm -rf '{}' +",
     "clean:node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
@@ -23,10 +27,28 @@
     "release-it": "^17.0.0",
     "turbo": "^1.10.14",
     "typedoc": "^0.25.7",
-    "typedoc-plugin-markdown": "^3.17.1",
-    "vitest": "^1.0.0"
+    "typedoc-plugin-markdown": "next",
+    "typedoc-vitepress-theme": "^1.0.0-next.6",
+    "vitest": "^1.0.0",
+    "@zvitek/vitepress-plugin-matomo": "^1.0.1",
+    "markdown-it-attrs": "^4.1.6",
+    "markdown-it-deflist": "^3.0.0",
+    "markdown-it-multimd-table": "^4.2.3",
+    "mermaid": "^10.6.1",
+    "vite": "^5.0.10",
+    "vitepress": "1.0.0-rc.34",
+    "vitepress-plugin-mermaid": "^2.0.16",
+    "vue": "^3.4.3"
   },
   "volta": {
     "node": "20.11.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "vite-plugin-md"
+      ]
+    }
   }
 }

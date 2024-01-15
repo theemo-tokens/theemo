@@ -1,6 +1,14 @@
 /**
- * Hi from Figma
  * @packageDocumentation
+ *
+ * Packages contains a reader to sync tokens from Figma. Also allows you to read
+ * Figma Plugins.
+ *
+ * ## Installation
+ *
+ * ```sh
+ * pnpm add -D @theemo/figma
+ * ```
  */
 
 export type { File, Node, Style } from './-figma-types.js';

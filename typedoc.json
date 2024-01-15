@@ -2,15 +2,15 @@
   "name": "Theemo",
   "entryPointStrategy": "packages",
   "entryPoints": [
-    "packages/@theemo/build",
-    "packages/@theemo/cli",
-    "packages/@theemo/figma",
-    "packages/@theemo/style-dictionary",
-    "packages/@theemo/sync",
-    "packages/@theemo/tokens"
+    "packages/@theemo/*"
+  ],
+  "exclude": [
+    "packages/@theemo/core",
+    "packages/@theemo/theme"
   ],
   "out": "./api",
   "plugin": [
-    "typedoc-plugin-markdown"
+    "typedoc-plugin-markdown",
+    "typedoc-vitepress-theme"
   ]
 }
