@@ -1,7 +1,5 @@
 import { TokenCollection } from '@theemo/tokens';
 
-import { getLexerConfig } from './config.js';
-
 import type { LexerConfig } from './config.js';
 import type { Token } from '@theemo/tokens';
 
@@ -12,7 +10,7 @@ export class Lexer {
   private classifiedTokens: TokenCollection = new TokenCollection();
 
   constructor(config: LexerConfig) {
-    this.config = getLexerConfig(config);
+    this.config = config;
   }
 
   analyze(tokens: TokenCollection): TokenCollection {
