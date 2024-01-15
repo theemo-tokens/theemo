@@ -1,6 +1,6 @@
 const StyleDictionary = require('style-dictionary');
 const { registerTheemo, makeConstrainedFilter } = require('@theemo/style-dictionary');
-const { isConstrainedValue, matchesConstrainedValue } = require('@theemo/tokens');
+const { isConstrainedValue } = require('@theemo/tokens');
 
 registerTheemo(StyleDictionary);
 

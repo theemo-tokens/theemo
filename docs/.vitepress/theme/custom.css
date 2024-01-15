@@ -1,0 +1,72 @@
+main {
+  counter-reset: figure;
+}
+
+figure {
+  counter-increment: figure;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9em;
+}
+
+figcaption {
+  font-size: 0.9em;
+}
+
+figcaption:before {
+  font-size: 0.7em;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  content: "Figure " counter(figure) " "
+}
+
+figcaption::first-letter {
+  font-size: 1.2em;
+}
+
+a.figref::after {
+  content: "Figure " attr(href)
+}
+
+.fig-75 img {
+  width: 75%;
+}
+
+.fig-50 img {
+  width: 50%;
+}
+
+.fig-35 img {
+  width: 35%;
+}
+
+.fig-25 img {
+  width: 25%;
+}
+
+.vp-doc td {
+  vertical-align: top;
+}
+
+/* a[href]:empty::after {
+  content: "[" counter(link) "]";
+} */
+
+/* Nav */
+
+.VPNavBar :where(a:nth-child(3), a:nth-child(6))::after {
+  margin-right: -8px;
+  margin-left: 16px;
+  width: 1px;
+  height: 24px;
+  background-color: var(--vp-c-divider);
+  content: "";
+}
+
+/* Lists */
+
+dt {
+  font-weight: 600;
+}

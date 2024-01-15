@@ -1,0 +1,17 @@
+{
+  "name": "Theemo",
+  "entryPointStrategy": "packages",
+  "entryPoints": [
+    "packages/@theemo/*"
+  ],
+  "exclude": [
+    "packages/@theemo/core",
+    "packages/@theemo/theme"
+  ],
+  "out": "./api",
+  "plugin": [
+    "typedoc-plugin-markdown",
+    "typedoc-vitepress-theme"
+  ],
+  "mergeReadme": true
+}
