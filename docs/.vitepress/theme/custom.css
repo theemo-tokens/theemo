@@ -56,53 +56,13 @@ a.figref::after {
 
 /* Nav */
 
-.VPNavBarMenu {
-  order: 1;
-  flex-grow: 1;
-}
-
-.VPNavBarSearch {
-  order: 2;
-  flex-grow: 0;
-}
-
-.VPNavBarAppearance {
-  order: 3;
-}
-
-.VPNavBarSocialLinks {
-  order: 4;
-}
-
-.VPNavBarExtra {
-  order: 5;
-}
-
-.VPNavBar .content-body {
-  margin-left: 32px;
-}
-
-/* .VPNavBar.has-sidebar .content-body {
-  border-bottom: 1px solid var(--vp-c-divider);
-} */
-
-.VPNavBar a:nth-child(3)::after {
+.VPNavBar :where(a:nth-child(3), a:nth-child(6))::after {
   margin-right: -8px;
   margin-left: 16px;
   width: 1px;
   height: 24px;
   background-color: var(--vp-c-divider);
   content: "";
-}
-
-.VPNavBar .VPFlyout {
-  margin-left: auto;
-}
-
-@media (min-width: 960px) {
-  .VPNavBar:not(.has-sidebar) .title {
-    width: calc(var(--vp-sidebar-width) - 32px);
-  }
 }
 
 /* Lists */

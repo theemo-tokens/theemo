@@ -1,9 +1,14 @@
 # Token Pipeline
 
 Theemo's job is to cover the entire token pipeline from design into theme management of
-your product and all the steps in between. Figure 1 shows the entire token pipeline.
+your product and all the steps in between. Here's the entire token pipeline.
 
-!#[Token Pipeline](./token-pipeline.png)
+```mermaid
+flowchart LR
+  designer[Token Designer] <== sync ==> storage[Token Storage]
+  storage -- build --> theme[Theme]
+  theme --> integration[Product Integration]
+```
 
 Although Theemo has adapters to cover each step, you should choose it for the
 steps you need. If you've already have a tool or solution for one, that's great!
@@ -11,7 +16,7 @@ steps you need. If you've already have a tool or solution for one, that's great!
 Token Designer
 
 : The place where you (visually) design your tokens, such as a
-[design](./design.md) editor (for example, Figma or Penpot).
+[design](./design.md) editor (e.g. Figma or Penpot).
 
 Token Storage
 
@@ -27,7 +32,7 @@ Product Integration
 
 : Obviously your theme is then used in the final product. To load the theme
 assets, manage [theme switching](./design-tokens/theming.md) or toggling
-[features](./design-tokens/features.md), this is where Theemo can provide
+[features](./design-tokens/features.md), this is where Theemo provides
 integrations.
 
 ## Sync

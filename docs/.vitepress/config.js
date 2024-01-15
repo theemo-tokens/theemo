@@ -16,6 +16,10 @@ export default withMermaid(
       logo: '/logo.svg',
       outline: [2, 3],
 
+      search: {
+        provider: 'local'
+      },
+
       nav: [
         {
           text: 'Getting Started',
@@ -36,27 +40,21 @@ export default withMermaid(
           text: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>',
           // link: '/api/',
           items: [
-            // {
-            //   text: 'References',
-            //   items: [
-            //     { text: 'Config', link: '/references/config' },
-            //     { text: 'CLI', link: '/cli', activeMatch: '/cli' },
-            //   ]
-            // },
-
-            // { text: 'API' }
-
             {
               text: 'Packages',
               items: [
-                { text: '@theemo/tokens', link: '/api/@theemo/tokens/index' },
-                { text: '@theemo/cli', link: '/api/@theemo/cli/index' },
-                { text: '@theemo/figma', link: '/api/@theemo/figma/index' },
+                { text: '@theemo/build', link: '/api/@theemo/build/' },
+                { text: '@theemo/cli', link: '/api/@theemo/cli/' },
+                { text: '@theemo/figma', link: '/api/@theemo/figma/' },
                 {
                   text: '@theemo/style-dictionary',
-                  link: '/api/@theemo/style-dictionary/index'
+                  link: '/api/@theemo/style-dictionary/'
                 },
-                { text: '@theemo/build', link: '/api/@theemo/build/index' }
+                { text: '@theemo/sync', link: '/api/@theemo/sync/' },
+                {
+                  text: '@theemo/tokens',
+                  link: '/api/@theemo/tokens/'
+                }
               ]
             }
           ]
@@ -235,7 +233,17 @@ export default withMermaid(
 
       socialLinks: [
         { icon: 'github', link: 'https://github.com/theemo-tokens' }
-      ]
+      ],
+
+      footer: {
+        message: 'Released under the MIT License.',
+        copyright:
+          'Copyright © 2019-present <a href="https://gos.si" target="_blank">Thomas Gossmann</a>'
+      }
+    },
+
+    sitemap: {
+      hostname: 'https://theemo.io'
     },
 
     markdown: {

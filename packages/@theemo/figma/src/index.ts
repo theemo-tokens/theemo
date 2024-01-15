@@ -1,16 +1,3 @@
-/**
- * @packageDocumentation
- *
- * Packages contains a reader to sync tokens from Figma. Also allows you to read
- * Figma Plugins.
- *
- * ## Installation
- *
- * ```sh
- * pnpm add -D @theemo/figma
- * ```
- */
-
 export type { File, Node, Style } from './-figma-types.js';
 export type { FigmaVariable } from './-figma-variable-types.js';
 export type {

@@ -16,7 +16,7 @@ hero:
 features:
   - title: Design
     icon: 🎨
-    details: Integrate with your Design Tools
+    details: Augment your Design Tools with Advanced Design Token Tooling
     link: /design
     linkText: Boot the Robots
 

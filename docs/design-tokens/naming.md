@@ -4,7 +4,7 @@ Naming design tokens can sometimes be considered its own discipline. Naming is s
 
 A lot has been written about naming design tokens, and Lukas Oppermann (2022) has collated this in his [practical guide to name design tokens](https://uxdesign.cc/naming-design-tokens-9454818ed7cb). Applying this brings people to both sides of the spectrum on one hand a chill mode and the other side a sweaty stressful mode.
 
-## How to NOT to Name Design Tokens
+## How NOT to Name Design Tokens
 
 When naming design tokens becomes a problem, then because this solves all other problems but naming design tokens. Here is a list of common mistakes:
 
