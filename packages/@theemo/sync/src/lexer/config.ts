@@ -11,18 +11,14 @@ export interface LexerConfig {
    *
    * @example
    *
-   * This is the default normalize method:
+   * Here is how to remove any whitespace from token names:
    *
-   * ```js
+   * ```ts
    * normalizeToken(token: Token): Token {
-   *  const normalized = { ...token };
-   *
-   *  normalized.name = normalized.name.replace(/\s/g, '');
-   *  if (normalized.reference) {
-   *    normalized.reference = normalized.reference.replace(/\s/g, '');
-   *  }
-   *
-   *  return normalized;
+   *   return {
+   *     ...token,
+   *     name: normalized.name.replace(/\s/g, '')
+   *   };
    * }
    * ```
    */
@@ -60,21 +56,4 @@ export interface LexerConfig {
       classified: TokenCollection;
     }
   ) => boolean;
-}
-
-const DEFAULT_LEXER_CONFIG = {
-  normalizeToken(token: Token): Token {
-    const normalized = { ...token };
-
-    normalized.name = normalized.name.replace(/\s/g, '');
-
-    return normalized;
-  }
-};
-
-export function getLexerConfig(config: LexerConfig): LexerConfig {
-  return {
-    ...DEFAULT_LEXER_CONFIG,
-    ...config
-  };
 }
