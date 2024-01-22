@@ -229,13 +229,18 @@ export default defineConfig({
 });
 ```
 
-::: info Default Behavior
+::: info References
 
-Filters out variables hidden from publishing and boolean type variables.
+Default
 
-[Reference](https://github.com/theemo-tokens/theemo/blob/8416df80bc0d0f801777cfdece259a660f7c4cff/packages/%40theemo/figma/src/config.ts#L153)
+```ts
+import { isTokenByVariable } from '@theemo/figma';
+```
 
-TODO link to API
+API
+
+- [`FigmaParserConfig.isTokenByVariable`](../../api/@theemo/figma/interfaces/FigmaParserConfig.md#istokenbyvariable)
+- [`isTokenByVariable()`](../../api/@theemo/figma/functions/isTokenByVariable.md)
 :::
 
 #### `getNameFromVariable()`
@@ -274,11 +279,18 @@ export default defineConfig({
 });
 ```
 
-::: info Default Behavior
+::: info References
 
-Replaces `/` with `.` and lower cases all names.
+Default
 
-[Reference](https://github.com/theemo-tokens/theemo/blob/8416df80bc0d0f801777cfdece259a660f7c4cff/packages/%40theemo/figma/src/config.ts#L157)
+```ts
+import { getNameFromVariable } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.getNameFromVariable`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getnamefromvariable)
+- [`getNameFromVariable()`](../../api/@theemo/figma/functions/getNameFromVariable.md)
 :::
 
 #### `considerMode()`
@@ -311,6 +323,11 @@ export default defineConfig({
   }
 });
 ```
+
+::: info References
+
+- [`FigmaParserConfig.considerMode`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#considermode)
+:::
 
 #### `getConstraints()`
 
@@ -346,12 +363,13 @@ export default defineConfig({
 });
 ```
 
-::: info Constraints
+::: info References
 
 Theemo has a very advanced and flexible system to describe constraints. Read
 more on [features for themes](../../design-tokens/theming.md#features).
 
-TODO: Links to `Constraint` types
+- [`FigmaParserConfig.getConstraints`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getconstraints)
+- [`Constraints`](../../api/@theemo/tokens/type-aliases/Constraints.md)
 :::
 
 ### Styles
@@ -421,8 +439,18 @@ export default defineConfig({
 });
 ```
 
-::: info
-TODO link to API
+::: info References
+
+Default
+
+```ts
+import { isTokenByStyle } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.isTokenByStyle`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#istokenbystyle)
+- [`isTokenByStyle()`](../../api/@theemo/figma/functions/isTokenByStyle.md)
 :::
 
 #### `getNameFromStyle()`
@@ -459,8 +487,18 @@ export default defineConfig({
 });
 ```
 
-::: info
-TODO link to API
+::: info References
+
+Default
+
+```ts
+import { getNameFromStyle } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.getNameFromStyle`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getnamefromstyle)
+- [`getNameFromStyle()`](../../api/@theemo/figma/functions/getNameFromStyle.md)
 :::
 
 ### Text Nodes
@@ -506,7 +544,7 @@ our sizing, we only need `base` and `ratio` parameters for this.
 as suffix for the node names. This will serve as indicators to recognize such
 nodes as tokens in theemo.
 
-::: info API Reference
+::: info Reference
 
 - [`Text` Node on Figma API](https://www.figma.com/developers/api#text-props)
 
@@ -538,8 +576,18 @@ export default defineConfig({
 });
 ```
 
-::: info
-TODO - link to API
+::: info References
+
+Default
+
+```ts
+import { isTokenByText } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.isTokenByText`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#istokenbytext)
+- [`isTokenByText()`](../../api/@theemo/figma/functions/isTokenByText.md)
 :::
 
 #### `getNameFromText()`
@@ -568,8 +616,18 @@ export default defineConfig({
 });
 ```
 
-::: info
-TODO - link the default implementation
+::: info References
+
+Default
+
+```ts
+import { getNameFromText } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.getNameFromText`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getnamefromtext)
+- [`getNameFromText()`](../../api/@theemo/figma/functions/getNameFromText.md)
 :::
 
 #### `getValueFromText()`
@@ -580,8 +638,18 @@ provides a default implementation by returning the `characters` property from
 the `node` (= the contents), which should already do it. However, you are free
 to overwrite this behavior at this point.
 
-::: info
-TODO - link the default implementation
+::: info References
+
+Default
+
+```ts
+import { getValueFromText } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.getValueFromText`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getvaluefromtext)
+- [`getValueFromText()`](../../api/@theemo/figma/functions/getValueFromText.md)
 :::
 
 ### Classify Tokens
@@ -592,12 +660,6 @@ into `Token`s and the result of the reader is to return an array of `Token`s
 which will be put into the [lexer](../lexer.md). In the last classification step,
 you have the chance to do some cleanup or pass any data along with the token
 that are relevant to your setup.
-
-::: info API References
-
-TODO API links
-
-:::
 
 #### `getTypeFromToken()`
 
@@ -629,8 +691,18 @@ export default defineConfig({
 });
 ```
 
-::: info
-TODO link to API
+::: info References
+
+Default
+
+```ts
+import { getTypeFromToken } from '@theemo/figma';
+```
+
+API
+
+- [`FigmaParserConfig.getTypeFromToken`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#gettypefromtoken)
+- [`getTypeFromToken()`](../../api/@theemo/figma/functions/getTypeFromToken.md)
 :::
 
 #### `getPropertiesForToken()`
@@ -668,105 +740,7 @@ You'll also receive the Figma `document` as second parameter. With that you can
 perform your own lookups with the Figma document. Please refer to their
 [REST API documention](https://www.figma.com/developers/api#get-files-endpoint).
 
-::: info
-TODO link to API
+::: info References
+
+- [`FigmaParserConfig.getPropertiesForToken`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getpropertiesfortoken)
 :::
-
-<!--
-### Output
-
-Here are some samples from how the tokens are looking after they are read and
-parsed from Figma:
-
-```js
-[
-  // pair of contextual tokens
-  {
-    name: 'layout.background.$light',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: undefined,
-    value: '#FFFFFF'
-  },
-  {
-    name: 'layout.background.$dark',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: undefined,
-    value: '#4D4D4D'
-  },
-  {
-    name: 'layout.background',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: undefined,
-    value: '#FFFFFF'
-  },
-  // regular token
-  {
-    name: 'intent.action.base.text',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: undefined,
-    value: '#FFEC40'
-  },
-  // token with a reference
-  {
-    name: 'intent.action.active.text',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: 'intent.action.base.text',
-    value: '#FFEC40'
-  },
-  // token with a reference and transform
-  {
-    name: 'intent.action.disabled.text',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: 'intent.action.base.text',
-    value: 'rgba(255, 236, 64, 0.65)',
-    transforms: { opacity: -35 }
-  },
-  // specific token
-  {
-    name: 'hero.text',
-    description: '',
-    tier: 'unknown',
-    type: 'color',
-    colorScheme: undefined,
-    reference: 'text.normal',
-    value: '#000000'
-  },
-  // text token
-  {
-    name: 'sizing.ratio',
-    description: undefined,
-    tier: 'unknown',
-    type: 'content',
-    colorScheme: undefined,
-    reference: undefined,
-    value: '1.3'
-  }
-  //...
-];
-```
-
--->
-
-<!-- 
-## References
-
-- [ReaderConfig](/api/theemo.readerconfig)
-- [FigmaReaderConfig](/api/theemo.figmareaderconfig) -->

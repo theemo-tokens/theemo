@@ -3,7 +3,7 @@ import { TokenCollection } from '@theemo/tokens';
 import { mapVariablesWithCollection, parseVariables } from '../figma-variables.js';
 
 import type { FigmaVariable, Variable, VariableCollection } from '../-figma-variable-types.js';
-import type { FigmaParserConfigWithDefaults } from '../config.js';
+import type { FigmaParserConfigWithDefaults } from '../defaults.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
 import type { ColorTransform, ComputedValue, ConstrainedValue, TokenType } from '@theemo/tokens';
@@ -229,6 +229,11 @@ export class TheemoPlugin implements Plugin {
   }
 }
 
+/**
+ * Theemo plugin for the Figma reader.
+ *
+ * Helps to sync variables (when not on the enterprise plan)
+ */
 export function theemoPlugin(): Plugin {
   return new TheemoPlugin();
 }

@@ -7,7 +7,7 @@ import {
   parseTypographyFromStyle
 } from '../figma-styles.js';
 
-import type { FigmaParserConfigWithDefaults } from '../config.js';
+import type { FigmaParserConfigWithDefaults } from '../defaults.js';
 import type { StyleColor } from '../figma-styles.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';

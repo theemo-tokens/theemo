@@ -4,9 +4,10 @@ export type {
   ColorAlphaFormat,
   ColorConfig,
   ColorFormat,
-  FigmaParserConfigWithDefaults,
+  FigmaParserConfig,
   FigmaReaderConfig
 } from './config.js';
+export type { FigmaParserConfigWithDefaults } from './defaults.js';
 export {
   DEFAULT_PARSER_CONFIG,
   getNameFromStyle,
@@ -17,7 +18,7 @@ export {
   isTokenByStyle,
   isTokenByText,
   isTokenByVariable
-} from './config.js';
+} from './defaults.js';
 export type { Plugin } from './plugin.js';
 export { theemoPlugin } from './plugins/theemo.js';
 export type { FigmaToken } from './token.js';

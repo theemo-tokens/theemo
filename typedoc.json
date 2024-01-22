@@ -8,10 +8,18 @@
     "packages/@theemo/core",
     "packages/@theemo/theme"
   ],
-  "out": "./api",
+  "out": "./docs/api",
+  "docsRoot": "./docs",
+  "excludeInternal": true,
   "plugin": [
     "typedoc-plugin-markdown",
     "typedoc-vitepress-theme"
   ],
-  "mergeReadme": true
+  "useCodeBlocks": true,
+  "parametersFormat": "table",
+  "typeDeclarationFormat": "table",
+  "textContentMappings": {
+    "kind.typeAlias.singular": "Type",
+    "kind.typeAlias.plural": "Types",
+  }
 }

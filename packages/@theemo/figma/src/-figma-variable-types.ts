@@ -52,6 +52,7 @@ export interface VariableCodeSyntax {
 }
 
 export interface Variable {
+  /**  */
   readonly id: string;
   readonly name: string;
   readonly key: string;
@@ -67,6 +68,18 @@ export interface Variable {
   readonly codeSyntax: VariableCodeSyntax;
 }
 
+/**
+ * A `FigmaVariable` is a `Variable` which has their `VariableCollection`
+ * attached.
+ *
+ * @see [Figma Variable Documentation](https://www.figma.com/developers/api#variables-types)
+ *
+ * @remarks
+ *
+ * Figma itself treats variables and collections as two objects. As you might
+ * need to have access to _both_ when in sync mode, a `FigmaVariable` does
+ * exactly that.
+ */
 export interface FigmaVariable extends Variable {
   readonly collection: VariableCollection;
 }

@@ -7,6 +7,11 @@ const isColorTransform = (token: StyleDictionary.TransformedToken): boolean => {
   return isComputedValue(token.value) && isColor(token);
 };
 
+/**
+ * Apply color transformations on color tokens
+ *
+ * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ */
 export const theemoColorValueTransform: StyleDictionary.Transform = {
   type: 'value',
   transitive: true,

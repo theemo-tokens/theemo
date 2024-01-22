@@ -6,6 +6,6 @@ import type { WriterTool } from '../tool.js';
  *
  * See the respective tool configurations, what further properties will be used.
  */
-export type WriterConfig = {
+export interface WriterConfig {
   targets: WriterTool | WriterTool[];
-};
+}

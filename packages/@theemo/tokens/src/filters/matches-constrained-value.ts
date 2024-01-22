@@ -32,6 +32,13 @@ function matchesScope(value: ConstrainedValue<TokenType>, scope: Scope) {
   return Boolean(value.scope && value.scope === scope);
 }
 
+/**
+ * Checks whether a token value matches the given constraint
+ *
+ * @param value the token value
+ * @param constraints the constraint
+ * @returns `true` if the constraint matches or `false` if not
+ */
 export function matchesConstrainedValue(
   value: TokenValue<TokenType>,
   constraints: Constraints

@@ -9,7 +9,7 @@ values.
 pnpm add -D @theemo/tokens
 ```
 
-## Alernatives
+## Alternatives
 
 This package is heavily influenced rsp. based on these:
 

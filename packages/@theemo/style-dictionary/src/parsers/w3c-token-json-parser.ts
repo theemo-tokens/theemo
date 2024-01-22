@@ -1,14 +1,15 @@
+import type StyleDictionary from 'style-dictionary';
+
 /**
  * Parses json and replace `$value` with `value` and `$description`
  * with `comment` to make it work with style dictionary
  *
- * @remarks
- *
  * From {@link https://github.com/lukasoppermann/style-dictionary-utils}
  *
+ * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  * @author Lukas Oppermann
  */
-export const w3cTokenJsonParser = {
+export const w3cTokenJsonParser: StyleDictionary.Parser = {
   pattern: /\.json$|\.tokens\.json$|\.tokens$/,
   parse: ({ contents }: { contents: string }) => {
     const preparedContent = (contents || '{}')
