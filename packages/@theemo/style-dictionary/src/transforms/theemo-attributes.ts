@@ -2,6 +2,11 @@ import { findConstrainedValue, isConstrainedValue } from '@theemo/tokens';
 
 import type StyleDictionary from 'style-dictionary';
 
+/**
+ * Extract constraints under which the token is available to the attributes
+ *
+ * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ */
 export const theemoAttributesTransform: StyleDictionary.Transform = {
   type: 'attribute',
   matcher: (token) => isConstrainedValue(token.value),

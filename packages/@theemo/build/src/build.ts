@@ -95,6 +95,11 @@ function getThemeName() {
   return data.theemo?.name ?? data.name;
 }
 
+/**
+ * Build a theme, which can be managed by theemo
+ *
+ * @param config The configuration for the theme and its behavior
+ */
 export function build(config: GenerateConfig) {
   const name = getThemeName();
   const contents = [prepareBaseBlock(config, name), ...prepareColorSchemes(config, name)];

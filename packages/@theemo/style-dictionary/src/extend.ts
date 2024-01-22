@@ -19,6 +19,24 @@ export {
   typographyCssTransform
 };
 
+/**
+ * Register all theemo extensions with style dictionary
+ *
+ * @example
+ *
+ * In your style dictionary config:
+ *
+ * ```js
+ * const StyleDictionary = require('style-dictionary');
+ * const { registerTheemo } = require('@theemo/style-dictionary');
+ *
+ * registerTheemo(StyleDictionary);
+ *
+ * // ...
+ * ```
+ * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ * @param styleDictionary
+ */
 export const registerTheemo = (styleDictionary: StyleDictionary.Core) => {
   styleDictionary.registerParser(w3cTokenJsonParser);
 

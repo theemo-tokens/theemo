@@ -10,7 +10,9 @@ function transformShadow(value: ShadowValueSingular) {
 }
 
 /**
- * @description convert a w3c `shadow` token to a value that can be used with the css `font` property
+ * Convert a `shadow` token to a value that can be used with the css `box-shadow` property
+ *
+ * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  */
 export const shadowCssTransform: StyleDictionary.Transform = {
   type: 'value',

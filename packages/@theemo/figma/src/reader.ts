@@ -3,7 +3,7 @@ import merge from 'lodash.merge';
 
 import { TokenCollection } from '@theemo/tokens';
 
-import { DEFAULT_PARSER_CONFIG } from './config.js';
+import { DEFAULT_PARSER_CONFIG } from './defaults.js';
 import FigmaParser from './plugins/figma-parser.js';
 
 import type { FigmaParserConfig, FigmaReaderConfig } from './config.js';

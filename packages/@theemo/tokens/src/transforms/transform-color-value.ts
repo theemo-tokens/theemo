@@ -2,7 +2,7 @@ import { colord } from 'colord';
 
 import type { ColorTransform, ComputedValue } from '../token-types';
 
-export function applyColorTransforms(value: string, transforms: ColorTransform): string {
+function applyColorTransforms(value: string, transforms: ColorTransform): string {
   let color = colord(value);
 
   if (transforms.alpha) {
@@ -28,6 +28,12 @@ export function applyColorTransforms(value: string, transforms: ColorTransform):
   return color.toHex();
 }
 
+/**
+ * Apply color transformations on the token value
+ *
+ * @param value the token value
+ * @returns the transformed token value
+ */
 export function transformColorValue(value: ComputedValue<'color'>) {
   return applyColorTransforms(value.value, value.transforms);
 }

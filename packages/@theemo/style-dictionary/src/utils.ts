@@ -1,21 +1,3 @@
-// import fs from 'node:fs';
-// import path from 'node:path';
-// import process from 'node:process';
-
-// export async function readModule(file: string): Promise<object> {
-//   const filepath = path.join(process.cwd(), file);
-
-//   if (!fs.existsSync(filepath)) {
-//     throw new Error(`Cannot find file: ${filepath}`);
-//   }
-
-//   return await import(filepath);
-// }
-
-// export function readJson(file: string) {
-//   return JSON.parse(fs.readFileSync(file, { encoding: 'utf-8' }));
-// }
-
 export function set(object: Record<string, unknown>, keyPath: string[], value: unknown): void {
   const lastKeyIndex = keyPath.length - 1;
 

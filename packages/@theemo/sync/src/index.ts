@@ -1,15 +1,3 @@
-/**
- * @packageDocumentation
- *
- * Synchronizes tokens from one tool to another
- *
- * ## Installation
- *
- * ```sh
- * pnpm add -D @theemo/sync
- * ```
- */
-
 export type { SyncConfig } from './config';
 export { defineConfig } from './config';
 export type { LexerConfig } from './lexer/config';

@@ -3,7 +3,9 @@ import { isTypography, type TypographyValue } from '@theemo/tokens';
 import type StyleDictionary from 'style-dictionary';
 
 /**
- * @description convert a w3c `typography` token to a value that can be used with the css `font` property
+ * Convert a W3C `typography` token to a value that can be used with the css `font` property
+ *
+ * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  */
 export const typographyCssTransform: StyleDictionary.Transform = {
   type: 'value',

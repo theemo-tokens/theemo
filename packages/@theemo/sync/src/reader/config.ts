@@ -6,6 +6,6 @@ import type { ReaderTool } from '../tool.js';
  *
  * See the respective tool configurations, what further properties will be used.
  */
-export type ReaderConfig = {
+export interface ReaderConfig {
   sources: ReaderTool | ReaderTool[];
-};
+}
