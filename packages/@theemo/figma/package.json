@@ -1,6 +1,6 @@
 {
   "name": "@theemo/figma",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Theemo Figma Integration",
   "license": "MIT",
   "author": "Thomas Gossmann",
@@ -44,8 +44,8 @@
     "test:dev": "vitest"
   },
   "dependencies": {
-    "@theemo/tokens": "0.2.1",
-    "@theemo/sync": "0.2.1",
+    "@theemo/tokens": "0.2.2",
+    "@theemo/sync": "0.2.2",
     "colord": "^2.9.3",
     "figma-api": "^1.11.0",
     "lodash.isempty": "^4.4.0",

@@ -1,6 +1,6 @@
 {
   "name": "@theemo/cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Theemo CLI",
   "license": "MIT",
   "author": "Thomas Gossmann",
@@ -51,8 +51,8 @@
     "test:dev": "vitest"
   },
   "dependencies": {
-    "@theemo/build": "0.2.1",
-    "@theemo/sync": "0.2.1",
+    "@theemo/build": "0.2.2",
+    "@theemo/sync": "0.2.2",
     "commander": "^11.0.0",
     "cosmiconfig": "^9.0.0",
     "dotenv": "^16.3.1",

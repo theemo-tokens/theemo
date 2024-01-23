@@ -1,5 +1,30 @@
 
 
+
+## v0.2.2 (2024-01-23)
+
+#### :rocket: Enhancement
+* `@theemo/figma`
+  * [#730](https://github.com/theemo-tokens/theemo/pull/730) Publish Types for Config ([@gossi](https://github.com/gossi))
+* `@theemo/style-dictionary`
+  * [#729](https://github.com/theemo-tokens/theemo/pull/729) Publish W3C Token Parser ([@gossi](https://github.com/gossi))
+
+#### :bug: Bug Fix
+* `@theemo/sync`
+  * [#733](https://github.com/theemo-tokens/theemo/pull/733) Remove Lexer Defaults ([@gossi](https://github.com/gossi))
+
+#### :memo: Documentation
+* `@theemo/build`, `@theemo/cli`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/tokens`
+  * [#736](https://github.com/theemo-tokens/theemo/pull/736) API Documentation ([@gossi](https://github.com/gossi))
+  * [#731](https://github.com/theemo-tokens/theemo/pull/731) Use vitepress + typedoc for api docs ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `theemo`
+  * [#727](https://github.com/theemo-tokens/theemo/pull/727) Remove Outdated Stuff ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## v0.2.1 (2023-11-06)
 
 #### :bug: Bug Fix

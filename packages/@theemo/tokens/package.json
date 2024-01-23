@@ -1,6 +1,6 @@
 {
   "name": "@theemo/tokens",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Theemo Token Definitions and Utilities",
   "license": "MIT",
   "author": "Thomas Gossmann",
