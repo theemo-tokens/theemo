@@ -106,10 +106,10 @@ importers:
   packages/@theemo/cli:
     dependencies:
       '@theemo/build':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../build
       '@theemo/sync':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../sync
       commander:
         specifier: ^11.0.0
@@ -191,10 +191,10 @@ importers:
   packages/@theemo/figma:
     dependencies:
       '@theemo/sync':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../sync
       '@theemo/tokens':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../tokens
       colord:
         specifier: ^2.9.3
@@ -255,10 +255,10 @@ importers:
   packages/@theemo/style-dictionary:
     dependencies:
       '@theemo/sync':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../sync
       '@theemo/tokens':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../tokens
     devDependencies:
       '@gossi/config-eslint':
@@ -304,7 +304,7 @@ importers:
   packages/@theemo/sync:
     dependencies:
       '@theemo/tokens':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../tokens
     devDependencies:
       '@babel/core':
