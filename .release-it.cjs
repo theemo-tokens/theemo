@@ -1,8 +1,8 @@
 module.exports = {
   plugins: {
     '@release-it-plugins/lerna-changelog': {
-      'infile': 'CHANGELOG.md',
-      'launchEditor': false
+      infile: 'CHANGELOG.md',
+      launchEditor: false
     },
     '@release-it-plugins/workspaces': {
       workspaces: [
@@ -20,11 +20,11 @@ module.exports = {
   git: {
     tagName: 'v${version}',
     commitMessage: 'Release v${version}',
-    requireCleanWorkingDir: false,
+    requireCleanWorkingDir: false
   },
   github: {
     release: true,
-    tokenRef: "GITHUB_AUTH"
+    tokenRef: 'GITHUB_AUTH'
   },
   npm: false
-}
+};
