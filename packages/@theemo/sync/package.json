@@ -47,7 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
-    "@gossi/config-eslint": "^0.6.0",
+    "@gossi/config-eslint": "^0.7.0",
     "@gossi/config-prettier": "^0.6.0",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
