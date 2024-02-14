@@ -42,7 +42,7 @@
     "vue": "^3.4.3"
   },
   "volta": {
-    "node": "20.11.0"
+    "node": "20.11.1"
   },
   "pnpm": {
     "peerDependencyRules": {
