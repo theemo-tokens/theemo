@@ -37,7 +37,7 @@
     "markdown-it-multimd-table": "^4.2.3",
     "mermaid": "^10.6.1",
     "vite": "^5.0.10",
-    "vitepress": "1.0.0-rc.43",
+    "vitepress": "1.0.0-rc.44",
     "vitepress-plugin-mermaid": "^2.0.16",
     "vue": "^3.4.3"
   },
