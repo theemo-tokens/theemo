@@ -226,7 +226,7 @@ importers:
         version: 4.4.9
       '@types/lodash.merge':
         specifier: ^4.6.7
-        version: 4.6.7
+        version: 4.6.9
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.60.1
         version: 5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.49.0)(typescript@5.2.2)
@@ -398,7 +398,7 @@ importers:
         version: 0.7.0(prettier@3.0.3)
       '@types/lodash.merge':
         specifier: ^4.6.7
-        version: 4.6.7
+        version: 4.6.9
       concurrently:
         specifier: ^8.2.0
         version: 8.2.0
@@ -2784,14 +2784,10 @@ packages:
       '@types/lodash': 4.14.202
     dev: true
 
-  /@types/lodash.merge@4.6.7:
-    resolution: {integrity: sha512-OwxUJ9E50gw3LnAefSHJPHaBLGEKmQBQ7CZe/xflHkyy/wH2zVyEIAKReHvVrrn7zKdF58p16We9kMfh7v0RRQ==}
+  /@types/lodash.merge@4.6.9:
+    resolution: {integrity: sha512-23sHDPmzd59kUgWyKGiOMO2Qb9YtqRO/x4IhkgNUiPQ1+5MUVqi6bCZeq9nBJ17msjIMbEIO5u+XW4Kz6aGUhQ==}
     dependencies:
-      '@types/lodash': 4.14.182
-    dev: true
-
-  /@types/lodash@4.14.182:
-    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
+      '@types/lodash': 4.14.202
     dev: true
 
   /@types/lodash@4.14.202:
