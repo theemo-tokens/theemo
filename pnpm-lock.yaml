@@ -57,11 +57,11 @@ importers:
         specifier: ^5.0.10
         version: 5.1.5(@types/node@20.11.23)
       vitepress:
-        specifier: 1.0.0-rc.44
-        version: 1.0.0-rc.44(search-insights@2.13.0)(typescript@5.3.3)
+        specifier: 1.0.0-rc.45
+        version: 1.0.0-rc.45(search-insights@2.13.0)(typescript@5.3.3)
       vitepress-plugin-mermaid:
         specifier: ^2.0.16
-        version: 2.0.16(mermaid@10.9.0)(vitepress@1.0.0-rc.44)
+        version: 2.0.16(mermaid@10.9.0)(vitepress@1.0.0-rc.45)
       vitest:
         specifier: ^1.0.0
         version: 1.3.1(@vitest/ui@1.3.1)
@@ -8929,27 +8929,6 @@ packages:
       semver: 7.6.0
     dev: true
 
-  /vite-node@1.3.1:
-    resolution: {integrity: sha512-azbRrqRxlWTJEVbzInZCTchx0X69M/XPTCz4H+TLvlTcR/xH/3hkRqhOakT41fMJCMzXTu4UvegkZiEoJAWvng==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    dependencies:
-      cac: 6.7.14
-      debug: 4.3.4
-      pathe: 1.1.2
-      picocolors: 1.0.0
-      vite: 5.1.5(@types/node@20.11.23)
-    transitivePeerDependencies:
-      - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-    dev: true
-
   /vite-node@1.3.1(@types/node@20.11.23):
     resolution: {integrity: sha512-azbRrqRxlWTJEVbzInZCTchx0X69M/XPTCz4H+TLvlTcR/xH/3hkRqhOakT41fMJCMzXTu4UvegkZiEoJAWvng==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -8959,7 +8938,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.1.4(@types/node@20.11.23)
+      vite: 5.1.5(@types/node@20.11.23)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -9043,20 +9022,20 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress-plugin-mermaid@2.0.16(mermaid@10.9.0)(vitepress@1.0.0-rc.44):
+  /vitepress-plugin-mermaid@2.0.16(mermaid@10.9.0)(vitepress@1.0.0-rc.45):
     resolution: {integrity: sha512-sW0Eu4+1EzRdwZBMGjzwKDsbQiuJIxCy8BlMw7Ur88p9fXalrFYKqZ3wYWLxsFTBipeooFIeanef/xw1P+v7vQ==}
     peerDependencies:
       mermaid: '10'
       vitepress: ^1.0.0 || ^1.0.0-alpha
     dependencies:
       mermaid: 10.9.0
-      vitepress: 1.0.0-rc.44(search-insights@2.13.0)(typescript@5.3.3)
+      vitepress: 1.0.0-rc.45(search-insights@2.13.0)(typescript@5.3.3)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress@1.0.0-rc.44(search-insights@2.13.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-tO5taxGI7fSpBK1D8zrZTyJJERlyU9nnt0jHSt3fywfq3VKn977Hg0wUuTkEmwXlFYwuW26+6+3xorf4nD3XvA==}
+  /vitepress@1.0.0-rc.45(search-insights@2.13.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-/OiYsu5UKpQKA2c0BAZkfyywjfauDjvXyv6Mo4Ra57m5n4Bxg1HgUGoth1CLH2vwUbR/BHvDA9zOM0RDvgeSVQ==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4.3.2
@@ -9211,7 +9190,7 @@ packages:
       tinybench: 2.6.0
       tinypool: 0.8.2
       vite: 5.1.5(@types/node@20.11.23)
-      vite-node: 1.3.1
+      vite-node: 1.3.1(@types/node@20.11.23)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
