@@ -77,10 +77,10 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@types/node':
         specifier: ^20.6.3
         version: 20.11.30
@@ -92,7 +92,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       tsup:
         specifier: ^8.0.0
         version: 8.0.2(@swc/core@1.4.11)(typescript@5.3.3)
@@ -129,10 +129,10 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@swc/cli':
         specifier: ^0.3.0
         version: 0.3.10(@swc/core@1.4.11)
@@ -150,7 +150,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       tsup:
         specifier: ^8.0.0
         version: 8.0.2(@swc/core@1.4.11)(typescript@5.3.3)
@@ -165,10 +165,10 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       concurrently:
         specifier: ^8.2.0
         version: 8.2.2
@@ -177,7 +177,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       tsup:
         specifier: ^8.0.0
         version: 8.0.2(@swc/core@1.4.11)(typescript@5.3.3)
@@ -217,10 +217,10 @@ importers:
         version: 7.24.1(@babel/core@7.24.3)(eslint@8.57.0)
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(@babel/eslint-parser@7.24.1)(@typescript-eslint/eslint-plugin@5.62.0)(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(@babel/eslint-parser@7.24.1)(@typescript-eslint/eslint-plugin@5.62.0)(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@types/lodash.isempty':
         specifier: ^4.4.7
         version: 4.4.9
@@ -241,7 +241,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       tsup:
         specifier: ^8.0.0
         version: 8.0.2(@swc/core@1.4.11)(typescript@5.3.3)
@@ -263,10 +263,10 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@types/jsonpath':
         specifier: ^0.2.0
         version: 0.2.4
@@ -287,7 +287,7 @@ importers:
         version: 5.2.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       style-dictionary:
         specifier: ^3.8.0
         version: 3.9.2
@@ -315,10 +315,10 @@ importers:
         version: 7.24.1(@babel/core@7.24.3)(eslint@8.57.0)
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(@babel/eslint-parser@7.24.1)(@typescript-eslint/eslint-plugin@5.62.0)(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(@babel/eslint-parser@7.24.1)(@typescript-eslint/eslint-plugin@5.62.0)(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.60.1
         version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.57.0)(typescript@5.3.3)
@@ -333,7 +333,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       tsup:
         specifier: ^8.0.0
         version: 8.0.2(@swc/core@1.4.11)(typescript@5.3.3)
@@ -358,10 +358,10 @@ importers:
         version: 7.24.3
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@swc/cli':
         specifier: ^0.3.0
         version: 0.3.10(@swc/core@1.4.11)
@@ -376,7 +376,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -392,10 +392,10 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@types/lodash.merge':
         specifier: ^4.6.7
         version: 4.6.9
@@ -407,7 +407,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.3
-        version: 3.0.3
+        version: 3.2.5
       tsup:
         specifier: ^8.0.0
         version: 8.0.2(@swc/core@1.4.11)(typescript@5.3.3)
@@ -438,10 +438,10 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.7.0
-        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3)
+        version: 0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3)
       '@gossi/config-prettier':
         specifier: ^0.7.0
-        version: 0.7.0(prettier@3.0.3)
+        version: 0.7.0(prettier@3.2.5)
       '@swc/cli':
         specifier: ^0.3.0
         version: 0.3.10(@swc/core@1.4.11)
@@ -459,7 +459,7 @@ importers:
         version: 8.57.0
       prettier:
         specifier: ^3.0.0
-        version: 3.0.3
+        version: 3.2.5
       typescript:
         specifier: ^5.1.6
         version: 5.3.3
@@ -1489,7 +1489,7 @@ packages:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
 
-  /@gossi/config-eslint@0.7.0(@babel/core@7.24.3)(@babel/eslint-parser@7.24.1)(@typescript-eslint/eslint-plugin@5.62.0)(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3):
+  /@gossi/config-eslint@0.7.0(@babel/core@7.24.3)(@babel/eslint-parser@7.24.1)(@typescript-eslint/eslint-plugin@5.62.0)(@typescript-eslint/parser@5.62.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3):
     resolution: {integrity: sha512-0l45gRJFsZKvBJNPWxa1KnjK4y5FLLKl0FmEiH9Xgz9prfyuVIBOXZTUhTH8noffsN4r8gi+XqiT6LsXYyISFA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
@@ -1529,7 +1529,7 @@ packages:
       eslint-plugin-i: 2.29.1(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-json: 3.1.0
       eslint-plugin-n: 16.6.2(eslint@8.57.0)
-      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.0.3)
+      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.2.5)
       eslint-plugin-simple-import-sort: 10.0.0(eslint@8.57.0)
     transitivePeerDependencies:
       - '@types/eslint'
@@ -1541,7 +1541,7 @@ packages:
       - typescript
     dev: true
 
-  /@gossi/config-eslint@0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.0.3)(typescript@5.3.3):
+  /@gossi/config-eslint@0.7.0(@babel/core@7.24.3)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.2.5)(typescript@5.3.3):
     resolution: {integrity: sha512-0l45gRJFsZKvBJNPWxa1KnjK4y5FLLKl0FmEiH9Xgz9prfyuVIBOXZTUhTH8noffsN4r8gi+XqiT6LsXYyISFA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
@@ -1578,7 +1578,7 @@ packages:
       eslint-plugin-i: 2.29.1(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-json: 3.1.0
       eslint-plugin-n: 16.6.2(eslint@8.57.0)
-      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.0.3)
+      eslint-plugin-prettier: 5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.2.5)
       eslint-plugin-simple-import-sort: 10.0.0(eslint@8.57.0)
     transitivePeerDependencies:
       - '@types/eslint'
@@ -1590,14 +1590,14 @@ packages:
       - typescript
     dev: true
 
-  /@gossi/config-prettier@0.7.0(prettier@3.0.3):
+  /@gossi/config-prettier@0.7.0(prettier@3.2.5):
     resolution: {integrity: sha512-Dah/xR2KL/lA8t8gUfE7Wh3Ff1NCjoE+OjnBkxK6oZqtOyShu53P6iz+rexiMHN+/owaD2/t+urQopTBaeOtbA==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
       prettier: ^3.0.0
     dependencies:
-      prettier: 3.0.3
-      prettier-plugin-ember-template-tag: 2.0.0(prettier@3.0.3)
+      prettier: 3.2.5
+      prettier-plugin-ember-template-tag: 2.0.0(prettier@3.2.5)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4927,7 +4927,7 @@ packages:
       semver: 7.6.0
     dev: true
 
-  /eslint-plugin-prettier@5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.0.3):
+  /eslint-plugin-prettier@5.1.3(eslint-config-prettier@8.10.0)(eslint@8.57.0)(prettier@3.2.5):
     resolution: {integrity: sha512-C9GCVAs4Eq7ZC/XFQHITLiHJxQngdtraXaM+LoUFoFp/lHNl2Zn8f3WQbe9HvTBBQ9YnKFB0/2Ajdqwo5D1EAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -4943,7 +4943,7 @@ packages:
     dependencies:
       eslint: 8.57.0
       eslint-config-prettier: 8.10.0(eslint@8.57.0)
-      prettier: 3.0.3
+      prettier: 3.2.5
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
     dev: true
@@ -7794,7 +7794,7 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-ember-template-tag@2.0.0(prettier@3.0.3):
+  /prettier-plugin-ember-template-tag@2.0.0(prettier@3.2.5):
     resolution: {integrity: sha512-n2iIQedT5r/kvoTfhjThPECE1y0Ji3DupNpCtENP1Dm974M2NoKhaT5QynfBdn+WXlPhvFE4A/2uDSsZfx373A==}
     engines: {node: 18.* || >= 20}
     peerDependencies:
@@ -7802,13 +7802,13 @@ packages:
     dependencies:
       '@babel/core': 7.24.3
       content-tag: 1.2.2
-      prettier: 3.0.3
+      prettier: 3.2.5
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+  /prettier@3.2.5:
+    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
