@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@gossi/config-eslint": "^0.7.0",
-    "@gossi/config-prettier": "^0.7.0",
+    "@gossi/config-prettier": "^0.8.0",
     "@types/node": "^20.6.3",
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",
