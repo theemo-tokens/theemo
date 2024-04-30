@@ -351,7 +351,7 @@ importers:
         version: link:../tokens
       type-fest:
         specifier: ^4.0.0
-        version: 4.15.0
+        version: 4.18.0
     devDependencies:
       '@babel/core':
         specifier: ^7.22.5
@@ -9102,8 +9102,8 @@ packages:
     engines: {node: '>=16'}
     dev: false
 
-  /type-fest@4.15.0:
-    resolution: {integrity: sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==}
+  /type-fest@4.18.0:
+    resolution: {integrity: sha512-+dbmiyliDY/2TTcjCS7NpI9yV2iEFlUDk5TKnsbkN7ZoRu5s7bT+zvYtNFhFXC2oLwURGT2frACAZvbbyNBI+w==}
     engines: {node: '>=16'}
     dev: false
 
