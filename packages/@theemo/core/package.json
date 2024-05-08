@@ -46,7 +46,7 @@
     "@gossi/config-eslint": "^0.7.0",
     "@gossi/config-prettier": "^0.8.0",
     "concurrently": "^8.2.0",
-    "eslint": "^8.49.0",
+    "eslint": "^9.0.0",
     "prettier": "^3.0.3",
     "tsup": "^8.0.0",
     "typescript": "^5.2.2",
