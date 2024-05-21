@@ -57,11 +57,11 @@ importers:
         specifier: ^5.0.10
         version: 5.2.11(@types/node@20.12.12)
       vitepress:
-        specifier: 1.2.0
-        version: 1.2.0(search-insights@2.13.0)(typescript@5.3.3)
+        specifier: 1.2.2
+        version: 1.2.2(search-insights@2.13.0)(typescript@5.3.3)
       vitepress-plugin-mermaid:
         specifier: ^2.0.16
-        version: 2.0.16(mermaid@10.9.1)(vitepress@1.2.0)
+        version: 2.0.16(mermaid@10.9.1)(vitepress@1.2.2)
       vitest:
         specifier: ^1.0.0
         version: 1.5.3(@vitest/ui@1.5.3)
@@ -9454,20 +9454,20 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress-plugin-mermaid@2.0.16(mermaid@10.9.1)(vitepress@1.2.0):
+  /vitepress-plugin-mermaid@2.0.16(mermaid@10.9.1)(vitepress@1.2.2):
     resolution: {integrity: sha512-sW0Eu4+1EzRdwZBMGjzwKDsbQiuJIxCy8BlMw7Ur88p9fXalrFYKqZ3wYWLxsFTBipeooFIeanef/xw1P+v7vQ==}
     peerDependencies:
       mermaid: '10'
       vitepress: ^1.0.0 || ^1.0.0-alpha
     dependencies:
       mermaid: 10.9.1
-      vitepress: 1.2.0(search-insights@2.13.0)(typescript@5.3.3)
+      vitepress: 1.2.2(search-insights@2.13.0)(typescript@5.3.3)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress@1.2.0(search-insights@2.13.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-m/4PAQVyPBvKHV7sFKwcmNmrsoSxdjnw/Eg40YyuBSaBHhrro9ubnfWk5GT0xGfE98LqjZkHCWKNJlR6G/7Ayg==}
+  /vitepress@1.2.2(search-insights@2.13.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-uZ3nXR5NY4nYj3RJWCo5jev9qlNZAQo5SUXu1U0QSUx84cUm/o7hCTDVjZ4njVSVui+PsV1oAbdQOg8ygbaf4w==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
