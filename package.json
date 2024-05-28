@@ -20,7 +20,7 @@
     "test:dev": "vitest --ui"
   },
   "devDependencies": {
-    "@release-it-plugins/lerna-changelog": "^6.1.0",
+    "@release-it-plugins/lerna-changelog": "^7.0.0",
     "@release-it-plugins/workspaces": "^4.2.0",
     "@vitest/coverage-v8": "^1.0.0",
     "@vitest/ui": "^1.0.0",
