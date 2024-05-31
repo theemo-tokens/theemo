@@ -185,9 +185,8 @@ export class TheemoPlugin implements Plugin {
 
                 // ref found and matched token
                 if (ref && this.parserConfig.isTokenByVariable(ref)) {
-                  (
-                    value as ComputedValue<TokenType>
-                  ).value = `{${this.parserConfig.getNameFromVariable(ref)}}`;
+                  (value as ComputedValue<TokenType>).value =
+                    `{${this.parserConfig.getNameFromVariable(ref)}}`;
                 }
               }
 

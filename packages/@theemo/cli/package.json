@@ -67,7 +67,7 @@
     "@types/node": "^20.3.3",
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.2.5",
     "tsup": "^8.0.0",
     "typescript": "^5.2.2",
     "vitest": "^1.0.0"
