@@ -31,9 +31,7 @@ import type StyleDictionary from 'style-dictionary';
  */
 export function makeConstrainedFilter(constraints: Constraints) {
   return (token: StyleDictionary.TransformedToken) => {
-    return (
-      token.attributes?.constraints &&
-      matchesConstrainedValue(token.attributes.constraints, constraints)
-    );
+    return (token.attributes?.constraints &&
+      matchesConstrainedValue(token.attributes.constraints, constraints)) as boolean;
   };
 }

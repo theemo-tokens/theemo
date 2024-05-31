@@ -12,7 +12,7 @@ import type { StyleColor } from '../figma-styles.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
 import type { TokenType } from '@theemo/tokens';
-import type { Effect, Node, Paint, Style, StylesMap, TypeStyle } from 'figma-api';
+import type { Effect, Node, Paint, Style, StylesMap } from 'figma-api';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 type CompositeNode = Node & {
@@ -124,6 +124,7 @@ export default class FigmaParser implements Plugin {
     let key = `${type}s`.replace('ss', 's') as keyof Node<'TEXT'> & 'texts';
 
     // fill - color swatch
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (key === 'fills' && node[key]) {
       token.value = parseColorFromStyle(
         this.getColorFromPaint(node[key] as Paint[]),
@@ -132,6 +133,7 @@ export default class FigmaParser implements Plugin {
     }
 
     // stroke - somewhere used as border
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     else if (key === 'strokes' && node[key]) {
       token.value = parseColorFromStyle(
         this.getColorFromPaint(node[key] as Paint[]),
@@ -140,21 +142,20 @@ export default class FigmaParser implements Plugin {
     }
 
     // effect - shadows
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     else if (key === 'effects' && node[key]) {
       const shadows = parseShadowsFromStyle(node[key] as Effect[], this.config.formats);
 
-      if (shadows) {
-        token.value = shadows;
-      }
+      token.value = shadows;
     }
 
     // typography
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, dot-notation
     else if (key === 'texts' && node['style']) {
-      const typo = parseTypographyFromStyle(node['style'] as TypeStyle);
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, dot-notation
+      const typo = parseTypographyFromStyle(node['style']);
 
-      if (typo) {
-        token.value = typo;
-      }
+      token.value = typo;
     }
 
     return token;

@@ -163,7 +163,7 @@ export interface FigmaParserConfig {
    * @param variable Figma Variable
    * @returns the constraints for the given mode
    */
-  getConstraints?: (mode: string, variable: FigmaVariable) => void | Constraints;
+  getConstraints?: (mode: string, variable: FigmaVariable) => Constraints | undefined;
 
   //
   // misc

@@ -21,23 +21,23 @@ export function parseColorValue(value: string | RGB | RGBA, config: ColorConfig)
   if (color.alpha() === 1) {
     switch (config.color) {
       case ColorFormat.Hsl:
-        return color.toHslString() as ColorValue;
+        return color.toHslString();
 
       case ColorFormat.Rgb:
-        return color.toRgbString() as ColorValue;
+        return color.toRgbString();
 
       default:
       case ColorFormat.Hex:
-        return color.toHex() as ColorValue;
+        return color.toHex();
     }
   } else {
     switch (config.colorAlpha) {
       case ColorAlphaFormat.Hsl:
-        return color.toHslString() as ColorValue;
+        return color.toHslString();
 
       default:
       case ColorAlphaFormat.Rgb:
-        return color.toRgbString() as ColorValue;
+        return color.toRgbString();
     }
   }
 }

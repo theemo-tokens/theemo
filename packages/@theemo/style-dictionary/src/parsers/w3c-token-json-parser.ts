@@ -1,3 +1,4 @@
+import type { DesignTokens } from 'style-dictionary';
 import type StyleDictionary from 'style-dictionary';
 
 /**
@@ -20,6 +21,6 @@ export const w3cTokenJsonParser: StyleDictionary.Parser = {
       // convert $description to comment
       .replace(/"\$?description"\s*:/g, '"comment":');
 
-    return JSON.parse(preparedContent);
+    return JSON.parse(preparedContent) as DesignTokens;
   }
 };

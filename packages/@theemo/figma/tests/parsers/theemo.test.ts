@@ -12,7 +12,7 @@ function getTokens(dev = false) {
 
   let config = {
     ...DEFAULT_PARSER_CONFIG,
-    getConstraints(mode: string): Constraints | void {
+    getConstraints(mode: string): Constraints | undefined {
       if (mode === 'light' || mode === 'dark') {
         return {
           features: {
@@ -21,6 +21,8 @@ function getTokens(dev = false) {
           }
         };
       }
+
+      return undefined;
     },
     considerMode(mode: string) {
       return mode === 'light' || mode === 'dark';

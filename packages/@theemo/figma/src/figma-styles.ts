@@ -26,7 +26,7 @@ export interface StyleShadow {
   color: StyleColor;
 }
 
-export function getTypefromStyle(style: Style): TokenType | void {
+export function getTypefromStyle(style: Style): TokenType | undefined {
   // 'FILL' | 'STROKE' | 'TEXT' | 'EFFECT' | 'GRID'
   const type = style.styleType;
 
@@ -41,16 +41,18 @@ export function getTypefromStyle(style: Style): TokenType | void {
     case 'text':
       return 'typography';
   }
+
+  return undefined;
 }
 
 export function getDimension(value: number | string, unit: string): DimensionValue {
   let val = typeof value === 'string' ? Number.parseFloat(value) : value;
 
-  return val === 0 ? '0' : `${val}${unit}`;
+  return val === 0 ? '0' : `${val.toString()}${unit}`;
 }
 
 export function parseColorFromStyle(color: StyleColor, config: ColorConfig): string {
-  if (color.visible === false) {
+  if (!color.visible) {
     return 'transparent';
   }
 
@@ -85,6 +87,7 @@ export function parseShadowsFromStyle(effects: Effect[], config: ColorConfig): S
 
 function parseTextTransform(textCase: TextCase): TextTransformValue {
   switch (textCase) {
+    /* eslint-disable @typescript-eslint/no-unsafe-enum-comparison */
     case 'UPPER':
       return 'uppercase';
 
@@ -99,6 +102,8 @@ function parseTextTransform(textCase: TextCase): TextTransformValue {
     case 'ORIGINAL':
     default:
       return 'none';
+
+    /* eslint-enable @typescript-eslint/no-unsafe-enum-comparison */
   }
 }
 

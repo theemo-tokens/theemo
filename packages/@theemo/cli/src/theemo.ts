@@ -21,7 +21,7 @@ export default class Theemo {
     const usedConfig = config ?? this.config.sync;
 
     if (usedConfig) {
-      sync(usedConfig);
+      await sync(usedConfig);
     }
   }
 

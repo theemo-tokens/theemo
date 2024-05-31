@@ -85,4 +85,4 @@ export async function cli() {
   program.parse(argv);
 }
 
-cli();
+void cli();

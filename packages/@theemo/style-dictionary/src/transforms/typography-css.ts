@@ -12,8 +12,11 @@ export const typographyCssTransform: StyleDictionary.Transform = {
   matcher: isTypography,
   transformer: ({ value }: { value: TypographyValue }) => {
     // font: (font-style) font-variant font-weight font-size/line-height font-family;
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     return `${value.fontWeight || ''} ${value.fontSize}${
+      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       value.lineHeight ? '/' + value.lineHeight : ''
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     } "${value.fontFamily}"`
       .trim()
       .replace(/\s\s+/g, ' ');
