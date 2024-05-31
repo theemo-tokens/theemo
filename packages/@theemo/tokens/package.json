@@ -46,7 +46,7 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.7.0",
+    "@gossi/config-eslint": "^0.10.0",
     "@gossi/config-prettier": "^0.8.0",
     "@types/lodash.merge": "^4.6.7",
     "concurrently": "^8.2.0",

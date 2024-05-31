@@ -20,8 +20,8 @@ function paintToColorTransforms(paint: PaintTransforms): ColorTransform {
 
   if (paint.opacity) {
     // @ts-expect-error opacity is invalidly copied over
-    delete colorTransforms['opacity'];
-    colorTransforms['alpha'] = paint['opacity'];
+    delete colorTransforms.opacity;
+    colorTransforms.alpha = paint.opacity;
   }
 
   return colorTransforms;
@@ -97,6 +97,7 @@ export class TheemoPlugin implements Plugin {
     const configStyle = Object.values(file.styles).find((style) => style.name === CONFIG);
 
     if (configStyle) {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       const theemoConfig = JSON.parse(configStyle.description ?? '{}') as Config;
 
       this.styleConfig = theemoConfig.styles;
@@ -108,7 +109,8 @@ export class TheemoPlugin implements Plugin {
 
   private parseVariables(file: GetFileResult): TokenCollection<FigmaToken> {
     let tokens = new TokenCollection<FigmaToken>();
-    const pluginData = file.document.pluginData[this.getPluginData()] as PluginData;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const pluginData = file.document.pluginData[this.getPluginData()] as PluginData | undefined;
 
     if (pluginData) {
       const variables = (JSON.parse(pluginData.variables) ?? {}) as Variables;
@@ -143,7 +145,7 @@ export class TheemoPlugin implements Plugin {
 
             // value is constrained, find by matching constraints
             else if (Array.isArray(token.value)) {
-              const constraints = this.parserConfig.getConstraints?.(mode.name, variable) ?? {};
+              const constraints = this.parserConfig.getConstraints?.(mode.name, variable);
 
               if (!constraints || Object.keys(constraints).length === 0) {
                 // eslint-disable-next-line no-console
@@ -152,6 +154,7 @@ export class TheemoPlugin implements Plugin {
                 value = (token.value as ComputedValue<TokenType>[]).find(
                   (val) =>
                     typeof val === 'object' &&
+                    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
                     matches(val as ConstrainedValue<TokenType>, constraints)
                 ) as ComputedValue<TokenType>;
 
@@ -169,6 +172,7 @@ export class TheemoPlugin implements Plugin {
             // found the matching value
             if (value) {
               // attach transforms
+              // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
               if (varConfig.transforms) {
                 (value as ComputedValue<TokenType>).transforms = paintToColorTransforms(
                   varConfig.transforms

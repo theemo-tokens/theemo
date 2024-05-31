@@ -77,12 +77,7 @@ function prepareColorSchemes(config: GenerateConfig, name: string) {
 
   for (const [scheme, schemaConfig] of Object.entries(config.colorSchemes)) {
     contents.push(
-      `/* Color Scheme: ${scheme} */\n${prepareColorScheme(
-        scheme,
-        name,
-        config,
-        schemaConfig as SchemeConfig
-      )}`
+      `/* Color Scheme: ${scheme} */\n${prepareColorScheme(scheme, name, config, schemaConfig)}`
     );
   }
 
@@ -126,10 +121,6 @@ export function build(config: GenerateConfig) {
 
     packageJson.theemo.colorSchemes = Object.keys(config.colorSchemes);
     packageJson.theemo.file = outFile;
-
-    if (!packageJson.keywords) {
-      packageJson.keywords = [];
-    }
 
     if (!packageJson.keywords.includes('theemo-theme')) {
       packageJson.keywords.push('theemo-theme');

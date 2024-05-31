@@ -18,7 +18,9 @@ import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 export function isAlias(value: VariableValue): value is VariableAlias {
   return (
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     (value as VariableAlias).type !== undefined &&
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     (value as VariableAlias).type === 'VARIABLE_ALIAS'
   );
 }
@@ -64,7 +66,8 @@ function parseValue(
   variable: FigmaVariable,
   mode: string,
   config: FigmaParserConfigWithDefaults
-): TokenValue<TokenType> | void {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+): TokenValue<TokenType> | undefined {
   const value = variable.valuesByMode[mode];
 
   switch (variable.resolvedType) {
@@ -83,7 +86,8 @@ function parseValueOrReference(
   modeId: string,
   variables: FigmaVariable[],
   config: FigmaParserConfigWithDefaults
-): TokenValue<TokenType> | void {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+): TokenValue<TokenType> | undefined {
   const aliasOrValue = variable.valuesByMode[modeId];
 
   const publishedAlias = isAlias(aliasOrValue) && isAliasPublished(aliasOrValue, variables, config);
@@ -123,7 +127,8 @@ function parseTokenValue(
   variable: FigmaVariable,
   variables: FigmaVariable[],
   config: FigmaParserConfigWithDefaults
-): TokenValue<TokenType> | void {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+): TokenValue<TokenType> | undefined {
   const tokenValues: TokenValue<TokenType>[] = [];
 
   // when constraints are needed and at least one of them is considered
@@ -222,6 +227,7 @@ export function parseVariables(
   const tokens = new TokenCollection<FigmaToken>();
 
   for (const variable of variables) {
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (variable.collection && config.isTokenByVariable(variable)) {
       tokens.add(createTokenFromVariable(variable, variables, file, config));
     }

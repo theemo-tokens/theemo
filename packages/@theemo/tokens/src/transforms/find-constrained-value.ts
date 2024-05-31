@@ -12,7 +12,8 @@ import type { Constraints, TokenType, TokenValue } from '../token-types';
 export function findConstrainedValue(
   value: TokenValue<TokenType>,
   constraints: Constraints
-): TokenValue<TokenType> | void {
+  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+): TokenValue<TokenType> | undefined {
   if (Array.isArray(value)) {
     return value.find((val) => findConstrainedValue(val, constraints));
   }

@@ -2,7 +2,7 @@ export function set(object: Record<string, unknown>, keyPath: string[], value: u
   const lastKeyIndex = keyPath.length - 1;
 
   for (let i = 0; i < lastKeyIndex; ++i) {
-    const key = keyPath[i] as keyof Record<string, unknown>;
+    const key = keyPath[i];
 
     if (!(key in object)) {
       // eslint-disable-next-line no-param-reassign

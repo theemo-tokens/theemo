@@ -6,14 +6,15 @@ import { TokenCollection } from '@theemo/tokens';
 import { DEFAULT_PARSER_CONFIG } from './defaults.js';
 import FigmaParser from './plugins/figma-parser.js';
 
-import type { FigmaParserConfig, FigmaReaderConfig } from './config.js';
+import type { FigmaReaderConfig } from './config.js';
+import type { FigmaParserConfigWithDefaults } from './defaults.js';
 import type { Plugin } from './plugin.js';
 import type { FigmaToken } from './token.js';
 import type { Token } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 type FigmaReaderConfigWithParser = FigmaReaderConfig & {
-  parser: Required<FigmaParserConfig>;
+  parser: FigmaParserConfigWithDefaults;
 };
 
 interface Parser extends Required<Pick<Plugin, 'parse'>> {}
@@ -97,7 +98,7 @@ export default class FigmaReader {
     const resolvers = this.plugins.filter((plugin) => plugin.resolve !== undefined) as Resolver[];
 
     for (const resolver of resolvers) {
-      t = resolver.resolve(token, tokens) ?? t;
+      t = resolver.resolve(token, tokens);
     }
 
     return t;

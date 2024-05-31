@@ -43,7 +43,7 @@
     "_test:dev": "vitest"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.7.0",
+    "@gossi/config-eslint": "^0.10.0",
     "@gossi/config-prettier": "^0.8.0",
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",

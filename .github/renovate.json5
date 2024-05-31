@@ -2,7 +2,8 @@
 // https://docs.renovatebot.com/configuration-options/
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "github>gossi/frontend-configs//config/renovate.json5"
   ],
   "automerge": true,
   "masterIssue": true,
