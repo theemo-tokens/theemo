@@ -492,7 +492,7 @@ importers:
     devDependencies:
       npm-run-all2:
         specifier: ^6.0.0
-        version: 6.2.0
+        version: 6.2.1
       style-dictionary:
         specifier: ^3.7.0
         version: 3.9.2
@@ -7397,15 +7397,15 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
-  /npm-run-all2@6.2.0:
-    resolution: {integrity: sha512-wA7yVIkthe6qJBfiJ2g6aweaaRlw72itsFGF6HuwCHKwtwAx/4BY1vVpk6bw6lS8RLMsexoasOkd0aYOmsFG7Q==}
-    engines: {node: ^14.18.0 || >=16.0.0, npm: '>= 8'}
+  /npm-run-all2@6.2.1:
+    resolution: {integrity: sha512-eX4MWsUYOSm1FhPh9LPAWbqq2quny3u8gEEWIY4HHECi10qOyi1dNaJFCyOOv2uP05ZuTPETwS2p1GZk9oLJsw==}
+    engines: {node: ^14.18.0 || ^16.13.0 || >=18.0.0, npm: '>= 8'}
     hasBin: true
     dependencies:
       ansi-styles: 6.2.1
       cross-spawn: 7.0.3
       memorystream: 0.3.1
-      minimatch: 9.0.4
+      minimatch: 9.0.5
       pidtree: 0.6.0
       read-package-json-fast: 3.0.2
       shell-quote: 1.8.1
