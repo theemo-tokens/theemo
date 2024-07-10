@@ -79,8 +79,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@types/node':
         specifier: ^20.6.3
         version: 20.14.10
@@ -131,8 +131,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@swc/cli':
         specifier: ^0.4.0
         version: 0.4.0(@swc/core@1.6.12)
@@ -167,8 +167,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       concurrently:
         specifier: ^8.2.0
         version: 8.2.2
@@ -219,8 +219,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(@babel/eslint-parser@7.24.7)(@typescript-eslint/eslint-plugin@7.16.0)(@typescript-eslint/parser@7.16.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@types/lodash.isempty':
         specifier: ^4.4.7
         version: 4.4.9
@@ -265,8 +265,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@types/jsonpath':
         specifier: ^0.2.0
         version: 0.2.4
@@ -317,8 +317,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(@babel/eslint-parser@7.24.7)(@typescript-eslint/eslint-plugin@7.16.0)(@typescript-eslint/parser@7.16.0)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.11.0
         version: 7.16.0(@typescript-eslint/parser@7.16.0)(eslint@8.57.0)(typescript@5.3.3)
@@ -360,8 +360,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@swc/cli':
         specifier: ^0.4.0
         version: 0.4.0(@swc/core@1.6.12)
@@ -394,8 +394,8 @@ importers:
         specifier: ^0.10.0
         version: 0.10.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@types/lodash.merge':
         specifier: ^4.6.7
         version: 4.6.9
@@ -440,8 +440,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(@babel/core@7.24.7)(eslint-plugin-import@2.29.1)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.3.3)
       '@gossi/config-prettier':
-        specifier: ^0.8.0
-        version: 0.8.0(prettier@3.3.2)
+        specifier: ^0.9.0
+        version: 0.9.0(prettier@3.3.2)
       '@swc/cli':
         specifier: ^0.4.0
         version: 0.4.0(@swc/core@1.6.12)
@@ -1652,8 +1652,8 @@ packages:
       - typescript
     dev: true
 
-  /@gossi/config-prettier@0.8.0(prettier@3.3.2):
-    resolution: {integrity: sha512-iwhdCsLUL0Rttkq/CGWOOIy95kOEEfnr2H7N/STqDEdSLOh7I+CYahevyClFRy+lz5cVvwqGKK1bnwqXDLkTZQ==}
+  /@gossi/config-prettier@0.9.0(prettier@3.3.2):
+    resolution: {integrity: sha512-mkqTbNWOmKurB72ajCPAzeQMmKz+gs04teVriCHUJxFK41+1Usrc9gD59x8bCCABVX11C9f8HPIdyV1FGMELdQ==}
     engines: {node: 16.* || >= 18.*}
     peerDependencies:
       prettier: ^3.0.0
