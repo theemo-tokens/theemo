@@ -57,11 +57,11 @@ importers:
         specifier: ^5.0.10
         version: 5.3.3(@types/node@20.14.10)
       vitepress:
-        specifier: 1.3.0
-        version: 1.3.0(search-insights@2.15.0)(typescript@5.3.3)
+        specifier: 1.3.1
+        version: 1.3.1(search-insights@2.15.0)(typescript@5.3.3)
       vitepress-plugin-mermaid:
         specifier: ^2.0.16
-        version: 2.0.16(mermaid@10.9.1)(vitepress@1.3.0)
+        version: 2.0.16(mermaid@10.9.1)(vitepress@1.3.1)
       vitest:
         specifier: ^2.0.0
         version: 2.0.2(@types/node@20.14.10)(@vitest/ui@2.0.2)
@@ -7058,8 +7058,8 @@ packages:
     engines: {node: '>=16 || 14 >=14.17'}
     dev: true
 
-  /minisearch@6.3.0:
-    resolution: {integrity: sha512-ihFnidEeU8iXzcVHy74dhkxh/dn8Dc08ERl0xwoMMGqp4+LvRSCgicb+zGqWthVokQKvCSxITlh3P08OzdTYCQ==}
+  /minisearch@7.0.0:
+    resolution: {integrity: sha512-0OIJ3hUE+YBJNruDCqbTMFmk/IoB1CpZzuGfl11khFIel66ew9UoLF/+gfq3bdyrneqr3P7BTjFZApUbmk+9Dg==}
     dev: true
 
   /minizlib@2.1.2:
@@ -9344,20 +9344,20 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress-plugin-mermaid@2.0.16(mermaid@10.9.1)(vitepress@1.3.0):
+  /vitepress-plugin-mermaid@2.0.16(mermaid@10.9.1)(vitepress@1.3.1):
     resolution: {integrity: sha512-sW0Eu4+1EzRdwZBMGjzwKDsbQiuJIxCy8BlMw7Ur88p9fXalrFYKqZ3wYWLxsFTBipeooFIeanef/xw1P+v7vQ==}
     peerDependencies:
       mermaid: '10'
       vitepress: ^1.0.0 || ^1.0.0-alpha
     dependencies:
       mermaid: 10.9.1
-      vitepress: 1.3.0(search-insights@2.15.0)(typescript@5.3.3)
+      vitepress: 1.3.1(search-insights@2.15.0)(typescript@5.3.3)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
     dev: true
 
-  /vitepress@1.3.0(search-insights@2.15.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-Cbm2AgXcCrukUeV+/24g1ZDSvw8blamh/1uf2pz3ApFpaYb9T7mo4imWDZ6APn2uPo4bJ6sgOzvsJ4aH+oLbBA==}
+  /vitepress@1.3.1(search-insights@2.15.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-soZDpg2rRVJNIM/IYMNDPPr+zTHDA5RbLDHAxacRu+Q9iZ2GwSR0QSUlLs+aEZTkG0SOX1dc8RmUYwyuxK8dfQ==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -9380,7 +9380,7 @@ packages:
       '@vueuse/integrations': 10.11.0(focus-trap@7.5.4)(vue@3.4.31)
       focus-trap: 7.5.4
       mark.js: 8.11.1
-      minisearch: 6.3.0
+      minisearch: 7.0.0
       shiki: 1.10.3
       vite: 5.3.3(@types/node@20.14.10)
       vue: 3.4.31(typescript@5.3.3)
