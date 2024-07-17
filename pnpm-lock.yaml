@@ -95,7 +95,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -153,7 +153,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -180,7 +180,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -244,7 +244,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -293,7 +293,7 @@ importers:
         version: 3.9.2
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -336,7 +336,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -410,7 +410,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.1.1(@swc/core@1.6.12)(typescript@5.3.3)
+        version: 8.1.2(@swc/core@1.6.12)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -4690,7 +4690,7 @@ packages:
     peerDependencies:
       eslint: ^7.2.0 || ^8
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.5
       doctrine: 3.0.0
       eslint: 8.57.0
       eslint-import-resolver-node: 0.3.9
@@ -8746,8 +8746,8 @@ packages:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
     dev: true
 
-  /tsup@8.1.1(@swc/core@1.6.12)(typescript@5.3.3):
-    resolution: {integrity: sha512-lLXP3BshJ6y/32b3tPZUB2siD2mkJ6mLzhbPOShfjogSc3aRw8MhbBV4cPKbqkbXuhsJR+c9B0W9RHMbtbXLMQ==}
+  /tsup@8.1.2(@swc/core@1.6.12)(typescript@5.3.3):
+    resolution: {integrity: sha512-Gzw/PXSX/z0aYMNmkcI54bKKFVFJQbLne+EqTJZeQ3lNT3QpumjtMU4rl+ZwTTp8oRF3ahMbEAxT2sZPJLFSrg==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
