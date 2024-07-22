@@ -95,7 +95,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -153,7 +153,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -180,7 +180,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -244,7 +244,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -293,7 +293,7 @@ importers:
         version: 3.9.2
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -336,7 +336,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -410,7 +410,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.1(@swc/core@1.6.13)(typescript@5.3.3)
+        version: 8.2.2(@swc/core@1.6.13)(typescript@5.3.3)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -5222,17 +5222,6 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fdir@6.1.1(picomatch@4.0.2):
-    resolution: {integrity: sha512-QfKBVg453Dyn3mr0Q0O+Tkr1r79lOTAKSi9f/Ot4+qVEwxWhav2Z+SudrG9vQjM2aYRMQQZ2/Q1zdA8ACM1pDg==}
-    peerDependencies:
-      picomatch: 3.x
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
-    dependencies:
-      picomatch: 4.0.2
-    dev: true
-
   /fetch-blob@3.1.5:
     resolution: {integrity: sha512-N64ZpKqoLejlrwkIAnb9iLSA3Vx/kjgzpcDhygcqJ2KKjky8nCgUQ+dzXtbrLaWZGZNmNfQTsiQ0weZ1svglHg==}
     engines: {node: ^12.20 || >= 14.13}
@@ -7680,11 +7669,6 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
-    engines: {node: '>=12'}
-    dev: true
-
   /pidtree@0.6.0:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
@@ -8923,8 +8907,8 @@ packages:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
     dev: true
 
-  /tsup@8.2.1(@swc/core@1.6.13)(typescript@5.3.3):
-    resolution: {integrity: sha512-ArA/s1GvXbovrnNeTtLphz7D2+OiFVCARviT8RmnWxFdH44dFt8v2tqz54MjJyqZC+QgjKjRuTlWKvC3CkAq3Q==}
+  /tsup@8.2.2(@swc/core@1.6.13)(typescript@5.3.3):
+    resolution: {integrity: sha512-MufIuzdSt6HYPOeOtjUXLR4rqRJySi6XsRNZdwvjC2XR+xghsu2L3vSmYmX+k4S1mO6j0OlUEyVQ3Fc0H66XcA==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -8950,10 +8934,9 @@ packages:
       debug: 4.3.5
       esbuild: 0.23.0
       execa: 5.1.1
-      fdir: 6.1.1(picomatch@4.0.2)
+      globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      picomatch: 4.0.2
       postcss-load-config: 6.0.1
       resolve-from: 5.0.0
       rollup: 4.19.0
