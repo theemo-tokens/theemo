@@ -5,5 +5,13 @@
     "github>gossi/frontend-configs//renovate/labels.json5",
     "github>gossi/frontend-configs//renovate/packages.json5",
     "github>gossi/frontend-configs//renovate/frontend-configs.json5"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "style-dictionary"
+      ],
+      "allowedVersions": "<4"
+    }
   ]
 }
