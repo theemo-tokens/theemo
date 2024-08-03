@@ -1,4 +1,5 @@
 {
+  "name": "theemo",
   "private": true,
   "repository": "https://github.com/theemo-tokens/theemo",
   "type": "module",
