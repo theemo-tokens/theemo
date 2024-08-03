@@ -1,7 +1,6 @@
 {
   "name": "playground-theme",
   "private": true,
-  "version": "0.0.0",
   "description": "Test theme for API",
   "license": "MIT",
   "keywords": [
