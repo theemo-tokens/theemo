@@ -24,7 +24,7 @@
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "skipLibCheck": false
+    "skipLibCheck": true
   },
   "include": [
     "src",
