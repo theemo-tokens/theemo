@@ -13,8 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: wyvox/action@v1
-      - run: pnpm build
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup
       - name: Collect Coverage and Submit to CodeClimate
         uses: paambaati/codeclimate-action@v8.0.0
         env:

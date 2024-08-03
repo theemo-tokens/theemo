@@ -71,8 +71,5 @@
     "tsup": "^8.0.0",
     "typescript": "^5.2.2",
     "vitest": "^2.0.0"
-  },
-  "volta": {
-    "extends": "../../../package.json"
   }
 }

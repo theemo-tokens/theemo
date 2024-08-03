@@ -32,8 +32,5 @@
     "npm-run-all2": "^6.0.0",
     "style-dictionary": "^3.7.0",
     "theemo": "^0.1.0"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }
