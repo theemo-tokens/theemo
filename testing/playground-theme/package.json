@@ -27,6 +27,6 @@
     "@theemo/sync": "workspace:*",
     "@theemo/style-dictionary": "workspace:*",
     "@theemo/tokens": "workspace:*",
-    "style-dictionary": "^3.8.0"
+    "style-dictionary": "3.9.2"
   }
 }
