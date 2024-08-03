@@ -45,14 +45,14 @@ importers:
         specifier: ^2.0.11
         version: 2.0.11
       typedoc:
-        specifier: ^0.25.7
-        version: 0.25.11(typescript@5.3.3)
+        specifier: ^0.26.0
+        version: 0.26.5(typescript@5.3.3)
       typedoc-plugin-markdown:
         specifier: ^4.0.0-next.42
-        version: 4.0.3(typedoc@0.25.11(typescript@5.3.3))
+        version: 4.0.3(typedoc@0.26.5(typescript@5.3.3))
       typedoc-vitepress-theme:
         specifier: ^1.0.0-next.7
-        version: 1.0.1(typedoc-plugin-markdown@4.0.3(typedoc@0.25.11(typescript@5.3.3)))
+        version: 1.0.1(typedoc-plugin-markdown@4.0.3(typedoc@0.26.5(typescript@5.3.3)))
       vite:
         specifier: ^5.0.10
         version: 5.3.5(@types/node@22.1.0)
@@ -95,7 +95,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -153,7 +153,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -180,7 +180,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -244,7 +244,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -293,7 +293,7 @@ importers:
         version: 3.9.2
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -336,7 +336,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -410,7 +410,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: ^8.0.0
-        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)
+        version: 8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0)
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
@@ -1117,6 +1117,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1124,6 +1125,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.2':
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
+    deprecated: Use @eslint/object-schema instead
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
@@ -1806,9 +1808,6 @@ packages:
   ansi-regex@6.0.1:
     resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
     engines: {node: '>=12'}
-
-  ansi-sequence-parser@1.1.1:
-    resolution: {integrity: sha512-vJXt3yiaUL4UU546s3rPXlsry/RnM730G1+HkpKE012AN0sx1eOrxSu95oKDIonskeLTijMgqWZ3uDEe3NFvyg==}
 
   ansi-styles@3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
@@ -3580,7 +3579,7 @@ packages:
     resolution: {integrity: sha512-TM9YBvyC84ZxE3rgfefxUWiQKLilstD6k7PTGt6wfbtXF8ixIJLOL3VYyV/z+ZiPLsVxAsKAFVwWlWeb2Y8Yyw==}
 
   lodash.isempty@4.4.0:
-    resolution: {integrity: sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=}
+    resolution: {integrity: sha512-oKMuF3xEeqDltrGMfDxAPGIVMSSRv8tbRSODbrs4KGsRRLEhrW8N8Rd4DRgB2+621hY8A8XwwrTVhXWpxFvMzg==}
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -3677,11 +3676,6 @@ packages:
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
-    hasBin: true
-
-  marked@4.3.0:
-    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
-    engines: {node: '>= 12'}
     hasBin: true
 
   matcher-collection@2.0.1:
@@ -3808,10 +3802,6 @@ packages:
 
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
-
-  minimatch@9.0.3:
-    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
-    engines: {node: '>=16 || 14 >=14.17'}
 
   minimatch@9.0.4:
     resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
@@ -4336,6 +4326,7 @@ packages:
   read-pkg-up@11.0.0:
     resolution: {integrity: sha512-LOVbvF1Q0SZdjClSefZ0Nz5z8u+tIE7mV5NibzmE9VYmDe9CaBbAVtz1veOSZbofrdsilxuDAYnFenukZVp8/Q==}
     engines: {node: '>=18'}
+    deprecated: Renamed to read-package-up
 
   read-pkg@9.0.1:
     resolution: {integrity: sha512-9viLL4/n1BJUCT1NXVTdS1jtm80yDEgR5T4yCelII49Mbj0v1rZdKqj7zCiYdbB0CuCgdrvHcNogAKTFPBocFA==}
@@ -4557,9 +4548,6 @@ packages:
     resolution: {integrity: sha512-TiwcRcrkhHvbrZbnRcFYMLl30Dfov3HKqzp5tO5b4pt6G/SezKcYhmDg15zXVBswHmctSAQKznqNW2LO5tTDow==}
     engines: {node: '>=4'}
     hasBin: true
-
-  shiki@0.14.7:
-    resolution: {integrity: sha512-dNPAPrxSc87ua2sKJ3H5dQ/6ZaY8RNnaAqK+t0eG7p0Soi2ydiqbGOTaZCqaYvA/uZYfS1LJnemt3Q+mSfcPCg==}
 
   shiki@1.10.3:
     resolution: {integrity: sha512-eneCLncGuvPdTutJuLyUGS8QNPAVFO5Trvld2wgEq1e002mwctAhJKeMGWtWVXOIEzmlcLRqcgPSorR6AVzOmQ==}
@@ -5000,12 +4988,12 @@ packages:
     peerDependencies:
       typedoc-plugin-markdown: '>=4.1.0'
 
-  typedoc@0.25.11:
-    resolution: {integrity: sha512-5MbI1W/FOG6oXsd8bdssQidSTeKh8Kt3xA5uKVzI+K99uzP8EGN45uPnPvQesyaWdD+89s4wCQdtWEd8QUbiRg==}
-    engines: {node: '>= 16'}
+  typedoc@0.26.5:
+    resolution: {integrity: sha512-Vn9YKdjKtDZqSk+by7beZ+xzkkr8T8CYoiasqyt4TTRFy5+UHzL/mF/o4wGBjRF+rlWQHDb0t6xCpA3JNL5phg==}
+    engines: {node: '>= 18'}
     hasBin: true
     peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x
+      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x
 
   typescript@5.3.3:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
@@ -5187,12 +5175,6 @@ packages:
   vscode-nls@5.0.1:
     resolution: {integrity: sha512-hHQV6iig+M21lTdItKPkJAaWrxALQb/nqpVffakO4knJOh3DrU2SXOMzUzNgo1eADPzu3qSsJY1weCzvR52q9A==}
 
-  vscode-oniguruma@1.7.0:
-    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
-
-  vscode-textmate@8.0.0:
-    resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
-
   vscode-uri@3.0.3:
     resolution: {integrity: sha512-EcswR2S8bpR7fD0YPeS7r2xXExrScVMxg4MedACaWHEtx9ftCF/qHG1xGkolzTPcEmjTavCQgbVzHUIdTMzFGA==}
 
@@ -5313,6 +5295,11 @@ packages:
   yaml@2.2.1:
     resolution: {integrity: sha512-e0WHiYql7+9wr4cWMx3TVQrNwejKaEe7/rHNmQmqRjazfOP5W8PB6Jpebb5o6fIapbz9o9+2ipcaTM2ZwDI6lw==}
     engines: {node: '>= 14'}
+
+  yaml@2.5.0:
+    resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
+    engines: {node: '>= 14'}
+    hasBin: true
 
   yargs-parser@20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
@@ -6652,8 +6639,6 @@ snapshots:
   ansi-regex@5.0.1: {}
 
   ansi-regex@6.0.1: {}
-
-  ansi-sequence-parser@1.1.1: {}
 
   ansi-styles@3.2.1:
     dependencies:
@@ -8843,8 +8828,6 @@ snapshots:
       punycode.js: 2.3.1
       uc.micro: 2.1.0
 
-  marked@4.3.0: {}
-
   matcher-collection@2.0.1:
     dependencies:
       '@types/minimatch': 3.0.5
@@ -9061,10 +9044,6 @@ snapshots:
   minimatch@3.1.2:
     dependencies:
       brace-expansion: 1.1.11
-
-  minimatch@9.0.3:
-    dependencies:
-      brace-expansion: 2.0.1
 
   minimatch@9.0.4:
     dependencies:
@@ -9477,11 +9456,12 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-load-config@6.0.1(postcss@8.4.40):
+  postcss-load-config@6.0.1(postcss@8.4.40)(yaml@2.5.0):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       postcss: 8.4.40
+      yaml: 2.5.0
 
   postcss@8.4.40:
     dependencies:
@@ -9833,13 +9813,6 @@ snapshots:
       interpret: 1.4.0
       rechoir: 0.6.2
 
-  shiki@0.14.7:
-    dependencies:
-      ansi-sequence-parser: 1.1.1
-      jsonc-parser: 3.2.1
-      vscode-oniguruma: 1.7.0
-      vscode-textmate: 8.0.0
-
   shiki@1.10.3:
     dependencies:
       '@shikijs/core': 1.10.3
@@ -10169,7 +10142,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3):
+  tsup@8.2.4(@swc/core@1.7.5)(postcss@8.4.40)(typescript@5.3.3)(yaml@2.5.0):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -10181,7 +10154,7 @@ snapshots:
       globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      postcss-load-config: 6.0.1(postcss@8.4.40)
+      postcss-load-config: 6.0.1(postcss@8.4.40)(yaml@2.5.0)
       resolve-from: 5.0.0
       rollup: 4.19.2
       source-map: 0.8.0-beta.0
@@ -10282,21 +10255,22 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
-  typedoc-plugin-markdown@4.0.3(typedoc@0.25.11(typescript@5.3.3)):
+  typedoc-plugin-markdown@4.0.3(typedoc@0.26.5(typescript@5.3.3)):
     dependencies:
-      typedoc: 0.25.11(typescript@5.3.3)
+      typedoc: 0.26.5(typescript@5.3.3)
 
-  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.0.3(typedoc@0.25.11(typescript@5.3.3))):
+  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.0.3(typedoc@0.26.5(typescript@5.3.3))):
     dependencies:
-      typedoc-plugin-markdown: 4.0.3(typedoc@0.25.11(typescript@5.3.3))
+      typedoc-plugin-markdown: 4.0.3(typedoc@0.26.5(typescript@5.3.3))
 
-  typedoc@0.25.11(typescript@5.3.3):
+  typedoc@0.26.5(typescript@5.3.3):
     dependencies:
       lunr: 2.3.9
-      marked: 4.3.0
-      minimatch: 9.0.3
-      shiki: 0.14.7
+      markdown-it: 14.1.0
+      minimatch: 9.0.5
+      shiki: 1.10.3
       typescript: 5.3.3
+      yaml: 2.5.0
 
   typescript@5.3.3: {}
 
@@ -10586,10 +10560,6 @@ snapshots:
 
   vscode-nls@5.0.1: {}
 
-  vscode-oniguruma@1.7.0: {}
-
-  vscode-textmate@8.0.0: {}
-
   vscode-uri@3.0.3: {}
 
   vue-demi@0.14.8(vue@3.4.35(typescript@5.3.3)):
@@ -10710,6 +10680,8 @@ snapshots:
   yallist@4.0.0: {}
 
   yaml@2.2.1: {}
+
+  yaml@2.5.0: {}
 
   yargs-parser@20.2.9: {}
 
