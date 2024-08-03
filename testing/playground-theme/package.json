@@ -28,8 +28,5 @@
     "@theemo/style-dictionary": "workspace:*",
     "@theemo/tokens": "workspace:*",
     "style-dictionary": "^3.8.0"
-  },
-  "volta": {
-    "extends": "../../package.json"
   }
 }

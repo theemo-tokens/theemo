@@ -12,8 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: wyvox/action@v1
-      - run: pnpm build
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup
       - run: pnpm lint
 
   test:
@@ -25,7 +26,9 @@ jobs:
 
     # needs: build
     steps:
-      - uses: wyvox/action@v1
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup
         with:
           node-version: ${{ matrix.node-version }}
       - run: pnpm build
