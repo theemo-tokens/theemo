@@ -29,8 +29,8 @@
     "_clean-magic": "yarn clean && yarn magic"
   },
   "devDependencies": {
-    "npm-run-all2": "^6.0.0",
-    "style-dictionary": "^3.7.0",
-    "theemo": "^0.1.0"
+    "npm-run-all2": "6.2.2",
+    "style-dictionary": "3.9.2",
+    "theemo": "0.1.3"
   }
 }

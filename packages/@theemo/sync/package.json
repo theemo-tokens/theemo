@@ -45,8 +45,8 @@
     "@theemo/tokens": "0.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.5",
-    "@babel/eslint-parser": "^7.22.5",
+    "@babel/core": "7.25.2",
+    "@babel/eslint-parser": "7.25.1",
     "@gossi/config-eslint": "^0.12.0",
     "@gossi/config-prettier": "^0.9.0",
     "@typescript-eslint/eslint-plugin": "^7.11.0",
@@ -54,9 +54,9 @@
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",
     "prettier": "^3.3.3",
-    "tsup": "^8.0.0",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.0"
+    "tsup": "8.2.4",
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
   },
   "engines": {
     "node": ">=18.0.0"

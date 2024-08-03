@@ -52,9 +52,9 @@
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",
     "prettier": "^3.3.3",
-    "tsup": "^8.0.0",
-    "typescript": "^5.5.4",
-    "vitest": "^2.0.0"
+    "tsup": "8.2.4",
+    "typescript": "5.5.4",
+    "vitest": "2.0.5"
   },
   "engines": {
     "node": ">=18.0.0"
