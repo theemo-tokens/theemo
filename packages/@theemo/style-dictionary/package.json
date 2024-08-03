@@ -51,7 +51,7 @@
     "style-dictionary": ">= 3"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.10.0",
+    "@gossi/config-eslint": "^0.12.0",
     "@gossi/config-prettier": "^0.9.0",
     "@types/jsonpath": "^0.2.0",
     "@types/mock-fs": "^4.13.1",
@@ -59,10 +59,13 @@
     "eslint": "^8.49.0",
     "jsonpath": "^1.1.1",
     "mock-fs": "^5.2.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.3",
     "style-dictionary": "^3.8.0",
     "tsup": "^8.0.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.5.4",
     "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
