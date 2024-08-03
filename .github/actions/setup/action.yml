@@ -1,7 +1,7 @@
 name: 'Setup'
 inputs:
-  with-node-version: # id of input
-    description: 'Who to greet'
+  with-node-version:
+    description: 'Specific node version'
     required: false
 runs:
   using: 'composite'
