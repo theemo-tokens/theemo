@@ -2,19 +2,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { readPackageSync } from 'read-pkg';
-import { updatePackageSync } from 'write-package';
+import { writePackageSync } from 'write-package';
 
 import type { GenerateConfig, SchemeConfig } from './config';
+import type { PackageJson } from 'read-pkg';
 
-interface Package {
-  name: string;
-  keywords: string[];
+type Package = PackageJson & {
   theemo?: {
     name: string;
     colorSchemes?: string[];
     file?: string;
   };
-}
+};
 
 function getBlockFromFile(file: string) {
   const contents = fs.existsSync(file) ? fs.readFileSync(file, 'utf-8') : '';
@@ -88,7 +87,7 @@ function prepareColorSchemes(config: GenerateConfig, name: string) {
 function getThemeName() {
   const data = readPackageSync() as Package;
 
-  return data.theemo?.name ?? data.name;
+  return (data.theemo?.name ?? data.name) as string;
 }
 
 /**
@@ -111,13 +110,13 @@ export function build(config: GenerateConfig) {
   fs.writeFileSync(outFile, contents.join('\n'));
 
   // update package.json
-  const originalPackageJson = readPackageSync({ normalize: false }) as Package;
-  const packageJson = {
-    keywords: Array.isArray(originalPackageJson.keywords) ? originalPackageJson.keywords : [],
-    theemo: originalPackageJson.theemo ?? {
-      name: originalPackageJson.name
-    }
-  };
+  const packageJson = readPackageSync({ normalize: false }) as Package;
+
+  if (!packageJson.theemo) {
+    packageJson.theemo = {
+      name: packageJson.name as string
+    };
+  }
 
   if (config.colorSchemes) {
     packageJson.theemo.colorSchemes = Object.keys(config.colorSchemes);
@@ -125,9 +124,13 @@ export function build(config: GenerateConfig) {
 
   packageJson.theemo.file = outFile;
 
+  if (!Array.isArray(packageJson.keywords)) {
+    packageJson.keywords = [];
+  }
+
   if (!packageJson.keywords.includes('theemo-theme')) {
     packageJson.keywords.push('theemo-theme');
   }
 
-  updatePackageSync(packageJson);
+  writePackageSync(packageJson);
 }

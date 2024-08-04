@@ -4,18 +4,11 @@
   "description": "Test theme for API",
   "license": "MIT",
   "keywords": [
-    "theemo-theme",
-    "theemo-theme",
-    "theemo-theme",
     "theemo-theme"
   ],
   "theemo": {
     "name": "theemo",
     "colorSchemes": [
-      "light",
-      "dark",
-      "light",
-      "dark",
       "light",
       "dark"
     ],
