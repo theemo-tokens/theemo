@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "baseUrl": ".",
-    "rootDir": "src/",
+    "rootDir": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
@@ -28,6 +28,6 @@
   },
   "include": [
     "src",
-    "types"
+    "tests"
   ]
 }

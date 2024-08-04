@@ -38,11 +38,12 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "start": "tsup --watch",
-    "_test": "vitest run",
+    "test": "vitest run",
     "_test:dev": "vitest"
   },
   "dependencies": {
-    "read-pkg": "^9.0.0"
+    "read-pkg": "^9.0.0",
+    "write-package": "^7.1.0"
   },
   "devDependencies": {
     "@gossi/config-eslint": "^0.12.0",
@@ -50,6 +51,8 @@
     "@types/node": "^20.6.3",
     "concurrently": "^8.2.0",
     "eslint": "^8.49.0",
+    "glob": "^11.0.0",
+    "memfs": "^4.11.1",
     "prettier": "^3.3.3",
     "tsup": "8.2.4",
     "typescript": "5.5.4",
