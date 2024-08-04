@@ -2,6 +2,18 @@
 
 ## Release (2024-08-04)
 
+@theemo/build 0.2.4 (patch)
+@theemo/cli 0.2.4 (patch)
+
+#### :bug: Bug Fix
+* `@theemo/build`, `playground-theme`
+  * [#1022](https://github.com/theemo-tokens/theemo/pull/1022) Fix value duplication in `package.json` for `theemo build` ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
+## Release (2024-08-04)
+
 @theemo/build 0.2.3 (patch)
 @theemo/cli 0.2.3 (patch)
 @theemo/core 0.0.2 (patch)
