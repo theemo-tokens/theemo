@@ -2,16 +2,12 @@
   "solution": {
     "@theemo/build": {
       "impact": "patch",
-      "oldVersion": "0.2.2",
-      "newVersion": "0.2.3",
+      "oldVersion": "0.2.3",
+      "newVersion": "0.2.4",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./packages/@theemo/build/package.json"
@@ -20,120 +16,31 @@
     "moana-color-schemes": {},
     "@theemo/cli": {
       "impact": "patch",
-      "oldVersion": "0.2.2",
-      "newVersion": "0.2.3",
+      "oldVersion": "0.2.3",
+      "newVersion": "0.2.4",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @theemo/build"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/sync"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./packages/@theemo/cli/package.json"
     },
     "@theemo/core": {
-      "impact": "patch",
-      "oldVersion": "0.0.1",
-      "newVersion": "0.0.2",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/@theemo/core/package.json"
+      "oldVersion": "0.0.2"
     },
     "@theemo/figma": {
-      "impact": "patch",
-      "oldVersion": "0.2.2",
-      "newVersion": "0.2.3",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/sync"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/tokens"
-        }
-      ],
-      "pkgJSONPath": "./packages/@theemo/figma/package.json"
+      "oldVersion": "0.2.3"
     },
     "@theemo/style-dictionary": {
-      "impact": "patch",
-      "oldVersion": "0.2.2",
-      "newVersion": "0.2.3",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/sync"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/tokens"
-        }
-      ],
-      "pkgJSONPath": "./packages/@theemo/style-dictionary/package.json"
+      "oldVersion": "0.2.3"
     },
     "@theemo/sync": {
-      "impact": "patch",
-      "oldVersion": "0.2.2",
-      "newVersion": "0.2.3",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/tokens"
-        }
-      ],
-      "pkgJSONPath": "./packages/@theemo/sync/package.json"
+      "oldVersion": "0.2.3"
     },
     "@theemo/tokens": {
-      "impact": "patch",
-      "oldVersion": "0.2.2",
-      "newVersion": "0.2.3",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/@theemo/tokens/package.json"
+      "oldVersion": "0.2.3"
     }
   },
-  "description": "## Release (2024-08-04)\n\n@theemo/build 0.2.3 (patch)\n@theemo/cli 0.2.3 (patch)\n@theemo/core 0.0.2 (patch)\n@theemo/figma 0.2.3 (patch)\n@theemo/style-dictionary 0.2.3 (patch)\n@theemo/sync 0.2.3 (patch)\n@theemo/tokens 0.2.3 (patch)\n\n#### :bug: Bug Fix\n* `@theemo/build`, `@theemo/cli`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `playground-theme`\n  * [#1020](https://github.com/theemo-tokens/theemo/pull/1020) Remove glibberish in package.json for theemo build ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@theemo/core`, `playground-theme`, `super-theemo-theme`\n  * [#1016](https://github.com/theemo-tokens/theemo/pull/1016) Use release-plan ([@gossi](https://github.com/gossi))\n* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`, `@theemo/fixtures`\n  * [#1014](https://github.com/theemo-tokens/theemo/pull/1014) Update Configs ([@gossi](https://github.com/gossi))\n* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/tokens`, `playground-theme`, `super-theemo-theme`\n  * [#1013](https://github.com/theemo-tokens/theemo/pull/1013) From volta to corepack ([@gossi](https://github.com/gossi))\n* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`\n  * [#903](https://github.com/theemo-tokens/theemo/pull/903) Update Configs ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2024-08-04)\n\n@theemo/build 0.2.4 (patch)\n@theemo/cli 0.2.4 (patch)\n\n#### :bug: Bug Fix\n* `@theemo/build`, `playground-theme`\n  * [#1022](https://github.com/theemo-tokens/theemo/pull/1022) Fix value duplication in `package.json` for `theemo build` ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }
