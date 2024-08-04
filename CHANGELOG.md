@@ -1,5 +1,32 @@
 # Changelog
 
+## Release (2024-08-04)
+
+@theemo/build 0.2.3 (patch)
+@theemo/cli 0.2.3 (patch)
+@theemo/core 0.0.2 (patch)
+@theemo/figma 0.2.3 (patch)
+@theemo/style-dictionary 0.2.3 (patch)
+@theemo/sync 0.2.3 (patch)
+@theemo/tokens 0.2.3 (patch)
+
+#### :bug: Bug Fix
+* `@theemo/build`, `@theemo/cli`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `playground-theme`
+  * [#1020](https://github.com/theemo-tokens/theemo/pull/1020) Remove glibberish in package.json for theemo build ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@theemo/core`, `playground-theme`, `super-theemo-theme`
+  * [#1016](https://github.com/theemo-tokens/theemo/pull/1016) Use release-plan ([@gossi](https://github.com/gossi))
+* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`, `@theemo/fixtures`
+  * [#1014](https://github.com/theemo-tokens/theemo/pull/1014) Update Configs ([@gossi](https://github.com/gossi))
+* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/tokens`, `playground-theme`, `super-theemo-theme`
+  * [#1013](https://github.com/theemo-tokens/theemo/pull/1013) From volta to corepack ([@gossi](https://github.com/gossi))
+* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`
+  * [#903](https://github.com/theemo-tokens/theemo/pull/903) Update Configs ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 
 
 
