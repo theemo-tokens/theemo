@@ -4,11 +4,18 @@
   "description": "Test theme for API",
   "license": "MIT",
   "keywords": [
+    "theemo-theme",
+    "theemo-theme",
+    "theemo-theme",
     "theemo-theme"
   ],
   "theemo": {
     "name": "theemo",
     "colorSchemes": [
+      "light",
+      "dark",
+      "light",
+      "dark",
       "light",
       "dark"
     ],
@@ -20,11 +27,11 @@
     "build:theme": "theemo build"
   },
   "devDependencies": {
+    "@theemo/build": "workspace:*",
     "@theemo/cli": "workspace:*",
     "@theemo/figma": "workspace:*",
-    "@theemo/build": "workspace:*",
-    "@theemo/sync": "workspace:*",
     "@theemo/style-dictionary": "workspace:*",
+    "@theemo/sync": "workspace:*",
     "@theemo/tokens": "workspace:*",
     "style-dictionary": "3.9.2"
   }

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { readPackageSync } from 'read-pkg';
+import { updatePackageSync } from 'write-package';
 
 import type { GenerateConfig, SchemeConfig } from './config';
 
@@ -16,7 +17,7 @@ interface Package {
 }
 
 function getBlockFromFile(file: string) {
-  const contents = fs.readFileSync(file, 'utf-8');
+  const contents = fs.existsSync(file) ? fs.readFileSync(file, 'utf-8') : '';
 
   return contents.replace(':root ', '');
 }
@@ -109,26 +110,24 @@ export function build(config: GenerateConfig) {
 
   fs.writeFileSync(outFile, contents.join('\n'));
 
-  // update package.json with color schemes
+  // update package.json
+  const originalPackageJson = readPackageSync({ normalize: false }) as Package;
+  const packageJson = {
+    keywords: Array.isArray(originalPackageJson.keywords) ? originalPackageJson.keywords : [],
+    theemo: originalPackageJson.theemo ?? {
+      name: originalPackageJson.name
+    }
+  };
+
   if (config.colorSchemes) {
-    const packageJson = readPackageSync() as Package;
-
-    if (!packageJson.theemo) {
-      packageJson.theemo = {
-        name: packageJson.name
-      };
-    }
-
     packageJson.theemo.colorSchemes = Object.keys(config.colorSchemes);
-    packageJson.theemo.file = outFile;
-
-    if (!packageJson.keywords.includes('theemo-theme')) {
-      packageJson.keywords.push('theemo-theme');
-    }
-
-    const data = JSON.stringify(packageJson, undefined, '  ');
-    const packageFile = path.join(process.cwd(), 'package.json');
-
-    fs.writeFileSync(packageFile, data);
   }
+
+  packageJson.theemo.file = outFile;
+
+  if (!packageJson.keywords.includes('theemo-theme')) {
+    packageJson.keywords.push('theemo-theme');
+  }
+
+  updatePackageSync(packageJson);
 }
