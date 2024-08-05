@@ -18,7 +18,7 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       markdown-it-attrs:
         specifier: 4.1.6
@@ -82,7 +82,7 @@ importers:
         specifier: ^20.14.14
         version: 20.14.14
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -150,7 +150,7 @@ importers:
         specifier: ^20.14.14
         version: 20.14.14
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -177,7 +177,7 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(prettier@3.3.3)
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -241,7 +241,7 @@ importers:
         specifier: ^7.11.0
         version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -281,7 +281,7 @@ importers:
         specifier: ^4.13.4
         version: 4.13.4
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -333,7 +333,7 @@ importers:
         specifier: ^7.11.0
         version: 7.18.0(eslint@8.57.0)(typescript@5.5.4)
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -376,7 +376,7 @@ importers:
         specifier: 1.7.6
         version: 1.7.6
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -407,7 +407,7 @@ importers:
         specifier: ^4.6.9
         version: 4.6.9
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
@@ -459,7 +459,7 @@ importers:
         specifier: ^20.14.14
         version: 20.14.14
       concurrently:
-        specifier: ^8.2.0
+        specifier: ^8.2.2
         version: 8.2.2
       eslint:
         specifier: ^8.49.0
