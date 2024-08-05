@@ -79,7 +79,7 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(prettier@3.3.3)
       '@types/node':
-        specifier: ^20.6.3
+        specifier: ^20.14.14
         version: 20.14.14
       concurrently:
         specifier: ^8.2.0
@@ -147,7 +147,7 @@ importers:
         specifier: 1.7.6
         version: 1.7.6
       '@types/node':
-        specifier: ^20.3.3
+        specifier: ^20.14.14
         version: 20.14.14
       concurrently:
         specifier: ^8.2.0
@@ -229,10 +229,10 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(prettier@3.3.3)
       '@types/lodash.isempty':
-        specifier: ^4.4.7
+        specifier: ^4.4.9
         version: 4.4.9
       '@types/lodash.merge':
-        specifier: ^4.6.7
+        specifier: ^4.6.9
         version: 4.6.9
       '@typescript-eslint/eslint-plugin':
         specifier: ^7.11.0
@@ -275,10 +275,10 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(prettier@3.3.3)
       '@types/jsonpath':
-        specifier: ^0.2.0
+        specifier: ^0.2.4
         version: 0.2.4
       '@types/mock-fs':
-        specifier: ^4.13.1
+        specifier: ^4.13.4
         version: 4.13.4
       concurrently:
         specifier: ^8.2.0
@@ -404,7 +404,7 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(prettier@3.3.3)
       '@types/lodash.merge':
-        specifier: ^4.6.7
+        specifier: ^4.6.9
         version: 4.6.9
       concurrently:
         specifier: ^8.2.0
@@ -456,7 +456,7 @@ importers:
         specifier: 1.7.6
         version: 1.7.6
       '@types/node':
-        specifier: ^20.4.0
+        specifier: ^20.14.14
         version: 20.14.14
       concurrently:
         specifier: ^8.2.0
