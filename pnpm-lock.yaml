@@ -21,8 +21,8 @@ importers:
         specifier: ^8.2.2
         version: 8.2.2
       markdown-it-attrs:
-        specifier: 4.1.6
-        version: 4.1.6(markdown-it@14.1.0)
+        specifier: 4.2.0
+        version: 4.2.0(markdown-it@14.1.0)
       markdown-it-deflist:
         specifier: 3.0.0
         version: 3.0.0
@@ -3383,8 +3383,8 @@ packages:
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
-  markdown-it-attrs@4.1.6:
-    resolution: {integrity: sha512-O7PDKZlN8RFMyDX13JnctQompwrrILuz2y43pW2GagcwpIIElkAdfeek+erHfxUOlXWPsjFeWmZ8ch1xtRLWpA==}
+  markdown-it-attrs@4.2.0:
+    resolution: {integrity: sha512-m7svtUBythvcGFFZAv9VjMEvs8UbHri2sojJ3juJumoOzv8sdkx9a7W3KxiHbXxAbvL3Xauak8TMwCnvigVPKw==}
     engines: {node: '>=6'}
     peerDependencies:
       markdown-it: '>= 9.0.0'
@@ -8125,7 +8125,7 @@ snapshots:
 
   mark.js@8.11.1: {}
 
-  markdown-it-attrs@4.1.6(markdown-it@14.1.0):
+  markdown-it-attrs@4.2.0(markdown-it@14.1.0):
     dependencies:
       markdown-it: 14.1.0
 
