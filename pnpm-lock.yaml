@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@vitest/coverage-v8':
         specifier: 2.0.5
-        version: 2.0.5(vitest@2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5))
       '@vitest/ui':
         specifier: 2.0.5
         version: 2.0.5(vitest@2.0.5)
@@ -49,16 +49,16 @@ importers:
         version: 1.0.1(typedoc-plugin-markdown@4.2.3(typedoc@0.26.5(typescript@5.5.4)))
       vite:
         specifier: 5.4.0
-        version: 5.4.0(@types/node@20.14.14)
+        version: 5.4.0(@types/node@20.14.15)
       vitepress:
         specifier: 1.3.2
-        version: 1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.14)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4)
+        version: 1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.15)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4)
       vitepress-plugin-mermaid:
         specifier: 2.0.16
-        version: 2.0.16(mermaid@10.9.1)(vitepress@1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.14)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4))
+        version: 2.0.16(mermaid@10.9.1)(vitepress@1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.15)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4))
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
       vue:
         specifier: 3.4.37
         version: 3.4.37(typescript@5.5.4)
@@ -79,8 +79,8 @@ importers:
         specifier: ^0.9.0
         version: 0.9.0(prettier@3.3.3)
       '@types/node':
-        specifier: ^20.14.14
-        version: 20.14.14
+        specifier: ^20.14.15
+        version: 20.14.15
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -104,7 +104,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   packages/@theemo/build/tests/scenarios/moana: {}
 
@@ -147,8 +147,8 @@ importers:
         specifier: 1.7.10
         version: 1.7.10
       '@types/node':
-        specifier: ^20.14.14
-        version: 20.14.14
+        specifier: ^20.14.15
+        version: 20.14.15
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -166,7 +166,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   packages/@theemo/core:
     devDependencies:
@@ -193,7 +193,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   packages/@theemo/figma:
     dependencies:
@@ -257,7 +257,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   packages/@theemo/style-dictionary:
     dependencies:
@@ -306,7 +306,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   packages/@theemo/sync:
     dependencies:
@@ -349,7 +349,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   packages/@theemo/theme:
     dependencies:
@@ -423,7 +423,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+        version: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   testing/fixtures:
     dependencies:
@@ -456,8 +456,8 @@ importers:
         specifier: 1.7.10
         version: 1.7.10
       '@types/node':
-        specifier: ^20.14.14
-        version: 20.14.14
+        specifier: ^20.14.15
+        version: 20.14.15
       concurrently:
         specifier: ^8.2.2
         version: 8.2.2
@@ -1542,8 +1542,8 @@ packages:
   '@types/node@12.0.2':
     resolution: {integrity: sha512-5tabW/i+9mhrfEOUcLDu2xBPsHJ+X5Orqy9FKpale3SjDA17j5AEpYq5vfy3oAeAHGcvANRCO3NV3d2D6q3NiA==}
 
-  '@types/node@20.14.14':
-    resolution: {integrity: sha512-d64f00982fS9YoOgJkAMolK7MN8Iq3TDdVjchbYHdEmjth/DHowx82GnoA+tVUAN+7vxfYUgAzi+JXbKNd2SDQ==}
+  '@types/node@20.14.15':
+    resolution: {integrity: sha512-Fz1xDMCF/B00/tYSVMlmK7hVeLh7jE5f3B7X1/hmV0MJBwE27KlS7EvD/Yp+z1lm8mVhwV5w+n8jOZG8AfTlKw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -5824,7 +5824,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.14.14
+      '@types/node': 20.14.15
       '@types/responselike': 1.0.3
 
   '@types/d3-scale-chromatic@3.0.3': {}
@@ -5853,7 +5853,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.14.14
+      '@types/node': 20.14.15
 
   '@types/linkify-it@5.0.0': {}
 
@@ -5880,13 +5880,13 @@ snapshots:
 
   '@types/mock-fs@4.13.4':
     dependencies:
-      '@types/node': 20.14.14
+      '@types/node': 20.14.15
 
   '@types/ms@0.7.34': {}
 
   '@types/node@12.0.2': {}
 
-  '@types/node@20.14.14':
+  '@types/node@20.14.15':
     dependencies:
       undici-types: 5.26.5
 
@@ -5894,7 +5894,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.14.14
+      '@types/node': 20.14.15
 
   '@types/unist@2.0.10': {}
 
@@ -5985,12 +5985,12 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-vue@5.1.2(vite@5.4.0(@types/node@20.14.14))(vue@3.4.37(typescript@5.5.4))':
+  '@vitejs/plugin-vue@5.1.2(vite@5.4.0(@types/node@20.14.15))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
-      vite: 5.4.0(@types/node@20.14.14)
+      vite: 5.4.0(@types/node@20.14.15)
       vue: 3.4.37(typescript@5.5.4)
 
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -6004,7 +6004,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+      vitest: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -6043,7 +6043,7 @@ snapshots:
       pathe: 1.1.2
       sirv: 2.0.4
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5)
+      vitest: 2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5)
 
   '@vitest/utils@2.0.5':
     dependencies:
@@ -9501,13 +9501,13 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-node@2.0.5(@types/node@20.14.14):
+  vite-node@2.0.5(@types/node@20.14.15):
     dependencies:
       cac: 6.7.14
       debug: 4.3.6
       pathe: 1.1.2
       tinyrainbow: 1.2.0
-      vite: 5.4.0(@types/node@20.14.14)
+      vite: 5.4.0(@types/node@20.14.15)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -9519,30 +9519,30 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.0(@types/node@20.14.14):
+  vite@5.4.0(@types/node@20.14.15):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.40
       rollup: 4.20.0
     optionalDependencies:
-      '@types/node': 20.14.14
+      '@types/node': 20.14.15
       fsevents: 2.3.3
 
-  vitepress-plugin-mermaid@2.0.16(mermaid@10.9.1)(vitepress@1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.14)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4)):
+  vitepress-plugin-mermaid@2.0.16(mermaid@10.9.1)(vitepress@1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.15)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4)):
     dependencies:
       mermaid: 10.9.1
-      vitepress: 1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.14)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4)
+      vitepress: 1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.15)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
 
-  vitepress@1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.14)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4):
+  vitepress@1.3.2(@algolia/client-search@4.24.0)(@types/node@20.14.15)(change-case@4.1.2)(postcss@8.4.40)(search-insights@2.15.0)(typescript@5.5.4):
     dependencies:
       '@docsearch/css': 3.6.1
       '@docsearch/js': 3.6.1(@algolia/client-search@4.24.0)(search-insights@2.15.0)
       '@shikijs/core': 1.12.1
       '@shikijs/transformers': 1.12.1
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 5.1.2(vite@5.4.0(@types/node@20.14.14))(vue@3.4.37(typescript@5.5.4))
+      '@vitejs/plugin-vue': 5.1.2(vite@5.4.0(@types/node@20.14.15))(vue@3.4.37(typescript@5.5.4))
       '@vue/devtools-api': 7.3.7
       '@vue/shared': 3.4.37
       '@vueuse/core': 10.11.0(vue@3.4.37(typescript@5.5.4))
@@ -9551,7 +9551,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.1.0
       shiki: 1.12.1
-      vite: 5.4.0(@types/node@20.14.14)
+      vite: 5.4.0(@types/node@20.14.15)
       vue: 3.4.37(typescript@5.5.4)
     optionalDependencies:
       postcss: 8.4.40
@@ -9583,7 +9583,7 @@ snapshots:
       - typescript
       - universal-cookie
 
-  vitest@2.0.5(@types/node@20.14.14)(@vitest/ui@2.0.5):
+  vitest@2.0.5(@types/node@20.14.15)(@vitest/ui@2.0.5):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -9601,11 +9601,11 @@ snapshots:
       tinybench: 2.9.0
       tinypool: 1.0.0
       tinyrainbow: 1.2.0
-      vite: 5.4.0(@types/node@20.14.14)
-      vite-node: 2.0.5(@types/node@20.14.14)
+      vite: 5.4.0(@types/node@20.14.15)
+      vite-node: 2.0.5(@types/node@20.14.15)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 20.14.14
+      '@types/node': 20.14.15
       '@vitest/ui': 2.0.5(vitest@2.0.5)
     transitivePeerDependencies:
       - less
