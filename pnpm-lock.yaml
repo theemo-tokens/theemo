@@ -42,11 +42,11 @@ importers:
         specifier: 0.26.5
         version: 0.26.5(typescript@5.5.4)
       typedoc-plugin-markdown:
-        specifier: 4.2.3
-        version: 4.2.3(typedoc@0.26.5(typescript@5.5.4))
+        specifier: 4.2.5
+        version: 4.2.5(typedoc@0.26.5(typescript@5.5.4))
       typedoc-vitepress-theme:
         specifier: 1.0.1
-        version: 1.0.1(typedoc-plugin-markdown@4.2.3(typedoc@0.26.5(typescript@5.5.4)))
+        version: 1.0.1(typedoc-plugin-markdown@4.2.5(typedoc@0.26.5(typescript@5.5.4)))
       vite:
         specifier: 5.4.0
         version: 5.4.0(@types/node@20.14.15)
@@ -4515,8 +4515,8 @@ packages:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
 
-  typedoc-plugin-markdown@4.2.3:
-    resolution: {integrity: sha512-esucQj79SFYOv0f5XVha7QWdLUH5C5HRlDf7Z8CXzHedmVPn7jox6Gt7FdoBXN8AFxyHpa3Lbuxu65Dobwt+4Q==}
+  typedoc-plugin-markdown@4.2.5:
+    resolution: {integrity: sha512-ZWIfc0OqwEtQfuaqbmM1kesMi/Fhc++W+5f3TDEm1Tsi28pHSoZk4WCOm4lNuN30WtEImwAHhhXC4DIWki1DiA==}
     engines: {node: '>= 18'}
     peerDependencies:
       typedoc: 0.26.x
@@ -9247,13 +9247,13 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typedoc-plugin-markdown@4.2.3(typedoc@0.26.5(typescript@5.5.4)):
+  typedoc-plugin-markdown@4.2.5(typedoc@0.26.5(typescript@5.5.4)):
     dependencies:
       typedoc: 0.26.5(typescript@5.5.4)
 
-  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.2.3(typedoc@0.26.5(typescript@5.5.4))):
+  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.2.5(typedoc@0.26.5(typescript@5.5.4))):
     dependencies:
-      typedoc-plugin-markdown: 4.2.3(typedoc@0.26.5(typescript@5.5.4))
+      typedoc-plugin-markdown: 4.2.5(typedoc@0.26.5(typescript@5.5.4))
 
   typedoc@0.26.5(typescript@5.5.4):
     dependencies:
