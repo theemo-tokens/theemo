@@ -48,7 +48,7 @@
   "devDependencies": {
     "@gossi/config-eslint": "^0.12.0",
     "@gossi/config-prettier": "^0.9.0",
-    "@types/node": "^20.16.0",
+    "@types/node": "^20.16.1",
     "concurrently": "^8.2.2",
     "eslint": "^8.57.0",
     "glob": "^11.0.0",
