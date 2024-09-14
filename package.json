@@ -30,7 +30,7 @@
     "mermaid": "11.1.1",
     "release-plan": "0.9.2",
     "turbo": "2.1.2",
-    "typedoc": "0.26.6",
+    "typedoc": "0.26.7",
     "typedoc-plugin-markdown": "4.2.7",
     "typedoc-vitepress-theme": "1.0.1",
     "vite": "5.4.3",
