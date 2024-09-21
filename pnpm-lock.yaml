@@ -97,8 +97,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -159,8 +159,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -186,8 +186,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -250,8 +250,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -299,8 +299,8 @@ importers:
         specifier: 3.9.2
         version: 3.9.2
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -342,8 +342,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -416,8 +416,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: 8.2.4
-        version: 8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
+        specifier: 8.3.0
+        version: 8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -4416,8 +4416,8 @@ packages:
   tslib@2.7.0:
     resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
 
-  tsup@8.2.4:
-    resolution: {integrity: sha512-akpCPePnBnC/CXgRrcy72ZSntgIEUa1jN0oJbbvpALWKNOz1B7aM+UVDWGRGIO/T/PZugAESWDJUAb5FD48o8Q==}
+  tsup@8.3.0:
+    resolution: {integrity: sha512-ALscEeyS03IomcuNdFdc0YWGVIkwH1Ws7nfTbAPuoILvEV2hpGQAY72LIOjglGo4ShWpZfpBqP/jpQVCzqYQag==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -9109,7 +9109,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.2.4(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1):
+  tsup@8.3.0(@swc/core@1.7.26)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -9118,7 +9118,6 @@ snapshots:
       debug: 4.3.6
       esbuild: 0.23.1
       execa: 5.1.1
-      globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.1.0
       postcss-load-config: 6.0.1(postcss@8.4.47)(yaml@2.5.1)
@@ -9126,6 +9125,7 @@ snapshots:
       rollup: 4.21.0
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
+      tinyglobby: 0.2.6
       tree-kill: 1.2.2
     optionalDependencies:
       '@swc/core': 1.7.26
