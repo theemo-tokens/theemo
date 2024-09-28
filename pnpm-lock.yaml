@@ -290,8 +290,8 @@ importers:
         specifier: 1.1.1
         version: 1.1.1
       mock-fs:
-        specifier: 5.2.0
-        version: 5.2.0
+        specifier: 5.3.0
+        version: 5.3.0
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
@@ -3507,8 +3507,8 @@ packages:
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
 
-  mock-fs@5.2.0:
-    resolution: {integrity: sha512-2dF2R6YMSZbpip1V1WHKGLNjr/k48uQClqMVb5H3MOvwc9qhYis3/IWbj02qIg/Y8MDXKFF4c5v0rxx2o6xTZw==}
+  mock-fs@5.3.0:
+    resolution: {integrity: sha512-IMvz1X+RF7vf+ur7qUenXMR7/FSKSIqS3HqFHXcyNI7G0FbpFO8L5lfsUJhl+bhK1AiulVHWKUSxebWauPA+xQ==}
     engines: {node: '>=12.0.0'}
 
   mrmime@2.0.0:
@@ -8186,7 +8186,7 @@ snapshots:
       pkg-types: 1.2.0
       ufo: 1.5.4
 
-  mock-fs@5.2.0: {}
+  mock-fs@5.3.0: {}
 
   mrmime@2.0.0: {}
 
