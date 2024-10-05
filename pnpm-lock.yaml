@@ -45,8 +45,8 @@ importers:
         specifier: 4.2.9
         version: 4.2.9(typedoc@0.26.8(typescript@5.6.2))
       typedoc-vitepress-theme:
-        specifier: 1.0.1
-        version: 1.0.1(typedoc-plugin-markdown@4.2.9(typedoc@0.26.8(typescript@5.6.2)))
+        specifier: 1.0.2
+        version: 1.0.2(typedoc-plugin-markdown@4.2.9(typedoc@0.26.8(typescript@5.6.2)))
       vite:
         specifier: 5.4.8
         version: 5.4.8(@types/node@20.16.10)
@@ -2594,6 +2594,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   esm@3.2.25:
@@ -4507,8 +4508,8 @@ packages:
     peerDependencies:
       typedoc: 0.26.x
 
-  typedoc-vitepress-theme@1.0.1:
-    resolution: {integrity: sha512-pnpgzSQRaR9QLMl3it/tjq7vlV+eeUzKa22w/xF6ZUdAcYdmeag13kuA6EKfU7/kkIkJ/qsu1GPd3OcIC36Hlw==}
+  typedoc-vitepress-theme@1.0.2:
+    resolution: {integrity: sha512-6RUW4FBsGolOU3M92F7qz9ILKjL0oq8aHyQ5Q39tIpzapimJ2qX+ChLqzcBP7/aAtEoPYezIivjjZN9oZ4Ghvg==}
     peerDependencies:
       typedoc-plugin-markdown: '>=4.1.0'
 
@@ -9212,7 +9213,7 @@ snapshots:
     dependencies:
       typedoc: 0.26.8(typescript@5.6.2)
 
-  typedoc-vitepress-theme@1.0.1(typedoc-plugin-markdown@4.2.9(typedoc@0.26.8(typescript@5.6.2))):
+  typedoc-vitepress-theme@1.0.2(typedoc-plugin-markdown@4.2.9(typedoc@0.26.8(typescript@5.6.2))):
     dependencies:
       typedoc-plugin-markdown: 4.2.9(typedoc@0.26.8(typescript@5.6.2))
 
