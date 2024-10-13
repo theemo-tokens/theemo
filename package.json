@@ -34,7 +34,7 @@
     "typedoc-plugin-markdown": "4.2.9",
     "typedoc-vitepress-theme": "1.0.2",
     "vite": "5.4.8",
-    "vitepress": "1.4.0",
+    "vitepress": "1.4.1",
     "vitepress-plugin-mermaid": "2.0.17",
     "vitest": "2.1.2",
     "vue": "3.5.12"
