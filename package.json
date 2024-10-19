@@ -39,7 +39,7 @@
     "vitest": "2.1.2",
     "vue": "3.5.12"
   },
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@9.12.2",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
