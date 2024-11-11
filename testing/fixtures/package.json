@@ -48,7 +48,7 @@
     "@swc/cli": "0.5.0",
     "@swc/core": "1.9.1",
     "@types/node": "^22.9.0",
-    "concurrently": "^9.0.1",
+    "concurrently": "^9.1.0",
     "eslint": "^8.57.1",
     "prettier": "^3.3.3",
     "typescript": "5.6.3"
