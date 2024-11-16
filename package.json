@@ -29,7 +29,7 @@
     "markdown-it-multimd-table": "4.2.3",
     "mermaid": "11.4.0",
     "release-plan": "0.10.0",
-    "turbo": "2.2.3",
+    "turbo": "2.3.0",
     "typedoc": "0.26.11",
     "typedoc-plugin-markdown": "4.2.10",
     "typedoc-vitepress-theme": "1.0.2",
