@@ -45,8 +45,8 @@ importers:
         specifier: 4.2.10
         version: 4.2.10(typedoc@0.26.11(typescript@5.7.2))
       typedoc-vitepress-theme:
-        specifier: 1.1.0
-        version: 1.1.0(typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2)))
+        specifier: 1.1.1
+        version: 1.1.1(typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2)))
       vite:
         specifier: 6.0.1
         version: 6.0.1(@types/node@22.10.1)(yaml@2.5.1)
@@ -4672,8 +4672,8 @@ packages:
     peerDependencies:
       typedoc: 0.26.x
 
-  typedoc-vitepress-theme@1.1.0:
-    resolution: {integrity: sha512-EpNpJHiXmh2AUcjSdZtK1MO9Bc2uW3iZg+EL+K7xSOS7+ruwPukaYRMpxR0FM+SkisjAA4VWNA3qdT6AKLx12A==}
+  typedoc-vitepress-theme@1.1.1:
+    resolution: {integrity: sha512-1UbhZdQIkGKLkIZCbw8putrel+Vo7KKFfd8RhQRSBgetUZGUJkum89kIyF3+Kzy+1nqE56/MLKVxpPgQYubYYg==}
     peerDependencies:
       typedoc-plugin-markdown: '>=4.3.0'
 
@@ -9749,7 +9749,7 @@ snapshots:
     dependencies:
       typedoc: 0.26.11(typescript@5.7.2)
 
-  typedoc-vitepress-theme@1.1.0(typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2))):
+  typedoc-vitepress-theme@1.1.1(typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2))):
     dependencies:
       typedoc-plugin-markdown: 4.2.10(typedoc@0.26.11(typescript@5.7.2))
 
