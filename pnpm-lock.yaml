@@ -42,11 +42,11 @@ importers:
         specifier: 0.26.11
         version: 0.26.11(typescript@5.7.2)
       typedoc-plugin-markdown:
-        specifier: 4.2.10
-        version: 4.2.10(typedoc@0.26.11(typescript@5.7.2))
+        specifier: 4.3.3
+        version: 4.3.3(typedoc@0.26.11(typescript@5.7.2))
       typedoc-vitepress-theme:
         specifier: 1.1.1
-        version: 1.1.1(typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2)))
+        version: 1.1.1(typedoc-plugin-markdown@4.3.3(typedoc@0.26.11(typescript@5.7.2)))
       vite:
         specifier: 6.0.3
         version: 6.0.3(@types/node@22.10.2)(yaml@2.5.1)
@@ -4651,11 +4651,11 @@ packages:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
 
-  typedoc-plugin-markdown@4.2.10:
-    resolution: {integrity: sha512-PLX3pc1/7z13UJm4TDE9vo9jWGcClFUErXXtd5LdnoLjV6mynPpqZLU992DwMGFSRqJFZeKbVyqlNNeNHnk2tQ==}
+  typedoc-plugin-markdown@4.3.3:
+    resolution: {integrity: sha512-kESCcNRzOcFJATLML2FoCfaTF9c0ujmbZ+UXsJvmNlFLS3v8tDKfDifreJXvXWa9d8gUcetZqOqFcZ/7+Ba34Q==}
     engines: {node: '>= 18'}
     peerDependencies:
-      typedoc: 0.26.x
+      typedoc: 0.27.x
 
   typedoc-vitepress-theme@1.1.1:
     resolution: {integrity: sha512-1UbhZdQIkGKLkIZCbw8putrel+Vo7KKFfd8RhQRSBgetUZGUJkum89kIyF3+Kzy+1nqE56/MLKVxpPgQYubYYg==}
@@ -9725,13 +9725,13 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2)):
+  typedoc-plugin-markdown@4.3.3(typedoc@0.26.11(typescript@5.7.2)):
     dependencies:
       typedoc: 0.26.11(typescript@5.7.2)
 
-  typedoc-vitepress-theme@1.1.1(typedoc-plugin-markdown@4.2.10(typedoc@0.26.11(typescript@5.7.2))):
+  typedoc-vitepress-theme@1.1.1(typedoc-plugin-markdown@4.3.3(typedoc@0.26.11(typescript@5.7.2))):
     dependencies:
-      typedoc-plugin-markdown: 4.2.10(typedoc@0.26.11(typescript@5.7.2))
+      typedoc-plugin-markdown: 4.3.3(typedoc@0.26.11(typescript@5.7.2))
 
   typedoc@0.26.11(typescript@5.7.2):
     dependencies:
