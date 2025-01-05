@@ -47,7 +47,7 @@
     "@gossi/config-prettier": "^0.9.1",
     "@swc/cli": "0.5.2",
     "@swc/core": "1.10.4",
-    "@types/node": "^22.10.2",
+    "@types/node": "^22.10.5",
     "concurrently": "^9.1.1",
     "eslint": "^8.57.1",
     "prettier": "^3.3.3",
