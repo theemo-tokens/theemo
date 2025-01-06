@@ -55,7 +55,7 @@
     "@gossi/config-prettier": "^0.9.1",
     "@types/jsonpath": "^0.2.4",
     "@types/mock-fs": "^4.13.4",
-    "concurrently": "^9.1.1",
+    "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "jsonpath": "1.1.1",
     "mock-fs": "5.4.1",
