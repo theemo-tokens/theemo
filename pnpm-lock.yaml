@@ -18,8 +18,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       markdown-it-attrs:
         specifier: 4.3.1
         version: 4.3.1(markdown-it@14.1.0)
@@ -82,8 +82,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -150,8 +150,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -177,8 +177,8 @@ importers:
         specifier: ^0.9.1
         version: 0.9.1(prettier@3.3.3)
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -241,8 +241,8 @@ importers:
         specifier: ^7.18.0
         version: 7.18.0(eslint@8.57.1)(typescript@5.7.2)
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -281,8 +281,8 @@ importers:
         specifier: ^4.13.4
         version: 4.13.4
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -333,8 +333,8 @@ importers:
         specifier: ^7.18.0
         version: 7.18.0(eslint@8.57.1)(typescript@5.7.2)
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -376,8 +376,8 @@ importers:
         specifier: 1.10.4
         version: 1.10.4
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -407,8 +407,8 @@ importers:
         specifier: ^4.6.9
         version: 4.6.9
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -459,8 +459,8 @@ importers:
         specifier: ^22.10.5
         version: 22.10.5
       concurrently:
-        specifier: ^9.1.1
-        version: 9.1.1
+        specifier: ^9.1.2
+        version: 9.1.2
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -2236,8 +2236,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  concurrently@9.1.1:
-    resolution: {integrity: sha512-6VX8lrBIycgZKTwBsWS+bLrmkGRkDmvtGsYylRN9b93CygN6CbK46HmnQ3rdSOR8HRjdahDrxb5MqD9cEFOg5Q==}
+  concurrently@9.1.2:
+    resolution: {integrity: sha512-H9MWcoPsYddwbOGM6difjVwVZHl63nwMEwDJG/L7VGtuaJhb12h2caPG2tVPWs7emuYix252iGfqOyrz1GczTQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6995,7 +6995,7 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  concurrently@9.1.1:
+  concurrently@9.1.2:
     dependencies:
       chalk: 4.1.2
       lodash: 4.17.21
