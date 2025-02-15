@@ -52,7 +52,7 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "@babel/core": "7.26.8",
+    "@babel/core": "7.26.9",
     "@babel/eslint-parser": "7.26.8",
     "@gossi/config-eslint": "^0.13.0",
     "@gossi/config-prettier": "^0.9.1",
