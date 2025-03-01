@@ -98,7 +98,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -142,10 +142,10 @@ importers:
         version: 0.9.1(prettier@3.3.3)
       '@swc/cli':
         specifier: 0.6.0
-        version: 0.6.0(@swc/core@1.10.18)(chokidar@4.0.1)
+        version: 0.6.0(@swc/core@1.11.5)(chokidar@4.0.1)
       '@swc/core':
-        specifier: 1.10.18
-        version: 1.10.18
+        specifier: 1.11.5
+        version: 1.11.5
       '@types/node':
         specifier: ^22.13.5
         version: 22.13.5
@@ -160,7 +160,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -187,7 +187,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -251,7 +251,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -300,7 +300,7 @@ importers:
         version: 3.9.2
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -343,7 +343,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -371,10 +371,10 @@ importers:
         version: 0.9.1(prettier@3.3.3)
       '@swc/cli':
         specifier: 0.6.0
-        version: 0.6.0(@swc/core@1.10.18)(chokidar@4.0.1)
+        version: 0.6.0(@swc/core@1.11.5)(chokidar@4.0.1)
       '@swc/core':
-        specifier: 1.10.18
-        version: 1.10.18
+        specifier: 1.11.5
+        version: 1.11.5
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
@@ -417,7 +417,7 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.3.6
-        version: 8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
+        version: 8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1)
       typescript:
         specifier: 5.7.3
         version: 5.7.3
@@ -451,10 +451,10 @@ importers:
         version: 0.9.1(prettier@3.3.3)
       '@swc/cli':
         specifier: 0.6.0
-        version: 0.6.0(@swc/core@1.10.18)(chokidar@4.0.1)
+        version: 0.6.0(@swc/core@1.11.5)(chokidar@4.0.1)
       '@swc/core':
-        specifier: 1.10.18
-        version: 1.10.18
+        specifier: 1.11.5
+        version: 1.11.5
       '@types/node':
         specifier: ^22.13.5
         version: 22.13.5
@@ -1451,68 +1451,68 @@ packages:
       chokidar:
         optional: true
 
-  '@swc/core-darwin-arm64@1.10.18':
-    resolution: {integrity: sha512-FdGqzAIKVQJu8ROlnHElP59XAUsUzCFSNsou+tY/9ba+lhu8R9v0OI5wXiPErrKGZpQFMmx/BPqqhx3X4SuGNg==}
+  '@swc/core-darwin-arm64@1.11.5':
+    resolution: {integrity: sha512-GEd1hzEx0mSGkJYMFMGLnrGgjL2rOsOsuYWyjyiA3WLmhD7o+n/EWBDo6mzD/9aeF8dzSPC0TnW216gJbvrNzA==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [darwin]
 
-  '@swc/core-darwin-x64@1.10.18':
-    resolution: {integrity: sha512-RZ73gZRituL/ZVLgrW6BYnQ5g8tuStG4cLUiPGJsUZpUm0ullSH6lHFvZTCBNFTfpQChG6eEhi2IdG6DwFp1lw==}
+  '@swc/core-darwin-x64@1.11.5':
+    resolution: {integrity: sha512-toz04z9wAClVvQSEY3xzrgyyeWBAfMWcKG4K0ugNvO56h/wczi2ZHRlnAXZW1tghKBk3z6MXqa/srfXgNhffKw==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [darwin]
 
-  '@swc/core-linux-arm-gnueabihf@1.10.18':
-    resolution: {integrity: sha512-8iJqI3EkxJuuq21UHoen1VS+QlS23RvynRuk95K+Q2HBjygetztCGGEc+Xelx9a0uPkDaaAtFvds4JMDqb9SAA==}
+  '@swc/core-linux-arm-gnueabihf@1.11.5':
+    resolution: {integrity: sha512-5SjmKxXdwbBpsYGTpgeXOXMIjS563/ntRGn8Zc12H/c4VfPrRLGhgbJ/48z2XVFyBLcw7BCHZyFuVX1+ZI3W0Q==}
     engines: {node: '>=10'}
     cpu: [arm]
     os: [linux]
 
-  '@swc/core-linux-arm64-gnu@1.10.18':
-    resolution: {integrity: sha512-8f1kSktWzMB6PG+r8lOlCfXz5E8Qhsmfwonn77T/OfjvGwQaWrcoASh2cdjpk3dydbf8jsKGPQE1lSc7GyjXRQ==}
+  '@swc/core-linux-arm64-gnu@1.11.5':
+    resolution: {integrity: sha512-pydIlInHRzRIwB0NHblz3Dx58H/bsi0I5F2deLf9iOmwPNuOGcEEZF1Qatc7YIjP5DFbXK+Dcz+pMUZb2cc2MQ==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-arm64-musl@1.10.18':
-    resolution: {integrity: sha512-4rv+E4VLdgQw6zjbTAauCAEExxChvxMpBUMCiZweTNPKbJJ2dY6BX2WGJ1ea8+RcgqR/Xysj3AFbOz1LBz6dGA==}
+  '@swc/core-linux-arm64-musl@1.11.5':
+    resolution: {integrity: sha512-LhBHKjkZq5tJF1Lh0NJFpx7ROnCWLckrlIAIdSt9XfOV+zuEXJQOj+NFcM1eNk17GFfFyUMOZyGZxzYq5dveEQ==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
 
-  '@swc/core-linux-x64-gnu@1.10.18':
-    resolution: {integrity: sha512-vTNmyRBVP+sZca+vtwygYPGTNudTU6Gl6XhaZZ7cEUTBr8xvSTgEmYXoK/2uzyXpaTUI4Bmtp1x81cGN0mMoLQ==}
+  '@swc/core-linux-x64-gnu@1.11.5':
+    resolution: {integrity: sha512-dCi4xkxXlsk5sQYb3i413Cfh7+wMJeBYTvBZTD5xh+/DgRtIcIJLYJ2tNjWC4/C2i5fj+Ze9bKNSdd8weRWZ3A==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-linux-x64-musl@1.10.18':
-    resolution: {integrity: sha512-1TZPReKhFCeX776XaT6wegknfg+g3zODve+r4oslFHI+g7cInfWlxoGNDS3niPKyuafgCdOjme2g3OF+zzxfsQ==}
+  '@swc/core-linux-x64-musl@1.11.5':
+    resolution: {integrity: sha512-K0AC4TreM5Oo/tXNXnE/Gf5+5y/HwUdd7xvUjOpZddcX/RlsbYOKWLgOtA3fdFIuta7XC+vrGKmIhm5l70DSVQ==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
 
-  '@swc/core-win32-arm64-msvc@1.10.18':
-    resolution: {integrity: sha512-o/2CsaWSN3bkzVQ6DA+BiFKSVEYvhWGA1h+wnL2zWmIDs2Knag54sOEXZkCaf8YQyZesGeXJtPEy9hh/vjJgkA==}
+  '@swc/core-win32-arm64-msvc@1.11.5':
+    resolution: {integrity: sha512-wzum8sYUsvPY7kgUfuqVYTgIPYmBC8KPksoNM1fz5UfhudU0ciQuYvUBD47GIGOevaoxhLkjPH4CB95vh1mJ9w==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [win32]
 
-  '@swc/core-win32-ia32-msvc@1.10.18':
-    resolution: {integrity: sha512-eTPASeJtk4mJDfWiYEiOC6OYUi/N7meHbNHcU8e+aKABonhXrIo/FmnTE8vsUtC6+jakT1TQBdiQ8fzJ1kJVwA==}
+  '@swc/core-win32-ia32-msvc@1.11.5':
+    resolution: {integrity: sha512-lco7mw0TPRTpVPR6NwggJpjdUkAboGRkLrDHjIsUaR+Y5+0m5FMMkHOMxWXAbrBS5c4ph7QErp4Lma4r9Mn5og==}
     engines: {node: '>=10'}
     cpu: [ia32]
     os: [win32]
 
-  '@swc/core-win32-x64-msvc@1.10.18':
-    resolution: {integrity: sha512-1Dud8CDBnc34wkBOboFBQud9YlV1bcIQtKSg7zC8LtwR3h+XAaCayZPkpGmmAlCv1DLQPvkF+s0JcaVC9mfffQ==}
+  '@swc/core-win32-x64-msvc@1.11.5':
+    resolution: {integrity: sha512-E+DApLSC6JRK8VkDa4bNsBdD7Qoomx1HvKVZpOXl9v94hUZI5GMExl4vU5isvb+hPWL7rZ0NeI7ITnVLgLJRbA==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [win32]
 
-  '@swc/core@1.10.18':
-    resolution: {integrity: sha512-IUWKD6uQYGRy8w2X9EZrtYg1O3SCijlHbCXzMaHQYc1X7yjijQh4H3IVL9ssZZyVp2ZDfQZu4bD5DWxxvpyjvg==}
+  '@swc/core@1.11.5':
+    resolution: {integrity: sha512-EVY7zfpehxhTZXOfy508gb3D78ihoGGmvyiTWtlBPjgIaidP1Xw0naHMD78CWiFlZmeDjKXJufGtsEGOnZdmNA==}
     engines: {node: '>=10'}
     peerDependencies:
       '@swc/helpers': '*'
@@ -1523,8 +1523,8 @@ packages:
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
 
-  '@swc/types@0.1.17':
-    resolution: {integrity: sha512-V5gRru+aD8YVyCOMAjMpWR1Ui577DD5KSJsHP8RAxopAH22jFz6GZd/qxqjO6MJHQhcsjvjOFXyDhyLQUnMveQ==}
+  '@swc/types@0.1.19':
+    resolution: {integrity: sha512-WkAZaAfj44kh/UFdAQcrMP1I0nwRqpt27u+08LMBYMqmQfwwMofYoMh/48NGkMMRfC4ynpfwRbJuu8ErfNloeA==}
 
   '@szmarczak/http-timer@5.0.1':
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
@@ -5996,9 +5996,9 @@ snapshots:
       - supports-color
       - typescript
 
-  '@swc/cli@0.6.0(@swc/core@1.10.18)(chokidar@4.0.1)':
+  '@swc/cli@0.6.0(@swc/core@1.11.5)(chokidar@4.0.1)':
     dependencies:
-      '@swc/core': 1.10.18
+      '@swc/core': 1.11.5
       '@swc/counter': 0.1.3
       '@xhmikosr/bin-wrapper': 13.0.5
       commander: 8.3.0
@@ -6011,55 +6011,55 @@ snapshots:
     optionalDependencies:
       chokidar: 4.0.1
 
-  '@swc/core-darwin-arm64@1.10.18':
+  '@swc/core-darwin-arm64@1.11.5':
     optional: true
 
-  '@swc/core-darwin-x64@1.10.18':
+  '@swc/core-darwin-x64@1.11.5':
     optional: true
 
-  '@swc/core-linux-arm-gnueabihf@1.10.18':
+  '@swc/core-linux-arm-gnueabihf@1.11.5':
     optional: true
 
-  '@swc/core-linux-arm64-gnu@1.10.18':
+  '@swc/core-linux-arm64-gnu@1.11.5':
     optional: true
 
-  '@swc/core-linux-arm64-musl@1.10.18':
+  '@swc/core-linux-arm64-musl@1.11.5':
     optional: true
 
-  '@swc/core-linux-x64-gnu@1.10.18':
+  '@swc/core-linux-x64-gnu@1.11.5':
     optional: true
 
-  '@swc/core-linux-x64-musl@1.10.18':
+  '@swc/core-linux-x64-musl@1.11.5':
     optional: true
 
-  '@swc/core-win32-arm64-msvc@1.10.18':
+  '@swc/core-win32-arm64-msvc@1.11.5':
     optional: true
 
-  '@swc/core-win32-ia32-msvc@1.10.18':
+  '@swc/core-win32-ia32-msvc@1.11.5':
     optional: true
 
-  '@swc/core-win32-x64-msvc@1.10.18':
+  '@swc/core-win32-x64-msvc@1.11.5':
     optional: true
 
-  '@swc/core@1.10.18':
+  '@swc/core@1.11.5':
     dependencies:
       '@swc/counter': 0.1.3
-      '@swc/types': 0.1.17
+      '@swc/types': 0.1.19
     optionalDependencies:
-      '@swc/core-darwin-arm64': 1.10.18
-      '@swc/core-darwin-x64': 1.10.18
-      '@swc/core-linux-arm-gnueabihf': 1.10.18
-      '@swc/core-linux-arm64-gnu': 1.10.18
-      '@swc/core-linux-arm64-musl': 1.10.18
-      '@swc/core-linux-x64-gnu': 1.10.18
-      '@swc/core-linux-x64-musl': 1.10.18
-      '@swc/core-win32-arm64-msvc': 1.10.18
-      '@swc/core-win32-ia32-msvc': 1.10.18
-      '@swc/core-win32-x64-msvc': 1.10.18
+      '@swc/core-darwin-arm64': 1.11.5
+      '@swc/core-darwin-x64': 1.11.5
+      '@swc/core-linux-arm-gnueabihf': 1.11.5
+      '@swc/core-linux-arm64-gnu': 1.11.5
+      '@swc/core-linux-arm64-musl': 1.11.5
+      '@swc/core-linux-x64-gnu': 1.11.5
+      '@swc/core-linux-x64-musl': 1.11.5
+      '@swc/core-win32-arm64-msvc': 1.11.5
+      '@swc/core-win32-ia32-msvc': 1.11.5
+      '@swc/core-win32-x64-msvc': 1.11.5
 
   '@swc/counter@0.1.3': {}
 
-  '@swc/types@0.1.17':
+  '@swc/types@0.1.19':
     dependencies:
       '@swc/counter': 0.1.3
 
@@ -9665,7 +9665,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.3.6(@swc/core@1.10.18)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1):
+  tsup@8.3.6(@swc/core@1.11.5)(postcss@8.5.3)(typescript@5.7.3)(yaml@2.5.1):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.24.2)
       cac: 6.7.14
@@ -9684,7 +9684,7 @@ snapshots:
       tinyglobby: 0.2.12
       tree-kill: 1.2.2
     optionalDependencies:
-      '@swc/core': 1.10.18
+      '@swc/core': 1.11.5
       postcss: 8.5.3
       typescript: 5.7.3
     transitivePeerDependencies:
