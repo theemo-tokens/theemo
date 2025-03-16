@@ -33,8 +33,8 @@ importers:
         specifier: 11.5.0
         version: 11.5.0
       release-plan:
-        specifier: 0.15.0
-        version: 0.15.0
+        specifier: 0.16.0
+        version: 0.16.0
       turbo:
         specifier: 2.4.4
         version: 2.4.4
@@ -3055,9 +3055,9 @@ packages:
   get-tsconfig@4.7.6:
     resolution: {integrity: sha512-ZAqrLlu18NbDdRaHq+AKXzAmqIUPswPWKUchfytdAjiRFnCe5ojG2bstg6mRiZabkKfCoL/e98pbBELIV/YCeA==}
 
-  github-changelog@1.0.2:
-    resolution: {integrity: sha512-ieWWj+wEHcWwhofXOB6HwxYbRCmWMZ8q8NHjt+g8d0GVA8AJE3h7uxjZ9ZqT8l9TPrGH5HRjaVOqO3PiU4pUSQ==}
-    engines: {node: 12.* || 14.* || >= 16}
+  github-changelog@2.0.0:
+    resolution: {integrity: sha512-JdAwddNCvHkZY/pTMqpoaLEfksaWiTc+beDjBkPEnr7iVlKfu8SeyCT8Sef+KsonRgIj6pl3SiWDPSefWmeicw==}
+    engines: {node: 18.* || 20.* || >= 22}
     hasBin: true
 
   glob-parent@5.1.2:
@@ -4184,8 +4184,8 @@ packages:
     resolution: {integrity: sha512-+crtS5QjFRqFCoQmvGduwYWEBng99ZvmFvF+cUJkGYF1L1BfU8C6Zp9T7f5vPAwyLkUExpvK+ANVZmGU49qi4Q==}
     engines: {node: '>=12'}
 
-  release-plan@0.15.0:
-    resolution: {integrity: sha512-UxoSSDK+I0N11d2cftfzepFlgvWKUiNZLVeHapbPUVqNbQQZor9Cs7G2mE+UHjCa9+QKVAU4RdFCkILTrlR7CQ==}
+  release-plan@0.16.0:
+    resolution: {integrity: sha512-S2hrXACiy39LenrdvPAhSY7PcitS4A4fAxlzoPgYyCiS2OU6Ed+cUKvN4h9/uRyZ/B3AMGywZUIPtIhCUIjTng==}
     hasBin: true
 
   require-directory@2.1.1:
@@ -8084,7 +8084,7 @@ snapshots:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-  github-changelog@1.0.2:
+  github-changelog@2.0.0:
     dependencies:
       '@manypkg/get-packages': 2.2.2
       chalk: 4.1.2
@@ -9229,7 +9229,7 @@ snapshots:
     dependencies:
       rc: 1.2.8
 
-  release-plan@0.15.0:
+  release-plan@0.16.0:
     dependencies:
       '@manypkg/get-packages': 2.2.2
       '@npmcli/package-json': 6.1.1
@@ -9239,7 +9239,7 @@ snapshots:
       cli-highlight: 2.1.11
       execa: 9.5.2
       fs-extra: 11.3.0
-      github-changelog: 1.0.2
+      github-changelog: 2.0.0
       js-yaml: 4.1.0
       latest-version: 9.0.0
       parse-github-repo-url: 1.4.1
