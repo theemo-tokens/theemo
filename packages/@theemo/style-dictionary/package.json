@@ -62,7 +62,7 @@
     "prettier": "^3.3.3",
     "style-dictionary": "3.9.2",
     "tsup": "8.4.0",
-    "typescript": "5.8.2",
+    "typescript": "5.8.3",
     "vitest": "3.0.9"
   },
   "engines": {
