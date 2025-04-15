@@ -79,7 +79,7 @@ type VariableCollections = Record<string, VariableCollection>;
 
 export class TheemoPlugin implements Plugin {
   // private declare file: GetFileResult;
-  private declare parserConfig: FigmaParserConfigWithDefaults;
+  declare private parserConfig: FigmaParserConfigWithDefaults;
 
   // config found in `.theemo/config`
   private styleConfig: StyleConfig[] = [];
