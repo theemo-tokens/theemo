@@ -1,0 +1,19 @@
+{
+  "name": "forest-theme",
+  "private": true,
+  "description": "Sample forest theemo theme",
+  "keywords": [
+    "theemo-theme"
+  ],
+  "theemo": {
+    "name": "forest",
+    "colorSchemes": [
+      "light",
+      "dark"
+    ],
+    "file": "forest.css"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

@@ -46,6 +46,9 @@
         "@algolia/client-search",
         "vite-plugin-md"
       ]
+    },
+    "overrides": {
+      "rollup": "^4.40.0"
     }
   }
 }

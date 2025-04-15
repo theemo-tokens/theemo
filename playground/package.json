@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "pnpm vite"
+  },
+  "devDependencies": {
+    "@theemo/vite": "workspace:*",
+    "forest-theme": "workspace:*",
+    "ocean-theme": "workspace:*",
+    "vite": "^6.1.0",
+    "vite-plugin-inspect": "^10.1.1"
+  }
+}
