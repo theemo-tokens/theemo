@@ -2,3 +2,4 @@ packages:
   - 'packages/**'
   - 'themes/**'
   - 'testing/**'
+  - playground

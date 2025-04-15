@@ -1,0 +1,15 @@
+{
+  "name": "ocean-theme",
+  "private": true,
+  "description": "Sample ocean theemo theme",
+  "keywords": [
+    "theemo-theme"
+  ],
+  "theemo": {
+    "name": "ocean",
+    "file": "nested/blue-ocean.css"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
