@@ -28,7 +28,7 @@ function isCompositeNode(node: Node): node is CompositeNode {
 export default class FigmaParser implements Plugin {
   private processedFiles: WeakMap<GetFileResult, WeakSet<Style>> = new WeakMap();
 
-  private declare config: FigmaParserConfigWithDefaults;
+  declare private config: FigmaParserConfigWithDefaults;
 
   setup(config: FigmaParserConfigWithDefaults): void {
     this.config = config;

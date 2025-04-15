@@ -51,15 +51,15 @@
     "style-dictionary": ">= 3"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.13.0",
-    "@gossi/config-prettier": "^0.9.1",
+    "@gossi/config-eslint": "^0.14.0",
+    "@gossi/config-prettier": "^0.10.0",
     "@types/jsonpath": "^0.2.4",
     "@types/mock-fs": "^4.13.4",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "jsonpath": "1.1.1",
     "mock-fs": "5.5.0",
-    "prettier": "^3.3.3",
+    "prettier": "^3.5.3",
     "style-dictionary": "3.9.2",
     "tsup": "8.4.0",
     "typescript": "5.8.3",
