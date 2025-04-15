@@ -17,7 +17,9 @@ type FigmaReaderConfigWithParser = FigmaReaderConfig & {
   parser: FigmaParserConfigWithDefaults;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Parser extends Required<Pick<Plugin, 'parse'>> {}
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Resolver extends Required<Pick<Plugin, 'resolve'>> {}
 
 export default class FigmaReader {
