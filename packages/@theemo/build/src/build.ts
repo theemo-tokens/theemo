@@ -70,7 +70,7 @@ function prepareBaseBlock(config: GenerateConfig, name: string) {
 
 function prepareColorSchemes(config: GenerateConfig, name: string) {
   if (!config.colorSchemes) {
-    return '';
+    return [];
   }
 
   const contents = [];
