@@ -387,6 +387,9 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      tsup:
+        specifier: 8.4.0
+        version: 8.4.0(@swc/core@1.11.20(@swc/helpers@0.5.17))(jiti@2.4.2)(postcss@8.5.3)(typescript@5.8.3)(yaml@2.5.1)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -439,6 +442,9 @@ importers:
       '@nuxt/schema':
         specifier: ^3
         version: 3.16.2
+      '@theemo/theme':
+        specifier: workspace:*
+        version: link:../theme
       esbuild:
         specifier: '*'
         version: 0.25.0
@@ -482,6 +488,9 @@ importers:
 
   playground:
     devDependencies:
+      '@theemo/theme':
+        specifier: workspace:*
+        version: link:../packages/@theemo/theme
       '@theemo/vite':
         specifier: workspace:*
         version: link:../packages/@theemo/vite

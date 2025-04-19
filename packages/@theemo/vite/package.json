@@ -42,6 +42,9 @@
     "_test": "vitest run",
     "_test:dev": "vitest"
   },
+  "dependencies": {
+    "@theemo/theme": "workspace:*"
+  },
   "peerDependencies": {
     "@farmfe/core": ">=1",
     "@nuxt/kit": "^3",

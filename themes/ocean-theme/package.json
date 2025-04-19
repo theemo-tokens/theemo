@@ -7,7 +7,22 @@
   ],
   "theemo": {
     "name": "ocean",
-    "file": "nested/blue-ocean.css"
+    "file": "nested/blue-ocean.css",
+    "features": [
+      {
+        "name": "color-scheme",
+        "options": [
+          "light",
+          "dark"
+        ],
+        "defaultOption": "light",
+        "browserFeature": "color-scheme",
+        "behavior": [
+          "adaptive",
+          "mode"
+        ]
+      }
+    ]
   },
   "volta": {
     "extends": "../../package.json"

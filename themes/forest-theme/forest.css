@@ -1,3 +1,15 @@
 :root {
   --background-color: lightgreen;
 }
+
+:root, [data-theemo-sizing="normal"] {
+  --sizing-factor: 1;
+}
+
+[data-theemo-sizing="bigger"] {
+  --sizing-factor: 1.1;
+}
+
+[data-theemo-sizing="smaller"] {
+  --sizing-factor: 0.9;
+}

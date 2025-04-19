@@ -1,12 +1,12 @@
 import { findRoot, fingerprintFile, makeResolver, transformIndexHtml } from '../handler';
-import { findRootPackage, findThemePackages, getThemeFileContents, getThemeName } from '../theme';
+import { findRootPackage, findThemePackages, getThemeFileContents } from '../theme';
 
-import type { Options } from '..';
-import type { TheemoPackage } from '../types';
+import type { PluginOptions } from '../config';
+import type { ResolvedTheemoPackage } from '../theme';
 import type { Plugin } from 'vite';
 
-export function buildPlugin(options: Options): Plugin {
-  let themePackages: TheemoPackage[] = [];
+export function buildPlugin(options: PluginOptions): Plugin {
+  let themePackages: ResolvedTheemoPackage[] = [];
 
   return {
     name: '@theemo/vite:build',
@@ -26,9 +26,9 @@ export function buildPlugin(options: Options): Plugin {
           makeResolver((id: string) => this.resolve(id))
         );
 
-        let filename = getThemeName(pkg);
+        let filename = pkg.theemo.name;
 
-        if (pkg.theemo?.filePath) {
+        if (pkg.theemo.filePath) {
           const hash = await fingerprintFile(pkg.theemo.filePath);
 
           filename += `-${hash}`;
@@ -36,7 +36,7 @@ export function buildPlugin(options: Options): Plugin {
 
         this.emitFile({
           type: 'asset',
-          fileName: `theemo/${filename}.css`,
+          fileName: `${options.outDir}/${filename}.css`,
           source
         });
       }
