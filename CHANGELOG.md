@@ -1,5 +1,19 @@
 # Changelog
 
+## Release (2025-04-19)
+
+* @theemo/vite 0.1.0 (minor)
+
+#### :rocket: Enhancement
+* `@theemo/vite`
+  * [#1296](https://github.com/theemo-tokens/theemo/pull/1296) Add vite package ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* [#1297](https://github.com/theemo-tokens/theemo/pull/1297) fix release-plan ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-08-04)
 
 @theemo/build 0.2.4 (patch)
