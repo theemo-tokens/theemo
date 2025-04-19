@@ -1,4 +1,6 @@
-import type { Theme } from './theme';
+import { type Theme, validateTheme } from './theme';
+
+import type { ValidationResult } from './validation';
 import type { PackageJson } from 'type-fest';
 
 /**
@@ -11,21 +13,27 @@ export type TheemoPackage = PackageJson & {
 const KEYWORD = 'theemo-theme';
 
 export function isTheemoPackage(pkg: PackageJson): pkg is TheemoPackage {
-  return (pkg.keywords ?? []).includes(KEYWORD) && Boolean(pkg.theemo);
+  return (pkg.keywords ?? []).includes(KEYWORD);
 }
 
-export function validateTheemoPackage(pkg: TheemoPackage): true | string[] {
-  const { theemo } = pkg;
-
+export function validateTheemoPackage(pkg: TheemoPackage): ValidationResult {
   const errors = [];
 
-  if (!theemo.name) {
-    errors.push(`Cannot find a theme name in ${pkg.name as string}. No "theemo.name" was given.`);
+  if (!isTheemoPackage(pkg)) {
+    errors.push(`Package '${(pkg as PackageJson).name as string}' requires keyword '${KEYWORD}'`);
   }
 
-  if (!theemo.file) {
-    errors.push(`Cannot find theme file in ${pkg.name as string}. No "theemo.file" was given.`);
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (!pkg.theemo) {
+    errors.push(`Package '${pkg.name as string}' requires 'theemo' field`);
+  } else {
+    const themeValidation = validateTheme(pkg.theemo);
+
+    errors.push(...themeValidation.errors);
   }
 
-  return errors.length > 0 ? errors : true;
+  return {
+    success: errors.length === 0,
+    errors
+  };
 }

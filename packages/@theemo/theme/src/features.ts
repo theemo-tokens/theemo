@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
+import type { ValidationResult } from './validation';
+
 /**
  * Color Contrasts
  *
@@ -77,12 +79,9 @@ export type Principal = (typeof Principal)[keyof typeof Principal];
 
 export interface Feature {
   name: string;
-  enabled?: boolean;
   options: string[];
   defaultOption?: string;
-  behavior?: Behavior | Behavior[];
   browserFeature?: BrowserMechanic;
-  modes?: Record<string, string>;
 }
 
 type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
@@ -97,14 +96,30 @@ export function isBrowserFeature(feature: Feature): feature is BrowserFeature {
   ].includes(feature.browserFeature as BrowserMechanic);
 }
 
-export function isAdaptiveFeature(feature: Feature) {
-  const behavior = Array.isArray(feature.behavior) ? feature.behavior : [feature.behavior];
+export function validateFeature(feature: Feature): ValidationResult {
+  const errors: string[] = [];
 
-  return behavior.includes(Behavior.Adaptive) && isBrowserFeature(feature);
-}
+  if (!feature.name) {
+    errors.push('Feature is missing a name');
+  }
 
-export function isModalFeature(feature: Feature) {
-  const behavior = Array.isArray(feature.behavior) ? feature.behavior : [feature.behavior];
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+  if (!feature.options) {
+    errors.push(`Feature '${feature.name}' requires options`);
+  }
 
-  return feature.behavior === undefined || behavior.includes(Behavior.Mode);
+  if (!feature.browserFeature && !feature.defaultOption) {
+    errors.push(`Feature '${feature.name}' requires 'defaultOption' or 'browser'`);
+  }
+
+  if (feature.browserFeature && !isBrowserFeature(feature)) {
+    errors.push(
+      `Feature '${feature.name}' uses invalid browser mechanic: '${feature.browserFeature}' does not exist. Supported values are: '${Object.values(BrowserMechanic).join("', ")}'`
+    );
+  }
+
+  return {
+    success: errors.length === 0,
+    errors
+  };
 }

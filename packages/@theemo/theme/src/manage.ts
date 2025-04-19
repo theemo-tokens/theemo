@@ -3,9 +3,7 @@ import {
   BrowserMechanic,
   ColorContrast,
   ColorScheme,
-  isAdaptiveFeature,
   isBrowserFeature,
-  isModalFeature,
   Motion,
   Principal
 } from './features';
@@ -87,7 +85,7 @@ export class ThemeManager {
   activeTheme?: Theme;
 
   #defaultFeatureValues: FeatureValues = {};
-  #adaptiveFeatureValues: FeatureValues = {};
+  #browserFeatureValues: FeatureValues = {};
   #modeFeatureValues: FeatureValues = {};
 
   #activeThemeManager: {
@@ -119,8 +117,8 @@ export class ThemeManager {
     return this.#config.themes;
   }
 
-  get adaptiveFeatureValues() {
-    return this.#adaptiveFeatureValues;
+  get browserFeatureValues() {
+    return this.#browserFeatureValues;
   }
 
   get modeFeatureValues() {
@@ -130,7 +128,7 @@ export class ThemeManager {
   get featureValues() {
     return {
       ...this.#defaultFeatureValues,
-      ...this.#adaptiveFeatureValues,
+      ...this.#browserFeatureValues,
       ...this.#modeFeatureValues
     };
   }
@@ -148,9 +146,9 @@ export class ThemeManager {
   getPrincipal(featureName: string): Principal {
     const feature = this.#findFeature(featureName);
 
-    const overriddenValue = isAdaptiveFeature(feature) && this.modeFeatureValues[feature.name];
+    const overriddenValue = isBrowserFeature(feature) && this.modeFeatureValues[feature.name];
 
-    const principal = isAdaptiveFeature(feature)
+    const principal = isBrowserFeature(feature)
       ? overriddenValue
         ? Principal.User
         : Principal.Browser
@@ -161,10 +159,6 @@ export class ThemeManager {
 
   setMode(featureName: string, value: string) {
     const feature = this.#findFeature(featureName);
-
-    if (!isModalFeature(feature)) {
-      throw new Error(`Cannot set mode for '${feature.name}': mode is not allowed`);
-    }
 
     if (!feature.options.includes(value)) {
       throw new Error(`Cannot set mode '${feature.name}' to '${value}': option doesn't exist`);
@@ -216,7 +210,7 @@ export class ThemeManager {
 
     // setup managing features
     this.#setupDefaultFeatures(theme);
-    this.#setupAdaptiveFeatures(theme);
+    this.#setupBrowserFeatures(theme);
 
     // set new theme the active one
     this.activeTheme = theme;
@@ -235,24 +229,22 @@ export class ThemeManager {
     element.disabled = false;
   }
 
-  #setupAdaptiveFeatures(theme: Theme) {
-    const adaptiveBrowserFeatures = (theme.features ?? [])
-      .filter(isBrowserFeature)
-      .filter(isAdaptiveFeature);
+  #setupBrowserFeatures(theme: Theme) {
+    const browserBrowserFeatures = (theme.features ?? []).filter(isBrowserFeature);
 
-    const browser = setupListeners(adaptiveBrowserFeatures, (values: FeatureValues) =>
+    const browser = setupListeners(browserBrowserFeatures, (values: FeatureValues) =>
       this.#handleChangeFeatures(values)
     );
 
     this.#activeThemeManager.teardownListeners = browser.dispose;
-    this.#adaptiveFeatureValues = browser.values;
+    this.#browserFeatureValues = browser.values;
   }
 
   #handleChangeFeatures(values: FeatureValues) {
     const dump = { ...this.featureValues };
 
-    this.#adaptiveFeatureValues = {
-      ...this.#adaptiveFeatureValues,
+    this.#browserFeatureValues = {
+      ...this.#browserFeatureValues,
       ...values
     };
 
@@ -277,7 +269,7 @@ export class ThemeManager {
 
   #deactivateTheme(theme: Theme) {
     this.#defaultFeatureValues = {};
-    this.#adaptiveFeatureValues = {};
+    this.#browserFeatureValues = {};
     this.#modeFeatureValues = {};
 
     // clear classes
@@ -288,7 +280,7 @@ export class ThemeManager {
   }
 
   #clearModes(theme: Theme) {
-    for (const feature of (theme.features ?? []).filter(isModalFeature)) {
+    for (const feature of theme.features ?? []) {
       document.documentElement.removeAttribute(`data-theemo-${feature.name}`);
     }
   }

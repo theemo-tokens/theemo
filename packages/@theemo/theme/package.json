@@ -34,7 +34,10 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
-    "start": "tsup --watch"
+    "start": "tsup --watch",
+    "_test": "vitest run --browser.headless --browser.provider=webdriverio",
+    "test": "vitest run",
+    "test:ui": "vitest"
   },
   "dependencies": {
     "@theemo/tokens": "workspace:*",
@@ -46,10 +49,16 @@
     "@gossi/config-prettier": "^0.10.0",
     "@swc/cli": "0.7.3",
     "@swc/core": "1.11.21",
+    "@vitest/browser": "3.1.1",
+    "@vitest/coverage-istanbul": "3.1.1",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
+    "forest-theme": "workspace:*",
+    "ocean-theme": "workspace:*",
     "prettier": "^3.5.3",
     "tsup": "8.4.0",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.1.1",
+    "webdriverio": "^9.12.6"
   }
 }
