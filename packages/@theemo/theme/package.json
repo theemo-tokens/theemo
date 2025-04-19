@@ -20,21 +20,21 @@
   ],
   "typings": "./dist/index.d.ts",
   "exports": {
-    "package.json": "./package.json",
-    "index.js": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
-    "_build": "concurrently -r 'npm:build:*'",
-    "build:js": "swc ./src -d ./dist",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build": "tsup",
     "_lint": "concurrently -g 'npm:lint:*(!fix)'",
     "_lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
-    "_start": "concurrently -r 'npm:start:*'",
-    "start:js": "swc ./src -d ./dist -w",
-    "start:types": "tsc --emitDeclarationOnly -w"
+    "start": "tsup --watch"
   },
   "dependencies": {
     "@theemo/tokens": "workspace:*",
@@ -49,6 +49,7 @@
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
+    "tsup": "8.4.0",
     "typescript": "5.8.3"
   }
 }

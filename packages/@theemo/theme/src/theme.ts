@@ -1,7 +1,10 @@
+import type { Feature } from './features';
+
 export type Scope = string;
 
 export interface Theme {
   name: string;
-  features?: Record<string, string[]>;
-  scopes?: Scope[];
+  file: string;
+  features?: Feature[];
+  // scopes?: Scope[];
 }
