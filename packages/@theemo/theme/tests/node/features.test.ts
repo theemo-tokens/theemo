@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
-import { isBrowserFeature } from '../src';
-import { BrowserMechanic, validateFeature } from '../src/features';
+import { isBrowserFeature } from '../../src';
+import { BrowserMechanic, validateFeature } from '../../src/features';
 
 test('isBrowserFeature()', () => {
   expect(

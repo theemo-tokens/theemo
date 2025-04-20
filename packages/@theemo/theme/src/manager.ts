@@ -106,7 +106,7 @@ export class ThemeManager {
 
     // officially activate the default
     if (this.#config.options.defaultTheme) {
-      void this.setTheme(this.#config.options.defaultTheme);
+      void this.switchTheme(this.#config.options.defaultTheme);
     }
   }
 
@@ -188,7 +188,7 @@ export class ThemeManager {
    *
    * @param name theme name
    */
-  async setTheme(name: string): Promise<void> {
+  async switchTheme(name: string): Promise<void> {
     if (this.activeTheme?.name === name) {
       return;
     }
@@ -196,7 +196,7 @@ export class ThemeManager {
     const theme = this.themes.find((t) => t.name === name);
 
     if (!theme) {
-      throw new Error(`Cannot set theme '${name}': theme doesn't exist`);
+      throw new Error(`Cannot switch theme '${name}': theme doesn't exist`);
     }
 
     // load and activate theme

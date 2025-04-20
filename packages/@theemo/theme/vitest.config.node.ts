@@ -2,6 +2,7 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    workspace: ['./vitest.config.{node,browser}.ts']
+    name: '@theemo/theme:node',
+    include: ['tests/node/**/*.test.ts']
   }
 });

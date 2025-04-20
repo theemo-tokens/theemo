@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'vitest';
 
-import { validateTheme } from '../src/theme';
+import { validateTheme } from '../../src/theme';
 import { loadThemePackage } from './helpers';
 
 describe('validateTheme()', () => {
-  test('ocean theme', async () => {
-    const oceanTheme = await loadThemePackage('ocean-theme');
+  test('ocean theme', () => {
+    const oceanTheme = loadThemePackage('ocean-theme');
     const oceanValidation = validateTheme(oceanTheme.theemo);
 
     expect(oceanValidation.success).toBeTruthy();

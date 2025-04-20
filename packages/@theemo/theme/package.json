@@ -37,7 +37,10 @@
     "start": "tsup --watch",
     "_test": "vitest run --browser.headless --browser.provider=webdriverio",
     "test": "vitest run",
-    "test:ui": "vitest"
+    "test:browser": "vitest run -c vitest.config.browser.ts",
+    "test:node": "vitest run -c vitest.config.node.ts",
+    "test:dev:browser": "vitest -c vitest.config.browser.ts --browser.headless=false --browser.name=chrome --browser.provider=preview",
+    "test:dev:node": "vitest -c vitest.config.node.ts"
   },
   "dependencies": {
     "@theemo/tokens": "workspace:*",
@@ -49,6 +52,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@swc/cli": "0.7.3",
     "@swc/core": "1.11.21",
+    "@theemo/vite": "workspace:*",
     "@vitest/browser": "3.1.1",
     "@vitest/coverage-istanbul": "3.1.1",
     "concurrently": "^9.1.2",

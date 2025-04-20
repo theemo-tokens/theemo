@@ -26,9 +26,8 @@
   },
   "include": [
     "src",
-    "tests"
+    "tests",
+    "vitest.config.ts",
+    "vitest.config.*.ts"
   ],
-  "exclude": [
-    "vitest.config.ts"
-  ]
 }

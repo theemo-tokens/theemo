@@ -30,7 +30,7 @@ class Themer {
       const button = document.createElement('button');
       button.append(theme.name);
       button.addEventListener('click', () => {
-        this.manager.setTheme(theme.name);
+        this.manager.switchTheme(theme.name);
       });
   
       themes.append(button);
