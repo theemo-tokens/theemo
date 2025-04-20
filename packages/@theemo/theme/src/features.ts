@@ -109,7 +109,7 @@ export function validateFeature(feature: Feature): ValidationResult {
   }
 
   if (!feature.browserFeature && !feature.defaultOption) {
-    errors.push(`Feature '${feature.name}' requires 'defaultOption' or 'browser'`);
+    errors.push(`Feature '${feature.name}' requires 'defaultOption' or 'browserFeature'`);
   }
 
   if (feature.browserFeature && !isBrowserFeature(feature)) {

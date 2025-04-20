@@ -7,6 +7,7 @@ import {
   validateTheemoPackage
 } from '@theemo/theme';
 
+import type { LoggingFunction } from 'rollup';
 import type { PackageJson } from 'type-fest';
 
 export type Resolve = (source: string) => Promise<string | null>;
@@ -66,7 +67,8 @@ async function loadTheme(pkg: TheemoPackage, resolve: Resolve) {
 
 export async function findThemePackages(
   pkg: PackageJson,
-  resolve: Resolve
+  resolve: Resolve,
+  log: LoggingFunction
 ): Promise<TheemoPackage[]> {
   const { dependencies = {}, devDependencies = {} } = pkg;
 
@@ -92,11 +94,14 @@ export async function findThemePackages(
   for (const themePkg of themePackages) {
     const validation = validateTheemoPackage(themePkg);
 
-    if (Array.isArray(validation)) {
-      validation.forEach(console.warn);
+    if (validation.success) {
+      resolvedPackages.push(await loadTheme(themePkg, resolve));
+    } else {
+      log(
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/restrict-template-expressions
+        `[Theemo] Ignoring Theme '${themePkg.name as string}' due to validation errors: \n\n  - ${validation.errors.join('\n  - ')}\n`
+      );
     }
-
-    resolvedPackages.push(await loadTheme(themePkg, resolve));
   }
 
   return resolvedPackages;

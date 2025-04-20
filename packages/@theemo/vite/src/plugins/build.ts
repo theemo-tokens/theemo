@@ -3,6 +3,7 @@ import { findRootPackage, findThemePackages, getThemeFileContents } from '../the
 
 import type { PluginOptions } from '../config';
 import type { ResolvedTheemoPackage } from '../theme';
+import type { LoggingFunction } from 'rollup';
 import type { Plugin } from 'vite';
 
 export function buildPlugin(options: PluginOptions): Plugin {
@@ -17,7 +18,8 @@ export function buildPlugin(options: PluginOptions): Plugin {
 
       themePackages = await findThemePackages(
         rootPackage,
-        makeResolver((source: string) => this.resolve(source))
+        makeResolver((source: string) => this.resolve(source)),
+        this.warn.bind(this) as LoggingFunction
       );
 
       for (const pkg of themePackages) {

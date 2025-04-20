@@ -72,7 +72,7 @@ describe('validateFeature()', () => {
 
     expect(incompleteFeature.success).toBeFalsy();
     expect(incompleteFeature.errors).toStrictEqual([
-      `Feature 'incomplete-feature' requires 'defaultOption' or 'browser'`
+      `Feature 'incomplete-feature' requires 'defaultOption' or 'browserFeature'`
     ]);
   });
 
@@ -106,7 +106,7 @@ describe('validateFeature()', () => {
     expect(emptyFeature.errors).toStrictEqual([
       'Feature is missing a name',
       `Feature 'undefined' requires options`,
-      `Feature 'undefined' requires 'defaultOption' or 'browser'`
+      `Feature 'undefined' requires 'defaultOption' or 'browserFeature'`
     ]);
   });
 });

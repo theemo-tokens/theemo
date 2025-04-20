@@ -9,6 +9,7 @@ import {
 
 import type { PluginOptions } from '../config';
 import type { ResolvedTheemoPackage } from '../theme';
+import type { LoggingFunction } from 'rollup';
 import type { Plugin, ViteDevServer } from 'vite';
 
 const servedFiles = new Map<string, string>();
@@ -26,7 +27,8 @@ export default function devPlugin(options: PluginOptions): Plugin {
     async buildStart() {
       themePackages = await findThemePackages(
         rootPackage,
-        makeResolver((source: string) => this.resolve(source))
+        makeResolver((source: string) => this.resolve(source)),
+        this.warn.bind(this) as LoggingFunction
       );
 
       for (const pkg of themePackages) {

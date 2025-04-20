@@ -1,5 +1,5 @@
 /** @import {ThemeManager, Theme} from "@theemo/theme" */
-import { ThemeManager, isAdaptiveFeature } from "@theemo/theme";
+import { ThemeManager, isBrowserFeature } from "@theemo/theme";
 
 function loadTemplate(id) {
   const template = document.getElementById(id);
@@ -51,7 +51,7 @@ class Themer {
 
       this.drawOptions(template.querySelector('#options'), feature);
 
-      if (isAdaptiveFeature(feature) && principal === 'user') {
+      if (isBrowserFeature(feature) && principal === 'user') {
         const button = document.createElement('button');
         button.append('Unset Mode');
         button.addEventListener('click', () => {
@@ -80,7 +80,7 @@ class Themer {
 
       let label = option
 
-      if (this.manager.adaptiveFeatureValues[feature.name] === option) {
+      if (this.manager.browserFeatureValues[feature.name] === option) {
         label += ' (System)';
       }
 
