@@ -43,7 +43,6 @@
     "test:dev:node": "vitest -c vitest.config.node.ts"
   },
   "dependencies": {
-    "@theemo/tokens": "workspace:*",
     "type-fest": "^4.0.0"
   },
   "devDependencies": {

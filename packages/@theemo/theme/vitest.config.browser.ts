@@ -24,13 +24,7 @@ export default defineConfig({
       // provider: 'preview',
       provider: 'webdriverio',
       testerHtmlPath: 'tests/browser/index.html',
-      instances: [
-        { browser: 'firefox' },
-        { browser: 'chrome' }
-        // tests are flaky in chromium + playwright
-        // { browser: 'chromium' },
-        // { browser: 'webkit' }
-      ]
+      instances: [{ browser: 'firefox' }, { browser: 'chrome' }]
     }
   }
 });
