@@ -51,7 +51,6 @@
     "@gossi/config-prettier": "^0.10.0",
     "@swc/cli": "0.7.3",
     "@swc/core": "1.11.21",
-    "@theemo/vite": "workspace:*",
     "@vitest/browser": "3.1.1",
     "@vitest/coverage-istanbul": "3.1.1",
     "concurrently": "^9.1.2",
