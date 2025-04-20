@@ -20,24 +20,29 @@
   ],
   "typings": "./dist/index.d.ts",
   "exports": {
-    "package.json": "./package.json",
-    "index.js": "./dist/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
-    "_build": "concurrently -r 'npm:build:*'",
-    "build:js": "swc ./src -d ./dist",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build": "tsup",
     "_lint": "concurrently -g 'npm:lint:*(!fix)'",
     "_lint:fix": "concurrently -g 'npm:lint:*:fix'",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
-    "_start": "concurrently -r 'npm:start:*'",
-    "start:js": "swc ./src -d ./dist -w",
-    "start:types": "tsc --emitDeclarationOnly -w"
+    "start": "tsup --watch",
+    "_test": "vitest run --browser.headless --browser.provider=webdriverio",
+    "test": "vitest run",
+    "test:browser": "vitest run -c vitest.config.browser.ts",
+    "test:node": "vitest run -c vitest.config.node.ts",
+    "test:dev:browser": "vitest -c vitest.config.browser.ts --browser.headless=false --browser.name=chrome --browser.provider=preview",
+    "test:dev:node": "vitest -c vitest.config.node.ts"
   },
   "dependencies": {
-    "@theemo/tokens": "workspace:*",
     "type-fest": "^4.0.0"
   },
   "devDependencies": {
@@ -46,9 +51,16 @@
     "@gossi/config-prettier": "^0.10.0",
     "@swc/cli": "0.7.3",
     "@swc/core": "1.11.21",
+    "@vitest/browser": "3.1.1",
+    "@vitest/coverage-istanbul": "3.1.1",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
+    "forest-theme": "workspace:*",
+    "ocean-theme": "workspace:*",
     "prettier": "^3.5.3",
-    "typescript": "5.8.3"
+    "tsup": "8.4.0",
+    "typescript": "5.8.3",
+    "vitest": "3.1.1",
+    "webdriverio": "^9.12.6"
   }
 }

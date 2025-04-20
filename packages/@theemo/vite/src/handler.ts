@@ -1,25 +1,14 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 
-import { getThemeName } from './theme';
+import { THEEMO_CONFIG_ID } from '@theemo/theme';
 
-import type { Options } from '.';
-import type {
-  TheemoConfig,
-  TheemoDescriptor,
-  TheemoOptions,
-  TheemoPackage,
-  ThemeFeatures
-} from './types';
+import type { PluginOptions } from './config';
+import type { ResolvedTheemoPackage } from './theme';
+import type { TheemoPackage, TheemoRuntimeConfig } from '@theemo/theme';
 import type { ResolvedId } from 'rollup';
 
 export function findRoot(): string {
-  // if (meta.framework === 'webpack') {
-  //   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //   // @ts-ignore
-  //   return meta.webpack.compiler.context;
-  // }
-
   return process.cwd();
 }
 
@@ -31,18 +20,8 @@ export function makeResolver(resolve: (source: string) => Promise<ResolvedId | n
   };
 }
 
-function createConfig(options: TheemoOptions, packages: TheemoPackage[]): TheemoConfig {
-  const themes: Record<string, ThemeFeatures> = {};
-
-  for (const pkg of packages) {
-    const theemo: TheemoDescriptor = pkg.theemo || {};
-    const name = getThemeName(pkg);
-    const features: ThemeFeatures = {
-      colorSchemes: theemo.colorSchemes || []
-    };
-
-    themes[name] = features;
-  }
+function createConfig(options: PluginOptions, packages: TheemoPackage[]): TheemoRuntimeConfig {
+  const themes = packages.map((pkg) => pkg.theemo);
 
   return {
     options,
@@ -69,8 +48,8 @@ export async function fingerprintFile(filename: string): Promise<string> {
 
 export async function transformIndexHtml(
   html: string,
-  options: Options & { fingerprint?: boolean },
-  themePackages: TheemoPackage[]
+  options: PluginOptions & { fingerprint?: boolean },
+  themePackages: ResolvedTheemoPackage[]
 ) {
   const head = [];
 
@@ -79,19 +58,19 @@ export async function transformIndexHtml(
 
   head.push(
     [
-      '<script id="theemo-config" type="application/json">',
+      `<script id="${THEEMO_CONFIG_ID}" type="application/json">`,
       JSON.stringify(config),
       '</script>'
     ].join('\n')
   );
 
   // themes
-  const defaultThemePkg = themePackages.find((pkg) => pkg.theemo?.name === options.defaultTheme);
+  const defaultThemePkg = themePackages.find((pkg) => pkg.theemo.name === options.defaultTheme);
 
   if (defaultThemePkg) {
-    let filename = getThemeName(defaultThemePkg);
+    let filename = defaultThemePkg.theemo.name;
 
-    if (options.fingerprint === true && defaultThemePkg.theemo?.filePath) {
+    if (options.fingerprint === true && defaultThemePkg.theemo.filePath) {
       const hash = await fingerprintFile(defaultThemePkg.theemo.filePath);
 
       filename += `-${hash}`;
@@ -99,7 +78,7 @@ export async function transformIndexHtml(
 
     head.push(`
       <link 
-        href="/theemo/${filename}.css"
+        href="/${options.outDir}/${filename}.css"
         type="text/css"
         rel="stylesheet"
         title="${options.defaultTheme}"

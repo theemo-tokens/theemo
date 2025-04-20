@@ -1,3 +1,13 @@
 :root {
-  --background-color: lightblue;
+  color-scheme: light dark;
+  --background-color: light-dark(lightblue, rgba(14, 67, 120, 0.953));
+  --text-color: light-dark(black, white);
+}
+
+[data-theemo-color-scheme="light"] {
+  color-scheme: light;
+}
+
+[data-theemo-color-scheme="dark"] {
+  color-scheme: dark;
 }

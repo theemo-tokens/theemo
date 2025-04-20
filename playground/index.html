@@ -7,8 +7,34 @@
   <link rel="stylesheet" href="/styles.css" type="text/css">
 </head>
 <body>
-  <div id="app"></div>
-  <a href="/__inspect/#/module?id=./main.ts&index=2" target="_blank" style="text-decoration: none; margin-top:10px; display: block;">visit /__inspect/ to inspect the intermediate state</a>
-  
+  <a href="/__inspect/" target="_blank" style="text-decoration: none; margin-top:10px; display: block;">visit /__inspect/ to inspect the intermediate state</a>
+  <h1>Themes</h1>
+
+  <div id="themes"></div>
+
+  <h2>Features</h2>
+
+  <div id="features">
+    
+  </div>
+
+  <template id="feature">
+    <fieldset>
+      <legend>name</legend>
+
+      <p>Principal</p>
+
+      <div id="options"></div>
+    </fieldset>
+  </template>
+
+  <template id="option">
+    <label>
+      <input type="radio" value="nn">
+      <span></span>
+    </label>
+  </template>
+
+  <script type="module" src="themes.mjs"></script>
 </body>
 </html>

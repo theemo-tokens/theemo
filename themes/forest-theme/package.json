@@ -7,11 +7,18 @@
   ],
   "theemo": {
     "name": "forest",
-    "colorSchemes": [
-      "light",
-      "dark"
-    ],
-    "file": "forest.css"
+    "file": "forest.css",
+    "features": [
+      {
+        "name": "sizing",
+        "options": [
+          "smaller",
+          "normal",
+          "bigger"
+        ],
+        "defaultOption": "normal"
+      }
+    ]
   },
   "volta": {
     "extends": "../../package.json"

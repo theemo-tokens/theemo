@@ -4,22 +4,22 @@ import {
   findThemePackages,
   getThemeFileContents,
   getThemeFilePath,
-  getThemeName,
   readFile
 } from '../theme';
 
-import type { Options } from '..';
-import type { TheemoPackage } from '../types';
+import type { PluginOptions } from '../config';
+import type { ResolvedTheemoPackage } from '../theme';
+import type { LoggingFunction } from 'rollup';
 import type { Plugin, ViteDevServer } from 'vite';
 
 const servedFiles = new Map<string, string>();
 const physicalFiles = new Map<string, string>();
 
-export default function devPlugin(options: Options): Plugin {
+export default function devPlugin(options: PluginOptions): Plugin {
   const root = findRoot();
   const rootPackage = findRootPackage(root);
   let devServer: ViteDevServer | undefined = undefined;
-  let themePackages: TheemoPackage[] = [];
+  let themePackages: ResolvedTheemoPackage[] = [];
 
   return {
     name: '@theemo/vite:dev',
@@ -27,7 +27,8 @@ export default function devPlugin(options: Options): Plugin {
     async buildStart() {
       themePackages = await findThemePackages(
         rootPackage,
-        makeResolver((source: string) => this.resolve(source))
+        makeResolver((source: string) => this.resolve(source)),
+        this.warn.bind(this) as LoggingFunction
       );
 
       for (const pkg of themePackages) {
@@ -36,7 +37,7 @@ export default function devPlugin(options: Options): Plugin {
           makeResolver((id: string) => this.resolve(id))
         )) as string;
 
-        const servedAt = `/theemo/${getThemeName(pkg)}.css`;
+        const servedAt = `/${options.outDir}/${pkg.theemo.name}.css`;
 
         servedFiles.set(servedAt, source);
 

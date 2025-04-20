@@ -16,7 +16,9 @@
     "lint": "pnpm --filter '@theemo/*' lint",
     "release": "release-it",
     "start": "turbo run --filter '@theemo/*' start",
-    "test": "vitest run",
+    "test": "concurrently -g 'npm:test:*(!dev)'",
+    "test:node": "vitest run",
+    "_test:browser": "pnpm run -r --parallel test:browser",
     "test:dev": "vitest --ui"
   },
   "devDependencies": {

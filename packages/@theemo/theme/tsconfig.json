@@ -1,20 +1,13 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "baseUrl": ".",
-    "rootDir": "src/",
-    "module": "NodeNext",
+    "rootDir": ".",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "paths": {
-      "*": [
-        "types/*",
-        "node_modules/*"
-      ]
-    },
     "esModuleInterop": true,
     "isolatedModules": true,
-    "declaration": true,
-    "declarationDir": "./dist",
     "downlevelIteration": true,
     "sourceMap": true,
     "importHelpers": true,
@@ -33,6 +26,8 @@
   },
   "include": [
     "src",
-    "types"
-  ]
+    "tests",
+    "vitest.config.ts",
+    "vitest.config.*.ts"
+  ],
 }
