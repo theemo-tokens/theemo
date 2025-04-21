@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "npm-run-all2": "7.0.2",
-    "style-dictionary": "3.9.2",
+    "style-dictionary": "^4.3.3",
     "theemo": "0.1.3"
   }
 }

@@ -1,7 +1,7 @@
 import { matchesConstrainedValue } from '@theemo/tokens';
 
 import type { Constraints } from '@theemo/tokens';
-import type StyleDictionary from 'style-dictionary';
+import type { TransformedToken } from 'style-dictionary/types';
 
 /**
  * Creates a function to filter tokens on the given constraints.
@@ -30,7 +30,7 @@ import type StyleDictionary from 'style-dictionary';
  * @returns a filter function
  */
 export function makeConstrainedFilter(constraints: Constraints) {
-  return (token: StyleDictionary.TransformedToken) => {
+  return (token: TransformedToken) => {
     return (token.attributes?.constraints &&
       matchesConstrainedValue(token.attributes.constraints, constraints)) as boolean;
   };
