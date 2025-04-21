@@ -30,6 +30,7 @@ import type StyleDictionary from 'style-dictionary';
  * @param styleDictionary
  */
 export const registerTheemo = (styleDictionary: StyleDictionary) => {
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (styleDictionary.registerPreprocessor) {
     styleDictionary.registerPreprocessor(theemoTokenPreprocessor);
   } else {
