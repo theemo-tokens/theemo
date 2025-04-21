@@ -1,18 +1,20 @@
-import type StyleDictionary from 'style-dictionary';
+import type { PlatformConfig, Transform, TransformedToken } from 'style-dictionary/types';
+
+function transform(token: TransformedToken, config: PlatformConfig): string {
+  return [config.prefix, ...token.path]
+    .filter((part: unknown): part is string => typeof part === 'string')
+    .join('-');
+}
 
 /**
  * Transforms the name into kebap-case for usage as CSS custom properties
  *
  * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  */
-export const namePathKebab: StyleDictionary.Transform = {
+export const namePathKebabTransform: Transform = {
+  name: 'name/path/kebab',
   type: 'name',
-  transformer: (
-    token: StyleDictionary.TransformedToken,
-    platform?: StyleDictionary.Platform
-  ): string => {
-    return [platform?.prefix, ...token.path]
-      .filter((part: unknown): part is string => typeof part === 'string')
-      .join('-');
-  }
+  // @ts-expect-error for backwards compatibility
+  transformer: transform,
+  transform
 };

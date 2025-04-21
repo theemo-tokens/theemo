@@ -1,9 +1,7 @@
 const StyleDictionary = require('style-dictionary');
 const { registerTheemo, makeConstrainedFilter } = require('@theemo/style-dictionary');
-const { isConstrainedValue } = require('@theemo/tokens');
 
 registerTheemo(StyleDictionary);
-
 
 module.exports = {
   source: ['tokens/**/*.json'],
@@ -19,9 +17,7 @@ module.exports = {
             outputReferences: true,
             showFileHeader: false
           },
-          filter: (token) => {
-            return !isConstrainedValue(token.value);
-          }
+          filter: 'theemo/non-constrained-tokens'
         }
       ]
     },

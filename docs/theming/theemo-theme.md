@@ -50,7 +50,7 @@ Here is a minimal package example, with `sync` and `build:*` scripts present
     "@theemo/sync": "workspace:*",
     "@theemo/style-dictionary": "workspace:*",
     "@theemo/tokens": "workspace:*",
-    "style-dictionary": "^3.8.0"
+    "style-dictionary": "^4.3.3"
   }
 }
 ```
