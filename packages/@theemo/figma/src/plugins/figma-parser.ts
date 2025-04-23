@@ -34,7 +34,7 @@ export default class FigmaParser implements Plugin {
     this.config = config;
   }
 
-  parse(file: GetFileResult) {
+  parse(file: GetFileResult): TokenCollection<FigmaToken> {
     return this.parseNode(file.document, file);
   }
 

@@ -6,6 +6,6 @@ import type { Token } from '..';
  * @param token the token
  * @returns `true`if the token is a stroke style or `false` if not
  */
-export function isStroke(token: Token) {
+export function isStroke(token: Token): boolean {
   return token.type === 'stroke';
 }

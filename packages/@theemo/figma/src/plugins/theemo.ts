@@ -93,7 +93,7 @@ export class TheemoPlugin implements Plugin {
     return '791262205400516364';
   }
 
-  parse(file: GetFileResult) {
+  parse(file: GetFileResult): TokenCollection<FigmaToken> {
     const configStyle = Object.values(file.styles).find((style) => style.name === CONFIG);
 
     if (configStyle) {

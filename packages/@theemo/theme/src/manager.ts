@@ -45,7 +45,13 @@ function match(feature: BrowserFeature) {
   return values;
 }
 
-export function setupListeners(features: BrowserFeature[], cb: (values: FeatureValues) => void) {
+export function setupListeners(
+  features: BrowserFeature[],
+  cb: (values: FeatureValues) => void
+): {
+  values: FeatureValues;
+  dispose: () => void;
+} {
   const disposals: (() => void)[] = [];
 
   const values: FeatureValues = {};
@@ -66,7 +72,7 @@ export function setupListeners(features: BrowserFeature[], cb: (values: FeatureV
 
   return {
     values,
-    dispose: () => {
+    dispose: (): void => {
       disposals.forEach((dispose) => dispose());
     }
   };
@@ -117,15 +123,15 @@ export class ThemeManager {
     return this.#config.themes;
   }
 
-  get browserFeatureValues() {
+  get browserFeatureValues(): FeatureValues {
     return this.#browserFeatureValues;
   }
 
-  get modeFeatureValues() {
+  get modeFeatureValues(): FeatureValues {
     return this.#modeFeatureValues;
   }
 
-  get featureValues() {
+  get featureValues(): FeatureValues {
     return {
       ...this.#defaultFeatureValues,
       ...this.#browserFeatureValues,
@@ -157,7 +163,7 @@ export class ThemeManager {
     return principal;
   }
 
-  setMode(featureName: string, value: string) {
+  setMode(featureName: string, value: string): void {
     const feature = this.#findFeature(featureName);
 
     if (!feature.options.includes(value)) {
@@ -171,7 +177,7 @@ export class ThemeManager {
     this.#options.featureChanged?.(feature.name, value);
   }
 
-  unsetMode(featureName: string) {
+  unsetMode(featureName: string): void {
     const feature = this.#findFeature(featureName);
 
     // eslint-disable-next-line @typescript-eslint/no-dynamic-delete

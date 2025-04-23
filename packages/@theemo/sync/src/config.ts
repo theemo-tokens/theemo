@@ -23,6 +23,6 @@ export interface SyncConfig {
   writer: WriterConfig;
 }
 
-export function defineConfig(config: SyncConfig) {
+export function defineConfig(config: SyncConfig): SyncConfig {
   return config;
 }

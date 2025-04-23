@@ -13,7 +13,7 @@ export function findRoot(): string {
 }
 
 export function makeResolver(resolve: (source: string) => Promise<ResolvedId | null>) {
-  return async (source: string) => {
+  return async (source: string): Promise<string | null> => {
     const result = await resolve(source);
 
     return result ? result.id : null;
@@ -50,7 +50,7 @@ export async function transformIndexHtml(
   html: string,
   options: PluginOptions & { fingerprint?: boolean },
   themePackages: ResolvedTheemoPackage[]
-) {
+): Promise<string> {
   const head = [];
 
   // runtime config

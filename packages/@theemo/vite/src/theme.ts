@@ -20,7 +20,7 @@ export type ResolvedTheemoPackage = TheemoPackage & {
   theemo?: ResolvedTheme;
 };
 
-export function readFile(filePath: string) {
+export function readFile(filePath: string): string {
   return fs.readFileSync(filePath, { encoding: 'utf-8' });
 }
 

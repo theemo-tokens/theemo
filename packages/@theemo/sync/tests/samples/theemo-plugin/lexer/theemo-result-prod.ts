@@ -17,4 +17,4 @@ export const TOKENS = [
     colorScheme: 'dark',
     value: '#80E5D6'
   }
-];
+] as const;

@@ -29,7 +29,7 @@ import type StyleDictionary from 'style-dictionary';
  * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  * @param styleDictionary
  */
-export const registerTheemo = (styleDictionary: StyleDictionary) => {
+export const registerTheemo = (styleDictionary: StyleDictionary): void => {
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   if (styleDictionary.registerPreprocessor) {
     styleDictionary.registerPreprocessor(theemoTokenPreprocessor);

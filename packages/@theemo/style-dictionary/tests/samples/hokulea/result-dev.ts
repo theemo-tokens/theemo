@@ -1,6 +1,10 @@
 import { EXPECTED_FILES as EXPECTED_FILES_PROD } from './result-prod.js';
 
-export const EXPECTED_FILES = [...EXPECTED_FILES_PROD, 'color/text.json', 'color/palette.json'];
+export const EXPECTED_FILES: string[] = [
+  ...EXPECTED_FILES_PROD,
+  'color/text.json',
+  'color/palette.json'
+] as const;
 
 export const TOKENS = [
   {
@@ -71,4 +75,4 @@ export const TOKENS = [
       colorScheme: 'dark'
     }
   }
-];
+] as const;

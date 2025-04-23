@@ -6,6 +6,6 @@ import type { Token } from '..';
  * @param token the token
  * @returns `true` if the token is a typography or `false` if not
  */
-export function isTypography(token: Token) {
+export function isTypography(token: Token): boolean {
   return token.type === 'typography';
 }

@@ -3,7 +3,7 @@ export const EXPECTED_FILES = [
   'alternative.dark.json',
   'alternative.light.json',
   'hero.json'
-];
+] as const;
 
 export const TOKENS = [
   {
@@ -34,4 +34,4 @@ export const TOKENS = [
       value: '{action.border.value}'
     }
   }
-];
+] as const;

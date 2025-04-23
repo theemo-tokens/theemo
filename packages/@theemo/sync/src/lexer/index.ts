@@ -17,13 +17,13 @@ export class Lexer {
     this.rawTokens = tokens;
 
     // normalization
-    this.normalizedTokens = tokens.map(this.normalizeToken.bind(this));
+    this.normalizedTokens = tokens.map((token) => this.normalizeToken(token));
 
     // classification
-    this.classifiedTokens = this.normalizedTokens.map(this.classifyToken.bind(this));
+    this.classifiedTokens = this.normalizedTokens.map((token) => this.classifyToken(token));
 
     // filter
-    const filteredTokens = this.classifiedTokens.filter(this.filterToken.bind(this));
+    const filteredTokens = this.classifiedTokens.filter((token) => this.filterToken(token));
 
     return filteredTokens;
   }

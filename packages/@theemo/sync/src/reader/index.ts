@@ -9,7 +9,7 @@ export class Reader {
     this.config = config;
   }
 
-  async read() {
+  async read(): Promise<TokenCollection> {
     let allTokens = new TokenCollection();
     const sources = Array.isArray(this.config.sources)
       ? this.config.sources

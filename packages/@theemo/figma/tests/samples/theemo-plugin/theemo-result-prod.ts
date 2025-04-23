@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-export const VALUES = {
+export const VALUES: Record<string, string> = {
   'action/background': '#2A50D5',
   'action/border': '#193080',
   'action/text': '#D4DCF7',
@@ -11,7 +11,7 @@ export const VALUES = {
   'alternative/text.$dark': '#12544A'
 };
 
-export const REFERENCES = {
+export const REFERENCES: Record<string, string | undefined> = {
   'action/background': undefined,
   'action/border': undefined,
   'action/text': undefined,

@@ -17,4 +17,4 @@ export const TOKENS = [
     colorScheme: 'dark',
     reference: 'palette/adjacent/700'
   }
-];
+] as const;

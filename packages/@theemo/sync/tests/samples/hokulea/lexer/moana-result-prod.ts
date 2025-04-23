@@ -15,4 +15,4 @@ export const TOKENS = [
     name: 'color.intent.action.fill.disabled.text',
     colorScheme: 'dark'
   }
-];
+] as const;

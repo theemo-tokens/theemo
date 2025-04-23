@@ -6,6 +6,6 @@ import type { Token } from '..';
  * @param token the token
  * @returns `true` if the token is a shadow or `false` if not
  */
-export function isShadow(token: Token) {
+export function isShadow(token: Token): boolean {
   return token.type === 'shadow';
 }
