@@ -6,6 +6,6 @@ import type { Token } from '..';
  * @param token the token
  * @returns `true` if the token is a cubic bezier or `false` if not
  */
-export function isCubicBezier(token: Token) {
+export function isCubicBezier(token: Token): boolean {
   return token.type === 'cubicBezier';
 }

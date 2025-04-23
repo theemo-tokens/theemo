@@ -8,7 +8,7 @@ export class Writer {
     this.config = config;
   }
 
-  write(tokens: TokenCollection) {
+  write(tokens: TokenCollection): void {
     const targets = Array.isArray(this.config.targets)
       ? this.config.targets
       : [this.config.targets];

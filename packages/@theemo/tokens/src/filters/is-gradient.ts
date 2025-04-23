@@ -6,6 +6,6 @@ import type { Token } from '..';
  * @param token the token
  * @returns `true` if the token is a gradient or `false` if not
  */
-export function isGradient(token: Token) {
+export function isGradient(token: Token): boolean {
   return token.type === 'gradient';
 }

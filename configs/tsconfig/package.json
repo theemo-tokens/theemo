@@ -1,0 +1,9 @@
+{
+  "name": "@theemo-config/tsconfig",
+  "private": true,
+  "description": "TSConfig for theemo",
+  "type": "module",
+  "exports": {
+    "./tsconfig.json": "./tsconfig.json"
+  }
+}

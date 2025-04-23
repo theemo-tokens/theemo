@@ -53,7 +53,7 @@ async function loadTheemo(program: Command) {
   return new Theemo(config ?? {});
 }
 
-export async function cli() {
+export async function cli(): Promise<void> {
   // setup program
   const program = new Command();
   const pkg = await loadPackage();

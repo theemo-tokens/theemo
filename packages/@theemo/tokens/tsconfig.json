@@ -1,28 +1,9 @@
 {
+  // "extends": "@theemo-config/tsconfig/tsconfig.json",
+  "extends": "../../../configs/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
     "baseUrl": ".",
-    "rootDir": ".",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "downlevelIteration": true,
-    "sourceMap": true,
-    "importHelpers": true,
-    "alwaysStrict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "skipLibCheck": true
+    "rootDir": "."
   },
   "include": [
     "src",

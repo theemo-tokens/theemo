@@ -1,6 +1,6 @@
 import { colord } from 'colord';
 
-import type { ColorTransform, ComputedValue } from '../token-types';
+import type { ColorTransform, ColorValue, ComputedValue } from '../token-types';
 
 function applyColorTransforms(value: string, transforms: ColorTransform): string {
   let color = colord(value);
@@ -34,6 +34,6 @@ function applyColorTransforms(value: string, transforms: ColorTransform): string
  * @param value the token value
  * @returns the transformed token value
  */
-export function transformColorValue(value: ComputedValue<'color'>) {
+export function transformColorValue(value: ComputedValue<'color'>): ColorValue {
   return applyColorTransforms(value.value, value.transforms);
 }

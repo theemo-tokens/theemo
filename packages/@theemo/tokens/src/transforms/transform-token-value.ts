@@ -10,7 +10,7 @@ import type { ComputedValue } from '../token-types';
  * @param token Token
  * @returns the token with the transforms applied
  */
-export function transformTokenValue(token: Token) {
+export function transformTokenValue(token: Token): Token {
   if (isColor(token)) {
     token.value = transformColorValue(token.value as ComputedValue<'color'>);
   }

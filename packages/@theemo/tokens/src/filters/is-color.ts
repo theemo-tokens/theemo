@@ -6,6 +6,6 @@ import type { Token } from '../token';
  * @param token the Token
  * @returns `true` if the token is of type color or `false` if not
  */
-export function isColor(token: Token) {
+export function isColor(token: Token): boolean {
   return token.type === 'color';
 }

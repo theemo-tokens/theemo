@@ -95,7 +95,7 @@ function getThemeName() {
  *
  * @param config The configuration for the theme and its behavior
  */
-export function build(config: GenerateConfig) {
+export function build(config: GenerateConfig): void {
   const name = getThemeName();
   const contents = [prepareBaseBlock(config, name), ...prepareColorSchemes(config, name)];
 

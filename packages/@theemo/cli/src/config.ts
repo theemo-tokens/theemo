@@ -29,6 +29,6 @@ export interface TheemoConfig {
  * @param config your config =)
  * @returns the config for `@theemo/cli`
  */
-export function defineConfig(config: TheemoConfig) {
+export function defineConfig(config: TheemoConfig): TheemoConfig {
   return config;
 }

@@ -44,7 +44,7 @@ export type FigmaParserConfigWithDefaults = FigmaParserConfig & DefaultFigmaPars
  * @param style Figma Style
  * @returns `false` when style starts with a `.`, otherwise `true`
  */
-export function isTokenByStyle(style: Style) {
+export function isTokenByStyle(style: Style): boolean {
   return !style.name.startsWith('.');
 }
 
@@ -60,7 +60,7 @@ export function isTokenByStyle(style: Style) {
  * @param style Figma Style
  * @returns normalized name
  */
-export function getNameFromStyle(style: Style) {
+export function getNameFromStyle(style: Style): string {
   return style.name
     .replaceAll('/', '.')
     .replace(/^\.(.+)/, '$1')
@@ -86,7 +86,7 @@ export function isTokenByText() {
  * @param node Figma Text Node
  * @returns Normalized name
  */
-export function getNameFromText(node: Node<'TEXT'>) {
+export function getNameFromText(node: Node<'TEXT'>): string {
   return node.name.toLowerCase();
 }
 
@@ -99,7 +99,7 @@ export function getNameFromText(node: Node<'TEXT'>) {
  * @param node Figma Text Node
  * @returns text from the text node
  */
-export function getValueFromText(node: Node<'TEXT'>) {
+export function getValueFromText(node: Node<'TEXT'>): string {
   return node.characters;
 }
 
@@ -114,7 +114,7 @@ export function getValueFromText(node: Node<'TEXT'>) {
  * @param variable Figma Variable
  * @returns `true` when the variable should be considered as token
  */
-export function isTokenByVariable(variable: FigmaVariable) {
+export function isTokenByVariable(variable: FigmaVariable): boolean {
   return !variable.hiddenFromPublishing && variable.resolvedType !== 'BOOLEAN';
 }
 
@@ -127,7 +127,7 @@ export function isTokenByVariable(variable: FigmaVariable) {
  * @param variable Figma Variable
  * @returns normalized name
  */
-export function getNameFromVariable(variable: FigmaVariable) {
+export function getNameFromVariable(variable: FigmaVariable): string {
   return variable.name.replaceAll('/', '.').toLowerCase();
 }
 

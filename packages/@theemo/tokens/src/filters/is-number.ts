@@ -6,6 +6,6 @@ import type { Token } from '..';
  * @param token the token
  * @returns `true` if the token is a number or `false` if not
  */
-export function isNumber(token: Token) {
+export function isNumber(token: Token): boolean {
   return token.type === 'number';
 }
