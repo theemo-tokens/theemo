@@ -13,4 +13,4 @@ export const TOKENS = [
     reference: 'color.text.light.reduced',
     colorScheme: 'dark'
   }
-];
+] as const;

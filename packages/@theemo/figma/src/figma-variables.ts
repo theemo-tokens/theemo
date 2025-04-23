@@ -25,7 +25,10 @@ export function isAlias(value: VariableValue): value is VariableAlias {
   );
 }
 
-export function findVariableFromAlias(alias: VariableAlias, variables: FigmaVariable[]) {
+export function findVariableFromAlias(
+  alias: VariableAlias,
+  variables: FigmaVariable[]
+): FigmaVariable | undefined {
   return variables.find((variable) => variable.id === alias.id);
 }
 
@@ -39,7 +42,7 @@ function isAliasPublished(
   return aliasedVariable && config.isTokenByVariable(aliasedVariable);
 }
 
-export function getValue(variable: FigmaVariable, mode?: string) {
+export function getValue(variable: FigmaVariable, mode?: string): VariableValue {
   const usedMode =
     mode && variable.collection.modes.find((collMode) => collMode.modeId === mode)
       ? mode
@@ -239,7 +242,7 @@ export function parseVariables(
 export function mapVariablesWithCollection(
   variables: Variable[],
   collections: VariableCollection[]
-) {
+): FigmaVariable[] {
   return variables.map((variable): FigmaVariable => {
     const collection = collections.find((coll) => variable.variableCollectionId === coll.id);
 

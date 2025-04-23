@@ -8,7 +8,7 @@ import type { DirectoryJSON } from 'memfs';
 
 // Based on
 // https://gist.github.com/boneskull/dd11a4d73024909299e26c95c85edc70
-export async function createDirectoryJSONFromFs(dir: string) {
+export async function createDirectoryJSONFromFs(dir: string): Promise<DirectoryJSON> {
   // recursify dirs
   const patterns = [path.join(dir, '**')];
 

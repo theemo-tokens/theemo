@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { REFERENCES as PROD_REFERENCES, VALUES as PROD_VALUES } from './moana-result-prod.js';
 
-export const VALUES = {
+export const VALUES: Record<string, string> = {
   ...PROD_VALUES,
   'color.intent.action.fill.base.background': '#9EDFFA',
   'color.intent.action.fill.hover.background': '#55C6F7',
   'color.intent.action.fill.active.background': '#054661'
 };
 
-export const REFERENCES = {
+export const REFERENCES: Record<string, string | undefined> = {
   ...PROD_REFERENCES,
   'color.intent.action.fill.base.background': 'color.palette.brand2',
   'color.intent.action.fill.base.border': 'color.palette.brand2',

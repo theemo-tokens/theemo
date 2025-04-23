@@ -1,4 +1,4 @@
-export const EXPECTED_FILES = [
+export const EXPECTED_FILES: string[] = [
   'color/layout.json',
   'color/layout.dark.json',
   'color/layout.light.json',
@@ -11,7 +11,7 @@ export const EXPECTED_FILES = [
   'color/intent/action.light.json',
   'color/intent/action.transient.json',
   'structure.json'
-];
+] as const;
 
 export const TOKENS = [
   {
@@ -80,4 +80,4 @@ export const TOKENS = [
       }
     }
   }
-];
+] as const;

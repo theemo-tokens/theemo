@@ -55,9 +55,9 @@ export default class FigmaReader {
       // step 1: resolve tokens
       .map((token: FigmaToken) => this.resolveToken(token, figmaTokens))
       // step 2: classify tokens
-      .map(this.classifyToken.bind(this))
+      .map((token) => this.classifyToken(token))
       // step 3: transform FigmaToken into Token
-      .map(this.transformToken.bind(this));
+      .map((token) => this.transformToken(token));
 
     return tokens;
   }

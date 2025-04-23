@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-export const VALUES = {
+export const VALUES: Record<string, string> = {
   'color.intent.action.fill.base.background': '#9EDFFA',
   'color.intent.action.fill.base.border': '#9EDFFA',
   'color.intent.action.fill.hover.background': '#55C6F7',
@@ -17,7 +17,7 @@ export const VALUES = {
   'color.intent.action.subtle.base.text': '#333333'
 };
 
-export const REFERENCES = {
+export const REFERENCES: Record<string, string | undefined> = {
   'color.intent.action.fill.base.background': undefined,
   'color.intent.action.fill.base.border': undefined,
   'color.intent.action.fill.base.text': undefined, // has ref in dev
@@ -30,7 +30,7 @@ export const REFERENCES = {
   'color.intent.action.subtle.disabled.border': 'color.layout.reduced'
 };
 
-export const STYLE_NAMES = {
+export const STYLE_NAMES: Record<string, string> = {
   'color.intent.action.fill.base.background': 'intent/action/fill/base.background',
   'color.intent.action.fill.base.border': 'intent/action/fill/base.border',
   'color.intent.action.fill.base.text': 'intent/action/fill/base.text',

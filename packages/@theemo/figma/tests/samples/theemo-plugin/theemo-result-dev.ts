@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { REFERENCES as PROD_REFERENCES, VALUES as PROD_VALUES } from './theemo-result-prod.js';
 
-export const VALUES = {
+export const VALUES: Record<string, string> = {
   ...PROD_VALUES,
   'palette/brand/100': '#08102B',
   'palette/brand/200': '#112055',
@@ -23,7 +23,7 @@ export const VALUES = {
   'palette/adjacent/900': '#D5F6F1'
 };
 
-export const REFERENCES = {
+export const REFERENCES: Record<string, string | undefined> = {
   ...PROD_REFERENCES,
   'action/background': 'palette/brand/500',
   'action/border': 'palette/brand/300',
