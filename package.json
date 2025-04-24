@@ -52,5 +52,8 @@
     "overrides": {
       "rollup": "^4.40.0"
     }
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

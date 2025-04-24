@@ -31,5 +31,8 @@
     "npm-run-all2": "7.0.2",
     "style-dictionary": "^4.3.3",
     "theemo": "0.1.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
