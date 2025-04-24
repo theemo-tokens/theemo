@@ -33,7 +33,7 @@
     "release-plan": "0.16.0",
     "turbo": "2.5.0",
     "typedoc": "0.26.11",
-    "typedoc-plugin-markdown": "4.2.10",
+    "typedoc-plugin-markdown": "4.6.3",
     "typedoc-vitepress-theme": "1.1.2",
     "vite": "6.3.2",
     "vitepress": "1.6.3",
