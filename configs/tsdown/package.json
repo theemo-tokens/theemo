@@ -14,6 +14,9 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix"
   },
+  "dependencies": {
+    "unplugin-isolated-decl": "^0.13.10"
+  },
   "devDependencies": {
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
