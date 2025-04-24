@@ -41,38 +41,6 @@
   "dependencies": {
     "@theemo/theme": "workspace:*"
   },
-  "peerDependencies": {
-    "@farmfe/core": ">=1",
-    "@nuxt/kit": "^3",
-    "@nuxt/schema": "^3",
-    "esbuild": "*",
-    "rollup": "^4.0.0",
-    "vite": ">=3",
-    "webpack": "^4 || ^5"
-  },
-  "peerDependenciesMeta": {
-    "@farmfe/core": {
-      "optional": true
-    },
-    "@nuxt/kit": {
-      "optional": true
-    },
-    "@nuxt/schema": {
-      "optional": true
-    },
-    "esbuild": {
-      "optional": true
-    },
-    "rollup": {
-      "optional": true
-    },
-    "vite": {
-      "optional": true
-    },
-    "webpack": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
