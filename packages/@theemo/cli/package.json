@@ -22,19 +22,14 @@
   "bin": {
     "theemo": "./bin/theemo.js"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     },
     "./cli": {
       "types": "./dist/cli.d.ts",
-      "require": "./dist/cli.cjs",
       "default": "./dist/cli.js"
     },
     "./package.json": "./package.json"

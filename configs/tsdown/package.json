@@ -2,10 +2,10 @@
   "name": "@theemo-config/tsdown",
   "private": true,
   "description": "TSDown Config for theemo",
-  "type": "module",
   "files": [
     "src/index.js"
   ],
+  "type": "module",
   "exports": {
     ".": "./src/index.js",
     "./package.json": "./package.json"

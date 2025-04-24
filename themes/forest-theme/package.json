@@ -5,6 +5,7 @@
   "keywords": [
     "theemo-theme"
   ],
+  "type": "module",
   "theemo": {
     "name": "forest",
     "file": "forest.css",
