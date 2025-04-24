@@ -5,6 +5,7 @@
   "keywords": [
     "theemo-theme"
   ],
+  "type": "module",
   "theemo": {
     "name": "ocean",
     "file": "nested/blue-ocean.css",

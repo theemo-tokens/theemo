@@ -18,11 +18,9 @@
   "files": [
     "dist"
   ],
-  "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
       "default": "./dist/index.mjs"
     },
     "./package.json": "./package.json"
