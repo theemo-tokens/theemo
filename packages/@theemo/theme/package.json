@@ -56,7 +56,7 @@
     "forest-theme": "workspace:*",
     "ocean-theme": "workspace:*",
     "prettier": "^3.5.3",
-    "tsdown": "^0.9.8",
+    "tsdown": "^0.9.9",
     "typescript": "5.8.3",
     "vitest": "3.1.1",
     "webdriverio": "^9.12.6"
