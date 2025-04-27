@@ -431,7 +431,7 @@ importers:
         version: link:../../../configs/tsdown
       '@vitest/browser':
         specifier: 3.1.1
-        version: 3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.6)
+        version: 3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.7)
       '@vitest/coverage-istanbul':
         specifier: 3.1.1
         version: 3.1.1(vitest@3.1.1)
@@ -460,8 +460,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1(@types/node@22.14.1)(@vitest/browser@3.1.1)(@vitest/ui@3.1.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1)
       webdriverio:
-        specifier: ^9.12.6
-        version: 9.12.6
+        specifier: ^9.12.7
+        version: 9.12.7
 
   packages/@theemo/tokens:
     dependencies:
@@ -6289,8 +6289,8 @@ packages:
     resolution: {integrity: sha512-Alz+JiaVW15b/Qy6zSmJeYXxvmtMIVpEAg7QDfCWqG9miZSKJYWwgWE3xoSrwYn5kTylUszqb17Pb5wyrj7YFw==}
     engines: {node: '>=18.20.0'}
 
-  webdriverio@9.12.6:
-    resolution: {integrity: sha512-cAuDFz2NgDxxvhC2/xEW7Pc5lC2TGMcohOuRmbQmSx4hNc82Hp2QpM+fVAS0ZDr9lzg9h3u0bL/blyV2Ah5NCg==}
+  webdriverio@9.12.7:
+    resolution: {integrity: sha512-HxpLQrFuadfE65dqh+Qc2pdvz18FbsdpdiZogy8VUBtxRanijbOsi4cV84ffGXab8Ownzu+bNBJuJjlTBDX00Q==}
     engines: {node: '>=18.20.0'}
     peerDependencies:
       puppeteer-core: '>=22.x || <=24.x'
@@ -8018,7 +8018,7 @@ snapshots:
       vite: 5.4.14(@types/node@22.14.1)(lightningcss@1.29.3)(terser@5.39.0)
       vue: 3.5.13(typescript@5.8.3)
 
-  '@vitest/browser@3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.6)':
+  '@vitest/browser@3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.7)':
     dependencies:
       '@testing-library/dom': 10.4.0
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
@@ -8030,7 +8030,7 @@ snapshots:
       vitest: 3.1.1(@types/node@22.14.1)(@vitest/browser@3.1.1)(@vitest/ui@3.1.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1)
       ws: 8.18.1
     optionalDependencies:
-      webdriverio: 9.12.6
+      webdriverio: 9.12.7
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -8069,7 +8069,7 @@ snapshots:
       tinyrainbow: 2.0.0
       vitest: 3.1.1(@types/node@22.14.1)(@vitest/browser@3.1.1)(@vitest/ui@3.1.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1)
     optionalDependencies:
-      '@vitest/browser': 3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.6)
+      '@vitest/browser': 3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.7)
     transitivePeerDependencies:
       - supports-color
 
@@ -12588,7 +12588,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.14.1
-      '@vitest/browser': 3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.6)
+      '@vitest/browser': 3.1.1(vite@6.3.3(@types/node@22.14.1)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.5.1))(vitest@3.1.1)(webdriverio@9.12.7)
       '@vitest/ui': 3.1.1(vitest@3.1.1)
     transitivePeerDependencies:
       - jiti
@@ -12669,7 +12669,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  webdriverio@9.12.6:
+  webdriverio@9.12.7:
     dependencies:
       '@types/node': 20.17.30
       '@types/sinonjs__fake-timers': 8.1.5
