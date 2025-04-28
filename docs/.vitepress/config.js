@@ -54,6 +54,10 @@ export default withMermaid(
                 {
                   text: '@theemo/tokens',
                   link: '/api/@theemo/tokens/'
+                },
+                {
+                  text: '@theemo/vite',
+                  link: '/api/@theemo/vite/'
                 }
               ]
             }
@@ -210,7 +214,8 @@ export default withMermaid(
                 text: '@theemo/style-dictionary',
                 link: '/packages/style-dictionary'
               },
-              { text: '@theemo/build', link: '/packages/build' }
+              { text: '@theemo/build', link: '/packages/build' },
+              { text: '@theemo/vite', link: '/packages/vite' }
             ]
           }
         ],
