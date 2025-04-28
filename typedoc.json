@@ -5,8 +5,7 @@
     "packages/@theemo/*"
   ],
   "exclude": [
-    "packages/@theemo/core",
-    "packages/@theemo/theme"
+    "packages/@theemo/core"
   ],
   "out": "./docs/api",
   "docsRoot": "./docs",
@@ -18,8 +17,10 @@
   "useCodeBlocks": true,
   "parametersFormat": "table",
   "typeDeclarationFormat": "table",
-  "textContentMappings": {
-    "kind.typeAlias.singular": "Type",
-    "kind.typeAlias.plural": "Types",
+  "navigation": {
+    "includeCategories": false,
+    "includeGroups": false,
+    "includeFolders": false,
+    "excludeReferences": true
   }
 }
