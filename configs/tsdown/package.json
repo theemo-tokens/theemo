@@ -14,15 +14,12 @@
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix"
   },
-  "dependencies": {
-    "unplugin-isolated-decl": "^0.13.10"
-  },
   "devDependencies": {
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
-    "tsdown": "^0.9.9",
+    "tsdown": "^0.10.2",
     "typescript": "5.8.3"
   },
   "engines": {
