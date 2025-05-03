@@ -214,7 +214,7 @@ function createTokenFromVariable(
   if (value !== undefined) {
     token.value = value;
 
-    if (!isValueOnlyReferences(value)) {
+    if (config.skipTypeForReferences ? !isValueOnlyReferences(value) : true) {
       token.type = parseType(variable);
     }
   }
