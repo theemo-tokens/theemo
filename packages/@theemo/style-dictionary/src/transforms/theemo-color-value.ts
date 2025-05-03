@@ -4,6 +4,8 @@ import type { ComputedValue, Token } from '@theemo/tokens';
 import type { Transform, TransformedToken } from 'style-dictionary/types';
 
 const isColorTransform = (token: TransformedToken): boolean => {
+  console.log('isColorTransform', token, isComputedValue(token.value), isColor(token as Token));
+
   return isComputedValue(token.value) && isColor(token as Token);
 };
 

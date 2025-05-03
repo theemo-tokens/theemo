@@ -1,7 +1,11 @@
+import { theemoComputedTokensFilter } from './filters/theemo-computed-tokens';
 import { theemoConstrainedTokensFilter } from './filters/theemo-constrained-tokens';
+import { theemoIsCssPropertyFilter } from './filters/theemo-is-css-property';
 import { theemoNonConstrainedTokensFilter } from './filters/theemo-non-constrained-tokens';
+import { cssPropertiesFormater } from './formats/css-property';
 import { w3cTokenJsonParser } from './parsers/w3c-token-json-parser';
 import { theemoTokenPreprocessor } from './preprocessors/theemo-token';
+import { colorLightDarkCssTransform } from './transforms/color-light-dark-css';
 import { namePathKebabTransform } from './transforms/name-path-kebab';
 import { shadowCssTransform } from './transforms/shadow-css';
 import { theemoAttributesTransform } from './transforms/theemo-attributes';
@@ -37,8 +41,12 @@ export const registerTheemo = (styleDictionary: StyleDictionary): void => {
     styleDictionary.registerParser(w3cTokenJsonParser);
   }
 
+  styleDictionary.registerFormat(cssPropertiesFormater);
+
   styleDictionary.registerFilter(theemoNonConstrainedTokensFilter);
   styleDictionary.registerFilter(theemoConstrainedTokensFilter);
+  styleDictionary.registerFilter(theemoComputedTokensFilter);
+  styleDictionary.registerFilter(theemoIsCssPropertyFilter);
 
   styleDictionary.registerTransform(theemoAttributesTransform);
   styleDictionary.registerTransform(theemoValueTransform);
@@ -46,6 +54,7 @@ export const registerTheemo = (styleDictionary: StyleDictionary): void => {
   styleDictionary.registerTransform(namePathKebabTransform);
   styleDictionary.registerTransform(typographyCssTransform);
   styleDictionary.registerTransform(shadowCssTransform);
+  styleDictionary.registerTransform(colorLightDarkCssTransform);
 
   styleDictionary.registerTransformGroup({
     name: 'theemo',
@@ -57,6 +66,7 @@ export const registerTheemo = (styleDictionary: StyleDictionary): void => {
       'typography/css',
       'shadow/css',
       'time/seconds',
+      'color/light-dark-css',
       'color/css'
     ]
   });

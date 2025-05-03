@@ -17,6 +17,8 @@ function transform(
   if (config.constraints) {
     const match = findConstrainedValue(value, config.constraints);
 
+    console.log(token, config.constraints, match);
+
     if (match) {
       if (isComputedValue(match)) {
         return match;
