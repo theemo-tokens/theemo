@@ -20,6 +20,8 @@ export { isTypography } from './filters/is-typography';
 export { matchesConstrainedValue } from './filters/matches-constrained-value';
 
 // transforms
-export { findConstrainedValue } from './transforms/find-constrained-value';
 export { transformColorValue } from './transforms/transform-color-value';
 export { transformTokenValue } from './transforms/transform-token-value';
+
+// values
+export { findConstrainedValue } from './token-values';
