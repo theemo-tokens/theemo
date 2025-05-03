@@ -165,6 +165,17 @@ export interface FigmaParserConfig {
    */
   getConstraints?: (mode: string, variable: FigmaVariable) => Constraints | undefined;
 
+  /**
+   * Skip type for tokens that are references.
+   *
+   * According to the spec, `$type` can be optional when certain criteria are
+   * met. One of them being references. If you wish, you can skip types here.
+   *
+   * @see [Spec](https://tr.designtokens.org/format/#type-0)
+   * @default `false`
+   */
+  skipTypeForReferences?: boolean;
+
   //
   // misc
   //

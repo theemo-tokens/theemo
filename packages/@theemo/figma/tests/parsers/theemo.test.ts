@@ -4,10 +4,11 @@ import { DEFAULT_PARSER_CONFIG } from '../../src/index.js';
 import { TheemoPlugin } from '../../src/plugins/theemo.js';
 import theemoPlaygroundFigma from '../samples/theemo-playground/figma.json';
 
+import type { FigmaParserConfig } from '../../src/index.js';
 import type { Constraints } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
-function getTokens(dev = false) {
+function getTokens(dev: boolean | Partial<FigmaParserConfig> = false) {
   const theemo = new TheemoPlugin();
 
   let config = {
@@ -26,7 +27,8 @@ function getTokens(dev = false) {
     },
     considerMode(mode: string) {
       return mode === 'light' || mode === 'dark';
-    }
+    },
+    ...(typeof dev === 'object' ? dev : {})
   };
 
   if (dev) {
@@ -83,6 +85,13 @@ describe('Theemo Plugin', () => {
       const tokens = getTokens();
       const intentActionBorder = tokens.find((t) => t.name === 'intent.action.border');
 
+      expect(intentActionBorder?.type).toBe('color');
+    });
+
+    test('color with reference (skipTypeForReference)', () => {
+      const tokens = getTokens({ skipTypeForReferences: true });
+      const intentActionBorder = tokens.find((t) => t.name === 'intent.action.border');
+
       expect(intentActionBorder?.type).toBe(undefined);
     });
 
@@ -95,6 +104,13 @@ describe('Theemo Plugin', () => {
 
     test('number reference', () => {
       const tokens = getTokens();
+      const padding0 = tokens.find((t) => t.name === 'padding0');
+
+      expect(padding0?.type).toBe('number');
+    });
+
+    test('number reference (skipTypeForReference)', () => {
+      const tokens = getTokens({ skipTypeForReferences: true });
       const padding0 = tokens.find((t) => t.name === 'padding0');
 
       expect(padding0?.type).toBe(undefined);

@@ -157,6 +157,7 @@ export const DEFAULT_PARSER_CONFIG: DefaultFigmaParserConfig = {
   considerMode() {
     return false;
   },
+  skipTypeForReferences: false,
   formats: {
     color: ColorFormat.Hex,
     colorAlpha: ColorAlphaFormat.Rgb
