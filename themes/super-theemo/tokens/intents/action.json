@@ -1,0 +1,77 @@
+{
+  "intent": {
+    "action": {
+      "base": {
+        "background": {
+          "$value": "{palette.brand.500}",
+          "$description": ""
+        },
+        "border": {
+          "$value": "{intent.action.base.background}",
+          "$description": ""
+        },
+        "text": {
+          "$value": "{palette.letters.brand-highlight}",
+          "$description": ""
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "{palette.brand.400}",
+          "$description": ""
+        },
+        "border": {
+          "$value": "{intent.action.hover.background}",
+          "$description": ""
+        },
+        "text": {
+          "$value": "{intent.action.base.text}",
+          "$description": ""
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "{palette.brand.300}",
+          "$description": ""
+        },
+        "border": {
+          "$value": "{intent.action.active.background}",
+          "$description": ""
+        },
+        "text": {
+          "$value": "{intent.action.base.text}",
+          "$description": ""
+        }
+      },
+      "disabled": {
+        "background": {
+          "$value": {
+            "value": "{intent.action.base.background}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": ""
+        },
+        "border": {
+          "$value": {
+            "value": "{intent.action.base.border}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": ""
+        },
+        "text": {
+          "$value": {
+            "value": "{intent.action.base.text}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": ""
+        }
+      }
+    }
+  }
+}

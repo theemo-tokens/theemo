@@ -1,0 +1,38 @@
+{
+  "text": {
+    "normal": {
+      "$value": [
+        {
+          "value": "{palette.letters.dark}",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "{palette.letters.light}",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": ""
+    },
+    "emphasize": {
+      "$value": [
+        {
+          "value": "{palette.adjacent.300}",
+          "features": {
+            "color-scheme": "light"
+          }
+        },
+        {
+          "value": "{palette.adjacent.900}",
+          "features": {
+            "color-scheme": "dark"
+          }
+        }
+      ],
+      "$description": ""
+    }
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "palette": {
+    "brand": {
+      "100": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "{palette.brand.red}",
+        "$description": ""
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": 30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.brand.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "red": {
+        "$value": "#e41b1b",
+        "$description": "",
+        "$type": "color"
+      },
+      "yellow": {
+        "$value": "#ffec40",
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "adjacent": {
+      "100": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#e9c316",
+        "$description": "",
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": 30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.adjacent.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "structure": {
+      "100": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#808080",
+        "$description": "",
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": 30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.structure.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "white": {
+        "$value": "#ffffff",
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "letters": {
+      "brand-highlight": {
+        "$value": "#ffec40",
+        "$description": "",
+        "$type": "color"
+      },
+      "dark": {
+        "$value": "#000000",
+        "$description": "",
+        "$type": "color"
+      },
+      "light": {
+        "$value": "#f2f2f2",
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "positive": {
+      "100": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#80e41b",
+        "$description": "",
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": 30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.positive.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "neutral": {
+      "100": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#1b80e4",
+        "$description": "",
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": 30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.neutral.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "higgs": {
+      "100": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#e4e41b",
+        "$description": "",
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.higgs.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      }
+    },
+    "negative": {
+      "100": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": -40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "200": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": -30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "300": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": -20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "400": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": -10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "500": {
+        "$value": "#a517e8",
+        "$description": "",
+        "$type": "color"
+      },
+      "600": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": 10
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "700": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": 20
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "800": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": 30
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      },
+      "900": {
+        "$value": {
+          "value": "{palette.negative.500}",
+          "transforms": {
+            "lightness": 40
+          }
+        },
+        "$description": "",
+        "$type": "color"
+      }
+    }
+  }
+}

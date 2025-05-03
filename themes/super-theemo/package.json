@@ -6,6 +6,7 @@
   "keywords": [
     "theemo-theme"
   ],
+  "type": "module",
   "theemo": {
     "name": "theemo",
     "colorSchemes": [
@@ -15,22 +16,26 @@
   },
   "scripts": {
     "_clean": "rm -rf build/ dist/ tokens/",
-    "sync": "theemo sync",
-    "build": "npm-run-all build:*",
-    "build:base": "style-dictionary build --config config.base.js",
-    "build:light": "style-dictionary build --config config.light.js",
-    "build:dark": "style-dictionary build --config config.dark.js",
-    "build:website": "npm-run-all build:website:*",
-    "build:website:base": "style-dictionary build --config config.website.js",
-    "build:website:dark": "style-dictionary build --config config.website.dark.js",
+    "sync": "DEV=true theemo sync",
+    "build:css": "style-dictionary build",
+    "_build:base": "style-dictionary build --config config.base.js",
+    "_build:light": "style-dictionary build --config config.light.js",
+    "_build:dark": "style-dictionary build --config config.dark.js",
+    "_build:website": "pnpm build:website:*",
+    "_build:website:base": "style-dictionary build --config config.website.js",
+    "_build:website:dark": "style-dictionary build --config config.website.dark.js",
     "generate": "theemo generate",
-    "magic": "npm-run-all sync build generate",
-    "_clean-magic": "yarn clean && yarn magic"
+    "magic": "sync build generate",
+    "_clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
-    "npm-run-all2": "8.0.1",
-    "style-dictionary": "^4.3.3",
-    "theemo": "0.1.3"
+    "@theemo/build": "workspace:*",
+    "@theemo/cli": "workspace:*",
+    "@theemo/figma": "workspace:*",
+    "@theemo/style-dictionary": "workspace:*",
+    "@theemo/sync": "workspace:*",
+    "@theemo/tokens": "workspace:*",
+    "style-dictionary": "^4.3.3"
   },
   "engines": {
     "node": ">=20.0.0"
