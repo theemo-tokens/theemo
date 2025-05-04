@@ -276,10 +276,10 @@ importers:
         specifier: ^4.6.9
         version: 4.6.9
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.31.0
+        specifier: ^8.31.1
         version: 8.31.1(@typescript-eslint/parser@8.31.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
       '@typescript-eslint/parser':
-        specifier: ^8.31.0
+        specifier: ^8.31.1
         version: 8.31.1(eslint@8.57.1)(typescript@5.8.3)
       concurrently:
         specifier: ^9.1.2
@@ -380,10 +380,10 @@ importers:
         specifier: workspace:*
         version: link:../../../configs/tsdown
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.31.0
+        specifier: ^8.31.1
         version: 8.31.1(@typescript-eslint/parser@8.31.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
       '@typescript-eslint/parser':
-        specifier: ^8.31.0
+        specifier: ^8.31.1
         version: 8.31.1(eslint@8.57.1)(typescript@5.8.3)
       concurrently:
         specifier: ^9.1.2
