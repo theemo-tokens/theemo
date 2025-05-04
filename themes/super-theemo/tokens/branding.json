@@ -2,11 +2,13 @@
   "brand": {
     "text": {
       "$value": "{palette.brand.yellow}",
-      "$description": ""
+      "$description": "",
+      "$type": "color"
     },
     "background": {
       "$value": "{palette.brand.red}",
-      "$description": ""
+      "$description": "",
+      "$type": "color"
     }
   }
 }

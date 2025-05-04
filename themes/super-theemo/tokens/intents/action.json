@@ -4,43 +4,52 @@
       "base": {
         "background": {
           "$value": "{palette.brand.500}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.action.base.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": "{palette.letters.brand-highlight}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       },
       "hover": {
         "background": {
           "$value": "{palette.brand.400}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.action.hover.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": "{intent.action.base.text}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       },
       "active": {
         "background": {
           "$value": "{palette.brand.300}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.action.active.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": "{intent.action.base.text}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       },
       "disabled": {
@@ -51,7 +60,8 @@
               "alpha": -35
             }
           },
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": {
@@ -60,7 +70,8 @@
               "alpha": -35
             }
           },
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": {
@@ -69,7 +80,8 @@
               "alpha": -35
             }
           },
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       }
     }

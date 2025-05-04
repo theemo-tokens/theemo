@@ -1,0 +1,28 @@
+{
+  "spacing": {
+    "density": {
+      "$value": [
+        {
+          "value": 1,
+          "features": {
+            "density": "comfortable"
+          }
+        },
+        {
+          "value": 1.2,
+          "features": {
+            "density": "spacious"
+          }
+        },
+        {
+          "value": 0.8,
+          "features": {
+            "density": "compact"
+          }
+        }
+      ],
+      "$description": "",
+      "$type": "number"
+    }
+  }
+}

@@ -43,7 +43,8 @@
       },
       "500": {
         "$value": "{palette.brand.red}",
-        "$description": ""
+        "$description": "",
+        "$type": "color"
       },
       "600": {
         "$value": {

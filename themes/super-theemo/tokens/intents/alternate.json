@@ -4,43 +4,52 @@
       "base": {
         "background": {
           "$value": "{palette.adjacent.500}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": "{palette.letters.light}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.alternate.base.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       },
       "hover": {
         "background": {
           "$value": "{palette.adjacent.400}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.alternate.hover.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": "{intent.alternate.base.text}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       },
       "active": {
         "background": {
           "$value": "{palette.adjacent.300}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.alternate.active.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": "{intent.alternate.base.text}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       },
       "disabled": {
@@ -51,7 +60,8 @@
               "alpha": -35
             }
           },
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "text": {
           "$value": {
@@ -60,11 +70,13 @@
               "alpha": -35
             }
           },
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         },
         "border": {
           "$value": "{intent.alternate.disabled.background}",
-          "$description": ""
+          "$description": "",
+          "$type": "color"
         }
       }
     }

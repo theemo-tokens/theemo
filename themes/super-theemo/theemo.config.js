@@ -11,27 +11,27 @@ const { FIGMA_SECRET, DEV } = process.env;
 
 const NESTED_TOPICS = ['intents', 'indicators'];
 
-function normalizeName(name) {
-  // lowercase all things
-  let n = name.toLowerCase();
+function fixNumberValue(value) {
+  if (typeof value === 'number') {
+    return parseFloat(parseFloat(value).toFixed(2));
+  }
 
-  // remove all clutter
-  n = n.replace(/\s+/, '');
+  if (Array.isArray(value)) {
+    return value.map(fixNumberValue);
+  }
 
-  // from folders to canonical name (if we haven't already)
-  n = n.replace(/\//g, '.');
+  if (typeof value === 'object') {
+    if (value.value) {
+      return {
+        ...value,
+        value: fixNumberValue(value.value)
+      }
+    }
 
-  // hand it back ;)
-  return n;
-}
+    return value;
+  }
 
-function isTransient(token, tokens) {
-  const hasColorSchemes = tokens.some(
-    (t) => t.colorScheme && t.name === token.name
-  );
-  const isReference = !token.colorScheme && hasColorSchemes;
-
-  return token.type !== 'basic' && isReference;
+  return parseFloat(parseFloat(value).toFixed(2));
 }
 
 export default defineConfig({
@@ -46,20 +46,22 @@ export default defineConfig({
 
         parser: {
           considerMode(mode) {
-            return ['light', 'dark'].includes(mode);
+            return ['light', 'dark', 'comfortable', 'spacious', 'compact'].includes(mode);
           },
 
           getConstraints(mode) {
-            if (mode === 'light' || mode === 'dark') {
+            if (['light', 'dark'].includes(mode)) {
               return { features: { 'color-scheme': mode } };
+            }
+
+            if (['comfortable', 'spacious', 'compact'].includes(mode)) {
+              return { features: { 'density': mode } };
             }
           },
 
           isTokenByVariable(variable) {
             return DEV ? true : isTokenByVariable(variable);
           },
-
-          // getTypeFromToken(token)
 
           isTokenByStyle(style) {
             return !style.name.startsWith('.')
@@ -72,53 +74,16 @@ export default defineConfig({
           },
 
           getPropertiesForToken(token) {
-            console.log(token);
-            
             return {
               collection: token.figma.variable.collection.name.toLowerCase()
             }
           }
         }
-
       })
-      // tool: 'figma',
-      // figmaFile: FIGMA_FILE,
-      // figmaSecret: FIGMA_SECRET,
-
-      // // referencer
-      // referencer: {
-      //   type: 'figma-plugin',
-      //   plugin: 'theemo',
-      //   pluginConfig: {
-      //     jsonbinFile: JSONBIN_FILE,
-      //     jsonbinSecret: JSONBIN_SECRET,
-      //     formats: {
-      //       color: 'hex',
-      //       colorAlpha: 'rgb'
-      //     }
-      //   }
-      // },
     },
 
     lexer: {
       normalizeToken(token) {
-      //   const normalized = { ...token };
-
-      //   // normalize names
-      //   // normalized.name = normalizeName(normalized.name);
-      //   // if (normalized.reference) {
-      //   //   normalized.reference = normalizeName(normalized.reference);
-      //   // }
-
-      //   // normalize contexts
-      //   const tokenContextIndex = normalized.name.indexOf('.$');
-      //   if (tokenContextIndex !== -1) {
-      //     normalized.colorScheme = normalized.name.slice(tokenContextIndex + 2);
-      //     normalized.name = normalized.name.slice(0, tokenContextIndex);
-      //   }
-
-      //   return normalized;
-
         if (['sizing.base'].includes(token.name)) {
           return {
             ...token,
@@ -130,21 +95,20 @@ export default defineConfig({
         if (token.type === 'number') {
           return {
             ...token,
-            value: parseFloat(parseFloat(token.value).toFixed(2))
+            value: fixNumberValue(token.value)
           };
         }
 
         return token;
       },
 
-      classifyToken(token, tokens) {
+      classifyToken(token) {
         const t = { ...token };
         t.tier = token.name.startsWith('.')
           ? 'basic'
           : token.name.startsWith('hero')
             ? 'specific'
             : 'purpose';
-        // t.transient = isTransient(t, tokens.normalized);
 
         return t;
       }
@@ -167,21 +131,6 @@ export default defineConfig({
   
           return fileName;
         },
-  
-        // valueForToken(token, tokens) {
-        //   if (token.reference) {
-        //     const reference = tokens.find(
-        //       t => t.name === token.reference && t.colorScheme === undefined
-        //     );
-  
-        //     if (reference && reference.name.startsWith('ifm') && token.name.startsWith('ifm') && token.transforms === undefined) {
-        //       // const ref = reference.name.replaceAll('-', '.').split('.').join('.');
-        //       return `{${reference.name}.value}`;
-        //     }
-        //   }
-  
-        //   return token.value;
-        // },
   
         dataForToken(token) {
           return {
