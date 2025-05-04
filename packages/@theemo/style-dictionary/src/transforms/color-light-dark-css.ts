@@ -1,6 +1,6 @@
 import { findConstrainedValue, isColor, isConstrainedValue } from '@theemo/tokens';
 
-import type { ConstrainedValue, Token, TokenType, TokenValue } from '@theemo/tokens';
+import type { ConstrainedValue, Token, TokenType } from '@theemo/tokens';
 import type { TransformedToken } from 'style-dictionary';
 import type { Transform } from 'style-dictionary/types';
 
@@ -18,13 +18,17 @@ function findValueByFeature(
   return undefined;
 }
 
+function getColorSchemeValues(token: TransformedToken) {
+  const value = token.value as ConstrainedValue<TokenType>;
+
+  return {
+    light: findValueByFeature(value, 'color-scheme', 'light'),
+    dark: findValueByFeature(value, 'color-scheme', 'dark')
+  };
+}
+
 function transform(token: TransformedToken) {
-  const value = token.value as ConstrainedValue<'color'>;
-
-  const light = findValueByFeature(value, 'color-scheme', 'light');
-  const dark = findValueByFeature(value, 'color-scheme', 'dark');
-
-  // console.log(token.name, light, dark);
+  const { light, dark } = getColorSchemeValues(token);
 
   if (light && dark) {
     return `light-dark(${light}, ${dark})`;
@@ -34,13 +38,8 @@ function transform(token: TransformedToken) {
 }
 
 function filter(token: TransformedToken) {
-  // console.log(token, isColor(token as Token), isConstrainedValue(token.value));
-
-  const value = token.value as TokenValue<TokenType>;
-
-  if (isColor(token as Token) && isConstrainedValue(value)) {
-    const light = findValueByFeature(value, 'color-scheme', 'light');
-    const dark = findValueByFeature(value, 'color-scheme', 'dark');
+  if (isColor(token as Token) && isConstrainedValue(token.original.value)) {
+    const { light, dark } = getColorSchemeValues(token);
 
     return Boolean(light && dark);
   }
@@ -56,6 +55,7 @@ function filter(token: TransformedToken) {
 export const colorLightDarkCssTransform: Transform = {
   name: 'color/light-dark-css',
   type: 'value',
+  transitive: true,
   filter,
   // @ts-expect-error for backwards compatibility
   matcher: filter,
