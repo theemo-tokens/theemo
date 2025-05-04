@@ -44,7 +44,7 @@
     "type-fest": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.26.10",
+    "@babel/core": "7.27.1",
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
