@@ -539,7 +539,7 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vite:
-        specifier: ^6.3.3
+        specifier: ^6.3.4
         version: 6.3.4(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
       vitest:
         specifier: 3.1.2
@@ -560,7 +560,7 @@ importers:
         specifier: workspace:*
         version: link:../themes/ocean-theme
       vite:
-        specifier: ^6.3.3
+        specifier: ^6.3.4
         version: 6.3.4(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
       vite-plugin-inspect:
         specifier: ^11.0.1
