@@ -20,6 +20,9 @@ export { isNoReferenceToken, isReferenceToken } from './filters/reference';
 // formatters
 export { cssPropertiesFormater } from './formats/css-properties';
 
+// parsers
+export { w3cTokenJsonParser } from './parsers/w3c-token-json-parser';
+
 // preprocessors
 export { theemoTokenPreprocessor } from './preprocessors/theemo-token';
 
