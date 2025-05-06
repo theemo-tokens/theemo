@@ -29,12 +29,16 @@
     "_clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
+    "@gossi/config-eslint": "^0.14.0",
+    "@gossi/config-prettier": "^0.10.0",
     "@theemo/build": "workspace:*",
     "@theemo/cli": "workspace:*",
     "@theemo/figma": "workspace:*",
     "@theemo/style-dictionary": "workspace:*",
     "@theemo/sync": "workspace:*",
     "@theemo/tokens": "workspace:*",
+    "eslint": "^8.57.1",
+    "prettier": "^3.5.3",
     "style-dictionary": "^4.3.3"
   },
   "engines": {

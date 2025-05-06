@@ -642,6 +642,12 @@ importers:
 
   themes/super-theemo:
     devDependencies:
+      '@gossi/config-eslint':
+        specifier: ^0.14.0
+        version: 0.14.0(@babel/core@7.27.1)(@babel/eslint-parser@7.27.1(@babel/core@7.27.1)(eslint@8.57.1))(@typescript-eslint/eslint-plugin@8.31.1(@typescript-eslint/parser@8.31.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(@typescript-eslint/parser@8.31.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
+      '@gossi/config-prettier':
+        specifier: ^0.10.0
+        version: 0.10.0(prettier@3.5.3)
       '@theemo/build':
         specifier: workspace:*
         version: link:../../packages/@theemo/build
@@ -660,6 +666,12 @@ importers:
       '@theemo/tokens':
         specifier: workspace:*
         version: link:../../packages/@theemo/tokens
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
       style-dictionary:
         specifier: ^4.3.3
         version: 4.4.0
