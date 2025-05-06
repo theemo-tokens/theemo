@@ -18,9 +18,9 @@ export function matchesConstraints(token: TransformedToken, constraints?: Constr
  * Use as {@link https://amzn.github.io/style-dictionary/#/config?id=file | `filter`} property in style dictionary config.
  *
  * ```js
- * const { makeConstrainedFilter } = require('@theemo/style-dictionary');
+ * import { makeConstrainedFilter } from '@theemo/style-dictionary';
  *
- * module.exports = {
+ * export default {
  *   platforms: {
  *     '[your-platforn]': {
  *       filter: makeConstrainedFilter({
