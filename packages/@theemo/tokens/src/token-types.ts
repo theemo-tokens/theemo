@@ -370,7 +370,7 @@ export type Scope = string;
  *
  * > Features provide a customization option for the user experience.
  */
-export type Features = Record<string, string>;
+export type Features = Record<string, string | string[]>;
 
 /**
  * Value constrained by features

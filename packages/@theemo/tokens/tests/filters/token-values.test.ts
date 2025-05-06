@@ -62,6 +62,26 @@ describe('filter token values', () => {
       ).toBeTruthy();
     });
 
+    test('matching on feature array', () => {
+      expect(
+        matchesConstrainedValue(
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          { value: '#ff0088', features: { 'color-scheme': 'light' } },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          { features: { 'color-scheme': ['light', 'dark'] } }
+        )
+      ).toBeTruthy();
+
+      expect(
+        matchesConstrainedValue(
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          { value: '#ff0088', features: { 'color-scheme': 'light' } },
+          // eslint-disable-next-line @typescript-eslint/naming-convention
+          { features: { 'color-scheme': ['dark'] } }
+        )
+      ).toBeFalsy();
+    });
+
     test('value array, matching one by feature', () => {
       expect(
         matchesConstrainedValue(
