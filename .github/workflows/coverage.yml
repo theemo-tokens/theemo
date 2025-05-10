@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - 'packages/@theemo/**'
+      - 'packages/**'
 
 jobs:
   coverage:
