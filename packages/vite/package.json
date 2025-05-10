@@ -44,6 +44,7 @@
   "devDependencies": {
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
+    "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",

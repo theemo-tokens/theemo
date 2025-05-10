@@ -89,7 +89,7 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
 
-  packages/@theemo/build:
+  packages/build:
     dependencies:
       lightningcss:
         specifier: ^1.29.3
@@ -109,10 +109,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@theemo/theme':
         specifier: workspace:*
         version: link:../theme
@@ -144,11 +144,11 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/build/tests/scenarios/moana: {}
+  packages/build/tests/scenarios/moana: {}
 
-  packages/@theemo/build/tests/scenarios/moana-color-schemes: {}
+  packages/build/tests/scenarios/moana-color-schemes: {}
 
-  packages/@theemo/cli:
+  packages/cli:
     dependencies:
       '@theemo/build':
         specifier: workspace:*
@@ -177,10 +177,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@types/node':
         specifier: ^22.15.3
         version: 22.15.3
@@ -203,7 +203,7 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/core:
+  packages/core:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.14.0
@@ -213,10 +213,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
@@ -236,7 +236,7 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/figma:
+  packages/figma:
     dependencies:
       '@theemo/sync':
         specifier: workspace:*
@@ -271,10 +271,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@types/lodash.isempty':
         specifier: ^4.4.9
         version: 4.4.9
@@ -306,7 +306,7 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/style-dictionary:
+  packages/style-dictionary:
     dependencies:
       '@theemo/sync':
         specifier: workspace:*
@@ -323,10 +323,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@types/jsonpath':
         specifier: ^0.2.4
         version: 0.2.4
@@ -361,7 +361,7 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/sync:
+  packages/sync:
     dependencies:
       '@theemo/tokens':
         specifier: workspace:*
@@ -381,10 +381,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.31.1
         version: 8.31.1(@typescript-eslint/parser@8.31.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
@@ -410,7 +410,7 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/theme:
+  packages/theme:
     dependencies:
       type-fest:
         specifier: ^4.0.0
@@ -427,10 +427,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@vitest/browser':
         specifier: 3.1.2
         version: 3.1.2(vite@6.3.4(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1))(vitest@3.1.2)(webdriverio@9.12.7)
@@ -445,10 +445,10 @@ importers:
         version: 8.57.1
       forest-theme:
         specifier: workspace:*
-        version: link:../../../themes/forest-theme
+        version: link:../../themes/forest-theme
       ocean-theme:
         specifier: workspace:*
-        version: link:../../../themes/ocean-theme
+        version: link:../../themes/ocean-theme
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -465,7 +465,7 @@ importers:
         specifier: ^9.12.7
         version: 9.12.7
 
-  packages/@theemo/tokens:
+  packages/tokens:
     dependencies:
       colord:
         specifier: ^2.9.3
@@ -482,10 +482,10 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo-config/tsconfig':
         specifier: workspace:*
-        version: link:../../../configs/tsconfig
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       '@types/lodash.merge':
         specifier: ^4.6.9
         version: 4.6.9
@@ -508,7 +508,7 @@ importers:
         specifier: 3.1.2
         version: 3.1.2(@types/node@22.15.3)(@vitest/browser@3.1.2)(@vitest/ui@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(yaml@2.7.1)
 
-  packages/@theemo/vite:
+  packages/vite:
     dependencies:
       '@theemo/theme':
         specifier: workspace:*
@@ -520,9 +520,12 @@ importers:
       '@gossi/config-prettier':
         specifier: ^0.10.0
         version: 0.10.0(prettier@3.5.3)
+      '@theemo-config/tsconfig':
+        specifier: workspace:*
+        version: link:../../configs/tsconfig
       '@theemo-config/tsdown':
         specifier: workspace:*
-        version: link:../../../configs/tsdown
+        version: link:../../configs/tsdown
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
@@ -555,10 +558,10 @@ importers:
     devDependencies:
       '@theemo/theme':
         specifier: workspace:*
-        version: link:../packages/@theemo/theme
+        version: link:../packages/theme
       '@theemo/vite':
         specifier: workspace:*
-        version: link:../packages/@theemo/vite
+        version: link:../packages/vite
       forest-theme:
         specifier: workspace:*
         version: link:../themes/forest-theme
@@ -576,16 +579,16 @@ importers:
     dependencies:
       '@theemo/core':
         specifier: workspace:*
-        version: link:../../packages/@theemo/core
+        version: link:../../packages/core
       '@theemo/figma':
         specifier: workspace:*
-        version: link:../../packages/@theemo/figma
+        version: link:../../packages/figma
       '@theemo/style-dictionary':
         specifier: workspace:*
-        version: link:../../packages/@theemo/style-dictionary
+        version: link:../../packages/style-dictionary
       '@theemo/sync':
         specifier: workspace:*
-        version: link:../../packages/@theemo/sync
+        version: link:../../packages/sync
       pkg-dir:
         specifier: ^8.0.0
         version: 8.0.0
@@ -622,22 +625,22 @@ importers:
     devDependencies:
       '@theemo/build':
         specifier: workspace:*
-        version: link:../../packages/@theemo/build
+        version: link:../../packages/build
       '@theemo/cli':
         specifier: workspace:*
-        version: link:../../packages/@theemo/cli
+        version: link:../../packages/cli
       '@theemo/figma':
         specifier: workspace:*
-        version: link:../../packages/@theemo/figma
+        version: link:../../packages/figma
       '@theemo/style-dictionary':
         specifier: workspace:*
-        version: link:../../packages/@theemo/style-dictionary
+        version: link:../../packages/style-dictionary
       '@theemo/sync':
         specifier: workspace:*
-        version: link:../../packages/@theemo/sync
+        version: link:../../packages/sync
       '@theemo/tokens':
         specifier: workspace:*
-        version: link:../../packages/@theemo/tokens
+        version: link:../../packages/tokens
       style-dictionary:
         specifier: ^4.3.3
         version: 4.4.0
@@ -656,22 +659,22 @@ importers:
         version: 0.10.0(prettier@3.5.3)
       '@theemo/build':
         specifier: workspace:*
-        version: link:../../packages/@theemo/build
+        version: link:../../packages/build
       '@theemo/cli':
         specifier: workspace:*
-        version: link:../../packages/@theemo/cli
+        version: link:../../packages/cli
       '@theemo/figma':
         specifier: workspace:*
-        version: link:../../packages/@theemo/figma
+        version: link:../../packages/figma
       '@theemo/style-dictionary':
         specifier: workspace:*
-        version: link:../../packages/@theemo/style-dictionary
+        version: link:../../packages/style-dictionary
       '@theemo/sync':
         specifier: workspace:*
-        version: link:../../packages/@theemo/sync
+        version: link:../../packages/sync
       '@theemo/tokens':
         specifier: workspace:*
-        version: link:../../packages/@theemo/tokens
+        version: link:../../packages/tokens
       eslint:
         specifier: ^8.57.1
         version: 8.57.1

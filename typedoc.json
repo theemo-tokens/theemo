@@ -2,10 +2,10 @@
   "name": "Theemo",
   "entryPointStrategy": "packages",
   "entryPoints": [
-    "packages/@theemo/*"
+    "packages/*"
   ],
   "exclude": [
-    "packages/@theemo/core"
+    "packages/core"
   ],
   "out": "./docs/api",
   "docsRoot": "./docs",

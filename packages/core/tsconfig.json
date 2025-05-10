@@ -1,0 +1,12 @@
+{
+  "extends": "@theemo-config/tsconfig/tsconfig.json",
+  // "extends": "../../../configs/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "."
+  },
+  "include": [
+    "src",
+    "types"
+  ]
+}
