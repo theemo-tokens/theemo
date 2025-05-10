@@ -1,0 +1,88 @@
+{
+  "name": "@theemo/ember",
+  "version": "0.0.0",
+  "description": "Theemo integration for Ember",
+  "license": "MIT",
+  "author": "Thomas Gossmann",
+  "homepage": "https://theemo.io",
+  "bugs": "https://github.com/theemo-tokens/theemo/issues",
+  "repository": "https://github.com/theemo-tokens/theemo",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "design system",
+    "theme",
+    "design tokens",
+    "ember-addon"
+  ],
+  "files": [
+    "addon-main.cjs",
+    "declarations",
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
+    },
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "lint": "concurrently -g 'npm:lint:*(!fix)'",
+    "lint:fix": "concurrently -g 'npm:lint:*:fix'",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "tsc --noEmit",
+    "start": "rollup --config --watch",
+    "_test": "vitest run",
+    "_test:dev": "vitest"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.6",
+    "@theemo/theme": "workspace:*",
+    "decorator-transforms": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/plugin-transform-typescript": "^7.27.1",
+    "@babel/eslint-parser": "^7.27.1",
+    "@babel/runtime": "^7.27.1",
+    "@ember/library-tsconfig": "^1.1.3",
+    "@embroider/addon-dev": "^8.0.1",
+    "@glimmer/tracking": "^1.1.2",
+    "@gossi/config-eslint": "^0.14.0",
+    "@gossi/config-prettier": "^0.10.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@theemo-config/tsconfig": "workspace:*",
+    "@theemo-config/tsdown": "workspace:*",
+    "concurrently": "^9.1.2",
+    "ember-source": "~6.4.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-ember": "^12.1.1",
+    "prettier": "^3.5.3",
+    "rollup": "^4.22.5",
+    "tslib": "^2.8.1",
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "main": "addon-main.cjs",
+    "type": "addon",
+    "version": 2,
+    "app-js": {
+      "./services/theemo.js": "./dist/_app_/services/theemo.js"
+    }
+  }
+}
