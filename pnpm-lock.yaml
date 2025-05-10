@@ -801,7 +801,7 @@ importers:
         specifier: ^0.10.2
         version: 0.10.2(typescript@5.8.3)
       type-fest:
-        specifier: ^4.40.1
+        specifier: ^4.41.0
         version: 4.41.0
       typescript:
         specifier: 5.8.3
