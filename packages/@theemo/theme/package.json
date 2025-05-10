@@ -1,6 +1,5 @@
 {
   "name": "@theemo/theme",
-  "private": true,
   "version": "0.0.1",
   "description": "Theemo Theme Runtine",
   "license": "MIT",
