@@ -1,6 +1,6 @@
 {
   "name": "@theemo/vite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Plugin for loading themes with vite",
   "license": "MIT",
   "author": "Thomas Gossmann",
