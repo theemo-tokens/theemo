@@ -221,7 +221,7 @@ importers:
         specifier: ^9.0.2
         version: 9.0.2(@ember/test-helpers@4.0.5(@babel/core@7.27.1)(@glint/template@1.5.2)(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5)))(@glint/template@1.5.2)(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))(qunit@2.24.1)
       ember-resolver:
-        specifier: ^13.0.2
+        specifier: ^13.1.0
         version: 13.1.0(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
       ember-route-template:
         specifier: ^1.0.3
