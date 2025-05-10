@@ -2,7 +2,7 @@ import { build } from '@theemo/build';
 import { sync } from '@theemo/sync';
 
 import type { TheemoConfig } from './config';
-import type { GenerateConfig } from '@theemo/build';
+import type { BuildConfig } from '@theemo/build';
 import type { SyncConfig } from '@theemo/sync';
 
 export default class Theemo {
@@ -25,7 +25,7 @@ export default class Theemo {
     }
   }
 
-  build(config?: GenerateConfig): void {
+  build(config?: BuildConfig): void {
     const usedConfig = config ?? this.config.build;
 
     if (usedConfig) {
