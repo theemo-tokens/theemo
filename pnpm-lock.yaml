@@ -673,7 +673,7 @@ importers:
     dependencies:
       type-fest:
         specifier: ^4.0.0
-        version: 4.40.1
+        version: 4.41.0
     devDependencies:
       '@babel/core':
         specifier: 7.27.1
@@ -802,7 +802,7 @@ importers:
         version: 0.10.2(typescript@5.8.3)
       type-fest:
         specifier: ^4.40.1
-        version: 4.40.1
+        version: 4.41.0
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -1202,12 +1202,6 @@ packages:
     resolution: {integrity: sha512-0QZ8qP/3RLDVBwBFoWAwCtgcDZJVwA5LUJRZU8x2YFfKNuFq161wK3cuGrALu5yiPu+vzwTAg/sMWVNeWeNyaw==}
     engines: {node: '>=6.9.0'}
     deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-property-in-object instead.
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-syntax-decorators@7.25.9':
-    resolution: {integrity: sha512-ryzI0McXUPJnRCvMo4lumIKZUzhYUO/ScI+Mz4YVaTLt04DHNSjEUjKVvbzQjZFLuod/cYEc07mJWhzl6v4DPg==}
-    engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -9933,8 +9927,8 @@ packages:
     resolution: {integrity: sha512-OduNjVJsFbifKb57UqZ2EMP1i4u64Xwow3NYXUtBbD4vIwJdQd4+xl8YDou1dlm4DVrtwT/7Ky8z8WyCULVfxw==}
     engines: {node: '>=16'}
 
-  type-fest@4.40.1:
-    resolution: {integrity: sha512-9YvLNnORDpI+vghLU/Nf+zSv0kL47KbVJ1o3sKgoTefl6i+zebxbiDQWoe/oWWqPhIgQdRZRT1KA9sCPL810SA==}
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
   type-is@1.6.18:
@@ -11035,11 +11029,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-syntax-decorators@7.25.9(@babel/core@7.27.1)':
-    dependencies:
-      '@babel/core': 7.27.1
-      '@babel/helper-plugin-utils': 7.27.1
-
   '@babel/plugin-syntax-decorators@7.27.1(@babel/core@7.27.1)':
     dependencies:
       '@babel/core': 7.27.1
@@ -11717,7 +11706,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.27.1
       '@babel/core': 7.27.1
-      '@babel/plugin-syntax-decorators': 7.25.9(@babel/core@7.27.1)
+      '@babel/plugin-syntax-decorators': 7.27.1(@babel/core@7.27.1)
       '@babel/plugin-syntax-dynamic-import': 7.8.3(@babel/core@7.27.1)
       '@babel/plugin-syntax-typescript': 7.27.1(@babel/core@7.27.1)
       '@babel/plugin-transform-runtime': 7.27.1(@babel/core@7.27.1)
@@ -12153,7 +12142,7 @@ snapshots:
   '@glimmer/interfaces@0.94.6':
     dependencies:
       '@simple-dom/interface': 1.4.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
 
   '@glimmer/manager@0.92.4':
     dependencies:
@@ -14444,7 +14433,7 @@ snapshots:
   babel-remove-types@1.0.1:
     dependencies:
       '@babel/core': 7.27.1
-      '@babel/plugin-syntax-decorators': 7.25.9(@babel/core@7.27.1)
+      '@babel/plugin-syntax-decorators': 7.27.1(@babel/core@7.27.1)
       '@babel/plugin-transform-typescript': 7.27.1(@babel/core@7.27.1)
       prettier: 2.8.8
     transitivePeerDependencies:
@@ -15674,7 +15663,7 @@ snapshots:
 
   decorator-transforms@2.3.0(@babel/core@7.27.1):
     dependencies:
-      '@babel/plugin-syntax-decorators': 7.25.9(@babel/core@7.27.1)
+      '@babel/plugin-syntax-decorators': 7.27.1(@babel/core@7.27.1)
       babel-import-util: 3.0.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -19536,7 +19525,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.27.1
       index-to-position: 1.1.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
 
   parse-ms@4.0.0: {}
 
@@ -19913,14 +19902,14 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.1
       read-pkg: 9.0.1
-      type-fest: 4.40.1
+      type-fest: 4.41.0
 
   read-pkg@9.0.1:
     dependencies:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.2
       parse-json: 8.3.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
       unicorn-magic: 0.1.0
 
   readable-stream@1.0.34:
@@ -20062,7 +20051,7 @@ snapshots:
   remove-types@1.0.0:
     dependencies:
       '@babel/core': 7.27.1
-      '@babel/plugin-syntax-decorators': 7.25.9(@babel/core@7.27.1)
+      '@babel/plugin-syntax-decorators': 7.27.1(@babel/core@7.27.1)
       '@babel/plugin-transform-typescript': 7.27.1(@babel/core@7.27.1)
       prettier: 2.8.8
     transitivePeerDependencies:
@@ -21423,7 +21412,7 @@ snapshots:
 
   type-fest@4.26.0: {}
 
-  type-fest@4.40.1: {}
+  type-fest@4.41.0: {}
 
   type-is@1.6.18:
     dependencies:
@@ -22222,7 +22211,7 @@ snapshots:
       deepmerge-ts: 7.1.5
       read-pkg: 9.0.1
       sort-keys: 5.1.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
       write-json-file: 6.0.0
 
   ws@8.17.1: {}
