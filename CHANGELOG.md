@@ -1,5 +1,49 @@
 # Changelog
 
+## Release (2025-05-10)
+
+* @theemo/build 0.2.5 (patch)
+* @theemo/cli 0.2.5 (patch)
+* @theemo/core 0.0.3 (patch)
+* @theemo/ember 0.1.0 (minor)
+* @theemo/figma 0.2.4 (patch)
+* @theemo/style-dictionary 0.2.4 (patch)
+* @theemo/sync 0.2.4 (patch)
+* @theemo/theme 0.0.2 (patch)
+* @theemo/tokens 0.2.4 (patch)
+* @theemo/vite 0.0.1 (patch)
+
+#### :boom: Breaking Change
+* [#1339](https://github.com/theemo-tokens/theemo/pull/1339) Build theme ([@gossi](https://github.com/gossi))
+* [#1312](https://github.com/theemo-tokens/theemo/pull/1312) Drop CJS ([@gossi](https://github.com/gossi))
+* [#1311](https://github.com/theemo-tokens/theemo/pull/1311) Drop support for `node@18` ([@gossi](https://github.com/gossi))
+
+#### :rocket: Enhancement
+* `@theemo/ember`
+  * [#1352](https://github.com/theemo-tokens/theemo/pull/1352) Introduce `@theemo/ember` package ([@gossi](https://github.com/gossi))
+* Other
+  * [#1339](https://github.com/theemo-tokens/theemo/pull/1339) Build theme ([@gossi](https://github.com/gossi))
+  * [#1335](https://github.com/theemo-tokens/theemo/pull/1335) Add option to `skipTypeForReferences` when sync from figma ([@gossi](https://github.com/gossi))
+  * [#1308](https://github.com/theemo-tokens/theemo/pull/1308) Support Style Dictionary v4 ([@gossi](https://github.com/gossi))
+  * [#1305](https://github.com/theemo-tokens/theemo/pull/1305) Establish Theme Handling ([@gossi](https://github.com/gossi))
+  * [#1296](https://github.com/theemo-tokens/theemo/pull/1296) Add vite package ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`, `@theemo/vite`
+  * [#1351](https://github.com/theemo-tokens/theemo/pull/1351) Move packages ([@gossi](https://github.com/gossi))
+* Other
+  * [#1350](https://github.com/theemo-tokens/theemo/pull/1350) Fix turbo ([@gossi](https://github.com/gossi))
+  * [#1349](https://github.com/theemo-tokens/theemo/pull/1349) Make `@theemo/theme` public ([@gossi](https://github.com/gossi))
+  * [#1328](https://github.com/theemo-tokens/theemo/pull/1328) Use native declaration map support from tsdown ([@gossi](https://github.com/gossi))
+  * [#1327](https://github.com/theemo-tokens/theemo/pull/1327) Update typedoc ([@gossi](https://github.com/gossi))
+  * [#1313](https://github.com/theemo-tokens/theemo/pull/1313) Clean up Deps and `package.json` files ([@gossi](https://github.com/gossi))
+  * [#1310](https://github.com/theemo-tokens/theemo/pull/1310) Add support for declaration maps ([@gossi](https://github.com/gossi))
+  * [#1309](https://github.com/theemo-tokens/theemo/pull/1309) Use `tsdown` for `tsup` ([@gossi](https://github.com/gossi))
+  * [#1297](https://github.com/theemo-tokens/theemo/pull/1297) fix release-plan ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2024-08-04)
 
 @theemo/build 0.2.4 (patch)
