@@ -10,7 +10,7 @@ function transformShadow(value: ShadowValueSingular) {
     .replace(/\s\s+/g, ' ');
 }
 
-function transform(token: TransformedToken) {
+export function transformShadowCss(token: TransformedToken): string {
   const value = token.value as ShadowValue;
 
   if (Array.isArray(value)) {
@@ -32,6 +32,6 @@ export const shadowCssTransform: Transform = {
   filter: (token) => isShadow(token as Token),
   // @ts-expect-error for backwards compatibility
   matcher: (token: TransformedToken) => isShadow(token as Token),
-  transformer: transform,
-  transform
+  transformer: transformShadowCss,
+  transform: transformShadowCss
 };

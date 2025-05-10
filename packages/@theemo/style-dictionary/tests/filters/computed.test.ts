@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
 
 import { isComputedToken, isNoComputedToken } from '../../src';
-import { toTransformedToken } from './-utils';
+import { toTransformedToken } from '../-utils';
 
 test('isComputedToken()', () => {
   expect(

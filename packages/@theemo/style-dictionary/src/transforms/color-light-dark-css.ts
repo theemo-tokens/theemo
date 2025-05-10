@@ -27,7 +27,7 @@ function getColorSchemeValues(token: TransformedToken) {
   };
 }
 
-function transform(token: TransformedToken) {
+export function transformColorLightDark(token: TransformedToken): string {
   const { light, dark } = getColorSchemeValues(token);
 
   if (light && dark) {
@@ -59,6 +59,6 @@ export const colorLightDarkCssTransform: Transform = {
   filter,
   // @ts-expect-error for backwards compatibility
   matcher: filter,
-  transformer: transform,
-  transform
+  transformer: transformColorLightDark,
+  transform: transformColorLightDark
 };

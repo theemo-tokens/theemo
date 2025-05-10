@@ -4,9 +4,9 @@ import type { ComputedValue, Token } from '@theemo/tokens';
 import type { PlatformConfig } from 'style-dictionary';
 import type { Transform, TransformedToken } from 'style-dictionary/types';
 
-const isColorTransform = (token: TransformedToken): boolean => {
+function isColorTransform(token: TransformedToken): boolean {
   return isComputedValue(token.value) && isColor(token as Token);
-};
+}
 
 function calc(value: number) {
   if (value < 0) {
@@ -28,7 +28,7 @@ function applyCSSColorTransform(value: ComputedValue<'color'>) {
   return `hsl(from ${from} ${h} ${s} ${l}${a})`;
 }
 
-function transform(token: TransformedToken, config: PlatformConfig) {
+export function transformColor(token: TransformedToken, config: PlatformConfig = {}): string {
   const value = token.value as ComputedValue<'color'>;
 
   if (config.options?.useCSSColorTransform) {
@@ -50,6 +50,6 @@ export const theemoColorValueTransform: Transform = {
   filter: isColorTransform,
   // @ts-expect-error for backwards compatibility
   matcher: isColorTransform,
-  transformer: transform,
-  transform
+  transformer: transformColor,
+  transform: transformColor
 };

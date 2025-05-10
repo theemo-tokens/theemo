@@ -6,7 +6,7 @@ import {
   isNoConstrainedToken,
   matchesConstraints
 } from '../../src';
-import { toTransformedToken } from './-utils';
+import { toTransformedToken } from '../-utils';
 
 test('matchesConstraints()', () => {
   expect(

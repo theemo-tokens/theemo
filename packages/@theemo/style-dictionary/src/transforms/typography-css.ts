@@ -1,10 +1,10 @@
-import { isTypography, type TypographyValue } from '@theemo/tokens';
+import { isTypography } from '@theemo/tokens';
 
-import type { Token } from '@theemo/tokens';
+import type { Token, TypographyValue } from '@theemo/tokens';
 import type { TransformedToken } from 'style-dictionary';
 import type { Transform } from 'style-dictionary/types';
 
-function transform(token: TransformedToken) {
+export function transformTypographyCss(token: TransformedToken): string {
   const value = token.value as TypographyValue;
 
   // font: (font-style) font-variant font-weight font-size/line-height font-family;
@@ -29,6 +29,6 @@ export const typographyCssTransform: Transform = {
   filter: (token) => isTypography(token as Token),
   // @ts-expect-error for backwards compatibility
   matcher: (token) => isTypography(token as Token),
-  transformer: transform,
-  transform
+  transformer: transformTypographyCss,
+  transform: transformTypographyCss
 };

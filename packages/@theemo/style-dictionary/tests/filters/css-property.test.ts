@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
 
 import { isCSSProperty, isNoComputedToken, isNoCSSProperty } from '../../src';
-import { toTransformedToken } from './-utils';
+import { toTransformedToken } from '../-utils';
 
 test('isCSSProperty()', () => {
   expect(

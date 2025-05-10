@@ -1,6 +1,9 @@
 import type { PlatformConfig, Transform, TransformedToken } from 'style-dictionary/types';
 
-function transform(token: TransformedToken, config: PlatformConfig): string {
+export function transformPathToKebapName(
+  token: TransformedToken,
+  config: PlatformConfig = { prefix: undefined }
+): string {
   return [config.prefix, ...token.path]
     .filter((part: unknown): part is string => typeof part === 'string')
     .join('-');
@@ -15,6 +18,6 @@ export const namePathKebabTransform: Transform = {
   name: 'name/path/kebab',
   type: 'name',
   // @ts-expect-error for backwards compatibility
-  transformer: transform,
-  transform
+  transformer: transformPathToKebapName,
+  transform: transformPathToKebapName
 };

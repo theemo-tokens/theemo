@@ -4,10 +4,10 @@ import type { Constraints } from '@theemo/tokens';
 import type { PlatformConfig, TransformedToken } from 'style-dictionary';
 import type { Transform } from 'style-dictionary/types';
 
-function transform(
+export function transformTheemoAttributes(
   _token: TransformedToken,
   config: PlatformConfig & { constraints?: Constraints }
-) {
+): object {
   if (config.constraints) {
     return {
       constraints: config.constraints
@@ -28,6 +28,6 @@ export const theemoAttributesTransform: Transform = {
   filter: (token) => isConstrainedValue(token.value),
   // @ts-expect-error for backwards compatibility
   matcher: (token: TransformedToken) => isConstrainedValue(token.value),
-  transformer: transform,
-  transform
+  transformer: transformTheemoAttributes,
+  transform: transformTheemoAttributes
 };
