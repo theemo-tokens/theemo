@@ -1,11 +1,6 @@
-import {
-  figmaReader,
-  theemoPlugin,
-  getNameFromVariable,
-  isTokenByVariable
-} from '@theemo/figma';
-import { styleDictionaryWriter } from '@theemo/style-dictionary';
 import { defineConfig } from '@theemo/cli';
+import { figmaReader, isTokenByVariable, theemoPlugin } from '@theemo/figma';
+import { styleDictionaryWriter } from '@theemo/style-dictionary';
 
 const { FIGMA_SECRET, DEV } = process.env;
 
@@ -25,7 +20,7 @@ function fixNumberValue(value) {
       return {
         ...value,
         value: fixNumberValue(value.value)
-      }
+      };
     }
 
     return value;
@@ -55,7 +50,7 @@ export default defineConfig({
             }
 
             if (['comfortable', 'spacious', 'compact'].includes(mode)) {
-              return { features: { 'density': mode } };
+              return { features: { density: mode } };
             }
           },
 
@@ -64,9 +59,11 @@ export default defineConfig({
           },
 
           isTokenByStyle(style) {
-            return !style.name.startsWith('.')
-              && style.styleType.toLowerCase() !== 'grid'
-              && style.styleType.toLowerCase() !== 'text';
+            return (
+              !style.name.startsWith('.') &&
+              style.styleType.toLowerCase() !== 'grid' &&
+              style.styleType.toLowerCase() !== 'text'
+            );
           },
 
           getNameFromStyle(style) {
@@ -76,7 +73,7 @@ export default defineConfig({
           getPropertiesForToken(token) {
             return {
               collection: token.figma.variable.collection.name.toLowerCase()
-            }
+            };
           }
         }
       })
@@ -104,6 +101,7 @@ export default defineConfig({
 
       classifyToken(token) {
         const t = { ...token };
+
         t.tier = token.name.startsWith('.')
           ? 'basic'
           : token.name.startsWith('hero')
@@ -119,7 +117,7 @@ export default defineConfig({
         pathForToken(token) {
           return token.name.split('.');
         },
-  
+
         fileForToken(token) {
           let fileName = token.collection;
 
@@ -128,10 +126,10 @@ export default defineConfig({
 
             fileName += `/${parts[1]}`;
           }
-  
+
           return fileName;
         },
-  
+
         dataForToken(token) {
           return {
             transient: token.transient
@@ -141,20 +139,23 @@ export default defineConfig({
     }
   },
   build: {
-    input: 'build/website',
-    output: 'dist',
-    auto: true,
-    defaultColorScheme: 'light',
-    colorSchemes: {
-      // light: {
-      //   auto: false,
-      //   manual: true
-      // },
-      dark: {
-        auto: false,
-        manual: true,
-        selector: 'html[data-theme="dark"]'
+    outDir: 'dist',
+    files: ['build/properties.css', 'build/vars.css'],
+    features: [
+      {
+        name: 'color-scheme',
+        browserFeature: 'color-scheme',
+        options: ['light', 'dark']
+      },
+      {
+        name: 'sizing',
+        options: {
+          compact: 'build/density-compact.css',
+          comfortable: 'build/density-comfortable.css',
+          spacious: 'build/density-spacious.css'
+        },
+        defaultOption: 'comfortable'
       }
-    }
+    ]
   }
 });

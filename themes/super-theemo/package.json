@@ -8,23 +8,34 @@
   ],
   "type": "module",
   "theemo": {
-    "name": "theemo",
-    "colorSchemes": [
-      "dark"
-    ],
-    "file": "dist/theemo.css"
+    "name": "super-theemo",
+    "file": "dist/super-theemo.css",
+    "features": [
+      {
+        "name": "color-scheme",
+        "browserFeature": "color-scheme",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "name": "sizing",
+        "options": [
+          "compact",
+          "comfortable",
+          "spacious"
+        ],
+        "defaultOption": "comfortable"
+      }
+    ]
   },
   "scripts": {
     "_clean": "rm -rf build/ dist/ tokens/",
     "sync": "DEV=true theemo sync",
+    "build": "pnpm run '/^build:.*/'",
     "build:css": "style-dictionary build",
-    "_build:base": "style-dictionary build --config config.base.js",
-    "_build:light": "style-dictionary build --config config.light.js",
-    "_build:dark": "style-dictionary build --config config.dark.js",
-    "_build:website": "pnpm build:website:*",
-    "_build:website:base": "style-dictionary build --config config.website.js",
-    "_build:website:dark": "style-dictionary build --config config.website.dark.js",
-    "generate": "theemo generate",
+    "build:theme": "theemo build",
     "magic": "sync build generate",
     "_clean-magic": "pnpm clean && pnpm magic"
   },

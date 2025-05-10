@@ -1,16 +1,22 @@
-import { isConstrainedByPlatform, isConstrainedToken, isCSSProperty, isNoCSSProperty, matchesConstraints, registerTheemo } from "@theemo/style-dictionary";
-import { matchesConstrainedValue } from "@theemo/tokens";
 import StyleDictionary from 'style-dictionary';
+
+import {
+  isConstrainedByPlatform,
+  isConstrainedToken,
+  isCSSProperty,
+  matchesConstraints,
+  registerTheemo
+} from '@theemo/style-dictionary';
 
 registerTheemo(StyleDictionary);
 
 function makeDensityPlatform(density) {
   return {
     transformGroup: 'theemo',
-    buildPath: 'dist/',
+    buildPath: 'build/',
     constraints: {
       features: {
-        'density': density
+        density: density
       }
     },
     options: {
@@ -24,17 +30,17 @@ function makeDensityPlatform(density) {
         filter: isConstrainedByPlatform
       }
     ]
-  }
+  };
 }
 
 /** @type import("style-dictionary/types").Config */
 const config = {
   source: ['tokens/**/*.json'],
-  preprocessors: ["theemo/token"],
+  preprocessors: ['theemo/token'],
   platforms: {
     css: {
       transformGroup: 'theemo',
-      buildPath: 'dist/',
+      buildPath: 'build/',
       options: {
         outputReferences: true,
         showFileHeader: false,
@@ -49,28 +55,24 @@ const config = {
         {
           format: 'css/variables',
           destination: 'vars.css',
-          filter: (token) => (
+          filter: (token) =>
             // when no CSS property
-            !isCSSProperty(token) && 
-            (
-              // and matches color-scheme constraint
-              matchesConstraints(token, {
-                features: {
-                  'color-scheme': 'light',
-                  'color-scheme': 'dark'
-                }
-              }) ||
+            !isCSSProperty(token) &&
+            // and matches color-scheme constraint
+            (matchesConstraints(token, {
+              features: {
+                'color-scheme': ['light', 'dark']
+              }
+            }) ||
               // but no other constraint
-              !isConstrainedToken(token)
-            )
-          )
+              !isConstrainedToken(token))
         }
       ]
     },
     // constrained tokens (to combine them later under given selectors)
     'density-comfortable': makeDensityPlatform('comfortable'),
     'density-spacious': makeDensityPlatform('spacious'),
-    'density-compact': makeDensityPlatform('compact'),
+    'density-compact': makeDensityPlatform('compact')
   }
 };
 

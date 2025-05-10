@@ -91,6 +91,9 @@ importers:
 
   packages/@theemo/build:
     dependencies:
+      lightningcss:
+        specifier: ^1.29.3
+        version: 1.29.3
       read-pkg:
         specifier: ^9.0.0
         version: 9.0.1
@@ -110,6 +113,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../../configs/tsdown
+      '@theemo/theme':
+        specifier: workspace:*
+        version: link:../theme
       '@types/node':
         specifier: ^22.15.3
         version: 22.15.3

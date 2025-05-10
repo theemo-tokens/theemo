@@ -8,7 +8,7 @@ import type { Format } from 'style-dictionary/types';
 const CSS_TYPE_MAPPING: Partial<Record<TokenType, string>> = {
   color: 'color',
   number: 'number',
-  dimension: 'dimension',
+  dimension: 'length',
   duration: 'time'
 };
 
