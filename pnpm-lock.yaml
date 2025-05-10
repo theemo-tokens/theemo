@@ -673,7 +673,7 @@ importers:
     dependencies:
       type-fest:
         specifier: ^4.0.0
-        version: 4.40.1
+        version: 4.41.0
     devDependencies:
       '@babel/core':
         specifier: 7.27.1
@@ -802,7 +802,7 @@ importers:
         version: 0.10.2(typescript@5.8.3)
       type-fest:
         specifier: ^4.40.1
-        version: 4.40.1
+        version: 4.41.0
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -9927,8 +9927,8 @@ packages:
     resolution: {integrity: sha512-OduNjVJsFbifKb57UqZ2EMP1i4u64Xwow3NYXUtBbD4vIwJdQd4+xl8YDou1dlm4DVrtwT/7Ky8z8WyCULVfxw==}
     engines: {node: '>=16'}
 
-  type-fest@4.40.1:
-    resolution: {integrity: sha512-9YvLNnORDpI+vghLU/Nf+zSv0kL47KbVJ1o3sKgoTefl6i+zebxbiDQWoe/oWWqPhIgQdRZRT1KA9sCPL810SA==}
+  type-fest@4.41.0:
+    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
     engines: {node: '>=16'}
 
   type-is@1.6.18:
@@ -12142,7 +12142,7 @@ snapshots:
   '@glimmer/interfaces@0.94.6':
     dependencies:
       '@simple-dom/interface': 1.4.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
 
   '@glimmer/manager@0.92.4':
     dependencies:
@@ -19525,7 +19525,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.27.1
       index-to-position: 1.1.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
 
   parse-ms@4.0.0: {}
 
@@ -19902,14 +19902,14 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.1
       read-pkg: 9.0.1
-      type-fest: 4.40.1
+      type-fest: 4.41.0
 
   read-pkg@9.0.1:
     dependencies:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.2
       parse-json: 8.3.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
       unicorn-magic: 0.1.0
 
   readable-stream@1.0.34:
@@ -21412,7 +21412,7 @@ snapshots:
 
   type-fest@4.26.0: {}
 
-  type-fest@4.40.1: {}
+  type-fest@4.41.0: {}
 
   type-is@1.6.18:
     dependencies:
@@ -22211,7 +22211,7 @@ snapshots:
       deepmerge-ts: 7.1.5
       read-pkg: 9.0.1
       sort-keys: 5.1.0
-      type-fest: 4.40.1
+      type-fest: 4.41.0
       write-json-file: 6.0.0
 
   ws@8.17.1: {}
