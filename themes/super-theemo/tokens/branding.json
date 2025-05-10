@@ -1,0 +1,14 @@
+{
+  "brand": {
+    "text": {
+      "$value": "{palette.brand.yellow}",
+      "$description": "",
+      "$type": "color"
+    },
+    "background": {
+      "$value": "{palette.brand.red}",
+      "$description": "",
+      "$type": "color"
+    }
+  }
+}

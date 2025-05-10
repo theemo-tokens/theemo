@@ -1,128 +1,151 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { transform } from 'lightningcss';
 import { readPackageSync } from 'read-pkg';
 import { writePackageSync } from 'write-package';
 
-import type { GenerateConfig, SchemeConfig } from './config';
-import type { PackageJson } from 'read-pkg';
+import { BrowserMechanic, type TheemoPackage, type Theme } from '@theemo/theme';
 
-type Package = PackageJson & {
-  theemo?: {
-    name: string;
-    colorSchemes?: string[];
-    file?: string;
-  };
+import { configWithDefaults } from './config';
+import { isColorSchemeFeature, isMediaQueryFeature } from './features';
+
+import type { BuildConfig, BuildConfigWithDefaults } from './config';
+import type { ColorSchemeBuildFeature, MediaQueryBuildFeature, ModeBuildFeature } from './features';
+
+const MEDIA_QUERY: Record<BrowserMechanic, string> = {
+  [BrowserMechanic.ColorScheme]: 'prefers-color-scheme',
+  [BrowserMechanic.ColorContrast]: 'prefers-contrast',
+  [BrowserMechanic.Motion]: 'prefers-reduced-motion'
 };
 
-function getBlockFromFile(file: string) {
+function readFile(file: string) {
   const contents = fs.existsSync(file) ? fs.readFileSync(file, 'utf-8') : '';
 
-  return contents.replace(':root ', '');
+  return contents;
 }
 
-function prepareColorScheme(
-  schemeName: string,
-  themeName: string,
-  config: GenerateConfig,
-  schemaConfig: SchemeConfig
-) {
-  const filePath = path.join(config.input, schemaConfig.file ?? `${schemeName}.css`);
-  const block = getBlockFromFile(filePath);
+function combineFiles(config: BuildConfig) {
   const contents = [];
 
-  // queries
-  if (schemaConfig.auto) {
-    const queries = [];
-
-    if (schemeName === 'light' || schemeName === 'dark') {
-      queries.push(`(prefers-color-scheme: ${schemeName})`);
-    }
-
-    if (schemeName === config.defaultColorScheme) {
-      queries.push('(prefers-color-scheme: none)');
-    }
-
-    if (queries.length > 0) {
-      contents.push(`@media ${queries.join(', ')} {\n:root ${block}}`);
-    }
+  for (const file of config.files ?? []) {
+    contents.push(readFile(file).trim());
   }
 
-  // manual activiate
-  if (schemaConfig.manual || !schemaConfig.auto) {
-    const selector = schemaConfig.selector ?? `.${themeName}-${schemeName}`;
-
-    contents.push(`${selector} ${block}`);
-  }
-
-  return contents.join('\n\n');
+  return contents;
 }
 
-function prepareBaseBlock(config: GenerateConfig, name: string) {
-  const basePath = path.join(config.input, config.base ?? 'base.css');
-
-  const baseBlock = getBlockFromFile(basePath);
-
-  const selector = `${config.auto ? ':root, ' : ''}.${name}`;
-
-  return `${selector} ${baseBlock}`;
+function buildColorSchemeFeature(feature: ColorSchemeBuildFeature) {
+  return `
+:root {
+  color-scheme: ${(feature.options as string[]).join(' ')};
 }
 
-function prepareColorSchemes(config: GenerateConfig, name: string) {
-  if (!config.colorSchemes) {
-    return [];
-  }
+[data-theemo-color-scheme="light"] {
+  color-scheme: light;
+}
 
+[data-theemo-color-scheme="dark"] {
+  color-scheme: dark;
+}
+  `.trim();
+}
+
+function buildFeature(feature: ModeBuildFeature) {
   const contents = [];
 
-  for (const [scheme, schemaConfig] of Object.entries(config.colorSchemes)) {
-    contents.push(
-      `/* Color Scheme: ${scheme} */\n${prepareColorScheme(scheme, name, config, schemaConfig)}`
-    );
+  for (const [option, file] of Object.entries(feature.options)) {
+    const fileContents = readFile(file);
+
+    const selectors = option === feature.defaultOption ? [':root'] : [];
+
+    selectors.push(`[data-theemo-${feature.name}="${option}"]`);
+
+    const css = fileContents.replace(':root', selectors.join(', ')).trim();
+
+    contents.push(css);
+  }
+
+  return contents;
+}
+
+function buildMediaQueryBrowserFeature(feature: MediaQueryBuildFeature) {
+  const contents = [];
+
+  const mediaQuery = MEDIA_QUERY[feature.browserFeature as BrowserMechanic];
+
+  for (const [option, file] of Object.entries(feature.options)) {
+    const fileContents = readFile(file);
+
+    const css = `@media (${mediaQuery}: ${option}) {
+    ${fileContents}
+}`;
+
+    contents.push(css);
+  }
+
+  return contents;
+}
+
+function buildFeatures(config: BuildConfigWithDefaults) {
+  const contents = [];
+
+  for (const feature of config.features) {
+    if (isColorSchemeFeature(feature)) {
+      contents.push(buildColorSchemeFeature(feature));
+    } else {
+      contents.push(...buildFeature(feature));
+
+      if (isMediaQueryFeature(feature)) {
+        contents.push(...buildMediaQueryBrowserFeature(feature));
+      }
+    }
   }
 
   return contents;
 }
 
 function getThemeName() {
-  const data = readPackageSync() as Package;
+  const data = readPackageSync();
 
-  return (data.theemo?.name ?? data.name) as string;
+  return (data.theemo as Theme | undefined)?.name ?? data.name;
 }
 
-/**
- * Build a theme, which can be managed by theemo
- *
- * @param config The configuration for the theme and its behavior
- */
-export function build(config: GenerateConfig): void {
+function buildFiles(config: BuildConfigWithDefaults) {
   const name = getThemeName();
-  const contents = [prepareBaseBlock(config, name), ...prepareColorSchemes(config, name)];
+  const contents = [...combineFiles(config), ...buildFeatures(config)];
 
-  const output = config.output ?? 'dist';
-
-  if (!fs.existsSync(output)) {
-    fs.mkdirSync(output);
+  if (!fs.existsSync(config.outDir)) {
+    fs.mkdirSync(config.outDir);
   }
 
-  const outFile = path.join(output, `${name}.css`);
+  const outFile = path.join(config.outDir, `${name}.css`);
+  const css = contents.join('\n\n');
 
-  fs.writeFileSync(outFile, contents.join('\n'));
+  fs.writeFileSync(outFile, css);
 
-  // update package.json
-  const packageJson = readPackageSync({ normalize: false }) as Package;
+  if (config.lightningcss !== false) {
+    const options = typeof config.lightningcss === 'object' ? config.lightningcss : {};
 
-  if (!packageJson.theemo) {
-    packageJson.theemo = {
-      name: packageJson.name as string
-    };
+    const { code } = transform({
+      code: Buffer.from(css),
+      filename: outFile,
+      ...options
+    });
+
+    fs.writeFileSync(outFile, code);
   }
+}
 
-  if (config.colorSchemes) {
-    packageJson.theemo.colorSchemes = Object.keys(config.colorSchemes);
-  }
+function updatePackage(config: BuildConfigWithDefaults) {
+  const packageJson = readPackageSync({ normalize: false }) as TheemoPackage;
+  const theemo = packageJson.theemo;
 
-  packageJson.theemo.file = outFile;
+  theemo.file = path.join(config.outDir, `${theemo.name}.css`);
+  theemo.features = config.features.map((f) => ({
+    ...f,
+    options: Array.isArray(f.options) ? f.options : Object.keys(f.options)
+  }));
 
   if (!Array.isArray(packageJson.keywords)) {
     packageJson.keywords = [];
@@ -133,4 +156,17 @@ export function build(config: GenerateConfig): void {
   }
 
   writePackageSync(packageJson);
+}
+
+/**
+ * Build a theme, which can be managed by theemo
+ *
+ * @param config The configuration for the theme and its behavior
+ */
+export function build(config: BuildConfig): void {
+  const defaultConfig = configWithDefaults(config);
+
+  buildFiles(defaultConfig);
+
+  updatePackage(defaultConfig);
 }

@@ -1,6 +1,18 @@
+@property --blue-light {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: lightblue;
+}
+
+@property --blue-dark {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgba(14, 67, 120, 0.953);
+}
+
 :root {
   color-scheme: light dark;
-  --background-color: light-dark(lightblue, rgba(14, 67, 120, 0.953));
+  --background-color: light-dark(var(--blue-light), var(--blue-dark));
   --text-color: light-dark(black, white);
 }
 

@@ -1,4 +1,4 @@
-import type { GenerateConfig } from '@theemo/build';
+import type { BuildConfig } from '@theemo/build';
 import type { SyncConfig } from '@theemo/sync';
 
 /**
@@ -20,7 +20,7 @@ export interface TheemoConfig {
    *
    * @see [Theming Documentation](https://theemo.io/theming)
    */
-  build?: GenerateConfig;
+  build?: BuildConfig;
 }
 
 /**

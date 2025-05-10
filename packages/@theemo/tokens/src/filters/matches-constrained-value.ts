@@ -23,8 +23,7 @@ function matchesFeatures(value: ConstrainedValue<TokenType>, features: Features)
   return Object.entries(features).every(
     ([name, val]) =>
       value.features !== undefined &&
-      Object.hasOwn(value.features, name) &&
-      value.features[name].includes(val)
+      (Array.isArray(val) ? val : [val]).some((v) => value.features?.[name]?.includes(v))
   );
 }
 

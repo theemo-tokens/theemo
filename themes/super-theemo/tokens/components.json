@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "background": {
+      "$value": "{palette.neutral.900}",
+      "$description": "",
+      "$type": "color"
+    },
+    "text": {
+      "$value": "{text.normal}",
+      "$description": "",
+      "$type": "color"
+    },
+    "heading": {
+      "background": {
+        "$value": "{brand.background}",
+        "$description": "",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{brand.text}",
+        "$description": "",
+        "$type": "color"
+      }
+    }
+  }
+}

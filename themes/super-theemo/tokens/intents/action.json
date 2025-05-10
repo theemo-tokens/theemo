@@ -1,0 +1,89 @@
+{
+  "intent": {
+    "action": {
+      "base": {
+        "background": {
+          "$value": "{palette.brand.500}",
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.action.base.background}",
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{palette.letters.brand-highlight}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "{palette.brand.400}",
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.action.hover.background}",
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.action.base.text}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "{palette.brand.300}",
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.action.active.background}",
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.action.base.text}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "disabled": {
+        "background": {
+          "$value": {
+            "value": "{intent.action.base.background}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": {
+            "value": "{intent.action.base.border}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": {
+            "value": "{intent.action.base.text}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

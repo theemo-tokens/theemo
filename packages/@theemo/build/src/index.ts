@@ -1,2 +1,2 @@
 export { build } from './build';
-export type { GenerateConfig } from './config';
+export type { BuildConfig } from './config';

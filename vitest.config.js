@@ -5,6 +5,7 @@ export default defineConfig({
     workspace: [
       'packages/@theemo/figma',
       'packages/@theemo/tokens',
+      'packages/@theemo/style-dictionary',
       'packages/@theemo/theme/vitest.config.node.ts'
     ],
     coverage: {

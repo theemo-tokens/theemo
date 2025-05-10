@@ -1,0 +1,84 @@
+{
+  "intent": {
+    "alternate": {
+      "base": {
+        "background": {
+          "$value": "{palette.adjacent.500}",
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{palette.letters.light}",
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.base.background}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "hover": {
+        "background": {
+          "$value": "{palette.adjacent.400}",
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.hover.background}",
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.alternate.base.text}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "active": {
+        "background": {
+          "$value": "{palette.adjacent.300}",
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.active.background}",
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": "{intent.alternate.base.text}",
+          "$description": "",
+          "$type": "color"
+        }
+      },
+      "disabled": {
+        "background": {
+          "$value": {
+            "value": "{intent.alternate.base.background}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "$type": "color"
+        },
+        "text": {
+          "$value": {
+            "value": "{intent.alternate.base.text}",
+            "transforms": {
+              "alpha": -35
+            }
+          },
+          "$description": "",
+          "$type": "color"
+        },
+        "border": {
+          "$value": "{intent.alternate.disabled.background}",
+          "$description": "",
+          "$type": "color"
+        }
+      }
+    }
+  }
+}

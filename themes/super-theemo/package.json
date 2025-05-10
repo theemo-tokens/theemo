@@ -6,31 +6,51 @@
   "keywords": [
     "theemo-theme"
   ],
+  "type": "module",
   "theemo": {
-    "name": "theemo",
-    "colorSchemes": [
-      "dark"
-    ],
-    "file": "dist/theemo.css"
+    "name": "super-theemo",
+    "file": "dist/super-theemo.css",
+    "features": [
+      {
+        "name": "color-scheme",
+        "browserFeature": "color-scheme",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "name": "sizing",
+        "options": [
+          "compact",
+          "comfortable",
+          "spacious"
+        ],
+        "defaultOption": "comfortable"
+      }
+    ]
   },
   "scripts": {
     "_clean": "rm -rf build/ dist/ tokens/",
-    "sync": "theemo sync",
-    "build": "npm-run-all build:*",
-    "build:base": "style-dictionary build --config config.base.js",
-    "build:light": "style-dictionary build --config config.light.js",
-    "build:dark": "style-dictionary build --config config.dark.js",
-    "build:website": "npm-run-all build:website:*",
-    "build:website:base": "style-dictionary build --config config.website.js",
-    "build:website:dark": "style-dictionary build --config config.website.dark.js",
-    "generate": "theemo generate",
-    "magic": "npm-run-all sync build generate",
-    "_clean-magic": "yarn clean && yarn magic"
+    "sync": "DEV=true theemo sync",
+    "build": "pnpm run '/^build:.*/'",
+    "build:css": "style-dictionary build",
+    "build:theme": "theemo build",
+    "magic": "sync build generate",
+    "_clean-magic": "pnpm clean && pnpm magic"
   },
   "devDependencies": {
-    "npm-run-all2": "8.0.1",
-    "style-dictionary": "^4.3.3",
-    "theemo": "0.1.3"
+    "@gossi/config-eslint": "^0.14.0",
+    "@gossi/config-prettier": "^0.10.0",
+    "@theemo/build": "workspace:*",
+    "@theemo/cli": "workspace:*",
+    "@theemo/figma": "workspace:*",
+    "@theemo/style-dictionary": "workspace:*",
+    "@theemo/sync": "workspace:*",
+    "@theemo/tokens": "workspace:*",
+    "eslint": "^8.57.1",
+    "prettier": "^3.5.3",
+    "style-dictionary": "^4.3.3"
   },
   "engines": {
     "node": ">=20.0.0"
