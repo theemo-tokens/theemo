@@ -1,6 +1,6 @@
 /**
  * Type declarations for
- *    import config from 'ember-demo/config/environment'
+ *    import config from '@theemo-playground/ember/config/environment'
  */
 declare const config: {
   environment: string;

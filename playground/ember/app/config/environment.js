@@ -1,3 +1,3 @@
 import loadConfigFromMeta from '@embroider/config-meta-loader';
 
-export default loadConfigFromMeta('ember-demo');
+export default loadConfigFromMeta('@theemo-playground/ember');

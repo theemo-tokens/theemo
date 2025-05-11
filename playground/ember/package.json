@@ -1,5 +1,5 @@
 {
-  "name": "ember-demo",
+  "name": "@theemo-playground/ember",
   "private": true,
   "scripts": {
     "build": "vite build",
@@ -68,9 +68,9 @@
     "eslint": "^8.57.1",
     "eslint-plugin-ember": "^12.5.0",
     "eslint-plugin-qunit": "^8.1.2",
-    "forest-theme": "workspace:*",
+    "@theemo-playground/forest-theme": "workspace:*",
     "globals": "^16.1.0",
-    "ocean-theme": "workspace:*",
+    "@theemo-playground/ocean-theme": "workspace:*",
     "prettier": "^3.5.3",
     "qunit": "^2.22.0",
     "qunit-dom": "^3.3.0",

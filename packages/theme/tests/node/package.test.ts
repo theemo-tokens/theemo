@@ -11,7 +11,7 @@ test('isTheemoPackage()', () => {
 
 describe('validateTheemoPackage()', () => {
   test('ocean theme', () => {
-    const oceanTheme = loadThemePackage('ocean-theme');
+    const oceanTheme = loadThemePackage('@theemo-playground/ocean-theme');
     const oceanValidation = validateTheemoPackage(oceanTheme);
 
     expect(oceanValidation.success).toBeTruthy();

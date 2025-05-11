@@ -92,189 +92,6 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
 
-  integrations-demo/ember-demo:
-    devDependencies:
-      '@babel/core':
-        specifier: ^7.27.1
-        version: 7.27.1
-      '@babel/eslint-parser':
-        specifier: ^7.27.1
-        version: 7.27.1(@babel/core@7.27.1)(eslint@8.57.1)
-      '@babel/plugin-proposal-decorators':
-        specifier: ^7.27.1
-        version: 7.27.1(@babel/core@7.27.1)
-      '@babel/plugin-transform-runtime':
-        specifier: ^7.27.1
-        version: 7.27.1(@babel/core@7.27.1)
-      '@babel/plugin-transform-typescript':
-        specifier: ^7.27.1
-        version: 7.27.1(@babel/core@7.27.1)
-      '@babel/runtime':
-        specifier: ^7.27.1
-        version: 7.27.1
-      '@ember/optional-features':
-        specifier: ^2.2.0
-        version: 2.2.0
-      '@ember/string':
-        specifier: ^4.0.1
-        version: 4.0.1
-      '@ember/test-helpers':
-        specifier: ^5.2.2
-        version: 5.2.2(@babel/core@7.27.1)(@glint/template@1.5.2)
-      '@embroider/compat':
-        specifier: ^4.0.3
-        version: 4.0.3(@embroider/core@4.0.3(@glint/template@1.5.2))(@glimmer/component@2.0.0)(@glint/template@1.5.2)(rsvp@4.8.5)(webpack@5.99.8)
-      '@embroider/config-meta-loader':
-        specifier: ^1.0.0
-        version: 1.0.0
-      '@embroider/core':
-        specifier: ^4.0.3
-        version: 4.0.3(@glint/template@1.5.2)
-      '@embroider/macros':
-        specifier: ^1.17.3
-        version: 1.17.3(@glint/template@1.5.2)
-      '@embroider/vite':
-        specifier: ^1.1.1
-        version: 1.1.1(@embroider/core@4.0.3(@glint/template@1.5.2))(@glint/template@1.5.2)(rollup@4.40.1)(vite@6.3.5(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1))
-      '@glimmer/component':
-        specifier: ^2.0.0
-        version: 2.0.0
-      '@glimmer/tracking':
-        specifier: ^1.1.2
-        version: 1.1.2
-      '@glint/core':
-        specifier: 1.5.2
-        version: 1.5.2(typescript@5.8.3)
-      '@glint/environment-ember-loose':
-        specifier: 1.5.2
-        version: 1.5.2(@glimmer/component@2.0.0)(@glint/template@1.5.2)(ember-cli-htmlbars@6.3.0)
-      '@glint/environment-ember-template-imports':
-        specifier: 1.5.2
-        version: 1.5.2(@glint/environment-ember-loose@1.5.2(@glimmer/component@2.0.0)(@glint/template@1.5.2)(ember-cli-htmlbars@6.3.0))(@glint/template@1.5.2)
-      '@glint/template':
-        specifier: 1.5.2
-        version: 1.5.2
-      '@gossi/config-eslint':
-        specifier: ^0.14.0
-        version: 0.14.0(@babel/core@7.27.1)(@babel/eslint-parser@7.27.1(@babel/core@7.27.1)(eslint@8.57.1))(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.32.0(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint-plugin-ember@12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint-plugin-qunit@8.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
-      '@gossi/config-prettier':
-        specifier: ^0.10.0
-        version: 0.10.0(prettier@3.5.3)
-      '@gossi/config-stylelint':
-        specifier: ^1.0.0
-        version: 1.0.0(stylelint@16.19.1(typescript@5.8.3))
-      '@gossi/config-template-lint':
-        specifier: ^0.9.0
-        version: 0.9.0(ember-template-lint@7.6.0(@babel/core@7.27.1))(prettier@3.5.3)
-      '@rollup/plugin-babel':
-        specifier: ^6.0.4
-        version: 6.0.4(@babel/core@7.27.1)(rollup@4.40.1)
-      '@theemo/ember':
-        specifier: workspace:*
-        version: link:../../packages/ember
-      '@theemo/theme':
-        specifier: workspace:*
-        version: link:../../packages/theme
-      '@theemo/vite':
-        specifier: workspace:*
-        version: link:../../packages/vite
-      '@tsconfig/ember':
-        specifier: ^3.0.10
-        version: 3.0.10
-      '@types/qunit':
-        specifier: ^2.19.12
-        version: 2.19.12
-      '@types/rsvp':
-        specifier: ^4.0.9
-        version: 4.0.9
-      babel-plugin-ember-template-compilation:
-        specifier: ^3.0.0
-        version: 3.0.0
-      concurrently:
-        specifier: ^9.1.0
-        version: 9.1.2
-      decorator-transforms:
-        specifier: ^2.3.0
-        version: 2.3.0(@babel/core@7.27.1)
-      ember-auto-import:
-        specifier: ^2.10.0
-        version: 2.10.0(@glint/template@1.5.2)(webpack@5.99.8)
-      ember-cli:
-        specifier: ~6.4.0
-        version: 6.4.0(handlebars@4.7.8)(underscore@1.12.1)
-      ember-cli-babel:
-        specifier: ^8.2.0
-        version: 8.2.0(@babel/core@7.27.1)
-      ember-cli-deprecation-workflow:
-        specifier: ^3.3.0
-        version: 3.3.0(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
-      ember-cli-htmlbars:
-        specifier: ^6.3.0
-        version: 6.3.0
-      ember-load-initializers:
-        specifier: ^3.0.1
-        version: 3.0.1(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
-      ember-page-title:
-        specifier: ^9.0.1
-        version: 9.0.1(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
-      ember-qunit:
-        specifier: ^9.0.2
-        version: 9.0.2(@ember/test-helpers@5.2.2(@babel/core@7.27.1)(@glint/template@1.5.2))(@glint/template@1.5.2)(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))(qunit@2.24.1)
-      ember-resolver:
-        specifier: ^13.1.0
-        version: 13.1.0(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
-      ember-route-template:
-        specifier: ^1.0.3
-        version: 1.0.3
-      ember-source:
-        specifier: ~6.4.0
-        version: 6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
-      ember-template-imports:
-        specifier: ^4.3.0
-        version: 4.3.0
-      ember-template-lint:
-        specifier: ^7.6.0
-        version: 7.6.0(@babel/core@7.27.1)
-      eslint:
-        specifier: ^8.57.1
-        version: 8.57.1
-      eslint-plugin-ember:
-        specifier: ^12.5.0
-        version: 12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
-      eslint-plugin-qunit:
-        specifier: ^8.1.2
-        version: 8.1.2(eslint@8.57.1)
-      forest-theme:
-        specifier: workspace:*
-        version: link:../../themes/forest-theme
-      globals:
-        specifier: ^16.1.0
-        version: 16.1.0
-      ocean-theme:
-        specifier: workspace:*
-        version: link:../../themes/ocean-theme
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      qunit:
-        specifier: ^2.22.0
-        version: 2.24.1
-      qunit-dom:
-        specifier: ^3.3.0
-        version: 3.4.0
-      stylelint:
-        specifier: ^16.19.1
-        version: 16.19.1(typescript@5.8.3)
-      tracked-built-ins:
-        specifier: ^4.0.0
-        version: 4.0.0(@babel/core@7.27.1)
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
-      vite:
-        specifier: ^6.3.5
-        version: 6.3.5(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1)
-
   packages/build:
     dependencies:
       lightningcss:
@@ -690,6 +507,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-playground/ocean-theme':
+        specifier: workspace:*
+        version: link:../../playground/ocean-theme
       '@vitest/browser':
         specifier: 3.1.3
         version: 3.1.3(vite@6.3.5(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1))(vitest@3.1.3)(webdriverio@9.12.7)
@@ -702,12 +522,6 @@ importers:
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
-      forest-theme:
-        specifier: workspace:*
-        version: link:../../themes/forest-theme
-      ocean-theme:
-        specifier: workspace:*
-        version: link:../../themes/ocean-theme
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -813,20 +627,207 @@ importers:
         specifier: 3.1.3
         version: 3.1.3(@types/node@22.15.3)(@vitest/browser@3.1.3)(@vitest/ui@3.1.3)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1)
 
-  playground:
+  playground/ember:
     devDependencies:
+      '@babel/core':
+        specifier: ^7.27.1
+        version: 7.27.1
+      '@babel/eslint-parser':
+        specifier: ^7.27.1
+        version: 7.27.1(@babel/core@7.27.1)(eslint@8.57.1)
+      '@babel/plugin-proposal-decorators':
+        specifier: ^7.27.1
+        version: 7.27.1(@babel/core@7.27.1)
+      '@babel/plugin-transform-runtime':
+        specifier: ^7.27.1
+        version: 7.27.1(@babel/core@7.27.1)
+      '@babel/plugin-transform-typescript':
+        specifier: ^7.27.1
+        version: 7.27.1(@babel/core@7.27.1)
+      '@babel/runtime':
+        specifier: ^7.27.1
+        version: 7.27.1
+      '@ember/optional-features':
+        specifier: ^2.2.0
+        version: 2.2.0
+      '@ember/string':
+        specifier: ^4.0.1
+        version: 4.0.1
+      '@ember/test-helpers':
+        specifier: ^5.2.2
+        version: 5.2.2(@babel/core@7.27.1)(@glint/template@1.5.2)
+      '@embroider/compat':
+        specifier: ^4.0.3
+        version: 4.0.3(@embroider/core@4.0.3(@glint/template@1.5.2))(@glimmer/component@2.0.0)(@glint/template@1.5.2)(rsvp@4.8.5)(webpack@5.99.8)
+      '@embroider/config-meta-loader':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@embroider/core':
+        specifier: ^4.0.3
+        version: 4.0.3(@glint/template@1.5.2)
+      '@embroider/macros':
+        specifier: ^1.17.3
+        version: 1.17.3(@glint/template@1.5.2)
+      '@embroider/vite':
+        specifier: ^1.1.1
+        version: 1.1.1(@embroider/core@4.0.3(@glint/template@1.5.2))(@glint/template@1.5.2)(rollup@4.40.1)(vite@6.3.5(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1))
+      '@glimmer/component':
+        specifier: ^2.0.0
+        version: 2.0.0
+      '@glimmer/tracking':
+        specifier: ^1.1.2
+        version: 1.1.2
+      '@glint/core':
+        specifier: 1.5.2
+        version: 1.5.2(typescript@5.8.3)
+      '@glint/environment-ember-loose':
+        specifier: 1.5.2
+        version: 1.5.2(@glimmer/component@2.0.0)(@glint/template@1.5.2)(ember-cli-htmlbars@6.3.0)
+      '@glint/environment-ember-template-imports':
+        specifier: 1.5.2
+        version: 1.5.2(@glint/environment-ember-loose@1.5.2(@glimmer/component@2.0.0)(@glint/template@1.5.2)(ember-cli-htmlbars@6.3.0))(@glint/template@1.5.2)
+      '@glint/template':
+        specifier: 1.5.2
+        version: 1.5.2
+      '@gossi/config-eslint':
+        specifier: ^0.14.0
+        version: 0.14.0(@babel/core@7.27.1)(@babel/eslint-parser@7.27.1(@babel/core@7.27.1)(eslint@8.57.1))(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.32.0(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint-plugin-ember@12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint-plugin-qunit@8.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
+      '@gossi/config-prettier':
+        specifier: ^0.10.0
+        version: 0.10.0(prettier@3.5.3)
+      '@gossi/config-stylelint':
+        specifier: ^1.0.0
+        version: 1.0.0(stylelint@16.19.1(typescript@5.8.3))
+      '@gossi/config-template-lint':
+        specifier: ^0.9.0
+        version: 0.9.0(ember-template-lint@7.6.0(@babel/core@7.27.1))(prettier@3.5.3)
+      '@rollup/plugin-babel':
+        specifier: ^6.0.4
+        version: 6.0.4(@babel/core@7.27.1)(rollup@4.40.1)
+      '@theemo-playground/forest-theme':
+        specifier: workspace:*
+        version: link:../forest-theme
+      '@theemo-playground/ocean-theme':
+        specifier: workspace:*
+        version: link:../ocean-theme
+      '@theemo/ember':
+        specifier: workspace:*
+        version: link:../../packages/ember
       '@theemo/theme':
         specifier: workspace:*
-        version: link:../packages/theme
+        version: link:../../packages/theme
       '@theemo/vite':
         specifier: workspace:*
-        version: link:../packages/vite
-      forest-theme:
+        version: link:../../packages/vite
+      '@tsconfig/ember':
+        specifier: ^3.0.10
+        version: 3.0.10
+      '@types/qunit':
+        specifier: ^2.19.12
+        version: 2.19.12
+      '@types/rsvp':
+        specifier: ^4.0.9
+        version: 4.0.9
+      babel-plugin-ember-template-compilation:
+        specifier: ^3.0.0
+        version: 3.0.0
+      concurrently:
+        specifier: ^9.1.0
+        version: 9.1.2
+      decorator-transforms:
+        specifier: ^2.3.0
+        version: 2.3.0(@babel/core@7.27.1)
+      ember-auto-import:
+        specifier: ^2.10.0
+        version: 2.10.0(@glint/template@1.5.2)(webpack@5.99.8)
+      ember-cli:
+        specifier: ~6.4.0
+        version: 6.4.0(handlebars@4.7.8)(underscore@1.12.1)
+      ember-cli-babel:
+        specifier: ^8.2.0
+        version: 8.2.0(@babel/core@7.27.1)
+      ember-cli-deprecation-workflow:
+        specifier: ^3.3.0
+        version: 3.3.0(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+      ember-cli-htmlbars:
+        specifier: ^6.3.0
+        version: 6.3.0
+      ember-load-initializers:
+        specifier: ^3.0.1
+        version: 3.0.1(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+      ember-page-title:
+        specifier: ^9.0.1
+        version: 9.0.1(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+      ember-qunit:
+        specifier: ^9.0.2
+        version: 9.0.2(@ember/test-helpers@5.2.2(@babel/core@7.27.1)(@glint/template@1.5.2))(@glint/template@1.5.2)(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))(qunit@2.24.1)
+      ember-resolver:
+        specifier: ^13.1.0
+        version: 13.1.0(ember-source@6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+      ember-route-template:
+        specifier: ^1.0.3
+        version: 1.0.3
+      ember-source:
+        specifier: ~6.4.0
+        version: 6.4.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
+      ember-template-imports:
+        specifier: ^4.3.0
+        version: 4.3.0
+      ember-template-lint:
+        specifier: ^7.6.0
+        version: 7.6.0(@babel/core@7.27.1)
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      eslint-plugin-ember:
+        specifier: ^12.5.0
+        version: 12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
+      eslint-plugin-qunit:
+        specifier: ^8.1.2
+        version: 8.1.2(eslint@8.57.1)
+      globals:
+        specifier: ^16.1.0
+        version: 16.1.0
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
+      qunit:
+        specifier: ^2.22.0
+        version: 2.24.1
+      qunit-dom:
+        specifier: ^3.3.0
+        version: 3.4.0
+      stylelint:
+        specifier: ^16.19.1
+        version: 16.19.1(typescript@5.8.3)
+      tracked-built-ins:
+        specifier: ^4.0.0
+        version: 4.0.0(@babel/core@7.27.1)
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+      vite:
+        specifier: ^6.3.5
+        version: 6.3.5(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1)
+
+  playground/forest-theme: {}
+
+  playground/ocean-theme: {}
+
+  playground/vanilla-js:
+    devDependencies:
+      '@theemo-playground/forest-theme':
         specifier: workspace:*
-        version: link:../themes/forest-theme
-      ocean-theme:
+        version: link:../forest-theme
+      '@theemo-playground/ocean-theme':
         specifier: workspace:*
-        version: link:../themes/ocean-theme
+        version: link:../ocean-theme
+      '@theemo/theme':
+        specifier: workspace:*
+        version: link:../../packages/theme
+      '@theemo/vite':
+        specifier: workspace:*
+        version: link:../../packages/vite
       vite:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.3)(terser@5.39.0)(yaml@2.7.1)
@@ -903,10 +904,6 @@ importers:
       style-dictionary:
         specifier: ^4.3.3
         version: 4.4.0
-
-  themes/forest-theme: {}
-
-  themes/ocean-theme: {}
 
   themes/super-theemo:
     devDependencies:

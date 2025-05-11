@@ -1,7 +1,9 @@
 {
   "extends": "@tsconfig/ember/tsconfig.json",
   "include": [
-    "app", "tests", "types"
+    "app",
+    "tests",
+    "types"
   ],
   "glint": {
     "environment": [
@@ -16,10 +18,8 @@
       Do not block emit on TS errors.
     */
     "noEmitOnError": false,
-
     "declaration": false,
     "declarationMap": false,
-
     /**
       https://www.typescriptlang.org/tsconfig#allowImportingTsExtensions
 
@@ -28,10 +28,10 @@
     */
     "allowImportingTsExtensions": true,
     "paths": {
-      "ember-demo/tests/*": [
+      "@theemo-playground/ember/tests/*": [
         "./tests/*"
       ],
-      "ember-demo/*": [
+      "@theemo-playground/ember/*": [
         "./app/*"
       ],
       "*": [
