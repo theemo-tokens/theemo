@@ -6,9 +6,9 @@
     "rootDir": "."
   },
   "include": [
-    "src",
-    "tests",
-    "vitest.config.ts",
-    "vitest.config.*.ts"
+    "src/**/*",
+    "tests/**/*",
+    // "vitest.config.ts",
+    // "vitest.config.*.ts"
   ],
 }

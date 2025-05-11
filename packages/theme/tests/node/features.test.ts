@@ -16,12 +16,13 @@ test('isBrowserFeature()', () => {
     isBrowserFeature({
       name: 'invalid-browser-feature',
       options: ['light', 'dark'],
-      // @ts-expect-error testing for an invalid type here
-      browserFeature: 'invalid-feature'
+      browserFeature: 'invalid-feature',
+      defaultOption: 'lala'
     })
   ).toBeFalsy();
 
   expect(
+    // @ts-expect-error testing invalid object
     isBrowserFeature({
       name: 'no-browser-feature',
       options: ['light', 'dark']
@@ -54,8 +55,8 @@ describe('validateFeature()', () => {
     const invalidBrowserFeature = validateFeature({
       name: 'invalid-browser-feature',
       options: ['light', 'dark'],
-      // @ts-expect-error testing for an invalid type here
-      browserFeature: 'invalid-feature'
+      browserFeature: 'invalid-feature',
+      defaultOption: 'purple'
     });
 
     expect(invalidBrowserFeature.success).toBeFalsy();
@@ -65,6 +66,7 @@ describe('validateFeature()', () => {
   });
 
   test('incomplete feature', () => {
+    // @ts-expect-error testing invalid object
     const incompleteFeature = validateFeature({
       name: 'incomplete-feature',
       options: ['a', 'b']
