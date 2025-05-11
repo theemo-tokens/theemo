@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitest/config';
 
+// @ts-expect-error yeah, because turbo detects a circular dep, when there is none
 import theemo from '@theemo/vite';
 
 export default defineConfig({
