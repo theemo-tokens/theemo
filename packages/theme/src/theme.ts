@@ -4,6 +4,23 @@ import type { ValidationResult } from './validation';
 
 // export type Scope = string;
 
+/**
+ * Describes a theme with its name and features
+ *
+ * @example
+ *
+ * Used in `package.json`:
+ *
+ * ```jsonc
+ * // package.json
+ * {
+ *   "name": "your-package",
+ *   "theemo": {
+ *     // your theme described here
+ *   }
+ * }
+ * ```
+ */
 export interface Theme {
   name: string;
   file: string;
@@ -11,6 +28,27 @@ export interface Theme {
   // scopes?: Scope[];
 }
 
+/**
+ * Validates a theme for being correct
+ *
+ * @example
+ *
+ * Check for a valid theme:
+ *
+ * ```ts
+ * const validation = validateTheme(myTheme);
+ *
+ * if (validation.success) {
+ *   // proceed with valid theme
+ * } else {
+ *   console.log(validation.errors);
+ * }
+ * ```
+ *
+ *
+ * @param pkg the given theme
+ * @returns the validation result
+ */
 export function validateTheme(theme: Theme): ValidationResult {
   const errors: string[] = [];
 

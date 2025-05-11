@@ -84,6 +84,12 @@ interface Options {
   featureChanged?: (feature: FeatureWithValue) => void;
 }
 
+/**
+ * Manages theming at runtime
+ *
+ * - switch themes
+ * - turn features on and off
+ */
 export class ThemeManager {
   #elements: Map<string, HTMLLinkElement> = new Map();
   #config: TheemoRuntimeConfig;
@@ -97,7 +103,10 @@ export class ThemeManager {
   #browserFeatureValues: FeatureValues = {};
   #modeFeatureValues: FeatureValues = {};
 
+  /** The active theme */
   activeTheme?: Theme;
+
+  /** Features of the active theme */
   features: FeatureWithValue[] = [];
 
   constructor(options: Options = {}) {
@@ -158,6 +167,12 @@ export class ThemeManager {
     return principal;
   }
 
+  /**
+   * Set the value/mode for a feature
+   *
+   * @param featureName the name of the feature
+   * @param value the mode for that feature
+   */
   setMode(featureName: string, value: FeatureValue): void {
     const feature = this.#findFeature(featureName);
 
@@ -174,6 +189,11 @@ export class ThemeManager {
     this.#options.featureChanged?.(feature);
   }
 
+  /**
+   * Turn off a feature. Revert to its default.
+   *
+   * @param featureName the name of the feature
+   */
   unsetMode(featureName: string): void {
     const feature = this.#findFeature(featureName);
 
@@ -188,8 +208,7 @@ export class ThemeManager {
   }
 
   /**
-   * Set the _main_ theme at the body.
-   * Method name is very likely to change
+   * Switch to another theme
    *
    * @param name theme name
    */
