@@ -4,21 +4,11 @@ import Service from '@ember/service';
 import { ThemeManager } from '@theemo/theme';
 
 import type Owner from '@ember/owner';
-import type { Feature as _Feature, Principal, Theme } from '@theemo/theme';
-
-type FeatureValues = Record<string, string>;
-
-type Feature = _Feature & {
-  principal: Principal;
-  value: unknown;
-};
+import type { FeatureWithValue, Theme } from '@theemo/theme';
 
 export default class TheemoService extends Service {
   @tracked activeTheme?: Theme;
-  @tracked features: Feature[] = [];
-
-  @tracked browserFeatureValues: FeatureValues = {};
-  @tracked modeFeatureValues: FeatureValues = {};
+  @tracked features: FeatureWithValue[] = [];
 
   #manager: ThemeManager;
 
@@ -40,13 +30,7 @@ export default class TheemoService extends Service {
   }
 
   #updateFeatures = () => {
-    this.features = (this.activeTheme?.features ?? []).map((f) => ({
-      ...f,
-      value: this.#manager.featureValues[f.name],
-      principal: this.#manager.getPrincipal(f.name)
-    }));
-    this.browserFeatureValues = this.#manager.browserFeatureValues;
-    this.modeFeatureValues = this.#manager.modeFeatureValues;
+    this.features = this.#manager.features;
   };
 
   get themes(): Theme[] {
@@ -63,9 +47,5 @@ export default class TheemoService extends Service {
 
   switchTheme = async (name: string): Promise<void> => {
     await this.#manager.switchTheme(name);
-  };
-
-  getPrincipal = (featureName: string) => {
-    return this.#manager.getPrincipal(featureName);
   };
 }

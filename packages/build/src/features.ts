@@ -1,24 +1,27 @@
-import { BrowserMechanic, type ColorContrast, type Feature, type Motion } from '@theemo/theme';
+import { BrowserMechanic, isModalFeature } from '@theemo/theme';
 
-export interface ModeBuildFeature extends Omit<Feature, 'options'> {
+import type {
+  ColorContrast,
+  ColorContrastFeature,
+  ColorSchemeFeature,
+  CustomFeature,
+  Feature,
+  Motion,
+  MotionFeature
+} from '@theemo/theme';
+
+export interface CustomBuildFeature extends Omit<CustomFeature, 'options'> {
   options: Record<string, string>;
 }
 
-export interface ColorSchemeBuildFeature extends Omit<Feature, 'options' | 'defaultOption'> {
-  options: ('light' | 'dark')[];
-  browserFeature: 'color-scheme';
-}
+export type ColorSchemeBuildFeature = ColorSchemeFeature;
 
-export interface ColorContrastBuildFeature extends Omit<Feature, 'options'> {
-  defaultOption: ColorContrast;
+export interface ColorContrastBuildFeature extends Omit<ColorContrastFeature, 'options'> {
   options: Record<ColorContrast, string>;
-  browserFeature: 'color-contrast';
 }
 
-export interface MotionBuildFeature extends Omit<Feature, 'options'> {
-  defaultOption: Motion;
+export interface MotionBuildFeature extends Omit<MotionFeature, 'options'> {
   options: Record<Motion, string>;
-  browserFeature: 'motion';
 }
 
 export type MediaQueryBuildFeature = ColorContrastBuildFeature | MotionBuildFeature;
@@ -27,7 +30,13 @@ export type BuildFeature =
   | ColorSchemeBuildFeature
   | ColorContrastBuildFeature
   | MotionBuildFeature
-  | ModeBuildFeature;
+  | CustomBuildFeature;
+
+export type ModalBuildFeature = Exclude<BuildFeature, ColorSchemeBuildFeature>;
+
+export function isModalBuildFeature(feature: BuildFeature): feature is ModalBuildFeature {
+  return isModalFeature(feature as unknown as Feature);
+}
 
 export function isColorSchemeFeature(feature: BuildFeature): feature is ColorSchemeBuildFeature {
   return feature.browserFeature === BrowserMechanic.ColorScheme;

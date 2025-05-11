@@ -12,12 +12,12 @@ const eq = (a: unknown, b: unknown) => {
   return a === b;
 };
 
+const and = (a: boolean, b: boolean) => {
+  return a && b;
+};
+
 export default class ThemeManager extends Component {
   @service declare theemo: TheemoService;
-
-  isSystem = (featureName: string, value: unknown) => {
-    return this.theemo.browserFeatureValues[featureName] === value;
-  };
 
   canUnset = (feature: Feature) => {
     return isBrowserFeature(feature) && feature.principal === Principal.User;
@@ -53,7 +53,13 @@ export default class ThemeManager extends Component {
                   checked={{eq feature.value option}}
                   {{on "change" (fn this.theemo.setMode feature.name option)}}
                 />
-                <span>{{option}} {{#if (this.isSystem feature.name option)}}(System){{/if}}</span>
+                <span>
+                  {{option}}
+
+                  {{#if (and (isBrowserFeature feature) (eq option feature.browserValue))}}
+                    (System)
+                  {{/if}}
+                </span>
               </label>
             {{/each}}
           </div>

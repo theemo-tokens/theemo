@@ -5,6 +5,10 @@ import { Principal, ThemeManager } from '../../src';
 describe('ThemeManager', () => {
   const manager = new ThemeManager();
 
+  const findThemeByName = (name: string) => {
+    return manager.features.find((f) => f.name === name);
+  };
+
   test('available themes', () => {
     const themeNames = manager.themes.map((t) => t.name);
 
@@ -12,21 +16,29 @@ describe('ThemeManager', () => {
   });
 
   test('ocean theme features', () => {
-    const featureNames = manager.activeTheme?.features?.map((f) => f.name);
+    const featureNames = manager.features.map((f) => f.name);
 
     expect(featureNames).toStrictEqual(['color-scheme']);
   });
 
   test('overwrite browser feature', () => {
-    expect(manager.getPrincipal('color-scheme')).toBe(Principal.Browser);
+    let colorSchemeFeature = findThemeByName('color-scheme');
 
+    expect(colorSchemeFeature?.principal).toBe(Principal.Browser);
+
+    // overwrite
     manager.setMode('color-scheme', 'dark');
 
-    expect(manager.getPrincipal('color-scheme')).toBe(Principal.User);
+    colorSchemeFeature = findThemeByName('color-scheme');
 
+    expect(colorSchemeFeature?.principal).toBe(Principal.User);
+
+    // unset
     manager.unsetMode('color-scheme');
 
-    expect(manager.getPrincipal('color-scheme')).toBe(Principal.Browser);
+    colorSchemeFeature = findThemeByName('color-scheme');
+
+    expect(colorSchemeFeature?.principal).toBe(Principal.Browser);
   });
 
   test('set unknown feature and unknown option', () => {

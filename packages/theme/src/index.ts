@@ -1,11 +1,22 @@
 export type { TheemoConfig, TheemoOptions, TheemoRuntimeConfig } from './config';
 export { DEFAULT_OPTIONS, THEEMO_CONFIG_ID } from './config';
-export type { Feature } from './features';
+export type {
+  BrowserFeature,
+  ColorContrastFeature,
+  ColorSchemeFeature,
+  CustomFeature,
+  Feature,
+  FeatureValue,
+  FeatureWithValue,
+  ModalFeature,
+  MotionFeature
+} from './features';
 export {
   BrowserMechanic,
   ColorContrast,
   ColorScheme,
   isBrowserFeature,
+  isModalFeature,
   Motion,
   Principal
 } from './features';

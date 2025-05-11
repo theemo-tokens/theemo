@@ -69,6 +69,11 @@ export const BrowserMechanic = {
 
 export type BrowserMechanic = (typeof BrowserMechanic)[keyof typeof BrowserMechanic];
 
+/**
+ * The principal who is responsible for the value
+ *
+ * @see https://theemo.io/design-tokens/traits#principals-and-agents
+ */
 export const Principal = {
   Browser: 'browser',
   User: 'user'
@@ -77,17 +82,81 @@ export const Principal = {
 export type Principal = (typeof Principal)[keyof typeof Principal];
 /* eslint-enable @typescript-eslint/naming-convention */
 
-export interface Feature {
+interface BaseFeature {
   name: string;
   options: string[];
   defaultOption?: string;
-  browserFeature?: BrowserMechanic;
+  browserFeature?: string;
 }
 
-type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
+/**
+ * Custom Feature based on modality
+ */
+export interface CustomFeature extends BaseFeature {
+  defaultOption: string;
+}
 
-export type BrowserFeature = WithRequired<Feature, 'browserFeature'>;
+/**
+ * Color Scheme Feature
+ *
+ * The first value in `options` is also the default
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
+ */
+export interface ColorSchemeFeature extends Omit<BaseFeature, 'options' | 'defaultOption'> {
+  options: ColorScheme[];
+  browserFeature: 'color-scheme';
+}
 
+/**
+ * Color Contrasts Feature
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
+ */
+export interface ColorContrastFeature extends Omit<BaseFeature, 'options'> {
+  defaultOption?: ColorContrast;
+  options: ColorContrast[];
+  browserFeature: 'color-contrast';
+}
+
+/**
+ * Motion Feature
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+ */
+export interface MotionFeature extends Omit<BaseFeature, 'options'> {
+  defaultOption?: Motion;
+  options: Motion[];
+  browserFeature: 'motion';
+}
+
+export type BrowserFeature = ColorSchemeFeature | ColorContrastFeature | MotionFeature;
+
+export type Feature = ColorSchemeFeature | ColorContrastFeature | MotionFeature | CustomFeature;
+
+// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
+export type FeatureValue = ColorScheme | ColorContrast | Motion | string;
+
+export type ModalFeature = Exclude<Feature, ColorSchemeFeature> &
+  Required<Exclude<Feature, ColorSchemeFeature>['defaultOption']>;
+
+type WithValue<T extends Feature> = T & {
+  value: FeatureValue;
+  browserValue?: FeatureValue;
+  principal: Principal;
+};
+
+/** A value of a feature */
+export type FeatureWithValue = WithValue<Feature>;
+
+/**
+ * Verifies if the given feature has the browser as principal that can change
+ * it based on media query or other mechanics
+ *
+ * @see https://theemo.io/design-tokens/traits#principals-and-agents
+ * @param feature the feature in question
+ * @returns `true` for a browser feature, otherwise `false`
+ */
 export function isBrowserFeature(feature: Feature): feature is BrowserFeature {
   return [
     BrowserMechanic.ColorContrast,
@@ -96,6 +165,23 @@ export function isBrowserFeature(feature: Feature): feature is BrowserFeature {
   ].includes(feature.browserFeature as BrowserMechanic);
 }
 
+/**
+ * Checks wether the given feature uses mode behavior
+ *
+ * @param feature the feature in question
+ * @returns `true` for a mode behavior, otherwise `false`
+ */
+export function isModalFeature(feature: Feature): feature is ModalFeature {
+  // @ts-expect-error checking for a sometimes undefined field
+  return feature.defaultOption !== undefined;
+}
+
+/**
+ * Checks if the feature contains all valid fields to be operational
+ *
+ * @param feature the feature in question
+ * @returns validation result
+ */
 export function validateFeature(feature: Feature): ValidationResult {
   const errors: string[] = [];
 
@@ -108,7 +194,7 @@ export function validateFeature(feature: Feature): ValidationResult {
     errors.push(`Feature '${feature.name}' requires options`);
   }
 
-  if (!feature.browserFeature && !feature.defaultOption) {
+  if (!feature.browserFeature && !(feature as BaseFeature).defaultOption) {
     errors.push(`Feature '${feature.name}' requires 'defaultOption' or 'browserFeature'`);
   }
 

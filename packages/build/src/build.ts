@@ -5,13 +5,18 @@ import { transform } from 'lightningcss';
 import { readPackageSync } from 'read-pkg';
 import { writePackageSync } from 'write-package';
 
-import { BrowserMechanic, type TheemoPackage, type Theme } from '@theemo/theme';
+import { BrowserMechanic } from '@theemo/theme';
 
 import { configWithDefaults } from './config';
-import { isColorSchemeFeature, isMediaQueryFeature } from './features';
+import { isColorSchemeFeature, isMediaQueryFeature, isModalBuildFeature } from './features';
 
 import type { BuildConfig, BuildConfigWithDefaults } from './config';
-import type { ColorSchemeBuildFeature, MediaQueryBuildFeature, ModeBuildFeature } from './features';
+import type {
+  ColorSchemeBuildFeature,
+  MediaQueryBuildFeature,
+  ModalBuildFeature
+} from './features';
+import type { Feature, TheemoPackage, Theme } from '@theemo/theme';
 
 const MEDIA_QUERY: Record<BrowserMechanic, string> = {
   [BrowserMechanic.ColorScheme]: 'prefers-color-scheme',
@@ -51,7 +56,7 @@ function buildColorSchemeFeature(feature: ColorSchemeBuildFeature) {
   `.trim();
 }
 
-function buildFeature(feature: ModeBuildFeature) {
+function buildFeature(feature: ModalBuildFeature) {
   const contents = [];
 
   for (const [option, file] of Object.entries(feature.options)) {
@@ -93,12 +98,12 @@ function buildFeatures(config: BuildConfigWithDefaults) {
   for (const feature of config.features) {
     if (isColorSchemeFeature(feature)) {
       contents.push(buildColorSchemeFeature(feature));
-    } else {
+    } else if (isModalBuildFeature(feature)) {
       contents.push(...buildFeature(feature));
+    }
 
-      if (isMediaQueryFeature(feature)) {
-        contents.push(...buildMediaQueryBrowserFeature(feature));
-      }
+    if (isMediaQueryFeature(feature)) {
+      contents.push(...buildMediaQueryBrowserFeature(feature));
     }
   }
 
@@ -142,10 +147,13 @@ function updatePackage(config: BuildConfigWithDefaults) {
   const theemo = packageJson.theemo;
 
   theemo.file = path.join(config.outDir, `${theemo.name}.css`);
-  theemo.features = config.features.map((f) => ({
-    ...f,
-    options: Array.isArray(f.options) ? f.options : Object.keys(f.options)
-  }));
+  theemo.features = config.features.map(
+    (f) =>
+      ({
+        ...f,
+        options: Array.isArray(f.options) ? f.options : Object.keys(f.options)
+      }) as Feature
+  );
 
   if (!Array.isArray(packageJson.keywords)) {
     packageJson.keywords = [];

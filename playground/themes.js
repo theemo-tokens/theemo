@@ -15,7 +15,7 @@ class Themer {
     this.manager = new ThemeManager({
       themeChanged: this.drawFeatures,
       featureChanged: () => {
-        this.drawFeatures(this.manager.activeTheme);
+        this.drawFeatures();
       }
     });
     
@@ -38,20 +38,19 @@ class Themer {
   }
 
   /** @param {Theme} theme */
-  drawFeatures = (theme) => {
+  drawFeatures = () => {
     const features = document.getElementById('features');
 
     features.replaceChildren();
   
-    for (const feature of theme.features) {
-      const principal = this.manager.getPrincipal(feature.name);
+    for (const feature of this.manager.features) {
       const template = loadTemplate('feature');
       template.querySelector('legend').textContent = feature.name;
-      template.querySelector('p').textContent = `Principal: ${principal}`;
+      template.querySelector('p').textContent = `Principal: ${feature.principal}`;
 
       this.drawOptions(template.querySelector('#options'), feature);
 
-      if (isBrowserFeature(feature) && principal === 'user') {
+      if (isBrowserFeature(feature) && feature.principal === 'user') {
         const button = document.createElement('button');
         button.append('Unset Mode');
         button.addEventListener('click', () => {
@@ -73,14 +72,14 @@ class Themer {
       const input = opt.querySelector('input');
       input.name = feature.name;
       input.value = option;
-      input.checked = this.manager.featureValues[feature.name] === option;
+      input.checked = feature.value === option;
       input.addEventListener('change', () => {
         this.manager.setMode(feature.name, option);
       })
 
       let label = option
 
-      if (this.manager.browserFeatureValues[feature.name] === option) {
+      if (feature.browserValue === option) {
         label += ' (System)';
       }
 

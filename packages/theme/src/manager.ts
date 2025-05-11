@@ -4,12 +4,13 @@ import {
   ColorContrast,
   ColorScheme,
   isBrowserFeature,
+  isModalFeature,
   Motion,
   Principal
 } from './features';
 
 import type { TheemoRuntimeConfig } from './config';
-import type { BrowserFeature } from './features';
+import type { BrowserFeature, Feature, FeatureValue, FeatureWithValue } from './features';
 import type { Theme } from './theme';
 
 const queries = {
@@ -29,7 +30,7 @@ const queries = {
   }
 };
 
-type FeatureValues = Record<string, string>;
+type FeatureValues = Record<string, FeatureValue>;
 
 function match(feature: BrowserFeature) {
   const values: FeatureValues = {};
@@ -80,7 +81,7 @@ export function setupListeners(
 
 interface Options {
   themeChanged?: (theme: Theme) => void;
-  featureChanged?: (name: string, value?: string) => void;
+  featureChanged?: (feature: FeatureWithValue) => void;
 }
 
 export class ThemeManager {
@@ -88,15 +89,16 @@ export class ThemeManager {
   #config: TheemoRuntimeConfig;
   #options: Options;
 
-  activeTheme?: Theme;
+  #activeThemeManager: {
+    teardownListeners?: () => void;
+  } = {};
 
   #defaultFeatureValues: FeatureValues = {};
   #browserFeatureValues: FeatureValues = {};
   #modeFeatureValues: FeatureValues = {};
 
-  #activeThemeManager: {
-    teardownListeners?: () => void;
-  } = {};
+  activeTheme?: Theme;
+  features: FeatureWithValue[] = [];
 
   constructor(options: Options = {}) {
     this.#options = options;
@@ -123,15 +125,7 @@ export class ThemeManager {
     return this.#config.themes;
   }
 
-  get browserFeatureValues(): FeatureValues {
-    return this.#browserFeatureValues;
-  }
-
-  get modeFeatureValues(): FeatureValues {
-    return this.#modeFeatureValues;
-  }
-
-  get featureValues(): FeatureValues {
+  get #featureValues(): FeatureValues {
     return {
       ...this.#defaultFeatureValues,
       ...this.#browserFeatureValues,
@@ -140,7 +134,7 @@ export class ThemeManager {
   }
 
   #findFeature(name: string) {
-    const feature = this.activeTheme?.features?.find((f) => f.name === name);
+    const feature = this.features.find((f) => f.name === name);
 
     if (!feature) {
       throw new Error(`Cannot find feature '${name}': feature doesn't exist`);
@@ -149,10 +143,11 @@ export class ThemeManager {
     return feature;
   }
 
-  getPrincipal(featureName: string): Principal {
-    const feature = this.#findFeature(featureName);
+  #getPrincipal(featureOrName: string | Feature): Principal {
+    const feature =
+      typeof featureOrName === 'string' ? this.#findFeature(featureOrName) : featureOrName;
 
-    const overriddenValue = isBrowserFeature(feature) && this.modeFeatureValues[feature.name];
+    const overriddenValue = isBrowserFeature(feature) && this.#modeFeatureValues[feature.name];
 
     const principal = isBrowserFeature(feature)
       ? overriddenValue
@@ -163,18 +158,20 @@ export class ThemeManager {
     return principal;
   }
 
-  setMode(featureName: string, value: string): void {
+  setMode(featureName: string, value: FeatureValue): void {
     const feature = this.#findFeature(featureName);
 
-    if (!feature.options.includes(value)) {
+    if (!(feature.options as FeatureValue[]).includes(value)) {
       throw new Error(`Cannot set mode '${feature.name}' to '${value}': option doesn't exist`);
     }
 
     this.#modeFeatureValues[feature.name] = value;
 
+    this.#updateFeatures();
+
     document.documentElement.setAttribute(`data-theemo-${feature.name}`, value);
 
-    this.#options.featureChanged?.(feature.name, value);
+    this.#options.featureChanged?.(feature);
   }
 
   unsetMode(featureName: string): void {
@@ -183,9 +180,11 @@ export class ThemeManager {
     // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
     delete this.#modeFeatureValues[feature.name];
 
+    this.#updateFeatures();
+
     document.documentElement.removeAttribute(`data-theemo-${feature.name}`);
 
-    this.#options.featureChanged?.(feature.name);
+    this.#options.featureChanged?.(feature);
   }
 
   /**
@@ -220,6 +219,7 @@ export class ThemeManager {
 
     // set new theme the active one
     this.activeTheme = theme;
+    this.#updateFeatures();
     this.#options.themeChanged?.(theme);
   }
 
@@ -247,22 +247,38 @@ export class ThemeManager {
   }
 
   #handleChangeFeatures(values: FeatureValues) {
-    const dump = { ...this.featureValues };
+    const dump = { ...this.#featureValues };
 
     this.#browserFeatureValues = {
       ...this.#browserFeatureValues,
       ...values
     };
 
-    const changes = Object.entries(this.featureValues).filter(([k, v]) => dump[k] !== v);
+    this.#updateFeatures();
 
-    for (const [k, v] of changes) {
-      this.#options.featureChanged?.(k, v);
+    const changes = Object.keys(
+      Object.entries(this.#featureValues).filter(([k, v]) => dump[k] !== v)
+    );
+
+    for (const featureName of changes) {
+      this.#options.featureChanged?.(this.#findFeature(featureName));
     }
   }
 
+  #updateFeatures() {
+    this.features = (this.activeTheme?.features ?? []).map(
+      (f) =>
+        ({
+          ...f,
+          value: this.#featureValues[f.name],
+          browserValue: isBrowserFeature(f) ? this.#browserFeatureValues[f.name] : undefined,
+          principal: this.#getPrincipal(f)
+        }) as FeatureWithValue
+    );
+  }
+
   #setupDefaultFeatures(theme: Theme) {
-    const defaultFeatures = (theme.features ?? []).filter((f) => f.defaultOption !== undefined);
+    const defaultFeatures = (theme.features ?? []).filter(isModalFeature);
 
     this.#defaultFeatureValues = defaultFeatures.reduce(
       (values, f) => ({
