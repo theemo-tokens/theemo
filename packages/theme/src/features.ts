@@ -198,9 +198,20 @@ export function validateFeature(feature: Feature): ValidationResult {
     errors.push(`Feature '${feature.name}' requires 'defaultOption' or 'browserFeature'`);
   }
 
+  if (
+    (feature as BaseFeature).defaultOption &&
+    !(feature.options as FeatureValue[]).includes(
+      (feature as BaseFeature).defaultOption as FeatureValue
+    )
+  ) {
+    errors.push(
+      `Feature '${feature.name}' has 'defaultOption' to be set to '${(feature as BaseFeature).defaultOption as string}', which is not allowed. Allowed values are '${feature.options.join(`', '`)}'.`
+    );
+  }
+
   if (feature.browserFeature && !isBrowserFeature(feature)) {
     errors.push(
-      `Feature '${feature.name}' uses invalid browser mechanic: '${feature.browserFeature}' does not exist. Supported values are: '${Object.values(BrowserMechanic).join("', ")}'`
+      `Feature '${feature.name}' uses invalid browser mechanic: '${feature.browserFeature}' does not exist. Supported values are: '${Object.values(BrowserMechanic).join("', ")}'.`
     );
   }
 
