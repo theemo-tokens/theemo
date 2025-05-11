@@ -46,11 +46,9 @@ export const THEEMO_CONFIG_ID = 'theemo-config';
  * @returns runtime config
  */
 export function extractConfig(rootElement: Element | Document = document): TheemoRuntimeConfig {
-  let script = rootElement.querySelector(`[id="${THEEMO_CONFIG_ID}"]`);
+  let meta = rootElement.querySelector<HTMLMetaElement>(`meta[name="${THEEMO_CONFIG_ID}"]`);
 
-  let config = (
-    script ? JSON.parse(script.textContent as string) : {}
-  ) as PartialDeep<TheemoConfig>;
+  let config = (meta ? JSON.parse(decodeURI(meta.content)) : {}) as PartialDeep<TheemoConfig>;
 
   return {
     options: {

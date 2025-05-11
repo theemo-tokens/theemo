@@ -3,11 +3,15 @@ import { type Theme, validateTheme } from './theme';
 import type { ValidationResult } from './validation';
 import type { PackageJson } from 'type-fest';
 
+export interface PackageTheme extends Theme {
+  file: string;
+}
+
 /**
  * A `package.json` file with `theemo` object
  */
 export type TheemoPackage = PackageJson & {
-  theemo: Theme;
+  theemo: PackageTheme;
 };
 
 /**
@@ -58,6 +62,10 @@ export function validateTheemoPackage(pkg: TheemoPackage): ValidationResult {
     errors.push(`Package '${pkg.name as string}' requires 'theemo' field`);
   } else {
     const themeValidation = validateTheme(pkg.theemo);
+
+    if (!pkg.theemo.file) {
+      errors.push(`Theemo in package '${pkg.name as string}' requires 'file'`);
+    }
 
     errors.push(...themeValidation.errors);
   }

@@ -21,6 +21,6 @@ export {
   Principal
 } from './features';
 export { ThemeManager } from './manager';
-export type { TheemoPackage } from './package';
+export type { PackageTheme, TheemoPackage } from './package';
 export { isTheemoPackage, validateTheemoPackage } from './package';
 export type { Theme } from './theme';
