@@ -3,5 +3,4 @@ packages:
   - packages/**
   - themes/**
   - testing/**
-  - playground
-  - integrations-demo/*
+  - playground/*

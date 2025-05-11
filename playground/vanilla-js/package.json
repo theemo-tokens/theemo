@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "@theemo-playground/vanilla-js",
   "private": true,
   "type": "module",
   "scripts": {
@@ -8,8 +8,8 @@
   "devDependencies": {
     "@theemo/vite": "workspace:*",
     "@theemo/theme": "workspace:*",
-    "forest-theme": "workspace:*",
-    "ocean-theme": "workspace:*",
+    "@theemo-playground/forest-theme": "workspace:*",
+    "@theemo-playground/ocean-theme": "workspace:*",
     "vite": "^6.3.5",
     "vite-plugin-inspect": "^11.0.1"
   },

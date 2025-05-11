@@ -5,7 +5,7 @@ import { loadThemePackage } from './helpers';
 
 describe('validateTheme()', () => {
   test('ocean theme', () => {
-    const oceanTheme = loadThemePackage('ocean-theme');
+    const oceanTheme = loadThemePackage('@theemo-playground/ocean-theme');
     const oceanValidation = validateTheme(oceanTheme.theemo);
 
     expect(oceanValidation.success).toBeTruthy();
