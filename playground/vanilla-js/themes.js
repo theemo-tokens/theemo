@@ -54,7 +54,7 @@ class Themer {
         const button = document.createElement('button');
         button.append('Unset Mode');
         button.addEventListener('click', () => {
-          this.manager.unsetMode(feature.name);
+          this.manager.unsetFeature(feature.name);
         });
 
         template.querySelector('fieldset').append(button);
@@ -74,7 +74,7 @@ class Themer {
       input.value = option;
       input.checked = feature.value === option;
       input.addEventListener('change', () => {
-        this.manager.setMode(feature.name, option);
+        this.manager.setFeature(feature.name, option);
       })
 
       let label = option
