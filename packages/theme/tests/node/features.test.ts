@@ -56,12 +56,12 @@ describe('validateFeature()', () => {
       name: 'invalid-browser-feature',
       options: ['light', 'dark'],
       browserFeature: 'invalid-feature',
-      defaultOption: 'purple'
+      defaultOption: 'light'
     });
 
     expect(invalidBrowserFeature.success).toBeFalsy();
     expect(invalidBrowserFeature.errors).toStrictEqual([
-      `Feature 'invalid-browser-feature' uses invalid browser mechanic: 'invalid-feature' does not exist. Supported values are: '${Object.values(BrowserMechanic).join("', ")}'`
+      `Feature 'invalid-browser-feature' uses invalid browser mechanic: 'invalid-feature' does not exist. Supported values are: '${Object.values(BrowserMechanic).join("', ")}'.`
     ]);
   });
 
@@ -87,6 +87,19 @@ describe('validateFeature()', () => {
 
     expect(missingOptions.success).toBeFalsy();
     expect(missingOptions.errors).toStrictEqual([`Feature 'missing-options' requires options`]);
+  });
+
+  test('invalid defaultOption', () => {
+    const invalidDefault = validateFeature({
+      name: 'invalid-default',
+      options: ['one', 'two', 'three'],
+      defaultOption: 'purple'
+    });
+
+    expect(invalidDefault.success).toBeFalsy();
+    expect(invalidDefault.errors).toStrictEqual([
+      `Feature 'invalid-default' has 'defaultOption' to be set to 'purple', which is not allowed. Allowed values are 'one', 'two', 'three'.`
+    ]);
   });
 
   test('no name', () => {
