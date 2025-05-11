@@ -15,7 +15,7 @@ import type { Plugin } from 'vite';
  *
  * ```ts
  * import { defineConfig } from 'vite'
- * import theemo from '@theemo/vite';
+ * import { theemo } from '@theemo/vite';
  *
  * export default defineConfig({
  *   plugins: [
@@ -29,7 +29,7 @@ import type { Plugin } from 'vite';
  * @param options your options, such as the default theme
  * @returns
  */
-export default function theemo(options: Options): Plugin[] {
+export function theemo(options: Options): Plugin[] {
   const opts = {
     ...DEFAULT_OPTIONS,
     ...options

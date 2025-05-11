@@ -3,7 +3,7 @@ import { classicEmberSupport, ember, extensions } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 import { defineConfig } from 'vite';
 
-import theemo from '@theemo/vite';
+import { theemo } from '@theemo/vite';
 
 export default defineConfig({
   plugins: [

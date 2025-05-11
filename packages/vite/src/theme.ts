@@ -1,18 +1,14 @@
 import fs from 'node:fs';
 
-import {
-  isTheemoPackage,
-  type TheemoPackage,
-  type Theme,
-  validateTheemoPackage
-} from '@theemo/theme';
+import { isTheemoPackage, validateTheemoPackage } from '@theemo/theme';
 
+import type { PackageTheme, TheemoPackage } from '@theemo/theme';
 import type { LoggingFunction } from 'rollup';
 import type { PackageJson } from 'type-fest';
 
 export type Resolve = (source: string) => Promise<string | null>;
 
-export interface ResolvedTheme extends Theme {
+export interface ResolvedTheme extends PackageTheme {
   filePath?: string;
 }
 

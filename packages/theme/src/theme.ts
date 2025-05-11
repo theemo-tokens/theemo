@@ -23,7 +23,6 @@ import type { ValidationResult } from './validation';
  */
 export interface Theme {
   name: string;
-  file: string;
   features?: Feature[];
   // scopes?: Scope[];
 }
@@ -54,10 +53,6 @@ export function validateTheme(theme: Theme): ValidationResult {
 
   if (!theme.name) {
     errors.push(`Theme requires 'name'`);
-  }
-
-  if (!theme.file) {
-    errors.push(`Theme '${theme.name}' requires 'file'`);
   }
 
   for (const feature of theme.features ?? []) {

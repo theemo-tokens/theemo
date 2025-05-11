@@ -5,7 +5,7 @@ import { THEEMO_CONFIG_ID } from '@theemo/theme';
 
 import type { PluginOptions } from './config';
 import type { ResolvedTheemoPackage } from './theme';
-import type { TheemoPackage, TheemoRuntimeConfig } from '@theemo/theme';
+import type { TheemoRuntimeConfig } from '@theemo/theme';
 import type { ResolvedId } from 'rollup';
 
 export function findRoot(): string {
@@ -20,12 +20,18 @@ export function makeResolver(resolve: (source: string) => Promise<ResolvedId | n
   };
 }
 
-function createConfig(options: PluginOptions, packages: TheemoPackage[]): TheemoRuntimeConfig {
+function createConfig(
+  options: PluginOptions,
+  packages: ResolvedTheemoPackage[]
+): TheemoRuntimeConfig {
   const themes = packages.map((pkg) => pkg.theemo);
 
   return {
     options,
-    themes
+    themes: themes.map((t) => ({
+      name: t.name,
+      features: t.features
+    }))
   };
 }
 
@@ -56,13 +62,7 @@ export async function transformIndexHtml(
   // runtime config
   const config = createConfig(options, themePackages);
 
-  head.push(
-    [
-      `<script id="${THEEMO_CONFIG_ID}" type="application/json">`,
-      JSON.stringify(config),
-      '</script>'
-    ].join('\n')
-  );
+  head.push(`<meta name="${THEEMO_CONFIG_ID}" content="${encodeURI(JSON.stringify(config))}">`);
 
   // themes
   const defaultThemePkg = themePackages.find((pkg) => pkg.theemo.name === options.defaultTheme);

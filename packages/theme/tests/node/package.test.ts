@@ -42,4 +42,18 @@ describe('validateTheemoPackage()', () => {
     expect(validation.success).toBeFalsy();
     expect(validation.errors).toStrictEqual([`Package 'no-theemo' requires 'theemo' field`]);
   });
+
+  test('theme without file', () => {
+    const validation = validateTheemoPackage({
+      name: 'no-theemo-file',
+      keywords: ['theemo-theme'],
+      // @ts-expect-error testing for an invalid type here
+      theemo: {
+        name: 'hi'
+      }
+    });
+
+    expect(validation.success).toBeFalsy();
+    expect(validation.errors).toStrictEqual([`Theemo in package 'no-theemo-file' requires 'file'`]);
+  });
 });
