@@ -3,7 +3,25 @@ import { type Theme, validateTheme } from './theme';
 import type { ValidationResult } from './validation';
 import type { PackageJson } from 'type-fest';
 
+/**
+ * A theme described in your `package.json`:
+ *
+ * @example
+ *
+ * Theme in your `package.json`
+ *
+ * ```json
+ * {
+ *   "name": "@scope/ocean-theme",
+ *   "theemo": {
+ *     "name": "ocean",
+ *     "file": "dist/ocean-theme.css"
+ *   }
+ * }
+ * ```
+ */
 export interface PackageTheme extends Theme {
+  /** Path to the CSS file, that will be loaded in the browser */
   file: string;
 }
 
@@ -45,7 +63,6 @@ export function isTheemoPackage(pkg: PackageJson): pkg is TheemoPackage {
  *   console.log(validation.errors);
  * }
  * ```
- *
  *
  * @param pkg the given package
  * @returns the validation result
