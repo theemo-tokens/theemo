@@ -11,26 +11,40 @@ export interface TheemoOptions {
   outDir?: string;
 }
 
+/**
+ * Options relevant for the Theemo runtime
+ */
 export type TheemoRuntimeOptions = WithRequired<TheemoOptions, 'outDir'>;
 
 /**
- * Complete Theemo config
+ * Entire Theemo config with options and themes
  */
 export interface TheemoConfig {
   options: TheemoOptions;
   themes: Theme[];
 }
 
+/** Default Theemo options */
 export const DEFAULT_OPTIONS: TheemoRuntimeOptions = {
   outDir: 'theemo'
 };
 
+/**
+ * Theemo runtime configuration put into `<script>`
+ */
 export interface TheemoRuntimeConfig extends TheemoConfig {
   options: TheemoRuntimeOptions;
 }
 
+/** ID to identify Theemo <meta> element */
 export const THEEMO_CONFIG_ID = 'theemo-config';
 
+/**
+ * Extract the config from `<script>` element
+ *
+ * @param rootElement element to look for the `<script>` element in
+ * @returns runtime config
+ */
 export function extractConfig(rootElement: Element | Document = document): TheemoRuntimeConfig {
   let script = rootElement.querySelector(`[id="${THEEMO_CONFIG_ID}"]`);
 

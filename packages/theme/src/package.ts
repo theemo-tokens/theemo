@@ -10,12 +10,42 @@ export type TheemoPackage = PackageJson & {
   theemo: Theme;
 };
 
+/**
+ * The keyword to look for in a `package.json` file
+ */
 const KEYWORD = 'theemo-theme';
 
+/**
+ * Checks if the given package is a Theemo package
+ *
+ * @param pkg the given package
+ * @returns `true` if it is a Theemo package, otherwise `false`
+ */
 export function isTheemoPackage(pkg: PackageJson): pkg is TheemoPackage {
   return (pkg.keywords ?? []).includes(KEYWORD);
 }
 
+/**
+ * Validates a package for being correct
+ *
+ * @example
+ *
+ * Check for a valid package:
+ *
+ * ```ts
+ * const validation = validateTheemoPackage(myPkg);
+ *
+ * if (validation.success) {
+ *   // proceed with valid package
+ * } else {
+ *   console.log(validation.errors);
+ * }
+ * ```
+ *
+ *
+ * @param pkg the given package
+ * @returns the validation result
+ */
 export function validateTheemoPackage(pkg: TheemoPackage): ValidationResult {
   const errors = [];
 

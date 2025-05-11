@@ -83,6 +83,7 @@ export type Principal = (typeof Principal)[keyof typeof Principal];
 /* eslint-enable @typescript-eslint/naming-convention */
 
 interface BaseFeature {
+  /** name of the feature */
   name: string;
   options: string[];
   defaultOption?: string;
@@ -104,6 +105,9 @@ export interface CustomFeature extends BaseFeature {
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
  */
 export interface ColorSchemeFeature extends Omit<BaseFeature, 'options' | 'defaultOption'> {
+  /**
+   * Color scheme options. The first will be the default
+   */
   options: ColorScheme[];
   browserFeature: 'color-scheme';
 }

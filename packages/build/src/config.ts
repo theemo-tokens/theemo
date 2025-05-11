@@ -1,10 +1,33 @@
 import type { BuildFeature } from './features';
 import type { CustomAtRules, TransformOptions } from 'lightningcss';
 
+/**
+ * Config for building a theme
+ */
 export interface BuildConfig {
+  /**
+   * Specify the output directory
+   *
+   * @default `dist`
+   */
   outDir?: string;
+
+  /**
+   * The files that will be concatenated into the output file
+   */
   files?: string[];
+
+  /**
+   * Instructions for how to build the features
+   */
   features?: BuildFeature[];
+
+  /**
+   * Lightning CSS is used for postprocess. You can pass options to lightning
+   * css here or turn it off entirely.
+   *
+   * @default `true`
+   */
   lightningcss?: boolean | Omit<TransformOptions<CustomAtRules>, 'code' | 'filename'>;
 }
 
