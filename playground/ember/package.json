@@ -14,8 +14,8 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "glint",
     "start": "vite",
-    "test": "concurrently \"pnpm:lint\" \"pnpm:test:*\" --names \"lint,test:\" --prefixColors auto",
-    "test:ember": "vite build --mode test && ember test --path dist"
+    "_test": "concurrently \"pnpm:lint\" \"pnpm:test:*\" --names \"lint,test:\" --prefixColors auto",
+    "_test:ember": "vite build --mode test && ember test --path dist"
   },
   "devDependencies": {
     "@babel/core": "^7.27.1",
@@ -46,6 +46,8 @@
     "@theemo/ember": "workspace:*",
     "@theemo/theme": "workspace:*",
     "@theemo/vite": "workspace:*",
+    "@theemo-playground/forest-theme": "workspace:*",
+    "@theemo-playground/ocean-theme": "workspace:*",
     "@tsconfig/ember": "^3.0.10",
     "@types/qunit": "^2.19.12",
     "@types/rsvp": "^4.0.9",
@@ -68,9 +70,7 @@
     "eslint": "^8.57.1",
     "eslint-plugin-ember": "^12.5.0",
     "eslint-plugin-qunit": "^8.1.2",
-    "@theemo-playground/forest-theme": "workspace:*",
     "globals": "^16.1.0",
-    "@theemo-playground/ocean-theme": "workspace:*",
     "prettier": "^3.5.3",
     "qunit": "^2.22.0",
     "qunit-dom": "^3.3.0",

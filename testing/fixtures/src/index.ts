@@ -3,12 +3,12 @@
 
 // config
 
-export {
-  HOKULEA_FIGMA_READER_CONFIG_DEV,
-  HOKULEA_FIGMA_READER_CONFIG_PROD,
-  HOKULEA_LEXER_CONFIG,
-  HOKULEA_WRITER_CONFIG
-} from './hokulea/config.js';
+// export {
+//   HOKULEA_FIGMA_READER_CONFIG_DEV,
+//   HOKULEA_FIGMA_READER_CONFIG_PROD,
+//   HOKULEA_LEXER_CONFIG,
+//   HOKULEA_WRITER_CONFIG
+// } from './hokulea/config';
 
 // reader
 export { default as HOKULEA_INPUT_READER_FIGMA_REFERENCES } from './hokulea/inputs/reader/references.json';
@@ -25,12 +25,12 @@ export { default as HOKULEA_INPUT_WRITER_TOKENS_PROD } from './hokulea/inputs/wr
 // THEEMO
 // ------
 
-export {
-  THEEMO_FIGMA_READER_CONFIG_DEV,
-  THEEMO_FIGMA_READER_CONFIG_PROD,
-  THEEMO_LEXER_CONFIG,
-  THEEMO_WRITER_CONFIG
-} from './theemo-plugin/config.js';
+// export {
+//   THEEMO_FIGMA_READER_CONFIG_DEV,
+//   THEEMO_FIGMA_READER_CONFIG_PROD,
+//   THEEMO_LEXER_CONFIG,
+//   THEEMO_WRITER_CONFIG
+// } from './theemo-plugin/config';
 
 // reader
 export { default as THEEMO_INPUT_READER_FIGMA_REFERENCES } from './theemo-plugin/inputs/reader/references.json';
@@ -46,4 +46,4 @@ export { default as THEEMO_INPUT_WRITER_TOKENS_PROD } from './theemo-plugin/inpu
 
 // ----
 
-export { FIXTURES_HOME } from './utils.js';
+export { FIXTURES_HOME } from './utils';

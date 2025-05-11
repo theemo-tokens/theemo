@@ -20,20 +20,16 @@
   "files": [
     "dist"
   ],
-  "typings": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "_build": "concurrently -r 'npm:build:*'",
-    "build:js": "swc ./src -d ./dist --copy-files",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build": "tsdown",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "_start": "concurrently -r 'npm:start:*'",
-    "start:js": "swc ./src -d ./dist --copy-files -w",
-    "start:types": "tsc --emitDeclarationOnly -w"
+    "lint:types": "tsc --noEmit",
+    "start": "tsdown --watch"
   },
   "dependencies": {
     "@theemo/core": "workspace:*",
@@ -45,12 +41,13 @@
   "devDependencies": {
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
-    "@swc/cli": "0.7.5",
-    "@swc/core": "1.11.24",
+    "@theemo-config/tsconfig": "workspace:*",
+    "@theemo-config/tsdown": "workspace:*",
     "@types/node": "^22.15.3",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
+    "tsdown": "^0.11.3",
     "typescript": "5.8.3"
   },
   "engines": {

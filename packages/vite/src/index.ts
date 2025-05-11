@@ -6,7 +6,7 @@ import devPlugin from './plugins/dev';
 import type { Options, PluginOptions } from './config';
 import type { Plugin } from 'vite';
 
-export default function viteTheemo(options: Options): Plugin[] {
+export default function theemo(options: Options): Plugin[] {
   const opts = {
     ...DEFAULT_OPTIONS,
     ...options
