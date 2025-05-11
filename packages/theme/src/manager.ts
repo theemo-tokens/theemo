@@ -168,12 +168,12 @@ export class ThemeManager {
   }
 
   /**
-   * Set the value/mode for a feature
+   * Set the feature to a value
    *
    * @param featureName the name of the feature
-   * @param value the mode for that feature
+   * @param value the value for that feature
    */
-  setMode(featureName: string, value: FeatureValue): void {
+  setFeature(featureName: string, value: FeatureValue): void {
     const feature = this.#findFeature(featureName);
 
     if (!(feature.options as FeatureValue[]).includes(value)) {
@@ -194,7 +194,7 @@ export class ThemeManager {
    *
    * @param featureName the name of the feature
    */
-  unsetMode(featureName: string): void {
+  unsetFeature(featureName: string): void {
     const feature = this.#findFeature(featureName);
 
     // eslint-disable-next-line @typescript-eslint/no-dynamic-delete

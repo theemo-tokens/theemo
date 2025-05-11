@@ -27,14 +27,14 @@ describe('ThemeManager', () => {
     expect(colorSchemeFeature?.principal).toBe(Principal.Browser);
 
     // overwrite
-    manager.setMode('color-scheme', 'dark');
+    manager.setFeature('color-scheme', 'dark');
 
     colorSchemeFeature = findThemeByName('color-scheme');
 
     expect(colorSchemeFeature?.principal).toBe(Principal.User);
 
     // unset
-    manager.unsetMode('color-scheme');
+    manager.unsetFeature('color-scheme');
 
     colorSchemeFeature = findThemeByName('color-scheme');
 
@@ -42,11 +42,11 @@ describe('ThemeManager', () => {
   });
 
   test('set unknown feature and unknown option', () => {
-    expect(() => manager.setMode('lalala', 'lululu')).toThrowError(
+    expect(() => manager.setFeature('lalala', 'lululu')).toThrowError(
       `Cannot find feature 'lalala': feature doesn't exist`
     );
 
-    expect(() => manager.setMode('color-scheme', 'lululu')).toThrowError(
+    expect(() => manager.setFeature('color-scheme', 'lululu')).toThrowError(
       `Cannot set mode 'color-scheme' to 'lululu': option doesn't exist`
     );
   });

@@ -51,7 +51,7 @@ export default class ThemeManager extends Component {
                   name="{{feature.name}}"
                   value="{{option}}"
                   checked={{eq feature.value option}}
-                  {{on "change" (fn this.theemo.setMode feature.name option)}}
+                  {{on "change" (fn this.theemo.setFeature feature.name option)}}
                 />
                 <span>
                   {{option}}
@@ -65,7 +65,7 @@ export default class ThemeManager extends Component {
           </div>
 
           {{#if (this.canUnset feature)}}
-            <button type="button" {{on "click" (fn this.theemo.unsetMode feature.name)}}>
+            <button type="button" {{on "click" (fn this.theemo.unsetFeature feature.name)}}>
               Unset Mode
             </button>
           {{/if}}

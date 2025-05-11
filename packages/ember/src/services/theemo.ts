@@ -7,8 +7,8 @@ import type Owner from '@ember/owner';
 import type { FeatureWithValue, Theme } from '@theemo/theme';
 
 export default class TheemoService extends Service {
-  @tracked activeTheme?: Theme;
-  @tracked features: FeatureWithValue[] = [];
+  @tracked private internalActiveTheme?: Theme;
+  @tracked private internalFeatures: FeatureWithValue[] = [];
 
   #manager: ThemeManager;
 
@@ -16,7 +16,7 @@ export default class TheemoService extends Service {
     super(owner);
     this.#manager = new ThemeManager({
       themeChanged: (theme: Theme) => {
-        this.activeTheme = theme;
+        this.internalActiveTheme = theme;
 
         this.#updateFeatures();
       },
@@ -25,24 +25,32 @@ export default class TheemoService extends Service {
       }
     });
 
-    this.activeTheme = this.#manager.activeTheme;
+    this.internalActiveTheme = this.#manager.activeTheme;
     this.#updateFeatures();
   }
 
   #updateFeatures = () => {
-    this.features = this.#manager.features;
+    this.internalFeatures = this.#manager.features;
   };
 
   get themes(): Theme[] {
     return this.#manager.themes;
   }
 
-  setMode = (featureName: string, value: string): void => {
-    this.#manager.setMode(featureName, value);
+  get activeTheme(): Theme | undefined {
+    return this.internalActiveTheme;
+  }
+
+  get features(): FeatureWithValue[] {
+    return this.internalFeatures;
+  }
+
+  setFeature = (featureName: string, value: string): void => {
+    this.#manager.setFeature(featureName, value);
   };
 
-  unsetMode = (featureName: string): void => {
-    this.#manager.unsetMode(featureName);
+  unsetFeature = (featureName: string): void => {
+    this.#manager.unsetFeature(featureName);
   };
 
   switchTheme = async (name: string): Promise<void> => {

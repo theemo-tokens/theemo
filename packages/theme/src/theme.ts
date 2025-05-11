@@ -22,7 +22,9 @@ import type { ValidationResult } from './validation';
  * ```
  */
 export interface Theme {
+  /** The name of your theme */
   name: string;
+  /** The supported features by your theme */
   features?: Feature[];
   // scopes?: Scope[];
 }
