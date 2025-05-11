@@ -1,10 +1,9 @@
-import { TokenTier } from '@theemo/core';
 import { ColorAlphaFormat, ColorFormat, theemoPlugin } from '@theemo/figma';
 
-import type { Token, TokenCollection } from '@theemo/core';
 import type { FigmaReaderConfig } from '@theemo/figma';
 import type { StyleDictionaryWriterConfig } from '@theemo/style-dictionary';
 import type { LexerConfig } from '@theemo/sync';
+import type { Token, TokenCollection } from '@theemo/tokens';
 
 function pathForToken(token: Token) {
   return token.name.split('/');
@@ -54,35 +53,6 @@ export const THEEMO_FIGMA_READER_CONFIG_PROD: FigmaReaderConfig = {
 };
 
 export const THEEMO_LEXER_CONFIG: LexerConfig = {
-  normalizeToken(token) {
-    const normalized = { ...token };
-
-    // normalize names
-    normalized.name = normalized.name.replace(/\s/g, '');
-
-    if (normalized.reference) {
-      normalized.reference = normalized.reference.replace(/\s/g, '');
-    }
-
-    // normalize contexts
-    const tokenContextIndex = normalized.name.indexOf('.$');
-
-    if (tokenContextIndex !== -1) {
-      normalized.colorScheme = normalized.name.slice(tokenContextIndex + 2);
-      normalized.name = normalized.name.slice(0, tokenContextIndex);
-    }
-
-    if (normalized.reference !== undefined) {
-      const referenceContextIndex = normalized.reference.indexOf('.$');
-
-      if (referenceContextIndex !== -1) {
-        normalized.reference = normalized.reference.slice(0, referenceContextIndex);
-      }
-    }
-
-    return normalized;
-  },
-
   classifyToken(token, tokens) {
     const t = { ...token };
 
