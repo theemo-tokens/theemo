@@ -192,8 +192,31 @@ export default withMermaid(
             text: 'Theming',
             items: [
               { text: 'Overview', link: '/theming' },
-              { text: 'Theemo Theme', link: '/theming/theemo-theme' },
-              { text: 'Building', link: '/theming/build' }
+              { text: 'Theemo Theme', link: '/theming/theemo-theme' }
+            ]
+          },
+          {
+            text: 'Building',
+            items: [
+              { text: 'Overview', link: '/theming/build' },
+              { 
+                text: 'Style Dictionary', 
+                link: '/theming/build/style-dictionary',
+                items: [
+                  {
+                    text: 'Extensions',
+                    // collapsed: true,
+                    items: [
+                      { text: 'Filters', link: '/theming/build/style-dictionary/filters'},
+                      { text: 'Formats', link: '/theming/build/style-dictionary/formats'},
+                      { text: 'Parsers', link: '/theming/build/style-dictionary/parsers'},
+                      { text: 'Preprocessors', link: '/theming/build/style-dictionary/preprocessors'},
+                      { text: 'Transforms', link: '/theming/build/style-dictionary/transforms'}
+                    ]
+                  }
+                ]
+              },
+              { text: 'Theemo Package', link: '/theming/build/theemo-package' }
             ]
           },
           {
