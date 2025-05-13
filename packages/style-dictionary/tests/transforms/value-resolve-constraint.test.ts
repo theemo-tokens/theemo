@@ -1,11 +1,11 @@
 import { expect, test } from 'vitest';
 
-import { transformTheemoValue } from '../../src/transforms/theemo-value';
+import { resolveValueConstraint } from '../../src/transforms/value-resolve-constraint';
 import { toTransformedToken } from '../-utils';
 
 test('find constrained value in an array of values', () => {
   expect(
-    transformTheemoValue(
+    resolveValueConstraint(
       toTransformedToken({
         value: [
           {
@@ -38,7 +38,7 @@ test('find constrained value in an array of values', () => {
 
 test('find constrained value', () => {
   expect(
-    transformTheemoValue(
+    resolveValueConstraint(
       toTransformedToken({
         value: {
           value: 'white',
@@ -64,7 +64,7 @@ test('find constrained value', () => {
 // could be for the next pass though
 test('no constrained value found, return original', () => {
   expect(
-    transformTheemoValue(
+    resolveValueConstraint(
       toTransformedToken({
         value: {
           value: 'white',
@@ -94,7 +94,7 @@ test('no constrained value found, return original', () => {
 
 test('find computed and constrained value', () => {
   expect(
-    transformTheemoValue(
+    resolveValueConstraint(
       toTransformedToken({
         value: {
           value: 'white',

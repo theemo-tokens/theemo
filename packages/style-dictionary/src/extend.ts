@@ -1,13 +1,10 @@
 import { cssPropertiesFormater } from './formats/css-properties';
 import { w3cTokenJsonParser } from './parsers/w3c-token-json-parser';
 import { theemoTokenPreprocessor } from './preprocessors/theemo-token';
+import { attributeConstraintsTransform } from './transforms/attribute-constraints';
 import { colorLightDarkCssTransform } from './transforms/color-light-dark-css';
-import { namePathKebabTransform } from './transforms/name-path-kebab';
-import { shadowCssTransform } from './transforms/shadow-css';
-import { theemoAttributesTransform } from './transforms/theemo-attributes';
-import { theemoColorValueTransform } from './transforms/theemo-color-value';
-import { theemoValueTransform } from './transforms/theemo-value';
-import { typographyCssTransform } from './transforms/typography-css';
+import { colorTheemoTransform } from './transforms/color-transforms';
+import { valueResolveConstraintTransform } from './transforms/value-resolve-constraint';
 
 import type StyleDictionary from 'style-dictionary';
 
@@ -39,26 +36,28 @@ export const registerTheemo = (styleDictionary: StyleDictionary): void => {
 
   styleDictionary.registerFormat(cssPropertiesFormater);
 
-  styleDictionary.registerTransform(theemoAttributesTransform);
-  styleDictionary.registerTransform(theemoValueTransform);
-  styleDictionary.registerTransform(theemoColorValueTransform);
-  styleDictionary.registerTransform(namePathKebabTransform);
-  styleDictionary.registerTransform(typographyCssTransform);
-  styleDictionary.registerTransform(shadowCssTransform);
+  styleDictionary.registerTransform(attributeConstraintsTransform);
+  styleDictionary.registerTransform(valueResolveConstraintTransform);
+  styleDictionary.registerTransform(colorTheemoTransform);
   styleDictionary.registerTransform(colorLightDarkCssTransform);
 
   styleDictionary.registerTransformGroup({
     name: 'theemo',
     transforms: [
-      'theemo/attributes',
-      'theemo/value',
-      'theemo/transform',
-      'name/path/kebab',
-      'typography/css',
-      'shadow/css',
-      'time/seconds',
+      'name/kebab',
+      'attribute/constraints',
+      'value/resolve-constraint',
+      'color/transforms',
       'color/light-dark-css',
-      'color/css'
+      'color/css',
+      'fontFamily/css',
+      'cubicBezier/css',
+      'strokeStyle/css/shorthand',
+      'border/css/shorthand',
+      'typography/css/shorthand',
+      'transition/css/shorthand',
+      'shadow/css/shorthand',
+      'time/seconds'
     ]
   });
 };

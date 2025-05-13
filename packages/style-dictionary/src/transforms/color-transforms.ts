@@ -39,12 +39,12 @@ export function transformColor(token: TransformedToken, config: PlatformConfig =
 }
 
 /**
- * Apply color transformations on color tokens
+ * Apply color transformations
  *
  * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  */
-export const theemoColorValueTransform: Transform = {
-  name: 'theemo/transform',
+export const colorTheemoTransform: Transform = {
+  name: 'color/transform',
   type: 'value',
   transitive: true,
   filter: isColorTransform,

@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { transformColor } from '../../src/transforms/theemo-color-value';
+import { transformColor } from '../../src/transforms/color-transforms';
 import { toTransformedToken } from '../-utils';
 
 describe('HSL / CSS Transforms', () => {
