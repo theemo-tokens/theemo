@@ -4,7 +4,7 @@ import type { Constraints } from '@theemo/tokens';
 import type { PlatformConfig, TransformedToken } from 'style-dictionary';
 import type { Transform } from 'style-dictionary/types';
 
-export function transformTheemoValue(
+export function resolveValueConstraint(
   token: TransformedToken,
   config: PlatformConfig & { constraints?: Constraints } = {}
 ): unknown {
@@ -37,13 +37,13 @@ export function transformTheemoValue(
  *
  * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  */
-export const theemoValueTransform: Transform = {
-  name: 'theemo/value',
+export const valueResolveConstraintTransform: Transform = {
+  name: 'value/resolve-constraint',
   type: 'value',
   transitive: true,
   filter: (token) => isConstrainedValue(token.value),
   // @ts-expect-error for backwards compatibility
   matcher: (token: TransformedToken) => isConstrainedValue(token.value),
-  transformer: transformTheemoValue,
-  transform: transformTheemoValue
+  transformer: resolveValueConstraint,
+  transform: resolveValueConstraint
 };

@@ -27,10 +27,7 @@ export { w3cTokenJsonParser } from './parsers/w3c-token-json-parser';
 export { theemoTokenPreprocessor } from './preprocessors/theemo-token';
 
 // transforms
+export { attributeConstraintsTransform } from './transforms/attribute-constraints';
 export { colorLightDarkCssTransform } from './transforms/color-light-dark-css';
-export { namePathKebabTransform } from './transforms/name-path-kebab';
-export { shadowCssTransform } from './transforms/shadow-css';
-export { theemoAttributesTransform } from './transforms/theemo-attributes';
-export { theemoColorValueTransform } from './transforms/theemo-color-value';
-export { theemoValueTransform } from './transforms/theemo-value';
-export { typographyCssTransform } from './transforms/typography-css';
+export { colorTheemoTransform } from './transforms/color-transforms';
+export { valueResolveConstraintTransform } from './transforms/value-resolve-constraint';

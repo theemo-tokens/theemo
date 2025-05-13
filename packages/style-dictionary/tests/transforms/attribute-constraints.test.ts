@@ -1,9 +1,9 @@
 import { expect, test } from 'vitest';
 
-import { transformTheemoAttributes } from '../../src/transforms/theemo-attributes';
+import { copyAttributeConstraints } from '../../src/transforms/attribute-constraints';
 import { toTransformedToken } from '../-utils';
 
-test('transformTheemoAttributes()', () => {
+test('copyAttributeConstraints()', () => {
   const constraints = {
     features: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -12,10 +12,10 @@ test('transformTheemoAttributes()', () => {
   };
 
   expect(
-    transformTheemoAttributes(toTransformedToken({}), {
+    copyAttributeConstraints(toTransformedToken({}), {
       constraints
     })
   ).toStrictEqual({ constraints });
 
-  expect(transformTheemoAttributes(toTransformedToken({}), {})).toStrictEqual({});
+  expect(copyAttributeConstraints(toTransformedToken({}), {})).toStrictEqual({});
 });
