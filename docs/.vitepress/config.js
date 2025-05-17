@@ -48,12 +48,14 @@ export default withTwoslash(withMermaid(defineConfig({
             items: [
               { text: '@theemo/build', link: '/api/@theemo/build/' },
               { text: '@theemo/cli', link: '/api/@theemo/cli/' },
+              { text: '@theemo/ember', link: '/api/@theemo/ember/' },
               { text: '@theemo/figma', link: '/api/@theemo/figma/' },
               {
                 text: '@theemo/style-dictionary',
                 link: '/api/@theemo/style-dictionary/'
               },
               { text: '@theemo/sync', link: '/api/@theemo/sync/' },
+              { text: '@theemo/theme', link: '/api/@theemo/theme/' },
               {
                 text: '@theemo/tokens',
                 link: '/api/@theemo/tokens/'
@@ -209,21 +211,6 @@ export default withTwoslash(withMermaid(defineConfig({
           items: [
             { text: 'Overview', link: '/theming/frameworks' },
             { text: 'Ember', link: '/theming/ember' }
-          ]
-        }
-      ],
-      '/packages': [
-        {
-          items: [
-            { text: '@theemo/tokens', link: '/packages/tokens' },
-            { text: '@theemo/cli', link: '/packages/cli' },
-            { text: '@theemo/figma', link: '/packages/figma' },
-            {
-              text: '@theemo/style-dictionary',
-              link: '/packages/style-dictionary'
-            },
-            { text: '@theemo/build', link: '/packages/build' },
-            { text: '@theemo/vite', link: '/packages/vite' }
           ]
         }
       ],
