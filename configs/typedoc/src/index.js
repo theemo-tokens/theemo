@@ -2,8 +2,10 @@ export function definePackage(options = {}) {
   return {
     includeVersion: true,
     excludeInternal: true,
+    excludeExternals: true,
     excludeNotDocumented: true,
     disableSources: false,
+    sort: 'alphabetical',
     ...options
   };
 }
