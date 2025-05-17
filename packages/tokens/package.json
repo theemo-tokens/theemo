@@ -46,6 +46,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
+    "@theemo-config/typedoc": "workspace:*",
     "@types/lodash.merge": "^4.6.9",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",

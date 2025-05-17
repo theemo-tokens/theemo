@@ -12,6 +12,9 @@ importers:
 
   .:
     devDependencies:
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:configs/typedoc
       '@theemo/build':
         specifier: workspace:*
         version: link:packages/build
@@ -60,9 +63,6 @@ importers:
       markdown-it-multimd-table:
         specifier: 4.2.3
         version: 4.2.3
-      markdown-it-table:
-        specifier: ^4.1.1
-        version: 4.1.1
       mermaid:
         specifier: 11.6.0
         version: 11.6.0
@@ -132,6 +132,27 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
 
+  configs/typedoc:
+    devDependencies:
+      '@gossi/config-eslint':
+        specifier: ^0.14.0
+        version: 0.14.0(@babel/core@7.27.1)(@babel/eslint-parser@7.27.1(@babel/core@7.27.1)(eslint@8.57.1))(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.32.1(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint-plugin-ember@12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint-plugin-qunit@8.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
+      '@gossi/config-prettier':
+        specifier: ^0.10.0
+        version: 0.10.0(prettier@3.5.3)
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
+      typedoc:
+        specifier: ^0.28.4
+        version: 0.28.4(typescript@5.8.3)
+      typescript:
+        specifier: 5.8.3
+        version: 5.8.3
+
   packages/build:
     dependencies:
       lightningcss:
@@ -156,6 +177,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       '@theemo/theme':
         specifier: workspace:*
         version: link:../theme
@@ -218,6 +242,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       '@types/node':
         specifier: ^22.15.30
         version: 22.15.30
@@ -318,9 +345,9 @@ importers:
       '@theemo-config/tsconfig':
         specifier: workspace:*
         version: link:../../configs/tsconfig
-      '@theemo-config/tsdown':
+      '@theemo-config/typedoc':
         specifier: workspace:*
-        version: link:../../configs/tsdown
+        version: link:../../configs/typedoc
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
@@ -385,6 +412,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       '@types/lodash.isempty':
         specifier: ^4.4.9
         version: 4.4.9
@@ -437,6 +467,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
@@ -535,6 +568,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.34.0
         version: 8.34.0(@typescript-eslint/parser@8.34.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
@@ -581,6 +617,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       '@theemo-playground/ocean-theme':
         specifier: workspace:*
         version: link:../../playground/ocean-theme
@@ -627,6 +666,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       '@types/lodash.merge':
         specifier: ^4.6.9
         version: 4.6.9
@@ -667,6 +709,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
@@ -7583,10 +7628,6 @@ packages:
 
   markdown-it-multimd-table@4.2.3:
     resolution: {integrity: sha512-KepCr2OMJqm7IT6sOIbuqHGe+NERhgy66XMrc5lo6dHW7oaPzMDtYwR1EGwK16/blb6mCSg4jqityOe0o/H7HA==}
-
-  markdown-it-table@4.1.1:
-    resolution: {integrity: sha512-dzFHRwCe97sXD071Gw/LSIwgAcO2vNsT0BcPCmnrKhNW/W57Bnknl8EaC+j4hM3bAqus1CiVPcTQAvLkUfHLhw==}
-    engines: {node: '>12.6'}
 
   markdown-it-terminal@0.4.0:
     resolution: {integrity: sha512-NeXtgpIK6jBciHTm9UhiPnyHDdqyVIdRPJ+KdQtZaf/wR74gvhCNbw5li4TYsxRp5u3ZoHEF4DwpECeZqyCw+w==}
@@ -18351,8 +18392,6 @@ snapshots:
   markdown-it-deflist@3.0.0: {}
 
   markdown-it-multimd-table@4.2.3: {}
-
-  markdown-it-table@4.1.1: {}
 
   markdown-it-terminal@0.4.0(markdown-it@14.1.0):
     dependencies:

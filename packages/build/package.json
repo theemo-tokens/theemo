@@ -47,6 +47,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
+    "@theemo-config/typedoc": "workspace:*",
     "@theemo/theme": "workspace:*",
     "@types/node": "^22.15.30",
     "concurrently": "^9.1.2",

@@ -61,7 +61,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@rollup/plugin-babel": "^6.0.4",
     "@theemo-config/tsconfig": "workspace:*",
-    "@theemo-config/tsdown": "workspace:*",
+    "@theemo-config/typedoc": "workspace:*",
     "concurrently": "^9.1.2",
     "ember-source": "~6.4.0",
     "eslint": "^8.57.1",

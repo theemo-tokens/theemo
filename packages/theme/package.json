@@ -24,6 +24,7 @@
     },
     "./package.json": "./package.json"
   },
+  "type": "module",
   "scripts": {
     "build": "tsdown",
     "lint": "concurrently -g 'npm:lint:*(!fix)'",
@@ -44,6 +45,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
+    "@theemo-config/typedoc": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
