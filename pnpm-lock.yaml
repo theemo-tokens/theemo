@@ -83,8 +83,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -129,8 +129,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -188,8 +188,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -221,8 +221,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -364,8 +364,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -407,8 +407,8 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -456,8 +456,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -505,8 +505,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -551,8 +551,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -591,8 +591,8 @@ importers:
         specifier: ^4.40.2
         version: 4.40.2
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       type-fest:
         specifier: ^4.41.0
         version: 4.41.0
@@ -854,8 +854,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.10
-        version: 0.11.10(typescript@5.8.3)
+        specifier: ^0.11.11
+        version: 0.11.11(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -9250,8 +9250,8 @@ packages:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
 
-  tsdown@0.11.10:
-    resolution: {integrity: sha512-AMXl1b3xoMoBIVxWzeo1bxDbnfxF6VK5ZvtrWsQMAm5nk6sYFqZiaVLp8y5/PFgxI80pUrlXctwCM6bs3HpDuw==}
+  tsdown@0.11.11:
+    resolution: {integrity: sha512-Hd3rOtoOKsHxBOQ9PhNkwe6nfkLtELQaV6cvIvqzVnU3SS42DChIdtK1kR48F9yBSrc7/InuLTlpayQbys18mw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -20181,7 +20181,7 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  tsdown@0.11.10(typescript@5.8.3):
+  tsdown@0.11.11(typescript@5.8.3):
     dependencies:
       ansis: 4.0.0
       cac: 6.7.14
