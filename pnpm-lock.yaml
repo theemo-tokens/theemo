@@ -83,8 +83,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -129,8 +129,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -188,8 +188,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -221,8 +221,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -364,8 +364,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -407,8 +407,8 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -456,8 +456,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -505,8 +505,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -551,8 +551,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -591,8 +591,8 @@ importers:
         specifier: ^4.40.2
         version: 4.40.2
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       type-fest:
         specifier: ^4.41.0
         version: 4.41.0
@@ -854,8 +854,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.3
-        version: 0.11.9(typescript@5.8.3)
+        specifier: ^0.11.10
+        version: 0.11.10(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -8409,8 +8409,8 @@ packages:
   robust-predicates@3.0.2:
     resolution: {integrity: sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==}
 
-  rolldown-plugin-dts@0.12.1:
-    resolution: {integrity: sha512-w/gLkL1Up+YhMGEM6SsyB/gqqYQoA0I3pY3it/UmLN5LS88aRbURY9SJRg/hrYvMjzY9aONSRZ8MmZ8UnG1PPg==}
+  rolldown-plugin-dts@0.13.1:
+    resolution: {integrity: sha512-CFoolC9/YQlETg1DqatEq3Q4UyMqBsL/m5zpsQuDmNJ8MHIUqzMS2iLEOuRIt/Q8yOs18sKDYzZ3aT8vvrbfGA==}
     engines: {node: '>=20.18.0'}
     peerDependencies:
       rolldown: ^1.0.0-beta.8-commit.2a5c6a6
@@ -9257,8 +9257,8 @@ packages:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
 
-  tsdown@0.11.9:
-    resolution: {integrity: sha512-Lp1lflza4U+Ennezzj7NyC3+OtoeAn7TuOe0fm7uKl0lt71I4gCGSj1HAdInRMD3uQhKUH3uU7nj+MpRSXL7Lg==}
+  tsdown@0.11.10:
+    resolution: {integrity: sha512-AMXl1b3xoMoBIVxWzeo1bxDbnfxF6VK5ZvtrWsQMAm5nk6sYFqZiaVLp8y5/PFgxI80pUrlXctwCM6bs3HpDuw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
@@ -19051,12 +19051,13 @@ snapshots:
 
   robust-predicates@3.0.2: {}
 
-  rolldown-plugin-dts@0.12.1(rolldown@1.0.0-beta.8-commit.d95f99e)(typescript@5.8.3):
+  rolldown-plugin-dts@0.13.1(rolldown@1.0.0-beta.8-commit.d95f99e)(typescript@5.8.3):
     dependencies:
       '@babel/generator': 7.27.1
       '@babel/parser': 7.27.2
       '@babel/types': 7.27.1
       ast-kit: 2.0.0
+      birpc: 2.3.0
       debug: 4.4.1
       dts-resolver: 2.0.1
       get-tsconfig: 4.10.0
@@ -20190,7 +20191,7 @@ snapshots:
 
   ts-dedent@2.2.0: {}
 
-  tsdown@0.11.9(typescript@5.8.3):
+  tsdown@0.11.10(typescript@5.8.3):
     dependencies:
       ansis: 4.0.0
       cac: 6.7.14
@@ -20200,7 +20201,7 @@ snapshots:
       empathic: 1.1.0
       hookable: 5.5.3
       rolldown: 1.0.0-beta.8-commit.d95f99e
-      rolldown-plugin-dts: 0.12.1(rolldown@1.0.0-beta.8-commit.d95f99e)(typescript@5.8.3)
+      rolldown-plugin-dts: 0.13.1(rolldown@1.0.0-beta.8-commit.d95f99e)(typescript@5.8.3)
       semver: 7.7.2
       tinyexec: 1.0.1
       tinyglobby: 0.2.13
