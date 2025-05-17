@@ -8,8 +8,7 @@ Dictionary v3.
 
 It is part of `registerTheemo()` or use it manually:
 
-```js
-// config.js
+```js [config.js] twoslash
 import StyleDictionary from 'style-dictionary';
 import { w3cTokenJsonParser } from '@theemo/style-dictionary';
 

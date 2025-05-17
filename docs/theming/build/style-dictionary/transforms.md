@@ -1,20 +1,23 @@
 # Transforms
 
-## `name/path/kebab`
+## `attribute/constraints`
 
-Transforms the canonical name of a token (with `.` as separator) into kebap case
-(using `-` as separator)
+Copies constraints from platform to the token, so they are available for
+filtering.
 
-```ts
-import { namePathKebab } from '@theemo/style-dictionary';
+Manual Registration:
 
-StyleDictionary.registerTransform(namePathKebab);
+```js [config.js] twoslash
+import StyleDictionary from 'style-dictionary';
+import { attributeConstraintsTransform } from '@theemo/style-dictionary';
+
+StyleDictionary.registerTransform(attributeConstraintsTransform);
 
 export default {
   source: ['tokens/**/*.json'],
   platforms: {
     css: {
-      transforms: ['name/path/kebab']
+      transforms: ['attribute/constraints']
     }
   }
 };
@@ -22,11 +25,9 @@ export default {
 
 ::: info
 
-- [API Docs](../../../api/@theemo/style-dictionary/variables/namePathKebabTransform.md)
+- [API Docs](../../../api/@theemo/style-dictionary/variables/attributeConstraintsTransform.md)
 
 :::
-
-## `attribute/constraints`
 
 ## `value/resolve-constraint`
 
@@ -35,7 +36,7 @@ the actual value based on the given constraint for a platform.
 
 Turning this:
 
-```json
+```json [token]
 {
   "$value": [
     {
@@ -57,7 +58,7 @@ Turning this:
 
 Into:
 
-```json
+```json [token]
 {
   "$value": "#12544a",
   "$type": "color"
@@ -66,10 +67,11 @@ Into:
 
 Manual Registration:
 
-```ts
-import { theemoValueTransform } from '@theemo/style-dictionary';
+```js [config.js] twoslash
+import StyleDictionary from 'style-dictionary';
+import { valueResolveConstraintTransform } from '@theemo/style-dictionary';
 
-StyleDictionary.registerTransform(theemoValueTransform);
+StyleDictionary.registerTransform(valueResolveConstraintTransform);
 
 export default {
   source: ['tokens/**/*.json'],
@@ -80,7 +82,7 @@ export default {
           'color-scheme': 'light'
         }
       },
-      transforms: ['theemo/value']
+      transforms: ['value/resolve-constraint']
     }
   }
 };
@@ -88,70 +90,106 @@ export default {
 
 ::: info
 
-- [API Docs](../../../api/@theemo/style-dictionary/variables/theemoValueTransform.md)
+- [API Docs](../../../api/@theemo/style-dictionary/variables/valueResolveConstraintTransform.md)
 
 :::
 
-## `color/light-dark-css`
+## `color/css/light-dark`
 
-## `color/theemo`
+Will turn your token into the CSS `light-dark()` function, when a token supports
+`light` and `dark` `color-scheme` constraint.
+
+Turning this:
+
+```json [token]
+{
+  "$value": [
+    {
+      "value": "#12544a",
+      "features": {
+        "color-scheme": "light"
+      }
+    },
+    {
+      "value": "#80e5d6",
+      "features": {
+        "color-scheme": "dark"
+      }
+    }
+  ],
+  "$type": "color"
+}
+```
+
+Into:
+
+```css
+:root {
+  --token-name: light-dark(#12544a, #80e5d6);
+}
+```
+
+## `color/transforms`
 
 Given your value is applying transformations (coming directly from Figma with
 the Theemo Figma Plugin), this transforms handles them.
 
 Computing this formula:
 
-```json
+```json [token]
 {
   "$value": { 
-    "value": "#ff0088", 
-    "transforms": { 
-      "alpha": -10 
-    } 
+    "value": "#f00",
+    "transforms": {
+      "hue": 180
+    }
   },
   "$type": "color"
 }
 ```
 
-and resolving it into the final value.
+to:
+
+```json [token]
+{
+  "$value": "#ff0800",
+  "$type": "color"
+}
+```
+
+you can use the `useCSSColorTransform` option to turn this into the CSS color
+function applying the tranform:
+
+```json [token]
+{
+  "$value": "hsl(from red calc(h + 180) s l)",
+  "$type": "color"
+}
+```
 
 Manual Registration:
 
-```ts
-import { theemoColorValueTransform } from '@theemo/style-dictionary';
+```js [config.js] twoslash
+import StyleDictionary from 'style-dictionary';
+import { colorTransform } from '@theemo/style-dictionary';
 
-styleDictionary.registerTransform({
-  name: 'theemo/transform',
-  ...theemoColorValueTransform
-});
+StyleDictionary.registerTransform(colorTransform);
+
+export default {
+  source: ['tokens/**/*.json'],
+  platforms: {
+    css: {
+      options: {
+        useCSSColorTransform: true
+      },
+      transforms: ['color/transforms']
+    }
+  }
+};
 ```
 
-## `typography/css`
+::: info
 
-Turns a `typography` token type and turns it into a CSS `font` declaration.
+- [API Docs](../../../api/@theemo/style-dictionary/variables/colorTransform.md)
 
-Manual Registration:
-
-```ts
-import { typographyCssTransform } from '@theemo/style-dictionary';
-
-styleDictionary.registerTransform({
-  name: 'typography/css',
-  ...typographyCssTransform
-});
-```
-
-## `shadow/css`
-
-Turns a `shadow` token type and turns it into a CSS `box-shadow` declaration.
-
-Manual Registration:
-
-```ts
-import { shadowCssTransform } from '@theemo/style-dictionary';
-
-styleDictionary.registerTransform({
-  name: 'shadow/css',
-  ...shadowCssTransform
-});
-```
+:::

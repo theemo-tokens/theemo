@@ -10,7 +10,7 @@ Dictionary](https://styledictionary.com/reference/config/) (which by
 default is `config.js`). Without any constraints being used, the
 configuration for Style Dictionary is fairly small and straight forward:
 
-```js
+```js [config.js] twoslash
 import StyleDictionary from 'style-dictionary';
 import { registerTheemo } from '@theemo/style-dictionary';
 
