@@ -2,8 +2,8 @@ import { cssPropertiesFormater } from './formats/css-properties';
 import { w3cTokenJsonParser } from './parsers/w3c-token-json-parser';
 import { theemoTokenPreprocessor } from './preprocessors/theemo-token';
 import { attributeConstraintsTransform } from './transforms/attribute-constraints';
-import { colorLightDarkCssTransform } from './transforms/color-light-dark-css';
-import { colorTheemoTransform } from './transforms/color-transforms';
+import { colorCssLightDarkTransform } from './transforms/color-css-light-dark';
+import { colorTransform } from './transforms/color-transforms';
 import { valueResolveConstraintTransform } from './transforms/value-resolve-constraint';
 
 import type StyleDictionary from 'style-dictionary';
@@ -38,8 +38,8 @@ export const registerTheemo = (styleDictionary: StyleDictionary): void => {
 
   styleDictionary.registerTransform(attributeConstraintsTransform);
   styleDictionary.registerTransform(valueResolveConstraintTransform);
-  styleDictionary.registerTransform(colorTheemoTransform);
-  styleDictionary.registerTransform(colorLightDarkCssTransform);
+  styleDictionary.registerTransform(colorTransform);
+  styleDictionary.registerTransform(colorCssLightDarkTransform);
 
   styleDictionary.registerTransformGroup({
     name: 'theemo',

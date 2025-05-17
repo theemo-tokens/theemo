@@ -19,6 +19,28 @@ test('matchesConstraints()', () => {
       { features: { 'color-scheme': 'light' } }
     )
   ).toBeTruthy();
+
+  expect(
+    matchesConstraints(
+      toTransformedToken({
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        value: { value: '#ff0088', features: { 'color-scheme': 'light' } }
+      }),
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      { features: { 'color-scheme': ['light', 'dark'] } }
+    )
+  ).toBeTruthy();
+
+  expect(
+    matchesConstraints(
+      toTransformedToken({
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        value: { value: '#ff0088', features: { 'color-scheme': 'light' } }
+      }),
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      { features: { 'color-scheme': 'dark' } }
+    )
+  ).toBeFalsy();
 });
 
 test('isConstrainedToken()', () => {

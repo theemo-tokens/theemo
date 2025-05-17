@@ -48,12 +48,43 @@ function filter(token: TransformedToken) {
 }
 
 /**
- * Convert a constrained `color` token to a value that uses `light-dark()` CSS function
+ * Will turn your token into the CSS `light-dark()` function, when a token
+ * supports `light` and `dark` `color-scheme` constraint.
  *
- * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ * @example
+ *
+ * Turning this:
+ *
+ * ```json
+ * {
+ *   "$value": [
+ *     {
+ *       "value": "#12544a",
+ *       "features": {
+ *         "color-scheme": "light"
+ *       }
+ *     },
+ *     {
+ *       "value": "#80e5d6",
+ *       "features": {
+ *         "color-scheme": "dark"
+ *       }
+ *     }
+ *   ],
+ *   "$type": "color"
+ * }
+ * ```
+ *
+ * Into:
+ *
+ * ```css
+ * :root {
+ *   --token-name: light-dark(#12544a, #80e5d6);
+ * }
+ * ```
  */
-export const colorLightDarkCssTransform: Transform = {
-  name: 'color/light-dark-css',
+export const colorCssLightDarkTransform: Transform = {
+  name: 'color/css/light-dark',
   type: 'value',
   transitive: true,
   filter,

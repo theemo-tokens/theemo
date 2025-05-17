@@ -20,7 +20,25 @@ export function copyAttributeConstraints(
 /**
  * Copies constraints from platform to the token, so they are available for filtering
  *
- * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ * @example
+ *
+ * Usage:
+ *
+ * ```js
+ * import StyleDictionary from 'style-dictionary';
+ * import { attributeConstraintsTransform } from '@theemo/style-dictionary';
+ *
+ * StyleDictionary.registerTransform(attributeConstraintsTransform);
+ *
+ * export default {
+ *   source: ['tokens/**\/*.json'],
+ *   platforms: {
+ *     css: {
+ *       transforms: ['attribute/constraints']
+ *     }
+ *   }
+ * };
+ * ```
  */
 export const attributeConstraintsTransform: Transform = {
   name: 'attribute/constraints',

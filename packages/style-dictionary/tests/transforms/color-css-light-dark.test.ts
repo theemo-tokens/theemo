@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
 
-import { transformColorLightDark } from '../../src/transforms/color-light-dark-css';
+import { transformColorLightDark } from '../../src/transforms/color-css-light-dark';
 import { toTransformedToken } from '../-utils';
 
 test('transformColorLightDark()', () => {

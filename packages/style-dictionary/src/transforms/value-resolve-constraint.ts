@@ -33,9 +33,66 @@ export function resolveValueConstraint(
 }
 
 /**
- * Resolves the token value based on the provided constraints
+ * Resolves the token value based on the provided constraints to make it
+ * processable by Style Dictionary.
  *
- * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ * @example
+ *
+ * Usage:
+ *
+ * ```js
+ * import StyleDictionary from 'style-dictionary';
+ * import { valueResolveConstraintTransform } from '@theemo/style-dictionary';
+ *
+ * StyleDictionary.registerTransform(valueResolveConstraintTransform);
+ *
+ * export default {
+ *   source: ['tokens/**\/*.json'],
+ *   platforms: {
+ *     css: {
+ *       constraints: {
+ *         features: {
+ *           'color-scheme': 'light'
+ *         }
+ *       },
+ *       transforms: ['value/resolve-constraint']
+ *     }
+ *   }
+ * };
+ * ```
+ *
+ * @example
+ *
+ * Turning this:
+ *
+ * ```json
+ * {
+ *   "$value": [
+ *     {
+ *       "value": "#12544a",
+ *       "features": {
+ *         "color-scheme": "light"
+ *       }
+ *     },
+ *     {
+ *       "value": "#80e5d6",
+ *       "features": {
+ *         "color-scheme": "dark"
+ *       }
+ *     }
+ *   ],
+ *   "$type": "color"
+ * }
+ * ```
+ *
+ * Into:
+ *
+ * ```json
+ * {
+ *   "$value": "#12544a",
+ *   "$type": "color"
+ * }
+ * ```
  */
 export const valueResolveConstraintTransform: Transform = {
   name: 'value/resolve-constraint',
