@@ -33,13 +33,13 @@ For computational tokens (mentioned in [Traits](./traits.md)) for dimension and 
 
 Beginner math to produce [modular scales](https://www.modularscale.com) (Kellum & Brown) with this formula:
 
-```
+```txt
 scale(n) = base * ratio ^ n
 ```
 
 The formula has three parameters: `base` (static), `ratio` (static) and `n` (dynamic). A potential format to store formula would be:
 
-```
+```json
 {
   "formula": {
     "name": "modular-scale",

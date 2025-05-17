@@ -35,7 +35,7 @@ A nominal scale helps to categorize design tokens into mutually exclusive, discr
 
 (2) Decisions within an object. An object (as from the example above), can hold choices and decisions.
 
-```
+```txt
 - shapes.shadow.action
 - shapes.shadow.container
 - shapes.shadow.popup
@@ -57,7 +57,7 @@ For example, picking a font-size given the aforementioned scale, which one shoul
 
 Additionally it puts a linguistic burden on token consumers in understanding these tokens align on a ranked scale. Steps are constructed with a semantic differential (Singer, 2002, p. 136), which can cause ambiguity in their naming and become problematic for token consumers. An exercise to demonstrate this, please pick the token which contains the lowest number:
 
-```
+```txt
 - sizing.normal
 - sizing.more-than-normal
 - sizing.thiniest
@@ -75,7 +75,7 @@ An ordinal scale allows categorization and ranking, and infers equal distance be
 
 Numeric design tokens are aligned on an interval scale and allow sorting. Similar to ordinal tokens they are considered _choices_. Examples can be found in color palettes:
 
-```
+```txt
 - palette-blue-100
 - palette-blue-200
 - palette-blue-...
@@ -86,7 +86,7 @@ Numeric design tokens are aligned on an interval scale and allow sorting. Simila
 
 and sizing:
 
-```
+```txt
 - sizing-3
 - sizing-2
 - sizing-1

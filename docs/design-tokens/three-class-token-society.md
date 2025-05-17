@@ -8,7 +8,27 @@ Tokens are grouped into three tiers:
 2. Semantic or purpose
 3. Component
 
-[Lukas Oppermann (2022)](https://uxdesign.cc/naming-design-tokens-9454818ed7cb) collated and [Jacob Miller (2023)](https://twitter.com/pwnies/status/1641162071449673728) ran a poll on Twitter about the various token level names . The levels are based on the fact that design tokens propagate through the system ([Nathan Curtis, 2017](https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421)) and brings visibility to the references as explained by [Romina Kavčič (2022)](https://designstrategy.guide/design-management/design-tokens-101/), [Ishan Manandhar (2020)](https://uxdesign.cc/design-tokens-how-to-use-them-effectively-d495ff05cbbf) and Brad Frost ([2018](https://bradfrost.com/blog/post/creating-themeable-design-systems/), [2022](https://www.youtube.com/watch?v=JbxKTBvSLeY)). Each author additionally explains the use-case or purpose for each group in their respective systems and with that concepts or patterns on how to use each group or their target area (eg. global vs local tokens). When before mentioned authors visualize the levels, they use a top to bottom rsp. bottom to direction. [Stefanie Fluin (2022)](https://stefaniefluin.medium.com/the-pyramid-design-token-structure-the-best-way-to-format-organize-and-name-your-design-tokens-ca81b9d8836d) speaks about a pyramid and [Oscar Gonzalez (2021)](https://uxdesign.cc/design-tokens-cheatsheet-927fc1404099) puts it into a visualization:
+[Lukas Oppermann (2022)](https://uxdesign.cc/naming-design-tokens-9454818ed7cb)
+collated and [Jacob Miller
+(2023)](https://twitter.com/pwnies/status/1641162071449673728) ran a poll on
+Twitter about the various token level names . The levels are based on the fact
+that design tokens propagate through the system ([Nathan Curtis,
+2017](https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421))
+and brings visibility to the references as explained by [Romina Kavčič
+(2022)](https://designstrategy.guide/design-management/design-tokens-101/),
+[Ishan Manandhar
+(2020)](https://uxdesign.cc/design-tokens-how-to-use-them-effectively-d495ff05cbbf)
+and Brad Frost
+([2018](https://bradfrost.com/blog/post/creating-themeable-design-systems/),
+[2022](https://www.youtube.com/watch?v=JbxKTBvSLeY)). Each author additionally
+explains the use-case or purpose for each group in their respective systems and
+with that concepts or patterns on how to use each group or their target area
+(eg. global vs local tokens). When before mentioned authors visualize the
+levels, they use a top to bottom rsp. bottom to top direction. [Stefanie Fluin
+(2022)](https://stefaniefluin.medium.com/the-pyramid-design-token-structure-the-best-way-to-format-organize-and-name-your-design-tokens-ca81b9d8836d)
+speaks about a pyramid and [Oscar Gonzalez
+(2021)](https://uxdesign.cc/design-tokens-cheatsheet-927fc1404099) puts it into
+a visualization:
 
 !#["Design Token Types" (Gonzalez, 2021)](./assets/token-society-pyramid.webp){.fig-75}
 
@@ -20,7 +40,21 @@ Does the question even make sense? Well, no. Not at all! It is the yellow elepha
 
 There are a couple of reasons, where the idea of a three class token society will fall short for organizing design token.
 
-(1) None of these articles explicitly mentions or allows exceptions of tokens, that would not fit into any of these tiers. They (miss)educate the illusion, that _all_ tokens have to follow this sequence. (2) They don't offer an alternative location to home design tokens around a particular topic, not being part of any tiers. (3) No difference is made between tokens for designers and consumers - are color palette tokens for consumers? (4) Readers might implicitly understand, tier 1 tokens are for token designers and tier 2 and tier 3 tokens are for token consumers? This is very assumptive, no explicit statements are made and eliminates predictability and stability guarantees. (5) Coupling an organization structure to a "technical" aspect only ever allows growth within the permutations of the aspect itself, meaning the organization has to scale with the given tiers (6) Design tokens that are outliers to the system are _valid_ but it feels awkward to have them, as they feel displaced.
+1. None of these articles explicitly mentions or allows exceptions of tokens,
+   that would not fit into any of these tiers. They (miss)educate the illusion,
+   that _all_ tokens have to follow this sequence.
+2. They don't offer an alternative location to home design tokens around a
+   particular topic, not being part of any tiers.
+3. No difference is made between tokens for designers and consumers - are color
+   palette tokens for consumers?
+4. Readers might implicitly understand, tier 1 tokens are for token designers
+   and tier 2 and tier 3 tokens are for token consumers? This is very
+   assumptive, no explicit statements are made and eliminates predictability and
+   stability guarantees.
+5. Coupling an organization structure to a "technical" aspect only ever allows
+   growth within the permutations of the aspect itself, meaning the organization
+   has to scale with the given tiers
+6. Design tokens that are outliers to the system are _valid_ but it feels awkward to have them, as they feel displaced.
 
 Organizing tokens is to give these groups meaning and purpose in terms of the system rather than the technical aspect they are sorted by. What happens when tokens, token organization or token naming are coupled with their technical aspects? Switching perspective from token designers to token consumers makes this visible:
 

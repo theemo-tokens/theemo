@@ -87,7 +87,7 @@ Instead of hardcoding values, references are the mechanic to assign the value. T
 
 The token  `intent-action-base-background` has permutations of values. Here is the formula:
 
-```
+```txt
 token = contrast x scheme x chroma x skin
 ```
 
@@ -100,7 +100,7 @@ In the example:
 
 Let's do the math:
 
-```
+```txt
 intent-action-base-background = 3 * 3 * 4 * 4 = 144
 ```
 
