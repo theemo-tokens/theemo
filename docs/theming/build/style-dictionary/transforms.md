@@ -190,6 +190,6 @@ export default {
 
 ::: info
 
-- [API Docs](../../../api/@theemo/style-dictionary/variables/colorTransform.md)
+- API Docs: TODO
 
 :::
