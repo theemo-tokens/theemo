@@ -141,24 +141,6 @@ export default withTwoslash(withMermaid(defineConfig({
             {
               text: 'Variables Export',
               link: '/design/figma/variables-export'
-            },
-            {
-              text: 'v1',
-              collapsed: true,
-              items: [
-                { text: 'References', link: '/design/figma/v1/references' },
-                {
-                  text: 'Automatic Color Palettes',
-                  link: '/design/figma/v1/automatic-color-palette'
-                },
-                { text: 'Contexts', link: '/design/figma/v1/contexts' },
-                { text: 'Sync', link: '/design/figma/v1/sync' },
-                {
-                  text: 'Best Practices',
-                  link: '/design/figma/v1/best-practices'
-                },
-                { text: 'FAQ', link: '/design/figma/v1/faq' }
-              ]
             }
           ]
         }
