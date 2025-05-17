@@ -39,12 +39,72 @@ export function transformColor(token: TransformedToken, config: PlatformConfig =
 }
 
 /**
- * Apply color transformations
+ * Apply color transformations. Either during build time - or - at runtime using
+ * CSS color functions.
  *
- * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
+ * @example
+ *
+ * Usage:
+ *
+ * ```js
+ * import StyleDictionary from 'style-dictionary';
+ * import { colorTransform } from '@theemo/style-dictionary';
+ *
+ * StyleDictionary.registerTransform(colorTransform);
+ *
+ * export default {
+ *   source: ['tokens/**\/*.json'],
+ *   platforms: {
+ *     css: {
+ *       options: {
+ *         useCSSColorTransform: true
+ *       },
+ *       transforms: ['color/transforms']
+ *     }
+ *   }
+ * };
+ * ```
+ *
+ * @example
+ *
+ * Calculate during build time.
+ *
+ * Computing this formula:
+ *
+ * ```json
+ * {
+ *   "$value": {
+ *     "value": "#f00",
+ *     "transforms": {
+ *       "hue": 180
+ *     }
+ *   },
+ *   "$type": "color"
+ * }
+ * ```
+ *
+ * to:
+ *
+ * ```json [token]
+ * {
+ *   "$value": "#ff0800",
+ *   "$type": "color"
+ * }
+ * ```
+ *
+ * @example
+ *
+ * When using `useCSSColorTransform` the output looks like this:
+ *
+ * ```json
+ * {
+ *   "$value": "hsl(from red calc(h + 180) s l)",
+ *   "$type": "color"
+ * }
+ * ```
  */
-export const colorTheemoTransform: Transform = {
-  name: 'color/transform',
+export const colorTransform: Transform = {
+  name: 'color/transforms',
   type: 'value',
   transitive: true,
   filter: isColorTransform,

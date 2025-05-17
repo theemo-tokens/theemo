@@ -1,5 +1,5 @@
 const StyleDictionary = require('style-dictionary');
-const { registerTheemo, makeConstrainedFilter } = require('@theemo/style-dictionary');
+const { registerTheemo, matchesConstraints } = require('@theemo/style-dictionary');
 
 registerTheemo(StyleDictionary);
 
@@ -37,7 +37,7 @@ module.exports = {
             outputReferences: true,
             showFileHeader: false
           },
-          filter: makeConstrainedFilter({
+          filter: (token) => matchesConstraints(token, {
             features: {
               'color-scheme': 'dark'
             }
@@ -61,7 +61,7 @@ module.exports = {
             outputReferences: true,
             showFileHeader: false
           },
-          filter: makeConstrainedFilter({
+          filter: (token) => matchesConstraints(token, {
             features: {
               'color-scheme': 'light'
             }

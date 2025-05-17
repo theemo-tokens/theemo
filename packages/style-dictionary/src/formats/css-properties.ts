@@ -31,6 +31,61 @@ export function formatTokenIntoCSSProperty(token: TransformedToken): string {
   return output;
 }
 
+/**
+ * Creates CSS `@property` tokens with a registered `type` so CSS knows what to
+ * do with your value. CSS `@property`'s represent the _raw_ value and as such cannot contain references. For this the `isCSSProperty()` filter is available
+ * to verify only those tokens suitable for use as `@property` will pass.
+ *
+ * @example
+ *
+ * Usage:
+ *
+ * ```js
+ * import StyleDictionary from 'style-dictionary';
+ * import { isCSSProperty, cssPropertiesFormater } from '@theemo/style-dictionary';
+ *
+ * StyleDictionary.registerFormat(cssPropertiesFormater);
+ *
+ * export default {
+ *   source: ['tokens/**\/*.json'],
+ *   platforms: {
+ *     css: {
+ *       files: [
+ *         {
+ *           format: 'css/properties',
+ *           destination: 'properties.css',
+ *           filter: isCSSProperty
+ *         }
+ *       ]
+ *     }
+ *   }
+ * };
+ * ```
+ *
+ * @example
+ *
+ * Output:
+ *
+ * ```css
+ * @property --palette-negative-500 {
+ *   syntax: "<color>";
+ *   inherits: true;
+ *   initial-value: #a517e8;
+ * }
+ *
+ * @property --sizing-base {
+ *   syntax: "<length>";
+ *   inherits: true;
+ *   initial-value: 1em;
+ * }
+ *
+ * @property --sizing-ratio {
+ *   syntax: "<number>";
+ *   inherits: true;
+ *   initial-value: 1.3;
+ * }
+ * ```
+ */
 export const cssPropertiesFormater: Format = {
   name: 'css/properties',
   format: async ({ dictionary, file }) => {

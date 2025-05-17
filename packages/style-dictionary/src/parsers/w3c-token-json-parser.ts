@@ -13,10 +13,22 @@ function parse({ contents }: { contents: string }) {
 }
 
 /**
- * Parses json and replace `$value` with `value` and `$description`
- * with `comment` to make it work with style dictionary
+ * The W3C parser is able to read the [W3C token
+ * format](https://tr.designtokens.org/format/) and is recommended for Style
+ * Dictionary v3.
  *
  * From {@link https://github.com/lukasoppermann/style-dictionary-utils}
+ *
+ * @example
+ *
+ * Usage:
+ *
+ * ```js
+ * import StyleDictionary from 'style-dictionary';
+ * import { w3cTokenJsonParser } from '@theemo/style-dictionary';
+ *
+ * StyleDictionary.registerParser(w3cTokenJsonParser);
+ * ```
  *
  * @see [Extending Style Dictionary](https://theemo.io/sync/style-dictionary/extensions)
  * @author Lukas Oppermann

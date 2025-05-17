@@ -11,9 +11,8 @@ export {
   isConstrainedByPlatform,
   isConstrainedToken,
   isNoConstrainedToken,
-  makeConstrainedFilter,
   matchesConstraints
-} from './filters/constrained';
+} from './filters/constraints';
 export { isCSSProperty, isNoCSSProperty } from './filters/css-property';
 export { isNoReferenceToken, isReferenceToken } from './filters/reference';
 
@@ -28,6 +27,6 @@ export { theemoTokenPreprocessor } from './preprocessors/theemo-token';
 
 // transforms
 export { attributeConstraintsTransform } from './transforms/attribute-constraints';
-export { colorLightDarkCssTransform } from './transforms/color-light-dark-css';
-export { colorTheemoTransform } from './transforms/color-transforms';
+export { colorCssLightDarkTransform } from './transforms/color-css-light-dark';
+export { colorTransform } from './transforms/color-transforms';
 export { valueResolveConstraintTransform } from './transforms/value-resolve-constraint';
