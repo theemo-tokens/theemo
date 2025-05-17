@@ -54,15 +54,15 @@ importers:
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
-      markdown-it-attrs:
-        specifier: 4.3.1
-        version: 4.3.1(markdown-it@14.1.0)
       markdown-it-deflist:
         specifier: 3.0.0
         version: 3.0.0
       markdown-it-multimd-table:
         specifier: 4.2.3
         version: 4.2.3
+      markdown-it-table:
+        specifier: ^4.1.1
+        version: 4.1.1
       mermaid:
         specifier: 11.6.0
         version: 11.6.0
@@ -7578,17 +7578,15 @@ packages:
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
-  markdown-it-attrs@4.3.1:
-    resolution: {integrity: sha512-/ko6cba+H6gdZ0DOw7BbNMZtfuJTRp9g/IrGIuz8lYc/EfnmWRpaR3CFPnNbVz0LDvF8Gf1hFGPqrQqq7De0rg==}
-    engines: {node: '>=6'}
-    peerDependencies:
-      markdown-it: '>= 9.0.0'
-
   markdown-it-deflist@3.0.0:
     resolution: {integrity: sha512-OxPmQ/keJZwbubjiQWOvKLHwpV2wZ5I3Smc81OjhwbfJsjdRrvD5aLTQxmZzzePeO0kbGzAo3Krk4QLgA8PWLg==}
 
   markdown-it-multimd-table@4.2.3:
     resolution: {integrity: sha512-KepCr2OMJqm7IT6sOIbuqHGe+NERhgy66XMrc5lo6dHW7oaPzMDtYwR1EGwK16/blb6mCSg4jqityOe0o/H7HA==}
+
+  markdown-it-table@4.1.1:
+    resolution: {integrity: sha512-dzFHRwCe97sXD071Gw/LSIwgAcO2vNsT0BcPCmnrKhNW/W57Bnknl8EaC+j4hM3bAqus1CiVPcTQAvLkUfHLhw==}
+    engines: {node: '>12.6'}
 
   markdown-it-terminal@0.4.0:
     resolution: {integrity: sha512-NeXtgpIK6jBciHTm9UhiPnyHDdqyVIdRPJ+KdQtZaf/wR74gvhCNbw5li4TYsxRp5u3ZoHEF4DwpECeZqyCw+w==}
@@ -18350,13 +18348,11 @@ snapshots:
 
   mark.js@8.11.1: {}
 
-  markdown-it-attrs@4.3.1(markdown-it@14.1.0):
-    dependencies:
-      markdown-it: 14.1.0
-
   markdown-it-deflist@3.0.0: {}
 
   markdown-it-multimd-table@4.2.3: {}
+
+  markdown-it-table@4.1.1: {}
 
   markdown-it-terminal@0.4.0(markdown-it@14.1.0):
     dependencies:
