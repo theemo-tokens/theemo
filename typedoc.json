@@ -9,7 +9,6 @@
   ],
   "out": "./docs/api",
   "docsRoot": "./docs",
-  "excludeInternal": true,
   "plugin": [
     "typedoc-plugin-markdown",
     "typedoc-vitepress-theme"

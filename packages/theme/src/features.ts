@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import type { ValidationResult } from './validation';
+import type { Simplify } from 'type-fest';
 
 /**
  * Color Contrasts
@@ -104,7 +105,7 @@ export interface CustomFeature extends BaseFeature {
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme
  */
-export interface ColorSchemeFeature extends Omit<BaseFeature, 'options' | 'defaultOption'> {
+export interface ColorSchemeFeature extends BaseFeature {
   /**
    * Color scheme options. The first will be the default
    */
@@ -117,7 +118,7 @@ export interface ColorSchemeFeature extends Omit<BaseFeature, 'options' | 'defau
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  */
-export interface ColorContrastFeature extends Omit<BaseFeature, 'options'> {
+export interface ColorContrastFeature extends BaseFeature {
   defaultOption?: ColorContrast;
   options: ColorContrast[];
   browserFeature: 'color-contrast';
@@ -128,21 +129,34 @@ export interface ColorContrastFeature extends Omit<BaseFeature, 'options'> {
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
  */
-export interface MotionFeature extends Omit<BaseFeature, 'options'> {
+export interface MotionFeature extends BaseFeature {
   defaultOption?: Motion;
   options: Motion[];
   browserFeature: 'motion';
 }
 
+/**
+ * All features supported by browser mechanics
+ */
 export type BrowserFeature = ColorSchemeFeature | ColorContrastFeature | MotionFeature;
 
+/**
+ * All features that have model behvaior and thus require a default value
+ */
+export type ModalFeature = Simplify<
+  Exclude<Feature, ColorSchemeFeature> &
+    Required<Pick<Exclude<Feature, ColorSchemeFeature>, 'defaultOption'>>
+>;
+
+/**
+ * All features
+ */
 export type Feature = ColorSchemeFeature | ColorContrastFeature | MotionFeature | CustomFeature;
 
-// eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
-export type FeatureValue = ColorScheme | ColorContrast | Motion | string;
-
-export type ModalFeature = Exclude<Feature, ColorSchemeFeature> &
-  Required<Exclude<Feature, ColorSchemeFeature>['defaultOption']>;
+/**
+ * The value of all features
+ */
+export type FeatureValue = ColorScheme | ColorContrast | Motion | (string & {});
 
 type WithValue<T extends Feature> = T & {
   value: FeatureValue;
@@ -150,8 +164,10 @@ type WithValue<T extends Feature> = T & {
   principal: Principal;
 };
 
-/** A value of a feature */
-export type FeatureWithValue = WithValue<Feature>;
+/**
+ * A feature with a value present on the principal who set it
+ */
+export type FeatureWithValue = Simplify<WithValue<Feature>>;
 
 /**
  * Verifies if the given feature has the browser as principal that can change
@@ -176,7 +192,6 @@ export function isBrowserFeature(feature: Feature): feature is BrowserFeature {
  * @returns `true` for a mode behavior, otherwise `false`
  */
 export function isModalFeature(feature: Feature): feature is ModalFeature {
-  // @ts-expect-error checking for a sometimes undefined field
   return feature.defaultOption !== undefined;
 }
 

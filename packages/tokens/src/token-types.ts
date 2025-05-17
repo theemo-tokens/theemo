@@ -1,9 +1,12 @@
 /**
  * Represents a reference
  *
- * Value is surrounded by curly braces: `{antoher.token}`
+ * Value is surrounded by curly braces: `{another.token}`
  */
-export type ReferenceValue = string;
+export type ReferenceValue<
+  Pre extends string = '{',
+  Post extends string = '}'
+> = `${Pre}${string}${Post}`;
 
 /**
  * An untyped, unknown value

@@ -24,7 +24,11 @@ export interface TheemoConfig {
   themes: Theme[];
 }
 
-/** Default Theemo options */
+/**
+ * Default Theemo options
+ *
+ * @internal
+ */
 export const DEFAULT_OPTIONS: TheemoRuntimeOptions = {
   outDir: 'theemo'
 };
@@ -36,7 +40,11 @@ export interface TheemoRuntimeConfig extends TheemoConfig {
   options: TheemoRuntimeOptions;
 }
 
-/** ID to identify Theemo <meta> element */
+/**
+ * ID to identify Theemo <meta> element
+ *
+ * @internal
+ */
 export const THEEMO_CONFIG_ID = 'theemo-config';
 
 /**
