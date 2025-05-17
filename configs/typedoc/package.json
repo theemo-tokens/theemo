@@ -1,0 +1,28 @@
+{
+  "name": "@theemo-config/typedoc",
+  "private": true,
+  "description": "Typedoc Config for theemo",
+  "files": [
+    "src/index.js"
+  ],
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@gossi/config-eslint": "^0.14.0",
+    "@gossi/config-prettier": "^0.10.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.5.3",
+    "typedoc": "^0.28.4",
+    "typescript": "5.8.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
