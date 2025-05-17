@@ -4,8 +4,8 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
 import markdownItDeflist from 'markdown-it-deflist';
 import markdownItTable from 'markdown-it-multimd-table';
 import typedocSidebar from '../api/typedoc-sidebar.json';
-import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons'
-import { withTwoslash } from 'vitepress-plugin-shiki-twoslash'
+import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons';
+import { withTwoslash } from 'vitepress-plugin-shiki-twoslash';
 
 export default withTwoslash(withMermaid(defineConfig({
   title: 'Theemo',
