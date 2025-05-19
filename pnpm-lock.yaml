@@ -288,7 +288,7 @@ importers:
         specifier: ^8.57.1
         version: 8.57.1
       eslint-plugin-ember:
-        specifier: ^12.1.1
+        specifier: ^12.5.0
         version: 12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)
       prettier:
         specifier: ^3.5.3
@@ -349,10 +349,10 @@ importers:
         specifier: ^4.6.9
         version: 4.6.9
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.31.1
+        specifier: ^8.32.1
         version: 8.32.1(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
       '@typescript-eslint/parser':
-        specifier: ^8.31.1
+        specifier: ^8.32.1
         version: 8.32.1(eslint@8.57.1)(typescript@5.8.3)
       concurrently:
         specifier: ^9.1.2
@@ -441,10 +441,10 @@ importers:
         specifier: workspace:*
         version: link:../../configs/tsdown
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.31.1
+        specifier: ^8.32.1
         version: 8.32.1(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3)
       '@typescript-eslint/parser':
-        specifier: ^8.31.1
+        specifier: ^8.32.1
         version: 8.32.1(eslint@8.57.1)(typescript@5.8.3)
       concurrently:
         specifier: ^9.1.2
@@ -750,7 +750,7 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0
       ember-template-lint:
-        specifier: ^7.6.0
+        specifier: ^7.7.0
         version: 7.7.0(@babel/core@7.27.1)
       eslint:
         specifier: ^8.57.1
