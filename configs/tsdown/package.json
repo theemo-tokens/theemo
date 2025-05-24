@@ -19,7 +19,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
-    "tsdown": "^0.11.11",
+    "tsdown": "^0.12.3",
     "typescript": "5.8.3"
   },
   "engines": {
