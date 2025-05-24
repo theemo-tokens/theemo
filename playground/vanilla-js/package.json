@@ -11,7 +11,7 @@
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
     "vite": "^6.3.5",
-    "vite-plugin-inspect": "^11.0.1"
+    "vite-plugin-inspect": "^11.1.0"
   },
   "engines": {
     "node": ">=20.0.0"
