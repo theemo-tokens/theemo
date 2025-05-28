@@ -43,7 +43,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
-    "@types/node": "^22.15.19",
+    "@types/node": "^22.15.23",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
