@@ -57,7 +57,7 @@
     "tsdown": "^0.12.6",
     "typescript": "5.8.3",
     "vitest": "3.1.4",
-    "webdriverio": "^9.14.0"
+    "webdriverio": "^9.15.0"
   },
   "engines": {
     "node": ">=20.0.0"
