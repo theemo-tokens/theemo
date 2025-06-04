@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "concurrency": "11",
+  "concurrency": "12",
   "tasks": {
     "build": {
       "inputs": ["src/**/*"],
