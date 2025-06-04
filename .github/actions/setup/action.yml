@@ -1,6 +1,6 @@
 name: 'Setup'
 inputs:
-  with-node-version:
+  node-version:
     description: 'Specific node version'
     required: false
 runs:
