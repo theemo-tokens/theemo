@@ -32,12 +32,8 @@
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "start": "tsdown --watch",
-    "_test": "vitest run --browser.headless --browser.provider=webdriverio",
     "test": "vitest run",
-    "test:browser": "vitest run -c vitest.config.browser.ts",
-    "test:node": "vitest run -c vitest.config.node.ts",
-    "test:dev:browser": "vitest -c vitest.config.browser.ts --browser.headless=false --browser.name=chrome --browser.provider=preview",
-    "test:dev:node": "vitest -c vitest.config.node.ts"
+    "test:dev": "vitest"
   },
   "dependencies": {
     "type-fest": "^4.0.0"
@@ -49,14 +45,12 @@
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
-    "@vitest/browser": "3.1.4",
-    "@vitest/coverage-istanbul": "3.1.4",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
     "tsdown": "^0.12.6",
     "typescript": "5.8.3",
-    "vitest": "3.1.4",
+    "vitest": "3.2.1",
     "webdriverio": "^9.15.0"
   },
   "engines": {

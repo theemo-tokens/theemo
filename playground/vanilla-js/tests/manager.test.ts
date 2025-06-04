@@ -1,6 +1,5 @@
+import { Principal, ThemeManager } from '@theemo/theme';
 import { describe, expect, test } from 'vitest';
-
-import { Principal, ThemeManager } from '../../src';
 
 describe('ThemeManager', () => {
   const manager = new ThemeManager();

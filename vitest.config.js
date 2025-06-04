@@ -2,11 +2,11 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    workspace: [
+    projects: [
       'packages/figma',
       'packages/tokens',
       'packages/style-dictionary',
-      'packages/theme/vitest.config.node.ts'
+      'packages/theme'
     ],
     coverage: {
       enabled: true,

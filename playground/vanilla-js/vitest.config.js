@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 
-// @ts-expect-error yeah, because turbo detects a circular dep, when there is none
-import theemo from '@theemo/vite';
+import { theemo } from '@theemo/vite';
+import path from 'node:path';
 
 export default defineConfig({
   plugins: [
@@ -11,12 +11,13 @@ export default defineConfig({
   ],
   test: {
     name: '@theemo/theme:browser',
-    include: ['tests/browser/**/*.test.ts'],
-    // open: true,
+    include: ['tests/**/*.test.ts'],
     coverage: {
       enabled: true,
       provider: 'istanbul',
-      reporter: ['text', 'html', ['lcov', { projectRoot: '../../../' }], 'json']
+      include: [`${path.resolve('../../packages/theme/src')}/**/*`],
+      reporter: ['text', 'html', ['lcov', { projectRoot: '../../../' }], 'json'],
+      allowExternal: true
     },
     browser: {
       enabled: true,
@@ -24,8 +25,11 @@ export default defineConfig({
       screenshotFailures: false,
       // provider: 'preview',
       provider: 'webdriverio',
-      testerHtmlPath: 'tests/browser/index.html',
+      testerHtmlPath: 'index.html',
       instances: [{ browser: 'firefox' }, { browser: 'chrome' }]
+    },
+    alias: {
+      '@theemo/theme': path.resolve('../../packages/theme/src/index.ts')
     }
   }
 });
