@@ -63,6 +63,10 @@ export default withTwoslash(withMermaid(defineConfig({
               {
                 text: '@theemo/vite',
                 link: '/api/@theemo/vite/'
+              },
+              {
+                text: '@theemo/vue',
+                link: '/api/@theemo/vue/'
               }
             ]
           }
@@ -210,7 +214,8 @@ export default withTwoslash(withMermaid(defineConfig({
           text: 'Frameworks',
           items: [
             { text: 'Overview', link: '/theming/frameworks' },
-            { text: 'Ember', link: '/theming/ember' }
+            { text: 'Ember', link: '/theming/ember' },
+            { text: 'Vue', link: '/theming/vue' }
           ]
         }
       ],

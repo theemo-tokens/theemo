@@ -136,7 +136,7 @@ importers:
     devDependencies:
       '@gossi/config-eslint':
         specifier: ^0.14.0
-        version: 0.14.0(@babel/core@7.27.1)(@babel/eslint-parser@7.27.1(@babel/core@7.27.1)(eslint@8.57.1))(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.32.1(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint-plugin-ember@12.5.0(@babel/core@7.27.1)(@typescript-eslint/parser@8.32.1(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint-plugin-qunit@8.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
+        version: 0.14.0(@babel/core@7.27.4)(@babel/eslint-parser@7.27.1(@babel/core@7.27.4)(eslint@8.57.1))(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.33.0(@typescript-eslint/parser@8.33.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1)(typescript@5.8.3))(@typescript-eslint/parser@8.33.0(eslint@8.57.1)(typescript@5.8.3))(eslint-plugin-ember@12.5.0(@babel/core@7.27.4)(@typescript-eslint/parser@8.33.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint-plugin-qunit@8.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.3)(typescript@5.8.3)
       '@gossi/config-prettier':
         specifier: ^0.10.0
         version: 0.10.0(prettier@3.5.3)
@@ -148,7 +148,7 @@ importers:
         version: 3.5.3
       typedoc:
         specifier: ^0.28.4
-        version: 0.28.4(typescript@5.8.3)
+        version: 0.28.5(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -758,6 +758,9 @@ importers:
       '@theemo-config/tsdown':
         specifier: workspace:*
         version: link:../../configs/tsdown
+      '@theemo-config/typedoc':
+        specifier: workspace:*
+        version: link:../../configs/typedoc
       concurrently:
         specifier: ^9.1.2
         version: 9.1.2
