@@ -7,6 +7,7 @@ import type { PluginOptions } from './config';
 import type { ResolvedTheemoPackage } from './theme';
 import type { TheemoRuntimeConfig } from '@theemo/theme';
 import type { ResolvedId } from 'rollup';
+import type { HtmlTagDescriptor, IndexHtmlTransformResult } from 'vite';
 
 export function findRoot(): string {
   return process.cwd();
@@ -56,13 +57,20 @@ export async function transformIndexHtml(
   html: string,
   options: PluginOptions & { fingerprint?: boolean },
   themePackages: ResolvedTheemoPackage[]
-): Promise<string> {
-  const head = [];
+): Promise<IndexHtmlTransformResult> {
+  const tags: HtmlTagDescriptor[] = [];
 
   // runtime config
   const config = createConfig(options, themePackages);
 
-  head.push(`<meta name="${THEEMO_CONFIG_ID}" content="${encodeURI(JSON.stringify(config))}">`);
+  tags.push({
+    injectTo: 'head',
+    tag: 'meta',
+    attrs: {
+      name: THEEMO_CONFIG_ID,
+      content: encodeURI(JSON.stringify(config))
+    }
+  });
 
   // themes
   const defaultThemePkg = themePackages.find((pkg) => pkg.theemo.name === options.defaultTheme);
@@ -76,15 +84,22 @@ export async function transformIndexHtml(
       filename += `-${hash}`;
     }
 
-    head.push(`
-      <link 
-        href="/${options.outDir}/${filename}.css"
-        type="text/css"
-        rel="stylesheet"
-        title="${options.defaultTheme}"
-        data-theemo="${options.defaultTheme}"
-      >`);
+    tags.push({
+      injectTo: 'head',
+      tag: 'link',
+      attrs: {
+        href: `/${options.outDir}/${filename}.css`,
+        type: 'text/css',
+        rel: 'stylesheet',
+        title: options.defaultTheme,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        'data-theemo': options.defaultTheme
+      }
+    });
   }
 
-  return html.replace('{{theemo}}', head.join('\n'));
+  return {
+    html,
+    tags
+  };
 }
