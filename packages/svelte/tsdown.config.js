@@ -4,5 +4,5 @@ import config from '@theemo-config/tsdown';
 
 export default defineConfig({
   ...config,
-  entry: ['src/index.svelte.ts']
+  entry: ['src/index.svelte.ts', 'src/kit.ts']
 });

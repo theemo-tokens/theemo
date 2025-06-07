@@ -21,21 +21,6 @@ export function makeResolver(resolve: (source: string) => Promise<ResolvedId | n
   };
 }
 
-function createConfig(
-  options: PluginOptions,
-  packages: ResolvedTheemoPackage[]
-): TheemoRuntimeConfig {
-  const themes = packages.map((pkg) => pkg.theemo);
-
-  return {
-    options,
-    themes: themes.map((t) => ({
-      name: t.name,
-      features: t.features
-    }))
-  };
-}
-
 export async function fingerprintFile(filename: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const cHash = crypto.createHash('MD5');
@@ -53,6 +38,34 @@ export async function fingerprintFile(filename: string): Promise<string> {
   });
 }
 
+async function createConfig(
+  options: PluginOptions & { fingerprint?: boolean },
+  packages: ResolvedTheemoPackage[]
+): Promise<TheemoRuntimeConfig> {
+  const themes = packages.map((pkg) => pkg.theemo);
+
+  return {
+    options,
+    themes: await Promise.all(
+      themes.map(async (t) => {
+        let filename = t.name;
+
+        if (options.fingerprint === true && t.filePath) {
+          const hash = await fingerprintFile(t.filePath);
+
+          filename += `-${hash}`;
+        }
+
+        return {
+          name: t.name,
+          features: t.features,
+          filename
+        };
+      })
+    )
+  };
+}
+
 export async function transformIndexHtml(
   html: string,
   options: PluginOptions & { fingerprint?: boolean },
@@ -61,7 +74,7 @@ export async function transformIndexHtml(
   const tags: HtmlTagDescriptor[] = [];
 
   // runtime config
-  const config = createConfig(options, themePackages);
+  const config = await createConfig(options, themePackages);
 
   tags.push({
     injectTo: 'head',

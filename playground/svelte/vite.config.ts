@@ -1,12 +1,12 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import { theemo } from '@theemo/vite';
+import { theemoPlugin } from '@theemo/svelte/kit';
 
 export default defineConfig({
-	plugins: [
-		sveltekit(),
-		theemo({
+  plugins: [
+    sveltekit(),
+    theemoPlugin({
       defaultTheme: 'ocean'
     })
-	]
+  ]
 });

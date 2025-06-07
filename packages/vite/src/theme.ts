@@ -2,6 +2,8 @@ import fs from 'node:fs';
 
 import { isTheemoPackage, validateTheemoPackage } from '@theemo/theme';
 
+import { findRoot } from './handler';
+
 import type { PackageTheme, TheemoPackage } from '@theemo/theme';
 import type { LoggingFunction } from 'rollup';
 import type { PackageJson } from 'type-fest';
@@ -101,4 +103,14 @@ export async function findThemePackages(
   }
 
   return resolvedPackages;
+}
+
+export function getResolvedTheemoPackages(
+  resolve: Resolve,
+  log: LoggingFunction
+): Promise<ResolvedTheemoPackage[]> {
+  const root = findRoot();
+  const rootPackage = findRootPackage(root);
+
+  return findThemePackages(rootPackage, resolve, log);
 }

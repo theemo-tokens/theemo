@@ -1,5 +1,8 @@
 import { getContext, setContext } from 'svelte';
 
+// import { get, readable } from 'svelte/store';
+import { browser } from '$app/environment';
+
 import { ThemeManager } from '@theemo/theme';
 
 import type { FeatureWithValue, Theme } from '@theemo/theme';
@@ -58,7 +61,9 @@ class Theemo {
 const THEEMO: symbol = Symbol('Theemo');
 
 export function setTheemoContext(): void {
-  setContext(THEEMO, new Theemo());
+  if (browser) {
+    setContext(THEEMO, new Theemo());
+  }
 }
 
 export function getTheemoContext(): Theemo {
