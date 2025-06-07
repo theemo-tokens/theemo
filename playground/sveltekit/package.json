@@ -1,5 +1,5 @@
 {
-  "name": "@theemo-playground/svelte",
+  "name": "@theemo-playground/sveltekit",
   "private": true,
   "version": "0.0.1",
   "type": "module",

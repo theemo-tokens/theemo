@@ -873,7 +873,7 @@ importers:
 
   playground/ocean-theme: {}
 
-  playground/svelte:
+  playground/sveltekit:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^6.0.0
