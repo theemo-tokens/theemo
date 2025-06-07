@@ -1000,7 +1000,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vue
       '@tsconfig/node22':
-        specifier: ^22.0.1
+        specifier: ^22.0.2
         version: 22.0.2
       '@types/node':
         specifier: ^22.14.0
