@@ -686,7 +686,7 @@ importers:
         specifier: 5.8.3
         version: 5.8.3
       vue:
-        specifier: ^3.5.13
+        specifier: ^3.5.16
         version: 3.5.16(typescript@5.8.3)
 
   playground/ember:
