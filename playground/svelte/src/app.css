@@ -1,0 +1,47 @@
+html {
+  background-color: var(--background-color);
+  color: var(--text-color, black);
+}
+
+/* Sizing */
+:root {
+  --_sizing-factor: var(--sizing-factor, 1);
+
+  font-size: calc(0.5vw + 1em * var(--_sizing-factor));
+
+  /* sizing one step below s0 */
+  --s-4: calc(var(--s0) * pow(var(--_sizing-factor), -4));
+  --s-3: calc(var(--s0) * pow(var(--_sizing-factor), -3));
+  --s-2: calc(var(--s0) * pow(var(--_sizing-factor), -2));
+  --s-1: calc(var(--s0) * pow(var(--_sizing-factor), -1));
+
+  /* sizing level 0, matching user preference */
+  --s0: 1em; 
+
+  /* sizing one step above s0 */
+  --s1: calc(var(--s0) * pow(var(--_sizing-factor), 1));
+  --s2: calc(var(--s0) * pow(var(--_sizing-factor), 2));
+  --s3: calc(var(--s0) * pow(var(--_sizing-factor), 3));
+  --s4: calc(var(--s0) * pow(var(--_sizing-factor), 4));
+}
+
+h1 {
+  font-size: var(--s4);
+}
+
+h2 {
+  font-size: var(--s3);
+}
+
+h3 {
+  font-size: var(--s2);
+}
+
+h4 {
+  font-size: var(--s1);
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+}
