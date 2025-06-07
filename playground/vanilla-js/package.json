@@ -3,7 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "pnpm vite",
+    "build": "vite build",
+    "dev": "vite dev",
+    "preview": "vite preview",
     "test:browser": "vitest run",
     "test:dev": "vitest --browser.headless=false --browser.name=chrome --browser.provider=preview"
   },

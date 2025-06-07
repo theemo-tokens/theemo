@@ -9,7 +9,7 @@ import {
   Principal
 } from './features';
 
-import type { TheemoRuntimeConfig } from './config';
+import type { TheemoRuntimeConfig, TheemoRuntimeTheme } from './config';
 import type { BrowserFeature, Feature, FeatureValue, FeatureWithValue } from './features';
 import type { Theme } from './theme';
 
@@ -130,7 +130,7 @@ export class ThemeManager {
   /**
    * List of available themes
    */
-  get themes(): Theme[] {
+  get themes(): TheemoRuntimeTheme[] {
     return this.#config.themes;
   }
 
@@ -242,9 +242,9 @@ export class ThemeManager {
     this.#options.themeChanged?.(theme);
   }
 
-  async #ensureThemeIsLoaded(theme: Theme) {
+  async #ensureThemeIsLoaded(theme: TheemoRuntimeTheme) {
     if (!this.#elements.has(theme.name)) {
-      await this.#loadTheme(theme.name);
+      await this.#loadTheme(theme);
     }
   }
 
@@ -326,20 +326,20 @@ export class ThemeManager {
     }
   }
 
-  async #loadTheme(name: string) {
-    const element = await this.#createLinkElement(name);
+  async #loadTheme(theme: TheemoRuntimeTheme) {
+    const element = await this.#createLinkElement(theme);
 
-    this.#elements.set(name, element);
+    this.#elements.set(theme.name, element);
   }
 
-  #createLinkElement(theme: string): Promise<HTMLLinkElement> {
+  #createLinkElement(theme: TheemoRuntimeTheme): Promise<HTMLLinkElement> {
     const linkElement = document.createElement('link');
 
-    linkElement.setAttribute('href', `/${this.#config.options.outDir}/${theme}.css`);
+    linkElement.setAttribute('href', `/${this.#config.options.outDir}/${theme.filename}.css`);
     linkElement.setAttribute('type', 'text/css');
     linkElement.setAttribute('rel', 'stylesheet');
-    linkElement.setAttribute('title', theme);
-    linkElement.dataset.theemo = theme;
+    linkElement.setAttribute('title', theme.name);
+    linkElement.dataset.theemo = theme.name;
     document.head.append(linkElement);
 
     return new Promise((resolve) => {

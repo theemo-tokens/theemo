@@ -1,7 +1,7 @@
 {
-  "name": "@theemo/vite",
+  "name": "@theemo/svelte",
   "version": "0.0.0",
-  "description": "Plugin for loading themes with vite",
+  "description": "Theemo integration for Svelte",
   "license": "MIT",
   "author": "Thomas Gossmann",
   "homepage": "https://theemo.io",
@@ -13,8 +13,7 @@
   "keywords": [
     "design system",
     "theme",
-    "design tokens",
-    "vite-plugin"
+    "design tokens"
   ],
   "files": [
     "dist"
@@ -22,12 +21,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./dist/index.svelte.d.ts",
+      "svelte": "./dist/index.svelte.js"
     },
-    "./-internal": {
-      "types": "./dist/-internal.d.ts",
-      "default": "./dist/-internal.js"
+    "./kit": {
+      "types": "./dist/kit.d.ts",
+      "default": "./dist/kit.js"
     },
     "./package.json": "./package.json"
   },
@@ -43,24 +42,39 @@
     "_test:dev": "vitest"
   },
   "dependencies": {
-    "@theemo/theme": "workspace:*"
+    "@theemo/theme": "workspace:*",
+    "@theemo/vite": "workspace:*"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "vite": "^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@sveltejs/kit": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
+    "@sveltejs/kit": "^2.21.2",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
     "rollup": "^4.41.1",
+    "svelte": "^5.33.14",
     "tsdown": "^0.12.6",
     "typescript": "5.8.3",
-    "type-fest": "^4.41.0",
     "vite": "^6.3.5",
     "vitest": "3.2.1"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": ">=20.0.0"
   }
 }
