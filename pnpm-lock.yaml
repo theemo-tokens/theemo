@@ -900,7 +900,7 @@ importers:
         specifier: ^5.33.17
         version: 5.33.17
       svelte-check:
-        specifier: ^4.1.6
+        specifier: ^4.2.1
         version: 4.2.1(picomatch@4.0.2)(svelte@5.33.17)(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
@@ -939,7 +939,7 @@ importers:
         specifier: ^5.33.17
         version: 5.33.17
       svelte-check:
-        specifier: ^4.0.0
+        specifier: ^4.2.1
         version: 4.2.1(picomatch@4.0.2)(svelte@5.33.17)(typescript@5.8.3)
       typescript:
         specifier: ^5.0.0
