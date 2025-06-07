@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.27.4",
-    "@babel/eslint-parser": "7.27.1",
+    "@babel/eslint-parser": "7.27.5",
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
