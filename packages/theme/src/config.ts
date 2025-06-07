@@ -34,29 +34,41 @@ export const DEFAULT_OPTIONS: TheemoRuntimeOptions = {
 };
 
 /**
- * Theemo runtime configuration put into `<script>`
+ * Runtime theme
+ *
+ * @internal
  */
-export interface TheemoRuntimeConfig extends TheemoConfig {
-  options: TheemoRuntimeOptions;
+export interface TheemoRuntimeTheme extends Theme {
+  filename: string;
 }
 
 /**
- * ID to identify Theemo <meta> element
+ * Theemo runtime configuration put into `<meta>`
+ */
+export interface TheemoRuntimeConfig extends TheemoConfig {
+  options: TheemoRuntimeOptions;
+  themes: TheemoRuntimeTheme[];
+}
+
+/**
+ * ID to identify Theemo `<meta>` element
  *
  * @internal
  */
 export const THEEMO_CONFIG_ID = 'theemo-config';
 
 /**
- * Extract the config from `<script>` element
+ * Extract the config from `<meta>` element
  *
- * @param rootElement element to look for the `<script>` element in
+ * @param rootElement element to look for the `<meta>` element in
  * @returns runtime config
  */
 export function extractConfig(rootElement: Element | Document = document): TheemoRuntimeConfig {
   let meta = rootElement.querySelector<HTMLMetaElement>(`meta[name="${THEEMO_CONFIG_ID}"]`);
 
-  let config = (meta ? JSON.parse(decodeURI(meta.content)) : {}) as PartialDeep<TheemoConfig>;
+  let config = (
+    meta ? JSON.parse(decodeURI(meta.content)) : {}
+  ) as PartialDeep<TheemoRuntimeConfig>;
 
   return {
     options: {
