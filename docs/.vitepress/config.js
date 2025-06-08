@@ -215,11 +215,11 @@ export default withTwoslash(withMermaid(defineConfig({
           text: 'Integrations',
           items: [
             { text: 'Overview', link: '/theming/integrations' },
-            { text: 'Vanilla', link: '/theming/vanilla' },
-            { text: 'Ember', link: '/theming/ember' },
-            { text: 'Svelte', link: '/theming/svelte' },
-            { text: 'SvelteKit', link: '/theming/sveltekit' },
-            { text: 'Vue', link: '/theming/vue' }
+            { text: 'Vanilla', link: '/theming/integrations/vanilla' },
+            { text: 'Ember', link: '/theming/integrations/ember' },
+            { text: 'Svelte', link: '/theming/integrations/svelte' },
+            { text: 'SvelteKit', link: '/theming/integrations/sveltekit' },
+            { text: 'Vue', link: '/theming/integrations/vue' }
           ]
         }
       ],
