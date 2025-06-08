@@ -54,6 +54,7 @@ export default withTwoslash(withMermaid(defineConfig({
                 text: '@theemo/style-dictionary',
                 link: '/api/@theemo/style-dictionary/'
               },
+              { text: '@theemo/svelte', link: '/api/@theemo/svelte/' },
               { text: '@theemo/sync', link: '/api/@theemo/sync/' },
               { text: '@theemo/theme', link: '/api/@theemo/theme/' },
               {
@@ -215,6 +216,8 @@ export default withTwoslash(withMermaid(defineConfig({
           items: [
             { text: 'Overview', link: '/theming/frameworks' },
             { text: 'Ember', link: '/theming/ember' },
+            { text: 'Svelte', link: '/theming/svelte' },
+            { text: 'SvelteKit', link: '/theming/sveltekit' },
             { text: 'Vue', link: '/theming/vue' }
           ]
         }
