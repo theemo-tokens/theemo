@@ -29,7 +29,9 @@ import { theemo } from '@theemo/vite';
 export default defineConfig({
   plugins: [
     svelte(),
-    theemo({defaultTheme: 'ocean'})
+    theemo({
+      defaultTheme: '<your-default-theme-name>'
+    })
   ],
 })
 ```
@@ -63,7 +65,7 @@ then later down the component tree, you can use it to switch themes:
 
 ## SvelteKit
 
-[Sveltekit Example on
+[SvelteKit Example on
 Playground](https://github.com/theemo-tokens/tree/main/playground/sveltekit)
 
 (when using `sv` CLI to start your project)
@@ -108,7 +110,7 @@ export default defineConfig({
   plugins: [
     sveltekit(),
     theemoPlugin({
-      defaultTheme: 'ocean'
+      defaultTheme: '<your-default-theme-name>'
     })
   ]
 });
@@ -156,3 +158,11 @@ theemo.switchTheme('ocean');
 > [!IMPORTANT]
 > At best, `Theemo` stays a single instance to avoid two classes try to manage
 > themes
+
+## References
+
+- [Svelte Example on
+Playground](https://github.com/theemo-tokens/tree/main/playground/svelte)
+- [SvelteKit Example on
+Playground](https://github.com/theemo-tokens/tree/main/playground/sveltekit)
+- [API](https://theemo.io/api/@theemo/svelte/)

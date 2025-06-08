@@ -72,3 +72,8 @@ theemo.switchTheme('ocean');
 > [!IMPORTANT]
 > At best, `Theemo` stays a single instance to avoid two classes try to manage
 > themes
+
+## References
+
+- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/svelte)
+- [API](/api/@theemo/svelte/)

@@ -20,7 +20,7 @@ import type { Plugin } from 'vite';
  * export default defineConfig({
  *   plugins: [
  *     theemo({
- *       defaultTheme: 'ocean'
+ *       defaultTheme: '<your-default-theme-name>'
  *     })
  *   ]
  * });

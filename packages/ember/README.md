@@ -1,4 +1,4 @@
-# Ember
+# `@theemo/ember`
 
 Theemo integration for Ember (with wite) to manage themes.
 
@@ -12,7 +12,8 @@ pnpm add -D @theemo/ember @theemo/vite
 
 Add `@theemo/vite` to load all themes
 
-```ts [vite.config.ts]
+```ts
+// vite.config.ts
 import { classicEmberSupport, ember, extensions } from '@embroider/vite';
 import { babel } from '@rollup/plugin-babel';
 import { defineConfig } from 'vite';
@@ -37,7 +38,7 @@ export default defineConfig({
 
 You can manage themes with the `TheemoService`.
 
-```glimmer-ts [components/theme-manager.gts]
+```glimmer-ts
 import Component from '@glimmer/component';
 import { fn } from '@ember/helper';
 import { on } from '@ember/modifier';
@@ -65,4 +66,4 @@ export default class ThemeManager extends Component {
 ## References
 
 - [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/ember)
-- [API](/api/@theemo/ember/)
+- [API](https://theemo.io/api/@theemo/ember/)

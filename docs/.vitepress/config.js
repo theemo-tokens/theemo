@@ -212,9 +212,10 @@ export default withTwoslash(withMermaid(defineConfig({
           ]
         },
         {
-          text: 'Frameworks',
+          text: 'Integrations',
           items: [
-            { text: 'Overview', link: '/theming/frameworks' },
+            { text: 'Overview', link: '/theming/integrations' },
+            { text: 'Vanilla', link: '/theming/vanilla' },
             { text: 'Ember', link: '/theming/ember' },
             { text: 'Svelte', link: '/theming/svelte' },
             { text: 'SvelteKit', link: '/theming/sveltekit' },
