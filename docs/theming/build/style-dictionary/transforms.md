@@ -129,6 +129,12 @@ Into:
 }
 ```
 
+::: info
+
+- [API Docs](../../../api/@theemo/style-dictionary/variables/colorCssLightDarkTransform.md)
+
+:::
+
 ## `color/transforms`
 
 Given your value is applying transformations (coming directly from Figma with
@@ -190,6 +196,6 @@ export default {
 
 ::: info
 
-- API Docs: TODO
+- [API Docs](../../../api/@theemo/style-dictionary/variables/colorTransform.md)
 
 :::

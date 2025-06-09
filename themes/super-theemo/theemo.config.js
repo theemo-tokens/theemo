@@ -148,7 +148,7 @@ export default defineConfig({
         options: ['light', 'dark']
       },
       {
-        name: 'sizing',
+        name: 'density',
         options: {
           compact: 'build/density-compact.css',
           comfortable: 'build/density-comfortable.css',

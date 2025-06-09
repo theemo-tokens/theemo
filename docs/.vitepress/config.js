@@ -183,32 +183,45 @@ export default withTwoslash(withMermaid(defineConfig({
         {
           text: 'Theming',
           items: [
-            { text: 'Overview', link: '/theming' },
-            { text: 'Theemo Theme', link: '/theming/theemo-theme' }
+            { text: 'Introduction', link: '/theming' },
+            { text: 'Theme Specification', link: '/theming/theme-spec' }
           ]
         },
         {
-          text: 'Building',
+          text: 'Build CSS',
           items: [
-            { text: 'Overview', link: '/theming/build' },
             { 
               text: 'Style Dictionary', 
               link: '/theming/build/style-dictionary',
+              collapsed: true,
               items: [
-                {
-                  text: 'Extensions',
-                  // collapsed: true,
-                  items: [
-                    { text: 'Filters', link: '/theming/build/style-dictionary/filters'},
-                    { text: 'Formats', link: '/theming/build/style-dictionary/formats'},
-                    { text: 'Parsers', link: '/theming/build/style-dictionary/parsers'},
-                    { text: 'Preprocessors', link: '/theming/build/style-dictionary/preprocessors'},
-                    { text: 'Transforms', link: '/theming/build/style-dictionary/transforms'}
-                  ]
-                }
+                { text: 'Filters', link: '/theming/build/style-dictionary/filters'},
+                { text: 'Formats', link: '/theming/build/style-dictionary/formats'},
+                { text: 'Parsers', link: '/theming/build/style-dictionary/parsers'},
+                { text: 'Preprocessors', link: '/theming/build/style-dictionary/preprocessors'},
+                { text: 'Transforms', link: '/theming/build/style-dictionary/transforms'},
+                { text: 'Transform Groups', link: '/theming/build/style-dictionary/transform-groups'}
               ]
             },
-            { text: 'Theemo Package', link: '/theming/build/theemo-package' }
+            { text: 'CSS <code>@property</code>', link: '/theming/build/css-at-property' },
+            { text: 'CSS Custom Properties &<br> CSS <code>light-dark()</code>', link: '/theming/build/css-custom-properties-light-dark' },
+            { text: 'CSS <code>color()</code> Transforms', link: '/theming/build/css-color-transforms' },
+            { text: 'Constraints', link: '/theming/build/constraints' },
+            { text: 'Example', link: '/theming/build/example' },
+          ],
+          
+        },
+        {
+          text: 'Build Theme',
+          items: [
+            { 
+              text: 'Theme Package', 
+              link: '/theming/build/theme-package'
+            }, 
+            { 
+              text: 'Config', 
+              link: '/theming/build/config' 
+            }
           ]
         },
         {
@@ -271,6 +284,7 @@ export default withTwoslash(withMermaid(defineConfig({
         customIcon: {
           'tokens.json': localIconLoader(import.meta.url, '../assets/design-token.logo.svg'),
           'token': localIconLoader(import.meta.url, '../assets/design-token.logo.svg'),
+          'tokens/**/*': localIconLoader(import.meta.url, '../assets/design-token.logo.svg'),
           'config.js': localIconLoader(import.meta.url, '../assets/style-dictionary.logo.svg'),
           'theemo': localIconLoader(import.meta.url, '../assets/theemo.logo.svg'),
           'theemo.config.js': localIconLoader(import.meta.url, '../assets/theemo.logo.svg'),

@@ -68,7 +68,10 @@ Having harmonic and automatic color palettes in your design editor, that would a
 
 ## Constrained Values
 
-Values that are constrained and valid for a given set of features are explained in [Theming](./theming.md).
+Values that are constrained and valid for a given set of features are explained
+in [Theming](./theming.md).
+
+TODO: describe it here
 
 ## Dynamic vs. Static Values
 
