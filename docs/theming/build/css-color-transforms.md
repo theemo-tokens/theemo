@@ -11,11 +11,11 @@ Uses (provided by [registering theemo extensions](./style-dictionary.md#register
 ::: warning
 
 The output is using `hsl()` function. Meanwhile DTCG has added support for
-mulitiple color functions. The implementation in Theemo landed earlier and does
-not support the new format yet.
+mulitiple color functions in the [Design Tokens Color
+Module](https://tr.designtokens.org/color/). The implementation in  Theemo
+landed earlier and does not support the new format yet.
 
-TODO: link to DTCG and create Issue
-
+[See Issue #1434](https://github.com/theemo-tokens/theemo/issues/1434)
 :::
 
 ## Input
@@ -216,4 +216,23 @@ When setting `useCSSColorTransform: false` the color values are transformed at
 build time. Use this, when your browser support doesn't include CSS color
 functions yet.
 
-TODO: run this at home
+```css [vars.css]
+:root {
+  --palette-brand-500: var(--palette-brand-red);
+  --palette-brand-100: #2e0505;
+  --palette-brand-200: #5b0b0b;
+  --palette-brand-300: #891010;
+  --palette-brand-400: #b61616;
+  --palette-brand-600: #e94949;
+  --palette-brand-700: #ef7676;
+  --palette-brand-800: #f4a4a4;
+  --palette-brand-900: #fad1d1;
+  --intent-action-base-text: var(--palette-letters-brand-highlight);
+  --intent-action-base-background: var(--palette-brand-500);
+  --intent-action-base-border: var(--intent-action-base-background);
+  --intent-action-disabled-text: rgba(255, 236, 64, 0.65);
+  --intent-action-disabled-background: rgba(228, 27, 27, 0.65);
+  --intent-action-disabled-border: rgba(228, 27, 27, 0.65);
+  /* ... more tokens ... */
+}
+```

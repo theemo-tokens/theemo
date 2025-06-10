@@ -34,7 +34,7 @@ function makeDensityPlatform(density) {
 }
 
 /** @type import("style-dictionary/types").Config */
-const config = {
+export default {
   source: ['tokens/**/*.json'],
   preprocessors: ['theemo/token'],
   platforms: {
@@ -44,7 +44,7 @@ const config = {
       options: {
         outputReferences: true,
         showFileHeader: false,
-        useCSSColorTransform: true
+        useCSSColorTransform: false
       },
       files: [
         {
@@ -75,5 +75,3 @@ const config = {
     'density-compact': makeDensityPlatform('compact')
   }
 };
-
-export default config;

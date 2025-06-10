@@ -169,4 +169,6 @@ export default {
 }
 ```
 
-TODO: link to configure this for `theemo build`
+## Related
+
+- [Configure color scheme for `theemo build`](../../config/build.md#color-scheme)
