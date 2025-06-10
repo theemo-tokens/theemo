@@ -1,4 +1,6 @@
-# Configure `theemo build`
+# Build Options
+
+- **Type**: [`BuildConfig`](../api/@theemo/build/interfaces/BuildConfig.md)
 
 Confiure the `build` in your `theemo.config.js`.
 
@@ -6,25 +8,27 @@ Confiure the `build` in your `theemo.config.js`.
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
-  build: {...}
+  build: {
+    // ...
+  }
 });
 ```
 
-## `outDir`
+## `build.outDir`
 
 - **Type**: `string`
 - **Default**: `dist`
 
 This is where files will be build into.
 
-## `files`
+## `build.files`
 
 - **Type**: `string[]`
 - **Default**: `[]`
 
 The files that will be concatenated into the output file.
 
-## `features`
+## `build.features`
 
 - **Type**: `BuildFeature[]`
 - **Default**: `[]`
@@ -233,7 +237,7 @@ export default defineConfig({
 
 :::
 
-## `lightningcss`
+## `build.lightningcss`
 
 - **Type**: `boolean | Omit<TransformOptions<CustomAtRules>, 'code' | 'filename'>`
 - **Default**: `true`

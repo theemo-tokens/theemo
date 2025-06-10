@@ -36,9 +36,10 @@ export default withTwoslash(withMermaid(defineConfig({
       },
 
       { text: 'Design', link: '/design', activeMatch: '/design[^-]' },
-      { text: 'Sync', link: '/sync', activeMatch: '/sync' },
+      { text: 'Sync', link: '/sync', activeMatch: '^/sync' },
       { text: 'Theming', link: '/theming', activeMatch: '/theming' },
 
+      { text: 'Config', link: '/config', activeMatch: '/config' },
       {
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>',
         // link: '/api/',
@@ -209,18 +210,13 @@ export default withTwoslash(withMermaid(defineConfig({
             { text: 'Constraints', link: '/theming/build/constraints' },
             { text: 'Example', link: '/theming/build/example' },
           ],
-          
         },
         {
           text: 'Build Theme',
           items: [
             { 
-              text: 'Theme Package', 
+              text: 'Building a Theme Package', 
               link: '/theming/build/theme-package'
-            }, 
-            { 
-              text: 'Config', 
-              link: '/theming/build/config' 
             }
           ]
         },
@@ -233,6 +229,23 @@ export default withTwoslash(withMermaid(defineConfig({
             { text: 'Svelte', link: '/theming/integrations/svelte' },
             { text: 'SvelteKit', link: '/theming/integrations/sveltekit' },
             { text: 'Vue', link: '/theming/integrations/vue' }
+          ]
+        }
+      ],
+      '/config': [
+        {
+          text: 'Config',
+          items: [
+            { text: 'Configuring Theemo', link: '/config' },
+            { 
+              text: 'Sync Options', 
+              link: '/config/sync', 
+              items: [
+                { text: 'Figma Reader Options', link: '/config/sync/figma-reader' },
+                { text: 'Style Dictionary Writer Options', link: '/config/sync/style-dictionary-writer' },
+              ] 
+            },
+            { text: 'Build Options', link: '/config/build' }
           ]
         }
       ],

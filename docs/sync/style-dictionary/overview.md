@@ -6,7 +6,7 @@ format for Style Dictionary as well as extensions to generate assets.
 ## Installation
 
 ```sh
-pnpm add @theemo/style-dictionary
+pnpm add -D @theemo/style-dictionary
 ```
 
 ## Contents

@@ -19,11 +19,11 @@ export default defineConfig({
 All these `targets` are writer plugins. Theemo provides some, but you can write
 your own, too.
 
-## Available Writer Plugins
+## Available Writers
 
 - [Style Dictionary Writer](./style-dictionary/writer.md)
 
-## Write your own Writer Plugin
+## Write your own Writer
 
 The plugin should implement the `WriterTool` interface, with only one `write()`
 function to keep the API fairly minimal.
@@ -56,7 +56,8 @@ import type { TokenCollection } from '@theemo/tokens';
 export default class YourWriter {
   #config: YourWriterConfig;
 
-  constructor(#config: YourWriterConfig) {
+  constructor(config: YourWriterConfig) {
+    this.#config = config;
   }
 
   write(tokens: TokenCollection): void {
@@ -75,7 +76,7 @@ export interface YourWriterConfig {
 
 Use your reader aside to the figma reader:
 
-```js
+```js [theemo.config.js]
 import { styleDictionaryWriter } from '@theemo/style-dictionary';
 import { yourWriter } from '<see-above>';
 import { defineConfig } from '@theemo/cli';
@@ -84,8 +85,8 @@ export default defineConfig({
   sync: {
     writer: {
       targets: [
-        styleDictionaryWriter({ ... }),
-        yourWriter({ ... })
+        styleDictionaryWriter({ /*...*/ }),
+        yourWriter({ /*...*/ })
       ]
     }
   }

@@ -30,8 +30,9 @@ export default defineConfig({
 });
 ```
 
-> [!NOTE]
-> See all available [configuration](./config.md) options.
+Find available [configuration options](../../config/build.md).
+
+## Usage
 
 Place a `script` in your `package.json` and add your theme name:
 
@@ -51,8 +52,6 @@ Place a `script` in your `package.json` and add your theme name:
   }
 }
 ```
-
-## Usage
 
 Run it with:
 
