@@ -48,7 +48,7 @@ export const registerTheemo = (styleDictionary: StyleDictionary): void => {
       'attribute/constraints',
       'value/resolve-constraint',
       'color/transforms',
-      'color/light-dark-css',
+      'color/css/light-dark',
       'color/css',
       'fontFamily/css',
       'cubicBezier/css',
