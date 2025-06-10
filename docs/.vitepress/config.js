@@ -6,6 +6,15 @@ import markdownItTable from 'markdown-it-multimd-table';
 import typedocSidebar from '../api/typedoc-sidebar.json';
 import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons';
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
+import Components from 'unplugin-vue-components/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+
+console.log(import.meta);
+
 
 export default withMermaid(defineConfig({
   title: 'Theemo',
@@ -27,19 +36,19 @@ export default withMermaid(defineConfig({
       {
         text: 'Getting Started',
         link: '/getting-started',
-        activeMatch: '/getting-started|usage-scenarios'
+        activeMatch: '^/getting-started|usage-scenarios|token-pipeline'
       },
       {
         text: 'Design Tokens',
         link: '/design-tokens',
-        activeMatch: '/design-tokens'
+        activeMatch: '^/design-tokens'
       },
 
-      { text: 'Design', link: '/design', activeMatch: '/design[^-]' },
+      { text: 'Design', link: '/design', activeMatch: '^/design[^-]' },
       { text: 'Sync', link: '/sync', activeMatch: '^/sync' },
-      { text: 'Theming', link: '/theming', activeMatch: '/theming' },
+      { text: 'Theming', link: '/theming', activeMatch: '^/theming' },
 
-      { text: 'Config', link: '/config', activeMatch: '/config' },
+      { text: 'Config', link: '/config', activeMatch: '^/config' },
       {
         text: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>',
         // link: '/api/',
@@ -175,8 +184,7 @@ export default withMermaid(defineConfig({
           text: 'Style Dictionary',
           items: [
             { text: 'Overview', link: '/sync/style-dictionary/overview' },
-            { text: 'Writer', link: '/sync/style-dictionary/writer' },
-            { text: 'Extensions', link: '/sync/style-dictionary/extensions' }
+            { text: 'Writer', link: '/sync/style-dictionary/writer' }
           ]
         }
       ],
@@ -295,17 +303,48 @@ export default withMermaid(defineConfig({
     }
   },
   vite: {
+    resolve: {
+      alias: {
+        "mermaid": "mermaid/dist/mermaid.esm.mjs"
+      }
+    },
     plugins: [
       groupIconVitePlugin({
         customIcon: {
-          'tokens.json': localIconLoader(import.meta.url, '../assets/design-token.logo.svg'),
-          'token': localIconLoader(import.meta.url, '../assets/design-token.logo.svg'),
-          'tokens/**/*': localIconLoader(import.meta.url, '../assets/design-token.logo.svg'),
-          'config.js': localIconLoader(import.meta.url, '../assets/style-dictionary.logo.svg'),
-          'theemo': localIconLoader(import.meta.url, '../assets/theemo.logo.svg'),
-          'theemo.config.js': localIconLoader(import.meta.url, '../assets/theemo.logo.svg'),
+          'tokens.json': localIconLoader(import.meta.url, '../assets/icons/design-token.svg'),
+          'token': localIconLoader(import.meta.url, '../assets/icons/design-token.svg'),
+          'tokens/**/*': localIconLoader(import.meta.url, '../assets/icons/design-token.svg'),
+          'config.js': localIconLoader(import.meta.url, '../assets/icons/style-dictionary.svg'),
+          'theemo': localIconLoader(import.meta.url, '../assets/icons/theemo.svg'),
+          'theemo.config.js': localIconLoader(import.meta.url, '../assets/icons/theemo.svg'),
         }
-      })
+      }),
+      Icons({
+        scale: 1,
+        compiler: 'web-components',
+        webComponents: {
+          autoDefine: true,
+        },
+        customCollections: {
+          // 'custom': {
+          //   theemo: () => fs.readFile(path.join(import.meta.dirname, '../assets/icons/theemo.svg'), 'utf-8'),
+          //   sd: () => fs.readFile(path.join(import.meta.dirname, '../assets/icons/style-dictionary.svg'), 'utf-8'),
+          // },
+          custom: FileSystemIconLoader(
+            path.join(import.meta.dirname, '../assets/icons/'), 
+            svg => svg.replace(/^<svg /, '<svg class="custom-icon" ')
+          )
+        }
+      }),
+      // Components({
+      //   resolvers: [
+      //     IconsResolver({
+      //       customCollections: [
+      //         'custom'
+      //       ]
+      //     })
+      //   ],
+      // })
     ],
   }
 }));

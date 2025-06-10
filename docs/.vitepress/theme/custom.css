@@ -70,3 +70,8 @@ a.figref::after {
 dt {
   font-weight: 600;
 }
+
+.custom-icon {
+  display: inline;
+  vertical-align: middle;
+}

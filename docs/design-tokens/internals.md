@@ -68,10 +68,40 @@ Having harmonic and automatic color palettes in your design editor, that would a
 
 ## Constrained Values
 
-Values that are constrained and valid for a given set of features are explained
-in [Theming](./theming.md).
+Your theme defines its supported [capabilities (features and scopes)](./theming.md#features).
+These are constraints to a token, as they make values for a certain set of
+features they are meant for.
 
-TODO: describe it here
+A token with different values for light and dark color scheme can be represented
+as:
+
+```json [token]
+{
+  "intent-action-base-background": {
+    "$type": "color",
+    "$value": [
+      {
+        "value": "darkblue",
+        "features": {
+          "color-scheme": "light"
+        }
+      },
+      {
+        "value": "lightblue",
+        "features": {
+          "color-scheme": "dark"
+        }
+      }
+    ]
+  }
+}
+```
+
+That's great for converting token values into the platform representation, as
+all the information is already present at the token. Furthermore, you can see at
+the token itself its _chamaleon_ feature and how it shapes under different situations.
+
+More explanation can be found in [Theming](./theming.md).
 
 ## Dynamic vs. Static Values
 

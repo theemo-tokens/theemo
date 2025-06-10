@@ -5,6 +5,8 @@ import './custom.css'
 import 'virtual:group-icons.css'
 import '@shikijs/vitepress-twoslash/style.css'
 
+import 'iconify-icon';
+
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,
