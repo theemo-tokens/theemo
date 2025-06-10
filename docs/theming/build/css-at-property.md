@@ -41,18 +41,18 @@ Uses (provided by [registering theemo extensions](./style-dictionary.md#register
 
 ## Configuration
 
-```js [config.js]
+```js [config.js] twoslash
 import StyleDictionary from 'style-dictionary';
 
 import {
-  isCSSProperty
+  isCSSProperty,
   registerTheemo
 } from '@theemo/style-dictionary';
 
 registerTheemo(StyleDictionary);
 
 /** @type import("style-dictionary/types").Config */
-const config = {
+export default {
   source: ['tokens/**/*.json'],
   preprocessors: ['theemo/token'],
   platforms: {
@@ -70,11 +70,9 @@ const config = {
           filter: isCSSProperty
         }
       ]
-    },
+    }
   }
 };
-
-export default config;
 ```
 
 ## Output

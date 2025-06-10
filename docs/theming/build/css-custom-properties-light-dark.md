@@ -104,7 +104,7 @@ Filters:
 - Can match the `color-scheme` feature constraint
 - Can't be any other constraint
 
-```js [config.js] {31-45}
+```js [config.js] {31-45} twoslash
 import StyleDictionary from 'style-dictionary';
 
 import {
@@ -118,7 +118,7 @@ import {
 registerTheemo(StyleDictionary);
 
 /** @type import("style-dictionary/types").Config */
-const config = {
+export default {
   source: ['tokens/**/*.json'],
   preprocessors: ['theemo/token'],
   platforms: {
@@ -154,8 +154,6 @@ const config = {
     },
   }
 };
-
-export default config;
 ```
 
 ## Output

@@ -1,16 +1,20 @@
 import DefaultTheme from 'vitepress/theme'
 import matomo from "@zvitek/vitepress-plugin-matomo";
+import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import './custom.css'
 import 'virtual:group-icons.css'
-import 'vitepress-plugin-shiki-twoslash/styles.css'
+import '@shikijs/vitepress-twoslash/style.css'
 
+/** @type {import('vitepress').Theme} */
 export default {
-  ...DefaultTheme,
-  enhanceApp: (ctx) => {
+  extends: DefaultTheme,
+  enhanceApp: ({ app, router }) => {
+    app.use(TwoslashFloatingVue);
+
     matomo({
-      router: ctx.router,
+      router: router,
       siteID: 5,
       trackerUrl: "https://analytics.otherwheel.com/"
-    })
+    });
   }
 }

@@ -18,7 +18,7 @@ export interface SyncConfig {
   /** Config for reading tokens from external source */
   reader: ReaderConfig;
   /** Config to _make sense_ of your tokens, as you need them in your domain */
-  lexer: LexerConfig;
+  lexer?: LexerConfig;
   /** Config to write them onto the disk for your used token manager tool */
   writer: WriterConfig;
 }

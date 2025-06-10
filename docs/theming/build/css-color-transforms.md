@@ -130,7 +130,7 @@ In addition to the config used at [CSS custom properties & CSS `light-dark()`] t
 conversions, this will add the `useCSSColorTransform` flag to tell the
 [`color/transforms`](./style-dictionary/transforms.md#color-transforms) to output using CSS color functions.
 
-```js [config.js] {24}
+```js [config.js] {24} twoslash
 import StyleDictionary from 'style-dictionary';
 
 import {
@@ -144,7 +144,7 @@ import {
 registerTheemo(StyleDictionary);
 
 /** @type import("style-dictionary/types").Config */
-const config = {
+export default {
   source: ['tokens/**/*.json'],
   preprocessors: ['theemo/token'],
   platforms: {
@@ -181,8 +181,6 @@ const config = {
     }
   }
 };
-
-export default config;
 ```
 
 ## Output

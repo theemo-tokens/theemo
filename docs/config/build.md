@@ -4,7 +4,7 @@
 
 Confiure the `build` in your `theemo.config.js`.
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
@@ -44,7 +44,7 @@ CSS files to use `light-dark()` function.
 
 ::: code-group
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
@@ -92,7 +92,7 @@ then wraps them in the necessary media query.
 
 ::: code-group
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
@@ -147,7 +147,7 @@ then wraps them in the necessary media query.
 
 ::: code-group
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
@@ -201,7 +201,7 @@ configure the `options`, to which CSS files they point and the `defaultOption`.
 
 ::: code-group
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
@@ -239,7 +239,7 @@ export default defineConfig({
 
 ## `build.lightningcss`
 
-- **Type**: `boolean | Omit<TransformOptions<CustomAtRules>, 'code' | 'filename'>`
+- **Type**: [`BuildConfig.lightningcss`](../api/@theemo/build/interfaces/BuildConfig.md#lightningcss)
 - **Default**: `true`
 - **Related**: [`lightningcss` Documentation](https://lightningcss.dev/docs.html)
 

@@ -5,7 +5,7 @@
 
 Confiure the `sync` in your `theemo.config.js`.
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({

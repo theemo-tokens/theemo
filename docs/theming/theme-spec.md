@@ -129,7 +129,7 @@ Here is a minimal package example, with `sync` and `build:*` scripts present
     "@theemo/sync": "^1.0.0",
     "@theemo/style-dictionary": "^1.0.0",
     "@theemo/tokens": "^1.0.0",
-    "style-dictionary": "^4.3.3"
+    "style-dictionary": "^5.0.0"
   }
 }
 ```

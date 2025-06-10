@@ -5,9 +5,9 @@ import markdownItDeflist from 'markdown-it-deflist';
 import markdownItTable from 'markdown-it-multimd-table';
 import typedocSidebar from '../api/typedoc-sidebar.json';
 import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons';
-import { withTwoslash } from 'vitepress-plugin-shiki-twoslash';
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
-export default withTwoslash(withMermaid(defineConfig({
+export default withMermaid(defineConfig({
   title: 'Theemo',
   description: 'Design Token Automations - Connecting Tools',
 
@@ -282,6 +282,9 @@ export default withTwoslash(withMermaid(defineConfig({
   },
 
   markdown: {
+    codeTransformers: [
+      transformerTwoslash() 
+    ],
     config(md) {
       md.use(figurePlugin);
       md.use(markdownItDeflist);
@@ -305,4 +308,4 @@ export default withTwoslash(withMermaid(defineConfig({
       })
     ],
   }
-})));
+}));

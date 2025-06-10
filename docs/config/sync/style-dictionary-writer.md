@@ -1,7 +1,5 @@
 # Style Dictionary Writer Options
 
-TODO: Add twoslash
-
 - [`StyleDictionaryWriterConfig`](../../api/@theemo/style-dictionary/interfaces/StyleDictionaryWriterConfig.md)
 
 ## `directory`

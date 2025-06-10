@@ -1,7 +1,5 @@
 # Figma Reader Options
 
-TODO: Add twoslash
-
 - [`FigmaReaderConfig`](../../api/@theemo/figma/interfaces/FigmaReaderConfig.md)
 
 ## `files`

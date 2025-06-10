@@ -4,7 +4,7 @@ You can configure theemo in `theemo.config.js`:
 
 The most basic config file looks like this:
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 export default {
   // config options
 }
@@ -24,7 +24,7 @@ Alternative locations are also possible:
 Since Theemo ships with TypeScript typings, you can leverage your IDE's
 intellisense with jsdoc type hints:
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 /** @type {import('@theemo/cli').TheemoConfig} */
 export default {
   // config options
@@ -34,7 +34,7 @@ export default {
 Alternatively, you can use the `defineConfig` helper which should provide
 intellisense without the need for jsdoc annotations:
 
-```js [theemo.config.js]
+```js [theemo.config.js] twoslash
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({

@@ -96,7 +96,7 @@ export default config;
 This is apparently for _one_ constraint match. Usually there are more such
 values, so it is prime candidate to turn these into functions:
 
-```js [config.js]
+```js [config.js] twoslash
 import StyleDictionary from 'style-dictionary';
 
 import {
@@ -130,7 +130,7 @@ function makeDensityPlatform(density) {
 }
 
 /** @type import("style-dictionary/types").Config */
-const config = {
+export default {
   source: ['tokens/**/*.json'],
   preprocessors: ['theemo/token'],
   platforms: {
@@ -143,8 +143,6 @@ const config = {
     'density-compact': makeDensityPlatform('compact')
   }
 };
-
-export default config;
 ```
 
 ## Output
