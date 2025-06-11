@@ -12,7 +12,7 @@ async function read(config: SyncConfig) {
 }
 
 function analyze(config: SyncConfig, tokens: TokenCollection) {
-  const lexer = new Lexer(config.lexer);
+  const lexer = new Lexer(config.lexer ?? {});
 
   return lexer.analyze(tokens);
 }

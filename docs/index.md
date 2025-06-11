@@ -3,8 +3,9 @@ layout: home
 
 hero:
   name: Theemo
-  text: Design Token Automations
-  tagline: Connecting Tools
+  # text: Design Token Automations
+  text: End-to-End Design Token Workflow
+  tagline: Pick the Parts YOU Need
   actions:
     - theme: brand
       text: Get Started

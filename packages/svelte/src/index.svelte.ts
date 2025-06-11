@@ -4,6 +4,9 @@ import { ThemeManager } from '@theemo/theme';
 
 import type { FeatureWithValue, Theme } from '@theemo/theme';
 
+/**
+ * Manage themes and features with Theemo
+ */
 class Theemo {
   private internalActiveTheme: Theme | undefined = $state();
   private internalFeatures: FeatureWithValue[] = $state([]);
@@ -30,26 +33,49 @@ class Theemo {
     this.internalFeatures = this.#manager.features;
   };
 
+  /**
+   * List of all available themes
+   */
   get themes(): Theme[] {
     return this.#manager.themes;
   }
 
+  /**
+   * The active theme
+   */
   get activeTheme(): Theme | undefined {
     return this.internalActiveTheme;
   }
 
+  /** All features for the active theme */
   get features(): FeatureWithValue[] {
     return this.internalFeatures;
   }
 
+  /**
+   * Set a feature to the given value
+   *
+   * @param featureName the feature to change
+   * @param value the value for that feature
+   */
   setFeature = (featureName: string, value: string): void => {
     this.#manager.setFeature(featureName, value);
   };
 
+  /**
+   * Unsets a feature. Reverts to its default.
+   *
+   * @param featureName the feature to unset
+   */
   unsetFeature = (featureName: string): void => {
     this.#manager.unsetFeature(featureName);
   };
 
+  /**
+   * Swithes to another theme
+   *
+   * @param name the name of the new theme
+   */
   switchTheme = async (name: string): Promise<void> => {
     await this.#manager.switchTheme(name);
   };

@@ -19,11 +19,11 @@ export default defineConfig({
 All these `sources` are reader plugins. Theemo provides some, but you can write
 your own, too.
 
-## Available Reader Plugins
+## Available Readers
 
 - [Figma Reader](./figma/reader.md)
 
-## Write your own Reader Plugin
+## Write your own Reader
 
 The plugin should implement the `ReaderTool` interface, with only one `read()`
 function to keep the API fairly minimal.
@@ -58,7 +58,8 @@ import type { YourReaderConfig } from './config';
 export default class YourReader {
   #config: YourReaderConfig;
 
-  constructor(#config: YourReaderConfig) {
+  constructor(config: YourReaderConfig) {
+    this.#config = config;
   }
 
   async read(): Promise<TokenCollection> {
@@ -81,7 +82,7 @@ export interface YourReaderConfig {
 
 Use your reader aside to the figma reader:
 
-```js
+```js [theemo.config.js]
 import { figmaReader } from '@theemo/figma';
 import { yourReader } from '<see-above>';
 import { defineConfig } from '@theemo/cli';
@@ -90,8 +91,8 @@ export default defineConfig({
   sync: {
     reader: {
       sources: [
-        figmaReader({ ... }),
-        yourReader({ ... })
+        figmaReader({ /*...*/ }),
+        yourReader({ /*...*/ })
       ]
     }
   }

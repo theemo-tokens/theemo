@@ -64,6 +64,7 @@
     "@sveltejs/kit": "^2.21.2",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
+    "@theemo-config/typedoc": "workspace:*",
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",

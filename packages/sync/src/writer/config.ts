@@ -7,5 +7,6 @@ import type { WriterTool } from '../tool.js';
  * See the respective tool configurations, what further properties will be used.
  */
 export interface WriterConfig {
+  /** One or many targets to write tokens to */
   targets: WriterTool | WriterTool[];
 }

@@ -8,7 +8,7 @@ outline: deep
 
 To start use `figmaReader()` from `@theemo/figma`. Here is a basic config as template:
 
-```js
+```js [theemo.config.js]
 import { figmaReader } from '@theemo/figma';
 import { defineConfig } from '@theemo/cli';
 
@@ -65,7 +65,7 @@ Please refer to [Issue #691](https://github.com/theemo-tokens/theemo/issues/691)
 
 ## Files
 
-It is possible to collect tokes across multiple files. Add all the file IDs you
+It is possible to collect tokens across multiple files. Add all the file IDs you
 wish to sync from into the `files` array.
 
 `figmaReader` will parse tokens from each file and then merge them together.
@@ -153,9 +153,7 @@ flowchart TB
   class getTypeFromToken,getPropertiesForToken api
 ```
 
-### Customization
-
-As per the flow graph above and in all examples on this page. The green
+As per the flow graph above and in all others on this page. The green
 functions is where you can intersect the default behavior and apply custom
 logic.
 
@@ -196,180 +194,17 @@ flowchart TB
   class isTokenByVariable,getNameFromVariable,considerMode,getConstraints api
 ```
 
-#### `isTokenByVariable()`
+Customizations options:
 
-Tokens can be hidden from publishing within Figma. However, accessing through
-the REST API is exposing _all_ variables. The default behavior mimics Figma's
-behavior. You have the chance to add some additional logic, custom to your
-system on checking which variables shall result in tokens or not.
+- [`isTokenByVariable()`](../../config/sync/figma-reader.md#parser-istokenbyvariable)
+- [`getNameFromVariable()`](../../config/sync/figma-reader.md#parser-getnamefromvariable)
+- [`considerMode()`](../../config/sync/figma-reader.md#parser-considermode)
+- [`getConstraints()`](../../config/sync/figma-reader.md#parser-getconstraints)
 
-```ts
-import { figmaReader, isTokenByVariable } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
+::: info API Reference
 
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        // ...
-        parser: {
-          isTokenByVariable: (variable: FigmaVariable) => {
-            // implement your custom logic here
-            if (yourCustomLogic(variable)) {
-              return false;
-            }
+- [`Variable` Type on Figma API](https://www.figma.com/developers/api#variables-types)
 
-            // ...or else use default behavior
-            return isTokenByVariable(variable);
-          };
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { isTokenByVariable } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.isTokenByVariable`](../../api/@theemo/figma/interfaces/FigmaParserConfig.md#istokenbyvariable)
-- [`isTokenByVariable()`](../../api/@theemo/figma/functions/isTokenByVariable.md)
-:::
-
-#### `getNameFromVariable()`
-
-Even though Figma shows hierarchy for your styles and variables, internally
-those are separated with a `/` character, hence Figma disallows the usage of `.`
-as part of the variable name, to align with [DTCG
-Format](https://tr.designtokens.org/format/#character-restrictions)  as the `.`
-is used as group separator. The default implementation takes care of this
-transformation. You may use this functions to apply name transformations,
-according to your [token specification](../../design-tokens/token-specification.md).
-
-```ts
-import { figmaReader, getNameFromVariable } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        // ...
-        parser: {
-          getNameFromVariable: (variable: FigmaVariable) => {
-            // implement your custom logic here
-            if (variable.name.includes('primary')) {
-              return variable.name.replace('primary', 'ARE-YOU-SURE-WHAT-THAT-MEANS?');
-            }
-
-            // ... or else use default behavior
-            return getNameFromVariable(variable);
-          };
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { getNameFromVariable } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.getNameFromVariable`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getnamefromvariable)
-- [`getNameFromVariable()`](../../api/@theemo/figma/functions/getNameFromVariable.md)
-:::
-
-#### `considerMode()`
-
-Variables support different modes. Some are relevant for your design system,
-others you can completely ignore for synching tokens. As theemo cannot predict
-which ones you want to consider for exporting tokens, you can declare such.
-
-::: info
-It only applies to collections with more then _one_ mode.
-:::
-
-For considering your `light` and `dark` modes, here is how:
-
-```ts
-import { figmaReader } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        parser: {
-          considerMode: (mode: string) => {
-            return ['light', 'dark'].includes(mode);
-          },
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-- [`FigmaParserConfig.considerMode`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#considermode)
-:::
-
-#### `getConstraints()`
-
-As your modes can take arbitrary names, such as:
-
-- `light`, `dark`
-- `light-more`, `light-less`, `dark-more`, `dark-less`
-- `sunrise`, `day`, `sunset`, `night`
-
-For theemo it is impossible to guess the appropriate constraints. As such, you
-need to provide and explain the behavior of your system. The example above
-for [`considerMode()`](#considermode), qualifies `light` and `dark` as
-appropriate modes, let's continue assigning their constraints:
-
-```ts
-import { figmaReader } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        parser: {
-          getConstraints(mode: string/*, variable: FigmaVariable*/) {
-            if (mode === 'light' || mode === 'dark') {
-              return { features: { 'color-scheme': mode } };
-            }
-          }
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Theemo has a very advanced and flexible system to describe constraints. Read
-more on [features for themes](../../design-tokens/theming.md#features).
-
-- [`FigmaParserConfig.getConstraints`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getconstraints)
-- [`Constraints`](../../api/@theemo/tokens/type-aliases/Constraints.md)
 :::
 
 ### Styles
@@ -400,105 +235,15 @@ flowchart TB
   class isTokenByStyle,getNameFromStyle api
 ```
 
+Customizations options:
+
+- [`isTokenByStyle()`](../../config/sync/figma-reader.md#parser-istokenbystyle)
+- [`getNameFromStyle()`](../../config/sync/figma-reader.md#parser-getnamefromstyle)
+
 ::: info API Reference
 
 - [`Style` Type on Figma API](https://www.figma.com/developers/api#style-type)
 
-:::
-
-#### `isTokenByStyle()`
-
-Each style found in the Figma file is passed into that function and being asked,
-whether this is a token or not.
-
-The default implementation is, if the name of the token starts with a `.`, it
-will respond `false`. That is the default behavior of Figma, where you can't
-publish styles that begin with a `.` (as it is like a hidden folder on a unix
-system).
-
-You can use this function to apply your own behavior. Here in this case, styles
-are ignored, when they contain braces:
-
-```ts
-import { figmaReader, isTokenByStyle } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-import type { Style } from 'figma-api';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        parser: {
-          isTokenByStyle: (style: Style) => {
-            return !style.name.includes('(') && !style.name.includes(')') && isTokenByStyle(style);
-          }
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { isTokenByStyle } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.isTokenByStyle`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#istokenbystyle)
-- [`isTokenByStyle()`](../../api/@theemo/figma/functions/isTokenByStyle.md)
-:::
-
-#### `getNameFromStyle()`
-
-To actually get the name of a style. By default, it will pass through the
-name of the token as in Figma, replacing `/` with `.`.
-
-For customizations, such as prefixing text styles with `typography/`, see here:
-
-```ts
-import { figmaReader, getNameFromStyle } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-import type { Style } from 'figma-api';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        parser: {
-          getNameFromStyle(style: Style) {
-            if (style.styleType === 'TEXT') {
-              return getNameFromStyle({
-                ...style,
-                name: `typography/${style.name}`
-              });
-            }
-
-            return getNameFromStyle(style);
-          },
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { getNameFromStyle } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.getNameFromStyle`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getnamefromstyle)
-- [`getNameFromStyle()`](../../api/@theemo/figma/functions/getNameFromStyle.md)
 :::
 
 ### Text Nodes
@@ -544,112 +289,16 @@ our sizing, we only need `base` and `ratio` parameters for this.
 as suffix for the node names. This will serve as indicators to recognize such
 nodes as tokens in theemo.
 
+Customizations options:
+
+- [`isTokenByText()`](../../config/sync/figma-reader.md#parser-istokenbytext)
+- [`getNameFromText()`](../../config/sync/figma-reader.md#parser-getnamefromtext)
+- [`getValueFromText()`](../../config/sync/figma-reader.md#parser-getvaluefromtext)
+
 ::: info Reference
 
 - [`Text` Node on Figma API](https://www.figma.com/developers/api#text-props)
 
-:::
-
-#### `isTokenByText()`
-
-By default no tokens are recognized, so we need to teach theemo to understand
-text nodes who include the `[token]` tag:
-
-```ts
-import { figmaReader } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-import type { Node } from 'figma-api';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        // ...
-        parser: {
-          isTokenByText(node: Node<'TEXT'>) {
-            return node.name.includes('[token]');
-          }
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { isTokenByText } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.isTokenByText`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#istokenbytext)
-- [`isTokenByText()`](../../api/@theemo/figma/functions/isTokenByText.md)
-:::
-
-#### `getNameFromText()`
-
-Next up is to actually get the name from the node we let pass earlier. Here we
-drop the `[token]` tag to get the _clean_ token name:
-
-```ts
-import { figmaReader } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-import type { Node } from 'figma-api';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        // ...
-        parser: {
-          getNameFromText(node: Node<'TEXT'>) {
-            return node.name.replace('[token]', '').trim();
-          }
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { getNameFromText } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.getNameFromText`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getnamefromtext)
-- [`getNameFromText()`](../../api/@theemo/figma/functions/getNameFromText.md)
-:::
-
-#### `getValueFromText()`
-
-So far theemo is handling a `node` which it knows it is a token and what the
-name is. Finally we need to get the actual _value_ from the node. Theemo
-provides a default implementation by returning the `characters` property from
-the `node` (= the contents), which should already do it. However, you are free
-to overwrite this behavior at this point.
-
-::: info References
-
-Default
-
-```ts
-import { getValueFromText } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.getValueFromText`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getvaluefromtext)
-- [`getValueFromText()`](../../api/@theemo/figma/functions/getValueFromText.md)
 :::
 
 ### Classify Tokens
@@ -661,86 +310,7 @@ which will be put into the [lexer](../lexer.md). In the last classification step
 you have the chance to do some cleanup or pass any data along with the token
 that are relevant to your setup.
 
-#### `getTypeFromToken()`
+Customizations options:
 
-While handling the tokens from reading and parsing the source, theemo tries to
-detect the _type_ of a token, based on the related Figma construct (ie. `Node`
-or `Style`). You can provide your own customization to this:
-
-```ts
-import { figmaReader } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        // ...
-        parser: {
-          getTypeFromToken: (token: FigmaToken) => {
-            if (token.style) {
-              return getTypefromStyle(token.style);
-            }
-
-            return '';
-          };
-        }
-      })
-    }
-  }
-});
-```
-
-::: info References
-
-Default
-
-```ts
-import { getTypeFromToken } from '@theemo/figma';
-```
-
-API
-
-- [`FigmaParserConfig.getTypeFromToken`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#gettypefromtoken)
-- [`getTypeFromToken()`](../../api/@theemo/figma/functions/getTypeFromToken.md)
-:::
-
-#### `getPropertiesForToken()`
-
-You might find yourself in the need to add additional properties to the token
-that is parsed from Figma. For example, you might want to include the Figma name
-of the related style to be able to show them both on the generated token
-documentation. Here is how:
-
-```ts
-import { figmaReader } from '@theemo/figma';
-import { defineConfig } from '@theemo/cli';
-
-export default defineConfig({
-  sync: {
-    reader: {
-      sources: figmaReader({
-        // ...
-        parser: {
-          getPropertiesForToken: (token: FigmaToken/*, document?: FigmaDocument*/) => {
-            if (token.figmaName) {
-              return {
-                figmaName: token.figmaName
-              };
-            }
-          };
-        }
-      })
-    }
-  }
-});
-```
-
-You'll also receive the Figma `document` as second parameter. With that you can
-perform your own lookups with the Figma document. Please refer to their
-[REST API documention](https://www.figma.com/developers/api#get-files-endpoint).
-
-::: info References
-
-- [`FigmaParserConfig.getPropertiesForToken`](../../api//@theemo/figma/interfaces/FigmaParserConfig.md#getpropertiesfortoken)
-:::
+- [`getTypeFromToken()`](../../config/sync/figma-reader.md#parser-gettypefromtoken)
+- [`getPropertiesForToken()`](../../config/sync/figma-reader.md#parser-getpropertiesfortoken)

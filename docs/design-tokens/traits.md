@@ -10,7 +10,7 @@ Tokens are somewhat of chameleons as they do change their value, it's fair to at
 
 ## Behaviors
 
-Behaviors come in two modalities: _adaptive_ and *mode*
+Behaviors come in two modalities: _adaptive_ and _mode_
 
 The **adaptive** modality is a user's instruction to the product to respect their preference being set in the operating system (OS). A product behaves passive and passes through the preference from the OS.\
 Changing the preference in the OS might happen by a manual toggle, automatically triggered via schedule, or through signals from sensors.

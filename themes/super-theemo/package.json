@@ -20,7 +20,7 @@
         ]
       },
       {
-        "name": "sizing",
+        "name": "density",
         "options": [
           "compact",
           "comfortable",

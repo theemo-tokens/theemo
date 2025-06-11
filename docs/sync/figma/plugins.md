@@ -5,9 +5,10 @@ reader.
 
 ## Write your own Figma Reader Plugin
 
-The plugin should implement the `Plugin` interface. It has a chance to request
-`plugin_data` from the REST API, make an async setup and has access to all the
-parser data as the reader itself (to share the same config).
+The plugin should implement the
+[`Plugin`](../../api/@theemo/figma/interfaces/Plugin.md) interface. It has a
+chance to request `plugin_data` from the REST API, make an async setup and has
+access to all the parser data as the reader itself (to share the same config).
 
 Here are the methods that you _can_ use (all of the shown are optional), pick
 whatever is relevant to you.
@@ -22,7 +23,8 @@ export default class YourPlugin {
   #config: YourPluginConfig;
   #parser: ParserConfig;
 
-  constructor(#config: YourPluginConfig) {
+  constructor(config: YourPluginConfig) {
+    this.#config = config;
   }
 
   /**
@@ -77,7 +79,7 @@ export interface YourPluginConfig {
 
 Use your plugin in the figma reader:
 
-```js
+```js [theemo.config.js]
 import { figmaReader } from '@theemo/figma';
 import { yourPlugin } from '<see-above>';
 import { defineConfig } from '@theemo/cli';
@@ -85,13 +87,11 @@ import { defineConfig } from '@theemo/cli';
 export default defineConfig({
   sync: {
     reader: {
-      sources: [
-        figmaReader({
-          plugins: [
-            yourPlugin({ ... })
-          ]
-        })
-      ]
+      sources: figmaReader({
+        plugins: [
+          yourPlugin({ ... })
+        ]
+      })
     }
   }
 });

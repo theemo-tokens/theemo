@@ -76,8 +76,10 @@ A feature is supported through tokens storing different values based on clear fe
 
 ```json
 {
-  "$value": "darkgrey",
-  "color-scheme": "dark"
+  "value": "darkgrey",
+  "features" {
+    "color-scheme": "dark"
+  }
 }
 ```
 
@@ -87,7 +89,7 @@ Instead of hardcoding values, references are the mechanic to assign the value. T
 
 The token  `intent-action-base-background` has permutations of values. Here is the formula:
 
-```
+```txt
 token = contrast x scheme x chroma x skin
 ```
 
@@ -100,7 +102,7 @@ In the example:
 
 Let's do the math:
 
-```
+```txt
 intent-action-base-background = 3 * 3 * 4 * 4 = 144
 ```
 
@@ -172,7 +174,7 @@ Equally interesting is the inner workings of a theme, how to support multiple fe
 
 At first the `intent-action-base-background` token with a single value:
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
@@ -187,7 +189,7 @@ and then requested via endpoint:
 GET https://example.com/api/:theme/tokens/intent-action-base-background
 ```
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
@@ -200,18 +202,22 @@ GET https://example.com/api/:theme/tokens/intent-action-base-background
 
 As token designers, we can support this token with different features, beginning with `color-scheme`:
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
     "$value": [
       {
-        "$value": "darkblue",
-        "color-scheme": "light"
+        "value": "darkblue",
+        "features": {
+          "color-scheme": "light"
+        }
       },
       {
-        "$value": "lightblue",
-        "color-scheme": "dark"
+        "value": "lightblue",
+        "features": {
+          "color-scheme": "dark"
+        }
       }
     ]
   }
@@ -224,7 +230,7 @@ Which now can be requested while explicitly querying for a feature:
 GET https://example.com/api/:theme/tokens/intent-action-base-background?color-scheme=dark
 ```
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
@@ -245,23 +251,29 @@ without querying any explicit features, theme defaults will be used: `color-sche
 
 Allowing to extend support for `color-contrast` feature:
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
     "$value": [
       {
-        "$value": "darkblue",
-        "color-scheme": "light"
+        "value": "darkblue",
+        "features": {
+          "color-scheme": "light"
+        }
       },
       {
-       "$value": "lightblue",
-        "color-scheme": "dark"
+        "value": "lightblue",
+        "features": {
+          "color-scheme": "dark"
+        }
       },
       {
-        "$value": "paleblue",
-        "color-scheme": "light",
-        "color-contrast": "high"
+        "value": "paleblue",
+        "features": {
+          "color-scheme": "light",
+          "color-contrast": "high"
+        }
       }
     ]
   }
@@ -274,7 +286,7 @@ Requesting:
 GET https://example.com/api/:theme/tokens/intent-action-base-background?color-contrast=high
 ```
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
@@ -323,17 +335,17 @@ Now a consumer of the theme API is aware of a scope called `invert` and is able 
 
 Much like defining multiple values for various features, the same mechanics can be used when defining scopes:
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
     "$value": [
       {
-        "$value": "darkblue"
+        "value": "darkblue"
       },
       {
-        "$value": "lightblue",
-        "$scope": "invert"
+        "value": "lightblue",
+        "scope": "invert"
       }
     ]
   }
@@ -346,7 +358,7 @@ which can be requested with this query:
 GET https://example.com/api/:theme/tokens/intent-action-base-background?scope=invert
 ```
 
-```json
+```json [token]
 {
   "intent-action-base-background": {
     "$type": "color",
@@ -452,8 +464,7 @@ Danny Banks (2021) shows two approaches using [multiple token values with Style 
 
 Given token designers work on text files to define tokens, it is a question of flavor which approach they choose, and for what reason. For example, using one file per feature (to work on one color-scheme) or files per bounded context (eg. intents) but seeing multiple values at once. Here are both approaches explained:
 
-```json5
-// intents.tokens
+```json [intents.tokens]
 {
   "intent-action-base-background": {
     "$type": "color",
@@ -464,14 +475,15 @@ Given token designers work on text files to define tokens, it is a question of f
 
 ... and another file for dark color scheme feature:
 
-```json5
-// intents-dark.tokens
+```json [intents-dark.tokens]
 {
   "intent-action-base-background": {
     "$type": "color",
     "$value": {
-      "$value": "lightblue",
-      "color-scheme": "dark"
+      "value": "lightblue",
+      "features": {
+        "color-scheme": "dark"
+      }
     }
   }
 }
@@ -481,14 +493,13 @@ The `$value` definition gets more detailed by describing the constraints under w
 
 All this is working with scopes being present:
 
-```json5
-// scope-invert.tokens
+```json [scope-invert.tokens]
 {
   "intent-action-base-background": {
     "$type": "color",
     "$value": {
-      "$value": "lightblue",
-      "$scope": "invert"
+      "value": "lightblue",
+      "scope": "invert"
     }
   }
 }
@@ -496,22 +507,23 @@ All this is working with scopes being present:
 
 The same token defined three times, in three different files. They can be compiled into one file:
 
-```json5
-// compiled.tokens
+```json [compiled.tokens]
 {
   "intent-action-base-background": {
     "$type": "color",
     "$value": [
       {
-        "$value": "darkblue"
+        "value": "darkblue"
       }, 
       {
-        "$value": "lightblue",
-        "color-scheme": "dark"
+        "value": "lightblue",
+        "features": {
+          "color-scheme": "dark"
+        }
       }, 
       {
-        "$value": "lightblue",
-        "$scope": "invert"
+        "value": "lightblue",
+        "scope": "invert"
       }
     ]
   }
@@ -531,8 +543,8 @@ make the connection to the work that was already put into here
 type CurrentValue = string;
 
 interface ConstrainedValue {
-  $value: CurrentValue;
-  $scope?: string; // must be the values defined in meta file
+  value: CurrentValue;
+  scope?: string; // must be the values defined in meta file
   [feature: string]: string; // must be the values defined in meta file
 }
 
@@ -545,7 +557,11 @@ type Value =
   | SingleValue[];
 ```
 
-This will continue to use _special fields_ prefixed with `$` and features use user-defined values. That rule makes it possible to validate the token files.
+::: info
+
+These types are supported by [`@theemo/tokens`](../api/@theemo/tokens/)
+
+:::
 
 At the time of writing this article, [this is currently being discussed at the DTCG group](https://github.com/design-tokens/community-group/issues/210), in order to add this to the spec. This idea is placed there amongst those from other contributors.
 

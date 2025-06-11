@@ -7,5 +7,6 @@ import type { ReaderTool } from '../tool.js';
  * See the respective tool configurations, what further properties will be used.
  */
 export interface ReaderConfig {
+  /** One or many sources to read tokens from */
   sources: ReaderTool | ReaderTool[];
 }

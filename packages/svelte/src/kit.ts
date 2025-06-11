@@ -65,6 +65,12 @@ function resolveEntry(entry: string) {
   return undefined;
 }
 
+/**
+ * Add theemo to your svelte config
+ *
+ * @param svelteKitConfig your svelte config
+ * @returns your svelte config with theemo config
+ */
 export function theemoSvelteConfig(svelteKitConfig: Config = {}): Config {
   const outDir = svelteKitConfig.kit?.outDir ?? '.svelte-kit';
   const currentHook = `${outDir}/generated/theemo-hook.server.mjs`;
@@ -207,6 +213,11 @@ export function makeHandler(packages: ResolvedTheemoPackage[], options: Options)
   };
 }
 
+/**
+ * Adds theemo to your vite
+ * @param options Theemo options
+ * @returns Theemo vite plugins
+ */
 export function theemoPlugin(options: Options): Plugin[] {
   return [...theemoVite(options), hookServerHookPlugin(options)];
 }

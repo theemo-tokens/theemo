@@ -4,8 +4,11 @@ import Service from '@ember/service';
 import { ThemeManager } from '@theemo/theme';
 
 import type Owner from '@ember/owner';
-import type { FeatureWithValue, Theme } from '@theemo/theme';
+import type { FeatureValue, FeatureWithValue, Theme } from '@theemo/theme';
 
+/**
+ * Manage Themes in Ember
+ */
 export default class TheemoService extends Service {
   @tracked private internalActiveTheme?: Theme;
   @tracked private internalFeatures: FeatureWithValue[] = [];
@@ -33,26 +36,49 @@ export default class TheemoService extends Service {
     this.internalFeatures = this.#manager.features;
   };
 
+  /**
+   * List of all available themes
+   */
   get themes(): Theme[] {
     return this.#manager.themes;
   }
 
+  /**
+   * The active theme
+   */
   get activeTheme(): Theme | undefined {
     return this.internalActiveTheme;
   }
 
+  /** All features for the active theme */
   get features(): FeatureWithValue[] {
     return this.internalFeatures;
   }
 
-  setFeature = (featureName: string, value: string): void => {
+  /**
+   * Set a feature to the given value
+   *
+   * @param featureName the feature to change
+   * @param value the value for that feature
+   */
+  setFeature = (featureName: string, value: FeatureValue): void => {
     this.#manager.setFeature(featureName, value);
   };
 
+  /**
+   * Unsets a feature. Reverts to its default.
+   *
+   * @param featureName the feature to unset
+   */
   unsetFeature = (featureName: string): void => {
     this.#manager.unsetFeature(featureName);
   };
 
+  /**
+   * Swithes to another theme
+   *
+   * @param name the name of the new theme
+   */
   switchTheme = async (name: string): Promise<void> => {
     await this.#manager.switchTheme(name);
   };

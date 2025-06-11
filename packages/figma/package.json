@@ -54,6 +54,7 @@
     "@gossi/config-prettier": "^0.10.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
+    "@theemo-config/typedoc": "workspace:*",
     "@types/lodash.isempty": "^4.4.9",
     "@types/lodash.merge": "^4.6.9",
     "@typescript-eslint/eslint-plugin": "^8.34.0",

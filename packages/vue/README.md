@@ -8,9 +8,7 @@ Theemo integration for vue to manage themes.
 pnpm add -D @theemo/vue @theemo/vite
 ```
 
-## Usage
-
-### 1. Prepare `vite`
+## Configuration
 
 Add `@theemo/vite` to load all themes
 
@@ -30,33 +28,15 @@ export default defineConfig({
 });
 ```
 
-Then in your `index.html` add `{{theemo}}` that will be replaced with the
-default theme (so it is instantly loaded):
+## Usage
 
-```html
-<!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    {{theemo}}
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-</html>
-```
-
-### 2. Provide & Inject
+### With Provide & Inject
 
 There are two exports in `@theemo/vue` for providing and injecting `Theemo`.
 Provide theemo from your `App.vue`:
 
 ```html
-<!-- App.vue -->
+<!-- src/App.vue -->
 <script setup lang="ts">
 import { provideTheemo } from '@theemo/vue';
 
@@ -64,10 +44,10 @@ provideTheemo();
 </script>
 ```
 
-then later down the component tree, you can use it to swith themes:
+then later down the component tree, you can use it to switch themes:
 
 ```html
-<!-- components/theme-switcher.vue -->
+<!-- src/components/theme-switcher.vue -->
 <script setup lang="ts">
 import { injectTheemo } from '@theemo/vue';
 
@@ -77,7 +57,7 @@ theemo.switchTheme('ocean');
 </script>
 ```
 
-### 3. Manually
+### Manually
 
 You can also use the `Theemo` class and manually instantiate it, if one instance
 is what you need.
@@ -88,3 +68,8 @@ import { Theemo } from '@theemo/vue';
 const theemo = new Theemo();
 theemo.switchTheme('ocean');
 ```
+
+## References
+
+- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/vue)
+- [API](https://theemo.io/api/@theemo/vue/)

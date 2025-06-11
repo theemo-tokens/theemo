@@ -12,5 +12,3 @@ becomes visible in Theemo. Here is a sample:
 !#[Transforming Colors](./transforms.png){.fig-75}
 
 Keep Theemo open to have your values auto-updated.
-
-It's quite helpful in building [automatic color palettes](./v1/automatic-color-palette.md).

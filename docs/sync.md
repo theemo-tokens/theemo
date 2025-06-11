@@ -72,17 +72,19 @@ pnpm add -D @theemo/cli @theemo/sync @theemo/figma @theemo/style-dictionary
 Create a config file `theemo.config.mjs`, and start with this template. You'll
 find further configuration in the respective readers and writers that you use.
 
-```js
+```js [theemo.config.js]
 import { defineConfig } from '@theemo/cli';
 
 export default defineConfig({
-  sync: {...}
+  sync: {
+    // ...
+  }
 });
 ```
 
 To run it, place it as a `script` in your `package.json`:
 
-```json
+```json [package.json]
 {
   "scripts": {
     "sync": "theemo sync"
