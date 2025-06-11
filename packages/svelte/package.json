@@ -77,5 +77,11 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "release-plan": {
+    "semverIncrementAs": {
+      "patch": "major",
+      "minor": "major"
+    }
   }
 }
