@@ -1,6 +1,6 @@
 {
   "name": "@theemo/svelte",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Theemo integration for Svelte",
   "license": "MIT",
   "author": "Thomas Gossmann",

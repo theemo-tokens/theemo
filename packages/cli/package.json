@@ -1,6 +1,6 @@
 {
   "name": "@theemo/cli",
-  "version": "1.0.0",
+  "version": "0.2.4",
   "description": "Theemo CLI",
   "license": "MIT",
   "author": "Thomas Gossmann",
