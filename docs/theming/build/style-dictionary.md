@@ -10,10 +10,9 @@ _different constraints_.
 Find them here:
 
 - [CSS `@property` Tokens](./css-at-property.md)
-- [CSS Custom Properties & Color Scheme
-  Tokens](./css-custom-properties-color-scheme.md)
+- [CSS Custom Properties & Color Scheme Tokens](./css-custom-properties-light-dark.md)
 - [CSS Color Transforms](./css-color-transforms.md)
-- [Constrained Tokens](./constrained-tokens.md)
+- [Constrained Tokens](./constraints.md)
 
 And see the [full example](example.md) to see all of them in action.
 

@@ -2,8 +2,8 @@
 
 This example converts tokens into CSS with [`@property`
 format](./css-at-property.md), using [regular CSS custom properties with
-`light-dark()` for color-scheme](./css-custom-properties-color-scheme.md) and
-[constraind tokens](./constrained-tokens.md) for density.
+`light-dark()` for color-scheme](./css-custom-properties-light-dark.md) and
+[constraind tokens](./constraints.md) for density.
 
 ::: info
 

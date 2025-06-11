@@ -20,11 +20,9 @@ Theemo supports you doing that for the web platform.
 
 Building a theme is a two part process.
 
-1. Convert your tokens into assets for your platform (CSS) using Style
-   Dictionary
-2. Bundle up a package for integration with your product
-
-:arrow_right: [Build a Theme](./theming/build.md)
+1. [Convert your tokens into assets for your platform (CSS) using Style
+   Dictionary](./theming/build/style-dictionary.md)
+2. [Bundle up a package for integration with your product](./theming/build/theme-package.md)
 
 ## Integration
 

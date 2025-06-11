@@ -60,3 +60,11 @@ pnpm build:theme
 ```
 
 Check your `file` and see the output.
+
+## Integrations
+
+The output from `theemo build` is _one_ CSS file ready to include in your
+application. You can either publish your theme package or have it part of your
+monorepo. From there you can of course inject it manually into your project.
+Better is to use one of the provided (vite based)
+[integrations](../integrations.md) to load and manage themes.

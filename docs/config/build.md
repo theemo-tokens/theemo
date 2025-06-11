@@ -32,7 +32,7 @@ The files that will be concatenated into the output file.
 
 - **Type**: `BuildFeature[]`
 - **Default**: `[]`
-- **Related**: [Features](../../design-tokens/features.md)
+- **Related**: [Features](../design-tokens/features.md)
 
 When your theme supports features, you describe them here so they can be created
 appropriately.

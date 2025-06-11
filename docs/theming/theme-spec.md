@@ -3,7 +3,7 @@
 A Theemo theme is an NPM package with a bit of metadata to recognize a theme.
 That helps bundlers to load them and runtime to manage features at runtime.
 
-You can use [`theemo build`](./build/theemo-package.md) to generate the required spec. Then publish the
+You can use [`theemo build`](./build/theme-package.md) to generate the required spec. Then publish the
 package to a registry or use it as part of your monorepo.
 
 ## Specification
@@ -44,7 +44,7 @@ Browsers have bulit-in mechanics to support a couple of features in which they
 act as [agents or principals](../design-tokens/traits.md#principals-and-agents)
 for the browser or operating system. Thus they are supported by the theemo
 [`ThemeManager`](/api/@theemo/theme/classes/ThemeManager.md) (see [Vanilla
-Example](./vanilla.md)).
+Example](./integrations/vanilla.md)).
 
 Browser Features are
 [`ColorSchemeFeature`](/api/@theemo/theme/interfaces/ColorSchemeFeature.md),

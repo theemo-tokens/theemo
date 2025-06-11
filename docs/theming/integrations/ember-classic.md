@@ -11,7 +11,7 @@ ember install ember-theemo
 
 ## Usage
 
-If you use [theming](../theming.md) for your theme creating,
+If you use [theming](../../theming.md) for your theme creating,
 `ember-theemo` will pick up any installed themes found by the `theemo-theme`
 keyword.
 

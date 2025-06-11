@@ -15,7 +15,7 @@ pnpm add -D @theemo/style-dictionary
 
 ## Related
 
-Next steps are [building a theme package](../../theming/build.md) from your synced tokens:
+Next steps are [building a theme package](../../theming.md#building) from your synced tokens:
 
 1. [Convert tokens into CSS with Style Dictionary](../../theming/build/style-dictionary.md)
 2. [Package up your CSS files](../../theming/build/theme-package.md)
