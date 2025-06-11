@@ -76,15 +76,15 @@ With
 you have access to the following:
 
 - Preprocessors
-  - [`theemo/token`](./style-dictionary/preprocessors.md#theemotoken) (Style Dictionary >= v4)
+  - [`theemo/token`](./style-dictionary/preprocessors.md#theemo-token) (Style Dictionary >= v4)
 - Parsers
   - [W3C Parser](./style-dictionary/parsers.md#w3c-parser) (Style Dictionary < v4)
 - Formats
-  - [`css/properties`](./style-dictionary/formats.md#cssproperties)
+  - [`css/properties`](./style-dictionary/formats.md#css-properties)
 - Transforms
-  - [`attribute/constraints`](./style-dictionary/transforms.md#attributeconstraints)
-  - [`value/resolve-constraint`](./style-dictionary/transforms.md#valueresolve-constraint)
-  - [`color/transforms`](./style-dictionary/transforms.md#colortransforms)
-  - [`color/light-dark-css`](./style-dictionary/transforms.md#colorcsslight-dark)
+  - [`attribute/constraints`](./style-dictionary/transforms.md#attribute-constraints)
+  - [`value/resolve-constraint`](./style-dictionary/transforms.md#value-resolve-constraint)
+  - [`color/transforms`](./style-dictionary/transforms.md#color-transforms)
+  - [`color/css/light-dark`](./style-dictionary/transforms.md#color-css-light-dark)
 - Transform Groups
   - [`theemo`](./style-dictionary/transform-groups.md#theemo)

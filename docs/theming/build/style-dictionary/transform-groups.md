@@ -8,10 +8,10 @@ Dictionary the `theemo` transform group is unlocked with the following
 transforms:
 
 <StyleDictionaryIcon/> [`name/kebab`](https://styledictionary.com/reference/hooks/transforms/predefined/#namekebab)<br>
-<TheemoIcon/> [`attribute/constraints`](./transforms.md#attributeconstraints)<br>
-<TheemoIcon/> [`value/resolve-constraint`](./transforms.md#valueresolve-constraint)<br>
-<TheemoIcon/> [`color/transforms`](./transforms.md#colortransforms)<br>
-<TheemoIcon/> [`color/light-dark-css`](./transforms.md#colorcsslight-dark)<br>
+<TheemoIcon/> [`attribute/constraints`](./transforms.md#attribute-constraints)<br>
+<TheemoIcon/> [`value/resolve-constraint`](./transforms.md#value-resolve-constraint)<br>
+<TheemoIcon/> [`color/transforms`](./transforms.md#color-transforms)<br>
+<TheemoIcon/> [`color/css/light-dark`](./transforms.md#color-css-light-dark)<br>
 <StyleDictionaryIcon/> [`color/css`](https://styledictionary.com/reference/hooks/transforms/predefined/#colorcss)<br>
 <StyleDictionaryIcon/> [`fontFamily/css`](https://styledictionary.com/reference/hooks/transforms/predefined/#fontfamilycss)<br>
 <StyleDictionaryIcon/> [`cubicBezier/css`](https://styledictionary.com/reference/hooks/transforms/predefined/#cubicbeziercss)<br>
