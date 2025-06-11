@@ -32,7 +32,8 @@ export default defineConfig({
             'custom'
           ]
         }),
-      ]
+      ],
+      dts: false
     }),
     Icons({
       scale: 1,
@@ -43,7 +44,8 @@ export default defineConfig({
           path.join(import.meta.dirname, '../assets/icons/'), 
           svg => svg.replace(/^<svg /, '<svg class="custom-icon" ')
         )
-      }
+      },
+
     })
   ],
 });
