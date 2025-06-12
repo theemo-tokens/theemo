@@ -1,5 +1,6 @@
 {
   "name": "@theemo-playground/ocean-theme",
+  "version": "0.0.0",
   "private": true,
   "description": "Sample ocean theemo theme",
   "keywords": [
