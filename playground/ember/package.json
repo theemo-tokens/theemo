@@ -1,5 +1,6 @@
 {
   "name": "@theemo-playground/ember",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "vite build",

@@ -1,5 +1,6 @@
 {
   "name": "@theemo-config/tsconfig",
+  "version": "0.0.0",
   "private": true,
   "description": "TSConfig for theemo",
   "type": "module",
