@@ -15,11 +15,11 @@
     "@theemo/theme": "workspace:*",
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
-    "@vitest/browser": "3.2.2",
-    "@vitest/coverage-istanbul": "3.2.2",
+    "@vitest/browser": "3.2.3",
+    "@vitest/coverage-istanbul": "3.2.3",
     "vite": "^6.3.5",
     "vite-plugin-inspect": "^11.1.0",
-    "vitest": "3.2.2"
+    "vitest": "3.2.3"
   },
   "engines": {
     "node": ">=20.11.0"
