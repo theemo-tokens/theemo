@@ -30,7 +30,7 @@
     "@ember/test-helpers": "^5.2.2",
     "@embroider/compat": "^4.1.0",
     "@embroider/config-meta-loader": "^1.0.0",
-    "@embroider/core": "^4.1.0",
+    "@embroider/core": "^4.1.1",
     "@embroider/macros": "^1.18.0",
     "@embroider/vite": "^1.1.5",
     "@glimmer/component": "^2.0.0",
