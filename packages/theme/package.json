@@ -52,7 +52,7 @@
     "prettier": "^3.5.3",
     "tsdown": "^0.12.8",
     "typescript": "5.8.3",
-    "vitest": "3.2.3",
+    "vitest": "3.2.4",
     "webdriverio": "^9.15.0"
   },
   "engines": {
