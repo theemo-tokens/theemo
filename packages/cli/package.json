@@ -63,7 +63,7 @@
     "concurrently": "^9.1.2",
     "eslint": "^8.57.1",
     "prettier": "^3.5.3",
-    "tsdown": "^0.12.8",
+    "tsdown": "^0.12.9",
     "typescript": "5.8.3",
     "vitest": "3.2.4"
   },
