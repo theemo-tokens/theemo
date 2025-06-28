@@ -41,7 +41,7 @@
     "@theemo/tokens": "workspace:*"
   },
   "devDependencies": {
-    "@babel/core": "7.27.4",
+    "@babel/core": "7.27.7",
     "@babel/eslint-parser": "7.27.5",
     "@gossi/config-eslint": "^0.14.0",
     "@gossi/config-prettier": "^0.10.0",
