@@ -66,8 +66,8 @@ importers:
         specifier: 4.2.3
         version: 4.2.3
       mermaid:
-        specifier: 11.6.0
-        version: 11.6.0
+        specifier: 11.7.0
+        version: 11.7.0
       release-plan:
         specifier: 0.17.0
         version: 0.17.0
@@ -106,7 +106,7 @@ importers:
         version: 1.6.0(markdown-it@14.1.0)(vite@6.3.5(@types/node@22.15.31)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.42.0)(yaml@2.8.0))
       vitepress-plugin-mermaid:
         specifier: 2.0.17
-        version: 2.0.17(mermaid@11.6.0)(vitepress@1.6.3(@algolia/client-search@5.27.0)(@types/node@22.15.31)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.42.0)(typescript@5.8.3))
+        version: 2.0.17(mermaid@11.7.0)(vitepress@1.6.3(@algolia/client-search@5.27.0)(@types/node@22.15.31)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.42.0)(typescript@5.8.3))
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@22.15.31)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.4.2)(jsdom@25.0.1)(lightningcss@1.30.1)(terser@5.42.0)(yaml@2.8.0)
@@ -2750,8 +2750,8 @@ packages:
   '@mermaid-js/mermaid-mindmap@9.3.0':
     resolution: {integrity: sha512-IhtYSVBBRYviH1Ehu8gk69pMDF8DSRqXBRDMWrEfHoaMruHeaP2DXA3PBnuwsMaCdPQhlUUcy/7DBLAEIXvCAw==}
 
-  '@mermaid-js/parser@0.4.0':
-    resolution: {integrity: sha512-wla8XOWvQAwuqy+gxiZqY+c7FokraOTHRWMsbB4AgRx9Sy7zKslNyejy7E+a77qHfey5GXw/ik3IXv/NHMJgaA==}
+  '@mermaid-js/parser@0.5.0':
+    resolution: {integrity: sha512-AiaN7+VjXC+3BYE+GwNezkpjIcCI2qIMB/K4S2/vMWe0q/XJCBbx5+K7iteuz7VyltX9iAK4FmVTvGc9kjOV4w==}
 
   '@napi-rs/wasm-runtime@0.2.11':
     resolution: {integrity: sha512-9DPkXtvHydrcOsopiYpUgPHpmj0HWZKMUnL2dZqpvC42lsratuBG06V5ipyno0fUek5VlFsNQ+AcFATSrJXgMA==}
@@ -7828,8 +7828,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  mermaid@11.6.0:
-    resolution: {integrity: sha512-PE8hGUy1LDlWIHWBP05SFdqUHGmRcCcK4IzpOKPE35eOw+G9zZgcnMpyunJVUEOgb//KBORPjysKndw8bFLuRg==}
+  mermaid@11.7.0:
+    resolution: {integrity: sha512-/1/5R0rt0Z1Ak0CuznAnCF3HtQgayRXUz6SguzOwN4L+DuCobz0UxnQ+ZdTSZ3AugKVVh78tiVmsHpHWV25TCw==}
 
   methods@1.1.2:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
@@ -12697,7 +12697,7 @@ snapshots:
       non-layered-tidy-tree-layout: 2.0.2
     optional: true
 
-  '@mermaid-js/parser@0.4.0':
+  '@mermaid-js/parser@0.5.0':
     dependencies:
       langium: 3.3.1
 
@@ -18887,11 +18887,11 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid@11.6.0:
+  mermaid@11.7.0:
     dependencies:
       '@braintree/sanitize-url': 7.1.1
       '@iconify/utils': 2.3.0
-      '@mermaid-js/parser': 0.4.0
+      '@mermaid-js/parser': 0.5.0
       '@types/d3': 7.4.3
       cytoscape: 3.32.0
       cytoscape-cose-bilkent: 4.1.0(cytoscape@3.32.0)
@@ -21897,9 +21897,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress-plugin-mermaid@2.0.17(mermaid@11.6.0)(vitepress@1.6.3(@algolia/client-search@5.27.0)(@types/node@22.15.31)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.42.0)(typescript@5.8.3)):
+  vitepress-plugin-mermaid@2.0.17(mermaid@11.7.0)(vitepress@1.6.3(@algolia/client-search@5.27.0)(@types/node@22.15.31)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.42.0)(typescript@5.8.3)):
     dependencies:
-      mermaid: 11.6.0
+      mermaid: 11.7.0
       vitepress: 1.6.3(@algolia/client-search@5.27.0)(@types/node@22.15.31)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.42.0)(typescript@5.8.3)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
