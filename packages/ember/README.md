@@ -65,5 +65,5 @@ export default class ThemeManager extends Component {
 
 ## References
 
-- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/ember)
+- [Example on Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/ember)
 - [API](https://theemo.io/api/@theemo/ember/)

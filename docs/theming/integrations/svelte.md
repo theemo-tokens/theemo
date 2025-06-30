@@ -3,7 +3,7 @@
 When you use vite with svelte starter template.
 
 [Svelte Example on
-Playground](https://github.com/theemo-tokens/tree/main/playground/svelte)
+Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/svelte)
 
 ## Installation
 
@@ -75,5 +75,5 @@ theemo.switchTheme('ocean');
 
 ## References
 
-- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/svelte)
+- [Example on Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/svelte)
 - [API](/api/@theemo/svelte/)

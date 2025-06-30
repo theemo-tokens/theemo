@@ -39,5 +39,5 @@ manager.switchTheme('ocean');
 
 ## References
 
-- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/vanilla-js)
+- [Example on Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/vanilla-js)
 - [API](https://theemo.io/api/@theemo/vite/)
