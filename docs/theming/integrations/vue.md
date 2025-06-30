@@ -68,5 +68,5 @@ theemo.switchTheme('ocean');
 
 ## References
 
-- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/vue)
+- [Example on Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/vue)
 - [API](/api/@theemo/vue/)
