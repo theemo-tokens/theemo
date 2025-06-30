@@ -44,7 +44,7 @@ export default {
       options: {
         outputReferences: true,
         showFileHeader: false,
-        useCSSColorTransform: false
+        useCSSColorTransform: true
       },
       files: [
         {
