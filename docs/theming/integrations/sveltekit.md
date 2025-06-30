@@ -3,7 +3,7 @@
 When using `sv` CLI to start your project.
 
 [Sveltekit Example on
-Playground](https://github.com/theemo-tokens/tree/main/playground/sveltekit)
+Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/sveltekit)
 
 ## Installation
 
@@ -94,5 +94,5 @@ theemo.switchTheme('ocean');
 
 ## References
 
-- [Example on Playground](https://github.com/theemo-tokens/tree/main/playground/sveltekit)
+- [Example on Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/sveltekit)
 - [API](/api/@theemo/svelte/)

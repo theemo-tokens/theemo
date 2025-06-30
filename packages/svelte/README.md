@@ -6,7 +6,7 @@ themes.
 ## Svelte
 
 [Svelte Example on
-Playground](https://github.com/theemo-tokens/tree/main/playground/svelte)
+Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/svelte)
 
 (when you use vite with svelte starter template)
 
@@ -66,7 +66,7 @@ then later down the component tree, you can use it to switch themes:
 ## SvelteKit
 
 [SvelteKit Example on
-Playground](https://github.com/theemo-tokens/tree/main/playground/sveltekit)
+Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/sveltekit)
 
 (when using `sv` CLI to start your project)
 
@@ -162,7 +162,7 @@ theemo.switchTheme('ocean');
 ## References
 
 - [Svelte Example on
-Playground](https://github.com/theemo-tokens/tree/main/playground/svelte)
+Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/svelte)
 - [SvelteKit Example on
-Playground](https://github.com/theemo-tokens/tree/main/playground/sveltekit)
+Playground](https://github.com/theemo-tokens/theemo/tree/main/playground/sveltekit)
 - [API](https://theemo.io/api/@theemo/svelte/)

@@ -8,7 +8,7 @@ format](./css-at-property.md), using [regular CSS custom properties with
 ::: info
 
 [Inspect the Example in
-Code](https://github.com/theemo-tokens/tree/main/themes/super-theemo).
+Code](https://github.com/theemo-tokens/theemo/tree/main/themes/super-theemo).
 
 :::
 
