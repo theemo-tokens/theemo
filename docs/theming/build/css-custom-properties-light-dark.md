@@ -1,7 +1,7 @@
 # CSS Custom Properties & CSS `light-dark()`
 
 Converting tokens into CSS custom properties is the most straight forward
-approach. When also coverting to [`@property`](./css-at-property.md) at the same
+approach. When also converting to [`@property`](./css-at-property.md) at the same
 time, this needs some filtering to separate them. At the same time, color-scheme tokens can
 be converted using the CSS `light-dark()` function.
 
