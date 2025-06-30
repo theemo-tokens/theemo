@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-06-30)
+
+* @theemo/ember 2.0.0 (patch)
+* @theemo/svelte 2.0.0 (patch)
+* @theemo/theme 2.0.0 (patch)
+* @theemo/vite 2.0.0 (patch)
+* @theemo/vue 2.0.0 (patch)
+
+#### :memo: Documentation
+* `@theemo/ember`, `@theemo/svelte`, `@theemo/theme`, `@theemo/vite`, `@theemo/vue`
+  * [#1480](https://github.com/theemo-tokens/theemo/pull/1480) Correct Links to playground ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-06-12)
 
 * @theemo/build 1.0.0 (minor)
