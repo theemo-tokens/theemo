@@ -1,11 +1,12 @@
 import { describe, expect, test } from 'vitest';
 
+import { type Constraints, TokenCollection } from '@theemo/tokens';
+
 import { DEFAULT_PARSER_CONFIG } from '../../src/index.js';
 import { TheemoPlugin } from '../../src/plugins/theemo.js';
 import theemoPlaygroundFigma from '../samples/theemo-playground/figma.json';
 
 import type { FigmaParserConfig } from '../../src/index.js';
-import type { Constraints } from '@theemo/tokens';
 import type { GetFileResult } from 'figma-api/lib/api-types.js';
 
 function getTokens(dev: boolean | Partial<FigmaParserConfig> = false) {
@@ -48,7 +49,7 @@ describe('Theemo Plugin', () => {
   test('variables as tokens', () => {
     const publicTokens = getTokens();
 
-    const expectedTokens = [
+    const expectedTokens = new TokenCollection([
       'intent.action.background',
       'intent.action.border',
       'intent.action.text',
@@ -57,19 +58,24 @@ describe('Theemo Plugin', () => {
       'intent.alternative.text',
       's0',
       'padding0'
-    ];
+    ]);
 
-    expect(
-      publicTokens.filter((t) => expectedTokens.includes(t.name)).map((t) => t.name)
-    ).toStrictEqual(expectedTokens);
+    expect(publicTokens.filter((t) => expectedTokens.has(t.name)).map((t) => t.name)).toStrictEqual(
+      expectedTokens
+    );
 
     const allTokens = getTokens(true);
 
-    const paletteTokens = ['brand.100', 'brand.500', 'adjacent.500', 'adjacent.700'];
+    const paletteTokens = new TokenCollection([
+      'brand.100',
+      'brand.500',
+      'adjacent.500',
+      'adjacent.700'
+    ]);
 
-    expect(
-      allTokens.filter((t) => paletteTokens.includes(t.name)).map((t) => t.name)
-    ).toStrictEqual(paletteTokens);
+    expect(allTokens.filter((t) => paletteTokens.has(t.name)).map((t) => t.name)).toStrictEqual(
+      paletteTokens
+    );
   });
 
   describe('token types', () => {
