@@ -57,7 +57,7 @@
     "vue": "^3.5.17"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": "^20.11.0 || >=22"
   },
   "release-plan": {
     "semverIncrementAs": {

@@ -58,7 +58,7 @@
     "vitest": "3.2.4"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": "^20.11.0 || >=22"
   },
   "release-plan": {
     "semverIncrementAs": {
