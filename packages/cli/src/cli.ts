@@ -85,4 +85,5 @@ export async function cli(): Promise<void> {
   program.parse(argv);
 }
 
-await cli();
+// eslint-disable-next-line unicorn/prefer-top-level-await
+void cli();
