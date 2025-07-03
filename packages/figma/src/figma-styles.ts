@@ -32,21 +32,24 @@ export function getTypefromStyle(style: Style): TokenType | undefined {
 
   switch (type.toLowerCase()) {
     case 'fill':
-    case 'stroke':
+    case 'stroke': {
       return 'color';
+    }
 
-    case 'effect':
+    case 'effect': {
       return 'shadow';
+    }
 
-    case 'text':
+    case 'text': {
       return 'typography';
+    }
   }
 
   return undefined;
 }
 
 export function getDimension(value: number | string, unit: string): DimensionValue {
-  let val = typeof value === 'string' ? Number.parseFloat(value) : value;
+  const val = typeof value === 'string' ? Number.parseFloat(value) : value;
 
   return val === 0 ? '0' : `${val.toString()}${unit}`;
 }
@@ -88,20 +91,27 @@ export function parseShadowsFromStyle(effects: Effect[], config: ColorConfig): S
 function parseTextTransform(textCase: TextCase): TextTransformValue {
   switch (textCase) {
     /* eslint-disable @typescript-eslint/no-unsafe-enum-comparison */
-    case 'UPPER':
+    case 'UPPER': {
       return 'uppercase';
+    }
 
-    case 'LOWER':
+    case 'LOWER': {
       return 'lowercase';
+    }
 
     case 'TITLE':
     case 'SMALL_CAPS':
-    case 'SMALL_CAPS_FORCED':
+    case 'SMALL_CAPS_FORCED': {
       return 'capitalize';
+    }
 
-    case 'ORIGINAL':
-    default:
+    case 'ORIGINAL': {
       return 'none';
+    }
+
+    default: {
+      return 'none';
+    }
 
     /* eslint-enable @typescript-eslint/no-unsafe-enum-comparison */
   }

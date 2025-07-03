@@ -8,7 +8,7 @@ import type { TransformedToken } from 'style-dictionary';
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units/CSS_data_types
  */
-const CSS_PROPERTY_TYPES: TokenType[] = ['color', 'number', 'dimension', 'duration'];
+const CSS_PROPERTY_TYPES = new Set<TokenType>(['color', 'number', 'dimension', 'duration']);
 
 /**
  * Checks whether a token can be formatted into a CSS `@property`. Use it in
@@ -50,7 +50,7 @@ export function isCSSProperty(token: TransformedToken): boolean {
     !usesReferences(token.original.value) &&
     !isConstrainedValue(token.original.value) &&
     !isComputedValue(token.original.value) &&
-    CSS_PROPERTY_TYPES.includes(type)
+    CSS_PROPERTY_TYPES.has(type)
   );
 }
 

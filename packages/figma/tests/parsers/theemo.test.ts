@@ -17,7 +17,6 @@ function getTokens(dev: boolean | Partial<FigmaParserConfig> = false) {
       if (mode === 'light' || mode === 'dark') {
         return {
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': mode
           }
         };
@@ -60,17 +59,17 @@ describe('Theemo Plugin', () => {
       'padding0'
     ];
 
-    expect([
-      ...publicTokens.filter((t) => expectedTokens.includes(t.name)).map((t) => t.name)
-    ]).toStrictEqual(expectedTokens);
+    expect(
+      publicTokens.filter((t) => expectedTokens.includes(t.name)).map((t) => t.name)
+    ).toStrictEqual(expectedTokens);
 
     const allTokens = getTokens(true);
 
     const paletteTokens = ['brand.100', 'brand.500', 'adjacent.500', 'adjacent.700'];
 
-    expect([
-      ...allTokens.filter((t) => paletteTokens.includes(t.name)).map((t) => t.name)
-    ]).toStrictEqual(paletteTokens);
+    expect(
+      allTokens.filter((t) => paletteTokens.includes(t.name)).map((t) => t.name)
+    ).toStrictEqual(paletteTokens);
   });
 
   describe('token types', () => {
@@ -160,9 +159,8 @@ describe('Theemo Plugin', () => {
       const intentActionBackground = tokens.find((t) => t.name === 'intent.action.background');
 
       expect(intentActionBackground?.value).toStrictEqual([
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         { value: '#2a50d5', features: { 'color-scheme': 'light' } },
-        // eslint-disable-next-line @typescript-eslint/naming-convention
+
         { value: '#2a50d5', features: { 'color-scheme': 'dark' } }
       ]);
     });
@@ -172,9 +170,8 @@ describe('Theemo Plugin', () => {
       const intentActionBorder = tokens.find((t) => t.name === 'intent.action.border');
 
       expect(intentActionBorder?.value).toStrictEqual([
-        // eslint-disable-next-line @typescript-eslint/naming-convention
         { value: '{intent.action.background}', features: { 'color-scheme': 'light' } },
-        // eslint-disable-next-line @typescript-eslint/naming-convention
+
         { value: '{intent.action.background}', features: { 'color-scheme': 'dark' } }
       ]);
     });

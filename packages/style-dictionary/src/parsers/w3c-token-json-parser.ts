@@ -3,11 +3,11 @@ import type { DesignTokens, Parser } from 'style-dictionary/types';
 function parse({ contents }: { contents: string }) {
   const preparedContent = (contents || '{}')
     // replace $value with value so that style dictionary recognizes it
-    .replace(/"\$?value"\s*:/g, '"value":')
+    .replaceAll(/"\$?value"\s*:/g, '"value":')
     // replace $type with type
-    .replace(/"\$?type"\s*:/g, '"type":')
+    .replaceAll(/"\$?type"\s*:/g, '"type":')
     // convert $description to comment
-    .replace(/"\$?description"\s*:/g, '"comment":');
+    .replaceAll(/"\$?description"\s*:/g, '"comment":');
 
   return JSON.parse(preparedContent) as DesignTokens;
 }

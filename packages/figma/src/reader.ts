@@ -17,14 +17,13 @@ type FigmaReaderConfigWithParser = FigmaReaderConfig & {
   parser: FigmaParserConfigWithDefaults;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Parser extends Required<Pick<Plugin, 'parse'>> {}
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+
 interface Resolver extends Required<Pick<Plugin, 'resolve'>> {}
 
 export default class FigmaReader {
   private config: FigmaReaderConfigWithParser;
-  private transformed: Map<string, Token> = new Map();
+  private transformed = new Map<string, Token>();
   private plugins: Plugin[];
 
   constructor(config: FigmaReaderConfig) {
@@ -89,7 +88,6 @@ export default class FigmaReader {
       .filter((data) => data !== undefined);
 
     return figmaClient.getFile(file, {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       plugin_data: [...new Set(pluginData)].join(',')
     });
   }
@@ -116,12 +114,14 @@ export default class FigmaReader {
 
   private transformToken(token: FigmaToken): Token {
     if (this.transformed.has(token.name)) {
-      return this.transformed.get(token.name) as Token;
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      return this.transformed.get(token.name)!;
     }
 
     const pluginProperties = this.plugins
       .filter((plugin) => plugin.getProperties !== undefined)
       .map((plugin) => plugin.getProperties?.(token))
+      // eslint-disable-next-line unicorn/no-array-reduce
       .reduce((prev, actual) => {
         return merge(prev, actual);
       }, {});

@@ -22,7 +22,7 @@ export default class StyleDictionaryWriter {
   }
 
   private getFiles(tokens: TokenCollection) {
-    const files: Map<string, TokenCollection> = new Map();
+    const files = new Map<string, TokenCollection>();
 
     for (const token of tokens) {
       const file = this.getFileFromToken(token);

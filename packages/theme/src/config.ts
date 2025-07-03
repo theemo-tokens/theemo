@@ -64,16 +64,16 @@ export const THEEMO_CONFIG_ID = 'theemo-config';
  * @returns runtime config
  */
 export function extractConfig(rootElement: Element | Document = document): TheemoRuntimeConfig {
-  let meta = rootElement.querySelector<HTMLMetaElement>(`meta[name="${THEEMO_CONFIG_ID}"]`);
+  const meta = rootElement.querySelector<HTMLMetaElement>(`meta[name="${THEEMO_CONFIG_ID}"]`);
 
-  let config = (
+  const config = (
     meta ? JSON.parse(decodeURI(meta.content)) : {}
   ) as PartialDeep<TheemoRuntimeConfig>;
 
   return {
     options: {
       ...DEFAULT_OPTIONS,
-      ...(config.options ?? {})
+      ...config.options
     },
     themes: config.themes ?? []
   };

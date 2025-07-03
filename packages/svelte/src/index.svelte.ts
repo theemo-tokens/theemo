@@ -81,8 +81,9 @@ class Theemo {
   };
 }
 
-const browser = typeof window !== 'undefined';
-const THEEMO: symbol = Symbol('Theemo');
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+const browser = globalThis.window !== undefined;
+const THEEMO = Symbol('Theemo');
 
 export function setTheemoContext(): void {
   if (browser) {

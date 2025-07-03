@@ -32,9 +32,9 @@ describe('Figma Parser', () => {
     const publicTokens = getTokens();
     const expectedTokens = ['grey'];
 
-    expect([
-      ...publicTokens.filter((t) => expectedTokens.includes(t.name)).map((t) => t.name)
-    ]).toStrictEqual(expectedTokens);
+    expect(
+      publicTokens.filter((t) => expectedTokens.includes(t.name)).map((t) => t.name)
+    ).toStrictEqual(expectedTokens);
 
     const allTokens = getTokens(true);
     const paletteTokens = [
@@ -44,9 +44,9 @@ describe('Figma Parser', () => {
       'palette.adjacent.700'
     ];
 
-    expect([
-      ...allTokens.filter((t) => paletteTokens.includes(t.name)).map((t) => t.name)
-    ]).toStrictEqual(paletteTokens);
+    expect(
+      allTokens.filter((t) => paletteTokens.includes(t.name)).map((t) => t.name)
+    ).toStrictEqual(paletteTokens);
   });
 
   describe('token types', () => {

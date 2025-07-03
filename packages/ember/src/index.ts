@@ -1,3 +1,1 @@
-import TheemoService from './services/theemo.ts';
-
-export { TheemoService };
+export { default as TheemoService } from './services/theemo.ts';

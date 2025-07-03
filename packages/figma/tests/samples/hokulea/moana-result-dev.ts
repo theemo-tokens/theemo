@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { REFERENCES as PROD_REFERENCES, VALUES as PROD_VALUES } from './moana-result-prod.js';
 
 export const VALUES: Record<string, string> = {

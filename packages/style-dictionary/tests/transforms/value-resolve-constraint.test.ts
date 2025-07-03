@@ -11,14 +11,12 @@ test('find constrained value in an array of values', () => {
           {
             value: 'white',
             features: {
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               'color-scheme': 'dark'
             }
           },
           {
             value: 'black',
             features: {
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               'color-scheme': 'light'
             }
           }
@@ -27,7 +25,6 @@ test('find constrained value in an array of values', () => {
       {
         constraints: {
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': 'light'
           }
         }
@@ -43,7 +40,6 @@ test('find constrained value', () => {
         value: {
           value: 'white',
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': 'dark'
           }
         }
@@ -51,7 +47,6 @@ test('find constrained value', () => {
       {
         constraints: {
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': 'dark'
           }
         }
@@ -69,7 +64,6 @@ test('no constrained value found, return original', () => {
         value: {
           value: 'white',
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': 'dark'
           }
         }
@@ -77,7 +71,6 @@ test('no constrained value found, return original', () => {
       {
         constraints: {
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-contrast': 'more'
           }
         }
@@ -86,7 +79,6 @@ test('no constrained value found, return original', () => {
   ).toStrictEqual({
     value: 'white',
     features: {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       'color-scheme': 'dark'
     }
   });
@@ -102,7 +94,6 @@ test('find computed and constrained value', () => {
             alpha: -20
           },
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': 'dark'
           }
         }
@@ -110,7 +101,6 @@ test('find computed and constrained value', () => {
       {
         constraints: {
           features: {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'color-scheme': 'dark'
           }
         }
@@ -122,7 +112,6 @@ test('find computed and constrained value', () => {
       alpha: -20
     },
     features: {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       'color-scheme': 'dark'
     }
   });

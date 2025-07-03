@@ -19,7 +19,7 @@ export type ResolvedTheemoPackage = TheemoPackage & {
 };
 
 export function readFile(filePath: string): string {
-  return fs.readFileSync(filePath, { encoding: 'utf-8' });
+  return fs.readFileSync(filePath, { encoding: 'utf8' });
 }
 
 function readFileAsJSON(filePath: string) {
@@ -32,7 +32,7 @@ export function findRootPackage(root: string) {
 }
 
 export function getThemeFilePath(pkg: TheemoPackage) {
-  return `${pkg.name as string}/${pkg.theemo.file}`;
+  return `${pkg.name}/${pkg.theemo.file}`;
 }
 
 export async function getThemeFileContents(
@@ -56,7 +56,7 @@ async function loadTheme(pkg: TheemoPackage, resolve: Resolve) {
 
     pkg.theemo = {
       ...pkg.theemo,
-      filePath: resolvedFilePath as string
+      filePath: resolvedFilePath
     } as ResolvedTheme;
   }
 
@@ -85,9 +85,9 @@ export async function findThemePackages(
     }
   }
 
-  const themePackages = packages.filter(Boolean).filter(isTheemoPackage);
+  const themePackages = packages.filter(Boolean).filter((element) => isTheemoPackage(element));
 
-  let resolvedPackages = [];
+  const resolvedPackages = [];
 
   for (const themePkg of themePackages) {
     const validation = validateTheemoPackage(themePkg);
@@ -96,8 +96,7 @@ export async function findThemePackages(
       resolvedPackages.push(await loadTheme(themePkg, resolve));
     } else {
       log(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/restrict-template-expressions
-        `[Theemo] Ignoring Theme '${themePkg.name as string}' due to validation errors: \n\n  - ${validation.errors.join('\n  - ')}\n`
+        `[Theemo] Ignoring Theme '${themePkg.name}' due to validation errors: \n\n  - ${validation.errors.join('\n  - ')}\n`
       );
     }
   }

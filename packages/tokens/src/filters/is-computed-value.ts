@@ -14,6 +14,6 @@ export function isComputedValue<T extends TokenType>(
     // check for an object
     (typeof value === 'object' && Object.hasOwn(value as object, 'transforms')) ||
     // or the array
-    (Array.isArray(value) && value.every(isComputedValue))
+    (Array.isArray(value) && value.every((element) => isComputedValue(element)))
   );
 }

@@ -36,7 +36,7 @@ function match(feature: BrowserFeature) {
   const values: FeatureValues = {};
 
   for (const [value, query] of Object.entries(queries[feature.browserFeature])) {
-    const check = window.matchMedia(query);
+    const check = globalThis.matchMedia(query);
 
     if (check.matches) {
       values[feature.name] = value;
@@ -59,7 +59,7 @@ export function setupListeners(
 
   for (const feature of features) {
     for (const [value, query] of Object.entries(queries[feature.browserFeature])) {
-      const check = window.matchMedia(query);
+      const check = globalThis.matchMedia(query);
       const handler = () => cb(match(feature));
 
       check.addEventListener('change', handler);
@@ -74,7 +74,7 @@ export function setupListeners(
   return {
     values,
     dispose: (): void => {
-      disposals.forEach((dispose) => dispose());
+      for (const dispose of disposals) dispose();
     }
   };
 }
@@ -91,7 +91,7 @@ interface Options {
  * - turn features on and off
  */
 export class ThemeManager {
-  #elements: Map<string, HTMLLinkElement> = new Map();
+  #elements = new Map<string, HTMLLinkElement>();
   #config: TheemoRuntimeConfig;
   #options: Options;
 
@@ -249,13 +249,16 @@ export class ThemeManager {
   }
 
   #activateTheme(theme: Theme) {
-    const element = this.#elements.get(theme.name) as HTMLLinkElement;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const element = this.#elements.get(theme.name)!;
 
     element.disabled = false;
   }
 
   #setupBrowserFeatures(theme: Theme) {
-    const browserBrowserFeatures = (theme.features ?? []).filter(isBrowserFeature);
+    const browserBrowserFeatures = (theme.features ?? []).filter((element) =>
+      isBrowserFeature(element)
+    );
 
     const browser = setupListeners(browserBrowserFeatures, (values: FeatureValues) =>
       this.#handleChangeFeatures(values)
@@ -297,14 +300,10 @@ export class ThemeManager {
   }
 
   #setupDefaultFeatures(theme: Theme) {
-    const defaultFeatures = (theme.features ?? []).filter(isModalFeature);
+    const defaultFeatures = (theme.features ?? []).filter((element) => isModalFeature(element));
 
-    this.#defaultFeatureValues = defaultFeatures.reduce(
-      (values, f) => ({
-        ...values,
-        [f.name]: f.defaultOption
-      }),
-      {}
+    this.#defaultFeatureValues = Object.fromEntries(
+      defaultFeatures.map((f) => [f.name, f.defaultOption])
     );
   }
 
@@ -317,7 +316,8 @@ export class ThemeManager {
     this.#clearModes(theme);
 
     // disable link
-    (this.#elements.get(theme.name) as HTMLLinkElement).disabled = true;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    this.#elements.get(theme.name)!.disabled = true;
   }
 
   #clearModes(theme: Theme) {

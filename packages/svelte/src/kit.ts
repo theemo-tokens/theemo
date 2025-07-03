@@ -35,7 +35,6 @@ interface TheemoHook {
 }
 
 interface GlobalThis {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   __theemoHook?: TheemoHook;
 }
 
@@ -62,7 +61,7 @@ function resolveEntry(entry: string) {
     }
   }
 
-  return undefined;
+  return;
 }
 
 /**
@@ -99,6 +98,7 @@ function makeResolver(resolve: (source: string) => Promise<ResolvedId | null>) {
   return async (source: string): Promise<string | null> => {
     const result = await resolve(source);
 
+    // eslint-disable-next-line unicorn/no-null
     return result ? result.id : null;
   };
 }
@@ -108,7 +108,7 @@ function generateServerHook(
   options: Options & { fingerprint?: boolean },
   previousHook: string | undefined
 ): string {
-  let serverHooksContent = ['// this file is auto-generated'];
+  const serverHooksContent = ['// this file is auto-generated'];
 
   if (previousHook) {
     serverHooksContent.push(
@@ -134,8 +134,8 @@ function writeServerHook(contents: string, filePath: string) {
 }
 
 function hookServerHookPlugin(options: Options): Plugin {
-  let buildEnvironment: boolean = false;
-  let currentHook: string = '';
+  let buildEnvironment = false;
+  let currentHook = '';
   let previousHook: string | undefined = undefined;
   let theemoPackages: ResolvedTheemoPackage[] = [];
 
@@ -167,7 +167,7 @@ function hookServerHookPlugin(options: Options): Plugin {
       if (previousHook && fs.existsSync(previousHook)) {
         const currentDir = path.dirname(currentHook);
 
-        previousHook = path.relative(currentDir, previousHook).replace(/\\/g, '/');
+        previousHook = path.relative(currentDir, previousHook).replaceAll('\\', '/');
       } else {
         previousHook = undefined;
       }

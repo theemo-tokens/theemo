@@ -11,10 +11,10 @@ import Theemo from './theemo.js';
 
 import type { TheemoConfig } from './config.js';
 
+// eslint-disable-next-line import-x/no-named-as-default-member
 dotenv.config();
 
 async function loadPackage() {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const foundPkg = await readPackageUp({ cwd: __dirname });
 
@@ -22,7 +22,7 @@ async function loadPackage() {
     return foundPkg.packageJson;
   }
 
-  return undefined;
+  return;
 }
 
 async function loadConfig(program: Command): Promise<TheemoConfig | undefined> {
@@ -85,4 +85,4 @@ export async function cli(): Promise<void> {
   program.parse(argv);
 }
 
-void cli();
+await cli();

@@ -138,8 +138,9 @@ export function getNameFromVariable(variable: FigmaVariable): string {
  * @param token A parsed Figma Token
  * @returns the parsed type
  */
-export function getTypeFromToken(token: FigmaToken) {
-  return token.type as TokenType;
+export function getTypeFromToken(token: FigmaToken): TokenType {
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  return token.type!;
 }
 
 /**

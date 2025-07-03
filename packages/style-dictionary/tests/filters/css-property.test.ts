@@ -50,7 +50,7 @@ test('isCSSProperty()', () => {
         type: 'color',
         value: {
           value: '#ee00aa',
-          // eslint-disable-next-line @typescript-eslint/naming-convention
+
           features: { 'color-scheme': 'light' }
         }
       })

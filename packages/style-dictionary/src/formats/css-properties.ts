@@ -17,14 +17,14 @@ function tokenTypeToCSSType(type: TokenType): string {
 }
 
 export function formatTokenIntoCSSProperty(token: TransformedToken): string {
-  let value = (token.value ?? token.$value) as string;
+  const value = (token.value ?? token.$value) as string;
 
   const type = (token.type ?? token.$type) as TokenType;
   let output = `@property --${token.name} {\n  syntax: "<${tokenTypeToCSSType(type)}>";\n  inherits: true;\n  initial-value: ${value};\n}`;
 
   const comment = (token.description ?? token.$description ?? token.comment) as string;
 
-  if (comment /*&& commentStyle !== none*/) {
+  if (comment /* && commentStyle !== none */) {
     output = addComment(output, comment, { commentStyle: 'long', commentPosition: 'above' });
   }
 
@@ -91,7 +91,9 @@ export const cssPropertiesFormater: Format = {
   format: async ({ dictionary, file }) => {
     const header = await fileHeader({ file });
 
-    const properties = dictionary.allTokens.map(formatTokenIntoCSSProperty).join('\n\n');
+    const properties = dictionary.allTokens
+      .map((element) => formatTokenIntoCSSProperty(element))
+      .join('\n\n');
 
     return [header, properties].filter(Boolean).join('\n');
   }
