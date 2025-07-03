@@ -1,5 +1,31 @@
 # Changelog
 
+## Release (2025-07-03)
+
+* @theemo/build 2.0.0 (patch)
+* @theemo/cli 2.0.0 (patch)
+* @theemo/core 2.0.0 (patch)
+* @theemo/ember 2.0.0 (patch)
+* @theemo/figma 2.0.0 (patch)
+* @theemo/style-dictionary 2.0.0 (patch)
+* @theemo/svelte 2.0.0 (patch)
+* @theemo/sync 2.0.0 (patch)
+* @theemo/theme 2.0.0 (patch)
+* @theemo/tokens 2.0.0 (patch)
+* @theemo/vite 2.0.0 (patch)
+* @theemo/vue 2.0.0 (patch)
+
+#### :memo: Documentation
+* `@theemo/ember`, `@theemo/svelte`, `@theemo/theme`, `@theemo/vite`, `@theemo/vue`
+  * [#1480](https://github.com/theemo-tokens/theemo/pull/1480) Correct Links to playground ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/ember`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/svelte`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`, `@theemo/vite`, `@theemo/vue`
+  * [#1482](https://github.com/theemo-tokens/theemo/pull/1482) Update to `@gossi/config-*` v1 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-06-12)
 
 * @theemo/build 1.0.0 (minor)
