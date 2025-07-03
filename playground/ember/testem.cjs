@@ -11,15 +11,15 @@ if (typeof module !== 'undefined') {
       Chrome: {
         ci: [
           // --no-sandbox is needed when running Chrome inside a container
-          process.env.CI ? '--no-sandbox' : null,
+          process.env.CI ? '--no-sandbox' : undefined,
           '--headless',
           '--disable-dev-shm-usage',
           '--disable-software-rasterizer',
           '--mute-audio',
           '--remote-debugging-port=0',
-          '--window-size=1440,900',
-        ].filter(Boolean),
-      },
-    },
+          '--window-size=1440,900'
+        ].filter(Boolean)
+      }
+    }
   };
 }

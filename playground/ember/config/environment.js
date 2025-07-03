@@ -1,5 +1,7 @@
+/* eslint-disable unicorn/prefer-module */
 'use strict';
 
+// eslint-disable-next-line unicorn/no-anonymous-default-export
 module.exports = function (environment) {
   const ENV = {
     modulePrefix: '@theemo-playground/ember',
