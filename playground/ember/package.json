@@ -39,16 +39,16 @@
     "@glint/environment-ember-loose": "1.5.2",
     "@glint/environment-ember-template-imports": "1.5.2",
     "@glint/template": "1.5.2",
-    "@gossi/config-eslint": "^0.14.0",
-    "@gossi/config-prettier": "^0.10.0",
-    "@gossi/config-stylelint": "^1.0.0",
-    "@gossi/config-template-lint": "^0.9.0",
+    "@gossi/config-eslint": "^1.1.2",
+    "@gossi/config-prettier": "^1.0.1",
+    "@gossi/config-stylelint": "^1.0.2",
+    "@gossi/config-template-lint": "^1.0.1",
     "@rollup/plugin-babel": "^6.0.4",
+    "@theemo-playground/forest-theme": "workspace:*",
+    "@theemo-playground/ocean-theme": "workspace:*",
     "@theemo/ember": "workspace:*",
     "@theemo/theme": "workspace:*",
     "@theemo/vite": "workspace:*",
-    "@theemo-playground/forest-theme": "workspace:*",
-    "@theemo-playground/ocean-theme": "workspace:*",
     "@tsconfig/ember": "^3.0.10",
     "@types/qunit": "^2.19.12",
     "@types/rsvp": "^4.0.9",
@@ -67,7 +67,7 @@
     "ember-source": "~6.5.0",
     "ember-template-imports": "^4.3.0",
     "ember-template-lint": "^7.9.0",
-    "eslint": "^8.57.1",
+    "eslint": "^9.30.1",
     "eslint-plugin-ember": "^12.5.0",
     "eslint-plugin-qunit": "^8.1.2",
     "globals": "^16.2.0",
@@ -80,7 +80,7 @@
     "vite": "^6.3.5"
   },
   "engines": {
-    "node": ">= 20"
+    "node": "^20.11.0 || >=22"
   },
   "ember": {
     "edition": "octane"

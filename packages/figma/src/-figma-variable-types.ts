@@ -43,11 +43,10 @@ export type FloatVariableScope =
 export type VariableScope = FloatVariableScope | ColorVariableScope;
 
 export interface VariableCodeSyntax {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   WEB: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
+
   ANDROID: string;
-  // eslint-disable-next-line @typescript-eslint/naming-convention
+
   IOS: string;
 }
 
@@ -58,9 +57,7 @@ export interface Variable {
   readonly key: string;
   readonly variableCollectionId: string;
   readonly resolvedType: VariableResolvedDataType;
-  readonly valuesByMode: {
-    [modeId: string]: VariableValue;
-  };
+  readonly valuesByMode: Record<string, VariableValue>;
   readonly remote: boolean;
   readonly description: string;
   readonly hiddenFromPublishing: boolean;

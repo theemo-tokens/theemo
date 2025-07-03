@@ -1,5 +1,2 @@
-import type { Node, Style } from 'figma-api';
-import type { GetFileResult } from 'figma-api/lib/api-types.js';
-
-export { Node, Style };
-export { GetFileResult as File };
+export { type Node, type Style } from 'figma-api';
+export { type GetFileResult as File } from 'figma-api/lib/api-types.js';

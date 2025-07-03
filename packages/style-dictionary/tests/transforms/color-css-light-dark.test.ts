@@ -11,14 +11,12 @@ test('transformColorLightDark()', () => {
           {
             value: 'white',
             features: {
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               'color-scheme': 'dark'
             }
           },
           {
             value: 'black',
             features: {
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               'color-scheme': 'light'
             }
           }
@@ -34,7 +32,6 @@ test('transformColorLightDark()', () => {
           {
             value: 'white',
             features: {
-              // eslint-disable-next-line @typescript-eslint/naming-convention
               'color-scheme': 'dark'
             }
           }

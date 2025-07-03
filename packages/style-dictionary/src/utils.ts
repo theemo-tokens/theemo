@@ -5,16 +5,13 @@ export function set(object: Record<string, unknown>, keyPath: string[], value: u
     const key = keyPath[i];
 
     if (!(key in object)) {
-      // eslint-disable-next-line no-param-reassign
       object[key] = {};
     }
 
-    // eslint-disable-next-line no-param-reassign
     object = object[key] as Record<string, unknown>;
   }
 
   if (typeof object[keyPath[lastKeyIndex]] !== 'object') {
-    // eslint-disable-next-line no-param-reassign
     object[keyPath[lastKeyIndex]] = value;
   }
 }

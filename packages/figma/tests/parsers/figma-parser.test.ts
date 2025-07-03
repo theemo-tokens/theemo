@@ -1,5 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
+import { TokenCollection } from '@theemo/tokens';
+
 import { DEFAULT_PARSER_CONFIG } from '../../src/index.js';
 import FigmaParser from '../../src/plugins/figma-parser.js';
 import theemoPlaygroundFigma from '../samples/theemo-playground/figma.json';
@@ -30,23 +32,23 @@ function getTokens(dev = false) {
 describe('Figma Parser', () => {
   test('styles as tokens', () => {
     const publicTokens = getTokens();
-    const expectedTokens = ['grey'];
+    const expectedTokens = new TokenCollection(['grey']);
 
-    expect([
-      ...publicTokens.filter((t) => expectedTokens.includes(t.name)).map((t) => t.name)
-    ]).toStrictEqual(expectedTokens);
+    expect(publicTokens.filter((t) => expectedTokens.has(t.name)).map((t) => t.name)).toStrictEqual(
+      expectedTokens
+    );
 
     const allTokens = getTokens(true);
-    const paletteTokens = [
+    const paletteTokens = new TokenCollection([
       'palette.brand.100',
       'palette.brand.500',
       'palette.adjacent.500',
       'palette.adjacent.700'
-    ];
+    ]);
 
-    expect([
-      ...allTokens.filter((t) => paletteTokens.includes(t.name)).map((t) => t.name)
-    ]).toStrictEqual(paletteTokens);
+    expect(allTokens.filter((t) => paletteTokens.has(t.name)).map((t) => t.name)).toStrictEqual(
+      paletteTokens
+    );
   });
 
   describe('token types', () => {

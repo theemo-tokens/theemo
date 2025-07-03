@@ -4,15 +4,15 @@ import { styleDictionaryWriter } from '@theemo/style-dictionary';
 
 const { FIGMA_SECRET, DEV } = process.env;
 
-const NESTED_TOPICS = ['intents', 'indicators'];
+const NESTED_TOPICS = new Set(['intents', 'indicators']);
 
 function fixNumberValue(value) {
   if (typeof value === 'number') {
-    return parseFloat(parseFloat(value).toFixed(2));
+    return Number.parseFloat(Number.parseFloat(value).toFixed(2));
   }
 
   if (Array.isArray(value)) {
-    return value.map(fixNumberValue);
+    return value.map((element) => fixNumberValue(element));
   }
 
   if (typeof value === 'object') {
@@ -26,7 +26,7 @@ function fixNumberValue(value) {
     return value;
   }
 
-  return parseFloat(parseFloat(value).toFixed(2));
+  return Number.parseFloat(Number.parseFloat(value).toFixed(2));
 }
 
 export default defineConfig({
@@ -121,7 +121,7 @@ export default defineConfig({
         fileForToken(token) {
           let fileName = token.collection;
 
-          if (NESTED_TOPICS.includes(token.collection)) {
+          if (NESTED_TOPICS.has(token.collection)) {
             const parts = token.name.split('.');
 
             fileName += `/${parts[1]}`;

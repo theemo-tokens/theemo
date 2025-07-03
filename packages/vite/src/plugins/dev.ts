@@ -32,10 +32,11 @@ export default function devPlugin(options: PluginOptions): Plugin {
       );
 
       for (const pkg of themePackages) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const source = (await getThemeFileContents(
           pkg,
           makeResolver((id: string) => this.resolve(id))
-        )) as string;
+        ))!;
 
         const servedAt = `/${options.outDir}/${pkg.theemo.name}.css`;
 
@@ -60,12 +61,13 @@ export default function devPlugin(options: PluginOptions): Plugin {
     configureServer(server) {
       devServer = server;
       server.middlewares.use((req, res, next) => {
-        if (servedFiles.has(req.originalUrl as string)) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        if (servedFiles.has(req.originalUrl!)) {
           res.writeHead(200, {
-            // eslint-disable-next-line @typescript-eslint/naming-convention
             'Content-Type': 'text/css'
           });
-          res.write(servedFiles.get(req.originalUrl as string));
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          res.write(servedFiles.get(req.originalUrl!));
           res.end();
         } else {
           next();

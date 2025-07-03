@@ -17,6 +17,7 @@ export function makeResolver(resolve: (source: string) => Promise<ResolvedId | n
   return async (source: string): Promise<string | null> => {
     const result = await resolve(source);
 
+    // eslint-disable-next-line unicorn/no-null
     return result ? result.id : null;
   };
 }
@@ -105,7 +106,7 @@ export async function transformIndexHtml(
         type: 'text/css',
         rel: 'stylesheet',
         title: options.defaultTheme,
-        // eslint-disable-next-line @typescript-eslint/naming-convention
+
         'data-theemo': options.defaultTheme
       }
     });

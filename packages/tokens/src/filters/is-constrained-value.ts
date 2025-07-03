@@ -15,6 +15,6 @@ export function isConstrainedValue<T extends TokenType>(
     (typeof value === 'object' &&
       (Object.hasOwn(value as object, 'features') || Object.hasOwn(value as object, 'scope'))) ||
     // or the array
-    (Array.isArray(value) && value.every(isConstrainedValue))
+    (Array.isArray(value) && value.every((element) => isConstrainedValue(element)))
   );
 }

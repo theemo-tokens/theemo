@@ -25,7 +25,7 @@ const MEDIA_QUERY: Record<BrowserMechanic, string> = {
 };
 
 function readFile(file: string) {
-  const contents = fs.existsSync(file) ? fs.readFileSync(file, 'utf-8') : '';
+  const contents = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
 
   return contents;
 }

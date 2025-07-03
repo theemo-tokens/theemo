@@ -26,7 +26,7 @@ function isCompositeNode(node: Node): node is CompositeNode {
 }
 
 export default class FigmaParser implements Plugin {
-  private processedFiles: WeakMap<GetFileResult, WeakSet<Style>> = new WeakMap();
+  private processedFiles = new WeakMap<GetFileResult, WeakSet<Style>>();
 
   declare private config: FigmaParserConfigWithDefaults;
 
@@ -95,14 +95,16 @@ export default class FigmaParser implements Plugin {
     type: keyof StylesMap,
     file: GetFileResult
   ): FigmaToken | undefined {
-    const id = (node.styles as StylesMap)[type];
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const id = node.styles![type];
     const style = this.getStyle(id, file);
 
     if (!this.processedFiles.has(file)) {
       this.processedFiles.set(file, new WeakSet());
     }
 
-    const processedStyles = this.processedFiles.get(file) as WeakSet<Style>;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const processedStyles = this.processedFiles.get(file)!;
 
     if (processedStyles.has(style) || !this.config.isTokenByStyle(style)) {
       return;
@@ -113,7 +115,8 @@ export default class FigmaParser implements Plugin {
     const token = this.createTokenFromStyle(style, node, file);
 
     token.figma.file = file;
-    token.type = getTypefromStyle(style) as TokenType;
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    token.type = getTypefromStyle(style)!;
     token.description = style.description;
 
     // also look for the value
@@ -121,7 +124,7 @@ export default class FigmaParser implements Plugin {
     // add the `s` and replace a possible `ss` to `s`
     // that way ensure, this is the plural version of `type`
     // which is also the key in the node
-    let key = `${type}s`.replace('ss', 's') as keyof Node<'TEXT'> & 'texts';
+    const key = `${type}s`.replace('ss', 's') as keyof Node<'TEXT'> & 'texts';
 
     // fill - color swatch
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
@@ -150,10 +153,9 @@ export default class FigmaParser implements Plugin {
     }
 
     // typography
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, dot-notation
-    else if (key === 'texts' && node['style']) {
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, dot-notation
-      const typo = parseTypographyFromStyle(node['style']);
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    else if (key === 'texts' && node.style) {
+      const typo = parseTypographyFromStyle(node.style);
 
       token.value = typo;
     }

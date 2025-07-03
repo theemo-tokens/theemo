@@ -6,7 +6,6 @@ import { toTransformedToken } from '../-utils';
 test('copyAttributeConstraints()', () => {
   const constraints = {
     features: {
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       'color-scheme': 'light'
     }
   };

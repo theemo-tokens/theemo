@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 export const VALUES: Record<string, string> = {
   'action/background': '#2A50D5',
   'action/border': '#193080',

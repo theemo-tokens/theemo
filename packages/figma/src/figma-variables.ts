@@ -44,6 +44,7 @@ function isAliasPublished(
 
 export function getValue(variable: FigmaVariable, mode?: string): VariableValue {
   const usedMode =
+    // eslint-disable-next-line unicorn/prefer-array-some
     mode && variable.collection.modes.find((collMode) => collMode.modeId === mode)
       ? mode
       : variable.collection.defaultModeId;
@@ -55,11 +56,8 @@ function resolveVariable(variable: FigmaVariable, variables: FigmaVariable[], mo
   const value = getValue(variable, mode);
 
   if (isAlias(value)) {
-    return resolveVariable(
-      findVariableFromAlias(value, variables) as FigmaVariable,
-      variables,
-      mode
-    );
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    return resolveVariable(findVariableFromAlias(value, variables)!, variables, mode);
   }
 
   return variable;
@@ -74,13 +72,18 @@ function parseValue(
   const value = variable.valuesByMode[mode];
 
   switch (variable.resolvedType) {
-    case 'COLOR':
+    case 'COLOR': {
       return parseColorValue(value as string | RGB | RGBA, config.formats);
+    }
 
     case 'FLOAT':
-    case 'STRING':
-    default:
+    case 'STRING': {
       return value;
+    }
+
+    default: {
+      return value;
+    }
   }
 }
 
@@ -144,8 +147,7 @@ function parseTokenValue(
       const constraints = config.getConstraints?.(name, variable) ?? {};
 
       if (Object.keys(constraints).length === 0) {
-        // eslint-disable-next-line no-console
-        console.log('No Constraints found for ', variable.name, 'with mode: ', name);
+        console.log('No Constraints found for', variable.name, 'with mode:', name);
       } else {
         tokenValues.push({
           value,
@@ -167,17 +169,21 @@ function parseTokenValue(
 
 function parseType(variable: Variable): TokenType {
   switch (variable.resolvedType) {
-    case 'COLOR':
+    case 'COLOR': {
       return 'color';
+    }
 
-    case 'FLOAT':
+    case 'FLOAT': {
       return 'number';
+    }
 
-    case 'STRING':
+    case 'STRING': {
       return 'content';
+    }
 
-    default:
+    default: {
       return 'unknown';
+    }
   }
 }
 
@@ -191,7 +197,7 @@ function isReference(value: TokenValue<TokenType>): boolean {
 function isValueOnlyReferences(value: TokenValue<TokenType>) {
   const values = Array.isArray(value) ? value : [value];
 
-  return values.every(isReference);
+  return values.every((element) => isReference(element));
 }
 
 function createTokenFromVariable(

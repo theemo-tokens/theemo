@@ -16,14 +16,14 @@
     "lint:js:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.14.0",
-    "@gossi/config-prettier": "^0.10.0",
-    "eslint": "^8.57.1",
+    "@gossi/config-eslint": "^1.1.2",
+    "@gossi/config-prettier": "^1.0.1",
+    "eslint": "^9.30.1",
     "prettier": "^3.5.3",
     "tsdown": "^0.12.9",
     "typescript": "5.8.3"
   },
   "engines": {
-    "node": ">=20.11.0"
+    "node": "^20.11.0 || >=22"
   }
 }

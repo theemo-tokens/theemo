@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-
 import type { ValidationResult } from './validation';
 import type { Simplify } from 'type-fest';
 
@@ -81,7 +79,6 @@ export const Principal = {
 } as const;
 
 export type Principal = (typeof Principal)[keyof typeof Principal];
-/* eslint-enable @typescript-eslint/naming-convention */
 
 interface BaseFeature {
   /** name of the feature */
@@ -224,7 +221,8 @@ export function validateFeature(feature: Feature): ValidationResult {
     )
   ) {
     errors.push(
-      `Feature '${feature.name}' has 'defaultOption' to be set to '${(feature as BaseFeature).defaultOption as string}', which is not allowed. Allowed values are '${feature.options.join(`', '`)}'.`
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      `Feature '${feature.name}' has 'defaultOption' to be set to '${(feature as BaseFeature).defaultOption!}', which is not allowed. Allowed values are '${feature.options.join(`', '`)}'.`
     );
   }
 

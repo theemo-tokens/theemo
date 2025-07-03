@@ -2,7 +2,7 @@ import { TokenCollection } from '@theemo/tokens';
 
 import { mapVariablesWithCollection, parseVariables } from '../figma-variables.js';
 
-import type { FigmaVariable, Variable, VariableCollection } from '../-figma-variable-types.js';
+import type { Variable, VariableCollection } from '../-figma-variable-types.js';
 import type { FigmaParserConfigWithDefaults } from '../defaults.js';
 import type { Plugin } from '../plugin.js';
 import type { FigmaToken } from '../token.js';
@@ -124,7 +124,8 @@ export class TheemoPlugin implements Plugin {
 
       // add transforms
       for (const token of tokens) {
-        const variable = token.figma.variable as FigmaVariable;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const variable = token.figma.variable!;
         const varConfig = this.variableConfig.find((varConf) => varConf.variableId === variable.id);
 
         // found a theemo variable config for this token
@@ -148,15 +149,15 @@ export class TheemoPlugin implements Plugin {
               const constraints = this.parserConfig.getConstraints?.(mode.name, variable);
 
               if (!constraints || Object.keys(constraints).length === 0) {
-                // eslint-disable-next-line no-console
-                console.log('No Constraints found for ', variable.name, 'with mode: ', mode.name);
+                console.log('No Constraints found for', variable.name, 'with mode:', mode.name);
               } else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                 value = (token.value as ComputedValue<TokenType>[]).find(
                   (val) =>
                     typeof val === 'object' &&
                     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
                     matches(val as ConstrainedValue<TokenType>, constraints)
-                ) as ComputedValue<TokenType>;
+                )!;
 
                 foundIndex = token.value.indexOf(value);
               }

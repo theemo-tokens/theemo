@@ -9,6 +9,7 @@ import config from '@theemo-playground/ember/config/environment';
 export function start() {
   setApplication(Application.create(config.APP));
 
+  // eslint-disable-next-line import-x/namespace
   setup(QUnit.assert);
   setupEmberOnerrorValidation();
 

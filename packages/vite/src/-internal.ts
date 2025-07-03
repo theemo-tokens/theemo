@@ -1,9 +1,2 @@
-import { transformIndexHtml } from './handler';
-import { getResolvedTheemoPackages } from './theme';
-
-export {
-  /** @internal */
-  getResolvedTheemoPackages,
-  /** @internal */
-  transformIndexHtml
-};
+export { transformIndexHtml } from './handler';
+export { getResolvedTheemoPackages } from './theme';

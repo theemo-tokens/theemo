@@ -71,20 +71,21 @@ export function validateTheemoPackage(pkg: TheemoPackage): ValidationResult {
   const errors = [];
 
   if (!isTheemoPackage(pkg)) {
-    errors.push(`Package '${(pkg as PackageJson).name as string}' requires keyword '${KEYWORD}'`);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    errors.push(`Package '${(pkg as PackageJson).name!}' requires keyword '${KEYWORD}'`);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-  if (!pkg.theemo) {
-    errors.push(`Package '${pkg.name as string}' requires 'theemo' field`);
-  } else {
+  if (pkg.theemo) {
     const themeValidation = validateTheme(pkg.theemo);
 
     if (!pkg.theemo.file) {
-      errors.push(`Theemo in package '${pkg.name as string}' requires 'file'`);
+      errors.push(`Theemo in package '${pkg.name}' requires 'file'`);
     }
 
     errors.push(...themeValidation.errors);
+  } else {
+    errors.push(`Package '${pkg.name}' requires 'theemo' field`);
   }
 
   return {

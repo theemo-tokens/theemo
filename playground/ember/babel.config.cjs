@@ -1,7 +1,4 @@
-const {
-  babelCompatSupport,
-  templateCompatSupport,
-} = require('@embroider/compat/babel');
+const { babelCompatSupport, templateCompatSupport } = require('@embroider/compat/babel');
 
 module.exports = {
   plugins: [
@@ -10,8 +7,8 @@ module.exports = {
       {
         allExtensions: true,
         onlyRemoveTypeImports: true,
-        allowDeclareFields: true,
-      },
+        allowDeclareFields: true
+      }
     ],
     [
       'babel-plugin-ember-template-compilation',
@@ -20,31 +17,31 @@ module.exports = {
         enableLegacyModules: [
           'ember-cli-htmlbars',
           'ember-cli-htmlbars-inline-precompile',
-          'htmlbars-inline-precompile',
+          'htmlbars-inline-precompile'
         ],
-        transforms: [...templateCompatSupport()],
-      },
+        transforms: [...templateCompatSupport()]
+      }
     ],
     [
       'module:decorator-transforms',
       {
         runtime: {
-          import: require.resolve('decorator-transforms/runtime-esm'),
-        },
-      },
+          import: require.resolve('decorator-transforms/runtime-esm')
+        }
+      }
     ],
     [
       '@babel/plugin-transform-runtime',
       {
         absoluteRuntime: __dirname,
         useESModules: true,
-        regenerator: false,
-      },
+        regenerator: false
+      }
     ],
-    ...babelCompatSupport(),
+    ...babelCompatSupport()
   ],
 
   generatorOpts: {
-    compact: false,
-  },
+    compact: false
+  }
 };
