@@ -46,8 +46,8 @@
     "@theemo/vite": "workspace:*"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0",
     "@sveltejs/kit": "^2.0.0",
+    "svelte": "^5.0.0",
     "vite": "^6.0.0"
   },
   "peerDependenciesMeta": {
@@ -59,14 +59,14 @@
     }
   },
   "devDependencies": {
-    "@gossi/config-eslint": "^0.14.0",
-    "@gossi/config-prettier": "^0.10.0",
+    "@gossi/config-eslint": "^1.1.2",
+    "@gossi/config-prettier": "^1.0.1",
     "@sveltejs/kit": "^2.22.2",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
     "concurrently": "^9.1.2",
-    "eslint": "^8.57.1",
+    "eslint": "^9.30.1",
     "prettier": "^3.5.3",
     "rollup": "^4.44.1",
     "svelte": "^5.34.9",
