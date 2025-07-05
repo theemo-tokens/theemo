@@ -48,8 +48,8 @@
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
-    "@babel/core": "7.27.7",
-    "@babel/eslint-parser": "7.27.5",
+    "@babel/core": "7.28.0",
+    "@babel/eslint-parser": "7.28.0",
     "@gossi/config-eslint": "^1.1.2",
     "@gossi/config-prettier": "^1.0.1",
     "@theemo-config/tsconfig": "workspace:*",
