@@ -28,7 +28,7 @@
     "@theemo/style-dictionary": "workspace:*",
     "@theemo/sync": "workspace:*",
     "@theemo/tokens": "workspace:*",
-    "style-dictionary": "^5.0.0"
+    "style-dictionary": "^5.0.1"
   },
   "engines": {
     "node": "^20.11.0 || >=22"
