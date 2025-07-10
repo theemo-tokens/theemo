@@ -3,6 +3,8 @@ import { defineConfig } from 'vitest/config';
 import { theemo } from '@theemo/vite';
 import path from 'node:path';
 
+import { canEmulateColorScheme, emulateColorScheme } from './tests/commands';
+
 export default defineConfig({
   plugins: [
     theemo({
@@ -26,7 +28,11 @@ export default defineConfig({
       // provider: 'preview',
       provider: 'webdriverio',
       testerHtmlPath: 'index.html',
-      instances: [{ browser: 'firefox' }, { browser: 'chrome' }]
+      instances: [{ browser: 'firefox' }, { browser: 'chrome' }],
+      commands: {
+        emulateColorScheme,
+        canEmulateColorScheme
+      }
     },
     alias: {
       '@theemo/theme': path.resolve('../../packages/theme/src/index.ts')
