@@ -1,5 +1,36 @@
 # Changelog
 
+## Release (2025-07-10)
+
+* @theemo/build 1.0.1 (patch)
+* @theemo/cli 1.0.1 (patch)
+* @theemo/core 1.0.1 (patch)
+* @theemo/ember 1.0.1 (patch)
+* @theemo/figma 1.0.1 (patch)
+* @theemo/style-dictionary 1.0.1 (patch)
+* @theemo/svelte 1.0.1 (patch)
+* @theemo/sync 1.0.1 (patch)
+* @theemo/theme 1.0.1 (patch)
+* @theemo/tokens 1.0.1 (patch)
+* @theemo/vite 1.0.1 (patch)
+* @theemo/vue 1.0.1 (patch)
+
+#### :bug: Bug Fix
+* `@theemo/theme`
+  * [#1490](https://github.com/theemo-tokens/theemo/pull/1490) Fix theme manager handler ([@gossi](https://github.com/gossi))
+
+#### :memo: Documentation
+* `@theemo/ember`, `@theemo/svelte`, `@theemo/theme`, `@theemo/vite`, `@theemo/vue`
+  * [#1480](https://github.com/theemo-tokens/theemo/pull/1480) Correct Links to playground ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/ember`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/svelte`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`, `@theemo/vite`, `@theemo/vue`
+  * [#1492](https://github.com/theemo-tokens/theemo/pull/1492) Go back to non-major-releasing ([@gossi](https://github.com/gossi))
+  * [#1482](https://github.com/theemo-tokens/theemo/pull/1482) Update to `@gossi/config-*` v1 ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-06-12)
 
 * @theemo/build 1.0.0 (minor)

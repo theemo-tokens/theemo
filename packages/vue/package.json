@@ -1,6 +1,6 @@
 {
   "name": "@theemo/vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TTheemo integration for Vue",
   "license": "MIT",
   "author": "Thomas Gossmann",
