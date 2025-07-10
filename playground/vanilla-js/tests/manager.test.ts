@@ -67,22 +67,16 @@ describe('ThemeManager', async () => {
     ).rejects.toThrowError(`Cannot switch theme 'theme-that-does-not-exist': theme doesn't exist`);
   });
 
+  // https://github.com/theemo-tokens/theemo/issues/1491
   // test.runIf(emulationPossible)('browser to switch color scheme and manager to react appropriately', async () => {
   //   await manager.switchTheme('ocean');
-  //   await emulateColorScheme('dark');
+  //   await emulateColorScheme('light');
 
   //   let colorSchemeFeature = findFeatureByName('color-scheme');
-
-  //   expect(colorSchemeFeature?.value).toBe('dark');
-
-  //   colorSchemeFeature = findFeatureByName('color-scheme');
-
   //   expect(colorSchemeFeature?.value).toBe('light');
-
+  
   //   await emulateColorScheme('dark');
-
   //   colorSchemeFeature = findFeatureByName('color-scheme');
-
   //   expect(colorSchemeFeature?.value).toBe('dark');
   // })
 });
