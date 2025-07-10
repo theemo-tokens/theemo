@@ -18,10 +18,7 @@ export const emulateColorScheme: BrowserCommand<[colorScheme: ColorScheme]> = as
   }
 
   else if (ctx.provider.name === 'webdriverio') {
-    
-    const x = await ctx.browser.emulate('colorScheme', colorScheme)
-    console.log('emulate', x);
-    
+    await ctx.browser.emulate('colorScheme', colorScheme);
   }
 }
 
