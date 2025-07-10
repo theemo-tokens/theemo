@@ -1041,7 +1041,7 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2(picomatch@4.0.2)(svelte@5.34.9)(typescript@5.8.3)
       typescript:
-        specifier: ^5.0.0
+        specifier: ^5.8.3
         version: 5.8.3
       vite:
         specifier: ^6.3.5
@@ -1114,7 +1114,7 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2
       typescript:
-        specifier: ~5.8.0
+        specifier: ~5.8.3
         version: 5.8.3
       vite:
         specifier: ^6.3.5
