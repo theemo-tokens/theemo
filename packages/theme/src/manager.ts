@@ -278,9 +278,9 @@ export class ThemeManager {
 
     this.#updateFeatures();
 
-    const changes = Object.keys(
-      Object.entries(this.#featureValues).filter(([k, v]) => dump[k] !== v)
-    );
+    const changes = Object.entries(this.#featureValues)
+      .filter(([k, v]) => dump[k] !== v)
+      .map(([k]) => k);
 
     for (const featureName of changes) {
       this.#options.featureChanged?.(this.#findFeature(featureName));
