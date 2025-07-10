@@ -84,11 +84,5 @@
     "app-js": {
       "./services/theemo.js": "./dist/_app_/services/theemo.js"
     }
-  },
-  "release-plan": {
-    "semverIncrementAs": {
-      "patch": "major",
-      "minor": "major"
-    }
   }
 }
