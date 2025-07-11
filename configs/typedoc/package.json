@@ -20,7 +20,7 @@
     "@gossi/config-prettier": "^1.0.1",
     "eslint": "^9.30.1",
     "prettier": "^3.5.3",
-    "typedoc": "^0.28.6",
+    "typedoc": "^0.28.7",
     "typescript": "5.8.3"
   },
   "engines": {
