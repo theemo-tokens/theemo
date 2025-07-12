@@ -17,7 +17,7 @@
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
     "@tsconfig/svelte": "^5.0.4",
-    "svelte": "^5.34.9",
+    "svelte": "^5.35.6",
     "svelte-check": "^4.2.2",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
