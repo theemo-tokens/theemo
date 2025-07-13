@@ -20,7 +20,7 @@
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
     "@tsconfig/node22": "^22.0.2",
-    "@types/node": "^22.15.34",
+    "@types/node": "^22.16.3",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "npm-run-all2": "^7.0.2",
