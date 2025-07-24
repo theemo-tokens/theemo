@@ -61,7 +61,7 @@
   "devDependencies": {
     "@gossi/config-eslint": "^1.1.2",
     "@gossi/config-prettier": "^1.0.1",
-    "@sveltejs/kit": "^2.22.5",
+    "@sveltejs/kit": "^2.26.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
