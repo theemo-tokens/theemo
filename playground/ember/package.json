@@ -76,7 +76,7 @@
     "qunit-dom": "^3.4.0",
     "stylelint": "^16.23.0",
     "tracked-built-ins": "^4.0.0",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "vite": "^6.3.5"
   },
   "engines": {
