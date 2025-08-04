@@ -69,8 +69,8 @@ importers:
         specifier: 11.9.0
         version: 11.9.0
       release-plan:
-        specifier: 0.17.0
-        version: 0.17.0
+        specifier: 0.17.2
+        version: 0.17.2
       style-dictionary:
         specifier: ^5.0.1
         version: 5.0.1
@@ -6627,8 +6627,8 @@ packages:
     resolution: {integrity: sha512-8aCohiDo4jwjOwma4FmYFd3i97urZulL8XL24nIPxuE+GZnfsAyy/g2Shqx6OjUiFKUXZM+Yy+KHnOmmA3FVcg==}
     engines: {node: '>= 4.0'}
 
-  github-changelog@2.0.0:
-    resolution: {integrity: sha512-JdAwddNCvHkZY/pTMqpoaLEfksaWiTc+beDjBkPEnr7iVlKfu8SeyCT8Sef+KsonRgIj6pl3SiWDPSefWmeicw==}
+  github-changelog@2.1.1:
+    resolution: {integrity: sha512-MRJXYVBJi5EUtIvaMokAIMAOmDwx8EtO2xK2yhK/jSHQBRGVwuhVGYhSCWPSnku8MTtL4mfk2qFNqUhx2ZC98A==}
     engines: {node: 18.* || 20.* || >= 22}
     hasBin: true
 
@@ -8974,8 +8974,8 @@ packages:
     resolution: {integrity: sha512-cnE+y8bz4NhMjISKbgeVJtqNbtf5QpjZP+Bslo+UqkIt9QPnX9q095eiRRASJG1/tz6dlNr6Z5NsBiWYokp6EQ==}
     hasBin: true
 
-  release-plan@0.17.0:
-    resolution: {integrity: sha512-mE6ZKEC2FLl0bMeHcd0mKXTxM8rb+gaiaLaEyL6pUmo8zKLAtJxpj6dufaoLd7peKtiw4rDyKKB2IreoGJoqXQ==}
+  release-plan@0.17.2:
+    resolution: {integrity: sha512-LgE/3CU8sFZt28uJR886xvWdw/CL0g5g5YSFTAJUvUy5qdERZdcc1pu317nKpYFs/yEDjiUasLj3rxnXBJf1zA==}
     hasBin: true
 
   remove-trailing-separator@1.1.0:
@@ -17764,7 +17764,7 @@ snapshots:
 
   git-repo-info@2.1.1: {}
 
-  github-changelog@2.0.0:
+  github-changelog@2.1.1:
     dependencies:
       '@manypkg/get-packages': 2.2.2
       chalk: 4.1.2
@@ -20369,7 +20369,7 @@ snapshots:
     dependencies:
       jsesc: 3.0.2
 
-  release-plan@0.17.0:
+  release-plan@0.17.2:
     dependencies:
       '@manypkg/get-packages': 2.2.2
       '@npmcli/package-json': 6.2.0
@@ -20379,7 +20379,7 @@ snapshots:
       cli-highlight: 2.1.11
       execa: 9.6.0
       fs-extra: 11.3.0
-      github-changelog: 2.0.0
+      github-changelog: 2.1.1
       js-yaml: 4.1.0
       latest-version: 9.0.0
       parse-github-repo-url: 1.4.1
