@@ -858,7 +858,7 @@ importers:
         version: 1.0.1(prettier@3.5.3)
       '@gossi/config-stylelint':
         specifier: ^1.0.2
-        version: 1.0.2(stylelint@16.23.0(typescript@5.9.2))
+        version: 1.0.2(stylelint@16.23.1(typescript@5.9.2))
       '@gossi/config-template-lint':
         specifier: ^1.0.1
         version: 1.0.1(ember-template-lint@7.9.1)(prettier@3.5.3)
@@ -956,8 +956,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       stylelint:
-        specifier: ^16.23.0
-        version: 16.23.0(typescript@5.9.2)
+        specifier: ^16.23.1
+        version: 16.23.1(typescript@5.9.2)
       tracked-built-ins:
         specifier: ^4.0.0
         version: 4.0.0(@babel/core@7.28.0)
@@ -9709,8 +9709,8 @@ packages:
     peerDependencies:
       stylelint: ^14.0.0 || ^15.0.0 || ^16.0.1
 
-  stylelint@16.23.0:
-    resolution: {integrity: sha512-69T5aS2LUY306ekt1Q1oaSPwz/jaG9HjyMix3UMrai1iEbuOafBe2Dh8xlyczrxFAy89qcKyZWWtc42XLx3Bbw==}
+  stylelint@16.23.1:
+    resolution: {integrity: sha512-dNvDTsKV1U2YtiUDfe9d2gp902veFeo3ecCWdGlmLm2WFrAV0+L5LoOj/qHSBABQwMsZPJwfC4bf39mQm1S5zw==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -12714,13 +12714,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@gossi/config-stylelint@1.0.2(stylelint@16.23.0(typescript@5.9.2))':
+  '@gossi/config-stylelint@1.0.2(stylelint@16.23.1(typescript@5.9.2))':
     dependencies:
       '@gossi/config-targets': 1.0.1
-      stylelint: 16.23.0(typescript@5.9.2)
-      stylelint-config-clean-order: 7.0.0(stylelint@16.23.0(typescript@5.9.2))
-      stylelint-config-standard: 38.0.0(stylelint@16.23.0(typescript@5.9.2))
-      stylelint-no-unsupported-browser-features: 8.0.4(stylelint@16.23.0(typescript@5.9.2))
+      stylelint: 16.23.1(typescript@5.9.2)
+      stylelint-config-clean-order: 7.0.0(stylelint@16.23.1(typescript@5.9.2))
+      stylelint-config-standard: 38.0.0(stylelint@16.23.1(typescript@5.9.2))
+      stylelint-no-unsupported-browser-features: 8.0.4(stylelint@16.23.1(typescript@5.9.2))
 
   '@gossi/config-targets@1.0.1': {}
 
@@ -21241,33 +21241,33 @@ snapshots:
 
   styled_string@0.0.1: {}
 
-  stylelint-config-clean-order@7.0.0(stylelint@16.23.0(typescript@5.9.2)):
+  stylelint-config-clean-order@7.0.0(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
-      stylelint: 16.23.0(typescript@5.9.2)
-      stylelint-order: 6.0.4(stylelint@16.23.0(typescript@5.9.2))
+      stylelint: 16.23.1(typescript@5.9.2)
+      stylelint-order: 6.0.4(stylelint@16.23.1(typescript@5.9.2))
 
-  stylelint-config-recommended@16.0.0(stylelint@16.23.0(typescript@5.9.2)):
+  stylelint-config-recommended@16.0.0(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
-      stylelint: 16.23.0(typescript@5.9.2)
+      stylelint: 16.23.1(typescript@5.9.2)
 
-  stylelint-config-standard@38.0.0(stylelint@16.23.0(typescript@5.9.2)):
+  stylelint-config-standard@38.0.0(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
-      stylelint: 16.23.0(typescript@5.9.2)
-      stylelint-config-recommended: 16.0.0(stylelint@16.23.0(typescript@5.9.2))
+      stylelint: 16.23.1(typescript@5.9.2)
+      stylelint-config-recommended: 16.0.0(stylelint@16.23.1(typescript@5.9.2))
 
-  stylelint-no-unsupported-browser-features@8.0.4(stylelint@16.23.0(typescript@5.9.2)):
+  stylelint-no-unsupported-browser-features@8.0.4(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
       doiuse: 6.0.5
       postcss: 8.5.6
-      stylelint: 16.23.0(typescript@5.9.2)
+      stylelint: 16.23.1(typescript@5.9.2)
 
-  stylelint-order@6.0.4(stylelint@16.23.0(typescript@5.9.2)):
+  stylelint-order@6.0.4(stylelint@16.23.1(typescript@5.9.2)):
     dependencies:
       postcss: 8.5.6
       postcss-sorting: 8.0.2(postcss@8.5.6)
-      stylelint: 16.23.0(typescript@5.9.2)
+      stylelint: 16.23.1(typescript@5.9.2)
 
-  stylelint@16.23.0(typescript@5.9.2):
+  stylelint@16.23.1(typescript@5.9.2):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
