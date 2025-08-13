@@ -51,7 +51,7 @@
     "unplugin-icons": "^22.1.0",
     "unplugin-vue-components": "^28.8.0",
     "vite": "6.3.5",
-    "vitepress": "1.6.3",
+    "vitepress": "1.6.4",
     "vitepress-plugin-group-icons": "^1.6.1",
     "vitepress-plugin-mermaid": "2.0.17",
     "vitest": "3.2.4",
