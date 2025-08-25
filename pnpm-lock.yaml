@@ -993,8 +993,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vite
       '@tsconfig/svelte':
-        specifier: ^5.0.4
-        version: 5.0.4
+        specifier: ^5.0.5
+        version: 5.0.5
       svelte:
         specifier: ^5.38.2
         version: 5.38.2
@@ -3272,8 +3272,8 @@ packages:
   '@tsconfig/node22@22.0.2':
     resolution: {integrity: sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA==}
 
-  '@tsconfig/svelte@5.0.4':
-    resolution: {integrity: sha512-BV9NplVgLmSi4mwKzD8BD/NQ8erOY/nUE/GpgWe2ckx+wIQF5RyRirn/QsSSCPeulVpc3RA/iJt6DpfTIZps0Q==}
+  '@tsconfig/svelte@5.0.5':
+    resolution: {integrity: sha512-48fAnUjKye38FvMiNOj0J9I/4XlQQiZlpe9xaNPfe8vy2Y1hFBt8g1yqf2EGjVvHavo4jf2lC+TQyENCr4BJBQ==}
 
   '@tybys/wasm-util@0.9.0':
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
@@ -13423,7 +13423,7 @@ snapshots:
 
   '@tsconfig/node22@22.0.2': {}
 
-  '@tsconfig/svelte@5.0.4': {}
+  '@tsconfig/svelte@5.0.5': {}
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
