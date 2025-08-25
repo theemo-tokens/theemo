@@ -72,8 +72,8 @@ importers:
         specifier: 0.17.2
         version: 0.17.2
       style-dictionary:
-        specifier: ^5.0.1
-        version: 5.0.1
+        specifier: ^5.0.2
+        version: 5.0.2
       turbo:
         specifier: 2.5.6
         version: 2.5.6
@@ -485,8 +485,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       style-dictionary:
-        specifier: ^5.0.1
-        version: 5.0.1
+        specifier: ^5.0.2
+        version: 5.0.2
       tsdown:
         specifier: ^0.12.9
         version: 0.12.9(typescript@5.9.2)(vue-tsc@2.2.12(typescript@5.9.2))
@@ -1196,8 +1196,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tokens
       style-dictionary:
-        specifier: ^5.0.1
-        version: 5.0.1
+        specifier: ^5.0.2
+        version: 5.0.2
 
   themes/super-theemo:
     devDependencies:
@@ -1232,8 +1232,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       style-dictionary:
-        specifier: ^5.0.1
-        version: 5.0.1
+        specifier: ^5.0.2
+        version: 5.0.2
 
 packages:
 
@@ -3180,9 +3180,6 @@ packages:
 
   '@shikijs/types@2.5.0':
     resolution: {integrity: sha512-ygl5yhxki9ZLNuNpPitBWvcy9fsSKKaRuO4BAlMyagszQidxcpLAr0qiW/q43DtSIDxO6hEbtYLiFZNXO/hdGw==}
-
-  '@shikijs/types@3.10.0':
-    resolution: {integrity: sha512-PAeyajDDhdzefMiSZn7ENCwVaACMnO53+p5pSrJpIQOJTSX+4Qn28Y5e7I6v9wkJNyepRFfbZmzmbbnzjxBMEA==}
 
   '@shikijs/types@3.11.0':
     resolution: {integrity: sha512-RB7IMo2E7NZHyfkqAuaf4CofyY8bPzjWPjJRzn6SEak3b46fIQyG6Vx5fG/obqkfppQ+g8vEsiD7Uc6lqQt32Q==}
@@ -9685,8 +9682,8 @@ packages:
   strnum@1.1.2:
     resolution: {integrity: sha512-vrN+B7DBIoTTZjnPNewwhx6cBA/H+IS7rfW68n7XxC1y7uoiGQBxaKzqucGUgavX15dJgiGztLJ8vxuEzwqBdA==}
 
-  style-dictionary@5.0.1:
-    resolution: {integrity: sha512-j+yQ4hM7a52iUQg5LVC8bnRkem4sU+unIY2qsyjoikPVzaxjkHd4ER7bnK+znW/Rhha69t4Fi5O46UHg6w8jFQ==}
+  style-dictionary@5.0.2:
+    resolution: {integrity: sha512-AlDpc9pvxz9EDSp2qduiQRDbI+I6IQ/bmKg+//JKD/xX3SEQGawAGUcKdbPsIkE2Po6eecUOg84uT026zbJCPQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -12389,7 +12386,7 @@ snapshots:
       '@shikijs/engine-oniguruma': 3.9.2
       '@shikijs/langs': 3.9.2
       '@shikijs/themes': 3.9.2
-      '@shikijs/types': 3.10.0
+      '@shikijs/types': 3.11.0
       '@shikijs/vscode-textmate': 10.0.2
 
   '@glimmer/compiler@0.92.4':
@@ -13298,11 +13295,6 @@ snapshots:
       - supports-color
 
   '@shikijs/types@2.5.0':
-    dependencies:
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
-
-  '@shikijs/types@3.10.0':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -21279,7 +21271,7 @@ snapshots:
 
   strnum@1.1.2: {}
 
-  style-dictionary@5.0.1:
+  style-dictionary@5.0.2:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/glob': 10.4.2
