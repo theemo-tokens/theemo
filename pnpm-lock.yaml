@@ -66,8 +66,8 @@ importers:
         specifier: 4.2.3
         version: 4.2.3
       mermaid:
-        specifier: 11.10.1
-        version: 11.10.1
+        specifier: 11.11.0
+        version: 11.11.0
       release-plan:
         specifier: 0.17.2
         version: 0.17.2
@@ -106,7 +106,7 @@ importers:
         version: 1.6.3(markdown-it@14.1.0)(vite@6.3.5(@types/node@24.0.10)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.1))
       vitepress-plugin-mermaid:
         specifier: 2.0.17
-        version: 2.0.17(mermaid@11.10.1)(vitepress@1.6.4(@algolia/client-search@5.27.0)(@types/node@24.0.10)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.43.1)(typescript@5.9.2))
+        version: 2.0.17(mermaid@11.11.0)(vitepress@1.6.4(@algolia/client-search@5.27.0)(@types/node@24.0.10)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.43.1)(typescript@5.9.2))
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.0.10)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.43.1)(yaml@2.8.1)
@@ -3140,8 +3140,8 @@ packages:
   '@shikijs/core@2.5.0':
     resolution: {integrity: sha512-uu/8RExTKtavlpH7XqnVYBrfBkUc20ngXiX9NSrBhOVZYv/7XQRKUyhtkeflY5QsxC0GbJThCerruZfsUaSldg==}
 
-  '@shikijs/core@3.12.1':
-    resolution: {integrity: sha512-j9+UDQ6M50xvaSR/e9lg212H0Fqxy3lYd39Q6YITYQxfrb5VYNUKPLZp4PN9f+YmRcdpyNAm3obn/tIZ2WkUWg==}
+  '@shikijs/core@3.12.2':
+    resolution: {integrity: sha512-L1Safnhra3tX/oJK5kYHaWmLEBJi1irASwewzY3taX5ibyXyMkkSDZlq01qigjryOBwrXSdFgTiZ3ryzSNeu7Q==}
 
   '@shikijs/core@3.9.2':
     resolution: {integrity: sha512-3q/mzmw09B2B6PgFNeiaN8pkNOixWS726IHmJEpjDAcneDPMQmUg2cweT9cWXY4XcyQS3i6mOOUgQz9RRUP6HA==}
@@ -3182,8 +3182,8 @@ packages:
   '@shikijs/transformers@2.5.0':
     resolution: {integrity: sha512-SI494W5X60CaUwgi8u4q4m4s3YAFSxln3tzNjOSYqq54wlVgz0/NbbXEb3mdLbqMBztcmS7bVTaEd2w0qMmfeg==}
 
-  '@shikijs/twoslash@3.12.1':
-    resolution: {integrity: sha512-hDELTuDBqOfBgGrltbw0f0DEe65hg5q0HZSMdWpYD4nsWd7WHYSdj+UkGZHqRlWxplgDrwJnLwOH3rf/M/Fmog==}
+  '@shikijs/twoslash@3.12.2':
+    resolution: {integrity: sha512-JthKvEvyE/gbu3u693mhNhEO6GYP1vetrwgEfqTAsT/G9AJ6nf7g7JVqdTSs+axdfilGWzZKeYdjfyanu/v5AA==}
     peerDependencies:
       typescript: '>=5.5.0'
 
@@ -3192,6 +3192,9 @@ packages:
 
   '@shikijs/types@3.12.1':
     resolution: {integrity: sha512-Is/p+1vTss22LIsGCJTmGrxu7ZC1iBL9doJFYLaZ4aI8d0VDXb7Mn0kBzhkc7pdsRpmUbQLQ5HXwNpa3H6F8og==}
+
+  '@shikijs/types@3.12.2':
+    resolution: {integrity: sha512-K5UIBzxCyv0YoxN3LMrKB9zuhp1bV+LgewxuVwHdl4Gz5oePoUFrr9EfgJlGlDeXCU1b/yhdnXeuRvAnz8HN8Q==}
 
   '@shikijs/types@3.9.2':
     resolution: {integrity: sha512-/M5L0Uc2ljyn2jKvj4Yiah7ow/W+DJSglVafvWAJ/b8AZDeeRAdMu3c2riDzB7N42VD+jSnWxeP9AKtd4TfYVw==}
@@ -7832,9 +7835,9 @@ packages:
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
 
-  marked@16.1.1:
-    resolution: {integrity: sha512-ij/2lXfCRT71L6u0M29tJPhP0bM5shLL3u5BePhFwPELj2blMJ6GDtD7PfJhRLhJ/c2UwrK17ySVcDzy2YHjHQ==}
-    engines: {node: '>= 20'}
+  marked@15.0.12:
+    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
+    engines: {node: '>= 18'}
     hasBin: true
 
   matcher-collection@1.1.2:
@@ -7933,8 +7936,8 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
-  mermaid@11.10.1:
-    resolution: {integrity: sha512-0PdeADVWURz7VMAX0+MiMcgfxFKY4aweSGsjgFihe3XlMKNqmai/cugMrqTd3WNHM93V+K+AZL6Wu6tB5HmxRw==}
+  mermaid@11.11.0:
+    resolution: {integrity: sha512-9lb/VNkZqWTRjVgCV+l1N+t4kyi94y+l5xrmBmbbxZYkfRl5hEDaTPMOcaWKCl1McG8nBEaMlWwkcAEEgjhBgg==}
 
   methods@1.1.2:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
@@ -13246,9 +13249,9 @@ snapshots:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
-  '@shikijs/core@3.12.1':
+  '@shikijs/core@3.12.2':
     dependencies:
-      '@shikijs/types': 3.12.1
+      '@shikijs/types': 3.12.2
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
@@ -13316,10 +13319,10 @@ snapshots:
       '@shikijs/core': 2.5.0
       '@shikijs/types': 2.5.0
 
-  '@shikijs/twoslash@3.12.1(typescript@5.9.2)':
+  '@shikijs/twoslash@3.12.2(typescript@5.9.2)':
     dependencies:
-      '@shikijs/core': 3.12.1
-      '@shikijs/types': 3.12.1
+      '@shikijs/core': 3.12.2
+      '@shikijs/types': 3.12.2
       twoslash: 0.3.4(typescript@5.9.2)
       typescript: 5.9.2
     transitivePeerDependencies:
@@ -13335,6 +13338,11 @@ snapshots:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
 
+  '@shikijs/types@3.12.2':
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+
   '@shikijs/types@3.9.2':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
@@ -13342,7 +13350,7 @@ snapshots:
 
   '@shikijs/vitepress-twoslash@3.9.2(typescript@5.9.2)':
     dependencies:
-      '@shikijs/twoslash': 3.12.1(typescript@5.9.2)
+      '@shikijs/twoslash': 3.12.2(typescript@5.9.2)
       floating-vue: 5.2.2(vue@3.5.20(typescript@5.9.2))
       mdast-util-from-markdown: 2.0.2
       mdast-util-gfm: 3.1.0
@@ -19112,7 +19120,7 @@ snapshots:
 
   markdown-table@3.0.4: {}
 
-  marked@16.1.1: {}
+  marked@15.0.12: {}
 
   matcher-collection@1.1.2:
     dependencies:
@@ -19286,10 +19294,10 @@ snapshots:
 
   merge2@1.4.1: {}
 
-  mermaid@11.10.1:
+  mermaid@11.11.0:
     dependencies:
       '@braintree/sanitize-url': 7.1.1
-      '@iconify/utils': 2.3.0
+      '@iconify/utils': 3.0.1
       '@mermaid-js/parser': 0.6.2
       '@types/d3': 7.4.3
       cytoscape: 3.32.0
@@ -19303,7 +19311,7 @@ snapshots:
       katex: 0.16.22
       khroma: 2.1.0
       lodash-es: 4.17.21
-      marked: 16.1.1
+      marked: 15.0.12
       roughjs: 4.6.6
       stylis: 4.3.6
       ts-dedent: 2.2.0
@@ -22362,9 +22370,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress-plugin-mermaid@2.0.17(mermaid@11.10.1)(vitepress@1.6.4(@algolia/client-search@5.27.0)(@types/node@24.0.10)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.43.1)(typescript@5.9.2)):
+  vitepress-plugin-mermaid@2.0.17(mermaid@11.11.0)(vitepress@1.6.4(@algolia/client-search@5.27.0)(@types/node@24.0.10)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.43.1)(typescript@5.9.2)):
     dependencies:
-      mermaid: 11.10.1
+      mermaid: 11.11.0
       vitepress: 1.6.4(@algolia/client-search@5.27.0)(@types/node@24.0.10)(change-case@5.4.4)(lightningcss@1.30.1)(postcss@8.5.6)(search-insights@2.17.3)(terser@5.43.1)(typescript@5.9.2)
     optionalDependencies:
       '@mermaid-js/mermaid-mindmap': 9.3.0
