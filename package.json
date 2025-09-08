@@ -21,7 +21,7 @@
     "test:dev": "vitest --ui"
   },
   "devDependencies": {
-    "@shikijs/vitepress-twoslash": "^3.9.2",
+    "@shikijs/vitepress-twoslash": "^3.12.2",
     "@theemo/build": "workspace:*",
     "@theemo/cli": "workspace:*",
     "@theemo/core": "workspace:*",
