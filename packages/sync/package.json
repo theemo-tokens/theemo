@@ -50,7 +50,7 @@
     "@theemo-config/typedoc": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^8.34.0",
     "@typescript-eslint/parser": "^8.34.0",
-    "concurrently": "^9.2.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.30.1",
     "prettier": "^3.5.3",
     "tsdown": "^0.12.9",

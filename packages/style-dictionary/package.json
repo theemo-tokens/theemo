@@ -52,7 +52,7 @@
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
-    "concurrently": "^9.2.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.30.1",
     "prettier": "^3.5.3",
     "style-dictionary": "^5.0.4",
