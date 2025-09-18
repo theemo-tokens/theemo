@@ -546,7 +546,7 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@24.3.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
       vitest:
         specifier: 3.2.4
@@ -742,7 +742,7 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@24.3.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
       vitest:
         specifier: 3.2.4
@@ -965,7 +965,7 @@ importers:
         specifier: ^5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@24.3.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
 
   playground/forest-theme: {}
@@ -1005,7 +1005,7 @@ importers:
         specifier: ~5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@24.3.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
 
   playground/sveltekit:
@@ -1044,7 +1044,7 @@ importers:
         specifier: ^5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@24.3.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
 
   playground/vanilla-js:
@@ -1068,7 +1068,7 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4)
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@24.3.1)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
       vite-plugin-inspect:
         specifier: ^11.3.3
@@ -1117,7 +1117,7 @@ importers:
         specifier: ~5.9.2
         version: 5.9.2
       vite:
-        specifier: ^6.3.5
+        specifier: ^6.3.6
         version: 6.3.6(@types/node@22.16.3)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.1)
       vitest:
         specifier: 3.2.4
