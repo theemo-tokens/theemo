@@ -17,7 +17,7 @@
     "@theemo-playground/ocean-theme": "workspace:*",
     "@vitest/browser": "3.2.4",
     "@vitest/coverage-istanbul": "3.2.4",
-    "vite": "^6.3.5",
+    "vite": "^6.3.6",
     "vite-plugin-inspect": "^11.3.3",
     "vitest": "3.2.4"
   },
