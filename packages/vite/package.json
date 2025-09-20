@@ -55,7 +55,7 @@
     "eslint": "^9.30.1",
     "prettier": "^3.5.3",
     "rollup": "^4.50.1",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.15.3",
     "type-fest": "^4.41.0",
     "typescript": "5.9.2",
     "vite": "^6.3.6",
