@@ -57,8 +57,8 @@ importers:
         specifier: ^9.2.1
         version: 9.2.1
       iconify-icon:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       markdown-it-deflist:
         specifier: 3.0.0
         version: 3.0.0
@@ -3186,6 +3186,9 @@ packages:
   '@shikijs/core@3.12.2':
     resolution: {integrity: sha512-L1Safnhra3tX/oJK5kYHaWmLEBJi1irASwewzY3taX5ibyXyMkkSDZlq01qigjryOBwrXSdFgTiZ3ryzSNeu7Q==}
 
+  '@shikijs/core@3.13.0':
+    resolution: {integrity: sha512-3P8rGsg2Eh2qIHekwuQjzWhKI4jV97PhvYjYUzGqjvJfqdQPz+nMlfWahU24GZAyW1FxFI1sYjyhfh5CoLmIUA==}
+
   '@shikijs/engine-javascript@2.5.0':
     resolution: {integrity: sha512-VjnOpnQf8WuCEZtNUdjjwGUbtAVKuZkVQ/5cHy/tojVVRIRtlWMYVjyWhxOmIq05AlSOv72z7hRNRGVBgQOl0w==}
 
@@ -3213,8 +3216,8 @@ packages:
   '@shikijs/transformers@2.5.0':
     resolution: {integrity: sha512-SI494W5X60CaUwgi8u4q4m4s3YAFSxln3tzNjOSYqq54wlVgz0/NbbXEb3mdLbqMBztcmS7bVTaEd2w0qMmfeg==}
 
-  '@shikijs/twoslash@3.12.2':
-    resolution: {integrity: sha512-JthKvEvyE/gbu3u693mhNhEO6GYP1vetrwgEfqTAsT/G9AJ6nf7g7JVqdTSs+axdfilGWzZKeYdjfyanu/v5AA==}
+  '@shikijs/twoslash@3.13.0':
+    resolution: {integrity: sha512-OmNKNoZ8Hevt4VKQHfJL+hrsrqLSnW/Nz7RMutuBqXBCIYZWk80HnF9pcXEwRmy9MN0MGRmZCW2rDDP8K7Bxkw==}
     peerDependencies:
       typescript: '>=5.5.0'
 
@@ -3223,6 +3226,9 @@ packages:
 
   '@shikijs/types@3.12.2':
     resolution: {integrity: sha512-K5UIBzxCyv0YoxN3LMrKB9zuhp1bV+LgewxuVwHdl4Gz5oePoUFrr9EfgJlGlDeXCU1b/yhdnXeuRvAnz8HN8Q==}
+
+  '@shikijs/types@3.13.0':
+    resolution: {integrity: sha512-oM9P+NCFri/mmQ8LoFGVfVyemm5Hi27330zuOBp0annwJdKH1kOLndw3zCtAVDehPLg9fKqoEx3Ht/wNZxolfw==}
 
   '@shikijs/vitepress-twoslash@3.12.2':
     resolution: {integrity: sha512-aOuy+69iuTI8MMAy2htMdB6MSwmC5/gfeWDs0TbEkEc2yBaA6dfM5XZi0LpsJeJFSgvIROaxH5pvgdrENTWfpg==}
@@ -6975,8 +6981,8 @@ packages:
     resolution: {integrity: sha512-Y93lCzHYgGWdrJ66yIktxiaGULYc6oGiABxhcO5AufBeOyoIdZF7bIfLaOrbM0iGIOXQQgxxRrFEnb+Y6w1n4A==}
     engines: {node: '>=10.18'}
 
-  iconify-icon@3.0.0:
-    resolution: {integrity: sha512-yPcnpkn8HUEUckrxxJBOer3jbGv3bqozHsLMLBRxhk3As1X76BgV2mS2a1HTNOIagR8nUs30H3qAd9GLe8Mnlg==}
+  iconify-icon@3.0.1:
+    resolution: {integrity: sha512-M3/kH3C+e/ufhmQuOSYSb1Ri1ImJ+ZEQYcVRMKnlSc8Nrdoy+iY9YvFnplX8t/3aCRuo5wN4RVPtCSHGnbt8dg==}
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -13344,6 +13350,13 @@ snapshots:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
+  '@shikijs/core@3.13.0':
+    dependencies:
+      '@shikijs/types': 3.13.0
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+      hast-util-to-html: 9.0.5
+
   '@shikijs/engine-javascript@2.5.0':
     dependencies:
       '@shikijs/types': 2.5.0
@@ -13387,10 +13400,10 @@ snapshots:
       '@shikijs/core': 2.5.0
       '@shikijs/types': 2.5.0
 
-  '@shikijs/twoslash@3.12.2(typescript@5.9.2)':
+  '@shikijs/twoslash@3.13.0(typescript@5.9.2)':
     dependencies:
-      '@shikijs/core': 3.12.2
-      '@shikijs/types': 3.12.2
+      '@shikijs/core': 3.13.0
+      '@shikijs/types': 3.13.0
       twoslash: 0.3.4(typescript@5.9.2)
       typescript: 5.9.2
     transitivePeerDependencies:
@@ -13406,9 +13419,14 @@ snapshots:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
 
+  '@shikijs/types@3.13.0':
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+
   '@shikijs/vitepress-twoslash@3.12.2(typescript@5.9.2)':
     dependencies:
-      '@shikijs/twoslash': 3.12.2(typescript@5.9.2)
+      '@shikijs/twoslash': 3.13.0(typescript@5.9.2)
       floating-vue: 5.2.2(vue@3.5.21(typescript@5.9.2))
       lz-string: 1.5.0
       magic-string: 0.30.18
@@ -18296,7 +18314,7 @@ snapshots:
 
   hyperdyperid@1.2.0: {}
 
-  iconify-icon@3.0.0:
+  iconify-icon@3.0.1:
     dependencies:
       '@iconify/types': 2.0.0
 
