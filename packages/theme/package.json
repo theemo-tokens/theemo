@@ -37,7 +37,7 @@
     "test:dev": "vitest"
   },
   "dependencies": {
-    "type-fest": "^4.0.0"
+    "type-fest": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.28.4",
