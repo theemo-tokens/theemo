@@ -71,7 +71,7 @@
     "rollup": "^4.52.4",
     "svelte": "^5.39.9",
     "tsdown": "^0.12.9",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "vite": "^6.3.6",
     "vitest": "3.2.4"
   },

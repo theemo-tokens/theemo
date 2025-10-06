@@ -22,7 +22,7 @@
     "@theemo-playground/ocean-theme": "workspace:*",
     "svelte": "^5.39.9",
     "svelte-check": "^4.3.2",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vite": "^6.3.6"
   }
 }
