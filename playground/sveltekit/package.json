@@ -12,7 +12,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^6.1.0",
+    "@sveltejs/adapter-auto": "^6.1.1",
     "@sveltejs/kit": "^2.28.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.1",
     "@theemo/svelte": "workspace:*",
