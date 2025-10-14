@@ -78,14 +78,14 @@ importers:
         specifier: 2.5.8
         version: 2.5.8
       typedoc:
-        specifier: 0.28.13
-        version: 0.28.13(typescript@5.9.3)
+        specifier: 0.28.14
+        version: 0.28.14(typescript@5.9.3)
       typedoc-plugin-markdown:
         specifier: 4.9.0
-        version: 4.9.0(typedoc@0.28.13(typescript@5.9.3))
+        version: 4.9.0(typedoc@0.28.14(typescript@5.9.3))
       typedoc-vitepress-theme:
         specifier: 1.1.2
-        version: 1.1.2(typedoc-plugin-markdown@4.9.0(typedoc@0.28.13(typescript@5.9.3)))
+        version: 1.1.2(typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.9.3)))
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -152,8 +152,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       typedoc:
-        specifier: ^0.28.13
-        version: 0.28.13(typescript@5.9.3)
+        specifier: ^0.28.14
+        version: 0.28.14(typescript@5.9.3)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -10133,8 +10133,8 @@ packages:
     peerDependencies:
       typedoc-plugin-markdown: '>=4.4.0'
 
-  typedoc@0.28.13:
-    resolution: {integrity: sha512-dNWY8msnYB2a+7Audha+aTF1Pu3euiE7ySp53w8kEsXoYw7dMouV5A1UsTUY345aB152RHnmRMDiovuBi7BD+w==}
+  typedoc@0.28.14:
+    resolution: {integrity: sha512-ftJYPvpVfQvFzpkoSfHLkJybdA/geDJ8BGQt/ZnkkhnBYoYW6lBgPQXu6vqLxO4X75dA55hX8Af847H5KXlEFA==}
     engines: {node: '>= 18', pnpm: '>= 10'}
     hasBin: true
     peerDependencies:
@@ -21801,15 +21801,15 @@ snapshots:
     dependencies:
       is-typedarray: 1.0.0
 
-  typedoc-plugin-markdown@4.9.0(typedoc@0.28.13(typescript@5.9.3)):
+  typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.9.3)):
     dependencies:
-      typedoc: 0.28.13(typescript@5.9.3)
+      typedoc: 0.28.14(typescript@5.9.3)
 
-  typedoc-vitepress-theme@1.1.2(typedoc-plugin-markdown@4.9.0(typedoc@0.28.13(typescript@5.9.3))):
+  typedoc-vitepress-theme@1.1.2(typedoc-plugin-markdown@4.9.0(typedoc@0.28.14(typescript@5.9.3))):
     dependencies:
-      typedoc-plugin-markdown: 4.9.0(typedoc@0.28.13(typescript@5.9.3))
+      typedoc-plugin-markdown: 4.9.0(typedoc@0.28.14(typescript@5.9.3))
 
-  typedoc@0.28.13(typescript@5.9.3):
+  typedoc@0.28.14(typescript@5.9.3):
     dependencies:
       '@gerrit0/mini-shiki': 3.12.0
       lunr: 2.3.9

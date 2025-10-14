@@ -44,7 +44,7 @@
     "release-plan": "0.17.2",
     "style-dictionary": "^5.0.4",
     "turbo": "2.5.8",
-    "typedoc": "0.28.13",
+    "typedoc": "0.28.14",
     "typedoc-plugin-markdown": "4.9.0",
     "typedoc-vitepress-theme": "1.1.2",
     "typescript": "5.9.3",
