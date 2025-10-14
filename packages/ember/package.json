@@ -63,7 +63,7 @@
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
     "concurrently": "^9.2.1",
-    "ember-source": "~6.7.0",
+    "ember-source": "~6.8.0",
     "eslint": "^9.30.1",
     "eslint-plugin-ember": "^12.5.0",
     "prettier": "^3.5.3",
