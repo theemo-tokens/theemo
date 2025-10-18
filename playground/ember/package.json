@@ -43,7 +43,7 @@
     "@gossi/config-prettier": "^1.0.1",
     "@gossi/config-stylelint": "^1.0.2",
     "@gossi/config-template-lint": "^1.0.1",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-babel": "^6.1.0",
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
     "@theemo/ember": "workspace:*",
