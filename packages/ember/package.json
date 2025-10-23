@@ -59,7 +59,7 @@
     "@glimmer/tracking": "^1.1.2",
     "@gossi/config-eslint": "^1.1.2",
     "@gossi/config-prettier": "^1.0.1",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-babel": "^6.1.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
     "concurrently": "^9.2.1",
