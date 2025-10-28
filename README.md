@@ -1,5 +1,7 @@
 # Theemo - Design Token Automations
 
+[![Maintainability](https://qlty.sh/gh/theemo-tokens/projects/theemo/maintainability.svg)](https://qlty.sh/gh/theemo-tokens/projects/theemo) [![Code Coverage](https://qlty.sh/gh/theemo-tokens/projects/theemo/coverage.svg)](https://qlty.sh/gh/theemo-tokens/projects/theemo)
+
 Theemo automates your design tokens by connecting your existing tools and make them work together, from design to framework integration. The theemo suite consists of multiple parts to serve a multi-disciplinary audience by bringing them together for an immersive workflow.
 
 ## Documentation
