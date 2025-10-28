@@ -1,14 +1,14 @@
 {
   "solution": {
     "@theemo/build": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
+      "impact": "minor",
+      "oldVersion": "1.0.1",
+      "newVersion": "1.1.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./packages/build/package.json"
@@ -17,219 +17,47 @@
     "moana-color-schemes": {},
     "@theemo/cli": {
       "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
+      "oldVersion": "1.0.1",
+      "newVersion": "1.0.2",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
           "reason": "Has dependency `workspace:*` on @theemo/build"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/sync"
         }
       ],
       "pkgJSONPath": "./packages/cli/package.json"
     },
     "@theemo/core": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/core/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/ember": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/theme"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/ember/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/figma": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/sync"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/tokens"
-        }
-      ],
-      "pkgJSONPath": "./packages/figma/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/style-dictionary": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/sync"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/tokens"
-        }
-      ],
-      "pkgJSONPath": "./packages/style-dictionary/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/svelte": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/theme"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/vite"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/svelte/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/sync": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        },
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/tokens"
-        }
-      ],
-      "pkgJSONPath": "./packages/sync/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/theme": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/theme/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/tokens": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/tokens/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/vite": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/theme"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/vite/package.json"
+      "oldVersion": "1.0.1"
     },
     "@theemo/vue": {
-      "impact": "patch",
-      "oldVersion": "1.0.0",
-      "newVersion": "1.0.1",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/theme"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :memo: Documentation"
-        },
-        {
-          "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
-        }
-      ],
-      "pkgJSONPath": "./packages/vue/package.json"
+      "oldVersion": "1.0.1"
     }
   },
-  "description": "## Release (2025-07-10)\n\n* @theemo/build 1.0.1 (patch)\n* @theemo/cli 1.0.1 (patch)\n* @theemo/core 1.0.1 (patch)\n* @theemo/ember 1.0.1 (patch)\n* @theemo/figma 1.0.1 (patch)\n* @theemo/style-dictionary 1.0.1 (patch)\n* @theemo/svelte 1.0.1 (patch)\n* @theemo/sync 1.0.1 (patch)\n* @theemo/theme 1.0.1 (patch)\n* @theemo/tokens 1.0.1 (patch)\n* @theemo/vite 1.0.1 (patch)\n* @theemo/vue 1.0.1 (patch)\n\n#### :bug: Bug Fix\n* `@theemo/theme`\n  * [#1490](https://github.com/theemo-tokens/theemo/pull/1490) Fix theme manager handler ([@gossi](https://github.com/gossi))\n\n#### :memo: Documentation\n* `@theemo/ember`, `@theemo/svelte`, `@theemo/theme`, `@theemo/vite`, `@theemo/vue`\n  * [#1480](https://github.com/theemo-tokens/theemo/pull/1480) Correct Links to playground ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* `@theemo/build`, `@theemo/cli`, `@theemo/core`, `@theemo/ember`, `@theemo/figma`, `@theemo/style-dictionary`, `@theemo/svelte`, `@theemo/sync`, `@theemo/theme`, `@theemo/tokens`, `@theemo/vite`, `@theemo/vue`\n  * [#1492](https://github.com/theemo-tokens/theemo/pull/1492) Go back to non-major-releasing ([@gossi](https://github.com/gossi))\n  * [#1482](https://github.com/theemo-tokens/theemo/pull/1482) Update to `@gossi/config-*` v1 ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2025-10-28)\n\n* @theemo/build 1.1.0 (minor)\n* @theemo/cli 1.0.2 (patch)\n\n#### :rocket: Enhancement\n* `@theemo/build`\n  * [#1627](https://github.com/theemo-tokens/theemo/pull/1627) Build theme with CSS `@layer` ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#1629](https://github.com/theemo-tokens/theemo/pull/1629) Support Trusted Publishing ([@gossi](https://github.com/gossi))\n* [#1628](https://github.com/theemo-tokens/theemo/pull/1628) Switch Code Coverage reporter to qlty ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }
