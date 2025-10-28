@@ -1,5 +1,21 @@
 # Changelog
 
+## Release (2025-10-28)
+
+* @theemo/build 1.1.0 (minor)
+* @theemo/cli 1.0.2 (patch)
+
+#### :rocket: Enhancement
+* `@theemo/build`
+  * [#1627](https://github.com/theemo-tokens/theemo/pull/1627) Build theme with CSS `@layer` ([@gossi](https://github.com/gossi))
+
+#### :house: Internal
+* [#1629](https://github.com/theemo-tokens/theemo/pull/1629) Support Trusted Publishing ([@gossi](https://github.com/gossi))
+* [#1628](https://github.com/theemo-tokens/theemo/pull/1628) Switch Code Coverage reporter to qlty ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-07-10)
 
 * @theemo/build 1.0.1 (patch)
