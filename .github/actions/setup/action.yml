@@ -1,10 +1,11 @@
-name: 'Setup'
+name: Setup
+description: Install toolchain for this repo CI tasks
 inputs:
   node-version:
-    description: 'Specific node version'
+    description: "Specific node version"
     required: false
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - name: Install pnpm
       uses: pnpm/action-setup@v4
@@ -13,11 +14,11 @@ runs:
       uses: actions/setup-node@v5
       with:
         node-version: ${{ inputs.node-version }}
-        node-version-file: '.node-version'
-        cache: 'pnpm'
+        node-version-file: ".node-version"
+        cache: "pnpm"
         # This creates an .npmrc that reads the NODE_AUTH_TOKEN environment variable
         # necessary for publish
-        registry-url: 'https://registry.npmjs.org'
+        registry-url: "https://registry.npmjs.org"
 
     - name: Install dependencies
       run: pnpm install
