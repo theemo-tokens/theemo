@@ -23,6 +23,13 @@ export interface BuildConfig {
   features?: BuildFeature[];
 
   /**
+   * Wrap the outputted file in a CSS `@layer`
+   *
+   * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@layer
+   */
+  layerName?: string;
+
+  /**
    * Lightning CSS is used for postprocess. You can pass options to lightning
    * css here or turn it off entirely.
    *
@@ -48,7 +55,7 @@ type OptionalKeys<T> = Exclude<keyof T, NonNullable<keyof SubType<Undefined<T>, 
 
 type DefaultBuildConfig = Omit<
   Required<Pick<BuildConfig, OptionalKeys<BuildConfig>>>,
-  'output' | 'files'
+  'output' | 'files' | 'layerName'
 >;
 
 export type BuildConfigWithDefaults = BuildConfig & DefaultBuildConfig;
