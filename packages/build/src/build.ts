@@ -116,12 +116,25 @@ function getThemeName() {
   return (data.theemo as Theme | undefined)?.name ?? data.name;
 }
 
+function wrapInLayer(contents: string[], layerName: string) {
+  // eslint-disable-next-line prettier/prettier
+  return [
+    `@layer ${layerName} {`, 
+    ...contents.map((line) => `  ${line}`), 
+    '}'
+  ];
+}
+
 function buildFiles(config: BuildConfigWithDefaults) {
   const name = getThemeName();
-  const contents = [...combineFiles(config), ...buildFeatures(config)];
+  let contents = [...combineFiles(config), ...buildFeatures(config)];
 
   if (!fs.existsSync(config.outDir)) {
     fs.mkdirSync(config.outDir);
+  }
+
+  if (config.layerName) {
+    contents = wrapInLayer(contents, config.layerName);
   }
 
   const outFile = path.join(config.outDir, `${name}.css`);
