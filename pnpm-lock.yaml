@@ -57,8 +57,8 @@ importers:
         specifier: ^9.2.1
         version: 9.2.1
       iconify-icon:
-        specifier: ^3.0.1
-        version: 3.0.1
+        specifier: ^3.0.2
+        version: 3.0.2
       markdown-it-deflist:
         specifier: 3.0.0
         version: 3.0.0
@@ -6918,8 +6918,8 @@ packages:
     resolution: {integrity: sha512-Y93lCzHYgGWdrJ66yIktxiaGULYc6oGiABxhcO5AufBeOyoIdZF7bIfLaOrbM0iGIOXQQgxxRrFEnb+Y6w1n4A==}
     engines: {node: '>=10.18'}
 
-  iconify-icon@3.0.1:
-    resolution: {integrity: sha512-M3/kH3C+e/ufhmQuOSYSb1Ri1ImJ+ZEQYcVRMKnlSc8Nrdoy+iY9YvFnplX8t/3aCRuo5wN4RVPtCSHGnbt8dg==}
+  iconify-icon@3.0.2:
+    resolution: {integrity: sha512-DYPAumiUeUeT/GHT8x2wrAVKn1FqZJqFH0Y5pBefapWRreV1BBvqBVMb0020YQ2njmbR59r/IathL2d2OrDrxA==}
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
@@ -18060,7 +18060,7 @@ snapshots:
 
   hyperdyperid@1.2.0: {}
 
-  iconify-icon@3.0.1:
+  iconify-icon@3.0.2:
     dependencies:
       '@iconify/types': 2.0.0
 
