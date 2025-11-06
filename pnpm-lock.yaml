@@ -357,8 +357,8 @@ importers:
         specifier: ^9.2.1
         version: 9.2.1
       ember-source:
-        specifier: ~6.8.0
-        version: 6.8.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
+        specifier: ~6.8.1
+        version: 6.8.1(@glimmer/component@2.0.0)(rsvp@4.8.5)
       eslint:
         specifier: ^9.30.1
         version: 9.30.1(jiti@2.6.0)
@@ -912,7 +912,7 @@ importers:
         version: 6.3.0
       ember-load-initializers:
         specifier: ^3.0.1
-        version: 3.0.1(ember-source@6.8.0(@glimmer/component@2.0.0)(rsvp@4.8.5))
+        version: 3.0.1(ember-source@6.8.1(@glimmer/component@2.0.0)(rsvp@4.8.5))
       ember-page-title:
         specifier: ^9.0.3
         version: 9.0.3
@@ -926,8 +926,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3
       ember-source:
-        specifier: ~6.8.0
-        version: 6.8.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
+        specifier: ~6.8.1
+        version: 6.8.1(@glimmer/component@2.0.0)(rsvp@4.8.5)
       ember-template-imports:
         specifier: ^4.3.0
         version: 4.3.0
@@ -5824,8 +5824,8 @@ packages:
     resolution: {integrity: sha512-89oVHVJwmLDvGvAUWgS87KpBoRhy3aZ6U0Ql6HOmU4TrPkyaa8pM0W81wj9cIwjYprcQtN9EwzZMHnq46+oUyw==}
     engines: {node: 8.* || 10.* || >= 12}
 
-  ember-source@6.8.0:
-    resolution: {integrity: sha512-abDPPq9gHB5u5kOY125QBUlm5D1oc+n9Pm2zRciFpxwRV9WXfqiAHMmEhcIWD0uV1E3jhBgqXoHP8CCGBcI2WA==}
+  ember-source@6.8.1:
+    resolution: {integrity: sha512-yGYa7HiXnJA/D0plnS7yCP/1qXGqMocuXi/iJih/QMSLgq3AEy8I5Qaz5re4HOUtpaMh0ZKmyejTD5tLfzhmvQ==}
     engines: {node: '>= 18.*'}
     peerDependencies:
       '@glimmer/component': '>= 1.1.2'
@@ -16551,9 +16551,9 @@ snapshots:
     transitivePeerDependencies:
       - eslint
 
-  ember-load-initializers@3.0.1(ember-source@6.8.0(@glimmer/component@2.0.0)(rsvp@4.8.5)):
+  ember-load-initializers@3.0.1(ember-source@6.8.1(@glimmer/component@2.0.0)(rsvp@4.8.5)):
     dependencies:
-      ember-source: 6.8.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
+      ember-source: 6.8.1(@glimmer/component@2.0.0)(rsvp@4.8.5)
 
   ember-page-title@9.0.3:
     dependencies:
@@ -16595,7 +16595,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-source@6.8.0(@glimmer/component@2.0.0)(rsvp@4.8.5):
+  ember-source@6.8.1(@glimmer/component@2.0.0)(rsvp@4.8.5):
     dependencies:
       '@babel/core': 7.28.5
       '@ember/edition-utils': 1.2.0
