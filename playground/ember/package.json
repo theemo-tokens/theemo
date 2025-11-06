@@ -38,7 +38,7 @@
     "@glint/core": "1.5.2",
     "@glint/environment-ember-loose": "1.5.2",
     "@glint/environment-ember-template-imports": "1.5.2",
-    "@glint/template": "1.6.2",
+    "@glint/template": "1.7.2",
     "@gossi/config-eslint": "^1.1.2",
     "@gossi/config-prettier": "^1.0.1",
     "@gossi/config-stylelint": "^1.0.2",
