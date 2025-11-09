@@ -20,7 +20,7 @@
     "@theemo/vite": "workspace:*",
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
-    "svelte": "^5.39.12",
+    "svelte": "^5.43.5",
     "svelte-check": "^4.3.3",
     "typescript": "^5.9.3",
     "vite": "^6.3.6"
