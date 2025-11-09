@@ -900,10 +900,10 @@ importers:
         version: 2.3.0(@babel/core@7.28.5)
       ember-auto-import:
         specifier: ^2.10.1
-        version: 2.10.1(@glint/template@1.7.2)(webpack@5.99.9)
+        version: 2.11.2(@glint/template@1.7.2)(webpack@5.99.9)
       ember-cli:
         specifier: ~6.7.0
-        version: 6.7.0(handlebars@4.7.8)(underscore@1.13.7)
+        version: 6.7.2(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-babel:
         specifier: ^8.2.0
         version: 8.2.0(@babel/core@7.28.5)
@@ -2011,11 +2011,11 @@ packages:
   '@ember-tooling/blueprint-model@0.0.2':
     resolution: {integrity: sha512-mZ6GZQE3zNfldN0qpZ8qAwCKH2fog60af72yppQueraYqRgL1SSd46An7sxRb1ur60+xlCMZAlj3086Fk1cKuQ==}
 
-  '@ember-tooling/classic-build-addon-blueprint@6.7.0':
-    resolution: {integrity: sha512-wNWXdVWy6N9jNtN7dKeZe9IClOWoqJzuPjZSW6+7GTi1JSN8kMmKUQzhvJEAeBne5KStGUyVGlc3073kI7d3Cw==}
+  '@ember-tooling/classic-build-addon-blueprint@6.7.1':
+    resolution: {integrity: sha512-WICdxgfmazYtDE+vak7jgJ04saxlUcpYPN6i7fXP8UpN+VEx4hQ4nFgm1Mw+EPVdQkkm1dziX4eKlCBqAaxxcQ==}
 
-  '@ember-tooling/classic-build-app-blueprint@6.7.0':
-    resolution: {integrity: sha512-Y6vaSlLOOfZtLBHUISZ0LWhiUyEpYaZLe8LHA7m5K7mJ0kkA3GO/YN1VGjrtlEd6yL2aWU4CYYT0tZjDH/UiAw==}
+  '@ember-tooling/classic-build-app-blueprint@6.7.2':
+    resolution: {integrity: sha512-VLyBxd7aMkKqLFFhEmAgw/3l+McRWOlLnWUYDZjdxwrF8AAwOyLHgiP9AoGydPHGbKF5L40DkJDjWe+1T+5VWQ==}
 
   '@ember/edition-utils@1.2.0':
     resolution: {integrity: sha512-VmVq/8saCaPdesQmftPqbFtxJWrzxNGSQ+e8x8LLe3Hjm36pJ04Q8LeORGZkAeOhldoUX9seLGmSaHeXkIqoog==}
@@ -5694,8 +5694,8 @@ packages:
   electron-to-chromium@1.5.179:
     resolution: {integrity: sha512-UWKi/EbBopgfFsc5k61wFpV7WrnnSlSzW/e2XcBmS6qKYTivZlLtoll5/rdqRTxGglGHkmkW0j0pFNJG10EUIQ==}
 
-  ember-auto-import@2.10.1:
-    resolution: {integrity: sha512-5K4lYSEBch3DKQn1VElFHDHcHTvhTJnB6aebf24VyIobLL+OMWORcCK1fiwyfPiVABztyuLXH2GiXDweNUtntA==}
+  ember-auto-import@2.11.2:
+    resolution: {integrity: sha512-eR67ggmPQ6Upx6Smbur0HTRYqQshyxJMKPkWBHwWZmZ8sOA5piR0raL7ccKO0Hrn4ZEkp8ih24yAwvssb6K4NQ==}
     engines: {node: 12.* || 14.* || >= 16}
 
   ember-cli-babel-plugin-helpers@1.1.1:
@@ -5750,8 +5750,8 @@ packages:
     resolution: {integrity: sha512-rk7GY+FmLn/2e22HsZs0Ycrz8HQ1W3Fv+2TFOuEFW9optnDXDgkntPBIl6gact/LHsfBM5RKbM3dHsIIeLgl0Q==}
     engines: {node: 10.* || >= 12.*}
 
-  ember-cli@6.7.0:
-    resolution: {integrity: sha512-E+8WK/BMzSoJmE8FIokFiTuayCs5CgusZuhk+Mpha8zcoTh9s7+tahuSnaypifSR0/NiJh7oixxZXzPmw9iuEg==}
+  ember-cli@6.7.2:
+    resolution: {integrity: sha512-e5TpmLPApKcNaYiJ6bUyLO2D4eDY0yDV0gydTHPWVxm/Y03HdVoAtdlP6a0gHeVB8TrVVYISetNf/WB8k8aKOQ==}
     engines: {node: '>= 20.11'}
     hasBin: true
 
@@ -11925,7 +11925,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ember-tooling/classic-build-addon-blueprint@6.7.0':
+  '@ember-tooling/classic-build-addon-blueprint@6.7.1':
     dependencies:
       '@ember-tooling/blueprint-model': 0.0.2
       chalk: 4.1.2
@@ -11939,7 +11939,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ember-tooling/classic-build-app-blueprint@6.7.0':
+  '@ember-tooling/classic-build-app-blueprint@6.7.2':
     dependencies:
       '@ember-tooling/blueprint-model': 0.0.2
       chalk: 4.1.2
@@ -16103,7 +16103,7 @@ snapshots:
 
   electron-to-chromium@1.5.179: {}
 
-  ember-auto-import@2.10.1(@glint/template@1.7.2)(webpack@5.99.9):
+  ember-auto-import@2.11.2(@glint/template@1.7.2)(webpack@5.99.9):
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.28.5)
@@ -16300,12 +16300,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli@6.7.0(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@6.7.2(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@ember-tooling/blueprint-blueprint': 0.0.2
       '@ember-tooling/blueprint-model': 0.0.2
-      '@ember-tooling/classic-build-addon-blueprint': 6.7.0
-      '@ember-tooling/classic-build-app-blueprint': 6.7.0
+      '@ember-tooling/classic-build-addon-blueprint': 6.7.1
+      '@ember-tooling/classic-build-app-blueprint': 6.7.2
       '@pnpm/find-workspace-dir': 1000.1.0
       babel-remove-types: 1.0.1
       broccoli: 3.5.2
