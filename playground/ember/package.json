@@ -49,7 +49,7 @@
     "@theemo/ember": "workspace:*",
     "@theemo/theme": "workspace:*",
     "@theemo/vite": "workspace:*",
-    "@tsconfig/ember": "^3.0.11",
+    "@tsconfig/ember": "^3.0.12",
     "@types/qunit": "^2.19.12",
     "@types/rsvp": "^4.0.9",
     "babel-plugin-ember-template-compilation": "^3.0.1",
