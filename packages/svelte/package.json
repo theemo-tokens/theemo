@@ -69,7 +69,7 @@
     "eslint": "^9.30.1",
     "prettier": "^3.5.3",
     "rollup": "^4.53.2",
-    "svelte": "^5.43.8",
+    "svelte": "^5.44.0",
     "tsdown": "^0.12.9",
     "typescript": "5.9.3",
     "vite": "^6.3.6",
