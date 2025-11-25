@@ -1099,8 +1099,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vue
       '@tsconfig/node22':
-        specifier: ^22.0.4
-        version: 22.0.4
+        specifier: ^22.0.5
+        version: 22.0.5
       '@types/node':
         specifier: ^22.16.3
         version: 22.16.3
@@ -3258,8 +3258,8 @@ packages:
   '@tsconfig/ember@3.0.12':
     resolution: {integrity: sha512-ypFTXqIzQAB5HpYPi4TwDElDcUheWrKsEaYXgjiCAvsH6zxcQ4zUeuJqmfT+FoUlHTPZ3Xyel81OxrcjI+rilw==}
 
-  '@tsconfig/node22@22.0.4':
-    resolution: {integrity: sha512-GI0gtqW+8Bz9UMOsOO1z3w1ebspOkVjSyeJ18r96LW82OOZenpzWXti/+f/MgPy1hqXTIRXn8QpGIOYHgKkTnQ==}
+  '@tsconfig/node22@22.0.5':
+    resolution: {integrity: sha512-hLf2ld+sYN/BtOJjHUWOk568dvjFQkHnLNa6zce25GIH+vxKfvTgm3qpaH6ToF5tu/NN0IH66s+Bb5wElHrLcw==}
 
   '@tsconfig/svelte@5.0.6':
     resolution: {integrity: sha512-yGxYL0I9eETH1/DR9qVJey4DAsCdeau4a9wYPKuXfEhm8lFO8wg+LLYJjIpAm6Fw7HSlhepPhYPDop75485yWQ==}
@@ -13344,7 +13344,7 @@ snapshots:
 
   '@tsconfig/ember@3.0.12': {}
 
-  '@tsconfig/node22@22.0.4': {}
+  '@tsconfig/node22@22.0.5': {}
 
   '@tsconfig/svelte@5.0.6': {}
 
