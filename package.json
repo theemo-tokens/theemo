@@ -43,7 +43,7 @@
     "mermaid": "11.12.2",
     "release-plan": "0.17.2",
     "style-dictionary": "^5.1.1",
-    "turbo": "2.6.1",
+    "turbo": "2.6.3",
     "typedoc": "0.28.15",
     "typedoc-plugin-markdown": "4.9.0",
     "typedoc-vitepress-theme": "1.1.2",
