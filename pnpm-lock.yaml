@@ -902,8 +902,8 @@ importers:
         specifier: ^2.12.0
         version: 2.12.0(@glint/template@1.7.3)(webpack@5.99.9)
       ember-cli:
-        specifier: ~6.8.0
-        version: 6.8.0(handlebars@4.7.8)(underscore@1.13.7)
+        specifier: ~6.8.1
+        version: 6.8.1(handlebars@4.7.8)(underscore@1.13.7)
       ember-cli-babel:
         specifier: ^8.2.0
         version: 8.2.0(@babel/core@7.28.5)
@@ -5812,8 +5812,8 @@ packages:
     resolution: {integrity: sha512-rk7GY+FmLn/2e22HsZs0Ycrz8HQ1W3Fv+2TFOuEFW9optnDXDgkntPBIl6gact/LHsfBM5RKbM3dHsIIeLgl0Q==}
     engines: {node: 10.* || >= 12.*}
 
-  ember-cli@6.8.0:
-    resolution: {integrity: sha512-qUMfPDvyMUWjK+na34YHv/8AQGn5WJTcCL5qaMwa5MLi2hnKBzvCBwd99nORJdLG9GpCxYzxFQ+txyEkfmvk7g==}
+  ember-cli@6.8.1:
+    resolution: {integrity: sha512-lA/eW8ESZyYIuyyIkicxkEfsV3pZzDLaJJsEEAV09Bfw9x9yPxPn/6yJcX5xTmj+cYWfkeQlOWj4ZKvXNIzwiA==}
     engines: {node: '>= 20.11'}
     hasBin: true
 
@@ -16502,7 +16502,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli@6.8.0(handlebars@4.7.8)(underscore@1.13.7):
+  ember-cli@6.8.1(handlebars@4.7.8)(underscore@1.13.7):
     dependencies:
       '@ember-tooling/blueprint-blueprint': 0.2.1
       '@ember-tooling/blueprint-model': 0.4.1
