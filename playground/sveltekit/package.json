@@ -21,7 +21,7 @@
     "@theemo-playground/forest-theme": "workspace:*",
     "@theemo-playground/ocean-theme": "workspace:*",
     "svelte": "^5.45.6",
-    "svelte-check": "^4.3.4",
+    "svelte-check": "^4.3.5",
     "typescript": "^5.9.3",
     "vite": "^6.3.6"
   }
