@@ -1099,7 +1099,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/vue
       '@tsconfig/node24':
-        specifier: ^24.0.0
+        specifier: ^24.0.4
         version: 24.0.4
       '@types/node':
         specifier: ^22.16.3
