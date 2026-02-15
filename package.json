@@ -55,7 +55,7 @@
     "vitepress-plugin-group-icons": "^1.6.5",
     "vitepress-plugin-mermaid": "2.0.17",
     "vitest": "3.2.4",
-    "vue": "3.5.27"
+    "vue": "3.5.28"
   },
   "packageManager": "pnpm@10.24.0",
   "engines": {
