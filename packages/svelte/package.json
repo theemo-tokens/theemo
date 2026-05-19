@@ -70,7 +70,7 @@
     "prettier": "^3.8.1",
     "rollup": "^4.60.4",
     "svelte": "^5.55.7",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.22.0",
     "typescript": "5.9.3",
     "vite": "^6.3.6",
     "vitest": "3.2.4"
