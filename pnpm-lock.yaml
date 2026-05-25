@@ -1123,8 +1123,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.3)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.44.0)(yaml@2.8.3)
       vue-tsc:
-        specifier: ^3.3.0
-        version: 3.3.0(typescript@5.9.3)
+        specifier: ^3.3.2
+        version: 3.3.2(typescript@5.9.3)
 
   testing/fixtures:
     dependencies:
@@ -4041,8 +4041,8 @@ packages:
       typescript:
         optional: true
 
-  '@vue/language-core@3.3.0':
-    resolution: {integrity: sha512-EyUxq1b8Yoxk6hQ6X33BIRnfFLb9Rbm9w/8G8y6uMxlQu7CW7yy9JS/z54xSpIvBvVWX6Lt5v1aBGwmrqD4aJw==}
+  '@vue/language-core@3.3.2':
+    resolution: {integrity: sha512-CLwjSfHlPLhjd2qhuS3tTFtnOIWHXAM5u4X1DxmzlQ8j5bmOYlKCsSusOP7jCRJnlVg0mCTQtHU3vwFvopZGoQ==}
 
   '@vue/reactivity@3.5.34':
     resolution: {integrity: sha512-y9XDjCEuBp+98k+UL5dbYkh57AHU4o6cxZedOPXw3bmrZZYLQsVHguGurq7hVrPCSrQtrnz1f9dssyFr+dMXfQ==}
@@ -10979,8 +10979,8 @@ packages:
     peerDependencies:
       typescript: '>=5.0.0'
 
-  vue-tsc@3.3.0:
-    resolution: {integrity: sha512-kY8RcoTOENASi0P1GLPvJgA2+hoGF+t8We1UGgmnAb1r/GjTUMSE3zz+WGfjPORZNnBHdAt67sVPhBLXWunkeg==}
+  vue-tsc@3.3.2:
+    resolution: {integrity: sha512-n7nQoA3YWW/eiDR8jMiv/uJvlg0uLGs+YgUrsTrf9EZaYSt3tuvMZb5V8+7Mvh/EH5pnY/hoVdgfjH+XcK+wwA==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
@@ -14704,7 +14704,7 @@ snapshots:
       typescript: 5.9.3
     optional: true
 
-  '@vue/language-core@3.3.0':
+  '@vue/language-core@3.3.2':
     dependencies:
       '@volar/language-core': 2.4.28
       '@vue/compiler-dom': 3.5.34
@@ -22540,7 +22540,7 @@ snapshots:
 
   twoslash-vue@0.3.6(typescript@5.9.3):
     dependencies:
-      '@vue/language-core': 3.3.0
+      '@vue/language-core': 3.3.2
       twoslash: 0.3.6(typescript@5.9.3)
       twoslash-protocol: 0.3.6
       typescript: 5.9.3
@@ -23216,10 +23216,10 @@ snapshots:
       typescript: 5.9.3
     optional: true
 
-  vue-tsc@3.3.0(typescript@5.9.3):
+  vue-tsc@3.3.2(typescript@5.9.3):
     dependencies:
       '@volar/typescript': 2.4.28
-      '@vue/language-core': 3.3.0
+      '@vue/language-core': 3.3.2
       typescript: 5.9.3
 
   vue@3.5.34(typescript@5.9.3):
