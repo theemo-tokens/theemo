@@ -72,8 +72,8 @@ importers:
         specifier: 0.17.4
         version: 0.17.4
       style-dictionary:
-        specifier: ^5.4.1
-        version: 5.4.1
+        specifier: ^5.5.1
+        version: 5.5.1
       turbo:
         specifier: 2.8.21
         version: 2.8.21
@@ -485,8 +485,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       style-dictionary:
-        specifier: ^5.4.1
-        version: 5.4.1
+        specifier: ^5.5.1
+        version: 5.5.1
       tsdown:
         specifier: ^0.12.9
         version: 0.12.9(typescript@5.9.3)(vue-tsc@2.2.12(typescript@5.9.3))
@@ -1196,8 +1196,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tokens
       style-dictionary:
-        specifier: ^5.4.1
-        version: 5.4.1
+        specifier: ^5.5.1
+        version: 5.5.1
 
   themes/super-theemo:
     devDependencies:
@@ -1232,8 +1232,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       style-dictionary:
-        specifier: ^5.4.1
-        version: 5.4.1
+        specifier: ^5.5.1
+        version: 5.5.1
 
 packages:
 
@@ -1894,8 +1894,8 @@ packages:
   '@braintree/sanitize-url@7.1.1':
     resolution: {integrity: sha512-i1L7noDNxtFyL5DmZafWy1wRVhGehQmzZaz1HiN5e7iylJMSZR7ekOV7NsIqa5qBldlLrsKv4HbgFUVlQrz8Mw==}
 
-  '@bundled-es-modules/deepmerge@4.3.1':
-    resolution: {integrity: sha512-Rk453EklPUPC3NRWc3VUNI/SSUjdBaFoaQvFRmNBNtMHVtOFD5AntiWg5kEE1hqcPqedYFDzxE3ZcMYPcA195w==}
+  '@bundled-es-modules/deepmerge@4.3.2':
+    resolution: {integrity: sha512-q8doe7ndrY2IolUOFIn0A0++JBX38pMhN7kFhTF4cnjIcILf6X6H2yWczInyv8ZFdR0lrE8088X8XS5efxXz8A==}
 
   '@bundled-es-modules/glob@13.0.6':
     resolution: {integrity: sha512-x9nR2e1pt8LF0yLPC6yz/aUoiN7qJJwZ1znLxIXCxGyH+8BI+yO/sklBdn1+QbUyWXQBM+CjfZz3IhqtgIoDVg==}
@@ -10065,8 +10065,8 @@ packages:
   stubborn-utils@1.0.2:
     resolution: {integrity: sha512-zOh9jPYI+xrNOyisSelgym4tolKTJCQd5GBhK0+0xJvcYDcwlOoxF/rnFKQ2KRZknXSG9jWAp66fwP6AxN9STg==}
 
-  style-dictionary@5.4.1:
-    resolution: {integrity: sha512-x8sqaLZCYDP+wzPkrUPPlnBuQ9ndwtzzrQE9AchXARGmC7KFnjVwDufDokiGsgDuUR9V94Iw5D0K8Oyxj7vrlQ==}
+  style-dictionary@5.5.1:
+    resolution: {integrity: sha512-+fwPuRKopBLNolzefOHrAtCQomJqj0HVbH0XWBwXEQR3CV+i2pkNY5yCSPPv0qNHc3ibnbuzF4Qui3tZehexIw==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -12176,7 +12176,7 @@ snapshots:
 
   '@braintree/sanitize-url@7.1.1': {}
 
-  '@bundled-es-modules/deepmerge@4.3.1':
+  '@bundled-es-modules/deepmerge@4.3.2':
     dependencies:
       deepmerge: 4.3.1
 
@@ -22041,9 +22041,9 @@ snapshots:
 
   stubborn-utils@1.0.2: {}
 
-  style-dictionary@5.4.1:
+  style-dictionary@5.5.1:
     dependencies:
-      '@bundled-es-modules/deepmerge': 4.3.1
+      '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/glob': 13.0.6
       '@bundled-es-modules/memfs': 4.17.0
       '@zip.js/zip.js': 2.8.11

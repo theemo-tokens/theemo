@@ -51,7 +51,7 @@
     "@theemo/tokens": "workspace:*",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
-    "style-dictionary": "^5.4.1"
+    "style-dictionary": "^5.5.1"
   },
   "engines": {
     "node": "^20.11.0 || >=22"
