@@ -58,7 +58,7 @@
     "style-dictionary": "^5.4.1",
     "tsdown": "^0.12.9",
     "typescript": "5.9.3",
-    "vitest": "3.2.4"
+    "vitest": "3.2.6"
   },
   "engines": {
     "node": "^20.11.0 || >=22"
