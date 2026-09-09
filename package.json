@@ -38,7 +38,7 @@
     "@zvitek/vitepress-plugin-matomo": "1.0.1",
     "concurrently": "^9.2.1",
     "iconify-icon": "^3.0.2",
-    "markdown-it-deflist": "3.0.0",
+    "markdown-it-deflist": "3.0.1",
     "markdown-it-multimd-table": "4.2.3",
     "mermaid": "11.14.0",
     "release-plan": "0.17.4",
