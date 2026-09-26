@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2026-09-26)
+
+* @theemo/svelte 1.0.2 (patch)
+* @theemo/vite 1.0.2 (patch)
+
+#### :house: Internal
+* `@theemo/svelte`, `@theemo/vite`
+  * [#1791](https://github.com/theemo-tokens/theemo/pull/1791) fix lint ([@gossi](https://github.com/gossi))
+
+#### Committers: 1
+- Thomas Gossmann ([@gossi](https://github.com/gossi))
+
 ## Release (2025-10-28)
 
 * @theemo/build 1.1.0 (minor)
