@@ -328,7 +328,7 @@ importers:
         version: 7.28.6(@babel/core@7.29.6)
       '@babel/runtime':
         specifier: ^7.29.2
-        version: 7.29.2
+        version: 7.29.7
       '@ember/library-tsconfig':
         specifier: ^1.1.3
         version: 1.1.3
@@ -388,7 +388,7 @@ importers:
         version: link:../tokens
       colord:
         specifier: ^2.9.3
-        version: 2.9.3
+        version: 2.10.0
       figma-api:
         specifier: ^1.11.0
         version: 1.12.0
@@ -657,7 +657,7 @@ importers:
     dependencies:
       colord:
         specifier: ^2.9.3
-        version: 2.9.3
+        version: 2.10.0
       lodash.merge:
         specifier: ^4.6.2
         version: 4.6.2
@@ -807,7 +807,7 @@ importers:
         version: 7.28.6(@babel/core@7.29.6)
       '@babel/runtime':
         specifier: ^7.29.2
-        version: 7.29.2
+        version: 7.29.7
       '@ember/optional-features':
         specifier: ^2.3.0
         version: 2.3.0
@@ -1872,8 +1872,8 @@ packages:
   '@babel/runtime@7.12.18':
     resolution: {integrity: sha512-BogPQ7ciE6SYAUPtlm9tWbgI9+2AgqSam6QivMgXgAT+fKbgppaj4ZX15MHeLC1PVF5sNk70huBu20XxWOs8Cg==}
 
-  '@babel/runtime@7.29.2':
-    resolution: {integrity: sha512-JiDShH45zKHWyGe4ZNVRrCjBz8Nh9TMmZG1kh4QTK8hCBTWBi8Da+i7s1fJw7/lYpM4ccepSNfqzZ/QvABBi5g==}
+  '@babel/runtime@7.29.7':
+    resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.29.7':
@@ -3394,12 +3394,12 @@ packages:
       svelte: ^5.0.0
       vite: ^6.3.0 || ^7.0.0
 
-  '@testing-library/dom@10.4.0':
-    resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
+  '@testing-library/dom@10.4.2':
+    resolution: {integrity: sha512-yzr2S9HyAIdhz2/6qHgbs665Q7PKVcDF05vsOlHPxG1mo36gKVesdYVeDLnXgfjJ03CrKRk08knc6+E/9m8v2Q==}
     engines: {node: '>=18'}
 
-  '@testing-library/user-event@14.6.1':
-    resolution: {integrity: sha512-vq7fv0rnt+QTXgPxr5Hjc210p6YKq2kmdziLgnsZGgLJ9e6VAShx1pACLuRjd/AS/sr7phAR58OIIpf0LlmQNw==}
+  '@testing-library/user-event@14.6.7':
+    resolution: {integrity: sha512-MPCpX8bxe8zS+JmmTwLp8jd0dy1rAm60Te/SL8JrQM3qvQJcBOs1d7IefJMyZzqM3EWBrDn/LWDt1BCGu4ASfg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
@@ -5172,8 +5172,8 @@ packages:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
 
-  colord@2.9.3:
-    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
+  colord@2.10.0:
+    resolution: {integrity: sha512-AidJptpBJmjTclAp9BkLwJi0T93fo5epJnbaZslpg6QVzpHjAiveF55mE9AcUJiGMqRHgMDY8soMsQtuNYMHfw==}
 
   colorjs.io@0.5.2:
     resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
@@ -11149,8 +11149,8 @@ packages:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
 
-  webpack-sources@3.5.3:
-    resolution: {integrity: sha512-F/zS5rEcCKxS6hrhxkLjOzblTsuv89rkuDyP+vToquds6KfPJ3fDqg9UNzbtJcA2AgXZOLMYLQqZpuyE5zDfxg==}
+  webpack-sources@3.6.0:
+    resolution: {integrity: sha512-EIMmPVvNI0CYXyRPp34F2Qk7W37/BZVZIofS6LAUnrNjCVahS+hO4mxwFJDjQjODTGZDtVzLYoN2+1dYkhk9qA==}
     engines: {node: '>=10.13.0'}
 
   webpack-virtual-modules@0.6.2:
@@ -11279,8 +11279,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.18.2:
-    resolution: {integrity: sha512-DMricUmwGZUVr++AEAe2uiVM7UoO9MAVZMDu05UQOaUII0lp+zOzLLU4Xqh/JvTqklB1T4uELaaPBKyjE1r4fQ==}
+  ws@8.22.0:
+    resolution: {integrity: sha512-Ydggc987+RO0AnWtZ/7Wq9FtNvcrL1b/RO0ud9mWjUPgDrsAAwQSF51sm2hm1XofbU/4jkpGEsLFsZZxU+1DOg==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -12280,7 +12280,7 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.13.11
 
-  '@babel/runtime@7.29.2': {}
+  '@babel/runtime@7.29.7': {}
 
   '@babel/template@7.29.7':
     dependencies:
@@ -12551,7 +12551,7 @@ snapshots:
       '@babel/plugin-syntax-typescript': 7.28.6(@babel/core@7.29.6)
       '@babel/plugin-transform-runtime': 7.29.0(@babel/core@7.29.6)
       '@babel/preset-env': 7.27.2(@babel/core@7.29.6)
-      '@babel/runtime': 7.29.2
+      '@babel/runtime': 7.29.7
       '@babel/traverse': 7.29.8
       '@embroider/core': 4.3.0(@glint/template@1.7.7)
       '@embroider/macros': 1.19.5(@glint/template@1.7.7)
@@ -14043,20 +14043,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@testing-library/dom@10.4.0':
+  '@testing-library/dom@10.4.2':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/runtime': 7.29.2
+      '@babel/runtime': 7.29.7
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
-      chalk: 4.1.2
       dom-accessibility-api: 0.5.16
       lz-string: 1.5.0
+      picocolors: 1.1.1
       pretty-format: 27.5.1
 
-  '@testing-library/user-event@14.6.1(@testing-library/dom@10.4.0)':
+  '@testing-library/user-event@14.6.7(@testing-library/dom@10.4.2)':
     dependencies:
-      '@testing-library/dom': 10.4.0
+      '@testing-library/dom': 10.4.2
 
   '@tootallnate/once@1.1.2': {}
 
@@ -14653,15 +14653,15 @@ snapshots:
 
   '@vitest/browser@3.2.4(vite@6.3.6(@types/node@22.16.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))(vitest@3.2.4)(webdriverio@9.27.1)':
     dependencies:
-      '@testing-library/dom': 10.4.0
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
+      '@testing-library/dom': 10.4.2
+      '@testing-library/user-event': 14.6.7(@testing-library/dom@10.4.2)
       '@vitest/mocker': 3.2.4(vite@6.3.6(@types/node@22.16.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))
       '@vitest/utils': 3.2.4
       magic-string: 0.30.21
       sirv: 3.0.2
       tinyrainbow: 2.0.0
       vitest: 3.2.4(@types/debug@4.1.12)(@types/node@22.16.3)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3)
-      ws: 8.18.2
+      ws: 8.22.0
     optionalDependencies:
       webdriverio: 9.27.1
     transitivePeerDependencies:
@@ -14673,15 +14673,15 @@ snapshots:
 
   '@vitest/browser@3.2.4(vite@6.3.6(@types/node@26.6.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))(vitest@3.2.4)(webdriverio@9.27.1)':
     dependencies:
-      '@testing-library/dom': 10.4.0
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
+      '@testing-library/dom': 10.4.2
+      '@testing-library/user-event': 14.6.7(@testing-library/dom@10.4.2)
       '@vitest/mocker': 3.2.4(vite@6.3.6(@types/node@26.6.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))
       '@vitest/utils': 3.2.4
       magic-string: 0.30.21
       sirv: 3.0.2
       tinyrainbow: 2.0.0
       vitest: 3.2.4(@types/debug@4.1.12)(@types/node@26.6.3)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3)
-      ws: 8.18.2
+      ws: 8.22.0
     optionalDependencies:
       webdriverio: 9.27.1
     transitivePeerDependencies:
@@ -14693,15 +14693,15 @@ snapshots:
 
   '@vitest/browser@3.2.4(vite@7.1.5(@types/node@26.6.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))(vitest@3.2.4)(webdriverio@9.27.1)':
     dependencies:
-      '@testing-library/dom': 10.4.0
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
+      '@testing-library/dom': 10.4.2
+      '@testing-library/user-event': 14.6.7(@testing-library/dom@10.4.2)
       '@vitest/mocker': 3.2.4(vite@7.1.5(@types/node@26.6.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))
       '@vitest/utils': 3.2.4
       magic-string: 0.30.21
       sirv: 3.0.2
       tinyrainbow: 2.0.0
       vitest: 3.2.4(@types/debug@4.1.12)(@types/node@26.6.3)(@vitest/browser@3.2.4)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3)
-      ws: 8.18.2
+      ws: 8.22.0
     optionalDependencies:
       webdriverio: 9.27.1
     transitivePeerDependencies:
@@ -14713,15 +14713,15 @@ snapshots:
 
   '@vitest/browser@3.2.7(vite@6.3.6(@types/node@26.6.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))(vitest@3.2.4)(webdriverio@9.27.1)':
     dependencies:
-      '@testing-library/dom': 10.4.0
-      '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
+      '@testing-library/dom': 10.4.2
+      '@testing-library/user-event': 14.6.7(@testing-library/dom@10.4.2)
       '@vitest/mocker': 3.2.7(vite@6.3.6(@types/node@26.6.3)(jiti@2.6.1)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3))
       '@vitest/utils': 3.2.7
       magic-string: 0.30.21
       sirv: 3.0.2
       tinyrainbow: 2.0.0
       vitest: 3.2.4(@types/debug@4.1.12)(@types/node@26.6.3)(@vitest/browser@3.2.7)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.51.2)(yaml@2.8.3)
-      ws: 8.18.2
+      ws: 8.22.0
     optionalDependencies:
       webdriverio: 9.27.1
     transitivePeerDependencies:
@@ -16361,7 +16361,7 @@ snapshots:
 
   color-support@1.1.3: {}
 
-  colord@2.9.3: {}
+  colord@2.10.0: {}
 
   colorjs.io@0.5.2: {}
 
@@ -19612,7 +19612,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.18.2
+      ws: 8.22.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -19639,7 +19639,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.2.0
-      ws: 8.18.2
+      ws: 8.22.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -22373,7 +22373,7 @@ snapshots:
       '@csstools/selector-specificity': 5.0.0(postcss-selector-parser@7.1.0)
       '@dual-bundle/import-meta-resolve': 4.2.1
       balanced-match: 2.0.0
-      colord: 2.9.3
+      colord: 2.10.0
       cosmiconfig: 9.0.0(typescript@5.9.3)
       css-functions-list: 3.2.3
       css-tree: 3.1.0
@@ -23668,7 +23668,7 @@ snapshots:
       deepmerge-ts: 7.1.5
       https-proxy-agent: 7.0.6
       undici: 6.21.3
-      ws: 8.18.2
+      ws: 8.22.0
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
@@ -23710,7 +23710,7 @@ snapshots:
 
   webidl-conversions@7.0.0: {}
 
-  webpack-sources@3.5.3: {}
+  webpack-sources@3.6.0: {}
 
   webpack-virtual-modules@0.6.2: {}
 
@@ -23739,7 +23739,7 @@ snapshots:
       tapable: 2.3.3
       terser-webpack-plugin: 5.6.1(lightningcss@1.30.1)(postcss@8.5.28)(webpack@5.99.9(lightningcss@1.30.1)(postcss@8.5.28))
       watchpack: 2.5.2
-      webpack-sources: 3.5.3
+      webpack-sources: 3.6.0
     transitivePeerDependencies:
       - '@minify-html/node'
       - '@swc/core'
@@ -23889,7 +23889,7 @@ snapshots:
 
   ws@8.17.1: {}
 
-  ws@8.18.2: {}
+  ws@8.22.0: {}
 
   wsl-utils@0.1.0:
     dependencies:
