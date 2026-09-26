@@ -73,6 +73,7 @@ function resolveEntry(entry: string) {
 export function theemoSvelteConfig(svelteKitConfig: Config = {}): Config {
   const outDir = svelteKitConfig.kit?.outDir ?? '.svelte-kit';
   const currentHook = `${outDir}/generated/theemo-hook.server.mjs`;
+  // eslint-disable-next-line @typescript-eslint/no-deprecated
   const previousHook = svelteKitConfig.kit?.files?.hooks?.server ?? 'src/hooks.server';
 
   (globalThis as GlobalThis).__theemoHook = {
