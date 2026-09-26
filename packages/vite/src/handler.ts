@@ -27,7 +27,7 @@ export async function fingerprintFile(filename: string): Promise<string> {
     const cHash = crypto.createHash('MD5');
     const stream = fs.createReadStream(filename);
 
-    stream.on('error', (err) => {
+    stream.on('error', (err: Error) => {
       reject(err);
     });
     stream.on('data', (chunk) => {
