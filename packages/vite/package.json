@@ -51,7 +51,7 @@
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/tsdown": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
-    "concurrently": "^9.2.1",
+    "concurrently": "^9.2.4",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
     "rollup": "^4.60.4",
