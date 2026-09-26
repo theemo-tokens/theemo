@@ -1,32 +1,12 @@
 {
   "solution": {
     "@theemo/build": {
-      "impact": "minor",
-      "oldVersion": "1.0.1",
-      "newVersion": "1.1.0",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
-        }
-      ],
-      "pkgJSONPath": "./packages/build/package.json"
+      "oldVersion": "1.1.0"
     },
     "moana": {},
     "moana-color-schemes": {},
     "@theemo/cli": {
-      "impact": "patch",
-      "oldVersion": "1.0.1",
-      "newVersion": "1.0.2",
-      "tagName": "latest",
-      "constraints": [
-        {
-          "impact": "patch",
-          "reason": "Has dependency `workspace:*` on @theemo/build"
-        }
-      ],
-      "pkgJSONPath": "./packages/cli/package.json"
+      "oldVersion": "1.0.2"
     },
     "@theemo/core": {
       "oldVersion": "1.0.1"
@@ -41,7 +21,21 @@
       "oldVersion": "1.0.1"
     },
     "@theemo/svelte": {
-      "oldVersion": "1.0.1"
+      "impact": "patch",
+      "oldVersion": "1.0.1",
+      "newVersion": "1.0.2",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        },
+        {
+          "impact": "patch",
+          "reason": "Has dependency `workspace:*` on @theemo/vite"
+        }
+      ],
+      "pkgJSONPath": "./packages/svelte/package.json"
     },
     "@theemo/sync": {
       "oldVersion": "1.0.1"
@@ -53,11 +47,21 @@
       "oldVersion": "1.0.1"
     },
     "@theemo/vite": {
-      "oldVersion": "1.0.1"
+      "impact": "patch",
+      "oldVersion": "1.0.1",
+      "newVersion": "1.0.2",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./packages/vite/package.json"
     },
     "@theemo/vue": {
       "oldVersion": "1.0.1"
     }
   },
-  "description": "## Release (2025-10-28)\n\n* @theemo/build 1.1.0 (minor)\n* @theemo/cli 1.0.2 (patch)\n\n#### :rocket: Enhancement\n* `@theemo/build`\n  * [#1627](https://github.com/theemo-tokens/theemo/pull/1627) Build theme with CSS `@layer` ([@gossi](https://github.com/gossi))\n\n#### :house: Internal\n* [#1629](https://github.com/theemo-tokens/theemo/pull/1629) Support Trusted Publishing ([@gossi](https://github.com/gossi))\n* [#1628](https://github.com/theemo-tokens/theemo/pull/1628) Switch Code Coverage reporter to qlty ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
+  "description": "## Release (2026-09-26)\n\n* @theemo/svelte 1.0.2 (patch)\n* @theemo/vite 1.0.2 (patch)\n\n#### :house: Internal\n* `@theemo/svelte`, `@theemo/vite`\n  * [#1791](https://github.com/theemo-tokens/theemo/pull/1791) fix lint ([@gossi](https://github.com/gossi))\n\n#### Committers: 1\n- Thomas Gossmann ([@gossi](https://github.com/gossi))\n"
 }
