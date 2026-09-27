@@ -315,7 +315,7 @@ importers:
         version: link:../theme
       decorator-transforms:
         specifier: ^2.3.0
-        version: 2.3.2(@babel/core@7.29.7)
+        version: 2.4.0(@babel/core@7.29.7)
     devDependencies:
       '@babel/core':
         specifier: ^7.29.7
@@ -896,8 +896,8 @@ importers:
         specifier: ^9.2.4
         version: 9.2.4
       decorator-transforms:
-        specifier: ^2.3.2
-        version: 2.3.2(@babel/core@7.29.7)
+        specifier: ^2.4.0
+        version: 2.4.0(@babel/core@7.29.7)
       ember-auto-import:
         specifier: ^2.13.1
         version: 2.13.1(@glint/template@1.9.0)(webpack@5.99.9(lightningcss@1.30.1)(postcss@8.5.28))
@@ -5919,8 +5919,10 @@ packages:
     resolution: {integrity: sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==}
     engines: {node: '>=0.10'}
 
-  decorator-transforms@2.3.2:
-    resolution: {integrity: sha512-XcErcjlmCzG5ODgYjt6ZTXwd6S8fPKln/sJmw15ZXkWG2JpoQNwszis+AwF6XSGlOoG7g8MCEO97g+Yw3fk5OQ==}
+  decorator-transforms@2.4.0:
+    resolution: {integrity: sha512-IB+0RqnJpuS7ndH4dVY5dfWTZsrCzN3avWFdjSiET0uT2U24jKywjpVEK97TflnZkZgiSRfmeqc1WfS+1CI23w==}
+    peerDependencies:
+      '@babel/core': ^7.23.0 || ^8.0.0
 
   deep-eql@5.0.2:
     resolution: {integrity: sha512-h5k/5U50IJJFpzfL6nO9jaaumfjO/f2NjK/oYB2Djzm4p9L+3T9qWpZqZ2hAbLPuuYq9wrU08WQyBTL5GbPk5Q==}
@@ -12513,7 +12515,7 @@ snapshots:
       '@ember/test-waiters': 4.1.0(@babel/core@7.29.7)(@glint/template@1.9.0)
       '@embroider/addon-shim': 1.10.2
       '@simple-dom/interface': 1.4.0
-      decorator-transforms: 2.3.2(@babel/core@7.29.7)
+      decorator-transforms: 2.4.0(@babel/core@7.29.7)
       dom-element-descriptors: 0.5.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -16943,12 +16945,10 @@ snapshots:
 
   decode-uri-component@0.2.2: {}
 
-  decorator-transforms@2.3.2(@babel/core@7.29.7):
+  decorator-transforms@2.4.0(@babel/core@7.29.7):
     dependencies:
-      '@babel/plugin-syntax-decorators': 7.29.7(@babel/core@7.29.7)
+      '@babel/core': 7.29.7
       babel-import-util: 3.0.1
-    transitivePeerDependencies:
-      - '@babel/core'
 
   deep-eql@5.0.2: {}
 
@@ -22815,7 +22815,7 @@ snapshots:
   tracked-built-ins@4.1.2(@babel/core@7.29.7):
     dependencies:
       '@embroider/addon-shim': 1.10.2
-      decorator-transforms: 2.3.2(@babel/core@7.29.7)
+      decorator-transforms: 2.4.0(@babel/core@7.29.7)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
