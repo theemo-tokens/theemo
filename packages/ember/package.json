@@ -62,7 +62,7 @@
     "@rollup/plugin-babel": "^6.1.0",
     "@theemo-config/tsconfig": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
-    "concurrently": "^9.2.1",
+    "concurrently": "^9.2.4",
     "ember-source": "~6.9.0",
     "eslint": "^9.39.2",
     "eslint-plugin-ember": "^12.7.5",
