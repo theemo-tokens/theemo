@@ -54,8 +54,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       iconify-icon:
         specifier: ^3.0.3
         version: 3.0.3
@@ -192,8 +192,8 @@ importers:
         specifier: ^22.16.3
         version: 22.16.3
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -254,8 +254,8 @@ importers:
         specifier: ^22.16.3
         version: 22.16.3
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -287,8 +287,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/tsdown
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -354,8 +354,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typedoc
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       ember-source:
         specifier: ~6.9.0
         version: 6.9.0(@glimmer/component@2.0.0)(rsvp@4.8.5)
@@ -433,8 +433,8 @@ importers:
         specifier: ^8.54.0
         version: 8.54.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -476,8 +476,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typedoc
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -525,8 +525,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typedoc
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -586,8 +586,8 @@ importers:
         specifier: ^8.54.0
         version: 8.54.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -632,8 +632,8 @@ importers:
         specifier: workspace:*
         version: link:../../playground/ocean-theme
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -681,8 +681,8 @@ importers:
         specifier: ^4.6.9
         version: 4.6.9
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -721,8 +721,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typedoc
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -770,8 +770,8 @@ importers:
         specifier: workspace:*
         version: link:../../configs/typedoc
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -893,8 +893,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       decorator-transforms:
         specifier: ^2.4.0
         version: 2.4.0(@babel/core@7.29.7)
@@ -1160,8 +1160,8 @@ importers:
         specifier: ^22.16.3
         version: 22.16.3
       concurrently:
-        specifier: ^9.2.4
-        version: 9.2.4
+        specifier: ^9.2.5
+        version: 9.2.5
       eslint:
         specifier: ^9.39.2
         version: 9.39.2(jiti@2.6.1)
@@ -5350,8 +5350,8 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
-  concurrently@9.2.4:
-    resolution: {integrity: sha512-TZ0CEhyzvFjgtAvHTusDMgj7wNdihCh7LLLrzdUOXIhdlnL2JBBGA9eJxR24rtqgmdjh3OA3hrN1rCHj6HM8qA==}
+  concurrently@9.2.5:
+    resolution: {integrity: sha512-YMZlvWrTPQEhjKp60XSmMGt60+pffbv6DyRnOMvVO98+J7aF8w8Ui9FhdcOwvSixc/kyR6SoVvmejcn/2lZBqg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -9864,8 +9864,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shell-quote@1.9.0:
-    resolution: {integrity: sha512-Iov+JwFv/2HcTpcwNMKd8+IWNb8tboQJNQTkAY/LLVK7gGH9jy+LGkVqPxfekHl+yMmiqXszdGWXgkfml7hjqA==}
+  shell-quote@1.12.0:
+    resolution: {integrity: sha512-PcByqNyT/38F2kDNi006HAMRJaULuBzq/FOsw3qdZvX/GA9W/jamDaRskgHjubHiftXK5sIFxLNkvrXUwcof6Q==}
     engines: {node: '>= 0.4'}
 
   shellwords@0.1.1:
@@ -16492,11 +16492,11 @@ snapshots:
 
   concat-map@0.0.1: {}
 
-  concurrently@9.2.4:
+  concurrently@9.2.5:
     dependencies:
       chalk: 4.1.2
       rxjs: 7.8.2
-      shell-quote: 1.9.0
+      shell-quote: 1.12.0
       supports-color: 8.1.1
       tree-kill: 1.2.2
       yargs: 17.7.2
@@ -20662,7 +20662,7 @@ snapshots:
       minimatch: 9.0.9
       pidtree: 0.6.0
       read-package-json-fast: 4.0.0
-      shell-quote: 1.9.0
+      shell-quote: 1.12.0
       which: 5.0.0
 
   npm-run-path@2.0.2:
@@ -21893,7 +21893,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shell-quote@1.9.0: {}
+  shell-quote@1.12.0: {}
 
   shellwords@0.1.1: {}
 
