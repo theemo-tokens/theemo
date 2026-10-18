@@ -27,7 +27,7 @@ jobs:
       attestations: write
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Setup
         uses: ./.github/actions/setup
         # we are doing this to make sure theat the gloabally installed npm is new enough to support OIDC
