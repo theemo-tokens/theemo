@@ -72,8 +72,8 @@ importers:
         specifier: 0.20.1
         version: 0.20.1
       style-dictionary:
-        specifier: ^5.5.5
-        version: 5.5.5
+        specifier: ^5.6.1
+        version: 5.7.0
       turbo:
         specifier: 2.11.7
         version: 2.11.7
@@ -485,8 +485,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       style-dictionary:
-        specifier: ^5.5.5
-        version: 5.5.5
+        specifier: ^5.6.1
+        version: 5.7.0
       tsdown:
         specifier: ^0.12.9
         version: 0.12.9(typescript@5.9.3)(vue-tsc@2.2.12(typescript@5.9.3))
@@ -1196,8 +1196,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/tokens
       style-dictionary:
-        specifier: ^5.5.5
-        version: 5.5.5
+        specifier: ^5.6.1
+        version: 5.7.0
 
   themes/super-theemo:
     devDependencies:
@@ -1232,8 +1232,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       style-dictionary:
-        specifier: ^5.5.5
-        version: 5.5.5
+        specifier: ^5.6.1
+        version: 5.7.0
 
 packages:
 
@@ -10200,8 +10200,8 @@ packages:
   stubborn-utils@1.0.2:
     resolution: {integrity: sha512-zOh9jPYI+xrNOyisSelgym4tolKTJCQd5GBhK0+0xJvcYDcwlOoxF/rnFKQ2KRZknXSG9jWAp66fwP6AxN9STg==}
 
-  style-dictionary@5.5.5:
-    resolution: {integrity: sha512-BG+o8U7MUcU6iLUtl1OWApF9hmfTSJcrhY6iWdXDU9xjt7VMZOHQMTsGx5AvsHyytWmeWybP2LzQxIKHUm9Svg==}
+  style-dictionary@5.7.0:
+    resolution: {integrity: sha512-imy4PuzqWTCpPE9YMcDSlqtb9zV4wj8I06hRDpt+/HTJVH88KKuMx0X++/PMDjQAGptSxqIkYiulOSwSL5r6Kw==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -22296,7 +22296,7 @@ snapshots:
 
   stubborn-utils@1.0.2: {}
 
-  style-dictionary@5.5.5:
+  style-dictionary@5.7.0:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/glob': 13.0.6
