@@ -54,7 +54,7 @@
     "concurrently": "^9.2.5",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
-    "rollup": "^4.64.5",
+    "rollup": "^4.64.7",
     "tsdown": "^0.12.9",
     "type-fest": "^5.10.0",
     "typescript": "5.9.3",
