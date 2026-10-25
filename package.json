@@ -42,7 +42,7 @@
     "markdown-it-multimd-table": "4.2.3",
     "mermaid": "11.17.2",
     "release-plan": "0.20.1",
-    "style-dictionary": "^5.6.1",
+    "style-dictionary": "^5.7.0",
     "turbo": "2.11.7",
     "typedoc": "0.28.20",
     "typedoc-plugin-markdown": "4.13.1",
