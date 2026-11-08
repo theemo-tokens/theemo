@@ -50,7 +50,7 @@
     "@theemo/sync": "workspace:*",
     "commander": "^15.0.0",
     "cosmiconfig": "^10.0.0",
-    "dotenv": "^17.0.0",
+    "dotenv": "^18.0.0",
     "read-pkg-up": "^11.0.0"
   },
   "devDependencies": {
