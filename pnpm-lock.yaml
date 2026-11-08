@@ -918,7 +918,7 @@ importers:
         version: 9.0.3
       ember-qunit:
         specifier: ^9.2.0
-        version: 9.2.0(@ember/test-helpers@5.7.0(@babel/core@7.29.7)(@glint/template@1.11.1))(qunit@2.26.0)
+        version: 9.2.0(@ember/test-helpers@5.7.0(@babel/core@7.29.7)(@glint/template@1.11.1))(qunit@3.0.0)
       ember-resolver:
         specifier: ^13.1.1
         version: 13.1.1
@@ -950,8 +950,8 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       qunit:
-        specifier: ^2.26.0
-        version: 2.26.0
+        specifier: ^3.0.0
+        version: 3.0.0
       qunit-dom:
         specifier: ^3.6.0
         version: 3.6.0
@@ -8700,8 +8700,8 @@ packages:
     resolution: {integrity: sha512-6li2QanLsAXpIH2R6j77MzRyvOyrvdTqlKtO4CgBdHGNvN99ZZfyxszHc5o5+IZBWD5u6Hzwg83JoGXmqZNG9Q==}
     engines: {node: '>=18'}
 
-  node-watch@0.7.3:
-    resolution: {integrity: sha512-3l4E8uMPY1HdMMryPRUAl+oIHtXtyiTlIiESNSVSNxcPfzAFzeTbXFQkZfAwBbo0B1qMSG8nUABx+Gd+YrbKrQ==}
+  node-watch@0.7.4:
+    resolution: {integrity: sha512-RinNxoz4W1cep1b928fuFhvAQ5ag/+1UlMDV7rbyGthBIgsiEouS4kvRayvvboxii4m8eolKOIBo3OjDqbc+uQ==}
     engines: {node: '>=6'}
 
   non-layered-tidy-tree-layout@2.0.2:
@@ -9332,9 +9332,9 @@ packages:
   qunit-theme-ember@1.0.0:
     resolution: {integrity: sha512-vdMVVo6ecdCkWttMTKeyq1ZTLGHcA6zdze2zhguNuc3ritlJMhOXY5RDseqazOwqZVfCg3rtlmL3fMUyIzUyFQ==}
 
-  qunit@2.26.0:
-    resolution: {integrity: sha512-KSv16YomcYmiK90qTOJl3Bm5IvTf2upqQDdBQWCvSQWe94FWobnUgKOpvpvZdG7VkDt3TJSI8k8g9+GGGEd7Fw==}
-    engines: {node: '>=10'}
+  qunit@3.0.0:
+    resolution: {integrity: sha512-g4Fgw3uhqwdjzhUDa0bYGQyGzs1xRcIY/32c5zUydnnrgzcA8updYF9nIeUis+PfwuqX6UB/4JpCNMnrVBY6iA==}
+    engines: {node: '>=18'}
     hasBin: true
 
   range-parser@1.2.1:
@@ -17469,11 +17469,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-qunit@9.2.0(@ember/test-helpers@5.7.0(@babel/core@7.29.7)(@glint/template@1.11.1))(qunit@2.26.0):
+  ember-qunit@9.2.0(@ember/test-helpers@5.7.0(@babel/core@7.29.7)(@glint/template@1.11.1))(qunit@3.0.0):
     dependencies:
       '@ember/test-helpers': 5.7.0(@babel/core@7.29.7)(@glint/template@1.11.1)
       '@embroider/addon-shim': 1.10.2
-      qunit: 2.26.0
+      qunit: 3.0.0
       qunit-theme-ember: 1.0.0
     transitivePeerDependencies:
       - supports-color
@@ -20467,7 +20467,7 @@ snapshots:
 
   node-releases@2.0.63: {}
 
-  node-watch@0.7.3: {}
+  node-watch@0.7.4: {}
 
   non-layered-tidy-tree-layout@2.0.2:
     optional: true
@@ -21077,10 +21077,10 @@ snapshots:
 
   qunit-theme-ember@1.0.0: {}
 
-  qunit@2.26.0:
+  qunit@3.0.0:
     dependencies:
-      commander: 7.2.0
-      node-watch: 0.7.3
+      commander: 12.1.0
+      node-watch: 0.7.4
       tiny-glob: 0.2.9
 
   range-parser@1.2.1: {}
