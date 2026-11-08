@@ -49,7 +49,7 @@
     "@theemo-config/tsdown": "workspace:*",
     "@theemo-config/typedoc": "workspace:*",
     "@theemo/theme": "workspace:*",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "concurrently": "^10.0.6",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
