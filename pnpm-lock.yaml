@@ -57,7 +57,7 @@ importers:
         specifier: ^10.0.6
         version: 10.0.6
       iconify-icon:
-        specifier: ^3.0.4
+        specifier: ^3.0.5
         version: 3.0.5
       markdown-it-deflist:
         specifier: 4.0.0
