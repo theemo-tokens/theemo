@@ -58,7 +58,7 @@
     "ember-auto-import": "^2.13.1",
     "ember-cli": "~7.3.0",
     "ember-cli-babel": "^8.3.2",
-    "ember-cli-htmlbars": "^6.3.0",
+    "ember-cli-htmlbars": "^7.0.1",
     "ember-load-initializers": "^3.0.1",
     "ember-page-title": "^9.0.3",
     "ember-qunit": "^9.2.0",
