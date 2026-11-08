@@ -369,7 +369,7 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       rollup:
-        specifier: ^4.67.3
+        specifier: ^4.67.4
         version: 4.68.0
       tslib:
         specifier: ^2.9.1
@@ -534,7 +534,7 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       rollup:
-        specifier: ^4.67.3
+        specifier: ^4.67.4
         version: 4.68.0
       svelte:
         specifier: ^5.57.3
@@ -730,7 +730,7 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
       rollup:
-        specifier: ^4.67.3
+        specifier: ^4.67.4
         version: 4.68.0
       tsdown:
         specifier: ^0.12.9
