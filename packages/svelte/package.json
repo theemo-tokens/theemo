@@ -68,7 +68,7 @@
     "concurrently": "^10.0.6",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
-    "rollup": "^4.67.3",
+    "rollup": "^4.67.4",
     "svelte": "^5.57.3",
     "tsdown": "^0.12.9",
     "typescript": "5.9.3",
