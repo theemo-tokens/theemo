@@ -327,7 +327,7 @@ importers:
         specifier: ^7.29.9
         version: 7.29.9(@babel/core@7.29.13)
       '@babel/runtime':
-        specifier: ^7.29.13
+        specifier: ^7.29.14
         version: 7.29.14
       '@ember/library-tsconfig':
         specifier: ^3.0.0
@@ -806,7 +806,7 @@ importers:
         specifier: ^7.29.9
         version: 7.29.9(@babel/core@7.29.13)
       '@babel/runtime':
-        specifier: ^7.29.13
+        specifier: ^7.29.14
         version: 7.29.14
       '@ember/optional-features':
         specifier: ^2.3.0
